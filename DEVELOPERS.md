@@ -5,7 +5,7 @@
 2. [Local development](#local-development)
    - [Fork the repository](#fork-the-repository)
    - [Clone the repo](#clone-the-repo)
-   - [Running turborepo](#running-turborepo)
+   - [Running Lerna](#running-lerna)
      - [Shared components](#shared-components)
      - [Installing packages](#installing-packages)
 3. [Create a pull request](#create-a-pull-request)
