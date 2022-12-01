@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "lerna run build",
-    "clean": "bash -c 'rm -rf apps/*/dist apps/*/.wesjet apps/*/.next packages/*/dist'",
+    "clean": "bash -c 'rm -rf examples/*/.wesjet examples/*/.next apps/*/.wesjet apps/*/.next packages/*/dist'",
     "format:prettier": "prettier -w .",
     "dev": "npm run dev -w=www",
     "prepare": "husky install"
