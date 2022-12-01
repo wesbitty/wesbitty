@@ -12,10 +12,20 @@
     "build": "lerna run build",
     "clean": "bash -c 'rm -rf apps/*/dist apps/*/.wesjet apps/*/.next packages/*/dist'",
     "format:prettier": "prettier -w .",
-    "dev": "npm run dev -w=www"
+    "dev": "npm run dev -w=www",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "devDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.2",
     "lerna": "^6.1.0",
-    "prettier": "2.8.0"
+    "lint-staged": "^13.0.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.8.0",
+    "semver": "^7.3.8",
+    "simple-git-hooks": "^2.8.1"
   }
 }
