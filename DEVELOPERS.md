@@ -71,11 +71,11 @@ To contribute code to [Wesbitty](https://wesbitty.com), you must fork the [Wesbi
 
 Then visit, and edit, any of the following sites:
 
-| Site                                           | Directory      | Scope name | Description                          | Local development server |
-| ---------------------------------------------- | -------------- | ---------- | ------------------------------------ | ------------------------ |
-| [wesbitty.com](https://wesbitty.com)           | `/apps/www`    | www        | The main website                     | http://localhost:8080    |
-| [app.wesbitty.com](https://app.wesbitty.com)   | `/#`      | In processing...     | Studio dashboard                     | http://localhost:3000    |
-| [wesbitty.com/docs](https://wesbitty.com/docs) | `/about`   | docs       | Guides and Reference (Next.js based) | http://localhost:4000    |
+| Site                                           | Directory   | Scope name       | Description                          | Local development server |
+| ---------------------------------------------- | ----------- | ---------------- | ------------------------------------ | ------------------------ |
+| [wesbitty.com](https://wesbitty.com)           | `/apps/www` | www              | The main website                     | http://localhost:8080    |
+| [app.wesbitty.com](https://app.wesbitty.com)   | `/#`        | In processing... | Studio dashboard                     | http://localhost:3000    |
+| [wesbitty.com/docs](https://wesbitty.com/docs) | `/about`    | docs             | Guides and Reference (Next.js based) | http://localhost:4000    |
 
 #### Running sites individually
 
@@ -88,7 +88,6 @@ npm run dev:www
 #### Shared components
 
 The monorepo has a set of shared components under `/packages`:
-
 
 - `/packages/config`: All shared config
 - `/packages/framework`: Wesbitty Api.

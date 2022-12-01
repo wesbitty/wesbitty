@@ -5,7 +5,8 @@
   "private": true,
   "workspaces": [
     "apps/www",
-    "packages/*"
+    "packages/*",
+    "examples/*"
   ],
   "scripts": {
     "build": "lerna run build",
