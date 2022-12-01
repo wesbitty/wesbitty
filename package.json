@@ -1,0 +1,20 @@
+{
+  "name": "wesbitty",
+  "version": "0.0.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "workspaces": [
+    "apps/www",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "lerna run build",
+    "clean": "bash -c 'rm -rf apps/*/dist apps/*/.wesjet apps/*/.next packages/*/dist'",
+    "format:prettier": "prettier -w .",
+    "dev": "npm run dev -w=www"
+  },
+  "devDependencies": {
+    "lerna": "^6.1.0",
+    "prettier": "2.8.0"
+  }
+}
