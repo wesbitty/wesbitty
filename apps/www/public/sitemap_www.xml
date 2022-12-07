@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://wesbitty.com/_app</loc>
+    <changefreq>weekly</changefreq>
+    <changefreq>0.5</changefreq>
+  </url>
+
+  <url>
     <loc>https://wesbitty.com/beta</loc>
     <changefreq>weekly</changefreq>
     <changefreq>0.5</changefreq>
@@ -26,12 +32,6 @@
 
   <url>
     <loc>https://wesbitty.com/support</loc>
-    <changefreq>weekly</changefreq>
-    <changefreq>0.5</changefreq>
-  </url>
-
-  <url>
-    <loc>https://wesbitty.com/_app</loc>
     <changefreq>weekly</changefreq>
     <changefreq>0.5</changefreq>
   </url>
