@@ -60,13 +60,13 @@ function Blog(props: any) {
           href={`${basePath}/rss.xml`}
         />
       </Head>
-      <NextSeo title="Blog" description="Latest news from the Wesbitty team." />
+      <NextSeo title="Blog" description="Blog | Wesbitty" />
       <DefaultLayout>
         <BlogHeader title="Blog" />
         <div className="bg-gray-50 dark:bg-dark-800 overflow-hidden py-12">
           <div className="container mx-auto px-8 sm:px-16 xl:px-20 mt-16">
             <div className="mx-auto max-w-7xl">
-              <Typography.Title level={2}>Latests posts</Typography.Title>
+              <Typography.Title level={2}>Blog Post</Typography.Title>
               <div className="mt-5 max-w-lg mx-auto grid gap-16 lg:grid-cols-2 lg:max-w-none">
                 {props.blogs.slice(0, 2).map((blog: any, idx: any) => {
                   return FeaturedThumb(blog)
@@ -78,11 +78,11 @@ function Blog(props: any) {
             <div className="mx-auto max-w-7xl">
               <div className="grid grid-cols-12">
                 <div className="col-span-12 lg:col-span-8">
-                  <Typography.Title level={2}>More posts from the team</Typography.Title>
+                  <Typography.Title level={2}>All Blog Post Categories</Typography.Title>
                 </div>
                 <div className="col-span-12 lg:col-span-4 mt-4 lg:mt-0">
                   <Space className="lg:justify-end" size={6}>
-                    <Typography.Text>Select a category</Typography.Text>
+                    <Typography.Text>Category :</Typography.Text>
                     <Dropdown
                       style={{
                         height: '50vh',
@@ -91,7 +91,7 @@ function Blog(props: any) {
                       overlay={[
                         <Dropdown.RadioGroup value={category} onChange={setCategory}>
                           <Dropdown.Radio key={'all'} value="all">
-                            Show all
+                            Select
                           </Dropdown.Radio>
                           {props.categories.map((categoryId: string) => (
                             <Dropdown.Radio key={categoryId} value={categoryId}>
@@ -106,7 +106,7 @@ function Blog(props: any) {
                         className="sbui-select--medium"
                         iconRight={<IconChevronDown />}
                       >
-                        {category === 'all' ? 'Show all' : category}
+                        {category === 'all' ? 'Select' : category}
                       </Button>
                     </Dropdown>
                   </Space>
