@@ -16,8 +16,8 @@ const Hero = () => {
                 <div className="md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center">
                   <div className="sm:mx-auto md:w-3/4 lg:w-full lg:mx-0">
                     <h1 className="mt-4 text-4xl text-gray-800 dark:text-white sm:mt-5 sm:leading-none lg:mt-6 lg:text-5xl xl:text-6xl">
-                      <span className="block text-gray-800 dark:text-white">The Open Source</span>
-                      <span className="text-brand-600 md:ml-0 block">Developer's Alternative</span>
+                      <span className="block text-gray-800 dark:text-white">Are you a developer ?</span>
+                      <span className="text-brand-600 md:ml-0 block">We've Got Your WishList.</span>
                     </h1>
                     <Typography.Text>
                       <p className="mt-5 text-base sm:mt-5 lg:text-lg ">

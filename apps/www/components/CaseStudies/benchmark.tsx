@@ -32,7 +32,7 @@ const Benchmark = () => {
           </div>
         </div>
         <div className="pb-12 px-12 col-span-1 lg:pb-0 lg:px-0 lg:col-span-2 rounded-r-md">
-          <a href="https://supabasesubscribe.vercel.app/subscription/enterpriseBenchmarks">
+          <a href="https://wesbitty.vercel.app/subscription/enterpriseBenchmarks">
             <Button>Get notified</Button>
           </a>
         </div>

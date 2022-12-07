@@ -22,7 +22,7 @@ export async function getStaticProps() {
 
   // create a rss feed in public directory
   // rss feed is added via <Head> component in render return
-  fs.writeFileSync('./public/rss.xml', rss)
+  fs.writeFileSync('./wesbitty/Nested/rss.xml', rss)
 
   return {
     props: {
@@ -60,7 +60,7 @@ function Blog(props: any) {
           href={`${basePath}/rss.xml`}
         />
       </Head>
-      <NextSeo title="Blog" description="Blog | Wesbitty" />
+      <NextSeo title="Blog" description="Blog | Wesbitty, Inc." />
       <DefaultLayout>
         <BlogHeader title="Blog" />
         <div className="bg-gray-50 dark:bg-dark-800 overflow-hidden py-12">

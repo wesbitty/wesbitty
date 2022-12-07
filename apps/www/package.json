@@ -9,8 +9,8 @@
     "export": "next export",
     "start": "next start",
     "typecheck": "tsc",
-    "prettier": "prettier -w \"./{pages,components,lib,styles,types}/**/*.{ts,tsx,md,js,jsx,json}\"",
-    "postbuild": "node ./lib/sitemap/generate-sitemap.mjs"
+    "prettier": "prettier -w \"./{pages,components,lib,styles,types,wesbitty}/**/*.{ts,tsx,md,js,jsx,json}\"",
+    "postbuild": "node ./lib/feed/maker.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",

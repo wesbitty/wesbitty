@@ -21,6 +21,6 @@
     "name": "Wesbitty CLI",
     "description": "Manage Wesbitty projects from your local machine",
     "badge": "",
-    "url": "https://github.com/supabase/cli"
+    "url": "https://github.com/wesbitty/wesjet/blob/master/packages/@wesjet/cli"
   }
 ]

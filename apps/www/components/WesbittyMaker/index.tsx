@@ -26,8 +26,8 @@ const BuiltExamples = () => {
               </a>
             </Link>
             <Link
-              href="https://github.com/wesbitty/wesjetpkg/tree/master/examples"
-              as="https://github.com/wesbitty/wesjetpkg/tree/master/examples"
+              href="https://github.com/wesbitty/wesjet/tree/master/examples"
+              as="https://github.com/wesbitty/wesjet/tree/master/examples"
             >
               <a>
                 <Button type="default" icon={<IconGitHub />}>

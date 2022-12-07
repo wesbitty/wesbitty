@@ -1,4 +1,4 @@
-# Developing Wesbitty
+# Developing Wesbitty, Inc.
 
 1. [Getting started](#getting-started)
    - [Install dependencies](#install-dependencies)
@@ -16,7 +16,7 @@
 
 ## Getting started
 
-Thanks for your interest in [Supabase](https://wesbitty.com) and for wanting to contribute! Before you begin, read the
+Thanks for your interest in [Wesbitty](https://wesbitty.com) and for wanting to contribute! Before you begin, read the
 [code of conduct](https://github.com/wesbitty/.github/blob/master/CODE_OF_CONDUCT.md) and check out the
 [existing issues](https://github.com/wesbitty/wesbitty/issues).
 This document describes how to set up your development environment to build and test [Wesbitty](https://wesbitty.com).
@@ -26,16 +26,16 @@ This document describes how to set up your development environment to build and 
 You need to install and configure the following dependencies on your machine to build [Wesbitty](https://wesbitty.com):
 
 - [Git](http://git-scm.com/)
-- [Node.js v16.x (LTS)](http://nodejs.org)
-- [npm](https://www.npmjs.com/) version 7+ or [Yarn](https://yarnpkg.com/)
+- [Node.js v18.x (LTS)](http://nodejs.org)
+- [Npm](https://www.npmjs.com/) version 7+ or [Npm](https://npmjs.org/)
 
 ## Local development
 
-We are in the process of migrating this repository to monorepo, using [Turborepo](https://turborepo.org/docs).
+We are in the process of migrating this repository to Monorepo, using [Lernarepo](https://lerna.org/docs).
 
-Eventually, all the apps will be run using [Lerna](https://lerna.js.org), which will significantly improve the developer workflow.
+Eventually, all the apps will be run using [Lerna](https://lerna.js), which will significantly improve the developer workflow.
 
-If you are working on the ([docs site](https://wesbitty.com/docs)), please refer to this [developers guide](https://github.com/supabase/supabase/tree/master/apps/reference/DEVELOPERS.md).
+If you are working on the ([docs site](https://wesbitty.com/docs)), please refer to this [developers guide](https://github.com/wesbitty/wesbitty/tree/master/apps/reference/DEVELOPERS.md).
 
 ### Fork the repository
 
@@ -82,12 +82,12 @@ Then visit, and edit, any of the following sites:
 You can run any of the sites individually by using the scope name. For example:
 
 ```sh
-npm run dev:www
+npm run dev
 ```
 
 #### Shared components
 
-The monorepo has a set of shared components under `/packages`:
+The Monorepo has a set of shared components under `/packages`:
 
 - `/packages/config`: All shared config
 - `/packages/framework`: Wesbitty Api.

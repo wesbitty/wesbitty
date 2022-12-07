@@ -1,2 +1,2 @@
 export const APP_NAME = 'Wesbitty'
-export const DESCRIPTION = 'The Open Source Developer Alternative.'
+export const DESCRIPTION = "We've Got Your WishList"

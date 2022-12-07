@@ -7,8 +7,7 @@ import { generateReadingTime } from './helpers'
 // based on YYYY-MM-DD format
 const FILENAME_SUBSTRING = 11
 
-//Finding directory named "blog" from the current working directory of Node.
-const postDirectory = path.join(process.cwd(), '_blog')
+const postDirectory = path.join(process.cwd(), '_AllBlogPost')
 
 export const getSortedPosts = (limit?: number, tags?: any) => {
   //Reads all the files in the post directory

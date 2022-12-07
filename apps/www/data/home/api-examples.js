@@ -6,7 +6,7 @@ export default [
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const wesbittyUrl = 'https://chat-room.supabase.co'
+const wesbittyUrl = 'https://chat-room.wesbitty.com'
 const wesbittyKey = 'public-anon-key'
 const wesbitty = createClient(supabaseUrl, supabaseKey)
 
@@ -24,7 +24,7 @@ const { user, error } = await supabase.auth.signUp({
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const wesbittyUrl = 'https://chat-room.supabase.co'
+const wesbittyUrl = 'https://chat-room.wesbitty.com'
 const wesbittyKey = 'public-anon-key'
 const wesbitty = createClient(supabaseUrl, supabaseKey)
 

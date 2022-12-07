@@ -38,7 +38,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
-  const site_title = `The Open Source Developer's Alternative | ${APP_NAME}`
+  const site_title = `We've Got Your WishList | ${APP_NAME}`
   const { basePath } = useRouter()
 
   return (

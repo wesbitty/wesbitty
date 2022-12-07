@@ -56,8 +56,8 @@ function GithubExamples() {
               </a>
             </Link>
             <Link
-              href="https://github.com/wesbitty/wesjetpkg/tree/master/examples"
-              as="https://github.com/wesbitty/wesjetpkg/tree/master/examples"
+              href="https://github.com/wesbitty/wesbitty/tree/master/examples"
+              as="https://github.com/wesbitty/wesbitty/tree/master/examples"
             >
               <a>
                 <Button type="default" icon={<IconGitHub />}>

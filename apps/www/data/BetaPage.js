@@ -171,7 +171,7 @@ export const PerformanceComparisonData = [
     key: 'read',
     title: 'Read (requests/s)',
     stats: [
-      { name: 'Supabase', value: 1167 },
+      { name: 'Wesbitty', value: 1167 },
       { name: 'Firestore', value: 366 },
     ],
   },
@@ -179,7 +179,7 @@ export const PerformanceComparisonData = [
     key: 'write',
     title: 'Write (requests/s)',
     stats: [
-      { name: 'Supabase', value: 870 },
+      { name: 'Wesbitty', value: 870 },
       { name: 'Firestore', value: 280 },
     ],
   },

@@ -1,7 +1,8 @@
-### Wesbitty, Inc.
+## Wesbitty, Inc.
 
-<!--
-**wesbitty/wesbitty** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**✨ Wesbitty Powerbase repository is built with Lerna and Npm PackageManager.**
+
+### Getting Started
 
 Here are some ideas to get you started:
 
@@ -13,4 +14,10 @@ Here are some ideas to get you started:
 - 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
--->
+
+### Installation
+
+```sh
+git clone https://github.com/wesbitty/wesbitty.git
+npm install
+```

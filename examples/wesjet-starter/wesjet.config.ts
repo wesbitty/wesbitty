@@ -18,12 +18,12 @@ const Post = defineDocumentType(() => ({
   computedFields: {
     url: {
       type: 'string',
-      resolve: (doc) => `/posts/${doc._raw.flattenedPath}`,
+      resolve: (doc) => `/allBlogPost/${doc._raw.flattenedPath}`,
     },
   },
 }))
 
 export default makeSource({
-  contentDirPath: 'posts',
+  contentDirPath: 'allBlogPost',
   documentTypes: [Post],
 })

@@ -1,0 +1,44 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Blog | Wesbitty, Inc.</title>
+      <link>https://wesbitty.com</link>
+      <description>Latest articles, Ideas & Updates - Wesbitty, Inc.</description>
+      <language>en</language>
+      <lastBuildDate>Sun, 04 Dec 2022 08:00:00 GMT</lastBuildDate>
+      <atom:link href="https://wesbitty.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
+      
+<item>
+  <guid>https://wesbitty.com/blog/2022/12/05/what-are-wesjet-templates</guid>
+  <title>What are Wesjet Templates?</title>
+  <link>https://wesbitty.com/blog/2022/12/05/what-are-wesjet-templates</link>
+  <description>What are wesjet templates and what are they used for?</description>
+  <pubDate>Sun, 04 Dec 2022 08:00:00 GMT</pubDate>
+</item>
+
+<item>
+  <guid>https://wesbitty.com/blog/2022/12/05/getting-started-with-wesjet</guid>
+  <title>Getting Started with Wesjet(Pkg)</title>
+  <link>https://wesbitty.com/blog/2022/12/05/getting-started-with-wesjet</link>
+  <description>Features and Usage guiding user's in appplication using wesjet.</description>
+  <pubDate>Sun, 04 Dec 2022 08:00:00 GMT</pubDate>
+</item>
+
+<item>
+  <guid>https://wesbitty.com/blog/2022/12/04/introducing-wesjet(pkg)</guid>
+  <title>Introducing Wesjet(Pkg)</title>
+  <link>https://wesbitty.com/blog/2022/12/04/introducing-wesjet(pkg)</link>
+  <description>Introducing Wesjet(Pkg) to the public.</description>
+  <pubDate>Sat, 03 Dec 2022 08:00:00 GMT</pubDate>
+</item>
+
+<item>
+  <guid>https://wesbitty.com/blog/2022/12/01/introduction-to-wesbitty</guid>
+  <title>Introduction to Wesbitty</title>
+  <link>https://wesbitty.com/blog/2022/12/01/introduction-to-wesbitty</link>
+  <description>The Open source platform for frontend developers, We've Got Your WishList.</description>
+  <pubDate>Wed, 30 Nov 2022 08:00:00 GMT</pubDate>
+</item>
+
+    </channel>
+  </rss>

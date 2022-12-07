@@ -50,9 +50,9 @@ function Docs() {
     dashboardSwiper.slideTo(e)
   }
 
-  const meta_title = 'Docs | Wesjet SDK Documentation'
+  const meta_title = 'Developers | Wesbitty, Inc.'
   const meta_description =
-    "With Wesjet SDK and easy to use dashboard, it makes developing super easy for developer's."
+    "Easy to use dashboard With Wesbitty, it makes developing super easy for developer's."
 
   return (
     <>

@@ -3,10 +3,10 @@ import { compareDesc, format, parseISO } from 'date-fns'
 import { allPosts, Post } from 'wesjet/jetpack'
 
 export async function getStaticProps() {
-  const posts: Post[] = allPosts.sort((a, b) => {
+  const allBlogPost: Post[] = allPosts.sort((a, b) => {
     return compareDesc(new Date(a.date), new Date(b.date))
   })
-  return { props: { posts } }
+  return { props: { allBlogPost } }
 }
 
 function PostCard(post: Post) {
@@ -25,12 +25,12 @@ function PostCard(post: Post) {
   )
 }
 
-export default function Home({ posts }: { posts: Post[] }) {
+export default function Home({ allBlogPost }: { allBlogPost: Post[] }) {
   return (
     <div className="max-w-xl mx-auto py-8">
       <h1 className="text-3xl font-bold mb-8 text-center">Wesjet Starter</h1>
 
-      {posts.map((post, idx) => (
+      {allBlogPost.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}
     </div>

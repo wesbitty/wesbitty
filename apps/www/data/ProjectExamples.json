@@ -24,11 +24,11 @@
     "imgUrl": "images/slack-clone.jpg",
     "title": "Chat app with Next.js",
     "url": "https://github.com/wesbitty/wesbitty/tree/master/examples/nextjs-slack-clone",
-    "description": "Build a full-stack Slack clone using Next.js and Supabase.",
+    "description": "Build a full-stack Slack clone using Next.js and Wesbitty.",
     "icons": [
       {
         "imgUrl": "https://avatars3.githubusercontent.com/u/54469796?s=480&v=4",
-        "imgAlt": "supabase icon"
+        "imgAlt": "wesbitty icon"
       },
       {
         "imgUrl": "https://avatars1.githubusercontent.com/u/14985020?s=480&v=4",
@@ -41,7 +41,7 @@
     "imgUrl": "images/to-do-app.jpg",
     "title": "Todo list with Vue.js",
     "url": "https://github.com/wesbitty/wesbitty/tree/master/examples/vue3-ts-todo-list",
-    "description": "Build a simple todo list with Vue and Supabase.",
+    "description": "Build a simple todo list with Vue and Wesbitty.",
     "icons": [
       {
         "imgUrl": "https://avatars3.githubusercontent.com/u/54469796?s=480&v=4",
