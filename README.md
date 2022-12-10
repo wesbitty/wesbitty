@@ -1,10 +1,10 @@
-# <p align="center">[Jet](https://wesbitty.github.io/jet/)</p>
+# <p align="center">[Wesbitty Inc](https://wesbitty.com/)</p>
 
 <p align="center">
 <a href="https://wesbitty.com/">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://avatars.githubusercontent.com/u/115786374?v=4">
-      <img src="https://avatars.githubusercontent.com/u/115786374?v=4" alt="Wesbitty" width="200" />
+      <img src="https://avatars.githubusercontent.com/u/115786374?v=4" alt="Wesbitty" width="250" />
     </picture> 
   </a>
 </p>
