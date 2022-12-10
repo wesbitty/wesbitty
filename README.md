@@ -7,7 +7,7 @@
   </a>
 </p>
 
-## <p align="center">Wesbitty Inc</p>
+## <p align="center">✨ Wesbitty Inc</p>
 
 <p align="center">
   <a href="https://github.com/wesbitty/ui/blob/main/LICENSE">
