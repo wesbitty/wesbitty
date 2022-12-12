@@ -10,8 +10,8 @@ import { getSortedPosts, getAllCategories } from '../lib/posts'
 import authors from '../lib/authors.json'
 
 import DefaultLayout from '../components/Layouts/Default'
-import { Typography, Badge, Space, Dropdown, Button, IconChevronDown } from '@supabase/ui'
-import PostTypes from '../types/post'
+import { Typography, Badge, Space, Dropdown, Button, IconChevronDown } from '@wesbitty/ui'
+import PostTypes from '../@wesbitty/config/post'
 import BlogListItem from '../components/Blog/BlogListItem'
 import BlogHeader from '../components/Blog/BlogHeader'
 
@@ -22,7 +22,7 @@ export async function getStaticProps() {
 
   // create a rss feed in public directory
   // rss feed is added via <Head> component in render return
-  fs.writeFileSync('./wesbitty/Nested/rss.xml', rss)
+  fs.writeFileSync('./@wesbitty/feed/rss.xml', rss)
 
   return {
     props: {

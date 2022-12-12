@@ -15,7 +15,7 @@ import {
   IconArrowRight,
   Space,
   IconBookOpen,
-} from '@supabase/ui'
+} from '@wesbitty/ui'
 
 import Examples from '../../data/Examples.json'
 import ExampleCard from '../ExampleCard'

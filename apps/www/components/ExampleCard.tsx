@@ -6,7 +6,7 @@ import {
   IconTriangle,
   Space,
   Typography,
-} from '@supabase/ui'
+} from '@wesbitty/ui'
 import Link from 'next/link'
 
 function ExampleCard(props: any) {

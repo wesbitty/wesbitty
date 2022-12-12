@@ -27,8 +27,8 @@ const Footer = (props: Props) => {
               className="w-40"
               src={
                 darkMode
-                  ? `${basePath}/brand-assets/supabase-logo-wordmark--dark.svg`
-                  : `${basePath}/brand-assets/supabase-logo-wordmark--light.svg`
+                  ? `${basePath}/Logo/wesbitty-dark-logo.svg`
+                  : `${basePath}/Logo/wesbitty-light-logo.svg`
               }
               alt="Wesbitty"
             />

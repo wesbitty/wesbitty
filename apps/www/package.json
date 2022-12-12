@@ -4,22 +4,25 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 8080",
+    "postbuild": "node ./@wesbitty/schema/feedGenerator.mjs",
+    "start": "next start",
     "build": "next build",
     "export": "next export",
-    "start": "next start",
     "typecheck": "tsc",
-    "prettier": "prettier -w \"./{pages,components,lib,styles,types,wesbitty}/**/*.{ts,tsx,md,js,jsx,json}\"",
-    "postbuild": "node ./lib/feed/maker.mjs"
+    "dev": "next dev --port 8080",
+    "prettier": "prettier -w \"./{pages,components,lib,styles,types,@wesbitty}/**/*.{ts,tsx,md,js,jsx,json}\""
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@supabase/supabase-js": "^1.6.0",
     "@supabase/ui": "0.25.0",
+    "@wesbitty/ui": "^0.0.1",
     "chalk": "^2.4.2",
     "classnames": "2.2.6",
+    "cobe": "^0.6.2",
     "date-fns": "^2.10.0",
+    "dayjs": "^1.11.4",
     "globby": "^12.0.2",
     "gray-matter": "^4.0.2",
     "markdown-toc": "^1.2.0",
@@ -58,6 +61,7 @@
     "postcss": "^8.3.11",
     "postcss-preset-env": "^7.0.0",
     "prettier": "^2.2.1",
-    "tailwindcss": "^2.2.17"
+    "tailwindcss": "^2.2.17",
+    "yup": "^0.32.11"
   }
 }

@@ -2,7 +2,7 @@ import Container from 'components/Container'
 import { createClient } from '@supabase/supabase-js'
 import Layout from '../components/Layouts/Default'
 import CTABanner from 'components/CTABanner/index'
-import { Button, Typography, IconDownload } from '@supabase/ui'
+import { Button, Typography, IconDownload } from '@wesbitty/ui'
 
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -35,7 +35,7 @@ const Index = () => {
             <div className="grid grid-cols-12 border dark:border-gray-600">
               <div className="col-span-12 lg:col-span-5">
                 <img
-                  src={`${basePath}/brand-assets/logo-preview.jpg`}
+                  src={`${basePath}/Logo/logo-preview.jpg`}
                   width="100%"
                   className="object-cover h-full"
                 />
@@ -43,15 +43,15 @@ const Index = () => {
               <div className="col-span-12 lg:col-span-7 flex items-center">
                 <div className="p-16">
                   <div>
-                    <Typography.Title level={2}>wesbitty logos</Typography.Title>
+                    <Typography.Title level={2}>Wesbitty logos</Typography.Title>
                     <Typography.Text>
                       <p>
-                        Download wesbitty official logos, including as SVG's, in both light and dark
+                        Download Wesbitty official logos, including as SVG's, in both light and dark
                         theme.
                       </p>
                       <p>Do not use any other color for the wordmark.</p>
                     </Typography.Text>
-                    <form method="get" action={`${basePath}/brand-assets/supabase-logos.zip`}>
+                    <form method="get" action={`${basePath}/Logo/wesbitty-logos.zip`}>
                       <Button htmlType="submit" type="default" iconRight={<IconDownload />}>
                         Download logo kit
                       </Button>

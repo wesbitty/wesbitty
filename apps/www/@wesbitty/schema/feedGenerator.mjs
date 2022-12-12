@@ -8,6 +8,7 @@ async function generate() {
     'pages/*.js',
     'pages/*.tsx',
     'pages/*/*.tsx',
+    '@wesbitty/*/*.xml',
     'data/**/*.mdx',
     '_AllBlogPost/*.mdx',
     '!pages/index.tsx',
@@ -28,13 +29,14 @@ async function generate() {
               .replace('pages', '')
               // add a `/` for blog posts
               .replace('_AllBlogPost', '/blog')
+              .replace('@wesbitty/feed', '')
               .replace('.tsx', '')
               .replace('.mdx', '')
               // replace the paths for nested 'index' based routes
               .replace('/auth/Auth', '/auth')
               .replace('/database/Database', '/database')
               .replace('/storage/Storage', '/storage')
-              .replace('/docs/Docs', '/docs')
+              .replace('/docs/Docs', '/docs') 
 
             let route = path === '/index' ? '' : path
 
@@ -72,7 +74,7 @@ async function generate() {
   })
 
   // eslint-disable-next-line no-sync
-  writeFileSync('wesbitty/Nested/allfeed.xml', formatted)
+  writeFileSync('@wesbitty/feed/feed.xml', formatted)
 }
 
 generate()

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import { Button, Badge, IconStar } from '@supabase/ui'
+import { Button, Badge, IconStar } from '@wesbitty/ui'
 import FlyOut from '../UI/FlyOut'
 import Transition from '../../lib/Transition'
 
@@ -197,28 +197,28 @@ const Nav = (props: Props) => {
                   <Link href="/" as="/">
                     <a>
                       <img
-                        className="block h-6 w-auto"
+                        className="w-40"
                         src={
                           darkMode
-                            ? `${basePath}/brand-assets/supabase-logo-wordmark--dark.svg`
-                            : `${basePath}/brand-assets/supabase-logo-wordmark--light.svg`
+                            ? `${basePath}/Logo/wesbitty-dark-logo.svg`
+                            : `${basePath}/Logo/wesbitty-light-logo.svg`
                         }
-                        alt="Logo"
+                        alt="Wesbitty-Logo"
                       />
                     </a>
                   </Link>
                 </div>
                 <div className="pl-4 hidden sm:ml-6 lg:flex sm:space-x-4">
-                  <FlyOutNavButton
-                    title={'Product'}
-                    onClick={() => handleToggle(() => setOpenProduct(!openProduct))}
-                    active={openProduct}
-                  />
-                  <FlyOutNavButton
-                    title={'Developers'}
-                    onClick={() => handleToggle(() => setOpenDevelopers(!openDevelopers))}
-                    active={openDevelopers}
-                  />
+                <a
+                    href="/blog"
+                    className={`
+                    inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
+                    text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
+                    dark:text-dark-100 dark:hover:border-dark-100
+                  `}
+                  >
+                    Blog
+                  </a>
                   <a
                     href="/pricing"
                     className={`
@@ -229,16 +229,16 @@ const Nav = (props: Props) => {
                   >
                     Pricing
                   </a>
-                  <a
-                    href="/blog"
-                    className={`
-                    inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
-                    text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
-                    dark:text-dark-100 dark:hover:border-dark-100
-                  `}
-                  >
-                    Blog
-                  </a>
+                  <FlyOutNavButton
+                    title={'Product'}
+                    onClick={() => handleToggle(() => setOpenProduct(!openProduct))}
+                    active={openProduct}
+                  />
+                  <FlyOutNavButton
+                    title={'Developers'}
+                    onClick={() => handleToggle(() => setOpenDevelopers(!openDevelopers))}
+                    active={openDevelopers}
+                  />
                 </div>
               </div>
               <div className="hidden lg:flex items-center sm:space-x-3">
@@ -248,7 +248,7 @@ const Nav = (props: Props) => {
                   </Button>
                 </a>
                 <a href="https://api.wesbitty.com/platform/login">
-                  <Button>Start your project</Button>
+                  <Button>Sign in</Button>
                 </a>
               </div>
             </div>

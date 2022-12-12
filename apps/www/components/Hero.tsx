@@ -1,4 +1,4 @@
-import { Button, IconBookOpen, Space, Typography } from '@supabase/ui'
+import { Button, IconBookOpen, Space, Typography } from '@wesbitty/ui'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import SectionContainer from './Layouts/SectionContainer'
@@ -16,15 +16,20 @@ const Hero = () => {
                 <div className="md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center">
                   <div className="sm:mx-auto md:w-3/4 lg:w-full lg:mx-0">
                     <h1 className="mt-4 text-4xl text-gray-800 dark:text-white sm:mt-5 sm:leading-none lg:mt-6 lg:text-5xl xl:text-6xl">
-                      <span className="block text-gray-800 dark:text-white">Empowering entrepreneurs</span>
-                      <span className="text-brand-600 md:ml-0 block">to grow their businesses around the globe.</span>
-                    </h1>
+                      <span className="block text-gray-800 dark:text-white">
+                        Empowering entrepreneurs
+                      </span>
+                      <span className="text-brand-600 md:ml-0 block">
+                        to grow their businesses around the globe.
+                      </span>
+               </h1>
                     <Typography.Text>
                       <p className="mt-5 text-base sm:mt-5 lg:text-lg ">
-                      Create an ecommerce website backed by powerful tools that help you
+                        Create an ecommerce website backed by powerful tools that help you
                       find customers, drive sales, and manage your day-to-day.
                       </p>
                     </Typography.Text>
+
                       <Link
                         href="https://api.wesbitty.com/platform/login"
                         as="https://api.wesbitty.com/platform/login"
@@ -47,12 +52,7 @@ const Hero = () => {
                           </Button>
                         </a>
                       </Link>
-                    <Space />
-                    <Typography.Text>
-                    <h1 className="mt-4 text-4xl text-gray-500 dark:text-white sm:mt-5 sm:leading-none lg:mt-6 lg:text-5xl xl:text-6xl">
-                    <span className="block text-gray-800 dark:text-white">Trusted by thousands</span>
-                    </h1>
-                    </Typography.Text>
+                    <p className="mt-8 text-sm text-dark-400 tracking-wide sm:mt-10">backed by</p>
                     <div className="mt-5 w-full sm:max-w-lg lg:ml-0">
                       <div className="flex flex-wrap items-center justify-start">
                         <img

@@ -3,7 +3,7 @@ import SolutionsData from '../../data/Solutions.json'
 import CaseStudiesData from '../../data/CaseStudies.json'
 import { useRouter } from 'next/router'
 import ProductIcon from '../ProductIcon'
-import { Typography, Badge } from '@supabase/ui'
+import { Typography, Badge } from '@wesbitty/ui'
 
 const Product = () => {
   const { basePath } = useRouter()
