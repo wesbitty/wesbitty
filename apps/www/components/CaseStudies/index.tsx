@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import Benchmark from './benchmark'
 import SectionHeader from '../UI/SectionHeader'
 import CaseStudiesData from '../../data/CaseStudies.json'
-import { Card, Space, Typography } from '@supabase/ui'
+import { Card, Space, Typography } from '@wesbitty/ui'
 import SectionContainer from '../Layouts/SectionContainer'
 
 const CaseStudies = () => {

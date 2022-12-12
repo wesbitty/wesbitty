@@ -1,4 +1,4 @@
-import { Badge, Card, Divider, IconFile, Space, Typography } from '@supabase/ui'
+import { Badge, Card, Divider, IconFile, Space, Typography } from '@wesbitty/ui'
 import matter from 'gray-matter'
 import authors from 'lib/authors.json'
 import hydrate from 'next-mdx-remote/hydrate'

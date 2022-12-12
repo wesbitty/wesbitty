@@ -3,7 +3,7 @@ import { getSortedPosts, getAllCategories } from '../../../lib/posts'
 
 import DefaultLayout from '../../../components/Layouts/Default'
 import BlogListItem from '../../../components/Blog/BlogListItem'
-import PostTypes from '../../../types/post'
+import PostTypes from '../../../@wesbitty/config/post'
 import BlogHeader from '../../../components/Blog/BlogHeader'
 
 export async function getStaticProps({ params }: any) {

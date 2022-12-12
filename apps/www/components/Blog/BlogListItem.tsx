@@ -1,8 +1,8 @@
-import { Badge, Space, Typography } from '@supabase/ui'
+import { Badge, Space, Typography } from '@wesbitty/ui'
 import authors from '../../lib/authors.json'
 import Link from 'next/link'
 import React from 'react'
-import PostTypes from '../../types/post'
+import PostTypes from '../../@wesbitty/config/post'
 
 interface Props {
   blog: PostTypes

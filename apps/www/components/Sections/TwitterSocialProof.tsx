@@ -14,7 +14,7 @@ import {
   IconAlignLeft,
   IconArrowLeft,
   IconArrowRight,
-} from '@supabase/ui'
+} from '@wesbitty/ui'
 
 import Examples from '../../data/tweets/Tweets.json'
 import TweetCard from '../TweetCard'

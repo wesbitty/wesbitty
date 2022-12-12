@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import DefaultLayout from '../../components/Layouts/Default'
 import { PricingTableRowDesktop, PricingTableRowMobile } from '../../components/PricingTableRow'
-import { Badge, Button, Divider, Space, Typography } from '@supabase/ui'
+import { Badge, Button, Divider, Space, Typography } from '@wesbitty/ui'
 
 import pricing from '../../data/Pricing.json'
 import pricingFaq from '../../data/PricingFAQ.json'

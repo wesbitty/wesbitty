@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-import Container from 'components/Container'
+import Container from '../components/Container'
 import Layout from '../components/Layouts/Default'
 
 import SectionHeader from 'components/UI/SectionHeader'
@@ -25,7 +25,7 @@ import {
   IconTwitter,
   Space,
   Typography,
-} from '@supabase/ui'
+} from '@wesbitty/ui'
 
 type Props = {}
 

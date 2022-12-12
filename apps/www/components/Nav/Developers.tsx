@@ -2,7 +2,7 @@ import React from 'react'
 import DevelopersData from '../../data/Developers.json'
 import AnnouncementsData from '../../data/Announcements.json'
 import { useRouter } from 'next/router'
-import { Typography } from '@supabase/ui'
+import { Typography } from '@wesbitty/ui'
 
 type Props = {
   text: string

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import SectionHeader from '../UI/SectionHeader'
 import ProjectExamples from '../../data/ProjectExamples.json'
-import { Button, Card, Typography, Space, IconGitHub } from '@supabase/ui'
+import { Button, Card, Typography, Space, IconGitHub } from '@wesbitty/ui'
 import SectionContainer from '../Layouts/SectionContainer'
 import ExampleCard from '../ExampleCard'
 

@@ -20,7 +20,7 @@ import {
   IconZoomIn,
   IconCopy,
   IconColumns,
-} from '@supabase/ui'
+} from '@wesbitty/ui'
 
 import AuthStyles from './Auth.module.css'
 
