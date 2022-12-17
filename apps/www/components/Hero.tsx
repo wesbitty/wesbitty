@@ -22,36 +22,31 @@ const Hero = () => {
                       <span className="text-brand-600 md:ml-0 block">
                         to grow their businesses around the globe.
                       </span>
-               </h1>
+                    </h1>
                     <Typography.Text>
                       <p className="mt-5 text-base sm:mt-5 lg:text-lg ">
-                        Create an ecommerce website backed by powerful tools that help you
-                      find customers, drive sales, and manage your day-to-day.
+                        Create an ecommerce website backed by powerful tools that help you find
+                        customers, drive sales, and manage your day-to-day.
                       </p>
                     </Typography.Text>
 
-                      <Link
-                        href="https://api.wesbitty.com/platform/login"
-                        as="https://api.wesbitty.com/platform/login"
-                      >
-                        <a className="mt-10">
-                          <Button className="py-3" size="medium">
-                            Get started
-                          </Button>
-                        </a>
-                      </Link>
-                      <Link href="/docs" as="/docs">
-                        <a className="mt-10">
-                          <Button
-                            className="py-3"
-                            size="medium"
-                            type="text"
-                            icon={<IconBookOpen />}
-                          >
-                            Documentation
-                          </Button>
-                        </a>
-                      </Link>
+                    <Link
+                      href="https://api.wesbitty.com/platform/login"
+                      as="https://api.wesbitty.com/platform/login"
+                    >
+                      <a className="mt-10">
+                        <Button className="py-3" size="medium">
+                          Get started
+                        </Button>
+                      </a>
+                    </Link>
+                    <Link href="/docs" as="/docs">
+                      <a className="mt-10">
+                        <Button className="py-3" size="medium" type="text" icon={<IconBookOpen />}>
+                          Documentation
+                        </Button>
+                      </a>
+                    </Link>
                     <p className="mt-8 text-sm text-dark-400 tracking-wide sm:mt-10">backed by</p>
                     <div className="mt-5 w-full sm:max-w-lg lg:ml-0">
                       <div className="flex flex-wrap items-center justify-start">

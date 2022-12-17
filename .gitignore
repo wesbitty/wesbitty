@@ -7,6 +7,10 @@ dist*
 
 .next
 
+.turbo
+
 # Ignore artifacts:
 build
 coverage
+
+.editorconfig

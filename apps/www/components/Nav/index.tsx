@@ -209,7 +209,7 @@ const Nav = (props: Props) => {
                   </Link>
                 </div>
                 <div className="pl-4 hidden sm:ml-6 lg:flex sm:space-x-4">
-                <a
+                  <a
                     href="/blog"
                     className={`
                     inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
