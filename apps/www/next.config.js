@@ -1,5 +1,5 @@
 const { withWesjet } = require('wesjet-nextjs-plugin')
-const path = require('path')
+
 
 module.exports = withWesjet({
   reactStrictMode: true,
@@ -16,8 +16,4 @@ module.exports = withWesjet({
       ],
     },
   ],
-  experimental: {
-    outputFileTracingRoot: path.join(__dirname, '../../'),
-    transpilePackages: ['ui'],
-  },
 })
