@@ -4,30 +4,24 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "postinstall": "npx next telemetry disable",
-    "postbuild": "node ./@wesbitty/schema/feedGenerator.mjs",
+    "build": "next build && node ./@wesbitty/scripts/sitemapGenerator.mjs",
     "start": "next start",
-    "build": "next build",
     "export": "next export",
     "typecheck": "tsc",
-    "dev": "next",
-    "prettier": "prettier -w \"./{pages,components,lib,styles,types,@wesbitty}/**/*.{ts,tsx,md,js,jsx,json}\""
+    "dev": "next dev",
+    "rm": "bash -c 'rm -rf .wesjet .next'",
+    "prettier": "prettier -w .",
+    "all": "npm run build && npm run start"
   },
-  "keywords": [
-    "Wesbitty",
-    "Nextjs"
-  ],
-  "author": "Wesbitty, Inc.",
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@supabase/supabase-js": "^1.6.0",
-    "@wesbitty/ui": "^0.0.1",
+    "@wesbitty/ui": "0.0.1",
     "chalk": "^2.4.2",
     "classnames": "2.2.6",
     "cobe": "^0.6.2",
     "date-fns": "^2.10.0",
-    "dayjs": "^1.11.4",
     "globby": "^12.0.2",
     "gray-matter": "^4.0.2",
     "markdown-toc": "^1.2.0",
@@ -51,8 +45,7 @@
     "typescript": "^4.0.3",
     "uuid": "^8.3.2",
     "wesjet": "^0.0.8",
-    "wesjet-nextjs-plugin": "^0.0.8",
-    "ui": "*"
+    "wesjet-nextjs-plugin": "^0.0.8"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.10",
@@ -62,8 +55,6 @@
     "@types/react-copy-to-clipboard": "^4.3.0",
     "@types/react-dom": "^16.9.8",
     "@types/react-syntax-highlighter": "^13.5.0",
-    "@swc/cli": "^0.1.57",
-    "@swc/core": "^1.3.1",
     "autoprefixer": "^10.3.7",
     "file-loader": "^6.2.0",
     "postcss": "^8.3.11",

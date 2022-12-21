@@ -1,8 +1,0 @@
-node_modules/
-.vercel
-.wesjet
-.next
-.env.local
-.env.production
-.env.dev
-.env.*

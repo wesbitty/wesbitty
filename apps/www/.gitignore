@@ -36,4 +36,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-.turbo
+
+# Gitpod
+.gitpod.yml

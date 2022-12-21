@@ -1,6 +1,6 @@
 [
   {
-    "title": "Product",
+    "title": "Products",
     "links": [
       {
         "text": "Database",
@@ -23,7 +23,7 @@
         "url": "/pricing"
       },
       {
-        "text": "Beta",
+        "text": "Wesjet",
         "url": "/beta"
       }
     ]
@@ -71,7 +71,7 @@
     ]
   },
   {
-    "title": "Company",
+    "title": "About Us",
     "links": [
       {
         "text": "Blog",

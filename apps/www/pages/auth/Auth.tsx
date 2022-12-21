@@ -275,8 +275,8 @@ function AuthPage() {
                 </p>
               </Typography.Text>
               <Link
-                href="https://github.com/supabase/ui#using-supabase-ui-auth"
-                as="https://github.com/supabase/ui#using-supabase-ui-auth"
+                href="https://github.com/wesbitty/ui#wesbitty-auth"
+                as="https://github.com/wesbitty/ui#wesbitty-auth"
               >
                 <a>
                   <Button size="small" type="default" className="mt-4" icon={<IconArrowUpRight />}>

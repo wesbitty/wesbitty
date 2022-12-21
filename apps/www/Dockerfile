@@ -1,32 +1,42 @@
-FROM node:16.17.0-alpine3.15
-
+# Install dependencies only when needed
+FROM node:16-alpine AS deps
 RUN apk add --no-cache libc6-compat
-RUN npm i -g npm
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
 
-EXPOSE 8080
+# Rebuild the source code only when needed
+FROM node:16-alpine AS builder
 
-ENV PORT 8080
-ENV NODE_ENV production
+WORKDIR /app
 
-WORKDIR /home/nextjs/app
-
-COPY package.json .
-COPY ../../package-lock.json .
-
-RUN npm install --omit=optional
-RUN npx browserslist@latest --update-db
-RUN npx next telemetry disable
-
-# need to install linux specific swc builds
-RUN npm install -D @swc/cli @swc/core
+COPY --from=deps /app/node_modules ./node_modules
 
 COPY . .
 
 RUN npm run build
 
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nextjs -u 1001
+# Production image, copy all the files and run next
+FROM node:16-alpine AS runner
+WORKDIR /app
 
-USER nextjs
+ENV NODE_ENV production
 
-CMD [ "npm", "start" ]
+RUN addgroup --system --gid 1001 bloggroup
+RUN adduser --system --uid 1001 bloguser
+
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/package.json ./package.json
+
+# Automatically leverage output traces to reduce image size
+# https://nextjs.org/docs/advanced-features/output-file-tracing
+COPY --from=builder --chown=bloguser:bloggroup /app/.next/standalone ./
+COPY --from=builder --chown=bloguser:bloggroup /app/.next/static ./.next/static
+
+USER bloguser
+
+EXPOSE 3210
+
+ENV PORT 3210
+
+CMD ["node", "server.js"]

@@ -14,7 +14,6 @@ import TwitterSocialProof from '../components/Sections/TwitterSocialProof'
 // Import Swiper styles if swiper used on page
 import 'swiper/swiper.min.css'
 
-
 type Props = {}
 
 const Index = ({}: Props) => {
@@ -27,11 +26,11 @@ const Index = ({}: Props) => {
           <div className="relative">
             <div className="section--masked">
               <div className="section--bg-masked">
-                <div className="border-t border-b border-gray-100 section--bg dark:border-gray-600"></div>
+                <div className="section--bg border-t border-b border-gray-100 dark:border-gray-600"></div>
               </div>
-              <div className="pt-12 pb-0 section-container">
+              <div className="section-container pt-12 pb-0">
                 <div className="overflow-x-hidden">
-                  <SectionContainer className="pb-8 mb-0">
+                  <SectionContainer className="mb-0 pb-8">
                     <TwitterSocialProof />
                   </SectionContainer>
                 </div>
