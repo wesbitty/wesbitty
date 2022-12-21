@@ -10,8 +10,8 @@ ENV NODE_ENV production
 
 WORKDIR /home/nextjs/app
 
-COPY package.json .
-COPY ../../package-lock.json .
+COPY apps/www/package.json .
+COPY package-lock.json .
 
 RUN npm install --omit=optional
 RUN npx browserslist@latest --update-db
@@ -20,7 +20,7 @@ RUN npx next telemetry disable
 # need to install linux specific swc builds
 RUN npm install -D @swc/cli @swc/core
 
-COPY . .
+COPY apps/www .
 
 RUN npm run build
 

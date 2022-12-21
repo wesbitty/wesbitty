@@ -9,12 +9,12 @@
     "node": ">=14.0.0"
   },
   "workspaces": [
-    "apps/*",
     "packages/*",
     "examples/*"
   ],
   "scripts": {
     "build": "turbo run build",
+    "compose:up": "cd apps/www && docker compose up -d",
     "clean": "bash -c 'rm -rf examples/*/.wesjet examples/*/.next apps/*/.wesjet apps/*/.next packages/*/dist'",
     "prettier": "prettier -w .",
     "dev": "turbo run dev"
