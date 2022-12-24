@@ -23,7 +23,6 @@
     "tests": "jest"
   },
   "devDependencies": {
-    "eslint-config-custom": "*",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.2",
     "lerna": "^6.1.0",

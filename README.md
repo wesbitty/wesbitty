@@ -30,6 +30,7 @@ Visit [https://wesbitty.com/developer](https://wesbitty.com/developer) to get st
 git clone https://github.com/wesbitty/wesbitty.git
 npm install
 ```
+
 ### Contributing
 
 See [CONTRIBUTING.md](https://github.com/wesbitty/wesbitty/blob/master/.github/CONTRIBUTING.md) for more information.
