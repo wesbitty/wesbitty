@@ -36,8 +36,8 @@ See [CONTRIBUTING.md](https://github.com/wesbitty/wesbitty/blob/master/.github/C
 
 ### Community
 
-The (https://github.com/wesbitty/wesbitty/discussions)[Wesbitty community] can be found on GitHub Discussions, where you can ask questions, voice ideas, and share your projects.
+The [Wesbitty Community](https://github.com/wesbitty/wesbitty/discussions) can be found on GitHub Discussions, where you can ask questions, voice ideas, and share your projects.
 
-To chat with other community members, you can join the (https://discord.com)[Wesbitty Discord].
+To chat with other community members, you can join the [Wesbitty discord](https://discord.com).
 
-Our [https://github.com/wesbitty/wesbitty/blob/master/.github/CODE_OF_CONDUCT.md](Code of Conduct) applies to all Wesbitty community channels.
+Our [Code Of Conduct](https://github.com/wesbitty/wesbitty/blob/master/.github/CODE_OF_CONDUCT.md) applies to all Wesbitty community channels.
