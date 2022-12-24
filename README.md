@@ -22,16 +22,7 @@
 
 ## Getting Started
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+Visit [https://wesbitty.com/developer](https://wesbitty.com/developer) to get started with Wesjet.
 
 ### Installation
 
@@ -39,3 +30,14 @@ Here are some ideas to get you started:
 git clone https://github.com/wesbitty/wesbitty.git
 npm install
 ```
+### Contributing
+
+See [CONTRIBUTING.md](https://github.com/wesbitty/wesbitty/blob/master/.github/CONTRIBUTING.md) for more information.
+
+### Community
+
+The (https://github.com/wesbitty/wesbitty/discussions)[Wesbitty community] can be found on GitHub Discussions, where you can ask questions, voice ideas, and share your projects.
+
+To chat with other community members, you can join the (https://discord.com)[Wesbitty Discord].
+
+Our [https://github.com/wesbitty/wesbitty/blob/master/.github/CODE_OF_CONDUCT.md](Code of Conduct) applies to all Wesbitty community channels.

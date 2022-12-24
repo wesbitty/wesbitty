@@ -9,7 +9,7 @@
     "export": "next export",
     "typecheck": "tsc",
     "dev": "next dev",
-    "rm": "bash -c 'rm -rf .wesjet .next'",
+    "clean": "bash -c 'rm -rf .wesjet .next'",
     "prettier": "prettier -w .",
     "all": "npm run build && npm run start"
   },

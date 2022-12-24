@@ -11,14 +11,16 @@
   "workspaces": [
     "apps/www",
     "packages/*",
-    "examples/*"
+    "examples/*",
+    "tests"
   ],
+  "author": "Wesbitty, Inc.",
   "scripts": {
-    "build": "npm run build --workspaces",
+    "build": "lerna run build",
     "clean": "bash -c 'rm -rf examples/*/.wesjet examples/*/.next apps/*/.wesjet apps/*/.next packages/*/dist'",
     "prettier": "prettier -w .",
-    "dev:www": "npm run dev -w=www",
-    "dev:examples": "npm run dev -w=wesjet-starter"
+    "dev": "lerna run dev",
+    "tests": "jest"
   },
   "devDependencies": {
     "eslint-config-custom": "*",
