@@ -8,7 +8,7 @@
     "start": "next start",
     "export": "next export",
     "typecheck": "tsc",
-    "dev": "next dev",
+    "dev": "next dev -p 3210",
     "clean": "bash -c 'rm -rf .wesjet .next'",
     "prettier": "prettier -w .",
     "all": "npm run build && npm run start"
