@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://wesbitty.com/_app</loc>
+    <loc>https://wesbitty.com/404</loc>
     <changefreq>daily</changefreq>
     <changefreq>0.5</changefreq>
   </url>
@@ -37,6 +37,12 @@
   </url>
 
   <url>
+    <loc>https://wesbitty.com/_app</loc>
+    <changefreq>daily</changefreq>
+    <changefreq>0.5</changefreq>
+  </url>
+
+  <url>
     <loc>https://wesbitty.com/auth</loc>
     <changefreq>daily</changefreq>
     <changefreq>0.5</changefreq>
@@ -49,7 +55,7 @@
   </url>
 
   <url>
-    <loc>https://wesbitty.com/docs</loc>
+    <loc>https://wesbitty.com/developer</loc>
     <changefreq>daily</changefreq>
     <changefreq>0.5</changefreq>
   </url>

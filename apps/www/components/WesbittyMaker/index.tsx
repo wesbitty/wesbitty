@@ -20,14 +20,14 @@ const BuiltExamples = () => {
             There are many example apps and starter projects to get going
           </p>
           <Space className="justify-center">
-            <Link href="/docs/guides/examples" as="/docs/guides/examples">
+            <Link href="https://github.com/wesbitty/wesbitty/tree/master/examples" as="https://github.com/wesbitty/wesbitty/tree/master/examples">
               <a>
                 <Button type="default">View all examples</Button>
               </a>
             </Link>
             <Link
-              href="https://github.com/wesbitty/wesjet/tree/master/examples"
-              as="https://github.com/wesbitty/wesjet/tree/master/examples"
+              href="https://github.com/wesbitty/wesbitty/tree/master/examples"
+              as="https://github.com/wesbitty/wesbitty/tree/master/examples"
             >
               <a>
                 <Button type="default" icon={<IconGitHub />}>
