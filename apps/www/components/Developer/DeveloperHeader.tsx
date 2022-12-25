@@ -1,11 +1,11 @@
 import { FC, Fragment, useState, useEffect } from 'react'
 import { TreeNode } from '@wesbitty/config/TreeNode'
 import Link from 'next/link'
-import { DocsNavigation } from './DeveloperNavigation'
+import { DeveloperNavigation } from './DeveloperNavigation'
 import { Icon } from '../Icon'
 import { useRouter } from 'next/router'
 
-export const DocsHeader: FC<{ tree: TreeNode[]; breadcrumbs: any[]; title: string }> = ({
+export const DeveloperHeader: FC<{ tree: TreeNode[]; breadcrumbs: any[]; title: string }> = ({
   tree,
   breadcrumbs,
   title,
@@ -81,7 +81,7 @@ export const DocsHeader: FC<{ tree: TreeNode[]; breadcrumbs: any[]; title: strin
               </button>
             </div>
             <div className="pt-4">
-              <DocsNavigation tree={tree} />
+              <DeveloperNavigation tree={tree} />
             </div>
           </div>
         </div>

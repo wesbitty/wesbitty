@@ -90,7 +90,7 @@ const Tree: FC<{ tree: TreeNode[]; level: number; activePath: string }> = ({ tre
   )
 }
 
-export const DocsNavigation: FC<{ tree: TreeNode[] }> = ({ tree }) => {
+export const DeveloperNavigation: FC<{ tree: TreeNode[] }> = ({ tree }) => {
   const router = useRouter()
 
   return (

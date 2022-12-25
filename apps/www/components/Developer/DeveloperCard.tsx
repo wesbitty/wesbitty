@@ -2,7 +2,8 @@ import { Icon, IconName } from '../Icon'
 import { Label } from '../Label'
 import { ChevronLink } from '../ChevronLink'
 
-export const DocsCard: React.FC<
+
+export const DeveloperCard: React.FC<
   React.PropsWithChildren<{
     title: string
     icon?: IconName | null
