@@ -10,13 +10,14 @@
   },
   "workspaces": [
     "apps/www",
+    "apps/authapp",
     "packages/*",
     "examples/*",
     "tests"
   ],
   "author": "Wesbitty, Inc.",
   "scripts": {
-    "build": "lerna run build --profile",
+    "build": "lerna run build",
     "clean": "bash -c 'rm -rf examples/*/.wesjet examples/*/.next apps/*/.wesjet apps/*/.next packages/*/dist'",
     "prettier": "prettier -w .",
     "dev": "lerna run dev --scope www",

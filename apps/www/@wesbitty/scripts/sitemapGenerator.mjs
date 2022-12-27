@@ -34,6 +34,7 @@ async function generate() {
               .replace('.mdx', '')
               // replace the paths for nested 'index' based routes
               .replace('/auth/Auth', '/auth')
+              .replace('/login/Login.tsx', '/login')              
               .replace('/database/Database', '/database')
               .replace('/storage/Storage', '/storage')
               .replace('/developer/Developer', '/developer')

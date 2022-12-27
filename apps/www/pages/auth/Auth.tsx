@@ -29,6 +29,7 @@ import APISection from '../../components/Sections/APISection'
 import GithubExamples from '../../components/Sections/GithubExamples'
 import ProductHeader from '../../components/Sections/ProductHeader'
 
+
 function AuthPage() {
   // base path for images
   const { basePath } = useRouter()
