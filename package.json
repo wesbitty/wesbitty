@@ -10,7 +10,6 @@
   },
   "workspaces": [
     "apps/www",
-    "apps/authapp",
     "packages/*",
     "examples/*",
     "tests"
