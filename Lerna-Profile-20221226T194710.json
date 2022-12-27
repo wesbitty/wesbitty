@@ -1,0 +1,80 @@
+[
+  {
+    "name": "thread_name",
+    "ph": "M",
+    "pid": 4967,
+    "tid": 0,
+    "ts": 0,
+    "args": {
+      "name": "Group #1"
+    }
+  },
+  {
+    "name": "thread_name",
+    "ph": "M",
+    "pid": 4967,
+    "tid": 1,
+    "ts": 0,
+    "args": {
+      "name": "Group #2"
+    }
+  },
+  {
+    "name": "thread_name",
+    "ph": "M",
+    "pid": 4967,
+    "tid": 2,
+    "ts": 0,
+    "args": {
+      "name": "Group #3"
+    }
+  },
+  {
+    "name": "wesjet-with-docker:build",
+    "cat": "wesjet-with-docker,build,",
+    "ph": "X",
+    "ts": 825671.7289984226,
+    "dur": 28236121.964998543,
+    "pid": 4967,
+    "tid": 2,
+    "args": {
+      "target": {
+        "project": "wesjet-with-docker",
+        "target": "build"
+      },
+      "status": "success"
+    }
+  },
+  {
+    "name": "wesjet-starter:build",
+    "cat": "wesjet-starter,build,",
+    "ph": "X",
+    "ts": 825632.1990005672,
+    "dur": 28413780.551999807,
+    "pid": 4967,
+    "tid": 1,
+    "args": {
+      "target": {
+        "project": "wesjet-starter",
+        "target": "build"
+      },
+      "status": "success"
+    }
+  },
+  {
+    "name": "www:build",
+    "cat": "www,build,",
+    "ph": "X",
+    "ts": 825574.9289989471,
+    "dur": 40357538.7240015,
+    "pid": 4967,
+    "tid": 0,
+    "args": {
+      "target": {
+        "project": "www",
+        "target": "build"
+      },
+      "status": "success"
+    }
+  }
+]

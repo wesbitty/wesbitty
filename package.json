@@ -16,10 +16,10 @@
   ],
   "author": "Wesbitty, Inc.",
   "scripts": {
-    "build": "lerna run build",
+    "build": "lerna run build --profile",
     "clean": "bash -c 'rm -rf examples/*/.wesjet examples/*/.next apps/*/.wesjet apps/*/.next packages/*/dist'",
     "prettier": "prettier -w .",
-    "dev": "lerna run dev",
+    "dev": "lerna run dev --scope www",
     "tests": "jest"
   },
   "devDependencies": {
