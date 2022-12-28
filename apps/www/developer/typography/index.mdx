@@ -1,0 +1,60 @@
+---
+title: Typography
+description: Basic button component
+img: '/images/button.svg'
+---
+
+## Installing
+
+Install the component
+
+```cli
+npm install @wesbitty/ui
+```
+
+## Getting started
+
+Import the component
+
+```js
+import { Typography } from '@wesbitty/ui'
+```
+
+This component contains sub components which might be easier to use in variables.
+Alternative import method can be to do the following.
+
+```js
+import { Typography } from '@wesbitty/ui'
+
+const { Title, Text, Link } = Typography;
+
+<Title level={3}>I am some text</Title>
+<Text>I am some text</Text>
+<Link>I am some link</Link>
+```
+
+## Titles
+
+You can define the level of a title by using the `level` prop. The level should be a number between `1` and `5`.
+
+<CodeSample sample="TypographyTitles" v="0" />
+
+## Text
+
+You can use the Text subcomponent for various misc text. You can also use a `<p>` tag inside them if needed.
+
+<CodeSample sample="TypographyText" v="0" />
+
+## API Reference
+
+#### Typography.Title
+
+<ComponentProps signature={`"Typography/Title"`} />
+
+#### Typography.Text
+
+<ComponentProps signature={`"Typography/Text"`} />
+
+#### Typography.Link
+
+<ComponentProps signature={`"Typography/Link"`} />

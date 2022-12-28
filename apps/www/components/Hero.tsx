@@ -31,8 +31,8 @@ const Hero = () => {
                     </Typography.Text>
 
                     <Link
-                      href="https://api.wesbitty.com/platform/login"
-                      as="https://api.wesbitty.com/platform/login"
+                      href="/user/login"
+                      as="/user/login"
                     >
                       <a className="mt-10">
                         <Button className="py-3" size="medium">

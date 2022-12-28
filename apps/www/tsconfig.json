@@ -20,5 +20,5 @@
     "incremental": true
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".wesjet/jetpack"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.js", "**/*.tsx", ".wesjet/jetpack"]
 }

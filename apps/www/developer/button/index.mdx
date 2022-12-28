@@ -1,0 +1,63 @@
+---
+title: Button
+description: Basic button component
+img: "/images/button.svg"
+---
+
+## Installing
+
+Install the component
+
+```cli
+npm install @wesbitty/ui
+```
+
+## Getting started
+
+Import the component
+
+```js
+import { Button } from '@wesbitty/ui'
+```
+
+## Basic
+
+You can define the type of a button using the `type` prop. There are `primary`, `default`, `secondary`, `outline`, `dashed`, and `text`,
+
+<CodeSample sample="ButtonBasic" v="0" />
+
+## Button types
+
+You can define the type of a button using the `type` prop.
+
+There are `primary`, `default`, `secondary`, `outline`, `dashed`, and `text`.
+
+<CodeSample sample="ButtonTypes" v="0" />
+
+## Size
+
+You can define the size of a button using the `size` prop.
+
+There are `tiny`, `small`, `medium`, `large` and `xlarge`. The default size is `tiny`
+
+<CodeSample sample="ButtonSizes" v="0" />
+
+## Using icons
+
+Icons can be used with a Button using the `icon` prop. You can import any [Icon]("https://github.com/supabase/ui#using-icons") component from Supabase UI.
+
+If you use Icons from the Supabase UI library, the Icon will respect the size of the Button. For example: if the Button is shown in Xlarge, then the Icon will be shown in XLarge.
+
+There is also support for icons on the right side of the button using `buttonRight`.
+
+<CodeSample sample="ButtonIcons" v="0" />
+
+## With block
+
+Buttons can be expanded to take the entire width of the space using the prop `block`.
+
+<CodeSample sample="ButtonBlock" v="0" />
+
+## API Reference
+
+<ComponentProps signature={`"Button/Button"`} />
