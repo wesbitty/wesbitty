@@ -83,28 +83,4 @@
     <changefreq>daily</changefreq>
     <changefreq>0.5</changefreq>
   </url>
-
-  <url>
-    <loc>https://wesbitty.com/blog/2022/12/01/introduction-to-wesbitty</loc>
-    <changefreq>daily</changefreq>
-    <changefreq>0.5</changefreq>
-  </url>
-
-  <url>
-    <loc>https://wesbitty.com/blog/2022/12/04/introducing-wesjet</loc>
-    <changefreq>daily</changefreq>
-    <changefreq>0.5</changefreq>
-  </url>
-
-  <url>
-    <loc>https://wesbitty.com/blog/2022/12/05/getting-started-with-wesjet</loc>
-    <changefreq>daily</changefreq>
-    <changefreq>0.5</changefreq>
-  </url>
-
-  <url>
-    <loc>https://wesbitty.com/blog/2022/12/05/what-are-wesjet-templates</loc>
-    <changefreq>daily</changefreq>
-    <changefreq>0.5</changefreq>
-  </url>
 </urlset>

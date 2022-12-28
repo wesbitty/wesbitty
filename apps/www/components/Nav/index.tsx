@@ -247,7 +247,7 @@ const Nav = (props: Props) => {
                     Star us on GitHub
                   </Button>
                 </a>
-                <a href="https://api.wesbitty.com/platform/login">
+                <a href="/user/login">
                   <Button>Sign in</Button>
                 </a>
               </div>
@@ -297,7 +297,7 @@ const Nav = (props: Props) => {
               <div className="mt-6 mb-12">
                 <div className="pt-2 pb-4 space-y-1">
                   <a
-                    href="https://api.wesbitty.com/platform/login"
+                    href="/user/login"
                     className="block pl-3 pr-4 text-base font-medium text-gray-600 dark:text-white"
                   >
                     Sign in
@@ -318,7 +318,7 @@ const Nav = (props: Props) => {
                     Product
                   </a>
                   <a
-                    href="/docs"
+                    href="/developer"
                     className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
                   >
                     Developers

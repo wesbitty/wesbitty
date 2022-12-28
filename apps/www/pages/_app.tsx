@@ -11,7 +11,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   function telemetry() {
-    return post(`https://api.wesbitty.com/platform/telemetry/page`, {
+    return post(`https://wesbitty.com/platform/page`, {
       referrer: document.referrer,
       title: document.title,
     })

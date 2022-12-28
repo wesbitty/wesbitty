@@ -7,7 +7,7 @@ import { generateReadingTime } from './helpers'
 // based on YYYY-MM-DD format
 const FILENAME_SUBSTRING = 11
 
-const postDirectory = path.join(process.cwd(), '_AllBlogPost')
+const postDirectory = path.join(process.cwd(), '_postFields')
 
 export const getSortedPosts = (limit?: number, tags?: any) => {
   //Reads all the files in the post directory

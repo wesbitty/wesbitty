@@ -1,7 +1,7 @@
 import { defineDocumentType, makeSource } from 'wesjet/maker'
 
-const Blog = defineDocumentType(() => ({
-  name: 'AllBlogPost',
+const Postfield = defineDocumentType(() => ({
+  name: 'PostFields',
   filePathPattern: `**/*.mdx`,
   fields: {
     title: {
@@ -18,12 +18,12 @@ const Blog = defineDocumentType(() => ({
   computedFields: {
     url: {
       type: 'string',
-      resolve: (doc) => `/_AllBlogPost/${doc._raw.flattenedPath}`,
+      resolve: (doc) => `/_postFields/${doc._raw.flattenedPath}`,
     },
   },
 }))
 
 export default makeSource({
-  contentDirPath: '_AllBlogPost',
-  documentTypes: [Blog],
+  contentDirPath: '_postFields',
+  documentTypes: [Postfield],
 })

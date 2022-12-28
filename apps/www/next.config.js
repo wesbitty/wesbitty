@@ -3,7 +3,7 @@ const { withWesjet } = require('wesjet-nextjs-plugin')
 
 module.exports = withWesjet({
   images: {
-    domains: ['pbs.twimg.com', 'avatars.githubusercontent.com', 'i.imgur.com'],
+    domains: ['pbs.twimg.com', 'avatars.githubusercontent.com', 'github.com', 'i.imgur.com'],
   },
   headers: async () => [{
     source: '/:path*',
