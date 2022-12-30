@@ -1,5 +1,5 @@
 .code-block::before {
-  content: "";
+  content: '';
   background: #1e1e1e;
   height: 10px;
   width: 48px;
@@ -7,7 +7,7 @@
 }
 
 .code-block::after {
-  content: "";
+  content: '';
   background: #1e1e1e;
   height: 12px;
   width: 48px;

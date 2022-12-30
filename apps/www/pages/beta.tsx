@@ -6,13 +6,13 @@ import Layout from '../components/Layouts/Default'
 import CountUp from '../components/CountUp'
 import FlyOut from '../components/UI/FlyOut'
 import CTABanner from '../components/CTABanner/index'
-import { APP_NAME, DESCRIPTION } from '../lib/constants'
-import { AlphaNumbers, IntroductionSegments, PerformanceComparisonData } from '../data/BetaPage'
+import { APP_NAME, DESCRIPTION } from '../@wesbitty/lib/constants'
+import { AlphaNumbers, IntroductionSegments, PerformanceComparisonData } from '../@wesbitty/data/BetaPage'
 import { render } from 'react-dom'
 import Link from 'next/link'
 
 import { NextSeo } from 'next-seo'
-import authors from '../lib/authors.json'
+import authors from '../@wesbitty/lib/authors.json'
 
 const site_title = `${APP_NAME} | We are now in Beta`
 
@@ -25,17 +25,17 @@ const NavFlyOutMenu = (props: any) => {
 
   return (
     <>
-      <div className="col-span-12 grid grid-cols-12 items-center border-dark-300 dark:border-dark-400 sm:border-r border-b border-dashed">
+      <div className="border-dark-300 dark:border-dark-400 col-span-12 grid grid-cols-12 items-center border-b border-dashed sm:border-r">
         {segments.flat().map((segment: any) => (
           <div
             key={segment.key}
             onClick={() => scrollTo(segment.key)}
             className={`
-              col-span-12 lg:col-span-4 px-4 lg:px-6 py-4 lg:py-10 text-dark-300 dark:text-dark-400 cursor-pointer bg-white dark:bg-dark-600
-              hover:bg-dark-100 dark:hover:bg-dark-500 border-dark-300 dark:border-dark-400 border-t sm:border-l border-dashed`}
+              border-dark-300 dark:border-dark-400 col-span-12 cursor-pointer border-t border-dashed bg-white px-4 py-4 text-dark-300 hover:bg-dark-100
+              dark:bg-dark-600 dark:text-dark-400 dark:hover:bg-dark-500 sm:border-l lg:col-span-4 lg:px-6 lg:py-10`}
           >
             <p className="flex items-center text-black dark:text-white">
-              <span className="font-mono text-xs text-dark-300 dark:text-dark-400 mr-2">
+              <span className="mr-2 font-mono text-xs text-dark-300 dark:text-dark-400">
                 0{segment.no}
               </span>
               <span>{segment.name}</span>
@@ -50,12 +50,12 @@ const NavFlyOutMenu = (props: any) => {
 const VideoShot = (props: any) => {
   const { src } = props
   return (
-    <div className="p-2 rounded-xl  bg-gradient-to-r from-green-400 via-violet-500 to-blue-500">
-      <div className="shadow-lg rounded-md" style={{ height: 'fit-content' }}>
-        <div className="w-full rounded-t-md h-5 bg-dark-400 flex items-center justify-start px-2">
-          <div className="h-2 w-2 mr-2 rounded-full bg-dark-500" />
-          <div className="h-2 w-2 mr-2 rounded-full bg-dark-500" />
-          <div className="h-2 w-2 mr-2 rounded-full bg-dark-500" />
+    <div className="rounded-xl bg-gradient-to-r  from-green-400 via-violet-500 to-blue-500 p-2">
+      <div className="rounded-md shadow-lg" style={{ height: 'fit-content' }}>
+        <div className="flex h-5 w-full items-center justify-start rounded-t-md bg-dark-400 px-2">
+          <div className="mr-2 h-2 w-2 rounded-full bg-dark-500" />
+          <div className="mr-2 h-2 w-2 rounded-full bg-dark-500" />
+          <div className="mr-2 h-2 w-2 rounded-full bg-dark-500" />
         </div>
         <video className="rounded-b-md" src={src} autoPlay loop muted playsInline>
           Your browser does not support the video tag
@@ -91,10 +91,10 @@ const SectionHeader = (props: any) => {
   const { sectionNumber, header } = props
   return (
     <div className="col-span-12">
-      <span className="block font-mono text-3xl text-dark-300 dark:text-dark-400 mb-3">
+      <span className="mb-3 block font-mono text-3xl text-dark-300 dark:text-dark-400">
         0{sectionNumber}
       </span>
-      <h3 className="text-black dark:text-white text-6xl">{header}</h3>
+      <h3 className="text-6xl text-black dark:text-white">{header}</h3>
     </div>
   )
 }
@@ -108,15 +108,15 @@ const Hero = () => {
         backgroundSize: '65%',
         backgroundPosition: '120% 50%',
       }}
-      className="py-16 lg:py-36 bg-dark-800 bg-no-repeat"
+      className="bg-dark-800 bg-no-repeat py-16 lg:py-36"
     >
-      <div className="container mx-auto px-8 lg:px-28 py-20 h-full grid grid-cols-12 gap-4 items-center text-dark-300">
-        <div className="col-span-12 md:col-span-9 lg:col-span-8 xl:col-span-6 text-white">
+      <div className="container mx-auto grid h-full grid-cols-12 items-center gap-4 px-8 py-20 text-dark-300 lg:px-28">
+        <div className="col-span-12 text-white md:col-span-9 lg:col-span-8 xl:col-span-6">
           <p className="mb-10 text-4xl">Wesbitty is an open source Developer's alternative.</p>
           <p className="text-2xl">
             Today, we're moving to <span className="text-brand-700">Beta</span>
           </p>
-          <time itemProp="datePublished" dateTime="2020-12-03" className="opacity-50 text-sm">
+          <time itemProp="datePublished" dateTime="2020-12-03" className="text-sm opacity-50">
             Published December 26th, 2022
           </time>
         </div>
@@ -128,10 +128,10 @@ const Hero = () => {
 const Introduction = () => {
   return (
     <div className="bg-dark-900">
-      <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-4 text-dark-300">
+      <div className="container mx-auto grid grid-cols-12 gap-4 px-8 py-20 text-dark-300 lg:px-28">
         <div className="col-span-12 sm:col-span-9 xl:col-span-8">
           <p>
-            <span className="text-2xl block text-white">
+            <span className="block text-2xl text-white">
               After the launch of our{' '}
               <a
                 href="https://news.ycombinator.com/item?id=23319901"
@@ -144,7 +144,7 @@ const Introduction = () => {
             </span>
           </p>
         </div>
-        <div className="col-span-12 sm:col-span-9 xl:col-span-6 text-base mb-20">
+        <div className="col-span-12 mb-20 text-base sm:col-span-9 xl:col-span-6">
           <p>
             we've been fortunate to work with thousands of early adopters on improving both our Open
             Source, and Hosted offerings. Companies like{' '}
@@ -175,36 +175,36 @@ const Introduction = () => {
           </p>
         </div>
 
-        <div className="col-span-12 text-base mb-10">
-          <p className="w-60 pb-2 border-b-2 border-dark-200 dark:border-dark-400">
+        <div className="col-span-12 mb-10 text-base">
+          <p className="border-dark-200 dark:border-dark-400 w-60 border-b-2 pb-2">
             Alpha Program in Numbers
           </p>
         </div>
 
         <div
           id="alphaNumbers"
-          className="col-span-12 grid grid-cols-12 gap-y-12 lg:gap-y-20 mb-20 gap-x-3 sm:gap-x-0"
+          className="col-span-12 mb-20 grid grid-cols-12 gap-y-12 gap-x-3 sm:gap-x-0 lg:gap-y-20"
         >
           {AlphaNumbers.map((stat: any, idx: number) => (
             <div
               key={`stat_${idx}`}
-              className="col-span-6 sm:col-span-4 grid grid-cols-8 sm:grid-cols-12 gap-x-1 md:gap-x-0 xl:gap-x-6 items-center"
+              className="col-span-6 grid grid-cols-8 items-center gap-x-1 sm:col-span-4 sm:grid-cols-12 md:gap-x-0 xl:gap-x-6"
             >
               <div className="col-span-4 sm:col-span-4 md:col-span-3 xl:col-span-2">
-                <div className="w-12 h-12 rounded-md bg-dark-700 flex items-center justify-center dark:bg-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-md bg-dark-700 dark:bg-white">
                   {stat.icon}
                 </div>
               </div>
-              <div className="col-span-7 sm-col-span-8 md:col-span-9 xl:col-span-10">
+              <div className="sm-col-span-8 col-span-7 md:col-span-9 xl:col-span-10">
                 <p className="text-5xl lg:text-6xl">
                   <CountUp triggerAnimOnScroll={true} referenceElId="alphaNumbers">
                     {stat.value}
                   </CountUp>
-                  {stat.unit && <span className="text-2xl ml-1">{stat.unit}</span>}
+                  {stat.unit && <span className="ml-1 text-2xl">{stat.unit}</span>}
                 </p>
               </div>
-              <div className="col-span-12 sm:col-span-9 md:col-span-10 col-start-0 sm:col-start-5 md:col-start-4 xl:col-start-3">
-                <p className="text-xs lg:text-base text-dark-300 dark:text-dark-400">{stat.name}</p>
+              <div className="col-start-0 col-span-12 sm:col-span-9 sm:col-start-5 md:col-span-10 md:col-start-4 xl:col-start-3">
+                <p className="text-xs text-dark-300 dark:text-dark-400 lg:text-base">{stat.name}</p>
               </div>
             </div>
           ))}
@@ -217,9 +217,9 @@ const Introduction = () => {
 const TableOfContents = (props: any) => {
   const { scrollTo } = props
   return (
-    <div className="bg-gray-50 dark:bg-dark-700 text-dark-400 dark:text-dark-200">
-      <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-4">
-        <div className="col-span-12 text-base mb-10">
+    <div className="bg-gray-50 text-dark-400 dark:bg-dark-700 dark:text-dark-200">
+      <div className="container mx-auto grid grid-cols-12 gap-4 px-8 py-20 lg:px-28">
+        <div className="col-span-12 mb-10 text-base">
           <p className="text-2xl text-black dark:text-white">
             Wesbitty <span className="text-brand-600 dark:text-brand-700">Beta</span> is starting
             now.
@@ -228,19 +228,19 @@ const TableOfContents = (props: any) => {
         <div className="col-span-12 grid grid-cols-12 gap-y-10">
           {IntroductionSegments.map((segment: any, segmentIdx: number) => (
             <div key={`introSegment_${segmentIdx}`} className="col-span-12 grid grid-cols-12">
-              <div className="col-span-12 mb-10 sm:col-span-5 xl:col-span-4 sm:mb-0">
+              <div className="col-span-12 mb-10 sm:col-span-5 sm:mb-0 xl:col-span-4">
                 <p>{segment.description}</p>
               </div>
-              <div className="hidden sm:block sm:col-span-1 xl:col-span-2" />
-              <div className="col-span-12 sm:col-span-6 flex flex-col">
+              <div className="hidden sm:col-span-1 sm:block xl:col-span-2" />
+              <div className="col-span-12 flex flex-col sm:col-span-6">
                 {segment.chapters.map((chapter: any, idx: number) => (
                   <div
                     key={`section_select_${idx}`}
-                    className="flex items-center mb-5 cursor-pointer"
+                    className="mb-5 flex cursor-pointer items-center"
                     onClick={() => scrollTo(chapter.key)}
                   >
                     <p className="font-mono text-xs text-dark-300 dark:text-dark-400">{`0${chapter.no}`}</p>
-                    <p className="ml-4 transition text-base border-b border-gray-400 hover:text-black dark:hover:text-white">
+                    <p className="ml-4 border-b border-gray-400 text-base transition hover:text-black dark:hover:text-white">
                       {chapter.name}
                     </p>
                   </div>
@@ -290,7 +290,7 @@ const Performance = () => {
       return () => window.removeEventListener('scroll', handleScroll)
     }, [animTriggered])
 
-    return <div className={`${color} rounded-full h-3`} style={{ width: `${count.toFixed(2)}%` }} />
+    return <div className={`${color} h-3 rounded-full`} style={{ width: `${count.toFixed(2)}%` }} />
   }
 
   const ComparisonChart = () => {
@@ -301,12 +301,12 @@ const Performance = () => {
           const multiplier = (metric.stats[0].value / metric.stats[1].value).toFixed(1)
           return (
             <div key={`${metric.key}`} className="mb-10 text-dark-400 dark:text-dark-300">
-              <p className="sm:w-36 pb-2 mb-4">{metric.title}</p>
+              <p className="mb-4 pb-2 sm:w-36">{metric.title}</p>
               <div className="flex flex-col sm:flex-row sm:items-center">
                 <div className="w-full sm:w-5/6">
                   {metric.stats.map((stat: any, idx: number) => (
                     <div key={`metric_${metric.key}_${idx}`} className="flex items-center">
-                      <p className="w-20 lg:w-24 border-r py-2 pr-4 mr-4 text-left sm:text-right">
+                      <p className="mr-4 w-20 border-r py-2 pr-4 text-left sm:text-right lg:w-24">
                         {stat.name}
                       </p>
                       <Bar
@@ -321,9 +321,9 @@ const Performance = () => {
                     </div>
                   ))}
                 </div>
-                <div className="text-left sm:w-1/6 sm:text-right flex flex-col">
+                <div className="flex flex-col text-left sm:w-1/6 sm:text-right">
                   <p className="text-6xl text-dark-700 dark:text-dark-100">{multiplier}x</p>
-                  <p className="text-sm -mt-2">more {metric.key}s per second</p>
+                  <p className="-mt-2 text-sm">more {metric.key}s per second</p>
                 </div>
               </div>
             </div>
@@ -335,11 +335,11 @@ const Performance = () => {
 
   return (
     <div id="performance" className="bg-white dark:bg-dark-800">
-      <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-300">
+      <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-20 text-dark-400 dark:text-dark-300 lg:px-28">
         <SectionHeader sectionNumber={1} header="Performance" />
 
-        <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10 items-center">
-          <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
+        <div className="col-span-12 mb-10 grid grid-cols-12 items-center gap-x-2 lg:gap-x-8">
+          <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
             <p className="mb-10">
               We started Wesbitty to give developers a web-ready database that is delightful to use,
               without sacrificing speed and scale. Postgres makes this possible, handling massive
@@ -390,7 +390,7 @@ const Performance = () => {
           <div className="col-span-12 mt-10 mb-10">
             <ComparisonChart />
           </div>
-          <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
+          <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
             <p className="mb-10">
               Benchmarks were run from a neutral host (Digital Ocean Droplet 4 GB Memory / 80 GB
               Disk / SGP1 - Ubuntu 20.04 (LTS) x64) against a table/collection pre-populated with 1
@@ -418,11 +418,11 @@ const Performance = () => {
 const Security = () => {
   return (
     <div id="security" className="bg-gray-50 dark:bg-dark-700">
-      <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-200">
+      <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-20 text-dark-400 dark:text-dark-200 lg:px-28">
         <SectionHeader sectionNumber={2} header="Security" />
 
         <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8">
-          <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
+          <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
             <p className="mb-10">
               As an infrastructure provider, security has been a priority from day one. While we had
               to resolve brute force attacks on our customers' databases, we internally run pen
@@ -432,7 +432,7 @@ const Security = () => {
               Approaching the launch of our Beta period, we worked with security advisors and
               specialists globally to enforce new measures and processes:
             </p>
-            <ul className="list-disc list-outside ml-6">
+            <ul className="ml-6 list-outside list-disc">
               <li className="mb-5">
                 Employed DigitalXRAID to run a full Pen Test on both our internal and customer
                 infrastructure. We immediately patched one medium priority issue and are currently
@@ -483,16 +483,16 @@ const Reliability = () => {
   const { basePath } = useRouter()
   return (
     <div id="reliability" className="bg-white dark:bg-dark-800">
-      <div className="container mx-auto px-8 lg:px-28 py-12 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-300 ">
+      <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-12 text-dark-400 dark:text-dark-300 lg:px-28 ">
         <SectionHeader sectionNumber={3} header="Reliability" />
 
-        <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
-          <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
+        <div className="col-span-12 mb-10 grid grid-cols-12 gap-x-2 lg:gap-x-8">
+          <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
             <p className="mb-5">
               During Alpha we experienced 2 availability incidents, neither affecting customer
               access to their data. These were:
             </p>
-            <ul className="list-disc list-outside ml-6 mb-10">
+            <ul className="ml-6 mb-10 list-outside list-disc">
               <li className="mb-5">
                 A third-party CDN API outage. As a result, subdomains were not created for new
                 projects.
@@ -536,18 +536,18 @@ const NewFeaturesAndIntegrations = () => {
   const { basePath } = useRouter()
   return (
     <div id="newFeaturesAndIntegrations" className="bg-gray-50 dark:bg-dark-700">
-      <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-200">
+      <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-20 text-dark-400 dark:text-dark-200 lg:px-28">
         <SectionHeader sectionNumber={4} header="New Features & Integrations" />
 
-        <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
-          <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
+        <div className="col-span-12 mb-10 grid grid-cols-12 gap-x-2 lg:gap-x-8">
+          <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
             <p className="mb-5">
               If you're new to Supabase, here's a few of the things you get when you choose us as
               your backend.
             </p>
             <ul className="">
               <li className="mb-10">
-                <p className="w-20 pb-2 mb-2 border-b-2 border-dark-200 dark:border-dark-400">
+                <p className="border-dark-200 dark:border-dark-400 mb-2 w-20 border-b-2 pb-2">
                   Auth
                 </p>
                 <p className="mb-5">
@@ -578,7 +578,7 @@ const NewFeaturesAndIntegrations = () => {
                 <VideoShot src={`${basePath}/videos/tabAuthRules.mp4`} />
               </li>
               <li className="mb-10">
-                <p className="w-20 pb-2 mb-2 border-b-2 border-dark-200 dark:border-dark-400">
+                <p className="border-dark-200 dark:border-dark-400 mb-2 w-20 border-b-2 pb-2">
                   Realtime
                 </p>
                 <p>
@@ -596,7 +596,7 @@ const NewFeaturesAndIntegrations = () => {
                 </p>
               </li>
               <li className="mb-10">
-                <p className="w-24 pb-2 mb-2 border-b-2 border-dark-200 dark:border-dark-400">
+                <p className="border-dark-200 dark:border-dark-400 mb-2 w-24 border-b-2 pb-2">
                   CRUD API
                 </p>
                 <p>
@@ -621,7 +621,7 @@ const NewFeaturesAndIntegrations = () => {
                 </p>
               </li>
               <li className="mb-10">
-                <p className="w-44 pb-2 mb-2 border-b-2 border-dark-200 dark:border-dark-400">
+                <p className="border-dark-200 dark:border-dark-400 mb-2 w-44 border-b-2 pb-2">
                   Quickstart Templates
                 </p>
                 <p>
@@ -631,7 +631,7 @@ const NewFeaturesAndIntegrations = () => {
                 </p>
               </li>
               <li className="mb-10">
-                <p className="w-24 pb-2 mb-2 border-b-2 border-dark-200 dark:border-dark-400">
+                <p className="border-dark-200 dark:border-dark-400 mb-2 w-24 border-b-2 pb-2">
                   Table View
                 </p>
                 <p className="mb-5">
@@ -641,7 +641,7 @@ const NewFeaturesAndIntegrations = () => {
                 <VideoShot src={`${basePath}/videos/tabTableEditor.mp4`} />
               </li>
               <li>
-                <p className="w-24 pb-2 mb-2 border-b-2 border-dark-200 dark:border-dark-400">
+                <p className="border-dark-200 dark:border-dark-400 mb-2 w-24 border-b-2 pb-2">
                   SQL Editor
                 </p>
                 <p className="mb-5">
@@ -660,18 +660,18 @@ const NewFeaturesAndIntegrations = () => {
 
 const BetaPricing = () => (
   <div id="betaPricing" className="bg-white dark:bg-dark-800">
-    <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-300">
+    <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-20 text-dark-400 dark:text-dark-300 lg:px-28">
       <SectionHeader sectionNumber={5} header="Beta Pricing" />
 
-      <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
-        <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
+      <div className="col-span-12 mb-10 grid grid-cols-12 gap-x-2 lg:gap-x-8">
+        <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
           <p className="mb-10">For up to date pricing info see: https://wesbitty.com/pricing</p>
           <p className="mb-10">
             We're working closely with many open source projects, infrastructure providers, and of
             course our Alpha Users, to provide a predictable and sustainable pricing model.
           </p>
           <p className="mb-5">Our key aims going into this exercise were:</p>
-          <ul className="list-disc list-outside ml-6 mb-10">
+          <ul className="ml-6 mb-10 list-outside list-disc">
             <li className="mb-5">
               To continue offering free Wesbitty instances for Students, Hobbyists, and Early
               Adopters
@@ -686,7 +686,7 @@ const BetaPricing = () => (
             </li>
           </ul>
           <p className="mb-10">We are committing to the following initiatives:</p>
-          <ul className="list-decimal list-outside ml-6 mb-10">
+          <ul className="ml-6 mb-10 list-outside list-decimal">
             <li className="mb-5">
               All Alpha Users will receive credits equivalent of 2 years of base tier usage. These
               will automatically be credited to your account if you signed up prior to December
@@ -728,11 +728,11 @@ const BetaPricing = () => (
 
 const OpenSource = () => (
   <div id="openSource" className="bg-gray-50 dark:bg-dark-700">
-    <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-200">
+    <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-20 text-dark-400 dark:text-dark-200 lg:px-28">
       <SectionHeader sectionNumber={6} header="Open Source" />
 
-      <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
-        <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
+      <div className="col-span-12 mb-10 grid grid-cols-12 gap-x-2 lg:gap-x-8">
+        <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
           <p className="mb-10">
             Great software is multi generational and stretches beyond any single company.
           </p>
@@ -795,10 +795,10 @@ const OpenSource = () => (
 
 const FundingPartners = () => (
   <div id="fundingPartners" className="bg-white dark:bg-dark-800">
-    <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-300">
+    <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-20 text-dark-400 dark:text-dark-300 lg:px-28">
       <SectionHeader sectionNumber={7} header="Funding Partners" />
-      <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
-        <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
+      <div className="col-span-12 mb-10 grid grid-cols-12 gap-x-2 lg:gap-x-8">
+        <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
           <p className="mb-10">
             Building a platform that can offer all the amazing features of Firebase will take
             resources - more than most open source tools. Ours will be a long journey and it will
@@ -832,11 +832,11 @@ const FundingPartners = () => (
 
 const ScalingOurTeam = () => (
   <div id="scalingOurTeam" className="bg-gray-50 dark:bg-dark-700">
-    <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-200">
+    <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-20 text-dark-400 dark:text-dark-200 lg:px-28">
       <SectionHeader sectionNumber={8} header="Scaling Our Team" />
 
-      <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
-        <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
+      <div className="col-span-12 mb-10 grid grid-cols-12 gap-x-2 lg:gap-x-8">
+        <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
           <p className="mb-10">
             We are extremely proud of our team. We're a mix of 11 engineers, from 8 different
             countries. Half of the team are previous founders - collectively we've founded 15
@@ -870,20 +870,20 @@ const ScalingOurTeam = () => (
 const WhatsNext = () => (
   <div
     id="whatsNext"
-    className="border-b-2 border-gray-50 bg-white dark:bg-dark-800 dark:border-dark-800"
+    className="dark:border-dark-800 border-b-2 border-gray-50 bg-white dark:bg-dark-800"
   >
-    <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-300">
+    <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-20 text-dark-400 dark:text-dark-300 lg:px-28">
       <SectionHeader sectionNumber={9} header="What's Next" />
 
-      <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
-        <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
+      <div className="col-span-12 mb-10 grid grid-cols-12 gap-x-2 lg:gap-x-8">
+        <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
           <p className="mb-5">
             If you watch our repos you'll see that development never stops, we ship every day (and
             night!). We're constantly improving Wesbitty based on user feedback. Alongside
             performance, security, and reliability improvements, here are some new features we're
             working on for 2021:
           </p>
-          <ul className="list-disc list-outside ml-6 mb-10">
+          <ul className="ml-6 mb-10 list-outside list-disc">
             <li className="mb-5">Storage - Making blob storage easier than ever before</li>
             <li className="mb-5">
               Functions - write and deploy serverless functions that have access to your Wesbitty
@@ -996,7 +996,7 @@ const Beta = () => {
       />
       <Container>
         <div className="sticky inset-0 z-50">
-          <div className="shadow-lg py-5 px-5 xl:px-20 bg-dark-800 flex items-center justify-between">
+          <div className="flex items-center justify-between bg-dark-800 py-5 px-5 shadow-lg xl:px-20">
             <Link href="/">
               <a>
                 <img className="h-5" src={`${basePath}/images/logo-dark.png`} />

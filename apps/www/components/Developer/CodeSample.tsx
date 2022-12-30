@@ -1,27 +1,27 @@
-import React from "react";
-import ComponentIndex, { RawDeveloper } from "./ComponentIndex";
+import React from 'react'
+import ComponentIndex, { RawDeveloper } from './ComponentIndex'
 
 // /* eslint import/no-webpack-loader-syntax: off */
-import CodeBlock from "./CodeBlock/CodeBlock";
+import CodeBlock from './CodeBlock/CodeBlock'
 
 // import Frame from "react-frame-component";
 
 interface Props {
-  children: any;
-  code: any;
-  sample: string;
+  children: any
+  code: any
+  sample: string
 }
 
 function CodeSample(props: Props) {
   // console.log(props.sample);
 
   // @ts-ignore
-  const Sample = ComponentIndex[props.sample];
+  const Sample = ComponentIndex[props.sample]
   // console.log(Sample);
   // console.log(props.children);
 
   if (!process.browser) {
-    return <span>Loading</span>;
+    return <span>Loading</span>
   } else {
     // console.log("hello");
     if (document) {
@@ -34,8 +34,8 @@ function CodeSample(props: Props) {
       // let initialContent = `<!DOCTYPE html><html><head></head><body><div id='mountHere'></div></body></html>`;
       return (
         <>
-          <div className="bg-white dark:bg-gray-700 border dark:border-gray-600 rounded m-0">
-            <div className="px-8 py-12 border-b dark:border-gray-600 z-10">
+          <div className="m-0 rounded border bg-white dark:border-gray-600 dark:bg-gray-700">
+            <div className="z-10 border-b px-8 py-12 dark:border-gray-600">
               {/* <Frame
               // @ts-ignore
               head={[head[0]]}
@@ -64,9 +64,9 @@ function CodeSample(props: Props) {
           </div>
           {/* </div> */}
         </>
-      );
+      )
     }
   }
 }
 
-export default CodeSample;
+export default CodeSample

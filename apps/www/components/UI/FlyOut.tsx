@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Transition from '../../lib/Transition'
+import Transition from '../../@wesbitty/lib/Transition'
 
 type Props = {
   title?: string
@@ -34,23 +34,23 @@ const FlyOut = (props: Props) => {
         leaveTo="opacity-0 translate-y-1"
       >
         <>
-          <div className="absolute inset-x-0 transform shadow-lg border-gray-100 dark:border-dark-500 w-full hidden lg:block bg-white dark:bg-gray-600">
+          <div className="dark:border-dark-500 absolute inset-x-0 hidden w-full transform border-gray-100 bg-white shadow-lg dark:bg-gray-600 lg:block">
             <div
-              className="border-b dark:border-gray-600 absolute inset-0 flex sm:flex-col lg:flex-row"
+              className="absolute inset-0 flex border-b dark:border-gray-600 sm:flex-col lg:flex-row"
               aria-hidden="true"
             >
-              <div className="bg-white dark:bg-gray-800 border-r dark:border-gray-600 sm:w-full sm:h-1/2 lg:w-1/2 lg:h-full" />
+              <div className="border-r bg-white dark:border-gray-600 dark:bg-gray-800 sm:h-1/2 sm:w-full lg:h-full lg:w-1/2" />
               <div
                 className={`${
                   singleBgColor ? 'bg-white dark:bg-dark-600' : 'bg-gray-50 dark:bg-gray-800'
-                } sm:w-full sm:h-1/2 lg:w-1/2 lg:h-full`}
+                } sm:h-1/2 sm:w-full lg:h-full lg:w-1/2`}
               />
             </div>
-            <div className="container relative mx-auto lg:grid-cols-2 px-6 lg:px-10 xl:px-14 py-2">
+            <div className="container relative mx-auto px-6 py-2 lg:grid-cols-2 lg:px-10 xl:px-14">
               {children}
             </div>
             <div
-              className="z-50 w-full h-screen absolute opacity-0"
+              className="absolute z-50 h-screen w-full opacity-0"
               style={{
                 pointerEvents: 'visiblePainted',
               }}

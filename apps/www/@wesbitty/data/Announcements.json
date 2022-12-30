@@ -1,0 +1,34 @@
+[
+  {
+    "type": "Announcement",
+    "title": "We've Got Your WishList - Wesbitty, Inc.",
+    "description": "Objectives, Target & Goals",
+    "imgUrl": "images/case-study-monitoro.jpg",
+    "logoUrl": "images/logos/monitoro.png",
+    "organization": "Monitoro",
+    "url": "/blog/2022/12/10/wesbitty-launch-week-sql",
+    "postMeta": {
+      "name": "Iamraff",
+      "avatarUrl": "https://avatars0.githubusercontent.com/u/10214025?v=4",
+      "publishDate": "Dec 10, 2022",
+      "readLength": 6
+    },
+    "ctaText": "View case study"
+  },
+  {
+    "type": "Announcement",
+    "title": "Introducing Wesjet(Pkg)",
+    "description": "Changelog: We've Finally Launched a public prieview of Wesjet(Pkg), which helps to bundle,transform,validate and build system optimized in all web application.",
+    "imgUrl": "images/case-study-monitoro.jpg",
+    "logoUrl": "images/logos/monitoro.png",
+    "organization": "Monitoro",
+    "url": "/blog/2022/12/11/wesjet(pkg)",
+    "postMeta": {
+      "name": "Wesbitty",
+      "avatarUrl": "https://avatars0.githubusercontent.com/u/10214025?v=4",
+      "publishDate": "Dec 11, 2022",
+      "readLength": 6
+    },
+    "ctaText": "View case study"
+  }
+]

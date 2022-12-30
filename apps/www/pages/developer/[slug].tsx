@@ -3,12 +3,12 @@ import fs from 'fs'
 import path from 'path'
 
 import Head from 'next/head'
-// import styles from "../styles/Home.module.css";÷
+// import styles from "../styles/Home.module.css";
 // import Introduction from "./../_posts/Introduction.mdx";
 import renderToString from 'next-mdx-remote/render-to-string'
 import hydrate from 'next-mdx-remote/hydrate'
 
-import { getAllPostSlugs, getPostdata } from '../../lib/developer'
+import { getAllPostSlugs, getPostdata } from '../../@wesbitty/lib/developer'
 
 // import Heading from "~/../../components/heading";
 // import Header from "~/../../components/Header";
@@ -28,8 +28,7 @@ import BlogPostPage from 'pages/blog/[year]/[month]/[day]/[slug]'
 
 const components = { CodeSample, ComponentProps, ...ComponentIndex }
 
-
-function Developer({ source, frontmatter, toc }: any) {
+export default function Home({ source, frontmatter, toc }: any) {
   const gfm = require('remark-gfm')
 
   const content = hydrate(source, { components })
@@ -50,7 +49,7 @@ function Developer({ source, frontmatter, toc }: any) {
 
   return (
     <DefaultLayout>
-      <div className="grid grid-cols-12 container px-0 lg:py-8 mx-auto lg:gap-16">
+      <div className="container mx-auto grid grid-cols-12 px-0 lg:gap-16 lg:py-8">
         <article className="col-span-12 lg:col-span-9 xl:col-span-7">
           <Typography.Title>{frontmatter.title}</Typography.Title>
           {/* <Typography.Title level={3}>
@@ -58,9 +57,9 @@ function Developer({ source, frontmatter, toc }: any) {
           </Typography.Title> */}
           <Typography.Text>
             <div className="my-8 text-sm">
-              <div className="flex md:items-center  space-y-2 flex-col md:flex-row md:space-y-0 md:space-x-3">
+              <div className="flex flex-col  space-y-2 md:flex-row md:items-center md:space-y-0 md:space-x-3">
                 <a
-                  href={`https://github.com/wesbitty/ui/tree/master/src/components/${frontmatter.title}/${frontmatter.title}.tsx`}
+                  href={`https://github.com/supabase/ui/tree/master/../../components/Field/${frontmatter.title}/${frontmatter.title}.tsx`}
                   style={{ textDecoration: 'none' }}
                 >
                   <Button type="default" iconRight={<IconGitHub />}>
@@ -69,7 +68,7 @@ function Developer({ source, frontmatter, toc }: any) {
                 </a>
 
                 <a
-                  href="https://github.com/wesbitty/ui/issues/new/choose"
+                  href="https://github.com/supabase/ui/issues/new/choose"
                   style={{ textDecoration: 'none' }}
                 >
                   <Button type="default" iconRight={<IconAlertCircle />}>
@@ -78,7 +77,7 @@ function Developer({ source, frontmatter, toc }: any) {
                 </a>
 
                 <a
-                  href={`https://github.com/supabase/supabase-ui-web/tree/master/_components/${frontmatter.title.toLowerCase()}/index.mdx`}
+                  href={`https://github.com/wesbitty/wesbitty/tree/master/apps/www/_developer/${frontmatter.title.toLowerCase()}/index.mdx`}
                   style={{ textDecoration: 'none' }}
                 >
                   <Button type="dashed" iconRight={<IconEdit />}>
@@ -93,7 +92,7 @@ function Developer({ source, frontmatter, toc }: any) {
             <Typography>{content}</Typography>
           </div>
         </article>
-        <div className="hidden lg:block lg:col-span-3 xl:col-span-2 col-start-11">
+        <div className="col-start-11 hidden lg:col-span-3 lg:block xl:col-span-2">
           {TableOfContents}
         </div>
       </div>
@@ -102,7 +101,7 @@ function Developer({ source, frontmatter, toc }: any) {
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPostSlugs('_docsField')
+  const paths = getAllPostSlugs('_developer')
   return {
     paths,
     fallback: false,
@@ -119,7 +118,7 @@ export async function getStaticProps({ params }: any) {
 
   //Finding directory named "blog" from the current working directory of Node.
   const filePath = `${params.slug}/index`
-  const postDirectory = path.join(process.cwd(), '_docsField')
+  const postDirectory = path.join(process.cwd(), '_developer')
   const fullPath = path.join(postDirectory, `${filePath}.mdx`)
   const fileContent = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContent)
@@ -143,5 +142,3 @@ export async function getStaticProps({ params }: any) {
     },
   }
 }
-
-export default Developer

@@ -48,7 +48,7 @@ export const PricingTableRowDesktop = (props: any) => {
     <>
       <tr className="divide-x dark:divide-gray-600" style={{ borderTop: 'none' }}>
         <th
-          className="pricing-table__product-row bg-gray-50 dark:bg-gray-700 py-3 pl-6 text-sm font-medium text-gray-900 dark:text-white text-left"
+          className="pricing-table__product-row bg-gray-50 py-3 pl-6 text-left text-sm font-medium text-gray-900 dark:bg-gray-700 dark:text-white"
           scope="colgroup"
         >
           <Space size={4}>
@@ -58,16 +58,16 @@ export const PricingTableRowDesktop = (props: any) => {
             </Typography.Title>
           </Space>
         </th>
-        <td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></td>
-        <td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></td>
-        <td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></td>
+        <td className="pricing-table__product-row bg-gray-50 py-5 px-6 dark:bg-dark-700"></td>
+        <td className="pricing-table__product-row bg-gray-50 py-5 px-6 dark:bg-dark-700"></td>
+        <td className="pricing-table__product-row bg-gray-50 py-5 px-6 dark:bg-dark-700"></td>
       </tr>
 
       {category.features.map((feat: any) => {
         return (
           <tr className="divide-x dark:divide-gray-600">
             <th
-              className="flex items-center py-5 px-6 text-sm font-normal text-gray-500 dark:text-gray-300 text-left"
+              className="flex items-center py-5 px-6 text-left text-sm font-normal text-gray-500 dark:text-gray-300"
               scope="row"
             >
               <span>{feat.title} </span>
@@ -109,7 +109,7 @@ export const PricingTableRowMobile = (props: any) => {
   return (
     <>
       <table className="mt-8 w-full">
-        <caption className="bg-gray-50 dark:bg-dark-900 border-t border-gray-200 dark:border-gray-600 py-3 px-4 text-sm font-medium text-gray-900 dark:text-white text-left">
+        <caption className="border-t border-gray-200 bg-gray-50 py-3 px-4 text-left text-sm font-medium text-gray-900 dark:border-gray-600 dark:bg-dark-900 dark:text-white">
           <Space size={4}>
             {category.icon ? <ProductIcon icon={props.icon} /> : null}
             <Typography.Title className="m-0" level={4}>
@@ -131,7 +131,7 @@ export const PricingTableRowMobile = (props: any) => {
           {category.features.map((feat: any) => {
             return (
               <tr className="border-t border-gray-200 dark:border-gray-600 ">
-                <th className="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">
+                <th className="py-5 px-4 text-left text-sm font-normal text-gray-500" scope="row">
                   <span>
                     <Typography.Text type="secondary">{feat.title}</Typography.Text>
                   </span>

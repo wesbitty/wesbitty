@@ -11,9 +11,9 @@ import {
   Space,
   Typography,
 } from '@wesbitty/ui'
-import ApiExamples from 'data/products/auth/auth-api-examples'
-import AuthSqlRulesExamples from 'data/products/auth/auth-sql-rules-examples'
-import Solutions from 'data/Solutions.json'
+import ApiExamples from '@wesbitty/data/products/auth/auth-api-examples'
+import AuthSqlRulesExamples from '@wesbitty/data/products/auth/auth-sql-rules-examples'
+import Solutions from '@wesbitty/data/Solutions.json'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -28,7 +28,6 @@ import SectionContainer from '../../components/Layouts/SectionContainer'
 import APISection from '../../components/Sections/APISection'
 import GithubExamples from '../../components/Sections/GithubExamples'
 import ProductHeader from '../../components/Sections/ProductHeader'
-
 
 function AuthPage() {
   // base path for images
@@ -75,7 +74,7 @@ function AuthPage() {
             "Including PostgreSQL's policy engine, for fine-grained access rules.",
           ]}
           image={[
-            <div className="w-full header--light block">
+            <div className="header--light block w-full">
               <Image
                 src={`${basePath}/images/product/auth/header-light.png`}
                 alt="auth header"
@@ -84,7 +83,7 @@ function AuthPage() {
                 height="1074"
               />
             </div>,
-            <div className="w-full header--dark mr-0 dark:block">
+            <div className="header--dark mr-0 w-full dark:block">
               <Image
                 src={`${basePath}/images/product/auth/header-dark.png`}
                 alt="auth header"
@@ -99,7 +98,7 @@ function AuthPage() {
 
         <SectionContainer>
           <div className="grid grid-cols-12">
-            <div className="mb-10 lg:mb-0 col-span-12 lg:col-span-3">
+            <div className="col-span-12 mb-10 lg:col-span-3 lg:mb-0">
               <p className="mb-4">
                 <Space>
                   <img src={`${basePath}/images/product/auth/google-icon.svg`} width={21} />
@@ -130,7 +129,7 @@ function AuthPage() {
                 </p>
               </Typography.Text>
             </div>
-            <div className="mb-10 lg:mb-0 col-span-12 lg:col-span-3 lg:col-start-5">
+            <div className="col-span-12 mb-10 lg:col-span-3 lg:col-start-5 lg:mb-0">
               <Typography.Text>
                 <p className="mb-4">
                   <IconLink />
@@ -181,7 +180,7 @@ function AuthPage() {
               </Typography.Text>,
             ]}
             footer={[
-              <div className="grid grid-cols-12 md:gap-8 lg:gap-0 xl:gap-16 mt-8">
+              <div className="mt-8 grid grid-cols-12 md:gap-8 lg:gap-0 xl:gap-16">
                 <div className="col-span-12 sm:col-span-6 lg:col-span-12 xl:col-span-4">
                   <FeatureColumn
                     icon={<IconBriefcase />}
@@ -220,7 +219,7 @@ function AuthPage() {
 
         <SectionContainer>
           <div className="grid grid-cols-12 lg:gap-16">
-            <div className="col-span-12 lg:col-span-5 mb-8">
+            <div className="col-span-12 mb-8 lg:col-span-5">
               <Typography.Title level={2}>User permissions without the middleware</Typography.Title>
               <Typography.Text>
                 <p className="text-base lg:text-lg">
@@ -249,12 +248,12 @@ function AuthPage() {
 
         <SectionContainer>
           <div className="grid grid-cols-12 lg:gap-16">
-            <div className="order-last col-span-12 lg:order-first lg:col-span-6 mt-8 lg:mt-0">
+            <div className="order-last col-span-12 mt-8 lg:order-first lg:col-span-6 lg:mt-0">
               <AuthComponentExample />
             </div>
             <div className="col-span-12 lg:col-span-6 lg:col-start-7 xl:col-span-4 xl:col-start-8">
               <Space className="mb-4">
-                <div className="w-8 h-8 rounded-md bg-gray-900 dark:bg-white text-white dark:text-gray-900  flex justify-center items-center">
+                <div className="flex h-8 w-8 items-center justify-center rounded-md bg-gray-900  text-white dark:bg-white dark:text-gray-900">
                   <IconKey size="small" strokeWidth={1.5} />
                 </div>
                 <Typography.Text type="secondary">
@@ -286,7 +285,7 @@ function AuthPage() {
                 </a>
               </Link>
 
-              <div className="grid grid-cols-12 md:gap-8 lg:gap-0 xl:gap-16 mt-8">
+              <div className="mt-8 grid grid-cols-12 md:gap-8 lg:gap-0 xl:gap-16">
                 <div className="col-span-12 lg:col-span-12 xl:col-span-4">
                   <FeatureColumn
                     icon={<IconBriefcase />}

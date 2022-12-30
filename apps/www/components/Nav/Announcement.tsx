@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import announcement from '../../data/Announcement.json'
+import announcement from '../../@wesbitty/data/Announcement.json'
 import { IconChevronRight, IconX } from '@wesbitty/ui'
 import { useRouter } from 'next/router'
 
@@ -43,21 +43,21 @@ const Announcement = () => {
         onClick={handleLink}
         className="
           relative
-          cursor-pointer
-          bg-gradient-to-r from-green-400 to-green-600
-          hover:from-green-500 hover:to-green-700        
-          text-white 
-          flex flex-row space-x-3
+          flex
+          cursor-pointer flex-row space-x-3
+          bg-gradient-to-r from-green-400        
+          to-green-600 
+          text-white hover:from-green-500 hover:to-green-700
         "
       >
         <div
           className="
-            flex items-center justify-center p-3 mx-auto text-sm lg:container lg:px-16 xl:px-20 font-medium 
-            lg:divide-x divide-green-400
+            mx-auto flex items-center justify-center divide-green-400 p-3 text-sm font-medium lg:container lg:divide-x 
+            lg:px-16 xl:px-20
           "
         >
-          <span className="px-3 hidden lg:block">{announcement.text}</span>
-          <span className="px-3 flex items-center space-x-2">
+          <span className="hidden px-3 lg:block">{announcement.text}</span>
+          <span className="flex items-center space-x-2 px-3">
             <span>
               {
                 // @ts-ignore
@@ -68,7 +68,7 @@ const Announcement = () => {
           </span>
         </div>
         <div
-          className="transition-opacity absolute right-4 h-full flex items-center opacity-50 hover:opacity-100"
+          className="absolute right-4 flex h-full items-center opacity-50 transition-opacity hover:opacity-100"
           onClick={handleClose}
         >
           <IconX size={16} />

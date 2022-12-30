@@ -5,9 +5,9 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 
 import { NextSeo } from 'next-seo'
-import { generateRss } from '../lib/rss'
-import { getSortedPosts, getAllCategories } from '../lib/posts'
-import authors from '../lib/authors.json'
+import { generateRss } from '../@wesbitty/lib/rss'
+import { getSortedPosts, getAllCategories } from '../@wesbitty/lib/posts'
+import authors from '../@wesbitty/lib/authors.json'
 
 import DefaultLayout from '../components/Layouts/Default'
 import { Typography, Badge, Space, Dropdown, Button, IconChevronDown } from '@wesbitty/ui'
@@ -22,7 +22,7 @@ export async function getStaticProps() {
 
   // create a rss feed in public directory
   // rss feed is added via <Head> component in render return
-  fs.writeFileSync('./@wesbitty/feed/rss.xml', rss)
+  fs.writeFileSync('./sitemap/rss.xml', rss)
 
   return {
     props: {
@@ -63,24 +63,24 @@ function Blog(props: any) {
       <NextSeo title="Blog" description="Blog | Wesbitty, Inc." />
       <DefaultLayout>
         <BlogHeader title="Blog" />
-        <div className="bg-gray-50 dark:bg-dark-800 overflow-hidden py-12">
-          <div className="container mx-auto px-8 sm:px-16 xl:px-20 mt-16">
+        <div className="overflow-hidden bg-gray-50 py-12 dark:bg-dark-800">
+          <div className="container mx-auto mt-16 px-8 sm:px-16 xl:px-20">
             <div className="mx-auto max-w-7xl">
               <Typography.Title level={2}>Blog Post</Typography.Title>
-              <div className="mt-5 max-w-lg mx-auto grid gap-16 lg:grid-cols-2 lg:max-w-none">
+              <div className="mx-auto mt-5 grid max-w-lg gap-16 lg:max-w-none lg:grid-cols-2">
                 {props.blogs.slice(0, 2).map((blog: any, idx: any) => {
                   return FeaturedThumb(blog)
                 })}
               </div>
             </div>
           </div>
-          <div className="container mx-auto px-8 sm:px-16 xl:px-20 mt-32">
+          <div className="container mx-auto mt-32 px-8 sm:px-16 xl:px-20">
             <div className="mx-auto max-w-7xl">
               <div className="grid grid-cols-12">
                 <div className="col-span-12 lg:col-span-8">
                   <Typography.Title level={2}>All Blog Post Categories</Typography.Title>
                 </div>
-                <div className="col-span-12 lg:col-span-4 mt-4 lg:mt-0">
+                <div className="col-span-12 mt-4 lg:col-span-4 lg:mt-0">
                   <Space className="lg:justify-end" size={6}>
                     <Typography.Text>Category :</Typography.Text>
                     <Dropdown
@@ -112,7 +112,7 @@ function Blog(props: any) {
                   </Space>
                 </div>
               </div>
-              <div className="mt-12 max-w-lg mx-auto grid lg:grid-cols-1 lg:max-w-none">
+              <div className="mx-auto mt-12 grid max-w-lg lg:max-w-none lg:grid-cols-1">
                 {/* <ul> */}
                 {blogs.map((blog: PostTypes, idx: number) => (
                   <BlogListItem blog={blog} key={idx} />
@@ -136,7 +136,7 @@ function FeaturedThumb(blog: PostTypes) {
       <a href={`/blog/${blog.url}`}>
         <a className="inline-block">
           <img
-            className="h-96 w-full object-cover border dark:border-dark"
+            className="h-96 w-full border object-cover dark:border-dark"
             src={`/images/blog/` + (blog.thumb ? blog.thumb : blog.image)}
           />
           <Space direction="vertical" size={5} className="mt-4">
@@ -171,7 +171,7 @@ function FeaturedThumb(blog: PostTypes) {
               <div>
                 <Space size={4}>
                   {author.author_image_url && (
-                    <img src={author.author_image_url} className="rounded-full w-10" />
+                    <img src={author.author_image_url} className="w-10 rounded-full" />
                   )}
                   <Space direction="vertical" size={0}>
                     <Typography.Text>{author.author}</Typography.Text>

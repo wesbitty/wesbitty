@@ -28,16 +28,17 @@ async function generate() {
             const path = page
               .replace('pages', '')
               // add a `/` for blog posts
-              .replace('_AllBlogPost', '/blog')
-              .replace('@wesbitty/feed', '')
+              .replace('_postsField', '/blog')
+              .replace('_docsField', '/developer')
+              .replace('sitemap', '')
               .replace('.tsx', '')
               .replace('.mdx', '')
               // replace the paths for nested 'index' based routes
               .replace('/auth/Auth', '/auth')
-              .replace('/login/Login.tsx', '/login')              
+              .replace('/login/Login.tsx', '/login')
               .replace('/database/Database', '/database')
               .replace('/storage/Storage', '/storage')
-              .replace('/developer/Developer', '/developer')
+              .replace('/developer/index', '/developer')
 
             let route = path === '/index' ? '' : path
 
@@ -75,7 +76,7 @@ async function generate() {
   })
 
   // eslint-disable-next-line no-sync
-  writeFileSync('@wesbitty/feed/feed.xml', formatted)
+  writeFileSync('sitemap/feed.xml', formatted)
 }
 
 generate()

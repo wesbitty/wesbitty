@@ -1,5 +1,5 @@
 import { Transition } from '@headlessui/react'
-import { getStaticProps } from '../../pages/developer'
+import { getStaticProps } from '../../pages/developer/index'
 
 function Nav({ contents, show, setShow }: any) {
   return (
@@ -15,7 +15,7 @@ function Nav({ contents, show, setShow }: any) {
       >
         <div
           onClick={setShow}
-          className="z-30 fixed inset-0 bg-gray-600 bg-opacity-75"
+          className="fixed inset-0 z-30 bg-gray-600 bg-opacity-75"
           aria-hidden="true"
         ></div>
       </Transition>
@@ -28,15 +28,15 @@ function Nav({ contents, show, setShow }: any) {
         leaveFrom="translate-x-0"
         leaveTo="-translate-x-full"
       >
-        <div className="fixed inset-0 flex z-40 md:hidden" role="dialog" aria-modal="true">
+        <div className="fixed inset-0 z-40 flex md:hidden" role="dialog" aria-modal="true">
           {/* // capture close clicks */}
           <div className="absolute h-full w-full" onClick={setShow}></div>
           {/* content of mobile menu */}
-          <div className="relative flex-1 flex flex-col max-w-xs w-full bg-white dark:bg-gray-800">
+          <div className="relative flex w-full max-w-xs flex-1 flex-col bg-white dark:bg-gray-800">
             {contents}
           </div>
 
-          <div className="flex-shrink-0 w-14">
+          <div className="w-14 flex-shrink-0">
             {/* <!-- Force sidebar to shrink to fit close icon --> */}
           </div>
         </div>

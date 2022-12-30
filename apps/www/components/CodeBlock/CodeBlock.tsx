@@ -1,5 +1,5 @@
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter'
-import monokaiCustomTheme from '../../data/CodeEditorTheme'
+import monokaiCustomTheme from '../../@wesbitty/data/CodeEditorTheme'
 import CodeBlockStyles from './CodeBlock.module.css'
 import { Button, IconCopy } from '@wesbitty/ui'
 import CopyToClipboard from 'react-copy-to-clipboard'
@@ -64,7 +64,7 @@ function CodeBlock(props: Props) {
         {props.children}
       </SyntaxHighlighter>
       {!props.hideCopy && props.children ? (
-        <div className="absolute right-2 top-2 dark">
+        <div className="dark absolute right-2 top-2">
           <CopyToClipboard text={props.children}>
             <Button type="outline" className="dark:bg-dark-800" icon={<IconCopy />}>
               Copy

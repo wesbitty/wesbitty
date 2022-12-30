@@ -1,5 +1,5 @@
 import { NextSeo } from 'next-seo'
-import { getSortedPosts, getAllCategories } from '../../../lib/posts'
+import { getSortedPosts, getAllCategories } from '../../../@wesbitty/lib/posts'
 
 import DefaultLayout from '../../../components/Layouts/Default'
 import BlogListItem from '../../../components/Blog/BlogListItem'
@@ -36,7 +36,7 @@ function TagBlogsPage(props: Props) {
       <NextSeo title="Blog" description="Latest news from the Wesbitty team." />
       <DefaultLayout>
         <BlogHeader title={`${tag} posts`} />
-        <div className="mt-12 max-w-lg mx-auto grid lg:grid-cols-1 lg:max-w-none">
+        <div className="mx-auto mt-12 grid max-w-lg lg:max-w-none lg:grid-cols-1">
           {blogs.map((blog: PostTypes, idx: number) => (
             <BlogListItem blog={blog} key={idx} />
           ))}

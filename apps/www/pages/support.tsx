@@ -16,7 +16,7 @@ import {
   Divider,
   IconMail,
 } from '@wesbitty/ui'
-import Examples from '../data/Examples.json'
+import Examples from '../@wesbitty/data/Examples.json'
 import ExampleCard from '../components/ExampleCard'
 import Features from '../components/Features/index'
 import BuiltExamples from '../components/WesbittyMaker/index'
@@ -47,14 +47,14 @@ const Index = ({}: Props) => {
                 </p>
               </Typography.Text>
             </div>
-            <div className="grid sm:grid-cols-3 md:grid-cols-12 gap-5 mt-16">
+            <div className="mt-16 grid gap-5 sm:grid-cols-3 md:grid-cols-12">
               <div className="col-span-12 lg:col-span-6 xl:col-span-4">
                 <div
-                  className="h-40 bg-white dark:bg-gray-700 
-                    border-t border-r border-l border-gray-100 dark:border-gray-600
-                    p-5
-                    flex flex-col justify-between
-                    rounded rounded-b-none
+                  className="flex h-40 flex-col 
+                    justify-between rounded rounded-b-none border-t border-r
+                    border-l
+                    border-gray-100 bg-white p-5
+                    dark:border-gray-600 dark:bg-gray-700
                     "
                 >
                   <div className="mb-4">
@@ -76,11 +76,11 @@ const Index = ({}: Props) => {
                 <div>
                   <div
                     className="
-                    bg-white dark:bg-gray-800 
-                    border-b border-r border-l border-gray-100 dark:border-gray-600
-                    p-5
-                    flex flex-col justify-between
-                    rounded rounded-t-none"
+                    flex flex-col 
+                    justify-between rounded rounded-t-none border-b border-r
+                    border-l
+                    border-gray-100 bg-white p-5
+                    dark:border-gray-600 dark:bg-gray-800"
                   >
                     <Space className="">
                       <Link
@@ -99,11 +99,11 @@ const Index = ({}: Props) => {
               </div>
               <div className="col-span-12 lg:col-span-6 xl:col-span-4">
                 <div
-                  className="h-40 bg-white dark:bg-gray-700 
-                    border-t border-r border-l border-gray-100 dark:border-gray-600
-                    p-5
-                    flex flex-col justify-between
-                    rounded rounded-b-none
+                  className="flex h-40 flex-col 
+                    justify-between rounded rounded-b-none border-t border-r
+                    border-l
+                    border-gray-100 bg-white p-5
+                    dark:border-gray-600 dark:bg-gray-700
                     "
                 >
                   <div className="mb-4">
@@ -125,11 +125,11 @@ const Index = ({}: Props) => {
                 <div>
                   <div
                     className="
-                    bg-white dark:bg-gray-800 
-                    border-b border-r border-l border-gray-100 dark:border-gray-600
-                    p-5
-                    flex flex-col justify-between
-                    rounded rounded-t-none"
+                    flex flex-col 
+                    justify-between rounded rounded-t-none border-b border-r
+                    border-l
+                    border-gray-100 bg-white p-5
+                    dark:border-gray-600 dark:bg-gray-800"
                   >
                     <Space className="">
                       <Link
@@ -149,11 +149,11 @@ const Index = ({}: Props) => {
 
               <div className="col-span-12 lg:col-span-6 xl:col-span-4">
                 <div
-                  className="h-40 bg-white dark:bg-gray-700 
-                    border-t border-r border-l border-gray-100 dark:border-gray-600
-                    p-5
-                    flex flex-col justify-between
-                    rounded rounded-b-none
+                  className="flex h-40 flex-col 
+                    justify-between rounded rounded-b-none border-t border-r
+                    border-l
+                    border-gray-100 bg-white p-5
+                    dark:border-gray-600 dark:bg-gray-700
                     "
                 >
                   <div className="mb-4">
@@ -176,11 +176,11 @@ const Index = ({}: Props) => {
                 <div>
                   <div
                     className="
-                    bg-white dark:bg-gray-800 
-                    border-b border-r border-l border-gray-100 dark:border-gray-600
-                    p-5
-                    flex flex-col justify-between
-                    rounded rounded-t-none"
+                    flex flex-col 
+                    justify-between rounded rounded-t-none border-b border-r
+                    border-l
+                    border-gray-100 bg-white p-5
+                    dark:border-gray-600 dark:bg-gray-800"
                   >
                     <Space className="">
                       <a href="mailto:wesbitty@outlook.com">

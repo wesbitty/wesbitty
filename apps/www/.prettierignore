@@ -1,10 +1,7 @@
+.expo
 node_modules
-
+docker*
+dist*
 .next
 .wesjet
-
 package-lock.json
-
-docker*
-
-dist*

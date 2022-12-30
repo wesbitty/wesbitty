@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router'
 import SectionHeader from '../UI/SectionHeader'
-import ProjectExamples from '../../data/ProjectExamples.json'
+import ProjectExamples from '../../@wesbitty/data/ProjectExamples.json'
 import { Button, Card, Typography, Space, IconGitHub } from '@wesbitty/ui'
 import SectionContainer from '../Layouts/SectionContainer'
 import ExampleCard from '../ExampleCard'
 
-import Examples from 'data/Examples.json'
+import Examples from '@wesbitty/data/Examples.json'
 import Link from 'next/link'
 // import Button from '../Button'
 
@@ -20,7 +20,10 @@ const BuiltExamples = () => {
             There are many example apps and starter projects to get going
           </p>
           <Space className="justify-center">
-            <Link href="https://github.com/wesbitty/wesbitty/tree/master/examples" as="https://github.com/wesbitty/wesbitty/tree/master/examples">
+            <Link
+              href="https://github.com/wesbitty/wesbitty/tree/master/examples"
+              as="https://github.com/wesbitty/wesbitty/tree/master/examples"
+            >
               <a>
                 <Button type="default">View all examples</Button>
               </a>
@@ -38,7 +41,7 @@ const BuiltExamples = () => {
           </Space>
         </Typography.Text>
       </div>
-      <div className="grid grid-cols-12 gap-5 mt-16">
+      <div className="mt-16 grid grid-cols-12 gap-5">
         {Examples.slice(0, 6).map((example, i) => {
           return (
             <div

@@ -51,9 +51,9 @@ const ImageGrid = ({ images, smCols = 3, mdCols = 6, lgCols = 8 }: iImageGrid) =
         return (
           <div
             key={`${x.name}-${i}`}
-            className="col-span-1 flex items-center justify-center bg-gray-50 dark:bg-gray-700 p-8"
+            className="col-span-1 flex items-center justify-center bg-gray-50 p-8 dark:bg-gray-700"
           >
-            <div className="relative overflow-auto w-full h-8 p-8">
+            <div className="relative h-8 w-full overflow-auto p-8">
               <Image
                 layout="fill"
                 src={`${x.image}`}
@@ -62,9 +62,9 @@ const ImageGrid = ({ images, smCols = 3, mdCols = 6, lgCols = 8 }: iImageGrid) =
                 objectPosition="center"
                 className="
                       bg-no-repeat
-                    filter 
+                    opacity-50 
                     contrast-0
-                    opacity-50
+                    filter
                   "
               />
             </div>

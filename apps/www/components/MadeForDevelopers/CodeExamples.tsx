@@ -9,8 +9,8 @@ import {
   createExample,
   updateExample,
   ExampleProps,
-} from 'data/CodeExamples'
-import monokaiCustomTheme from 'data/CodeEditorTheme'
+} from '@wesbitty/data/CodeExamples'
+import monokaiCustomTheme from '@wesbitty/data/CodeEditorTheme'
 import { Button, IconCopy, Space, Tabs } from '@wesbitty/ui'
 
 SyntaxHighlighter.registerLanguage('javascript', js)
@@ -133,8 +133,8 @@ const CodeExamples = () => {
         <div className="col-span-12 text-center lg:col-span-3 lg:hidden">{<TabNav />}</div>
         <div className="col-span-12 lg:col-span-9">
           <div className="rounded-md rounded-b-lg bg-dark-600 dark:bg-dark-700">
-            <div className="p-2 pl-5 flex justify-between items-center">
-              <p className="text-sm truncate mr-2 sm:text-base text-dark-100">
+            <div className="flex items-center justify-between p-2 pl-5">
+              <p className="mr-2 truncate text-sm text-dark-100 sm:text-base">
                 {exampleList[example].description}
               </p>
               <div className="dark">
@@ -177,7 +177,7 @@ const CodeExamples = () => {
             </SyntaxHighlighter>
           </div>
         </div>
-        <div className="col-span-12 text-center hidden lg:col-span-3 lg:block">{<Buttons />}</div>
+        <div className="col-span-12 hidden text-center lg:col-span-3 lg:block">{<Buttons />}</div>
       </div>
     </div>
   )

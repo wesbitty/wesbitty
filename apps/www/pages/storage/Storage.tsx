@@ -10,10 +10,10 @@ import {
   Space,
   Typography,
 } from '@wesbitty/ui'
-import ApiExamples from 'data/products/storage/api-examples'
-import DashboardViewData from 'data/products/storage/dashboard-carousel.json'
-import StoragePermissionsData from 'data/products/storage/permissions-examples'
-import Solutions from 'data/Solutions.json'
+import ApiExamples from '@wesbitty/data/products/storage/api-examples'
+import DashboardViewData from '@wesbitty/data/products/storage/dashboard-carousel.json'
+import StoragePermissionsData from '@wesbitty/data/products/storage/permissions-examples'
+import Solutions from '@wesbitty/data/Solutions.json'
 import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
@@ -68,7 +68,7 @@ function StoragePage() {
             'With custom policies and permissions that are familiar and easy to implement.',
           ]}
           image={[
-            <div className="w-full header--light block">
+            <div className="header--light block w-full">
               <Image
                 src={`${basePath}/images/product/storage/header--light.png`}
                 alt="storage header"
@@ -77,7 +77,7 @@ function StoragePage() {
                 height="1067"
               />
             </div>,
-            <div className="w-full header--dark mr-0 dark:block">
+            <div className="header--dark mr-0 w-full dark:block">
               <Image
                 src={`${basePath}/images/product/storage/header--dark.png`}
                 alt="storage header"
@@ -91,7 +91,7 @@ function StoragePage() {
 
         <SectionContainer>
           <div className="grid grid-cols-12">
-            <div className="mb-10 lg:mb-0 col-span-12 lg:col-span-3">
+            <div className="col-span-12 mb-10 lg:col-span-3 lg:mb-0">
               <Typography.Text>
                 <p className="mb-4">
                   <Space>
@@ -114,7 +114,7 @@ function StoragePage() {
               </p> */}
               </Typography.Text>
             </div>
-            <div className="mb-10 lg:mb-0 col-span-12 lg:col-span-3 lg:col-start-5">
+            <div className="col-span-12 mb-10 lg:col-span-3 lg:col-start-5 lg:mb-0">
               <Typography.Text>
                 <p>
                   <Space>
@@ -213,8 +213,8 @@ function StoragePage() {
               </p>,
             ]}
             footer={[
-              <div className="grid grid-cols-12 gap-8 lg:gap-0 xl:gap-16 my-8">
-                <div className="col-span-6 lg:col-span-12 lg:mb-8 xl:mb-0 xl:col-span-4">
+              <div className="my-8 grid grid-cols-12 gap-8 lg:gap-0 xl:gap-16">
+                <div className="col-span-6 lg:col-span-12 lg:mb-8 xl:col-span-4 xl:mb-0">
                   <FeatureColumn
                     icon={<IconWifi />}
                     title="CDN"
@@ -249,7 +249,7 @@ function StoragePage() {
 
                 <SectionContainer>
                   <div className="grid grid-cols-12 lg:gap-16">
-                    <div className="col-span-12 lg:col-span-5 mb-8">
+                    <div className="col-span-12 mb-8 lg:col-span-5">
                       <Typography.Title level={2}>
                         Integrates natively <br />
                         with Supabase Auth

@@ -1,5 +1,5 @@
 import { Badge, Space, Typography } from '@wesbitty/ui'
-import authors from '../../lib/authors.json'
+import authors from '../../@wesbitty/lib/authors.json'
 import Link from 'next/link'
 import React from 'react'
 import PostTypes from '../../@wesbitty/config/post'
@@ -12,7 +12,7 @@ const BlogListItem = ({ blog }: Props) => {
   // @ts-ignore
   const author = blog.author ? authors[blog.author] : authors['wesbitty']
   return (
-    <div key={blog.slug} className="pt-4 pb-12 border-b border-gray-100 dark:border-gray-600 mb-8">
+    <div key={blog.slug} className="mb-8 border-b border-gray-100 pt-4 pb-12 dark:border-gray-600">
       <div className="mx-auto max-w-7xl cursor-pointer">
         <a href={`/blog/${blog.url}`}>
           <a className="inline-block">
@@ -48,7 +48,7 @@ const BlogListItem = ({ blog }: Props) => {
                 <div>
                   <Space size={4}>
                     {author.author_image_url && (
-                      <img src={author.author_image_url} className="rounded-full w-10" />
+                      <img src={author.author_image_url} className="w-10 rounded-full" />
                     )}
                     <Space direction="vertical" size={0}>
                       <Typography.Text>{author.author}</Typography.Text>

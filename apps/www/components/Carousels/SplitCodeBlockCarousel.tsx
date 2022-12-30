@@ -45,7 +45,7 @@ function SplitCodeBlockCarousel(props: SplitCodeBlockCarousel) {
   const details = (
     <div className="">
       <Typography.Text>
-        <span className="block text-white mb-8">Allow fetch something</span>
+        <span className="mb-8 block text-white">Allow fetch something</span>
       </Typography.Text>
       <Typography.Text type="secondary">
         <p>
@@ -60,7 +60,7 @@ function SplitCodeBlockCarousel(props: SplitCodeBlockCarousel) {
   )
 
   return (
-    <div className="col-span-12 lg:col-span-6 lg:col-start-7 sbui-tabs--alt">
+    <div className="sbui-tabs--alt col-span-12 lg:col-span-6 lg:col-start-7">
       <Tabs
         scrollable
         // @ts-ignore
@@ -76,7 +76,7 @@ function SplitCodeBlockCarousel(props: SplitCodeBlockCarousel) {
           )
         })}
       </Tabs>
-      <div className="border border-gray-100 dark:border-gray-600 rounded-md bg-gray-800 overflow-hidden">
+      <div className="overflow-hidden rounded-md border border-gray-100 bg-gray-800 dark:border-gray-600">
         <Swiper
           // @ts-ignore
           onSwiper={setApiSwiper}
@@ -99,7 +99,7 @@ function SplitCodeBlockCarousel(props: SplitCodeBlockCarousel) {
           })}
         </Swiper>
 
-        <div className="overflow-hidden bg-gray-800 p-8 dark rounded-md border border-t-none border-t-0 border-gray-600">
+        <div className="border-t-none dark overflow-hidden rounded-md border border-t-0 border-gray-600 bg-gray-800 p-8">
           <Swiper
             // @ts-ignore
             onSwiper={setSwiperDetails}
@@ -117,11 +117,11 @@ function SplitCodeBlockCarousel(props: SplitCodeBlockCarousel) {
                 <SwiperSlide key={i}>
                   <div className="">
                     <Typography.Text>
-                      <span className="block text-lg text-white mb-4">
+                      <span className="mb-4 block text-lg text-white">
                         {extension.detail_title}
                       </span>
                     </Typography.Text>
-                    <Typography.Text type="secondary" className="block mb-6">
+                    <Typography.Text type="secondary" className="mb-6 block">
                       <p>{extension.detail_text}</p>
                     </Typography.Text>
                     <Space className="justify-between">

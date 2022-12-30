@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import Benchmark from './benchmark'
 import SectionHeader from '../UI/SectionHeader'
-import CaseStudiesData from '../../data/CaseStudies.json'
+import CaseStudiesData from '../../@wesbitty/data/CaseStudies.json'
 import { Card, Space, Typography } from '@wesbitty/ui'
 import SectionContainer from '../Layouts/SectionContainer'
 
@@ -20,7 +20,7 @@ const CaseStudies = () => {
           }
         />
       </div>
-      <div className="mt-5 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+      <div className="mx-auto mt-5 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
         {CaseStudiesData.map((caseStudy: any, idx: number) => (
           <a href={caseStudy.url} key={idx}>
             <Card
@@ -28,7 +28,7 @@ const CaseStudies = () => {
               hoverable
               cover={<img src={`${basePath}/${caseStudy.imgUrl}`} className="h-64 object-cover" />}
             >
-              <Space className="justify-between h-40" direction="vertical">
+              <Space className="h-40 justify-between" direction="vertical">
                 <div>
                   <Typography.Text small type="secondary">
                     Project example

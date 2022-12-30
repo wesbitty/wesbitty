@@ -34,7 +34,7 @@ function APISection(props: Props) {
 
   return (
     <div className="grid grid-cols-12 lg:gap-16">
-      <div className="col-span-12 lg:col-span-5 xl:col-span-5 pb-8">
+      <div className="col-span-12 pb-8 lg:col-span-5 xl:col-span-5">
         <Typography.Title level={2}>{props.title}</Typography.Title>
         <Typography.Text>{props.text}</Typography.Text>
         {props.documentation_link && (
@@ -48,7 +48,7 @@ function APISection(props: Props) {
         )}
         {props.footer && <div className="py-8">{props.footer}</div>}
       </div>
-      <div className="col-span-12 lg:col-span-7 xl:col-span-6 xl:col-start-7 sbui-tabs--alt">
+      <div className="sbui-tabs--alt col-span-12 lg:col-span-7 xl:col-span-6 xl:col-start-7">
         <Tabs
           scrollable
           activeId={apiSwiperActiveIndex.toString()}
@@ -61,7 +61,7 @@ function APISection(props: Props) {
               </Tabs.Panel>
             ))}
         </Tabs>
-        <div className="bg-gray-800 overflow-hidden">
+        <div className="overflow-hidden bg-gray-800">
           <Swiper
             // @ts-ignore
             onSwiper={setApiSwiper}

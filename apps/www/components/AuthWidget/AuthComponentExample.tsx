@@ -51,7 +51,7 @@ function AuthComponentExample() {
         </Tabs.Panel>
       </Tabs> */}
       <div
-        className={`relative bg-white dark:bg-gray-800 py-2 pb-16 border dark:border-gray-600 auth-container`}
+        className={`auth-container relative border bg-white py-2 pb-16 dark:border-gray-600 dark:bg-gray-800`}
       >
         <Swiper
           // @ts-ignore

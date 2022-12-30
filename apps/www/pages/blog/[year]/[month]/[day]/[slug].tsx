@@ -1,6 +1,6 @@
 import { Badge, Card, Divider, IconFile, Space, Typography } from '@wesbitty/ui'
 import matter from 'gray-matter'
-import authors from 'lib/authors.json'
+import authors from '@wesbitty/lib/authors.json'
 import hydrate from 'next-mdx-remote/hydrate'
 import renderToString from 'next-mdx-remote/render-to-string'
 import { NextSeo } from 'next-seo'
@@ -13,8 +13,8 @@ import CTABanner from 'components/CTABanner'
 import DefaultLayout from 'components/Layouts/Default'
 import Quote from 'components/Quote'
 import ImageGrid from 'components/ImageGrid'
-import { generateReadingTime } from 'lib/helpers'
-import { getAllPostSlugs, getPostdata, getSortedPosts } from 'lib/posts'
+import { generateReadingTime } from '@wesbitty/lib/helpers'
+import { getAllPostSlugs, getPostdata, getSortedPosts } from '@wesbitty/lib/posts'
 import blogStyles from './[slug].module.css'
 
 // import all components used in blog articles here
@@ -174,15 +174,15 @@ function BlogPostPage(props: any) {
         }}
       />
       <DefaultLayout>
-        <div className="bg-white dark:bg-dark-800 overflow-hidden mb-12">
-          <div className="container px-8 sm:px-16 xl:px-20 lg:mt-16 mx-auto">
-            <div className="max-w-6xl mx-auto">
-              <div className="lg:py-12 grid grid-cols-12 lg:gap-16">
+        <div className="mb-12 overflow-hidden bg-white dark:bg-dark-800">
+          <div className="container mx-auto px-8 sm:px-16 lg:mt-16 xl:px-20">
+            <div className="mx-auto max-w-6xl">
+              <div className="grid grid-cols-12 lg:gap-16 lg:py-12">
                 <div className="col-span-12 lg:col-span-10">
                   <Link href={`/blog`} as={`/blog`}>
                     <a>
                       <Typography.Text type="secondary">
-                        <span className="hover:text-gray-900 dark:hover:text-white cursor-pointer">
+                        <span className="cursor-pointer hover:text-gray-900 dark:hover:text-white">
                           View more posts
                         </span>
                       </Typography.Text>
@@ -200,7 +200,7 @@ function BlogPostPage(props: any) {
                     <div className="mt-6 mb-8 lg:mb-0">
                       <Space size={4}>
                         {author.author_image_url && (
-                          <img src={author.author_image_url} className="rounded-full w-10" />
+                          <img src={author.author_image_url} className="w-10 rounded-full" />
                         )}
                         <Space direction="vertical" size={0}>
                           <Typography.Text>{author.author}</Typography.Text>
@@ -216,14 +216,14 @@ function BlogPostPage(props: any) {
             </div>
           </div>
         </div>
-        <div className="container px-8 sm:px-16 xl:px-20 py-16 mx-auto">
-          <div className="max-w-6xl mx-auto">
-            <div className="py-4 grid grid-cols-12 lg:gap-16">
+        <div className="container mx-auto px-8 py-16 sm:px-16 xl:px-20">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid grid-cols-12 py-4 lg:gap-16">
               <div className="col-span-12 lg:col-span-8">
                 {props.blog.thumb && (
                   <img
                     src={'/images/blog/' + props.blog.thumb}
-                    className="object-cover -mt-32 mb-8 border dark:border-gray-600"
+                    className="-mt-32 mb-8 border object-cover dark:border-gray-600"
                     style={{ maxHeight: '520px', width: '100%' }}
                   />
                 )}
@@ -233,7 +233,7 @@ function BlogPostPage(props: any) {
                 </article>
               </div>
               <div className="col-span-12 lg:col-span-4">
-                <Space direction="vertical" size={8} className="lg:mb-16 lg:top-16 lg:sticky">
+                <Space direction="vertical" size={8} className="lg:sticky lg:top-16 lg:mb-16">
                   <div className="hidden lg:block">{toc}</div>
                   <div>
                     <Typography.Title className="mb-4" level={5}>
@@ -258,7 +258,7 @@ function BlogPostPage(props: any) {
                       <Link href={`/blog`} as={`/blog`}>
                         <div>
                           <Typography.Text type="secondary">
-                            <span className="hover:text-gray-900 dark:hover:text-white cursor-pointer">
+                            <span className="cursor-pointer hover:text-gray-900 dark:hover:text-white">
                               View all posts
                             </span>
                           </Typography.Text>
@@ -269,7 +269,7 @@ function BlogPostPage(props: any) {
                 </Space>
               </div>
             </div>
-            <div className="grid lg:grid-cols-2 gap-8 py-8">
+            <div className="grid gap-8 py-8 lg:grid-cols-2">
               <div>{props.prevPost && <NextCard post={props.prevPost} label="Last post" />}</div>
               <div>
                 {props.nextPost && (

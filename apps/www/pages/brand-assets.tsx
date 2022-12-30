@@ -6,8 +6,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import SectionContainer from '../components/Layouts/SectionContainer'
 
-
-
 const { Title, Text } = Typography
 
 const Index = () => {
@@ -36,10 +34,10 @@ const Index = () => {
                 <img
                   src={`${basePath}/Logo/logo-preview.jpg`}
                   width="100%"
-                  className="object-cover h-full"
+                  className="h-full object-cover"
                 />
               </div>
-              <div className="col-span-12 lg:col-span-7 flex items-center">
+              <div className="col-span-12 flex items-center lg:col-span-7">
                 <div className="p-16">
                   <div>
                     <Typography.Title level={2}>Wesbitty logos</Typography.Title>

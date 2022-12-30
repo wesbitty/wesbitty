@@ -16,7 +16,7 @@ import {
   IconArrowRight,
 } from '@wesbitty/ui'
 
-import Examples from '../../data/tweets/Tweets.json'
+import Examples from '../../@wesbitty/data/tweets/Tweets.json'
 import TweetCard from '../TweetCard'
 
 // Import Swiper styles
@@ -49,7 +49,7 @@ function TwitterSocialProof() {
                 href={'https://github.com/wesbitty/wesbitty/discussions'}
                 as={'https://github.com/wesbitty/wesbitty/discussions'}
               >
-                <a className="block text-sm text-gray-400 dark:text-gray-400 mt-3" target="_blank">
+                <a className="mt-3 block text-sm text-gray-400 dark:text-gray-400" target="_blank">
                   <Button size="small" iconRight={<IconMessageCircle size="tiny" />} type="default">
                     GitHub discussions
                   </Button>
@@ -109,13 +109,13 @@ function TwitterSocialProof() {
                 </SwiperSlide>
               )
             })}
-            <div className="container mx-auto hidden md:flex flex-row justify-between mt-3">
-              <div ref={prevRef} className="cursor-pointer ml-4">
+            <div className="container mx-auto mt-3 hidden flex-row justify-between md:flex">
+              <div ref={prevRef} className="ml-4 cursor-pointer">
                 <Typography.Text>
                   <IconArrowLeft />
                 </Typography.Text>
               </div>
-              <div ref={nextRef} className="cursor-pointer mr-4">
+              <div ref={nextRef} className="mr-4 cursor-pointer">
                 <Typography.Text>
                   <IconArrowRight />
                 </Typography.Text>

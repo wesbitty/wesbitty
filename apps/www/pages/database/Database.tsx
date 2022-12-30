@@ -9,11 +9,11 @@ import {
   Typography,
 } from '@wesbitty/ui'
 // data
-import ApiExamplesData from '../../data/products/database/api-examples'
-import ExtensionsExamplesData from '../../data/products/database/extensions-examples'
-import SqlViewCarouselData from '../../data/products/database/sql-view-carousel.json'
-import TableViewCarouselData from '../../data/products/database/table-view-carousel.json'
-import Solutions from '../../data/Solutions.json'
+import ApiExamplesData from '../../@wesbitty/data/products/database/api-examples'
+import ExtensionsExamplesData from '../../@wesbitty/data/products/database/extensions-examples'
+import SqlViewCarouselData from '../../@wesbitty/data/products/database/sql-view-carousel.json'
+import TableViewCarouselData from '../../@wesbitty/data/products/database/table-view-carousel.json'
+import Solutions from '../../@wesbitty/data/Solutions.json'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -85,7 +85,7 @@ function Database() {
             'PostgreSQL is one of the worlds most scalable databases.',
           ]}
           image={[
-            <div className="w-full header--light block">
+            <div className="header--light block w-full">
               <Image
                 src={`${basePath}/images/product/database/header--light-2.png`}
                 alt="database header"
@@ -94,7 +94,7 @@ function Database() {
                 height="1116"
               />
             </div>,
-            <div className="w-full header--dark mr-0 dark:block">
+            <div className="header--dark mr-0 w-full dark:block">
               <Image
                 src={`${basePath}/images/product/database/header--dark-2.png`}
                 alt="database header"
@@ -108,7 +108,7 @@ function Database() {
 
         <SectionContainer>
           <div className="grid grid-cols-12">
-            <div className="mb-10 lg:mb-0 col-span-12 lg:col-span-3">
+            <div className="col-span-12 mb-10 lg:col-span-3 lg:mb-0">
               <Typography.Text>
                 <p className="mb-4">
                   <Space>
@@ -131,7 +131,7 @@ function Database() {
                 </p>
               </Typography.Text>
             </div>
-            <div className="mb-10 lg:mb-0 col-span-12 lg:col-span-3 lg:col-start-5">
+            <div className="col-span-12 mb-10 lg:col-span-3 lg:col-start-5 lg:mb-0">
               <Typography.Text>
                 <p className="mb-4">
                   <Space>
@@ -264,7 +264,7 @@ function Database() {
             ]}
             footer={[
               <div className="grid grid-cols-12">
-                <div className="mt-0 col-span-12 lg:col-span-6 xl:col-span-12 xl:mb-8">
+                <div className="col-span-12 mt-0 lg:col-span-6 xl:col-span-12 xl:mb-8">
                   <Space>
                     <Typography.Text type="secondary">
                       <p className="m-0">Libraries coming soon:</p>{' '}
@@ -283,7 +283,7 @@ function Database() {
                     </Badge>
                   </Space>
                 </div>
-                <div className="col-span-12 lg:col-span-6 xl:col-span-10 hidden xl:block">
+                <div className="col-span-12 hidden lg:col-span-6 xl:col-span-10 xl:block">
                   {/* <TweetCard
                     handle="@eunjae_lee"
                     img_url="https://pbs.twimg.com/profile_images/1188191474401320965/eGjSYbQd_400x400.jpg"
@@ -316,9 +316,9 @@ function Database() {
 
         <SectionContainer className="lg:py-48">
           <div className="grid grid-cols-12 lg:gap-16">
-            <div className="col-span-12 lg:col-span-6 xl:col-span-5 mb-8">
+            <div className="col-span-12 mb-8 lg:col-span-6 xl:col-span-5">
               <Typography.Title level={2}>Extend your database</Typography.Title>
-              <Typography.Text className="block mb-8">
+              <Typography.Text className="mb-8 block">
                 <p className="lg:text-lg">Wesbitty works natively with Postgres extensions.</p>
                 <p>
                   Choose from a huge collection of Postgres extensions, enabled with a single click.
@@ -336,7 +336,7 @@ function Database() {
                 </a>
               </Link>
             </div>
-            <div className="mt-8 lg:mt-0 col-span-12 lg:col-span-6 lg:col-start-7">
+            <div className="col-span-12 mt-8 lg:col-span-6 lg:col-start-7 lg:mt-0">
               <SplitCodeBlockCarousel
                 // @ts-ignore
                 content={ExtensionsExamplesData}

@@ -17,7 +17,7 @@ import {
   IconBookOpen,
 } from '@wesbitty/ui'
 
-import Examples from '../../data/Examples.json'
+import Examples from '../../@wesbitty/data/Examples.json'
 import ExampleCard from '../ExampleCard'
 
 // install Swiper modules
@@ -37,12 +37,12 @@ function GithubExamples() {
           <Typography.Title level={2}>
             Community driven examples, libraries and guides
           </Typography.Title>
-          <Typography.Text className="block mb-6">
+          <Typography.Text className="mb-6 block">
             <p className="text-base lg:text-lg">
               Supported by a network of early advocates, contributors, and champions.
             </p>
           </Typography.Text>
-          <div className="flex space-y-1.5 flex-col lg:space-y-0 lg:space-x-1.5 lg:flex-row justify-center">
+          <div className="flex flex-col justify-center space-y-1.5 lg:flex-row lg:space-y-0 lg:space-x-1.5">
             <Link href="/docs/guides/examples#guides" as="/docs/guides/examples#guides">
               <a>
                 <Button type="default" icon={<IconBookOpen />}>
@@ -115,13 +115,13 @@ function GithubExamples() {
                 </SwiperSlide>
               )
             })}
-            <div className="container mx-auto hidden md:flex flex-row justify-between mt-3">
-              <div ref={prevRef} className="cursor-pointer ml-4">
+            <div className="container mx-auto mt-3 hidden flex-row justify-between md:flex">
+              <div ref={prevRef} className="ml-4 cursor-pointer">
                 <Typography.Text>
                   <IconArrowLeft />
                 </Typography.Text>
               </div>
-              <div ref={nextRef} className="cursor-pointer mr-4">
+              <div ref={nextRef} className="mr-4 cursor-pointer">
                 <Typography.Text>
                   <IconArrowRight />
                 </Typography.Text>

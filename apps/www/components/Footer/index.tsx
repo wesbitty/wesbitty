@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import FooterLinks from '../../data/Footer.json'
+import FooterLinks from '../../@wesbitty/data/Footer.json'
 import SectionContainer from '../Layouts/SectionContainer'
 import DarkModeToggle from '../DarkModeToggle'
 
@@ -14,7 +14,7 @@ const Footer = (props: Props) => {
 
   return (
     <footer
-      className="bg-white dark:bg-dark-800 border-t border-gray-100 dark:border-gray-600"
+      className="border-t border-gray-100 bg-white dark:border-gray-600 dark:bg-dark-800"
       aria-labelledby="footerHeading"
     >
       <h2 id="footerHeading" className="sr-only">
@@ -63,7 +63,7 @@ const Footer = (props: Props) => {
               </a>
             </div>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 xl:mt-0 xl:col-span-2">
+          <div className="mt-12 grid grid-cols-1 gap-8 xl:col-span-2 xl:mt-0">
             <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
               {FooterLinks.map((segment: any) => {
                 return (
@@ -96,7 +96,7 @@ const Footer = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="mt-32 border-t dark:border-dark pt-8 flex justify-between">
+        <div className="mt-32 flex justify-between border-t pt-8 dark:border-dark">
           <p className="text-base text-gray-400 dark:text-dark-400">&copy; Wesbitty, Inc.</p>
           <DarkModeToggle darkMode={darkMode} updateTheme={updateTheme} />
         </div>
