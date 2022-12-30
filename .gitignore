@@ -5,6 +5,9 @@ dist*
 # wesjet cache
 .wesjet
 
+apps/docs*
+apps/web
+
 .next
 
 .turbo

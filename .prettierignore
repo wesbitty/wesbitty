@@ -1,6 +1,8 @@
-build
-coverage
-dist
-.wesjet
-.next
+.expo
 node_modules
+docker*
+dist*
+.next
+.wesjet
+build
+package-lock.json
