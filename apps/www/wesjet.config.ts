@@ -1,6 +1,5 @@
 import { defineDocumentType, makeSource } from 'wesjet/maker'
 
-
 const PostsField = defineDocumentType(() => ({
   name: 'PostsField',
   filePathPattern: `**/*.mdx`,
