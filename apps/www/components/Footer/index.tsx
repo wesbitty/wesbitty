@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import FooterLinks from '~/@wesbitty/data/Footer.json'
+import FooterLinks from '../../@wesbitty/data/Footer.json'
 import SectionContainer from '../Layouts/SectionContainer'
 import DarkModeToggle from '../DarkModeToggle'
 import Link from 'next/link'
@@ -30,8 +30,8 @@ const Footer = (props: Props) => {
                   className="w-40"
                   src={
                     darkMode
-                      ? `${basePath}/brand-assets/wesbitty-dark-logo.svg`
-                      : `${basePath}/brand-assets/wesbityy-light-logo.svg`
+                      ? `${basePath}/Logo/wesbitty-dark-logo.svg`
+                      : `${basePath}/Logo/wesbitty-light-logo.svg`
                   }
                   alt="Wesbitty"
                 />

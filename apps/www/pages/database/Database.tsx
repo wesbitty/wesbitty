@@ -7,7 +7,7 @@ import {
   Space,
   Tabs,
   Typography,
-} from '@supabase/ui'
+} from '@wesbitty/ui'
 // data
 import ApiExamplesData from '~/@wesbitty/data/products/database/api-examples'
 import ExtensionsExamplesData from '~/@wesbitty/data/products/database/extensions-examples'

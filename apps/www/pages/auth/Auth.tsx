@@ -10,7 +10,7 @@ import {
   IconX,
   Space,
   Typography,
-} from '@supabase/ui'
+} from '@wesbitty/ui'
 import ApiExamples from '~/@wesbitty/data/products/auth/auth-api-examples'
 import AuthSqlRulesExamples from '~/@wesbitty/data/products/auth/auth-sql-rules-examples'
 import Solutions from '~/@wesbitty/data/Solutions.json'

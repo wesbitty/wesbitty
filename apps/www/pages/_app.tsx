@@ -7,6 +7,7 @@ import Meta from '../components/Favicons'
 import '../styles/index.css'
 import { post } from '../@wesbitty/lib/fetchWrapper'
 
+
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 

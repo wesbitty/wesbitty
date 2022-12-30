@@ -1,4 +1,4 @@
-import { Button, Typography } from '@supabase/ui'
+import { Button, Typography } from '@wesbitty/ui'
 import { useRouter } from 'next/router'
 
 const Benchmark = () => {

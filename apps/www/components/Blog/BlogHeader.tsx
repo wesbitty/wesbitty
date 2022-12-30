@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography } from '@supabase/ui'
+import { Typography } from '@wesbitty/ui'
 
 interface Props {
   title: string

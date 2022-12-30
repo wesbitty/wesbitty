@@ -6,7 +6,7 @@ import SectionContainer from '../Layouts/SectionContainer'
 import ImageCarousel from '../Carousels/ImageCarousel'
 
 import TableViewCarouselData from '~/@wesbitty/data/products/database/table-view-carousel.json'
-import { Typography } from '@supabase/ui'
+import { Typography } from '@wesbitty/ui'
 
 import AdminAccessData from '~/@wesbitty/data/home/admin-access.json'
 

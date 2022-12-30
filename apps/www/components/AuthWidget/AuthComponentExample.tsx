@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
-import { Button, Card, Auth, Space, Tabs, Typography, IconCode, IconSearch } from '@supabase/ui'
+import { Button, Card, Auth, Space, Tabs, Typography, IconCode, IconSearch } from '@wesbitty/ui'
 import CodeBlock from '../CodeBlock/CodeBlock'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -94,7 +94,7 @@ function AuthComponentExample() {
             <div className="p-8">
               <CodeBlock
                 children={`import React, { useState } from 'react'
-import { Auth, Typography, Button } from '@supabase/ui'
+import { Auth, Typography, Button } from '@wesbitty/ui'
 import { createClient } from '@supabase/supabase-js'
 
 export default function app() {

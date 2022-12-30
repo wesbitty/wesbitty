@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { IconHelpCircle, IconWatch, Space, Typography } from '@supabase/ui'
+import { IconHelpCircle, IconWatch, Space, Typography } from '@wesbitty/ui'
 import ReactTooltip from 'react-tooltip'
 import ProductIcon from 'components/ProductIcon'
 

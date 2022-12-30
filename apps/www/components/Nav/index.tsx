@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import { Button, Badge, IconStar } from '@supabase/ui'
+import { Button, Badge, IconStar } from '@wesbitty/ui'
 import FlyOut from '~/components/UI/FlyOut'
 import Transition from '~/@wesbitty/lib/Transition'
 
@@ -200,8 +200,8 @@ const Nav = (props: Props) => {
                         className="w-40"
                         src={
                           darkMode
-                            ? `${basePath}/brand-assets/wesbitty-dark-logo.svg`
-                            : `${basePath}/brand-assets/wesbityy-light-logo.svg`
+                            ? `${basePath}/Logo/wesbitty-dark-logo.svg`
+                            : `${basePath}/Logo/wesbitty-light-logo.svg`
                         }
                         alt="Logo"
                       />

@@ -1,4 +1,4 @@
-import { Space, Typography } from '@supabase/ui'
+import { Space, Typography } from '@wesbitty/ui'
 import authors from '~/@wesbitty/lib/authors.json'
 import React from 'react'
 import Image from 'next/image'

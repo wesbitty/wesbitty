@@ -15,7 +15,7 @@ import {
   IconGitHub,
   Divider,
   IconMail,
-} from '@supabase/ui'
+} from '@wesbitty/ui'
 import Examples from '~/@wesbitty/data/Examples.json'
 import ExampleCard from 'components/ExampleCard'
 import Features from 'components/Features/index'

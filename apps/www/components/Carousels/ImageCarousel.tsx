@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { Tabs, Typography, Button, IconCornerRightUp, IconArrowUpRight } from '@supabase/ui'
+import { Tabs, Typography, Button, IconCornerRightUp, IconArrowUpRight } from '@wesbitty/ui'
 import { useState } from 'react'
 
 // Import Swiper React components

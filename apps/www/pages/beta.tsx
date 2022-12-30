@@ -115,7 +115,7 @@ const Hero = () => {
     >
       <div className="container mx-auto px-8 lg:px-28 py-20 h-full grid grid-cols-12 gap-4 items-center text-dark-300">
         <div className="col-span-12 md:col-span-9 lg:col-span-8 xl:col-span-6 text-white">
-          <p className="mb-10 text-4xl">Supabase is an open source Firebase alternative.</p>
+          <p className="mb-10 text-4xl">Wesbitty is an open source Firebase alternative.</p>
           <p className="text-2xl">
             Today, we're moving to <span className="text-brand-700">Beta</span>
           </p>
@@ -174,7 +174,7 @@ const Introduction = () => {
             >
               TAYFA
             </a>{' '}
-            are using Supabase to ship more products, faster.
+            are using Wesbitty to ship more products, faster.
           </p>
         </div>
 
@@ -344,7 +344,7 @@ const Performance = () => {
         <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10 items-center">
           <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
             <p className="mb-10">
-              We started Supabase to give developers a web-ready database that is delightful to use,
+              We started Wesbitty to give developers a web-ready database that is delightful to use,
               without sacrificing speed and scale. Postgres makes this possible, handling massive
               amounts of data without sacrificing read and write speed.
             </p>

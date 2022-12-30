@@ -2,7 +2,7 @@ import Container from 'components/Container'
 import { createClient } from '@supabase/supabase-js'
 import Layout from '~/components/Layouts/Default'
 import CTABanner from 'components/CTABanner/index'
-import { Button, Typography, IconDownload } from '@supabase/ui'
+import { Button, Typography, IconDownload } from '@wesbitty/ui'
 
 import Link from 'next/link'
 import { useRouter } from 'next/router'

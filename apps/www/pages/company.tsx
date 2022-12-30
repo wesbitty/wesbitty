@@ -25,7 +25,7 @@ import {
   IconTwitter,
   Space,
   Typography,
-} from '@supabase/ui'
+} from '@wesbitty/ui'
 import { NextSeo } from 'next-seo'
 
 type Props = {}

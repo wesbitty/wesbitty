@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import announcement from '~/@wesbitty/data/Announcement.json'
-import { IconChevronRight, IconX } from '@supabase/ui'
+import { IconChevronRight, IconX } from '@wesbitty/ui'
 import { useRouter } from 'next/router'
 
 const Announcement = () => {

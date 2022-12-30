@@ -5,7 +5,7 @@ import DefaultLayout from 'components/Layouts/Default'
 import BlogListItem from 'components/Blog/BlogListItem'
 import PostTypes from '~/@wesbitty/types/post'
 import BlogHeader from 'components/Blog/BlogHeader'
-import { Typography } from '@supabase/ui'
+import { Typography } from '@wesbitty/ui'
 
 export async function getStaticProps({ params }: any) {
   const posts = getSortedPosts('_postsField', 0, [params.tag])
