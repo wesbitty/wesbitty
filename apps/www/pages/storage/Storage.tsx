@@ -9,11 +9,11 @@ import {
   IconX,
   Space,
   Typography,
-} from '@wesbitty/ui'
-import ApiExamples from '@wesbitty/data/products/storage/api-examples'
-import DashboardViewData from '@wesbitty/data/products/storage/dashboard-carousel.json'
-import StoragePermissionsData from '@wesbitty/data/products/storage/permissions-examples'
-import Solutions from '@wesbitty/data/Solutions.json'
+} from '@supabase/ui'
+import ApiExamples from '~/@wesbitty/data/products/storage/api-examples'
+import DashboardViewData from '~/@wesbitty/data/products/storage/dashboard-carousel.json'
+import StoragePermissionsData from '~/@wesbitty/data/products/storage/permissions-examples'
+import Solutions from '~/@wesbitty/data/Solutions.json'
 import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
@@ -68,7 +68,7 @@ function StoragePage() {
             'With custom policies and permissions that are familiar and easy to implement.',
           ]}
           image={[
-            <div className="header--light block w-full">
+            <div className="w-full header--light block">
               <Image
                 src={`${basePath}/images/product/storage/header--light.png`}
                 alt="storage header"
@@ -77,7 +77,7 @@ function StoragePage() {
                 height="1067"
               />
             </div>,
-            <div className="header--dark mr-0 w-full dark:block">
+            <div className="w-full header--dark mr-0 dark:block">
               <Image
                 src={`${basePath}/images/product/storage/header--dark.png`}
                 alt="storage header"
@@ -91,7 +91,7 @@ function StoragePage() {
 
         <SectionContainer>
           <div className="grid grid-cols-12">
-            <div className="col-span-12 mb-10 lg:col-span-3 lg:mb-0">
+            <div className="mb-10 lg:mb-0 col-span-12 lg:col-span-3">
               <Typography.Text>
                 <p className="mb-4">
                   <Space>
@@ -106,7 +106,7 @@ function StoragePage() {
               <Typography.Title level={4}>Interoperable</Typography.Title>
               <Typography.Text>
                 <p className="text-lg">
-                  Integrates well with the rest of Wesbitty ecosystem, including Auth and Postgres.
+                  Integrates well with the rest of Supabase ecosystem, including Auth and Postgres.
                 </p>
                 {/* <p>
                 Familiar and easy to use permissions mean that your content is secure and accessible
@@ -114,7 +114,7 @@ function StoragePage() {
               </p> */}
               </Typography.Text>
             </div>
-            <div className="col-span-12 mb-10 lg:col-span-3 lg:col-start-5 lg:mb-0">
+            <div className="mb-10 lg:mb-0 col-span-12 lg:col-span-3 lg:col-start-5">
               <Typography.Text>
                 <p>
                   <Space>
@@ -185,7 +185,7 @@ function StoragePage() {
                   'Update a user account with public profile information, including uploading a profile image.'
                 }
                 author={'supabase'}
-                author_url={'https://github.com/supabase'}
+                author_url={'https://github.com/wesbitty'}
                 author_img={'https://avatars.githubusercontent.com/u/54469796'}
                 repo_name={'nextjs-ts-user-management'}
                 repo_url={
@@ -213,8 +213,8 @@ function StoragePage() {
               </p>,
             ]}
             footer={[
-              <div className="my-8 grid grid-cols-12 gap-8 lg:gap-0 xl:gap-16">
-                <div className="col-span-6 lg:col-span-12 lg:mb-8 xl:col-span-4 xl:mb-0">
+              <div className="grid grid-cols-12 gap-8 lg:gap-0 xl:gap-16 my-8">
+                <div className="col-span-6 lg:col-span-12 lg:mb-8 xl:mb-0 xl:col-span-4">
                   <FeatureColumn
                     icon={<IconWifi />}
                     title="CDN"
@@ -249,7 +249,7 @@ function StoragePage() {
 
                 <SectionContainer>
                   <div className="grid grid-cols-12 lg:gap-16">
-                    <div className="col-span-12 mb-8 lg:col-span-5">
+                    <div className="col-span-12 lg:col-span-5 mb-8">
                       <Typography.Title level={2}>
                         Integrates natively <br />
                         with Supabase Auth

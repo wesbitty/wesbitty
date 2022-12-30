@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography } from '@wesbitty/ui'
+import { Typography } from '@supabase/ui'
 
 interface Props {
   title: string
@@ -7,10 +7,12 @@ interface Props {
 
 export default function BlogHeader({ title }: Props) {
   return (
-    <div className="overflow-hidden border-b bg-white py-12 dark:border-gray-600 dark:bg-dark-800">
-      <div className="container mx-auto mt-16 px-8 sm:px-16 xl:px-20">
-        <div className="mx-auto max-w-7xl">
-          <Typography.Title>{title}</Typography.Title>
+    <div className="bg-white dark:bg-dark-800 overflow-hidden pt-4 pb-4 border-b dark:border-gray-600">
+      <div className="container mx-auto px-8 sm:px-16 xl:px-20">
+        <div className="mx-auto">
+          <Typography.Title>
+            <span className="text-3xl">{title}</span>
+          </Typography.Title>
         </div>
       </div>
     </div>

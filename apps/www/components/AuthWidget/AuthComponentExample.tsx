@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
-import { Button, Card, Auth, Space, Tabs, Typography, IconCode, IconSearch } from '@wesbitty/ui'
+import { Button, Card, Auth, Space, Tabs, Typography, IconCode, IconSearch } from '@supabase/ui'
 import CodeBlock from '../CodeBlock/CodeBlock'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-const wesbitty = createClient(
+const supabase = createClient(
   'https://rsnibhkhsbfnncjmwnkj.supabase.co',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNTIxNDE1MywiZXhwIjoxOTMwNzkwMTUzfQ.OQEbAaTfgDdLCCht251P2JRD3QDnui6nsU8N-tZA_Mc'
 )
@@ -51,7 +51,7 @@ function AuthComponentExample() {
         </Tabs.Panel>
       </Tabs> */}
       <div
-        className={`auth-container relative border bg-white py-2 pb-16 dark:border-gray-600 dark:bg-gray-800`}
+        className={`relative bg-white dark:bg-gray-800 py-2 pb-16 border dark:border-gray-600 auth-container`}
       >
         <Swiper
           // @ts-ignore
@@ -74,13 +74,13 @@ function AuthComponentExample() {
                       <Typography.Title level={3}>{'Acme Company'}</Typography.Title>
                     </Space>
                   </div>
-                  <Auth.UserContextProvider supabaseClient={wesbitty}>
-                    <AuthContainer supabaseClient={wesbitty}>
+                  <Auth.UserContextProvider supabaseClient={supabase}>
+                    <AuthContainer supabaseClient={supabase}>
                       <Auth
                         providers={['facebook', 'google', 'github', 'bitbucket', 'gitlab']}
                         socialButtonSize={'medium'}
                         socialLayout={'horizontal'}
-                        supabaseClient={wesbitty}
+                        supabaseClient={supabase}
                         socialColors={false}
                       />
                     </AuthContainer>
@@ -94,12 +94,12 @@ function AuthComponentExample() {
             <div className="p-8">
               <CodeBlock
                 children={`import React, { useState } from 'react'
-import { Auth, Typography, Button } from '@wesbitty/ui'
-import { createClient } from '@wesbitty/wesbitty-js'
+import { Auth, Typography, Button } from '@supabase/ui'
+import { createClient } from '@supabase/supabase-js'
 
 export default function app() {
-  const wesbitty = createClient(
-    "https://YOUR-PROJECT-ID.wesbitty.com",
+  const supabase = createClient(
+    "https://YOUR-PROJECT-ID.supabase.co",
     "YOUR-PUBLIC-ANON-KEY"
   );
 
@@ -119,9 +119,9 @@ export default function app() {
   };
 
   return (
-    <Auth.UserContextProvider supabaseClient={wesbitty}>
-      <Container supabaseClient={wesbitty}>
-        <Auth supabaseClient={wesbitty} />
+    <Auth.UserContextProvider supabaseClient={supabase}>
+      <Container supabaseClient={supabase}>
+        <Auth supabaseClient={supabase} />
       </Container>
     </Auth.UserContextProvider>
   );

@@ -10,31 +10,31 @@ import {
   IconX,
   Space,
   Typography,
-} from '@wesbitty/ui'
-import ApiExamples from '@wesbitty/data/products/auth/auth-api-examples'
-import AuthSqlRulesExamples from '@wesbitty/data/products/auth/auth-sql-rules-examples'
-import Solutions from '@wesbitty/data/Solutions.json'
+} from '@supabase/ui'
+import ApiExamples from '~/@wesbitty/data/products/auth/auth-api-examples'
+import AuthSqlRulesExamples from '~/@wesbitty/data/products/auth/auth-sql-rules-examples'
+import Solutions from '~/@wesbitty/data/Solutions.json'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import AuthComponentExample from '../../components/AuthWidget/AuthComponentExample'
-import SplitCodeBlockCarousel from '../../components/Carousels/SplitCodeBlockCarousel'
-import CTABanner from '../../components/CTABanner'
-import FeatureColumn from '../../components/FeatureColumn'
-import FloatingIcons from '../../components/FloatingIcons'
-import DefaultLayout from '../../components/Layouts/Default'
-import SectionContainer from '../../components/Layouts/SectionContainer'
-import APISection from '../../components/Sections/APISection'
-import GithubExamples from '../../components/Sections/GithubExamples'
-import ProductHeader from '../../components/Sections/ProductHeader'
+import AuthComponentExample from '~/components/AuthWidget/AuthComponentExample'
+import SplitCodeBlockCarousel from '~/components/Carousels/SplitCodeBlockCarousel'
+import CTABanner from '~/components/CTABanner'
+import FeatureColumn from '~/components/FeatureColumn'
+import FloatingIcons from '~/components/FloatingIcons'
+import DefaultLayout from '~/components/Layouts/Default'
+import SectionContainer from '~/components/Layouts/SectionContainer'
+import APISection from '~/components/Sections/APISection'
+import GithubExamples from '~/components/Sections/GithubExamples'
+import ProductHeader from '~/components/Sections/ProductHeader'
 
 function AuthPage() {
   // base path for images
   const { basePath } = useRouter()
 
   // supabase auth widget project details
-  const wesbitty = createClient(
+  const supabase = createClient(
     'https://rsnibhkhsbfnncjmwnkj.supabase.co',
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNTIxNDE1MywiZXhwIjoxOTMwNzkwMTUzfQ.OQEbAaTfgDdLCCht251P2JRD3QDnui6nsU8N-tZA_Mc'
   )
@@ -74,18 +74,18 @@ function AuthPage() {
             "Including PostgreSQL's policy engine, for fine-grained access rules.",
           ]}
           image={[
-            <div className="header--light block w-full">
+            <div className="w-full header--light block">
               <Image
-                src={`${basePath}/images/product/auth/header-light.png`}
+                src={`${basePath}/images/product/auth/header--light.png`}
                 alt="auth header"
                 layout="responsive"
                 width="1372"
                 height="1074"
               />
             </div>,
-            <div className="header--dark mr-0 w-full dark:block">
+            <div className="w-full header--dark mr-0 dark:block">
               <Image
-                src={`${basePath}/images/product/auth/header-dark.png`}
+                src={`${basePath}/images/product/auth/header--dark.png`}
                 alt="auth header"
                 layout="responsive"
                 width="1372"
@@ -98,12 +98,22 @@ function AuthPage() {
 
         <SectionContainer>
           <div className="grid grid-cols-12">
-            <div className="col-span-12 mb-10 lg:col-span-3 lg:mb-0">
+            <div className="mb-10 lg:mb-0 col-span-12 lg:col-span-3">
               <p className="mb-4">
-                <Space>
-                  <img src={`${basePath}/images/product/auth/google-icon.svg`} width={21} />
-                  <img src={`${basePath}/images/product/auth/facebook-icon.svg`} width={21} />
-                  <div>
+                <div className="flex items-center flex-wrap xl:w-64">
+                  <img
+                    className="mb-2 mr-2"
+                    src={`${basePath}/images/product/auth/google-icon.svg`}
+                    width={21}
+                    alt="google auth login icon"
+                  />
+                  <img
+                    className="mb-2 mr-2"
+                    src={`${basePath}/images/product/auth/facebook-icon.svg`}
+                    width={21}
+                    alt="facebook auth login icon"
+                  />
+                  <div className="mb-2 mr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 32.58 31.77"
@@ -116,10 +126,73 @@ function AuthPage() {
                       />
                     </svg>
                   </div>
-                  <img src={`${basePath}/images/product/auth/gitlab-icon.svg`} width={21} />
-                  <img src={`${basePath}/images/product/auth/bitbucket-icon.svg`} width={21} />
-                  <img src={`${basePath}/images/product/auth/twitter-icon.svg`} width={21} />
-                </Space>
+                  <img
+                    className="mb-2 mr-2"
+                    src={`${basePath}/images/product/auth/gitlab-icon.svg`}
+                    width={21}
+                    alt="gitlab auth login icon"
+                  />
+                  <img
+                    className="mb-2 mr-2"
+                    src={`${basePath}/images/product/auth/bitbucket-icon.svg`}
+                    width={21}
+                    alt="bitbucket auth login icon"
+                  />
+                  <img
+                    className="mb-2 mr-2"
+                    src={`${basePath}/images/product/auth/twitter-icon.svg`}
+                    width={21}
+                    alt="twitter auth login icon"
+                  />
+                  <img
+                    className="mb-2 mr-2"
+                    src={`${basePath}/images/product/auth/apple-icon.svg`}
+                    width={21}
+                    alt="apple auth login icon"
+                  />
+                  <img
+                    className="mb-2 mr-2"
+                    src={`${basePath}/images/product/auth/discord-icon.svg`}
+                    width={21}
+                    alt="discord auth login icon"
+                  />
+                  <img
+                    className="mb-2 mr-2"
+                    src={`${basePath}/images/product/auth/microsoft-icon.svg`}
+                    width={21}
+                    alt="microsoft auth login icon"
+                  />
+                  <img
+                    className="mb-2 mr-2"
+                    src={`${basePath}/images/product/auth/messagebird-icon.svg`}
+                    width={21}
+                    alt="messagebird auth login icon"
+                  />
+                  <img
+                    className="mb-2 mr-2"
+                    src={`${basePath}/images/product/auth/twilio-icon.svg`}
+                    width={21}
+                    alt="twilio auth login icon"
+                  />
+                  <img
+                    className="mb-2 mr-2"
+                    src={`${basePath}/images/product/auth/twitch-icon.svg`}
+                    width={21}
+                    alt="twitch auth login icon"
+                  />
+                  <img
+                    className="mb-2 mr-2"
+                    src={`${basePath}/images/product/auth/spotify-icon.svg`}
+                    width={21}
+                    alt="spotify auth login icon"
+                  />
+                  <img
+                    className="mb-2 mr-2"
+                    src={`${basePath}/images/product/auth/slack-icon.svg`}
+                    width={21}
+                    alt="slack auth login icon"
+                  />
+                </div>
               </p>
               <Typography.Title level={4}>All the social providers</Typography.Title>
               <Typography.Text>
@@ -129,7 +202,7 @@ function AuthPage() {
                 </p>
               </Typography.Text>
             </div>
-            <div className="col-span-12 mb-10 lg:col-span-3 lg:col-start-5 lg:mb-0">
+            <div className="mb-10 lg:mb-0 col-span-12 lg:col-span-3 lg:col-start-5">
               <Typography.Text>
                 <p className="mb-4">
                   <IconLink />
@@ -152,7 +225,7 @@ function AuthPage() {
               <Typography.Title level={4}>Own your data</Typography.Title>
               <Typography.Text>
                 <p className="text-base">
-                  User data stored in your Wesbitty database so you never have to worry about 3rd
+                  User data stored in your Supabase database so you never have to worry about 3rd
                   party privacy issues. Host your data in 8 different locations.
                 </p>
               </Typography.Text>
@@ -180,7 +253,7 @@ function AuthPage() {
               </Typography.Text>,
             ]}
             footer={[
-              <div className="mt-8 grid grid-cols-12 md:gap-8 lg:gap-0 xl:gap-16">
+              <div className="grid grid-cols-12 md:gap-8 lg:gap-0 xl:gap-16 mt-8">
                 <div className="col-span-12 sm:col-span-6 lg:col-span-12 xl:col-span-4">
                   <FeatureColumn
                     icon={<IconBriefcase />}
@@ -219,11 +292,11 @@ function AuthPage() {
 
         <SectionContainer>
           <div className="grid grid-cols-12 lg:gap-16">
-            <div className="col-span-12 mb-8 lg:col-span-5">
+            <div className="col-span-12 lg:col-span-5 mb-8">
               <Typography.Title level={2}>User permissions without the middleware</Typography.Title>
               <Typography.Text>
                 <p className="text-base lg:text-lg">
-                  Wesbitty Auth works without any additional servers. Build Authorization rules with
+                  Supabase Auth works without any additional servers. Build Authorization rules with
                   Postgres' Row Level Security, controlling who can create, edit and delete specific
                   rows in your database.
                 </p>
@@ -248,12 +321,12 @@ function AuthPage() {
 
         <SectionContainer>
           <div className="grid grid-cols-12 lg:gap-16">
-            <div className="order-last col-span-12 mt-8 lg:order-first lg:col-span-6 lg:mt-0">
+            <div className="order-last col-span-12 lg:order-first lg:col-span-6 mt-8 lg:mt-0">
               <AuthComponentExample />
             </div>
             <div className="col-span-12 lg:col-span-6 lg:col-start-7 xl:col-span-4 xl:col-start-8">
               <Space className="mb-4">
-                <div className="flex h-8 w-8 items-center justify-center rounded-md bg-gray-900  text-white dark:bg-white dark:text-gray-900">
+                <div className="w-8 h-8 rounded-md bg-gray-900 dark:bg-white text-white dark:text-gray-900  flex justify-center items-center">
                   <IconKey size="small" strokeWidth={1.5} />
                 </div>
                 <Typography.Text type="secondary">
@@ -270,13 +343,13 @@ function AuthPage() {
                   Pre-built auth widgets to get started in minutes.
                 </p>
                 <p>
-                  Wesbitty provides React libraries which handle common scenarios, including logging
+                  Supabase provides React libraries which handle common scenarios, including logging
                   in, signing up, magic link and forgot password forms.
                 </p>
               </Typography.Text>
               <Link
-                href="https://github.com/wesbitty/ui#wesbitty-auth"
-                as="https://github.com/wesbitty/ui#wesbitty-auth"
+                href="https://github.com/wesbitty/ui#using-supabase-ui-auth"
+                as="https://github.com/wesbitty/ui#using-supabase-ui-auth"
               >
                 <a>
                   <Button size="small" type="default" className="mt-4" icon={<IconArrowUpRight />}>
@@ -285,7 +358,7 @@ function AuthPage() {
                 </a>
               </Link>
 
-              <div className="mt-8 grid grid-cols-12 md:gap-8 lg:gap-0 xl:gap-16">
+              <div className="grid grid-cols-12 md:gap-8 lg:gap-0 xl:gap-16 mt-8">
                 <div className="col-span-12 lg:col-span-12 xl:col-span-4">
                   <FeatureColumn
                     icon={<IconBriefcase />}

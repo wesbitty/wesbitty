@@ -1,6 +1,6 @@
 import { useState } from 'react'
 // Import Swiper React components
-import { Button, IconArrowUpRight, Tabs, Typography } from '@wesbitty/ui'
+import { Button, IconArrowUpRight, Tabs, Typography } from '@supabase/ui'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import CodeBlock from '../CodeBlock/CodeBlock'
 import Link from 'next/link'
@@ -34,7 +34,7 @@ function APISection(props: Props) {
 
   return (
     <div className="grid grid-cols-12 lg:gap-16">
-      <div className="col-span-12 pb-8 lg:col-span-5 xl:col-span-5">
+      <div className="col-span-12 lg:col-span-5 xl:col-span-5 pb-8">
         <Typography.Title level={2}>{props.title}</Typography.Title>
         <Typography.Text>{props.text}</Typography.Text>
         {props.documentation_link && (
@@ -48,7 +48,7 @@ function APISection(props: Props) {
         )}
         {props.footer && <div className="py-8">{props.footer}</div>}
       </div>
-      <div className="sbui-tabs--alt col-span-12 lg:col-span-7 xl:col-span-6 xl:col-start-7">
+      <div className="col-span-12 lg:col-span-7 xl:col-span-6 xl:col-start-7 sbui-tabs--alt">
         <Tabs
           scrollable
           activeId={apiSwiperActiveIndex.toString()}
@@ -61,7 +61,7 @@ function APISection(props: Props) {
               </Tabs.Panel>
             ))}
         </Tabs>
-        <div className="overflow-hidden bg-gray-800">
+        <div className="bg-gray-800 overflow-hidden">
           <Swiper
             // @ts-ignore
             onSwiper={setApiSwiper}

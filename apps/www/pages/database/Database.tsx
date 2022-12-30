@@ -7,13 +7,13 @@ import {
   Space,
   Tabs,
   Typography,
-} from '@wesbitty/ui'
+} from '@supabase/ui'
 // data
-import ApiExamplesData from '../../@wesbitty/data/products/database/api-examples'
-import ExtensionsExamplesData from '../../@wesbitty/data/products/database/extensions-examples'
-import SqlViewCarouselData from '../../@wesbitty/data/products/database/sql-view-carousel.json'
-import TableViewCarouselData from '../../@wesbitty/data/products/database/table-view-carousel.json'
-import Solutions from '../../@wesbitty/data/Solutions.json'
+import ApiExamplesData from '~/@wesbitty/data/products/database/api-examples'
+import ExtensionsExamplesData from '~/@wesbitty/data/products/database/extensions-examples'
+import SqlViewCarouselData from '~/@wesbitty/data/products/database/sql-view-carousel.json'
+import TableViewCarouselData from '~/@wesbitty/data/products/database/table-view-carousel.json'
+import Solutions from '~/@wesbitty/data/Solutions.json'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -52,7 +52,7 @@ function Database() {
 
   const meta_title = 'Database | Open source SQL Database'
   const meta_description =
-    'With wesbitty’s APIs and easy to use dashboard, it makes designing relational databases easy.'
+    'With supabase’s APIs and easy to use dashboard, it makes designing relational databases easy.'
 
   return (
     <>
@@ -81,11 +81,11 @@ function Database() {
             </span>,
           ]}
           subheader={[
-            'Every Wesbitty project is a dedicated PostgreSQL database, trusted by millions of developers.',
+            'Every Supabase project is a dedicated PostgreSQL database, trusted by millions of developers.',
             'PostgreSQL is one of the worlds most scalable databases.',
           ]}
           image={[
-            <div className="header--light block w-full">
+            <div className="w-full header--light block">
               <Image
                 src={`${basePath}/images/product/database/header--light-2.png`}
                 alt="database header"
@@ -94,7 +94,7 @@ function Database() {
                 height="1116"
               />
             </div>,
-            <div className="header--dark mr-0 w-full dark:block">
+            <div className="w-full header--dark mr-0 dark:block">
               <Image
                 src={`${basePath}/images/product/database/header--dark-2.png`}
                 alt="database header"
@@ -108,7 +108,7 @@ function Database() {
 
         <SectionContainer>
           <div className="grid grid-cols-12">
-            <div className="col-span-12 mb-10 lg:col-span-3 lg:mb-0">
+            <div className="mb-10 lg:mb-0 col-span-12 lg:col-span-3">
               <Typography.Text>
                 <p className="mb-4">
                   <Space>
@@ -124,14 +124,14 @@ function Database() {
               <Typography.Title level={4}>Just Postgres</Typography.Title>
               <Typography.Text>
                 <p className="text-base lg:text-lg">
-                  Every Wesbitty project is a dedicated Postgres database.
+                  Every Supabase project is a dedicated Postgres database.
                 </p>
                 <p>
                   100% portable. Bring your existing Postgres database, or migrate away at any time.
                 </p>
               </Typography.Text>
             </div>
-            <div className="col-span-12 mb-10 lg:col-span-3 lg:col-start-5 lg:mb-0">
+            <div className="mb-10 lg:mb-0 col-span-12 lg:col-span-3 lg:col-start-5">
               <Typography.Text>
                 <p className="mb-4">
                   <Space>
@@ -227,7 +227,7 @@ function Database() {
                       handle="@Elsolo244"
                       img_url={`${basePath}/images/twitter-profiles/v6citnk33y2wpeyzrq05_400x400.jpeg`}
                       quote="Where has
-                @wesbitty
+                @supabase
                 been all my life? 😍"
                     />,
                   ]}
@@ -242,7 +242,7 @@ function Database() {
                     <TweetCard
                       handle="@jim_bisenius"
                       img_url={`${basePath}/images/twitter-profiles/rLgwUZSB_400x400.jpg`}
-                      quote="@MongoDB or @MySQL?!?! Please, let me introduce you to @wesbitty and the wonderful world of @PostgreSQL before it's too late!!"
+                      quote="@MongoDB or @MySQL?!?! Please, let me introduce you to @supabase and the wonderful world of @PostgreSQL before it's too late!!"
                     />,
                   ]}
                 />
@@ -259,12 +259,12 @@ function Database() {
             text={[
               <p>
                 We introspect your database and provide instant APIs. Focus on building your
-                product, while Wesbitty handles the CRUD.
+                product, while Supabase handles the CRUD.
               </p>,
             ]}
             footer={[
               <div className="grid grid-cols-12">
-                <div className="col-span-12 mt-0 lg:col-span-6 xl:col-span-12 xl:mb-8">
+                <div className="mt-0 col-span-12 lg:col-span-6 xl:col-span-12 xl:mb-8">
                   <Space>
                     <Typography.Text type="secondary">
                       <p className="m-0">Libraries coming soon:</p>{' '}
@@ -283,7 +283,7 @@ function Database() {
                     </Badge>
                   </Space>
                 </div>
-                <div className="col-span-12 hidden lg:col-span-6 xl:col-span-10 xl:block">
+                <div className="col-span-12 lg:col-span-6 xl:col-span-10 hidden xl:block">
                   {/* <TweetCard
                     handle="@eunjae_lee"
                     img_url="https://pbs.twimg.com/profile_images/1188191474401320965/eGjSYbQd_400x400.jpg"
@@ -316,17 +316,17 @@ function Database() {
 
         <SectionContainer className="lg:py-48">
           <div className="grid grid-cols-12 lg:gap-16">
-            <div className="col-span-12 mb-8 lg:col-span-6 xl:col-span-5">
+            <div className="col-span-12 lg:col-span-6 xl:col-span-5 mb-8">
               <Typography.Title level={2}>Extend your database</Typography.Title>
-              <Typography.Text className="mb-8 block">
-                <p className="lg:text-lg">Wesbitty works natively with Postgres extensions.</p>
+              <Typography.Text className="block mb-8">
+                <p className="lg:text-lg">Supabase works natively with Postgres extensions.</p>
                 <p>
                   Choose from a huge collection of Postgres extensions, enabled with a single click.
                 </p>
               </Typography.Text>
               <FeatureColumn
                 title="40+ preinstalled extensions"
-                text="We only show a few of the extensions supported by wesbitty here, but we preinstall many more that you can use right away."
+                text="We only show a few of the extensions supported by supabase here, but we preinstall many more that you can use right away."
               />
               <Link href="/docs/guides/database" as="/docs/guides/database">
                 <a>
@@ -336,7 +336,7 @@ function Database() {
                 </a>
               </Link>
             </div>
-            <div className="col-span-12 mt-8 lg:col-span-6 lg:col-start-7 lg:mt-0">
+            <div className="mt-8 lg:mt-0 col-span-12 lg:col-span-6 lg:col-start-7">
               <SplitCodeBlockCarousel
                 // @ts-ignore
                 content={ExtensionsExamplesData}

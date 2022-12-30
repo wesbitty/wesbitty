@@ -1,6 +1,6 @@
-import Container from '../components/Container'
-import Layout from '../components/Layouts/Default'
-import Hero from '../components/Hero'
+import Container from 'components/Container'
+import Layout from '~/components/Layouts/Default'
+import Hero from 'components/Hero'
 import Link from 'next/link'
 import {
   Button,
@@ -15,26 +15,48 @@ import {
   IconGitHub,
   Divider,
   IconMail,
-} from '@wesbitty/ui'
-import Examples from '../@wesbitty/data/Examples.json'
-import ExampleCard from '../components/ExampleCard'
-import Features from '../components/Features/index'
-import BuiltExamples from '../components/WesbittyMaker/index'
-import MadeForDevelopers from '../components/MadeForDevelopers/index'
-import AdminAccess from '../components/AdminAccess/index'
-import CaseStudies from '../components/CaseStudies/index'
-import CTABanner from '../components/CTABanner/index'
-import SectionContainer from '../components/Layouts/SectionContainer'
-import TwitterSocialProof from '../components/Sections/TwitterSocialProof'
+} from '@supabase/ui'
+import Examples from '~/@wesbitty/data/Examples.json'
+import ExampleCard from 'components/ExampleCard'
+import Features from 'components/Features/index'
+import BuiltExamples from '~/components/WesbittyMaker/index'
+import MadeForDevelopers from 'components/MadeForDevelopers/index'
+import AdminAccess from 'components/AdminAccess/index'
+import CaseStudies from 'components/CaseStudies/index'
+import CTABanner from 'components/CTABanner/index'
+import SectionContainer from '~/components/Layouts/SectionContainer'
+import TwitterSocialProof from '~/components/Sections/TwitterSocialProof'
 
 // Import Swiper styles if swiper used on page
 import 'swiper/swiper.min.css'
+import { useRouter } from 'next/router'
+import { NextSeo } from 'next-seo'
 
 type Props = {}
 
 const Index = ({}: Props) => {
+  const router = useRouter()
+
+  const meta_title = 'Help &amp Support | Wesbitty'
+  const meta_description =
+    'Find help and support for Wesbitty. Our support agents provide answers on all types of issues, including account information, billing, and refunds.'
+
   return (
     <>
+      <NextSeo
+        title={meta_title}
+        description={meta_description}
+        openGraph={{
+          title: meta_title,
+          description: meta_description,
+          url: `https://wesbitty.com/${router.pathname}`,
+          images: [
+            {
+              url: `https://wesbitty.com/images/og/og-image.jpg`,
+            },
+          ],
+        }}
+      />
       <Layout>
         <Container>
           <SectionContainer className="">
@@ -47,14 +69,14 @@ const Index = ({}: Props) => {
                 </p>
               </Typography.Text>
             </div>
-            <div className="mt-16 grid gap-5 sm:grid-cols-3 md:grid-cols-12">
+            <div className="grid sm:grid-cols-3 md:grid-cols-12 gap-5 mt-16">
               <div className="col-span-12 lg:col-span-6 xl:col-span-4">
                 <div
-                  className="flex h-40 flex-col 
-                    justify-between rounded rounded-b-none border-t border-r
-                    border-l
-                    border-gray-100 bg-white p-5
-                    dark:border-gray-600 dark:bg-gray-700
+                  className="h-40 bg-white dark:bg-gray-700 
+                    border-t border-r border-l border-gray-100 dark:border-gray-600
+                    p-5
+                    flex flex-col justify-between
+                    rounded rounded-b-none
                     "
                 >
                   <div className="mb-4">
@@ -76,11 +98,11 @@ const Index = ({}: Props) => {
                 <div>
                   <div
                     className="
-                    flex flex-col 
-                    justify-between rounded rounded-t-none border-b border-r
-                    border-l
-                    border-gray-100 bg-white p-5
-                    dark:border-gray-600 dark:bg-gray-800"
+                    bg-white dark:bg-gray-800 
+                    border-b border-r border-l border-gray-100 dark:border-gray-600
+                    p-5
+                    flex flex-col justify-between
+                    rounded rounded-t-none"
                   >
                     <Space className="">
                       <Link
@@ -99,11 +121,11 @@ const Index = ({}: Props) => {
               </div>
               <div className="col-span-12 lg:col-span-6 xl:col-span-4">
                 <div
-                  className="flex h-40 flex-col 
-                    justify-between rounded rounded-b-none border-t border-r
-                    border-l
-                    border-gray-100 bg-white p-5
-                    dark:border-gray-600 dark:bg-gray-700
+                  className="h-40 bg-white dark:bg-gray-700 
+                    border-t border-r border-l border-gray-100 dark:border-gray-600
+                    p-5
+                    flex flex-col justify-between
+                    rounded rounded-b-none
                     "
                 >
                   <div className="mb-4">
@@ -125,11 +147,11 @@ const Index = ({}: Props) => {
                 <div>
                   <div
                     className="
-                    flex flex-col 
-                    justify-between rounded rounded-t-none border-b border-r
-                    border-l
-                    border-gray-100 bg-white p-5
-                    dark:border-gray-600 dark:bg-gray-800"
+                    bg-white dark:bg-gray-800 
+                    border-b border-r border-l border-gray-100 dark:border-gray-600
+                    p-5
+                    flex flex-col justify-between
+                    rounded rounded-t-none"
                   >
                     <Space className="">
                       <Link
@@ -149,11 +171,11 @@ const Index = ({}: Props) => {
 
               <div className="col-span-12 lg:col-span-6 xl:col-span-4">
                 <div
-                  className="flex h-40 flex-col 
-                    justify-between rounded rounded-b-none border-t border-r
-                    border-l
-                    border-gray-100 bg-white p-5
-                    dark:border-gray-600 dark:bg-gray-700
+                  className="h-40 bg-white dark:bg-gray-700 
+                    border-t border-r border-l border-gray-100 dark:border-gray-600
+                    p-5
+                    flex flex-col justify-between
+                    rounded rounded-b-none
                     "
                 >
                   <div className="mb-4">
@@ -176,14 +198,14 @@ const Index = ({}: Props) => {
                 <div>
                   <div
                     className="
-                    flex flex-col 
-                    justify-between rounded rounded-t-none border-b border-r
-                    border-l
-                    border-gray-100 bg-white p-5
-                    dark:border-gray-600 dark:bg-gray-800"
+                    bg-white dark:bg-gray-800 
+                    border-b border-r border-l border-gray-100 dark:border-gray-600
+                    p-5
+                    flex flex-col justify-between
+                    rounded rounded-t-none"
                   >
                     <Space className="">
-                      <a href="mailto:wesbitty@outlook.com">
+                      <a href="mailto:admin@wesbitty.com">
                         <Button size="medium" type="default" iconRight={<IconMail />}>
                           Email Support
                         </Button>

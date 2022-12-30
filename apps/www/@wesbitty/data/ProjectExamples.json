@@ -1,13 +1,13 @@
 [
   {
     "imgUrl": "images/stripe.jpg",
-    "title": "Wesjet starter",
-    "url": "https://github.com/wesbitty/wesbitty/tree/master/examples/wesjet-starter",
-    "description": "Build a SaaS business with Stripe subscriptions and Wesbitty.",
+    "title": "Stripe SaaS starter",
+    "url": "https://github.com/thorwebdev/nextjs-saas-starter",
+    "description": "Build a SaaS business with Stripe subscriptions and Supabase.",
     "icons": [
       {
         "imgUrl": "https://avatars3.githubusercontent.com/u/54469796?s=480&v=4",
-        "imgAlt": "wesbitty icon"
+        "imgAlt": "supabase icon"
       },
       {
         "imgUrl": "https://avatars1.githubusercontent.com/u/14985020?s=480&v=4",
@@ -22,13 +22,13 @@
   },
   {
     "imgUrl": "images/slack-clone.jpg",
-    "title": "Wesjet Starter",
-    "url": "https://github.com/wesbitty/wesbitty/tree/master/examples/wesjet-starter",
-    "description": "Build a full-stack Slack clone using Next.js and Wesjet.",
+    "title": "Chat app with Next.js",
+    "url": "https://github.com/wesbitty/wesbitty/tree/master/examples/nextjs-slack-clone",
+    "description": "Build a full-stack Slack clone using Next.js and Supabase.",
     "icons": [
       {
         "imgUrl": "https://avatars3.githubusercontent.com/u/54469796?s=480&v=4",
-        "imgAlt": "wesbitty icon"
+        "imgAlt": "supabase icon"
       },
       {
         "imgUrl": "https://avatars1.githubusercontent.com/u/14985020?s=480&v=4",
@@ -39,13 +39,13 @@
   },
   {
     "imgUrl": "images/to-do-app.jpg",
-    "title": "Using wesjet with docker",
-    "url": "https://github.com/wesbitty/wesbitty/tree/master/examples/wesjet-with-docker",
-    "description": "Build a simple todo list with Vue and Wesbitty.",
+    "title": "Todo list with Vue.js",
+    "url": "https://github.com/wesbitty/wesbitty/tree/master/examples/vue3-ts-todo-list",
+    "description": "Build a simple todo list with Vue and Supabase.",
     "icons": [
       {
         "imgUrl": "https://avatars3.githubusercontent.com/u/54469796?s=480&v=4",
-        "imgAlt": "wesbitty icon"
+        "imgAlt": "supabase icon"
       },
       {
         "imgUrl": "https://avatars1.githubusercontent.com/u/14985020?s=480&v=4",

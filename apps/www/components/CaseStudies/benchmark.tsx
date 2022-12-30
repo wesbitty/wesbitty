@@ -1,19 +1,19 @@
-import { Button, Typography } from '@wesbitty/ui'
+import { Button, Typography } from '@supabase/ui'
 import { useRouter } from 'next/router'
 
 const Benchmark = () => {
   const { basePath } = useRouter()
   return (
-    <div className="mx-auto mt-6 max-w-lg lg:mx-0 lg:mt-16 lg:max-w-none">
-      <div className="grid grid-cols-1 items-center gap-4 overflow-auto rounded-md bg-dark-800 shadow-lg lg:grid-cols-12">
-        <div className="col-span-1 flex flex-col items-center lg:col-span-10 lg:flex-row">
+    <div className="mt-6 lg:mt-16 max-w-lg mx-auto lg:max-w-none lg:mx-0">
+      <div className="grid gap-4 items-center rounded-md grid-cols-1 lg:grid-cols-12 overflow-auto bg-dark-800 shadow-lg">
+        <div className="col-span-1 lg:col-span-10 flex items-center flex-col lg:flex-row">
           <img
-            className="mb-10 hidden w-full lg:mb-0 lg:mr-14 lg:block lg:h-44 lg:w-auto"
+            className="mb-10 w-full lg:w-auto lg:mb-0 lg:h-44 lg:mr-14 hidden lg:block"
             src={`${basePath}/images/benchmark.svg`}
             alt="Benchmark illustration"
           />
           <img
-            className="mb-10 w-full lg:mb-0 lg:mr-14 lg:hidden lg:h-44 lg:w-auto"
+            className="mb-10 w-full lg:w-auto lg:mb-0 lg:h-44 lg:mr-14 lg:hidden"
             src={`${basePath}/images/benchmark--mobile.svg`}
             alt="Benchmark illustration"
           />
@@ -23,7 +23,7 @@ const Benchmark = () => {
             </Typography.Title>
             <Typography.Text type="secondary">
               <span className="block text-gray-300">
-                Wesbitty outperforms equivalent systems by more than 300%.
+                Supabase outperforms equivalent systems by more than 300%.
               </span>
               <span className="block text-gray-300">
                 Sign up for our public benchmark release and we'll send it to your inbox.
@@ -31,8 +31,8 @@ const Benchmark = () => {
             </Typography.Text>
           </div>
         </div>
-        <div className="col-span-1 rounded-r-md px-12 pb-12 lg:col-span-2 lg:px-0 lg:pb-0">
-          <a href="https://wesbitty.vercel.app/subscription/enterpriseBenchmarks">
+        <div className="pb-12 px-12 col-span-1 lg:pb-0 lg:px-0 lg:col-span-2 rounded-r-md">
+          <a href="https://supabasesubscribe.vercel.app/subscription/enterpriseBenchmarks">
             <Button>Get notified</Button>
           </a>
         </div>

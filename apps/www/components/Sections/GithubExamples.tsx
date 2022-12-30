@@ -15,7 +15,7 @@ import {
   IconArrowRight,
   Space,
   IconBookOpen,
-} from '@wesbitty/ui'
+} from '@supabase/ui'
 
 import Examples from '../../@wesbitty/data/Examples.json'
 import ExampleCard from '../ExampleCard'
@@ -37,12 +37,12 @@ function GithubExamples() {
           <Typography.Title level={2}>
             Community driven examples, libraries and guides
           </Typography.Title>
-          <Typography.Text className="mb-6 block">
+          <Typography.Text className="block mb-6">
             <p className="text-base lg:text-lg">
               Supported by a network of early advocates, contributors, and champions.
             </p>
           </Typography.Text>
-          <div className="flex flex-col justify-center space-y-1.5 lg:flex-row lg:space-y-0 lg:space-x-1.5">
+          <div className="flex space-y-1.5 flex-col lg:space-y-0 lg:space-x-1.5 lg:flex-row justify-center">
             <Link href="/docs/guides/examples#guides" as="/docs/guides/examples#guides">
               <a>
                 <Button type="default" icon={<IconBookOpen />}>
@@ -115,13 +115,13 @@ function GithubExamples() {
                 </SwiperSlide>
               )
             })}
-            <div className="container mx-auto mt-3 hidden flex-row justify-between md:flex">
-              <div ref={prevRef} className="ml-4 cursor-pointer">
+            <div className="container mx-auto hidden md:flex flex-row justify-between mt-3">
+              <div ref={prevRef} className="cursor-pointer ml-4">
                 <Typography.Text>
                   <IconArrowLeft />
                 </Typography.Text>
               </div>
-              <div ref={nextRef} className="mr-4 cursor-pointer">
+              <div ref={nextRef} className="cursor-pointer mr-4">
                 <Typography.Text>
                   <IconArrowRight />
                 </Typography.Text>

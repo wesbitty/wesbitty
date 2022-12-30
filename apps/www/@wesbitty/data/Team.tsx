@@ -1,5 +1,5 @@
-import { Card, Space, Typography } from '@wesbitty/ui'
-import DeveloperSignups from '@wesbitty/data/DeveloperSignups'
+import { Card, Space, Typography } from '@supabase/ui'
+import DeveloperSignups from '~/@wesbitty/data/DeveloperSignups'
 
 type TeamMember = {
   name: string

@@ -1,18 +1,21 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
-import Container from '../components/Container'
+import Container from 'components/Container'
 import Layout from '../components/Layouts/Default'
-import CountUp from '../components/CountUp'
-import FlyOut from '../components/UI/FlyOut'
-import CTABanner from '../components/CTABanner/index'
-import { APP_NAME, DESCRIPTION } from '../@wesbitty/lib/constants'
-import { AlphaNumbers, IntroductionSegments, PerformanceComparisonData } from '../@wesbitty/data/BetaPage'
+import CountUp from 'components/CountUp'
+import FlyOut from 'components/UI/FlyOut'
+import CTABanner from 'components/CTABanner/index'
+import { APP_NAME, DESCRIPTION } from '~/@wesbitty/lib/constants'
+import {
+  AlphaNumbers,
+  IntroductionSegments,
+  PerformanceComparisonData,
+} from '~/@wesbitty/data/BetaPage'
 import { render } from 'react-dom'
 import Link from 'next/link'
-
 import { NextSeo } from 'next-seo'
-import authors from '../@wesbitty/lib/authors.json'
+import authors from '~/@wesbitty/lib/authors.json'
 
 const site_title = `${APP_NAME} | We are now in Beta`
 
@@ -25,17 +28,17 @@ const NavFlyOutMenu = (props: any) => {
 
   return (
     <>
-      <div className="border-dark-300 dark:border-dark-400 col-span-12 grid grid-cols-12 items-center border-b border-dashed sm:border-r">
+      <div className="col-span-12 grid grid-cols-12 items-center border-dark-300 dark:border-dark-400 sm:border-r border-b border-dashed">
         {segments.flat().map((segment: any) => (
           <div
             key={segment.key}
             onClick={() => scrollTo(segment.key)}
             className={`
-              border-dark-300 dark:border-dark-400 col-span-12 cursor-pointer border-t border-dashed bg-white px-4 py-4 text-dark-300 hover:bg-dark-100
-              dark:bg-dark-600 dark:text-dark-400 dark:hover:bg-dark-500 sm:border-l lg:col-span-4 lg:px-6 lg:py-10`}
+              col-span-12 lg:col-span-4 px-4 lg:px-6 py-4 lg:py-10 text-dark-300 dark:text-dark-400 cursor-pointer bg-white dark:bg-dark-600
+              hover:bg-dark-100 dark:hover:bg-dark-500 border-dark-300 dark:border-dark-400 border-t sm:border-l border-dashed`}
           >
             <p className="flex items-center text-black dark:text-white">
-              <span className="mr-2 font-mono text-xs text-dark-300 dark:text-dark-400">
+              <span className="font-mono text-xs text-dark-300 dark:text-dark-400 mr-2">
                 0{segment.no}
               </span>
               <span>{segment.name}</span>
@@ -50,12 +53,12 @@ const NavFlyOutMenu = (props: any) => {
 const VideoShot = (props: any) => {
   const { src } = props
   return (
-    <div className="rounded-xl bg-gradient-to-r  from-green-400 via-violet-500 to-blue-500 p-2">
-      <div className="rounded-md shadow-lg" style={{ height: 'fit-content' }}>
-        <div className="flex h-5 w-full items-center justify-start rounded-t-md bg-dark-400 px-2">
-          <div className="mr-2 h-2 w-2 rounded-full bg-dark-500" />
-          <div className="mr-2 h-2 w-2 rounded-full bg-dark-500" />
-          <div className="mr-2 h-2 w-2 rounded-full bg-dark-500" />
+    <div className="p-2 rounded-xl  bg-gradient-to-r from-green-400 via-violet-500 to-blue-500">
+      <div className="shadow-lg rounded-md" style={{ height: 'fit-content' }}>
+        <div className="w-full rounded-t-md h-5 bg-dark-400 flex items-center justify-start px-2">
+          <div className="h-2 w-2 mr-2 rounded-full bg-dark-500" />
+          <div className="h-2 w-2 mr-2 rounded-full bg-dark-500" />
+          <div className="h-2 w-2 mr-2 rounded-full bg-dark-500" />
         </div>
         <video className="rounded-b-md" src={src} autoPlay loop muted playsInline>
           Your browser does not support the video tag
@@ -91,10 +94,10 @@ const SectionHeader = (props: any) => {
   const { sectionNumber, header } = props
   return (
     <div className="col-span-12">
-      <span className="mb-3 block font-mono text-3xl text-dark-300 dark:text-dark-400">
+      <span className="block font-mono text-3xl text-dark-300 dark:text-dark-400 mb-3">
         0{sectionNumber}
       </span>
-      <h3 className="text-6xl text-black dark:text-white">{header}</h3>
+      <h3 className="text-black dark:text-white text-6xl">{header}</h3>
     </div>
   )
 }
@@ -108,16 +111,16 @@ const Hero = () => {
         backgroundSize: '65%',
         backgroundPosition: '120% 50%',
       }}
-      className="bg-dark-800 bg-no-repeat py-16 lg:py-36"
+      className="py-16 lg:py-36 bg-dark-800 bg-no-repeat"
     >
-      <div className="container mx-auto grid h-full grid-cols-12 items-center gap-4 px-8 py-20 text-dark-300 lg:px-28">
-        <div className="col-span-12 text-white md:col-span-9 lg:col-span-8 xl:col-span-6">
-          <p className="mb-10 text-4xl">Wesbitty is an open source Developer's alternative.</p>
+      <div className="container mx-auto px-8 lg:px-28 py-20 h-full grid grid-cols-12 gap-4 items-center text-dark-300">
+        <div className="col-span-12 md:col-span-9 lg:col-span-8 xl:col-span-6 text-white">
+          <p className="mb-10 text-4xl">Supabase is an open source Firebase alternative.</p>
           <p className="text-2xl">
             Today, we're moving to <span className="text-brand-700">Beta</span>
           </p>
-          <time itemProp="datePublished" dateTime="2020-12-03" className="text-sm opacity-50">
-            Published December 26th, 2022
+          <time itemProp="datePublished" dateTime="2020-12-03" className="opacity-50 text-sm">
+            Published December 3rd, 2020
           </time>
         </div>
       </div>
@@ -128,10 +131,10 @@ const Hero = () => {
 const Introduction = () => {
   return (
     <div className="bg-dark-900">
-      <div className="container mx-auto grid grid-cols-12 gap-4 px-8 py-20 text-dark-300 lg:px-28">
+      <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-4 text-dark-300">
         <div className="col-span-12 sm:col-span-9 xl:col-span-8">
           <p>
-            <span className="block text-2xl text-white">
+            <span className="text-2xl block text-white">
               After the launch of our{' '}
               <a
                 href="https://news.ycombinator.com/item?id=23319901"
@@ -140,11 +143,11 @@ const Introduction = () => {
               >
                 Alpha
               </a>{' '}
-              Program in December,
+              Program in June,
             </span>
           </p>
         </div>
-        <div className="col-span-12 mb-20 text-base sm:col-span-9 xl:col-span-6">
+        <div className="col-span-12 sm:col-span-9 xl:col-span-6 text-base mb-20">
           <p>
             we've been fortunate to work with thousands of early adopters on improving both our Open
             Source, and Hosted offerings. Companies like{' '}
@@ -171,40 +174,40 @@ const Introduction = () => {
             >
               TAYFA
             </a>{' '}
-            are using Wesbitty to ship more products, faster.
+            are using Supabase to ship more products, faster.
           </p>
         </div>
 
-        <div className="col-span-12 mb-10 text-base">
-          <p className="border-dark-200 dark:border-dark-400 w-60 border-b-2 pb-2">
+        <div className="col-span-12 text-base mb-10">
+          <p className="w-60 pb-2 border-b-2 border-dark-200 dark:border-dark-400">
             Alpha Program in Numbers
           </p>
         </div>
 
         <div
           id="alphaNumbers"
-          className="col-span-12 mb-20 grid grid-cols-12 gap-y-12 gap-x-3 sm:gap-x-0 lg:gap-y-20"
+          className="col-span-12 grid grid-cols-12 gap-y-12 lg:gap-y-20 mb-20 gap-x-3 sm:gap-x-0"
         >
           {AlphaNumbers.map((stat: any, idx: number) => (
             <div
               key={`stat_${idx}`}
-              className="col-span-6 grid grid-cols-8 items-center gap-x-1 sm:col-span-4 sm:grid-cols-12 md:gap-x-0 xl:gap-x-6"
+              className="col-span-6 sm:col-span-4 grid grid-cols-8 sm:grid-cols-12 gap-x-1 md:gap-x-0 xl:gap-x-6 items-center"
             >
               <div className="col-span-4 sm:col-span-4 md:col-span-3 xl:col-span-2">
-                <div className="flex h-12 w-12 items-center justify-center rounded-md bg-dark-700 dark:bg-white">
+                <div className="w-12 h-12 rounded-md bg-dark-700 flex items-center justify-center dark:bg-white">
                   {stat.icon}
                 </div>
               </div>
-              <div className="sm-col-span-8 col-span-7 md:col-span-9 xl:col-span-10">
+              <div className="col-span-7 sm-col-span-8 md:col-span-9 xl:col-span-10">
                 <p className="text-5xl lg:text-6xl">
                   <CountUp triggerAnimOnScroll={true} referenceElId="alphaNumbers">
                     {stat.value}
                   </CountUp>
-                  {stat.unit && <span className="ml-1 text-2xl">{stat.unit}</span>}
+                  {stat.unit && <span className="text-2xl ml-1">{stat.unit}</span>}
                 </p>
               </div>
-              <div className="col-start-0 col-span-12 sm:col-span-9 sm:col-start-5 md:col-span-10 md:col-start-4 xl:col-start-3">
-                <p className="text-xs text-dark-300 dark:text-dark-400 lg:text-base">{stat.name}</p>
+              <div className="col-span-12 sm:col-span-9 md:col-span-10 col-start-0 sm:col-start-5 md:col-start-4 xl:col-start-3">
+                <p className="text-xs lg:text-base text-dark-300 dark:text-dark-400">{stat.name}</p>
               </div>
             </div>
           ))}
@@ -217,30 +220,30 @@ const Introduction = () => {
 const TableOfContents = (props: any) => {
   const { scrollTo } = props
   return (
-    <div className="bg-gray-50 text-dark-400 dark:bg-dark-700 dark:text-dark-200">
-      <div className="container mx-auto grid grid-cols-12 gap-4 px-8 py-20 lg:px-28">
-        <div className="col-span-12 mb-10 text-base">
+    <div className="bg-gray-50 dark:bg-dark-700 text-dark-400 dark:text-dark-200">
+      <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-4">
+        <div className="col-span-12 text-base mb-10">
           <p className="text-2xl text-black dark:text-white">
-            Wesbitty <span className="text-brand-600 dark:text-brand-700">Beta</span> is starting
+            Supabase <span className="text-brand-600 dark:text-brand-700">Beta</span> is starting
             now.
           </p>
         </div>
         <div className="col-span-12 grid grid-cols-12 gap-y-10">
           {IntroductionSegments.map((segment: any, segmentIdx: number) => (
             <div key={`introSegment_${segmentIdx}`} className="col-span-12 grid grid-cols-12">
-              <div className="col-span-12 mb-10 sm:col-span-5 sm:mb-0 xl:col-span-4">
+              <div className="col-span-12 mb-10 sm:col-span-5 xl:col-span-4 sm:mb-0">
                 <p>{segment.description}</p>
               </div>
-              <div className="hidden sm:col-span-1 sm:block xl:col-span-2" />
-              <div className="col-span-12 flex flex-col sm:col-span-6">
+              <div className="hidden sm:block sm:col-span-1 xl:col-span-2" />
+              <div className="col-span-12 sm:col-span-6 flex flex-col">
                 {segment.chapters.map((chapter: any, idx: number) => (
                   <div
                     key={`section_select_${idx}`}
-                    className="mb-5 flex cursor-pointer items-center"
+                    className="flex items-center mb-5 cursor-pointer"
                     onClick={() => scrollTo(chapter.key)}
                   >
                     <p className="font-mono text-xs text-dark-300 dark:text-dark-400">{`0${chapter.no}`}</p>
-                    <p className="ml-4 border-b border-gray-400 text-base transition hover:text-black dark:hover:text-white">
+                    <p className="ml-4 transition text-base border-b border-gray-400 hover:text-black dark:hover:text-white">
                       {chapter.name}
                     </p>
                   </div>
@@ -290,7 +293,7 @@ const Performance = () => {
       return () => window.removeEventListener('scroll', handleScroll)
     }, [animTriggered])
 
-    return <div className={`${color} h-3 rounded-full`} style={{ width: `${count.toFixed(2)}%` }} />
+    return <div className={`${color} rounded-full h-3`} style={{ width: `${count.toFixed(2)}%` }} />
   }
 
   const ComparisonChart = () => {
@@ -301,17 +304,17 @@ const Performance = () => {
           const multiplier = (metric.stats[0].value / metric.stats[1].value).toFixed(1)
           return (
             <div key={`${metric.key}`} className="mb-10 text-dark-400 dark:text-dark-300">
-              <p className="mb-4 pb-2 sm:w-36">{metric.title}</p>
+              <p className="sm:w-36 pb-2 mb-4">{metric.title}</p>
               <div className="flex flex-col sm:flex-row sm:items-center">
                 <div className="w-full sm:w-5/6">
                   {metric.stats.map((stat: any, idx: number) => (
                     <div key={`metric_${metric.key}_${idx}`} className="flex items-center">
-                      <p className="mr-4 w-20 border-r py-2 pr-4 text-left sm:text-right lg:w-24">
+                      <p className="w-20 lg:w-24 border-r py-2 pr-4 mr-4 text-left sm:text-right">
                         {stat.name}
                       </p>
                       <Bar
                         color={
-                          stat.name === 'Wesbitty'
+                          stat.name === 'Supabase'
                             ? 'bg-brand-600 dark:bg-brand-700'
                             : 'bg-dark-300 dark:bg-dark-400'
                         }
@@ -321,9 +324,9 @@ const Performance = () => {
                     </div>
                   ))}
                 </div>
-                <div className="flex flex-col text-left sm:w-1/6 sm:text-right">
+                <div className="text-left sm:w-1/6 sm:text-right flex flex-col">
                   <p className="text-6xl text-dark-700 dark:text-dark-100">{multiplier}x</p>
-                  <p className="-mt-2 text-sm">more {metric.key}s per second</p>
+                  <p className="text-sm -mt-2">more {metric.key}s per second</p>
                 </div>
               </div>
             </div>
@@ -335,13 +338,13 @@ const Performance = () => {
 
   return (
     <div id="performance" className="bg-white dark:bg-dark-800">
-      <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-20 text-dark-400 dark:text-dark-300 lg:px-28">
+      <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-300">
         <SectionHeader sectionNumber={1} header="Performance" />
 
-        <div className="col-span-12 mb-10 grid grid-cols-12 items-center gap-x-2 lg:gap-x-8">
-          <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
+        <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10 items-center">
+          <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
             <p className="mb-10">
-              We started Wesbitty to give developers a web-ready database that is delightful to use,
+              We started Supabase to give developers a web-ready database that is delightful to use,
               without sacrificing speed and scale. Postgres makes this possible, handling massive
               amounts of data without sacrificing read and write speed.
             </p>
@@ -357,7 +360,7 @@ const Performance = () => {
               </a>{' '}
               to handle our{' '}
               <a
-                href="https://github.com/supabase/realtime"
+                href="https://github.com/wesbitty/realtime"
                 target="_blank"
                 className="text-brand-700 hover:text-brand-800"
               >
@@ -377,7 +380,7 @@ const Performance = () => {
               We're publishing the results of our benchmarks here and we'll continue to seek gains
               throughout our Beta program and beyond. Our{' '}
               <a
-                href="https://github.com/supabase/benchmarks/"
+                href="https://github.com/wesbitty/benchmarks/"
                 target="_blank"
                 className="text-brand-700 hover:text-brand-800"
               >
@@ -390,22 +393,22 @@ const Performance = () => {
           <div className="col-span-12 mt-10 mb-10">
             <ComparisonChart />
           </div>
-          <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
+          <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
             <p className="mb-10">
               Benchmarks were run from a neutral host (Digital Ocean Droplet 4 GB Memory / 80 GB
               Disk / SGP1 - Ubuntu 20.04 (LTS) x64) against a table/collection pre-populated with 1
-              million rows. The Wesbitty database and API used are each running on AWS EC2 t3a.micro
+              million rows. The Supabase database and API used are each running on AWS EC2 t3a.micro
               instances.
             </p>
             <p className="mb-10">
-              Wesbitty is available in 7 different geographic regions. We're adding more regions as
+              Supabase is available in 7 different geographic regions. We're adding more regions as
               we build up multi-cloud support. Soon we'll offer read-replicas to scale your database
               right to the edge - reducing latency and giving your users a better experience.
             </p>
             <p>
-              One of our key metrics at Wesbitty is "Time to Value". How fast can a user go from
+              One of our key metrics at Supabase is "Time to Value". How fast can a user go from
               sign up, to making their first API request? How fast can they go from development to
-              production? We've built several case studies on our blog, demonstrating how Wesbitty
+              production? We've built several case studies on our blog, demonstrating how Supabase
               enables them to build and scale their product in as little time as possible.
             </p>
           </div>
@@ -418,11 +421,11 @@ const Performance = () => {
 const Security = () => {
   return (
     <div id="security" className="bg-gray-50 dark:bg-dark-700">
-      <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-20 text-dark-400 dark:text-dark-200 lg:px-28">
+      <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-200">
         <SectionHeader sectionNumber={2} header="Security" />
 
         <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8">
-          <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
+          <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
             <p className="mb-10">
               As an infrastructure provider, security has been a priority from day one. While we had
               to resolve brute force attacks on our customers' databases, we internally run pen
@@ -432,7 +435,7 @@ const Security = () => {
               Approaching the launch of our Beta period, we worked with security advisors and
               specialists globally to enforce new measures and processes:
             </p>
-            <ul className="ml-6 list-outside list-disc">
+            <ul className="list-disc list-outside ml-6">
               <li className="mb-5">
                 Employed DigitalXRAID to run a full Pen Test on both our internal and customer
                 infrastructure. We immediately patched one medium priority issue and are currently
@@ -483,16 +486,16 @@ const Reliability = () => {
   const { basePath } = useRouter()
   return (
     <div id="reliability" className="bg-white dark:bg-dark-800">
-      <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-12 text-dark-400 dark:text-dark-300 lg:px-28 ">
+      <div className="container mx-auto px-8 lg:px-28 py-12 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-300 ">
         <SectionHeader sectionNumber={3} header="Reliability" />
 
-        <div className="col-span-12 mb-10 grid grid-cols-12 gap-x-2 lg:gap-x-8">
-          <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
+        <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
+          <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
             <p className="mb-5">
               During Alpha we experienced 2 availability incidents, neither affecting customer
               access to their data. These were:
             </p>
-            <ul className="ml-6 mb-10 list-outside list-disc">
+            <ul className="list-disc list-outside ml-6 mb-10">
               <li className="mb-5">
                 A third-party CDN API outage. As a result, subdomains were not created for new
                 projects.
@@ -510,11 +513,11 @@ const Reliability = () => {
             <p className="mb-10">
               We're launching{' '}
               <a
-                href="https://status.wesbitty.com"
+                href="https://status.supabase.com"
                 target="_blank"
                 className="text-brand-700 hover:text-brand-800"
               >
-                https://status.wesbitty.com
+                https://status.supabase.com
               </a>{' '}
               to keep track of uptime across all of our services and critical infrastructure.
             </p>
@@ -536,22 +539,22 @@ const NewFeaturesAndIntegrations = () => {
   const { basePath } = useRouter()
   return (
     <div id="newFeaturesAndIntegrations" className="bg-gray-50 dark:bg-dark-700">
-      <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-20 text-dark-400 dark:text-dark-200 lg:px-28">
+      <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-200">
         <SectionHeader sectionNumber={4} header="New Features & Integrations" />
 
-        <div className="col-span-12 mb-10 grid grid-cols-12 gap-x-2 lg:gap-x-8">
-          <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
+        <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
+          <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
             <p className="mb-5">
               If you're new to Supabase, here's a few of the things you get when you choose us as
               your backend.
             </p>
             <ul className="">
               <li className="mb-10">
-                <p className="border-dark-200 dark:border-dark-400 mb-2 w-20 border-b-2 pb-2">
+                <p className="w-20 pb-2 mb-2 border-b-2 border-dark-200 dark:border-dark-400">
                   Auth
                 </p>
                 <p className="mb-5">
-                  If you're new to Wesbitty, here's a few of the things you get when you choose us
+                  If you're new to Supabase, here's a few of the things you get when you choose us
                   as your backend. We provide{' '}
                   <a
                     href="/docs/reference/javascript/auth-signup"
@@ -578,7 +581,7 @@ const NewFeaturesAndIntegrations = () => {
                 <VideoShot src={`${basePath}/videos/tabAuthRules.mp4`} />
               </li>
               <li className="mb-10">
-                <p className="border-dark-200 dark:border-dark-400 mb-2 w-20 border-b-2 pb-2">
+                <p className="w-20 pb-2 mb-2 border-b-2 border-dark-200 dark:border-dark-400">
                   Realtime
                 </p>
                 <p>
@@ -590,13 +593,13 @@ const NewFeaturesAndIntegrations = () => {
                   >
                     subscribe to changes in your database
                   </a>{' '}
-                  over websockets, receiving your data in realtime. Companies are using Wesbitty to
+                  over websockets, receiving your data in realtime. Companies are using Supabase to
                   build chat applications, trigger notifications, and pipe data to analytics
                   dashboards whenever it changes in their database.
                 </p>
               </li>
               <li className="mb-10">
-                <p className="border-dark-200 dark:border-dark-400 mb-2 w-24 border-b-2 pb-2">
+                <p className="w-24 pb-2 mb-2 border-b-2 border-dark-200 dark:border-dark-400">
                   CRUD API
                 </p>
                 <p>
@@ -621,7 +624,7 @@ const NewFeaturesAndIntegrations = () => {
                 </p>
               </li>
               <li className="mb-10">
-                <p className="border-dark-200 dark:border-dark-400 mb-2 w-44 border-b-2 pb-2">
+                <p className="w-44 pb-2 mb-2 border-b-2 border-dark-200 dark:border-dark-400">
                   Quickstart Templates
                 </p>
                 <p>
@@ -631,22 +634,22 @@ const NewFeaturesAndIntegrations = () => {
                 </p>
               </li>
               <li className="mb-10">
-                <p className="border-dark-200 dark:border-dark-400 mb-2 w-24 border-b-2 pb-2">
+                <p className="w-24 pb-2 mb-2 border-b-2 border-dark-200 dark:border-dark-400">
                   Table View
                 </p>
                 <p className="mb-5">
-                  View and edit your data like a spreadsheet from within the Wesbitty dashboard.
+                  View and edit your data like a spreadsheet from within the Supabase dashboard.
                   Build your schema, create complex relationships, and import and export to csv.
                 </p>
                 <VideoShot src={`${basePath}/videos/tabTableEditor.mp4`} />
               </li>
               <li>
-                <p className="border-dark-200 dark:border-dark-400 mb-2 w-24 border-b-2 pb-2">
+                <p className="w-24 pb-2 mb-2 border-b-2 border-dark-200 dark:border-dark-400">
                   SQL Editor
                 </p>
                 <p className="mb-5">
                   No need to install third party SQL tools, you can run queries directly from the
-                  Wesbitty Dashboard.
+                  Supabase Dashboard.
                 </p>
                 <VideoShot src={`${basePath}/videos/tabSqlEditor.mp4`} />
               </li>
@@ -660,20 +663,20 @@ const NewFeaturesAndIntegrations = () => {
 
 const BetaPricing = () => (
   <div id="betaPricing" className="bg-white dark:bg-dark-800">
-    <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-20 text-dark-400 dark:text-dark-300 lg:px-28">
+    <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-300">
       <SectionHeader sectionNumber={5} header="Beta Pricing" />
 
-      <div className="col-span-12 mb-10 grid grid-cols-12 gap-x-2 lg:gap-x-8">
-        <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
+      <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
+        <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
           <p className="mb-10">For up to date pricing info see: https://wesbitty.com/pricing</p>
           <p className="mb-10">
             We're working closely with many open source projects, infrastructure providers, and of
             course our Alpha Users, to provide a predictable and sustainable pricing model.
           </p>
           <p className="mb-5">Our key aims going into this exercise were:</p>
-          <ul className="ml-6 mb-10 list-outside list-disc">
+          <ul className="list-disc list-outside ml-6 mb-10">
             <li className="mb-5">
-              To continue offering free Wesbitty instances for Students, Hobbyists, and Early
+              To continue offering free Supabase instances for Students, Hobbyists, and Early
               Adopters
             </li>
             <li className="mb-5">
@@ -686,7 +689,7 @@ const BetaPricing = () => (
             </li>
           </ul>
           <p className="mb-10">We are committing to the following initiatives:</p>
-          <ul className="ml-6 mb-10 list-outside list-decimal">
+          <ul className="list-decimal list-outside ml-6 mb-10">
             <li className="mb-5">
               All Alpha Users will receive credits equivalent of 2 years of base tier usage. These
               will automatically be credited to your account if you signed up prior to December
@@ -700,11 +703,11 @@ const BetaPricing = () => (
               University (and participating code school) Students will be eligible for 2 years of
               base tier usage (Code Schools can contact{' '}
               <a
-                href="mailto:wesbitty@outlook.com"
+                href="mailto:rory@supabase.io"
                 target="_blank"
                 className="text-brand-700 hover:text-brand-800"
               >
-                wesbitty@outlook.com
+                rory@supabase.io
               </a>
               )
             </li>
@@ -714,7 +717,7 @@ const BetaPricing = () => (
             </li>
           </ul>
           <p>
-            The Wesbitty Base Tier is now called the Wesbitty Pro tier as per the{' '}
+            The Supabase Base Tier is now called the Supabase Pro tier as per the{' '}
             <a href="https://wesbitty.com/pricing" className="text-brand-700 hover:text-brand-800">
               pricing page
             </a>
@@ -728,23 +731,23 @@ const BetaPricing = () => (
 
 const OpenSource = () => (
   <div id="openSource" className="bg-gray-50 dark:bg-dark-700">
-    <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-20 text-dark-400 dark:text-dark-200 lg:px-28">
+    <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-200">
       <SectionHeader sectionNumber={6} header="Open Source" />
 
-      <div className="col-span-12 mb-10 grid grid-cols-12 gap-x-2 lg:gap-x-8">
-        <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
+      <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
+        <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
           <p className="mb-10">
             Great software is multi generational and stretches beyond any single company.
           </p>
           <p className="mb-10">
-            Wesbitty is a collection of many projects, and we rely on making contributors to help us
+            Supabase is a collection of many projects, and we rely on making contributors to help us
             build and improve. Because of this, we aim to make open source more accessible and
             attractive to anyone who wants to contribute.
           </p>
           <p className="mb-10">
-            Every dollar that is given to Wesbitty in{' '}
+            Every dollar that is given to Supabase in{' '}
             <a
-              href="https://github.com/sponsors/wesbitty/"
+              href="https://github.com/sponsors/supabase/"
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
             >
@@ -769,11 +772,11 @@ const OpenSource = () => (
             If you teach programming, and you're interested in offering OSS tuition to your
             students, we're actively looking for more education partners. Email{' '}
             <a
-              href="mailto:wesbitty@outlook.com"
+              href="mailto:rory@supabase.io"
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
             >
-              wesbitty@outlook.com
+              rory@supabase.io
             </a>{' '}
             to find out more.
           </p>
@@ -795,10 +798,10 @@ const OpenSource = () => (
 
 const FundingPartners = () => (
   <div id="fundingPartners" className="bg-white dark:bg-dark-800">
-    <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-20 text-dark-400 dark:text-dark-300 lg:px-28">
+    <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-300">
       <SectionHeader sectionNumber={7} header="Funding Partners" />
-      <div className="col-span-12 mb-10 grid grid-cols-12 gap-x-2 lg:gap-x-8">
-        <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
+      <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
+        <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
           <p className="mb-10">
             Building a platform that can offer all the amazing features of Firebase will take
             resources - more than most open source tools. Ours will be a long journey and it will
@@ -832,11 +835,11 @@ const FundingPartners = () => (
 
 const ScalingOurTeam = () => (
   <div id="scalingOurTeam" className="bg-gray-50 dark:bg-dark-700">
-    <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-20 text-dark-400 dark:text-dark-200 lg:px-28">
+    <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-200">
       <SectionHeader sectionNumber={8} header="Scaling Our Team" />
 
-      <div className="col-span-12 mb-10 grid grid-cols-12 gap-x-2 lg:gap-x-8">
-        <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
+      <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
+        <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
           <p className="mb-10">
             We are extremely proud of our team. We're a mix of 11 engineers, from 8 different
             countries. Half of the team are previous founders - collectively we've founded 15
@@ -851,13 +854,13 @@ const ScalingOurTeam = () => (
             We are hiring across multiple positions including PostgreSQL engineers, Cloud engineers,
             SRE's, and Developer Advocates. We are a fully remote team, spanning 4 continents and 10
             nationalities. If you are interested and think you can be a factor in the success of
-            Wesbitty, get in touch at{' '}
+            Supabase, get in touch at{' '}
             <a
-              href="mailto:wesbitty@outlook.com"
+              href="mailto:work@supabase.io"
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
             >
-              wesbitty@outlook.com
+              work@supabase.io
             </a>
             .
           </p>
@@ -870,23 +873,23 @@ const ScalingOurTeam = () => (
 const WhatsNext = () => (
   <div
     id="whatsNext"
-    className="dark:border-dark-800 border-b-2 border-gray-50 bg-white dark:bg-dark-800"
+    className="border-b-2 border-gray-50 bg-white dark:bg-dark-800 dark:border-dark-800"
   >
-    <div className="container mx-auto grid grid-cols-12 gap-y-10 px-8 py-20 text-dark-400 dark:text-dark-300 lg:px-28">
+    <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-300">
       <SectionHeader sectionNumber={9} header="What's Next" />
 
-      <div className="col-span-12 mb-10 grid grid-cols-12 gap-x-2 lg:gap-x-8">
-        <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
+      <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
+        <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
           <p className="mb-5">
             If you watch our repos you'll see that development never stops, we ship every day (and
-            night!). We're constantly improving Wesbitty based on user feedback. Alongside
+            night!). We're constantly improving Supabase based on user feedback. Alongside
             performance, security, and reliability improvements, here are some new features we're
             working on for 2021:
           </p>
-          <ul className="ml-6 mb-10 list-outside list-disc">
+          <ul className="list-disc list-outside ml-6 mb-10">
             <li className="mb-5">Storage - Making blob storage easier than ever before</li>
             <li className="mb-5">
-              Functions - write and deploy serverless functions that have access to your Wesbitty
+              Functions - write and deploy serverless functions that have access to your Supabase
               context
             </li>
             <li className="mb-5">
@@ -898,7 +901,7 @@ const WhatsNext = () => (
               base
             </li>
             <li className="mb-5">
-              Multicloud - Spread your Wesbitty instances across multiple datacenter providers to
+              Multicloud - Spread your Supabase instances across multiple datacenter providers to
               protect against outages
             </li>
             <li className="mb-5">
@@ -908,17 +911,17 @@ const WhatsNext = () => (
             <li>
               More client libraries - members of the community are helping us build client libraries
               for many different languages including TypeScript, Python, Dart, C#, and Rust. Come
-              and help us bring Wesbitty to your favorite language or framework.
+              and help us bring Supabase to your favorite language or framework.
             </li>
           </ul>
           <p className="mb-10">
-            We depend on your feedback to continually improve Wesbitty. Email us at{' '}
+            We depend on your feedback to continually improve Supabase. Email us at{' '}
             <a
-              href="mailto:wesbitty@outlook.com"
+              href="mailto:admin@wesbitty.com"
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
             >
-              wesbitty@outlook.com
+              support@supabase.io
             </a>{' '}
             or join the{' '}
             <a
@@ -954,10 +957,7 @@ const Beta = () => {
 
   const scrollTo = (key: string) => {
     if (references[key]) {
-      references[key].current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      })
+      references[key].current.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }
 
@@ -984,7 +984,7 @@ const Beta = () => {
             //
             // to do: author urls should be internal in future
             // currently we have external links to github profiles
-            authors: ['wesbitty'],
+            authors: [authors['supabase'].authorURL],
             tags: ['beta'],
           },
           images: [
@@ -996,7 +996,7 @@ const Beta = () => {
       />
       <Container>
         <div className="sticky inset-0 z-50">
-          <div className="flex items-center justify-between bg-dark-800 py-5 px-5 shadow-lg xl:px-20">
+          <div className="shadow-lg py-5 px-5 xl:px-20 bg-dark-800 flex items-center justify-between">
             <Link href="/">
               <a>
                 <img className="h-5" src={`${basePath}/images/logo-dark.png`} />

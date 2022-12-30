@@ -9,10 +9,10 @@ export default [
     code: `// Create a record
 
 // Insert new record into a table called \`rooms\`
-const { data, error } = await weabitty
+const { data, error } = await supabase
   .from('rooms')
   .insert({ 
-    name: 'Wesbitty Fan Club', 
+    name: 'Supabase Fan Club', 
     public: true 
   })
 
@@ -36,7 +36,7 @@ const { data, error } = await weabitty
 
 // Retrieve all of the \`rooms\`, 
 // and get all the messages for each room.
-const { data, error } = await wesbitty
+const { data, error } = await supabase
   .from('rooms').select(\`
     name,
     messages ( text )

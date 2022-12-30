@@ -1,8 +1,8 @@
 import React from 'react'
-import DevelopersData from '../../@wesbitty/data/Developers.json'
-import AnnouncementsData from '../../@wesbitty/data/Announcements.json'
+import DevelopersData from '~/@wesbitty/data/Developers.json'
+import AnnouncementsData from '~/@wesbitty/data/Announcements.json'
 import { useRouter } from 'next/router'
-import { Typography } from '@wesbitty/ui'
+import { Typography } from '@supabase/ui'
 
 type Props = {
   text: string
@@ -19,11 +19,11 @@ const Developers = () => {
     const content = (
       <a
         href={url}
-        className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50 dark:hover:bg-dark-700"
+        className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 dark:hover:bg-dark-700 transition ease-in-out duration-150"
       >
         {/* <!-- Heroicon name: support --> */}
         <svg
-          className="stroke-gray h-6 w-6 flex-shrink-0 dark:stroke-white "
+          className="flex-shrink-0 h-6 w-6 stroke-gray dark:stroke-white "
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -44,14 +44,14 @@ const Developers = () => {
       <a
         key={text}
         href={url}
-        className="col-span-6 rounded p-3 transition hover:bg-gray-50 dark:hover:bg-dark-700"
+        className="p-3 col-span-6 rounded hover:bg-gray-50 dark:hover:bg-dark-700 transition"
       >
         {content}
       </a>
     ) : (
       <div
         key={text}
-        className="-m-3 flex flex-col justify-between rounded-lg p-3 transition duration-150 ease-in-out"
+        className="-m-3 p-3 flex flex-col justify-between rounded-lg transition ease-in-out duration-150"
       >
         {content}
       </div>
@@ -61,7 +61,7 @@ const Developers = () => {
   return (
     <div className="grid grid-cols-12">
       <nav className="col-span-6" aria-labelledby="solutionsHeading">
-        <div className="m-3 grid grid-cols-12 gap-3">{iconSections}</div>
+        <div className="grid grid-cols-12 m-3 gap-3">{iconSections}</div>
       </nav>
       <div className="col-span-6">
         <div className="m-3 mx-6">
@@ -71,11 +71,11 @@ const Developers = () => {
               <li className="flow-root" key={`flyout_case_${idx}`}>
                 <a
                   href={caseStudy.url}
-                  className="flex rounded-lg border p-3 transition duration-150 ease-in-out hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-dark-700"
+                  className="p-3 flex rounded-lg hover:bg-gray-100 dark:hover:bg-dark-700 transition ease-in-out duration-150 border dark:border-gray-600"
                 >
-                  <div className="hidden flex-shrink-0 sm:block">
+                  <div className="hidden sm:block flex-shrink-0">
                     <img
-                      className="h-20 w-32 rounded-md object-cover"
+                      className="w-32 h-20 object-cover rounded-md"
                       src={`${basePath}/${caseStudy.imgUrl}`}
                       alt="caseStudyThumb"
                     />

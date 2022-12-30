@@ -13,9 +13,6 @@ yarn.lock
 /.next/
 /out/
 
-# wesjet
-.wesjet
-
 # production
 /build
 
@@ -36,6 +33,3 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-# Gitpod
-.gitpod.yml

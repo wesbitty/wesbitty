@@ -1,11 +1,11 @@
-import { Button, Typography } from '@wesbitty/ui'
+import { Button, Typography } from '@supabase/ui'
 
 const CTABanner = (props: any) => {
   const { darkerBg } = props
   return (
     <div
       className={`
-        grid grid-cols-12 items-center gap-4 border-t bg-dark-800 py-32 text-center dark:border-gray-600
+        py-32 grid grid-cols-12 gap-4 items-center text-center bg-dark-800 border-t dark:border-gray-600
         ${darkerBg ? 'dark:bg-dark-900' : ''} px-16
       `}
     >
@@ -16,7 +16,7 @@ const CTABanner = (props: any) => {
         </Typography.Title>
       </div>
       <div className="col-span-12 mt-4">
-        <a href="/user/login">
+        <a href="https://wesbitty.com/platform/login">
           <Button size="medium">Start your project</Button>
         </a>
       </div>

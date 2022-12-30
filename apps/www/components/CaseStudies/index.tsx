@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
-import Benchmark from './benchmark'
-import SectionHeader from '../UI/SectionHeader'
-import CaseStudiesData from '../../@wesbitty/data/CaseStudies.json'
-import { Card, Space, Typography } from '@wesbitty/ui'
+import Benchmark from 'components/CaseStudies/benchmark'
+import SectionHeader from 'components/UI/SectionHeader'
+import CaseStudiesData from '~/@wesbitty/data/CaseStudies.json'
+import { Card, Space, Typography } from '@supabase/ui'
 import SectionContainer from '../Layouts/SectionContainer'
 
 const CaseStudies = () => {
@@ -16,11 +16,11 @@ const CaseStudies = () => {
           title_alt={' with no extra effort'}
           subtitle={'Enterprise Solutions'}
           paragraph={
-            "Wesbitty is built with proven, enterprise-ready tools. We're supporting everything from fintech providers to social networks. "
+            "Supabase is built with proven, enterprise-ready tools. We're supporting everything from fintech providers to social networks. "
           }
         />
       </div>
-      <div className="mx-auto mt-5 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
+      <div className="mt-5 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
         {CaseStudiesData.map((caseStudy: any, idx: number) => (
           <a href={caseStudy.url} key={idx}>
             <Card
@@ -28,7 +28,7 @@ const CaseStudies = () => {
               hoverable
               cover={<img src={`${basePath}/${caseStudy.imgUrl}`} className="h-64 object-cover" />}
             >
-              <Space className="h-40 justify-between" direction="vertical">
+              <Space className="justify-between h-40" direction="vertical">
                 <div>
                   <Typography.Text small type="secondary">
                     Project example

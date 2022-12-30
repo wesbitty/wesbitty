@@ -2,7 +2,7 @@
   {
     "type": "Case Study",
     "title": "A web crawler handling millions of API requests.",
-    "description": "See how Monitoro built an automated a scraping platform using Wesbitty.",
+    "description": "See how Monitoro built an automated a scraping platform using Supabase.",
     "imgUrl": "images/case-study-monitoro.jpg",
     "logoUrl": "images/logos/monitoro.png",
     "organization": "Monitoro",
@@ -18,7 +18,7 @@
   {
     "type": "Case Study",
     "title": "Counter-fraud watchlists for the fintech industry.",
-    "description": "See how Xendit use Wesbitty to build a full-text search engine.",
+    "description": "See how Xendit use Supabase to build a full-text search engine.",
     "imgUrl": "images/case-study-xendit.jpg",
     "logoUrl": "images/logos/xendit.png",
     "organization": "Llama Lab",

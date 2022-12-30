@@ -6,8 +6,8 @@ dist*
 .wesjet
 
 apps/docs*
-apps/web
-apps/net
+apps/web*
+apps/net*
 
 .next
 

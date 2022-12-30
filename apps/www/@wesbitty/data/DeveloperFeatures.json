@@ -7,7 +7,7 @@
   },
   {
     "name": "Install from CDN",
-    "description": "Use Wesbitty in the browser without a build process",
+    "description": "Use Supabase in the browser without a build process",
     "badge": "",
     "url": "/docs/client/initializing"
   },
@@ -18,9 +18,9 @@
     "url": "/docs/guides/self-hosting"
   },
   {
-    "name": "Wesbitty CLI",
-    "description": "Manage Wesbitty projects from your local machine",
+    "name": "Supabase CLI",
+    "description": "Manage Supabase projects from your local machine",
     "badge": "",
-    "url": "https://github.com/wesbitty/wesjet/blob/master/packages/@wesjet/cli"
+    "url": "https://github.com/wesbitty/cli"
   }
 ]

@@ -1,32 +1,32 @@
 [
   {
     "type": "Announcement",
-    "title": "We've Got Your WishList - Wesbitty, Inc.",
-    "description": "Objectives, Target & Goals",
+    "title": "Launch Week II: The SQL",
+    "description": "We're launching a product every day for one week in July.",
     "imgUrl": "images/case-study-monitoro.jpg",
     "logoUrl": "images/logos/monitoro.png",
     "organization": "Monitoro",
-    "url": "/blog/2022/12/10/wesbitty-launch-week-sql",
+    "url": "/blog/2021/07/22/supabase-launch-week-sql",
     "postMeta": {
-      "name": "Iamraff",
+      "name": "Paul Copplestone",
       "avatarUrl": "https://avatars0.githubusercontent.com/u/10214025?v=4",
-      "publishDate": "Dec 10, 2022",
+      "publishDate": "Mar 16, 2020",
       "readLength": 6
     },
     "ctaText": "View case study"
   },
   {
     "type": "Announcement",
-    "title": "Introducing Wesjet(Pkg)",
-    "description": "Changelog: We've Finally Launched a public prieview of Wesjet(Pkg), which helps to bundle,transform,validate and build system optimized in all web application.",
+    "title": "Supabase Storage",
+    "description": "Supabase launches Storage leveraging Postgres.",
     "imgUrl": "images/case-study-monitoro.jpg",
     "logoUrl": "images/logos/monitoro.png",
     "organization": "Monitoro",
-    "url": "/blog/2022/12/11/wesjet(pkg)",
+    "url": "/blog/2021/03/30/supabase-storage",
     "postMeta": {
-      "name": "Wesbitty",
+      "name": "Paul Copplestone",
       "avatarUrl": "https://avatars0.githubusercontent.com/u/10214025?v=4",
-      "publishDate": "Dec 11, 2022",
+      "publishDate": "Mar 16, 2020",
       "readLength": 6
     },
     "ctaText": "View case study"

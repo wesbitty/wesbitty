@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router'
-import FooterLinks from '../../@wesbitty/data/Footer.json'
+import FooterLinks from '~/@wesbitty/data/Footer.json'
 import SectionContainer from '../Layouts/SectionContainer'
 import DarkModeToggle from '../DarkModeToggle'
+import Link from 'next/link'
 
 type Props = {
   darkMode: boolean
@@ -14,7 +15,7 @@ const Footer = (props: Props) => {
 
   return (
     <footer
-      className="border-t border-gray-100 bg-white dark:border-gray-600 dark:bg-dark-800"
+      className="bg-white dark:bg-dark-800 border-t border-gray-100 dark:border-gray-600"
       aria-labelledby="footerHeading"
     >
       <h2 id="footerHeading" className="sr-only">
@@ -23,15 +24,19 @@ const Footer = (props: Props) => {
       <SectionContainer>
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
-            <img
-              className="w-40"
-              src={
-                darkMode
-                  ? `${basePath}/Logo/wesbitty-dark-logo.svg`
-                  : `${basePath}/Logo/wesbitty-light-logo.svg`
-              }
-              alt="Wesbitty"
-            />
+            <Link href="#" as="/">
+              <a>
+                <img
+                  className="w-40"
+                  src={
+                    darkMode
+                      ? `${basePath}/brand-assets/wesbitty-dark-logo.svg`
+                      : `${basePath}/brand-assets/wesbityy-light-logo.svg`
+                  }
+                  alt="Wesbitty"
+                />
+              </a>
+            </Link>
             <div className="flex space-x-6">
               <a href="https://twitter.com/wesbitty" className="text-gray-300 hover:text-gray-400">
                 <span className="sr-only">Twitter</span>
@@ -51,7 +56,7 @@ const Footer = (props: Props) => {
                 </svg>
               </a>
 
-              <a href="https://discord.gg/Wesbitty" className="text-gray-300 hover:text-gray-400">
+              <a href="https://discord.wesbitty.com/" className="text-gray-300 hover:text-gray-400">
                 <span className="sr-only">Discord</span>
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 71 55" aria-hidden="true">
                   <path
@@ -63,7 +68,7 @@ const Footer = (props: Props) => {
               </a>
             </div>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 xl:col-span-2 xl:mt-0">
+          <div className="mt-12 grid grid-cols-1 gap-8 xl:mt-0 xl:col-span-2">
             <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
               {FooterLinks.map((segment: any) => {
                 return (
@@ -96,8 +101,10 @@ const Footer = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="mt-32 flex justify-between border-t pt-8 dark:border-dark">
-          <p className="text-base text-gray-400 dark:text-dark-400">&copy; Wesbitty, Inc.</p>
+        <div className="mt-32 border-t dark:border-dark pt-8 flex justify-between">
+          <p className="mb-0 self-center text-base text-gray-400 dark:text-dark-400">
+            &copy; Wesbitty Inc
+          </p>
           <DarkModeToggle darkMode={darkMode} updateTheme={updateTheme} />
         </div>
       </SectionContainer>

@@ -37,7 +37,7 @@
   },
   {
     "question": "How do I upgrade or downgrade my tier?",
-    "answer": "Email us at <wesbitty@outlook.com>[](mailto:wesbitty@outlook.com)"
+    "answer": "Email us at <support@supabase.io>[](mailto:admin@wesbitty.com)"
   },
   {
     "question": "Will I hit any kind of API limits?",
@@ -53,7 +53,7 @@
   },
   {
     "question": "I read that you are giving credits to users who sign up during beta, do I get those?",
-    "answer": "If you signed up before the 4th of April 2021 we will issue credits for the Pro tier. You can claim them by getting in touch via <wesbitty@outlook.com>[](mailto:wesbitty@outlook.com)."
+    "answer": "If you signed up before the 4th of April 2021 we will issue credits for the Pro tier. You can claim them by getting in touch via <support@supabase.io>[](mailto:admin@wesbitty.com)."
   },
   {
     "question": "What if I want to cancel my monthly subscription?",
@@ -73,15 +73,15 @@
   },
   {
     "question": "I need more than the Pro tier, what do I need to do?",
-    "answer": "Contact us via <wesbitty@outlook.com>[](mailto:wesbitty@outlook.com) and we will be happy to help you upgrade."
+    "answer": "Contact us via <support@supabase.io>[](mailto:admin@wesbitty.com) and we will be happy to help you upgrade."
   },
   {
     "question": "I have special database requirements, can I request a larger server?",
-    "answer": "Contact us via <wesbitty@outlook.com>[](mailto:wesbitty@outlook.com) and we will be happy to help you upgrade."
+    "answer": "Contact us via <support@supabase.io>[](mailto:admin@wesbitty.com) and we will be happy to help you upgrade."
   },
   {
     "question": "What happens if I need to transfer my project to someone else in the future?",
-    "answer": "Contact us via <wesbitty@outlook.com>[](mailto:wesbitty@outlook.com) and we will be happy to help migrate your project to a new / another account."
+    "answer": "Contact us via <support@supabase.io>[](mailto:admin@wesbitty.com) and we will be happy to help migrate your project to a new / another account."
   },
   {
     "question": "Do you offer a free trial?",
@@ -93,14 +93,14 @@
   },
   {
     "question": "Do you offer discounts or deals for non-profits and educational institutions or students?",
-    "answer": "We have the free tier which you are welcome to take advantage of. If you need more than the free tier you can reach out to us [here](mailto:wesbitty@outlook.com) for our consideration of merit on a case by case basis."
+    "answer": "We have the free tier which you are welcome to take advantage of. If you need more than the free tier you can reach out to us [here](mailto:admin@wesbitty.com) for our consideration of merit on a case by case basis."
   },
   {
     "question": "Do you cater to enterprise contracts, support, or dedicated infrastructure hosting?",
-    "answer": "Yes. Contact us via <wesbitty@outlook.com>[](mailto:wesbitty@outlook.com) and we will be happy to discuss your needs."
+    "answer": "Yes. Contact us via <support@supabase.io>[](mailto:admin@wesbitty.com) and we will be happy to discuss your needs."
   },
   {
-    "question": "Where can I find Privacy and Terms of Use information for Wesbitty?",
+    "question": "Where can I find Privacy and Terms of Use information for Supabase?",
     "answer": "You can check out our privacy policy [here](/docs/company/privacy) and terms of service [here](/docs/company/terms)."
   },
   {
@@ -120,7 +120,7 @@
     "answer": "We are working on multi-environment projects. For now, you can create a project for your development backend and production backend. We give you four free projects as part of our free tier. This means you could have two development and two production servers as part of your free tier."
   },
   {
-    "question": "Can I self host Wesbitty for free?",
-    "answer": "Yes, our Docker setup can be found [here](https://github.com/wesbitty/wesjet), or in our [CLI](https://github.com/wesbitty/wesjet/blob/master/packages@wesjet/cli). Note that our Dashboard is not available in the Docker set up."
+    "question": "Can I self host Supabase for free?",
+    "answer": "Yes, our Docker setup can be found [here](https://github.com/wesbitty/wesbitty), or in our [CLI](https://github.com/wesbitty/cli). Supabase Studio is available in the docker setup, read more about it [here](https://wesbitty.com/blog/2021/11/30/supabase-studio)."
   }
 ]

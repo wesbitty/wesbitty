@@ -1,15 +1,15 @@
 import Container from 'components/Container'
-import Layout from '../components/Layouts/Default'
+import Layout from '~/components/Layouts/Default'
 import Hero from 'components/Hero'
+
 import Features from 'components/Features/index'
-import BuiltExamples from 'components/WesbittyMaker/index'
+import BuiltExamples from '~/components/WesbittyMaker/index'
 import MadeForDevelopers from 'components/MadeForDevelopers/index'
 import AdminAccess from 'components/AdminAccess/index'
 import CaseStudies from 'components/CaseStudies/index'
 import CTABanner from 'components/CTABanner/index'
-import SectionContainer from '../components/Layouts/SectionContainer'
-import TwitterSocialProof from '../components/Sections/TwitterSocialProof'
-
+import SectionContainer from '~/components/Layouts/SectionContainer'
+import TwitterSocialProof from '~/components/Sections/TwitterSocialProof'
 
 // Import Swiper styles if swiper used on page
 import 'swiper/swiper.min.css'

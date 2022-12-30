@@ -1,4 +1,4 @@
-import { Typography } from '@wesbitty/ui'
+import { Typography } from '@supabase/ui'
 
 function FeatureColumn({ icon, title, text }: any) {
   return (

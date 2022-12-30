@@ -2,12 +2,12 @@ import { useState } from 'react'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { Tabs, Typography, Button, Space } from '@wesbitty/ui'
+import { Tabs, Typography, Button, Space } from '@supabase/ui'
 import CodeBlock from '../CodeBlock/CodeBlock'
 
 // Import Swiper styles
 import 'swiper/swiper.min.css'
-import { Badge } from '@wesbitty/ui'
+import { Badge } from '@supabase/ui'
 import Link from 'next/link'
 
 interface Content {
@@ -45,7 +45,7 @@ function SplitCodeBlockCarousel(props: SplitCodeBlockCarousel) {
   const details = (
     <div className="">
       <Typography.Text>
-        <span className="mb-8 block text-white">Allow fetch something</span>
+        <span className="block text-white mb-8">Allow fetch something</span>
       </Typography.Text>
       <Typography.Text type="secondary">
         <p>
@@ -60,7 +60,7 @@ function SplitCodeBlockCarousel(props: SplitCodeBlockCarousel) {
   )
 
   return (
-    <div className="sbui-tabs--alt col-span-12 lg:col-span-6 lg:col-start-7">
+    <div className="col-span-12 lg:col-span-6 lg:col-start-7 sbui-tabs--alt">
       <Tabs
         scrollable
         // @ts-ignore
@@ -76,7 +76,7 @@ function SplitCodeBlockCarousel(props: SplitCodeBlockCarousel) {
           )
         })}
       </Tabs>
-      <div className="overflow-hidden rounded-md border border-gray-100 bg-gray-800 dark:border-gray-600">
+      <div className="border border-gray-100 dark:border-gray-600 rounded-md bg-gray-800 overflow-hidden">
         <Swiper
           // @ts-ignore
           onSwiper={setApiSwiper}
@@ -99,7 +99,7 @@ function SplitCodeBlockCarousel(props: SplitCodeBlockCarousel) {
           })}
         </Swiper>
 
-        <div className="border-t-none dark overflow-hidden rounded-md border border-t-0 border-gray-600 bg-gray-800 p-8">
+        <div className="overflow-hidden bg-gray-800 p-8 dark rounded-md border border-t-none border-t-0 border-gray-600">
           <Swiper
             // @ts-ignore
             onSwiper={setSwiperDetails}
@@ -117,11 +117,11 @@ function SplitCodeBlockCarousel(props: SplitCodeBlockCarousel) {
                 <SwiperSlide key={i}>
                   <div className="">
                     <Typography.Text>
-                      <span className="mb-4 block text-lg text-white">
+                      <span className="block text-lg text-white mb-4">
                         {extension.detail_title}
                       </span>
                     </Typography.Text>
-                    <Typography.Text type="secondary" className="mb-6 block">
+                    <Typography.Text type="secondary" className="block mb-6">
                       <p>{extension.detail_text}</p>
                     </Typography.Text>
                     <Space className="justify-between">

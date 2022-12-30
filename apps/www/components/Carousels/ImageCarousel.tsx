@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { Tabs, Typography, Button, IconCornerRightUp, IconArrowUpRight } from '@wesbitty/ui'
+import { Tabs, Typography, Button, IconCornerRightUp, IconArrowUpRight } from '@supabase/ui'
 import { useState } from 'react'
 
 // Import Swiper React components
@@ -49,7 +49,7 @@ function ImageCarousel(props: ImageCarouselProps) {
   const details = (
     <div className="h-64 bg-white">
       <Typography.Text>
-        <span className="mb-8 block text-white">Allow fetch something</span>
+        <span className="block text-white mb-8">Allow fetch something</span>
       </Typography.Text>
       <Typography.Text type="secondary">
         <p>
@@ -67,8 +67,8 @@ function ImageCarousel(props: ImageCarouselProps) {
 
   return (
     <div className="grid grid-cols-12">
-      <div className="col-span-12 w-full lg:col-span-6">
-        <div className="sbui-tabs--alt col-span-12 lg:col-span-7">
+      <div className="col-span-12 lg:col-span-6 w-full">
+        <div className="col-span-12 lg:col-span-7 sbui-tabs--alt">
           <div className={props.altTabView ? 'hidden' : 'block'}>
             <Tabs
               scrollable
@@ -92,7 +92,7 @@ function ImageCarousel(props: ImageCarouselProps) {
             </Tabs>
           </div>
           <div
-            className={`overflow-hidden rounded-md border border-gray-100 bg-gray-800 dark:border-gray-600 ${ImageCarouselStyles['gradient-bg']}`}
+            className={`overflow-hidden border border-gray-100 dark:border-gray-600 rounded-md bg-gray-800 ${ImageCarouselStyles['gradient-bg']}`}
           >
             <Swiper
               // @ts-ignore
@@ -133,7 +133,7 @@ function ImageCarousel(props: ImageCarouselProps) {
           </div>
         </div>
       </div>
-      <div className="col-span-12 mt-8 lg:col-span-5 lg:col-start-8 lg:mt-0 xl:col-span-4 xl:col-start-9">
+      <div className="mt-8 lg:mt-0 col-span-12 lg:col-span-5 lg:col-start-8 xl:col-span-4 xl:col-start-9">
         <div className={`sbui-tabs--underline-alt ${props.altTabView ? 'block' : 'hidden'} mb-3`}>
           <Tabs
             scrollable
@@ -169,7 +169,7 @@ function ImageCarousel(props: ImageCarouselProps) {
           {props.content.map((content, i) => {
             return (
               <SwiperSlide key={i}>
-                <div className="bg-white dark:bg-gray-800">
+                <div className="bg-white dark:bg-gray-800 p-px">
                   <Typography.Title level={4}>{content.title}</Typography.Title>
                   <Typography.Text>
                     <p className="text-base">{content.text}</p>

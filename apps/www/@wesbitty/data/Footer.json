@@ -1,6 +1,6 @@
 [
   {
-    "title": "Products",
+    "title": "Product",
     "links": [
       {
         "text": "Database",
@@ -23,7 +23,7 @@
         "url": "/pricing"
       },
       {
-        "text": "Wesjet",
+        "text": "Beta",
         "url": "/beta"
       }
     ]
@@ -40,16 +40,12 @@
         "url": "/brand-assets"
       },
       {
-        "text": "Case Studies",
-        "url": "/blog/tags/case-study"
-      },
-      {
         "text": "System Status",
-        "url": "https://status.wesbitty.com/"
+        "url": "https://status.supabase.com/"
       },
       {
         "text": "Terms of service",
-        "url": "/company/terms"
+        "url": "/docs/company/terms"
       }
     ]
   },
@@ -58,20 +54,20 @@
     "links": [
       {
         "text": "Documentation",
-        "url": "/developer"
+        "url": "/docs"
       },
       {
         "text": "API Reference",
-        "url": "/docs/client/wesjet-client"
+        "url": "/docs/client/supabase-client"
       },
       {
         "text": "Guides",
-        "url": "/developer/guides/examples"
+        "url": "/docs/guides/examples"
       }
     ]
   },
   {
-    "title": "About Us",
+    "title": "Company",
     "links": [
       {
         "text": "Blog",
@@ -83,7 +79,7 @@
       },
       {
         "text": "Careers",
-        "url": "https://wesbitty.com/careers"
+        "url": "https://about.supabase.com/careers"
       },
       {
         "text": "Company",

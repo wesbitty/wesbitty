@@ -6,18 +6,18 @@ import {
   IconTriangle,
   Space,
   Typography,
-} from '@wesbitty/ui'
+} from '@supabase/ui'
 import Link from 'next/link'
 
 function ExampleCard(props: any) {
   return (
     <>
       <div
-        className="flex h-40 flex-col 
-          justify-between rounded rounded-b-none border-t border-r
-          border-l
-          border-gray-100 bg-white p-5
-          dark:border-gray-600 dark:bg-gray-700
+        className="h-40 bg-white dark:bg-gray-700 
+          border-t border-r border-l border-gray-100 dark:border-gray-600
+          p-5
+          flex flex-col justify-between
+          rounded rounded-b-none
           "
       >
         <div className="mb-4">
@@ -26,7 +26,7 @@ function ExampleCard(props: any) {
           </Typography.Title>
           <Typography.Text className="block">
             <p>{props.description}</p>
-            <div className="mb-2 flex flex-row items-center">
+            <div className="flex flex-row items-center mb-2">
               Created by:
               <img
                 src={props.author_img}
@@ -41,11 +41,11 @@ function ExampleCard(props: any) {
       <div>
         <div
           className="
-          flex flex-col 
-          justify-between rounded rounded-t-none border-b border-r
-          border-l
-          border-gray-100 bg-white p-5
-          dark:border-gray-600 dark:bg-gray-800"
+          bg-white dark:bg-gray-800 
+          border-b border-r border-l border-gray-100 dark:border-gray-600
+          p-5
+          flex flex-col justify-between
+          rounded rounded-t-none"
         >
           <Typography.Text>
             <Link href={props.repo_url} as={props.repo_url}>

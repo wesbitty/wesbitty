@@ -4,22 +4,41 @@ import Link from 'next/link'
 
 import DefaultLayout from '../../components/Layouts/Default'
 import { PricingTableRowDesktop, PricingTableRowMobile } from '../../components/PricingTableRow'
-import { Badge, Button, Divider, Space, Typography } from '@wesbitty/ui'
+import { Accordion, Badge, Button, Divider, Space, Typography } from '@supabase/ui'
 
 import pricing from '../../@wesbitty/data/Pricing.json'
 import pricingFaq from '../../@wesbitty/data/PricingFAQ.json'
 import ReactMarkdown from 'react-markdown'
 import CTABanner from '../../components/CTABanner'
 
-import Solutions from '../../@wesbitty/data/Solutions.json'
+import Solutions from '~/@wesbitty/data/Solutions.json'
+import { NextSeo } from 'next-seo'
 
 export default function IndexPage() {
-  const { basePath } = useRouter()
+  const router = useRouter()
+
+  const meta_title = 'Pricing & fees | Wesbitty'
+  const meta_description =
+    'Explore Wesbitty fees and pricing information. Find our competitive pricing tiers, with no hidden pricing. We have generous free tiers for those getting started, and Pay As You Go for those scaling up.'
 
   return (
     <DefaultLayout>
+      <NextSeo
+        title={meta_title}
+        description={meta_description}
+        openGraph={{
+          title: meta_title,
+          description: meta_description,
+          url: `https://wesbitty.com/${router.pathname}`,
+          images: [
+            {
+              url: `https://wesbitty.com/images/og/og-image.jpg`,
+            },
+          ],
+        }}
+      />
       <div className="bg-white dark:bg-gray-800">
-        <div className="container relative mx-auto px-6 pt-24 md:pt-24 lg:px-16 lg:pt-24 xl:px-20">
+        <div className="container mx-auto px-6 lg:px-16 xl:px-20 relative pt-24 md:pt-24 lg:pt-24">
           <div className="text-center">
             <Typography.Title>Predictable pricing, no surprises</Typography.Title>
             <Typography.Text>
@@ -27,7 +46,7 @@ export default function IndexPage() {
                 Start with a hobby project, collaborate with a team, and scale to millions of users.
               </p>
             </Typography.Text>
-            <div className="mt-16 grid grid-cols-12 gap-8">
+            <div className="grid grid-cols-12 gap-8 mt-16">
               {/* <div className="col-span-12 lg:col-span-6">
                 <div className="rounded border border-green-500 dark:border-green-900 bg-green-500 bg-opacity-10 grid grid-cols-6">
                   <div className="p-6 col-span-6">
@@ -64,13 +83,13 @@ export default function IndexPage() {
         </div>
       </div>
       <div className="bg-white dark:bg-gray-800">
-        <div className="sm:py-18 container relative mx-auto px-0 py-16 md:py-24 lg:px-16 lg:py-24 xl:px-20">
+        <div className="container mx-auto px-0 lg:px-16 xl:px-20 relative py-16 sm:py-18 md:py-24 lg:py-24">
           {/* <!-- xs to lg --> */}
 
           <div className=" lg:hidden">
             {/* Free - Mobile  */}
             <div className="px-4">
-              <h2 className="text-lg font-medium leading-6 text-gray-900 dark:text-white">Free</h2>
+              <h2 className="text-lg leading-6 font-medium text-gray-900 dark:text-white">Free</h2>
               <p className="mt-4">
                 <span className="text-4xl font-normal text-gray-900 dark:text-white">$0</span>
                 <Typography.Text type="secondary">/project /month</Typography.Text>
@@ -106,8 +125,8 @@ export default function IndexPage() {
             <PricingTableRowMobile category={pricing.support} tier={'free'} />
 
             {/* Pro - Mobile  */}
-            <div className="mt-16 px-4">
-              <h2 className="text-lg font-medium leading-6 text-gray-900 dark:text-white">Pro</h2>
+            <div className="px-4 mt-16">
+              <h2 className="text-lg leading-6 font-medium text-gray-900 dark:text-white">Pro</h2>
               <p className="mt-4">
                 <span className="text-4xl font-normal text-gray-900 dark:text-white">$25</span>
                 <Typography.Text type="secondary">/project /month</Typography.Text>
@@ -143,8 +162,8 @@ export default function IndexPage() {
             <PricingTableRowMobile category={pricing.support} tier={'pro'} />
 
             {/* Enterprise - Mobile  */}
-            <div className="mt-16 px-4">
-              <h2 className="text-lg font-medium leading-6 text-gray-900 dark:text-white">
+            <div className="px-4 mt-16">
+              <h2 className="text-lg leading-6 font-medium text-gray-900 dark:text-white">
                 Pay as you go
               </h2>
               <p className="mt-4">
@@ -184,67 +203,67 @@ export default function IndexPage() {
 
           {/* <!-- lg+ --> */}
           <div className="hidden lg:block">
-            <table className="h-px w-full table-fixed">
+            <table className="w-full h-px table-fixed">
               <caption className="sr-only">Pricing plan comparison</caption>
-              <thead className="thead--plans sticky top-[62px] z-10">
+              <thead className="thead--plans sticky z-10 top-[62px]">
                 <tr>
                   <th
-                    className="relative bg-white px-6  pb-4 text-left text-sm font-medium text-gray-900 dark:bg-gray-800 dark:text-white"
+                    className="relative bg-white dark:bg-gray-800  pb-4 px-6 text-sm font-medium text-gray-900 dark:text-white text-left"
                     scope="col"
                   >
                     <span className="sr-only">Feature by</span>
                     <span>Plans</span>
                     <div
-                      className="h-0.25 absolute bottom-0 left-0 w-full bg-gray-200 dark:bg-gray-600"
+                      className="absolute bottom-0 left-0 h-0.25 w-full bg-gray-200 dark:bg-gray-600"
                       style={{ height: '1px' }}
                     ></div>
                   </th>
 
                   <th
-                    className=" w-1/4 bg-white  px-6 pb-4 text-left font-medium dark:bg-gray-800"
+                    className=" bg-white dark:bg-gray-800  w-1/4 pb-4 px-6 text-left font-medium"
                     scope="col"
                   >
                     <Typography.Title level={4}>Free</Typography.Title>
                     <div
-                      className="h-0.25 absolute bottom-0 left-0 w-full bg-gray-200 dark:bg-gray-600"
+                      className="absolute bottom-0 left-0 h-0.25 w-full bg-gray-200 dark:bg-gray-600"
                       style={{ height: '1px' }}
                     ></div>
                   </th>
 
                   <th
-                    className=" w-1/4 bg-white  px-6 pb-4 text-left text-lg font-medium leading-6 text-gray-900 dark:bg-gray-800"
+                    className=" bg-white dark:bg-gray-800  w-1/4 pb-4 px-6 text-lg leading-6 font-medium text-gray-900 text-left"
                     scope="col"
                   >
                     <Typography.Title level={4}>Pro</Typography.Title>
                     <div
-                      className="h-0.25 absolute bottom-0 left-0 w-full bg-gray-200 dark:bg-gray-600"
+                      className="absolute bottom-0 left-0 h-0.25 w-full bg-gray-200 dark:bg-gray-600"
                       style={{ height: '1px' }}
                     ></div>
                   </th>
 
                   <th
-                    className=" w-1/4 bg-white  px-6 pb-4 text-left text-lg font-medium leading-6 text-gray-900 dark:bg-gray-800"
+                    className=" bg-white dark:bg-gray-800  w-1/4 pb-4 px-6 text-lg leading-6 font-medium text-gray-900 text-left"
                     scope="col"
                   >
                     <Typography.Title level={4}>Pay as you go</Typography.Title>
                     <div
-                      className="h-0.25 absolute bottom-0 left-0 w-full bg-gray-200 dark:bg-gray-600"
+                      className="absolute bottom-0 left-0 h-0.25 w-full bg-gray-200 dark:bg-gray-600"
                       style={{ height: '1px' }}
                     ></div>
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200 border-gray-200 dark:divide-gray-700 dark:border-gray-600">
+              <tbody className="border-gray-200 dark:border-gray-600 divide-y divide-gray-200 dark:divide-gray-700">
                 <tr className="divide-x dark:divide-gray-700">
                   <th
-                    className="py-8 px-6 text-left align-top text-sm font-medium text-gray-900 dark:text-white"
+                    className="py-8 px-6 text-sm font-medium text-gray-900 dark:text-white text-left align-top"
                     scope="row"
                   >
                     Pricing
                   </th>
 
                   <td className="h-full py-8 px-6 align-top">
-                    <div className="relative table h-full">
+                    <div className="relative h-full table">
                       <p>
                         <span className="text-4xl font-normal text-gray-900 dark:text-white">
                           $0
@@ -267,7 +286,7 @@ export default function IndexPage() {
                   </td>
 
                   <td className="h-full py-8 px-6 align-top">
-                    <div className="relative table h-full">
+                    <div className="relative h-full table">
                       <p>
                         <span className="text-4xl font-normal text-gray-900 dark:text-white">
                           $25
@@ -290,7 +309,7 @@ export default function IndexPage() {
                   </td>
 
                   <td className="h-full py-8 px-6 align-top">
-                    <div className="relative table h-full">
+                    <div className="relative h-full table">
                       <p>
                         <span className="text-4xl font-normal text-gray-900 dark:text-white">
                           $25
@@ -334,7 +353,7 @@ export default function IndexPage() {
                     Choose your plan
                   </th>
 
-                  <td className="px-6 pt-5">
+                  <td className="pt-5 px-6">
                     <Link href="https://app.wesbitty.com" as="https://app.wesbitty.com">
                       <a>
                         <Button size="medium" type="outline" block>
@@ -344,7 +363,7 @@ export default function IndexPage() {
                     </Link>
                   </td>
 
-                  <td className="px-6 pt-5">
+                  <td className="pt-5 px-6">
                     <Link href="https://app.wesbitty.com" as="https://app.wesbitty.com">
                       <a>
                         <Button size="medium" type="outline" block>
@@ -354,8 +373,8 @@ export default function IndexPage() {
                     </Link>
                   </td>
 
-                  <td className="px-6 pt-5">
-                    <Link href="mailto:wesbitty@outlook.com" as="mailto:wesbitty@outlook.com">
+                  <td className="pt-5 px-6">
+                    <Link href="mailto:admin@wesbitty.com" as="mailto:admin@wesbitty.com">
                       <a>
                         <Button size="medium" type="outline" block>
                           Contact us
@@ -370,26 +389,23 @@ export default function IndexPage() {
         </div>
       </div>
 
-      <div className="border-t bg-gray-50 dark:border-gray-600 dark:bg-gray-800">
-        <div className="sm:py-18 container relative mx-auto px-6 py-16 md:py-24 lg:px-16 lg:py-24 xl:px-20">
+      <div className="bg-gray-50 dark:bg-gray-800 border-t dark:border-gray-600">
+        <div className="container mx-auto px-6 lg:px-16 xl:px-20 relative py-16 sm:py-18 md:py-24 lg:py-24">
           <Typography.Title level={2}>Frequently asked questions</Typography.Title>
           <div className="mt-16">
-            <dl className="space-y-10 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-8 md:gap-y-12 md:space-y-0">
-              {pricingFaq.map((faq, i) => {
+            <div className="grid grid-cols-2 gap-y-10 gap-x-10">
+              {pricingFaq.map((faq) => {
                 return (
                   <div>
-                    <dt className="text-lg font-medium leading-6 text-white">
-                      <Typography.Title level={4}>{faq.question}</Typography.Title>
-                    </dt>
-                    <dd className="mt-2 text-base ">
-                      <Typography>
-                        <ReactMarkdown>{faq.answer}</ReactMarkdown>
-                      </Typography>
-                    </dd>
+                    <Accordion bordered>
+                      <Accordion.Item label={faq.question}>
+                        <Typography>{faq.answer}</Typography>
+                      </Accordion.Item>
+                    </Accordion>
                   </div>
                 )
               })}
-            </dl>
+            </div>
           </div>
         </div>
       </div>

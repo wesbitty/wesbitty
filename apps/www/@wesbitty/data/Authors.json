@@ -1,20 +1,20 @@
 {
-  "bigwellsrobertson": {
-    "name": "Robertson Peter",
+  "paul_copplestone": {
+    "name": "Paul Copplestone",
     "job_title": "CEO and Co-Founder",
-    "username": "bigwellsrobertson",
+    "username": "kiwicopple",
     "avatar_url": "https://avatars0.githubusercontent.com/u/10214025?v=4"
   },
-  "lauratheodo": {
-    "name": "Laura Theodo",
+  "anthony_wilson": {
+    "name": "Anthony Wilson",
     "job_title": "CTO and Co-Founder",
-    "username": "lauratheodo",
+    "username": "awalias",
     "avatar_url": "https://avatars3.githubusercontent.com/u/458736?v=4"
   },
-  "iamraff": {
-    "name": "Iamraff",
-    "job_title": "Programs",
-    "username": "iamraff",
+  "rory": {
+    "name": "Rory Wilding",
+    "job_title": "Head of Growth",
+    "username": "roryw10",
     "avatar_url": "https://avatars0.githubusercontent.com/u/10214025?v=4"
   }
 }

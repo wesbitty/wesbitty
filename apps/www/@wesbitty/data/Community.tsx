@@ -1,5 +1,5 @@
-import { Card, Space, Typography } from '@wesbitty/ui'
-import DeveloperSignups from '@wesbitty/data/DeveloperSignups'
+import { Card, Space, Typography } from '@supabase/ui'
+import DeveloperSignups from '~/@wesbitty/data/DeveloperSignups'
 
 type CommunityItem = {
   title: string
@@ -17,11 +17,11 @@ const data: CommunityItem[] = [
     statLabel: 'Registered developers',
     img: 'supabase.png',
     detail: () => (
-      <div className="mx-auto mt-5 grid max-w-lg gap-0 overflow-hidden rounded-lg border border-dashed text-center sm:grid-cols-3 lg:max-w-none lg:grid-cols-4 ">
+      <div className="mt-5 max-w-lg mx-auto grid gap-0 sm:grid-cols-3 lg:grid-cols-4 lg:max-w-none text-center border border-dashed rounded-lg overflow-hidden ">
         {DeveloperSignups.map((signup) => (
           <div
             key={signup.title}
-            className="col-span-1 flex justify-center border border-dashed py-8 px-8"
+            className="col-span-1 flex justify-center py-8 px-8 border border-dashed"
           >
             <img key={signup.title} className="max-h-12" src={signup.img} alt={signup.title} />
           </div>
@@ -31,7 +31,7 @@ const data: CommunityItem[] = [
   },
   {
     title: 'GitHub',
-    stat: '22,000+',
+    stat: '24,000+',
     statLabel: 'Github stars',
     img: 'github.png',
     invertImgDarkMode: true,
@@ -43,7 +43,7 @@ const data: CommunityItem[] = [
   },
   {
     title: 'Twitter',
-    stat: '19,000+',
+    stat: '20,000+',
     statLabel: 'Followers',
     img: 'twitter.png',
     detail: () => (

@@ -1,4 +1,4 @@
-import { IconTwitter, Typography } from '@wesbitty/ui'
+import { IconTwitter, Typography } from '@supabase/ui'
 import Image from 'next/image'
 
 interface TweetCard {
@@ -9,13 +9,13 @@ interface TweetCard {
 
 function TweetCard(props: TweetCard) {
   return (
-    <div className="rounded-lg border border-gray-100 bg-white p-6 dark:border-gray-600 dark:bg-dark-800">
+    <div className="bg-white dark:bg-dark-800 rounded-lg border border-gray-100 dark:border-gray-600 p-6">
       <div className="relative">
-        <div className="h-12 w-12 overflow-hidden rounded-md border dark:border-gray-600">
+        <div className="rounded-md w-12 h-12 border dark:border-gray-600 overflow-hidden">
           <Image src={props.img_url} layout="responsive" width="64" height="64" />
         </div>
         <div
-          className="absolute -top-2 -left-2 flex h-6 w-6 items-center justify-center rounded-md"
+          className="absolute -top-2 -left-2 w-6 h-6 flex justify-center items-center rounded-md"
           style={{ background: '#00acee' }}
         >
           <div className="text-white">
@@ -23,11 +23,11 @@ function TweetCard(props: TweetCard) {
           </div>
         </div>
       </div>
-      <Typography.Text type="secondary" className="mt-3 block">
+      <Typography.Text type="secondary" className="block mt-3">
         {props.handle}
       </Typography.Text>
       <Typography.Text>
-        <p className="mt-3 text-base text-gray-900 dark:text-white">"{props.quote}"</p>
+        <p className="text-base mt-3 text-gray-900 dark:text-white">"{props.quote}"</p>
       </Typography.Text>
     </div>
   )

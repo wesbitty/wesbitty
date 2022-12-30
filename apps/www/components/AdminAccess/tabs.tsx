@@ -1,5 +1,5 @@
-import TabMarkup from '../../@wesbitty/data/AdminAccess.json'
-import { Tabs as SBTabs, Typography, Button } from '@wesbitty/ui'
+import TabMarkup from '~/@wesbitty/data/AdminAccess.json'
+import { Tabs as SBTabs, Typography, Button } from '@supabase/ui'
 
 type Props = {
   tabId: string
@@ -14,7 +14,7 @@ function Tabs(props: Props) {
   }
 
   return (
-    <div className="-mt-20 flex w-full justify-between sm:relative lg:mt-0">
+    <div className="flex justify-between w-full sm:relative -mt-20 lg:mt-0">
       <div>
         <div className="">
           <SBTabs

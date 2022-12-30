@@ -4,7 +4,7 @@ interface ProductIcon {
 
 function ProductIcon({ icon }: ProductIcon) {
   return (
-    <div className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-gray-800 text-white dark:bg-white">
+    <div className="inline-flex items-center justify-center rounded-md bg-gray-800 dark:bg-white text-white h-8 w-8">
       <svg
         className="h-4 w-4 stroke-white dark:stroke-black"
         xmlns="http://www.w3.org/2000/svg"

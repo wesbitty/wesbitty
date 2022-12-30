@@ -1,18 +1,18 @@
 import { useRouter } from 'next/router'
 
-import Container from '../components/Container'
-import Layout from '../components/Layouts/Default'
+import Container from 'components/Container'
+import Layout from '~/components/Layouts/Default'
 
 import SectionHeader from 'components/UI/SectionHeader'
 import CTABanner from 'components/CTABanner/index'
 import ImageGrid from 'components/ImageGrid'
-import SectionContainer from '../components/Layouts/SectionContainer'
+import SectionContainer from '~/components/Layouts/SectionContainer'
 
-import PressData from '@wesbitty/data/Press'
-import CommunityData from '@wesbitty/data/Community'
-import CompaniesData from '@wesbitty/data/Companies'
-import InvestorData from '@wesbitty/data/Investors'
-import TeamData from '@wesbitty/data/Team'
+import PressData from '~/@wesbitty/data/Press'
+import CommunityData from '~/@wesbitty/data/Community'
+import CompaniesData from '~/@wesbitty/data/Companies'
+import InvestorData from '~/@wesbitty/data/Investors'
+import TeamData from '~/@wesbitty/data/Team'
 
 import Image from 'next/image'
 
@@ -25,13 +25,34 @@ import {
   IconTwitter,
   Space,
   Typography,
-} from '@wesbitty/ui'
+} from '@supabase/ui'
+import { NextSeo } from 'next-seo'
 
 type Props = {}
 
 const Index = ({}: Props) => {
+  const router = useRouter()
+
+  const meta_title = "One of the world's fastest-growing open source communities | Supabase"
+  const meta_description =
+    'Supabase is the community that builds the infrastructure for your applications. Build using Supabase for any size project—from a new startup to even large growing companies'
+
   return (
     <>
+      <NextSeo
+        title={meta_title}
+        description={meta_description}
+        openGraph={{
+          title: meta_title,
+          description: meta_description,
+          url: `https://wesbitty.com/${router.pathname}`,
+          images: [
+            {
+              url: `https://wesbitty.com/images/og/og-image.jpg`,
+            },
+          ],
+        }}
+      />
       <Layout>
         <Header />
         <Community />
@@ -51,9 +72,9 @@ const Header = () => {
     <>
       <div
         className="
-          sm:py-18 
-          container relative mx-auto px-6 py-16 text-center md:py-24 lg:px-16 lg:py-24
-          xl:px-20"
+          container 
+          mx-auto px-6 lg:px-16 xl:px-20 relative py-16 sm:py-18 md:py-24 lg:py-24
+          text-center"
       >
         <Typography.Title>
           Join one of the world's fastest growing open source communities.
@@ -72,7 +93,7 @@ const Team = () => {
   const IconLink = ({ link, icon }: iIconLink) => {
     return (
       <a href={link} target="_blank">
-        <div className="opacity-50 transition-opacity hover:opacity-75">{icon}</div>
+        <div className="transition-opacity opacity-50 hover:opacity-75">{icon}</div>
       </a>
     )
   }
@@ -85,14 +106,14 @@ const Team = () => {
           <div className="col-span-8 ">
             <Typography.Text>
               <p className="text-lg">
-                Wesbitty is fully remote, with a strong affinity for open source maintainers and
+                Supabase is fully remote, with a strong affinity for open source maintainers and
                 ex-Founders. Our engineering team is made up of developers from AWS, Google,
                 Palantir, Stripe, and other YC companies.
               </p>
             </Typography.Text>
           </div>
-          <div className=" col-span-4 pt-8 md:mt-0 md:text-right">
-            <a href="https://wesbitty.com/careers">
+          <div className=" md:text-right pt-8 md:mt-0 col-span-4">
+            <a href="https://about.supabase.com/careers">
               <Button size="medium">Join the team</Button>
             </a>
           </div>
@@ -168,19 +189,19 @@ const Community = () => {
         }
       /> */}
       <div className="space-y-16">
-        <div className="relative grid max-w-5xl grid-cols-2 gap-8 lg:grid-cols-4 ">
+        <div className="relative gap-8 grid grid-cols-2 lg:grid-cols-4 max-w-5xl ">
           {CommunityData.map((x, i) => (
             <div
               key={x.title}
               className={`
               space-y-4 text-center lg:text-left
               ${i !== CommunityData.length - 1 ? 'dark:border-r-dark lg:border-r' : ''}
-              ${i === 1 ? 'dark:border-r-dark md:border-0 lg:border-r ' : ''}
+              ${i === 1 ? 'md:border-0 dark:border-r-dark lg:border-r ' : ''}
           `}
             >
               <div
-                className={`relative mx-auto h-7 w-7 lg:mx-0 ${
-                  x.invertImgDarkMode ? ' dark:invert dark:filter' : ''
+                className={`relative h-7 w-7 mx-auto lg:mx-0 ${
+                  x.invertImgDarkMode ? ' dark:filter dark:invert' : ''
                 }`}
               >
                 <Image
@@ -236,17 +257,17 @@ const Investors = () => {
         />
       </div>
 
-      <div className="mx-auto mt-5 mb-16 grid max-w-lg gap-0.5 lg:max-w-none lg:grid-cols-3">
+      <div className="mt-5 max-w-lg mx-auto grid gap-0.5 lg:grid-cols-3 lg:max-w-none mb-16">
         {InvestorData.filter((x) => x.lead === true).map((x) => (
           <div key={x.name}>
             <div
               className="
               col-span-1 
-              flex h-32 content-end items-center
-              justify-center bg-gray-50 
-              dark:bg-gray-700"
+              flex justify-center content-end items-center
+              bg-gray-50 dark:bg-gray-700 
+              h-32"
             >
-              <div className="relative h-8 w-full overflow-auto">
+              <div className="relative overflow-auto w-full h-8">
                 <Image
                   layout="fill"
                   src={`${x.img}`}
@@ -254,9 +275,9 @@ const Investors = () => {
                   objectFit="scale-down"
                   objectPosition="center"
                   className="
-                    opacity-50 
+                    filter 
                     contrast-0
-                    filter
+                    opacity-50
                   "
                 />
               </div>
@@ -265,7 +286,7 @@ const Investors = () => {
         ))}
       </div>
       <Typography.Title level={3}>Individual investors</Typography.Title>
-      <div className="mx-auto mt-5 grid grid-cols-2 gap-5 lg:max-w-none lg:grid-cols-4">
+      <div className="mt-5 mx-auto grid gap-5 grid-cols-2 lg:grid-cols-4 lg:max-w-none">
         {InvestorData.filter((x) => x.lead === false)
           .sort((a, b) => a.name.localeCompare(b.name))
           .map((x) => (
@@ -295,11 +316,11 @@ const Press = () => {
       <div>
         <SectionHeader title={'Press'} />
       </div>
-      <div className="mx-auto mt-5 grid gap-5 lg:max-w-none lg:grid-cols-2">
+      <div className="mt-5 mx-auto grid gap-5 lg:grid-cols-2 lg:max-w-none">
         {PressData.filter((x) => x.type == 'article').map((x) => (
           <a href={x.href} key={x.href} target="_blank">
             <Card key={`press_${x.href}`} hoverable>
-              <Space className="h-40 justify-between" direction="vertical">
+              <Space className="justify-between h-40" direction="vertical">
                 <div>
                   <Typography.Text small type="secondary">
                     {x.type.toUpperCase()}
@@ -311,11 +332,11 @@ const Press = () => {
           </a>
         ))}
       </div>
-      <div className="mx-auto mt-5 grid gap-5 sm:grid-cols-2 lg:max-w-none lg:grid-cols-4">
+      <div className="mt-5 mx-auto grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:max-w-none">
         {PressData.filter((x) => x.type == 'podcast').map((x) => (
           <a href={x.href} key={x.href} target="_blank">
             <Card key={`press_${x.href}`} hoverable>
-              <Space className="h-40 justify-between" direction="vertical">
+              <Space className="justify-between h-40" direction="vertical">
                 <div>
                   <Typography.Text small type="secondary">
                     {x.type.toUpperCase()}

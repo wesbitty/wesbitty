@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import { Button, Badge, IconStar } from '@wesbitty/ui'
-import FlyOut from '../UI/FlyOut'
-import Transition from '../../@wesbitty/lib/Transition'
+import { Button, Badge, IconStar } from '@supabase/ui'
+import FlyOut from '~/components/UI/FlyOut'
+import Transition from '~/@wesbitty/lib/Transition'
 
-import SolutionsData from '../../@wesbitty/data/Solutions.json'
+import SolutionsData from '~/@wesbitty/data/Solutions.json'
 
-import Solutions from '../Nav/Product'
-import Developers from '../Nav/Developers'
-import Announcement from '../Nav/Announcement'
+import Solutions from '~/components/Nav/Product'
+import Developers from '~/components/Nav/Developers'
+import Announcement from '~/components/Nav/Announcement'
 
 type Props = {
   darkMode: boolean
@@ -49,7 +49,7 @@ const Nav = (props: Props) => {
     const content = (
       <div className="mb-3 flex md:h-full lg:flex-col">
         <div className="flex-shrink-0">
-          <div className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-gray-800 text-white sm:h-12 sm:w-12">
+          <div className="inline-flex items-center justify-center h-10 w-10 rounded-md bg-gray-800 text-white sm:h-12 sm:w-12">
             {/* <!-- Heroicon name: chart-bar --> */}
             <svg
               className="h-6 w-6"
@@ -63,9 +63,9 @@ const Nav = (props: Props) => {
             </svg>
           </div>
         </div>
-        <div className="ml-4 md:flex md:flex-1 md:flex-col md:justify-between lg:ml-0 lg:mt-4">
+        <div className="ml-4 md:flex-1 md:flex md:flex-col md:justify-between lg:ml-0 lg:mt-4">
           <div>
-            <p className="space-x-2 text-base font-medium text-gray-900 dark:text-white">
+            <p className="text-base font-medium text-gray-900 dark:text-white space-x-2">
               <span>{name}</span>
               {label && (
                 <Badge dot color="green">
@@ -87,14 +87,14 @@ const Nav = (props: Props) => {
       <a
         key={`solution_${idx}`}
         href={url}
-        className="-m-3 my-2 flex flex-col justify-between rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50 dark:hover:bg-dark-600"
+        className="-m-3 p-3 my-2 flex flex-col justify-between rounded-lg hover:bg-gray-50 dark:hover:bg-dark-600 transition ease-in-out duration-150"
       >
         {content}
       </a>
     ) : (
       <div
         key={`solution_${idx}`}
-        className="-m-3 flex flex-col justify-between rounded-lg p-3 transition duration-150 ease-in-out"
+        className="-m-3 p-3 flex flex-col justify-between rounded-lg transition ease-in-out duration-150"
       >
         {content}
       </div>
@@ -107,11 +107,11 @@ const Nav = (props: Props) => {
 
   const HamburgerButton = (props: HamburgerButtonProps) => (
     <div
-      className="absolute inset-y-0 left-0 flex items-center px-2 lg:hidden"
+      className="absolute inset-y-0 left-0 px-2 flex items-center lg:hidden"
       onClick={() => props.toggleFlyOut()}
     >
       <button
-        className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-700"
+        className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-700"
         aria-expanded="false"
       >
         <span className="sr-only">Open main menu</span>
@@ -155,8 +155,8 @@ const Nav = (props: Props) => {
     <div
       className={
         `
-                  inline-flex cursor-pointer items-center border-b-2 border-transparent px-1 text-sm font-medium text-gray-500
-                  hover:text-gray-700 dark:text-dark-100
+                  inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700
+                  dark:text-dark-100 cursor-pointer
                 ` + props.active
       }
       onClick={props.onClick}
@@ -165,8 +165,8 @@ const Nav = (props: Props) => {
         <span>{props.title}</span>
         <svg
           className={
-            'ml-2 h-5 w-5 text-gray-300 transition duration-150 ease-in-out group-hover:text-gray-300' +
-            (props.active && ' rotate-180 transform')
+            'ml-2 h-5 w-5 text-gray-300 group-hover:text-gray-300 transition ease-in-out duration-150' +
+            (props.active && ' transform rotate-180')
           }
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
@@ -187,48 +187,28 @@ const Nav = (props: Props) => {
     <>
       <Announcement />
       <div className="sticky top-0 z-50">
-        <nav className="border-b bg-white dark:border-gray-600 dark:bg-gray-800">
+        <nav className="bg-white dark:bg-gray-800 border-b dark:border-gray-600">
           {/* <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-10 xl:px-0"> */}
-          <div className="relative mx-auto flex h-16 justify-between lg:container lg:px-16 xl:px-20">
+          <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-16 xl:px-20">
             <HamburgerButton toggleFlyOut={() => setOpen(true)} />
-            <div className="flex flex-1 items-center justify-center sm:items-stretch lg:justify-between">
+            <div className="flex-1 flex items-center justify-center sm:items-stretch lg:justify-between">
               <div className="flex items-center">
-                <div className="flex flex-shrink-0 items-center">
+                <div className="flex-shrink-0 flex items-center">
                   <Link href="/" as="/">
                     <a>
                       <img
                         className="w-40"
                         src={
                           darkMode
-                            ? `${basePath}/Logo/wesbitty-dark-logo.svg`
-                            : `${basePath}/Logo/wesbitty-light-logo.svg`
+                            ? `${basePath}/brand-assets/wesbitty-dark-logo.svg`
+                            : `${basePath}/brand-assets/wesbityy-light-logo.svg`
                         }
-                        alt="Wesbitty-Logo"
+                        alt="Logo"
                       />
                     </a>
                   </Link>
                 </div>
-                <div className="hidden pl-4 sm:ml-6 sm:space-x-4 lg:flex">
-                  <a
-                    href="/blog"
-                    className={`
-                    dark:hover:border-dark-100 inline-flex items-center border-b-2 border-transparent p-5 px-1
-                    text-sm font-medium text-gray-500 hover:border-gray-500
-                    hover:text-gray-700 dark:text-dark-100
-                  `}
-                  >
-                    Blog
-                  </a>
-                  <a
-                    href="/pricing"
-                    className={`
-                    dark:hover:border-dark-100 inline-flex items-center border-b-2 border-transparent p-5 px-1
-                    text-sm font-medium text-gray-500 hover:border-gray-500
-                    hover:text-gray-700 dark:text-dark-100
-                  `}
-                  >
-                    Pricing
-                  </a>
+                <div className="pl-4 hidden sm:ml-6 lg:flex sm:space-x-4">
                   <FlyOutNavButton
                     title={'Product'}
                     onClick={() => handleToggle(() => setOpenProduct(!openProduct))}
@@ -239,16 +219,36 @@ const Nav = (props: Props) => {
                     onClick={() => handleToggle(() => setOpenDevelopers(!openDevelopers))}
                     active={openDevelopers}
                   />
+                  <a
+                    href="/pricing"
+                    className={`
+                    inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
+                    text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
+                    dark:text-dark-100 dark:hover:border-dark-100
+                  `}
+                  >
+                    Pricing
+                  </a>
+                  <a
+                    href="/blog"
+                    className={`
+                    inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
+                    text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
+                    dark:text-dark-100 dark:hover:border-dark-100
+                  `}
+                  >
+                    Blog
+                  </a>
                 </div>
               </div>
-              <div className="hidden items-center sm:space-x-3 lg:flex">
+              <div className="hidden lg:flex items-center sm:space-x-3">
                 <a href="https://github.com/wesbitty/wesbitty" target="_blank">
                   <Button type="default" icon={<IconStar />}>
                     Star us on GitHub
                   </Button>
                 </a>
-                <a href="/user/login">
-                  <Button>Sign in</Button>
+                <a href="https://wesbitty.com/platform/login">
+                  <Button>Start your project</Button>
                 </a>
               </div>
             </div>
@@ -266,13 +266,13 @@ const Nav = (props: Props) => {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-1"
           >
-            <div className="fixed -inset-y-0 z-50 h-screen w-screen transform overflow-y-scroll bg-white p-4 dark:bg-dark-700 md:p-8">
+            <div className="p-4 md:p-8 h-screen w-screen fixed bg-white transform overflow-y-scroll -inset-y-0 z-50 dark:bg-dark-700">
               <div className="absolute right-4 top-4 items-center justify-between">
                 <div className="-mr-2">
                   <button
                     onClick={() => setOpen(false)}
                     type="button"
-                    className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-500 dark:bg-dark-800"
+                    className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-500 dark:bg-dark-800"
                   >
                     <span className="sr-only">Close menu</span>
                     <svg
@@ -295,52 +295,52 @@ const Nav = (props: Props) => {
               </div>
               {/* </div> */}
               <div className="mt-6 mb-12">
-                <div className="space-y-1 pt-2 pb-4">
+                <div className="pt-2 pb-4 space-y-1">
                   <a
-                    href="/user/login"
+                    href="https://wesbitty.com/platform/login"
                     className="block pl-3 pr-4 text-base font-medium text-gray-600 dark:text-white"
                   >
                     Sign in
                   </a>
                 </div>
-                <div className="space-y-1 pt-2 pb-4">
-                  <a
-                    href="/blog"
-                    target="_blank"
-                    className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800 dark:text-white dark:hover:bg-dark-600"
-                  >
-                    Blog
-                  </a>
+                <div className="pt-2 pb-4 space-y-1">
                   <a
                     href="/docs"
-                    className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800 dark:text-white dark:hover:bg-dark-600"
+                    className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
                   >
                     Product
                   </a>
                   <a
-                    href="/developer"
-                    className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800 dark:text-white dark:hover:bg-dark-600"
+                    href="/docs"
+                    className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
                   >
                     Developers
                   </a>
                   <a
                     href="/docs"
-                    className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800 dark:text-white dark:hover:bg-dark-600"
+                    className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
                   >
                     Company
                   </a>
                   <a
                     href="/pricing"
-                    className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800 dark:text-white dark:hover:bg-dark-600"
+                    className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
                   >
                     Pricing
                   </a>
                   <a
                     href="https://github.com/wesbitty/wesbitty"
                     target="_blank"
-                    className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800 dark:text-white dark:hover:bg-dark-600"
+                    className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
                   >
                     GitHub
+                  </a>
+                  <a
+                    href="/blog"
+                    target="_blank"
+                    className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
+                  >
+                    Blog
                   </a>
                 </div>
                 <div className="p-3">

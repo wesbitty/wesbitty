@@ -1,4 +1,4 @@
-import { IconDatabase, Typography } from '@wesbitty/ui'
+import { IconDatabase, Typography } from '@supabase/ui'
 
 const FeatureSection = (props: any) => {
   return (

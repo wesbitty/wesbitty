@@ -1,6 +1,6 @@
-import { Badge, Card, Divider, IconFile, Space, Typography } from '@wesbitty/ui'
+import { Badge, Card, Divider, IconChevronLeft, IconFile, Space, Typography } from '@supabase/ui'
 import matter from 'gray-matter'
-import authors from '@wesbitty/lib/authors.json'
+import authors from '~/@wesbitty/lib/authors.json'
 import hydrate from 'next-mdx-remote/hydrate'
 import renderToString from 'next-mdx-remote/render-to-string'
 import { NextSeo } from 'next-seo'
@@ -13,8 +13,8 @@ import CTABanner from 'components/CTABanner'
 import DefaultLayout from 'components/Layouts/Default'
 import Quote from 'components/Quote'
 import ImageGrid from 'components/ImageGrid'
-import { generateReadingTime } from '@wesbitty/lib/helpers'
-import { getAllPostSlugs, getPostdata, getSortedPosts } from '@wesbitty/lib/posts'
+import { generateReadingTime } from '~/@wesbitty/lib/helpers'
+import { getAllPostSlugs, getPostdata, getSortedPosts } from '~/@wesbitty/lib/posts'
 import blogStyles from './[slug].module.css'
 
 // import all components used in blog articles here
@@ -36,7 +36,7 @@ const slug = require('rehype-slug')
 const toc = require('markdown-toc')
 
 export async function getStaticPaths() {
-  const paths = getAllPostSlugs()
+  const paths = getAllPostSlugs('_postsField')
   return {
     paths,
     fallback: false,
@@ -45,7 +45,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: any) {
   const filePath = `${params.year}-${params.month}-${params.day}-${params.slug}`
-  const postContent = await getPostdata(filePath)
+  const postContent = await getPostdata(filePath, '_postsField')
   const { data, content } = matter(postContent)
 
   const mdxSource: any = await renderToString(content, {
@@ -57,9 +57,9 @@ export async function getStaticProps({ params }: any) {
     },
   })
 
-  const relatedPosts = getSortedPosts(5, mdxSource.scope.tags)
+  const relatedPosts = getSortedPosts('_postsField', 5, mdxSource.scope.tags)
 
-  const allPosts = getSortedPosts()
+  const allPosts = getSortedPosts('_postsField')
 
   const currentIndex = allPosts
     .map(function (e) {
@@ -87,7 +87,7 @@ export async function getStaticProps({ params }: any) {
 
 function BlogPostPage(props: any) {
   // @ts-ignore
-  const author = props.blog.author ? authors[props.blog.author] : authors['wesbitty']
+  const author = props.blog.author ? authors[props.blog.author] : authors['supabase']
   const content = hydrate(props.blog.content, { components })
 
   const { basePath } = useRouter()
@@ -132,7 +132,7 @@ function BlogPostPage(props: any) {
         </Space>
       </div>
       <div>
-        <Typography.Title level={5}>Table of contents</Typography.Title>
+        <Typography.Text type="secondary">Table of contents</Typography.Text>
         <Typography>
           <div className={blogStyles['toc']}>
             <ReactMarkdown plugins={[gfm]}>{props.blog.toc.content}</ReactMarkdown>
@@ -174,33 +174,47 @@ function BlogPostPage(props: any) {
         }}
       />
       <DefaultLayout>
-        <div className="mb-12 overflow-hidden bg-white dark:bg-dark-800">
-          <div className="container mx-auto px-8 sm:px-16 lg:mt-16 xl:px-20">
-            <div className="mx-auto max-w-6xl">
-              <div className="grid grid-cols-12 lg:gap-16 lg:py-12">
-                <div className="col-span-12 lg:col-span-10">
-                  <Link href={`/blog`} as={`/blog`}>
-                    <a>
-                      <Typography.Text type="secondary">
-                        <span className="cursor-pointer hover:text-gray-900 dark:hover:text-white">
-                          View more posts
-                        </span>
-                      </Typography.Text>
-                    </a>
-                  </Link>
-                  <Space className="my-4">
+        <div
+          className="
+          bg-white dark:bg-dark-800
+            container px-8 sm:px-16 xl:px-20 mx-auto
+            py-16
+          "
+        >
+          <div className="grid grid-cols-12 gap-4">
+            <div className="col-span-12 lg:col-span-2 mb-2">
+              {/* Back button */}
+              <Typography.Text type="secondary">
+                <a
+                  href={'/blog'}
+                  className="hover:text-gray-900 dark:hover:text-white cursor-pointer flex items-center"
+                >
+                  <IconChevronLeft style={{ padding: 0 }} />
+                  Back
+                </a>
+              </Typography.Text>
+            </div>
+            <div className="col-span-12 lg:col-span-12 xl:col-span-10">
+              {/* Title and description */}
+              <div className="mb-16 space-y-8 max-w-5xl">
+                <div className="space-y-4">
+                  <Typography.Text type="success">Blog post</Typography.Text>
+                  <Typography.Title>{props.blog.title}</Typography.Title>
+                  <div className="flex space-x-3">
                     <Typography.Text>{props.blog.date}</Typography.Text>
                     <Typography.Text type="secondary">•</Typography.Text>
                     <Typography.Text>
                       {generateReadingTime(props.blog.content.renderedOutput)}
                     </Typography.Text>
-                  </Space>
-                  <Typography.Title>{props.blog.title}</Typography.Title>
+                  </div>
                   {author && (
                     <div className="mt-6 mb-8 lg:mb-0">
                       <Space size={4}>
                         {author.author_image_url && (
-                          <img src={author.author_image_url} className="w-10 rounded-full" />
+                          <img
+                            src={author.author_image_url}
+                            className="rounded-full w-10 border dark:border-dark"
+                          />
                         )}
                         <Space direction="vertical" size={0}>
                           <Typography.Text>{author.author}</Typography.Text>
@@ -213,17 +227,80 @@ function BlogPostPage(props: any) {
                   )}
                 </div>
               </div>
+              <div className="grid grid-cols-12 lg:gap-16 xl:gap-8">
+                {/* Content */}
+                <div className="col-span-12 lg:col-span-7 xl:col-span-7">
+                  {props.blog.thumb && (
+                    <img
+                      src={'/images/blog/' + props.blog.thumb}
+                      className="object-cover mb-8 border dark:border-gray-600"
+                      style={{ maxHeight: '520px' }}
+                    />
+                  )}
+                  <article className={blogStyles['article']}>
+                    <Typography>{content}</Typography>
+                  </article>
+                  <div className="grid lg:grid-cols-1 gap-8 py-8">
+                    <div>
+                      {props.prevPost && <NextCard post={props.prevPost} label="Last post" />}
+                    </div>
+                    <div>
+                      {props.nextPost && (
+                        <NextCard post={props.nextPost} label="Next post" className="text-right" />
+                      )}
+                    </div>
+                  </div>
+                </div>
+                {/* Sidebar */}
+                <div className="col-span-12 lg:col-span-5 xl:col-span-3 xl:col-start-9 space-y-8">
+                  <Space direction="vertical" size={8} className="lg:mb-16 lg:top-16 lg:sticky">
+                    <div className="hidden lg:block">{toc}</div>
+                    <div>
+                      <div className="mb-4">
+                        <Typography.Text type="secondary">Related articles</Typography.Text>
+                      </div>
+                      <Space direction="vertical">
+                        {props.relatedPosts.map((post: any) => (
+                          <Link href={`/blog/${post.url}`} as={`/blog/${post.url}`}>
+                            <div>
+                              <Typography.Text className="cursor-pointer">
+                                <Space>
+                                  <IconFile size={'small'} style={{ minWidth: '1.2rem' }} />
+                                  <span className="hover:text-gray-900 dark:hover:text-white">
+                                    {post.title}
+                                  </span>
+                                </Space>
+                              </Typography.Text>
+                              <Divider light className="mt-2" />
+                            </div>
+                          </Link>
+                        ))}
+                        <Link href={`/blog`} as={`/blog`}>
+                          <div>
+                            <Typography.Text type="secondary">
+                              <span className="hover:text-gray-900 dark:hover:text-white cursor-pointer">
+                                View all posts
+                              </span>
+                            </Typography.Text>
+                          </div>
+                        </Link>
+                      </Space>
+                    </div>
+                  </Space>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="container mx-auto px-8 py-16 sm:px-16 xl:px-20">
-          <div className="mx-auto max-w-6xl">
-            <div className="grid grid-cols-12 py-4 lg:gap-16">
+
+        {/* <div className="container px-8 sm:px-16 xl:px-20 py-16 mx-auto">
+          <div className="max-w-6xl mx-auto">
+            <div className="py-4 grid grid-cols-12 lg:gap-16">
               <div className="col-span-12 lg:col-span-8">
                 {props.blog.thumb && (
                   <img
                     src={'/images/blog/' + props.blog.thumb}
-                    className="-mt-32 mb-8 border object-cover dark:border-gray-600"
+                    className="object-cover -mt-32 mb-8 border dark:border-gray-600"
                     style={{ maxHeight: '520px', width: '100%' }}
                   />
                 )}
@@ -233,7 +310,7 @@ function BlogPostPage(props: any) {
                 </article>
               </div>
               <div className="col-span-12 lg:col-span-4">
-                <Space direction="vertical" size={8} className="lg:sticky lg:top-16 lg:mb-16">
+                <Space direction="vertical" size={8} className="lg:mb-16 lg:top-16 lg:sticky">
                   <div className="hidden lg:block">{toc}</div>
                   <div>
                     <Typography.Title className="mb-4" level={5}>
@@ -258,7 +335,7 @@ function BlogPostPage(props: any) {
                       <Link href={`/blog`} as={`/blog`}>
                         <div>
                           <Typography.Text type="secondary">
-                            <span className="cursor-pointer hover:text-gray-900 dark:hover:text-white">
+                            <span className="hover:text-gray-900 dark:hover:text-white cursor-pointer">
                               View all posts
                             </span>
                           </Typography.Text>
@@ -269,7 +346,7 @@ function BlogPostPage(props: any) {
                 </Space>
               </div>
             </div>
-            <div className="grid gap-8 py-8 lg:grid-cols-2">
+            <div className="grid lg:grid-cols-2 gap-8 py-8">
               <div>{props.prevPost && <NextCard post={props.prevPost} label="Last post" />}</div>
               <div>
                 {props.nextPost && (
@@ -278,7 +355,8 @@ function BlogPostPage(props: any) {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+
         <CTABanner />
       </DefaultLayout>
     </>

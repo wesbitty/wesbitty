@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import Nav from '../Nav/index'
-import Footer from '../Footer/index'
+import Nav from 'components/Nav/index'
+import Footer from 'components/Footer/index'
 
 type Props = {
   hideHeader?: boolean

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "wesjet/jetpack": [".wesjet/jetpack"]
+      "~/*": ["./*"]
     },
     "target": "es5",
     "module": "esnext",
@@ -20,5 +20,5 @@
     "incremental": true
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.js", "**/*.tsx", ".wesjet/jetpack"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
