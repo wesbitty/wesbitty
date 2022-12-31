@@ -2,15 +2,15 @@
   {
     "type": "Case Study",
     "title": "A web crawler handling millions of API requests.",
-    "description": "See how Monitoro built an automated a scraping platform using Supabase.",
+    "description": "See how Monitoro built an automated a scraping platform using Wesbitty.",
     "imgUrl": "images/case-study-monitoro.jpg",
     "logoUrl": "images/logos/monitoro.png",
     "organization": "Monitoro",
     "url": "/blog/2020/12/02/case-study-monitoro",
     "postMeta": {
-      "name": "Paul Copplestone",
+      "name": "Robertson Peter",
       "avatarUrl": "https://avatars0.githubusercontent.com/u/10214025?v=4",
-      "publishDate": "Mar 16, 2020",
+      "publishDate": "Jan 02, 2023",
       "readLength": 6
     },
     "ctaText": "View case study"
@@ -18,15 +18,15 @@
   {
     "type": "Case Study",
     "title": "Counter-fraud watchlists for the fintech industry.",
-    "description": "See how Xendit use Supabase to build a full-text search engine.",
+    "description": "See how Xendit use Wesbitty to build a full-text search engine.",
     "imgUrl": "images/case-study-xendit.jpg",
     "logoUrl": "images/logos/xendit.png",
     "organization": "Llama Lab",
-    "url": "/blog/2020/12/02/case-study-xendit",
+    "url": "/blog/2023/01/02/case-study-xendit",
     "postMeta": {
-      "name": "Paul Copplestone",
+      "name": "Robertson Peter",
       "avatarUrl": "https://avatars0.githubusercontent.com/u/10214025?v=4",
-      "publishDate": "Mar 20, 2020",
+      "publishDate": "Jan 02, 2023",
       "readLength": 10
     },
     "ctaText": "View case study"
@@ -38,11 +38,11 @@
     "imgUrl": "images/case-study-tayfab.jpg",
     "logoUrl": "images/logos/monitoro.png",
     "organization": "Tayfab",
-    "url": "/blog/2020/12/02/case-study-tayfa",
+    "url": "/blog/2023/01/02/case-study-tayfa",
     "postMeta": {
-      "name": "Paul Copplestone",
+      "name": "Robertson Peter",
       "avatarUrl": "https://avatars0.githubusercontent.com/u/10214025?v=4",
-      "publishDate": "Mar 27, 2020",
+      "publishDate": "Jan 02, 2023",
       "readLength": 5
     },
     "ctaText": "View case study"

@@ -96,7 +96,7 @@ export const createExample: ExampleProps = {
   // Create a new chat room
   const newRoom = await supabase
     .from('rooms')
-    .insert({ name: 'Supabase Fan Club', public: true })
+    .insert({ name: 'Wesbitty Fan Club', public: true })
     `,
   },
 }
@@ -180,7 +180,7 @@ export const updateExample: ExampleProps = {
 //   // Create a new chat room
 //   const newRoom = await supabase
 //     .from('rooms')
-//     .insert({ name: 'Supabase Fan Club', public: true })
+//     .insert({ name: 'Wesbitty Fan Club', public: true })
 //   `
 // const updateExample = `
 //   import { createClient } from '@supabase/supabase-js'
@@ -227,7 +227,7 @@ export const updateExample: ExampleProps = {
 //     // Initialize
 //     const supabaseUrl = 'https://chat-room.supabase.co'
 //     const supabaseKey = 'public-anon-key'
-//     const supabase = Supabase.createClient(supabaseUrl, supabaseKey)
+//     const supabase = Wesbitty.createClient(supabaseUrl, supabaseKey)
 
 //     // Get public rooms and their messages
 //     supabase

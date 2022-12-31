@@ -16,7 +16,7 @@
   "author": "Wesbitty, Inc.",
   "scripts": {
     "build": "lerna run build",
-    "clean": "bash -c 'rm -rf examples/*/.wesjet examples/*/.next apps/*/.wesjet apps/*/.next packages/*/dist'",
+    "clean": "bash -c 'rm -rf apps/*/.wesjet apps/*/.next packages/*/dist'",
     "prettier": "prettier -w .",
     "dev": "lerna run dev --scope www",
     "tests": "jest"

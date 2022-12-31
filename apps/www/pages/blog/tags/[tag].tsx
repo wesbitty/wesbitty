@@ -8,7 +8,7 @@ import BlogHeader from 'components/Blog/BlogHeader'
 import { Typography } from '@wesbitty/ui'
 
 export async function getStaticProps({ params }: any) {
-  const posts = getSortedPosts('_postsField', 0, [params.tag])
+  const posts = getSortedPosts('[blog]', 0, [params.tag])
   return {
     props: {
       tag: params.tag,
@@ -18,7 +18,7 @@ export async function getStaticProps({ params }: any) {
 }
 
 export async function getStaticPaths() {
-  const categories = getAllCategories('_postsField')
+  const categories = getAllCategories('[blog]')
   return {
     paths: categories.map((category: any) => ({ params: { tag: category } })),
     fallback: false,

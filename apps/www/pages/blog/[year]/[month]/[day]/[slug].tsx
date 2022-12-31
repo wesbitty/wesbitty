@@ -36,7 +36,7 @@ const slug = require('rehype-slug')
 const toc = require('markdown-toc')
 
 export async function getStaticPaths() {
-  const paths = getAllPostSlugs('_postsField')
+  const paths = getAllPostSlugs('[blog]')
   return {
     paths,
     fallback: false,
@@ -45,7 +45,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: any) {
   const filePath = `${params.year}-${params.month}-${params.day}-${params.slug}`
-  const postContent = await getPostdata(filePath, '_postsField')
+  const postContent = await getPostdata(filePath, '[blog]')
   const { data, content } = matter(postContent)
 
   const mdxSource: any = await renderToString(content, {
@@ -57,9 +57,9 @@ export async function getStaticProps({ params }: any) {
     },
   })
 
-  const relatedPosts = getSortedPosts('_postsField', 5, mdxSource.scope.tags)
+  const relatedPosts = getSortedPosts('[blog]', 5, mdxSource.scope.tags)
 
-  const allPosts = getSortedPosts('_postsField')
+  const allPosts = getSortedPosts('[blog]')
 
   const currentIndex = allPosts
     .map(function (e) {

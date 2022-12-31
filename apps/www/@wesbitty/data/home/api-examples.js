@@ -72,7 +72,7 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 // Create a new chat room
 const newRoom = await supabase
   .from('rooms')
-  .insert({ name: 'Supabase Fan Club', public: true })
+  .insert({ name: 'Wesbitty Fan Club', public: true })
   `,
   },
   {

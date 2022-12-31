@@ -32,7 +32,7 @@
     "answer": "Your bill will not automatically run over the tier you have selected. We will reach out first to discuss moving up a tier."
   },
   {
-    "question": "Is there a way for me to learn about Supabase without being billed?",
+    "question": "Is there a way for me to learn about Wesbitty without being billed?",
     "answer": "Yes, you can use the free tier."
   },
   {
@@ -100,7 +100,7 @@
     "answer": "Yes. Contact us via <support@supabase.io>[](mailto:admin@wesbitty.com) and we will be happy to discuss your needs."
   },
   {
-    "question": "Where can I find Privacy and Terms of Use information for Supabase?",
+    "question": "Where can I find Privacy and Terms of Use information for Wesbitty?",
     "answer": "You can check out our privacy policy [here](/docs/company/privacy) and terms of service [here](/docs/company/terms)."
   },
   {
@@ -120,7 +120,7 @@
     "answer": "We are working on multi-environment projects. For now, you can create a project for your development backend and production backend. We give you four free projects as part of our free tier. This means you could have two development and two production servers as part of your free tier."
   },
   {
-    "question": "Can I self host Supabase for free?",
-    "answer": "Yes, our Docker setup can be found [here](https://github.com/wesbitty/wesbitty), or in our [CLI](https://github.com/wesbitty/cli). Supabase Studio is available in the docker setup, read more about it [here](https://wesbitty.com/blog/2021/11/30/supabase-studio)."
+    "question": "Can I self host Wesbitty for free?",
+    "answer": "Yes, our Docker setup can be found [here](https://github.com/wesbitty/wesbitty), or in our [CLI](https://github.com/wesbitty/cli). Wesbitty Studio is available in the docker setup, read more about it [here](https://wesbitty.com/blog/2021/11/30/supabase-studio)."
   }
 ]

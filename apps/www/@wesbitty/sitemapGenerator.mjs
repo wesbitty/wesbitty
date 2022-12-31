@@ -2,11 +2,6 @@ import { writeFileSync } from 'fs'
 import { globby } from 'globby'
 import prettier from 'prettier'
 
-/*
- * kudos to leerob from vercel
- * https://leerob.io/blog/nextjs-sitemap-robots
- */
-
 async function generate() {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
   const pages = await globby([
@@ -14,7 +9,7 @@ async function generate() {
     'pages/*.tsx',
     'pages/*/*.tsx',
     'data/**/*.mdx',
-    '_postsField/*.mdx',
+    '[blog]/*.mdx',
     '!pages/index.tsx',
     '!data/*.mdx',
     '!pages/_*.js',
@@ -33,7 +28,7 @@ async function generate() {
               .replace('pages', '')
               .replace('schemas', '')
               // add a `/` for blog posts
-              .replace('_postsField', '/blog')
+              .replace('[blog]', '/blog')
               .replace('.tsx', '')
               .replace('.mdx', '')
               // replace the paths for nested 'index' based routes

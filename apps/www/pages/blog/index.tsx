@@ -11,8 +11,8 @@ import PostTypes from '../../@wesbitty/types/post'
 import BlogListItem from '../../components/Blog/BlogListItem'
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPosts('_postsField')
-  const categories = getAllCategories('_postsField')
+  const allPostsData = getSortedPosts('[blog]')
+  const categories = getAllCategories('[blog]')
   const rss = generateRss(allPostsData)
 
   // create a rss feed in public directory

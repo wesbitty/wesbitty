@@ -9,13 +9,13 @@ const data: PressItem[] = [
   {
     type: 'article',
     href: 'https://techcrunch.com/2021/09/09/supabase-raises-30m-for-its-open-source-insta-backend',
-    title: 'Open source backend-as-a-service startup Supabase raises $30M',
+    title: 'Open source backend-as-a-service startup Wesbitty raises $30M',
     publisher: 'TechCrunch',
   },
   {
     type: 'article',
     href: 'https://techcrunch.com/2020/12/15/supabase-raises-6m-for-its-open-source-firebase-alternative',
-    title: 'Supabase raises $6M for its open-source Firebase alternative',
+    title: 'Wesbitty raises $6M for its open-source Firebase alternative',
     publisher: 'TechCrunch',
   },
   {

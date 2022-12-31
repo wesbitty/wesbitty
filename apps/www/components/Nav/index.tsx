@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { Button, Badge, IconLogIn, IconHome, IconPackage } from '@wesbitty/ui'
+import FlyOut from '../../components/UI/FlyOut'
+import Transition from '../../@wesbitty/lib/Transition'
 
-import { Button, Badge, IconStar } from '@wesbitty/ui'
-import FlyOut from '~/components/UI/FlyOut'
-import Transition from '~/@wesbitty/lib/Transition'
+import SolutionsData from '../../@wesbitty/data/Solutions.json'
 
-import SolutionsData from '~/@wesbitty/data/Solutions.json'
-
-import Solutions from '~/components/Nav/Product'
-import Developers from '~/components/Nav/Developers'
-import Announcement from '~/components/Nav/Announcement'
+import Solutions from '../../components/Nav/Product'
+import Developers from '../../components/Nav/Developers'
+import Announcement from '../../components/Nav/Announcement'
 
 type Props = {
   darkMode: boolean
@@ -203,12 +202,22 @@ const Nav = (props: Props) => {
                             ? `${basePath}/Logo/wesbitty-dark-logo.svg`
                             : `${basePath}/Logo/wesbitty-light-logo.svg`
                         }
-                        alt="Logo"
+                        alt="Wesbitty"
                       />
                     </a>
                   </Link>
                 </div>
                 <div className="pl-4 hidden sm:ml-6 lg:flex sm:space-x-4">
+                  <a
+                    href="/blog"
+                    className={`
+                    inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
+                    text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
+                    dark:text-dark-100 dark:hover:border-dark-100
+                  `}
+                  >
+                    Blog
+                  </a>
                   <FlyOutNavButton
                     title={'Product'}
                     onClick={() => handleToggle(() => setOpenProduct(!openProduct))}
@@ -229,26 +238,18 @@ const Nav = (props: Props) => {
                   >
                     Pricing
                   </a>
-                  <a
-                    href="/blog"
-                    className={`
-                    inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
-                    text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
-                    dark:text-dark-100 dark:hover:border-dark-100
-                  `}
-                  >
-                    Blog
-                  </a>
                 </div>
               </div>
               <div className="hidden lg:flex items-center sm:space-x-3">
                 <a href="https://github.com/wesbitty/wesbitty" target="_blank">
-                  <Button type="default" icon={<IconStar />}>
-                    Star us on GitHub
+                  <Button type="default" icon={<IconPackage />}>
+                    Start Your Project
                   </Button>
                 </a>
                 <a href="https://wesbitty.com/platform/login">
-                  <Button>Start your project</Button>
+                  <Button title="Sign In" type="default" icon={<IconLogIn />}>
+                    Sign In
+                  </Button>
                 </a>
               </div>
             </div>
@@ -323,6 +324,13 @@ const Nav = (props: Props) => {
                     Company
                   </a>
                   <a
+                    href="/blog"
+                    target="_blank"
+                    className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
+                  >
+                    Blog
+                  </a>
+                  <a
                     href="/pricing"
                     className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
                   >
@@ -334,13 +342,6 @@ const Nav = (props: Props) => {
                     className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
                   >
                     GitHub
-                  </a>
-                  <a
-                    href="/blog"
-                    target="_blank"
-                    className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
-                  >
-                    Blog
                   </a>
                 </div>
                 <div className="p-3">

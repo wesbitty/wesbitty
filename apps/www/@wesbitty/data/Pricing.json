@@ -103,7 +103,7 @@
         }
       },
       {
-        "title": "Remove Supabase branding from emails",
+        "title": "Remove Wesbitty branding from emails",
         "tiers": {
           "free": false,
           "pro": true,

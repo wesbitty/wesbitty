@@ -7,7 +7,7 @@ import { generateReadingTime } from './helpers'
 // based on YYYY-MM-DD format
 const FILENAME_SUBSTRING = 11
 
-type Directories = '_postsField' | '_case-studies'
+type Directories = '[blog]' | '_case-studies'
 
 export const getSortedPosts = (directory: Directories, limit?: number, tags?: any) => {
   //Finding directory named "blog" from the current working directory of Node.
@@ -35,7 +35,7 @@ export const getSortedPosts = (directory: Directories, limit?: number, tags?: an
     // construct url to link to blog posts
     // based on datestamp in file name
     let url = ''
-    if (directory === '_postsField') {
+    if (directory === '[blog]') {
       const dates = getDatesFromFileName(filename)
       url = `${dates.year}/${dates.month}/${dates.day}/${slug.substring(FILENAME_SUBSTRING)}`
     } else {
@@ -83,7 +83,7 @@ export const getAllPostSlugs = (directory: Directories) => {
 
   const files = fileNames.map((filename) => {
     const dates =
-      directory === '_postsField'
+      directory === '[blog]'
         ? getDatesFromFileName(filename)
         : {
             year: '2021',
@@ -96,7 +96,7 @@ export const getAllPostSlugs = (directory: Directories) => {
         ...dates,
         slug: filename
           .replace('.mdx', '')
-          .substring(directory === '_postsField' ? FILENAME_SUBSTRING : 0),
+          .substring(directory === '[blog]' ? FILENAME_SUBSTRING : 0),
       },
     }
   })

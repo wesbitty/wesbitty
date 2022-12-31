@@ -12,7 +12,7 @@ export default [
 const { data, error } = await supabase
   .from('rooms')
   .insert({ 
-    name: 'Supabase Fan Club', 
+    name: 'Wesbitty Fan Club', 
     public: true 
   })
 
