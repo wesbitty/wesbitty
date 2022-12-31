@@ -9,6 +9,9 @@ import CaseStudies from 'components/CaseStudies/index'
 import CTABanner from 'components/CTABanner/index'
 import SectionContainer from '../components/Layouts/SectionContainer'
 import TwitterSocialProof from '../components/Sections/TwitterSocialProof'
+import { Auth0Provider } from "@auth0/auth0-react"
+
+
 
 // Import Swiper styles if swiper used on page
 import 'swiper/swiper.min.css'
@@ -18,6 +21,10 @@ type Props = {}
 const Index = ({}: Props) => {
   return (
     <>
+      <Auth0Provider
+    domain="wesbitty.us.auth0.com"
+    clientId="VFDP0wPp0FVarqc5jOLVc41Ggkjudb5o"
+  >
       <Layout>
         <Container>
           <Hero />
@@ -43,6 +50,7 @@ const Index = ({}: Props) => {
           <CTABanner />
         </Container>
       </Layout>
+      </Auth0Provider>
     </>
   )
 }

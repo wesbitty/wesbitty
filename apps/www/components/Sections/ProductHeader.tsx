@@ -42,7 +42,7 @@ const ProductHeader = (props: Types) => (
           </Typography.Text>
         )}
         <div className="mt-12 flex flex-row md:flex-row md:items-center">
-          <Link href="https://wesbitty.com/platform/login" as="https://wesbitty.com/platform/login">
+          <Link href="/api/auth/signin" as="/api/auth/signin">
             <a>
               <Button size="medium">Start a project</Button>
             </a>

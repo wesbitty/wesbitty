@@ -1,4 +1,4 @@
-import { APP_NAME, DESCRIPTION } from '~/@wesbitty/lib/constants'
+import { APP_NAME, DESCRIPTION } from '../@wesbitty/lib/constants'
 import { DefaultSeo } from 'next-seo'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
@@ -6,6 +6,8 @@ import { useEffect } from 'react'
 import Meta from '../components/Favicons'
 import '../styles/index.css'
 import { post } from '../@wesbitty/lib/fetchWrapper'
+
+
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()

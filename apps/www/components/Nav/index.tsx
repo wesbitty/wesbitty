@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { Button, Badge, IconLogIn, IconHome, IconPackage } from '@wesbitty/ui'
 import FlyOut from '../../components/UI/FlyOut'
 import Transition from '../../@wesbitty/lib/Transition'
-
+import LoginButton from './LoginButton'
 import SolutionsData from '../../@wesbitty/data/Solutions.json'
 
 import Solutions from '../../components/Nav/Product'
@@ -246,11 +246,12 @@ const Nav = (props: Props) => {
                     Start Your Project
                   </Button>
                 </a>
-                <a href="https://wesbitty.com/platform/login">
+              
+              
                   <Button title="Sign In" type="default" icon={<IconLogIn />}>
-                    Sign In
+                  <LoginButton>Sign In</LoginButton>
                   </Button>
-                </a>
+        
               </div>
             </div>
             {/* <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"></div> */}
@@ -298,7 +299,7 @@ const Nav = (props: Props) => {
               <div className="mt-6 mb-12">
                 <div className="pt-2 pb-4 space-y-1">
                   <a
-                    href="https://wesbitty.com/platform/login"
+                    href="/api/auth/signin"
                     className="block pl-3 pr-4 text-base font-medium text-gray-600 dark:text-white"
                   >
                     Sign in
