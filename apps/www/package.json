@@ -2,7 +2,7 @@
   "name": "www",
   "version": "0.0.1",
   "license": "MIT",
-  "description": "Wesbitty Official Template v1",
+  "description": "Official Template v1",
   "private": true,
   "scripts": {
     "dev": "next dev --port 3210",

@@ -2,16 +2,16 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-import DefaultLayout from '../../components/Layouts/Default'
-import { PricingTableRowDesktop, PricingTableRowMobile } from '../../components/PricingTableRow'
+import DefaultLayout from '../components/Layouts/Default'
+import { PricingTableRowDesktop, PricingTableRowMobile } from '../components/PricingTableRow'
 import { Accordion, Badge, Button, Divider, Space, Typography } from '@wesbitty/ui'
 
-import pricing from '../../@wesbitty/data/Pricing.json'
-import pricingFaq from '../../@wesbitty/data/PricingFAQ.json'
+import pricing from '../@wesbitty/data/Pricing.json'
+import pricingFaq from '../@wesbitty/data/PricingFAQ.json'
 import ReactMarkdown from 'react-markdown'
-import CTABanner from '../../components/CTABanner'
+import CTABanner from '../components/CTABanner'
 
-import Solutions from '~/@wesbitty/data/Solutions.json'
+import Solutions from '../@wesbitty/data/Solutions.json'
 import { NextSeo } from 'next-seo'
 
 export default function IndexPage() {

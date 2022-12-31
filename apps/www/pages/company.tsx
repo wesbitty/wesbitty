@@ -1,21 +1,16 @@
 import { useRouter } from 'next/router'
-
-import Container from 'components/Container'
-import Layout from '~/components/Layouts/Default'
-
-import SectionHeader from 'components/UI/SectionHeader'
-import CTABanner from 'components/CTABanner/index'
+import Container from '../components/Container'
+import Layout from '../components/Layouts/Default'
+import SectionHeader from '../components/UI/SectionHeader'
+import CTABanner from '../components/CTABanner/index'
 import ImageGrid from 'components/ImageGrid'
-import SectionContainer from '~/components/Layouts/SectionContainer'
-
-import PressData from '~/@wesbitty/data/Press'
-import CommunityData from '~/@wesbitty/data/Community'
-import CompaniesData from '~/@wesbitty/data/Companies'
-import InvestorData from '~/@wesbitty/data/Investors'
-import TeamData from '~/@wesbitty/data/Team'
-
+import SectionContainer from '../components/Layouts/SectionContainer'
+import PressData from '../@wesbitty/data/Press'
+import CommunityData from '../@wesbitty/data/Community'
+import CompaniesData from '../@wesbitty/data/Companies'
+import InvestorData from '../@wesbitty/data/Investors'
+import TeamData from '../@wesbitty/data/Team'
 import Image from 'next/image'
-
 import {
   Button,
   Card,
@@ -33,9 +28,9 @@ type Props = {}
 const Index = ({}: Props) => {
   const router = useRouter()
 
-  const meta_title = "One of the world's fastest-growing open source communities | Supabase"
+  const meta_title = "One of the world's fastest-growing open source communities | Wesbitty, Inc."
   const meta_description =
-    'Supabase is the community that builds the infrastructure for your applications. Build using Supabase for any size project—from a new startup to even large growing companies'
+    'Wesbitty is the community that builds the infrastructure for your applications. Build using Wesbitty for any size project—from a new startup to even large growing companies'
 
   return (
     <>
@@ -106,14 +101,14 @@ const Team = () => {
           <div className="col-span-8 ">
             <Typography.Text>
               <p className="text-lg">
-                Supabase is fully remote, with a strong affinity for open source maintainers and
+                Wesbitty is fully remote, with a strong affinity for open source maintainers and
                 ex-Founders. Our engineering team is made up of developers from AWS, Google,
                 Palantir, Stripe, and other YC companies.
               </p>
             </Typography.Text>
           </div>
           <div className=" md:text-right pt-8 md:mt-0 col-span-4">
-            <a href="https://about.supabase.com/careers">
+            <a href="https://wesbitty.com/about">
               <Button size="medium">Join the team</Button>
             </a>
           </div>
