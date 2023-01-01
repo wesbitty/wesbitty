@@ -10,22 +10,39 @@ import CTABanner from 'components/CTABanner/index'
 import SectionContainer from '../components/Layouts/SectionContainer'
 import TwitterSocialProof from '../components/Sections/TwitterSocialProof'
 import { Auth0Provider } from "@auth0/auth0-react"
-
-
-
-// Import Swiper styles if swiper used on page
+import { useUser } from '@auth0/nextjs-auth0/client';
+import { siteMetadata } from '../@wesbitty/siteMetadata'
 import 'swiper/swiper.min.css'
 
+
+
+
+
+
 type Props = {}
+
+function IndexApi() {
+  const { user, error, isLoading } = useUser();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
+
+  if (user) {
+    return (
+      <div>
+        Welcome {user.name}! <a href="/api/auth/logout">Logout</a>
+      </div>
+    );
+  }
+
+  return <a href="/api/auth/login">Login</a>;
+}
 
 const Index = ({}: Props) => {
   return (
     <>
-      <Auth0Provider
-    domain="wesbitty.us.auth0.com"
-    clientId="VFDP0wPp0FVarqc5jOLVc41Ggkjudb5o"
-  >
       <Layout>
+       <IndexApi />
         <Container>
           <Hero />
           <Features />
@@ -50,7 +67,6 @@ const Index = ({}: Props) => {
           <CTABanner />
         </Container>
       </Layout>
-      </Auth0Provider>
     </>
   )
 }

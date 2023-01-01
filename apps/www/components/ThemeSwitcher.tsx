@@ -44,11 +44,11 @@ const MoonEmoji = () => (
   </svg>
 )
 
-function DarkModeToggle(props: Props) {
+function ThemeSwitcher(props: Props) {
   const { darkMode, updateTheme } = props
 
   const toggleDarkMode = () => {
-    localStorage.setItem('supabaseDarkMode', (!darkMode).toString())
+    localStorage.setItem('wesbittyDMToggle', (!darkMode).toString())
     updateTheme(!darkMode)
   }
 
@@ -79,4 +79,4 @@ function DarkModeToggle(props: Props) {
     </div>
   )
 }
-export default DarkModeToggle
+export default ThemeSwitcher

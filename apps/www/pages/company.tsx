@@ -23,6 +23,7 @@ import {
 } from '@wesbitty/ui'
 import { NextSeo } from 'next-seo'
 
+
 type Props = {}
 
 const Index = ({}: Props) => {

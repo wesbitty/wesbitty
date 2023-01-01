@@ -4,12 +4,13 @@ import { useRouter } from 'next/router'
 import { Button, Badge, IconLogIn, IconHome, IconPackage } from '@wesbitty/ui'
 import FlyOut from '../../components/UI/FlyOut'
 import Transition from '../../@wesbitty/lib/Transition'
-import LoginButton from './LoginButton'
+import ThemeSwitch from '../ThemeSwitch'
 import SolutionsData from '../../@wesbitty/data/Solutions.json'
-
 import Solutions from '../../components/Nav/Product'
 import Developers from '../../components/Nav/Developers'
 import Announcement from '../../components/Nav/Announcement'
+
+
 
 type Props = {
   darkMode: boolean
@@ -225,6 +226,7 @@ const Nav = (props: Props) => {
                   />
                   <FlyOutNavButton
                     title={'Developers'}
+                    icon={<IconPackage />}
                     onClick={() => handleToggle(() => setOpenDevelopers(!openDevelopers))}
                     active={openDevelopers}
                   />
@@ -240,18 +242,18 @@ const Nav = (props: Props) => {
                   </a>
                 </div>
               </div>
+              <ThemeSwitch />
               <div className="hidden lg:flex items-center sm:space-x-3">
                 <a href="https://github.com/wesbitty/wesbitty" target="_blank">
                   <Button type="default" icon={<IconPackage />}>
                     Start Your Project
                   </Button>
                 </a>
-              
-              
-                  <Button title="Sign In" type="default" icon={<IconLogIn />}>
-                  <LoginButton>Sign In</LoginButton>
+              <a href="/api/auth/login">
+              <Button title="Sign In" type="default" icon={<IconLogIn />}>
+                       Sign In
                   </Button>
-        
+                  </a>
               </div>
             </div>
             {/* <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"></div> */}
@@ -299,7 +301,7 @@ const Nav = (props: Props) => {
               <div className="mt-6 mb-12">
                 <div className="pt-2 pb-4 space-y-1">
                   <a
-                    href="/api/auth/signin"
+                    href="/api/auth/login"
                     className="block pl-3 pr-4 text-base font-medium text-gray-600 dark:text-white"
                   >
                     Sign in

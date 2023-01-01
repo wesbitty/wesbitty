@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { APP_NAME, DESCRIPTION } from '../@wesbitty/lib/constants'
 import { DefaultSeo } from 'next-seo'
 import { AppProps } from 'next/app'
@@ -6,6 +7,9 @@ import { useEffect } from 'react'
 import Meta from '../components/Favicons'
 import '../styles/index.css'
 import { post } from '../@wesbitty/lib/fetchWrapper'
+import React from 'react';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
+import { ThemeProvider } from 'next-themes'
 
 
 
@@ -45,6 +49,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+           <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Meta />
       <DefaultSeo
         title={site_title}
@@ -68,7 +75,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           cardType: 'summary_large_image',
         }}
       />
+    <ThemeProvider attribute="class">
+     <UserProvider>
       <Component {...pageProps} />
+      </UserProvider>
+    </ThemeProvider>
     </>
   )
 }

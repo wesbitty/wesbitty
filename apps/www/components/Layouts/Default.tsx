@@ -13,7 +13,7 @@ const DefaultLayout = (props: Props) => {
   const [darkMode, setDarkMode] = useState<boolean>(true)
 
   useEffect(() => {
-    const isDarkMode = localStorage.getItem('supabaseDarkMode')
+    const isDarkMode = localStorage.getItem('wesbittyDMToggle')
     if (isDarkMode) {
       setDarkMode(isDarkMode === 'true')
       document.documentElement.className = isDarkMode === 'true' ? 'dark' : ''

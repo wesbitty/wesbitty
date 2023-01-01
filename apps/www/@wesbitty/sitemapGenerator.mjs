@@ -1,6 +1,7 @@
 import { writeFileSync } from 'fs'
+import { prettier } from 'prettier'
 import { globby } from 'globby'
-import prettier from 'prettier'
+
 
 async function generate() {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
@@ -26,21 +27,17 @@ async function generate() {
           .map((page) => {
             const path = page
               .replace('pages', '')
+              .replace('public', '')
               .replace('schemas', '')
-              // add a `/` for blog posts
               .replace('[blog]', '/blog')
               .replace('.tsx', '')
               .replace('.mdx', '')
-              // replace the paths for nested 'index' based routes
               .replace('/auth/Auth', '/auth')
               .replace('/database/Database', '/database')
               .replace('/storage/Storage', '/storage')
+              .replace('/feed.xml', '')
+              let route = path === '/index' ? '' : path
 
-            let route = path === '/index' ? '' : path
-
-            //
-            // blog specific urls
-            //
             if (route.includes('/blog/')) {
               // clean blog post route from string
               const _route = route.replace('/blog/', '')
@@ -55,9 +52,9 @@ async function generate() {
             }
 
             return `
-              <url>
-                  <loc>${`https://wesbitty.com${route}`}</loc>
-              </url>
+            <url>
+            <loc>${`https://wesbitty.com${route}`}</loc>
+        </url>
             `
           })
           .join('')}
@@ -72,5 +69,3 @@ async function generate() {
   // eslint-disable-next-line no-sync
   writeFileSync('schemas/sitemap.xml', formatted)
 }
-
-generate()
