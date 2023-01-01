@@ -2,7 +2,6 @@ import { writeFileSync } from 'fs'
 import { prettier } from 'prettier'
 import { globby } from 'globby'
 
-
 async function generate() {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
   const pages = await globby([
@@ -36,7 +35,7 @@ async function generate() {
               .replace('/database/Database', '/database')
               .replace('/storage/Storage', '/storage')
               .replace('/feed.xml', '')
-              let route = path === '/index' ? '' : path
+            let route = path === '/index' ? '' : path
 
             if (route.includes('/blog/')) {
               // clean blog post route from string

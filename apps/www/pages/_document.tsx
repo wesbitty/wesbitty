@@ -5,7 +5,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en" className="scroll-smooth">
         <Head>
-        <script async src="https://platform.twitter.com/widgets.js" />
+          <script async src="https://platform.twitter.com/widgets.js" />
         </Head>
         <body>
           <Main />

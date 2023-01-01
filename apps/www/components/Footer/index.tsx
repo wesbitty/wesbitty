@@ -4,8 +4,6 @@ import SectionContainer from '../Layouts/SectionContainer'
 import Link from 'next/link'
 import ThemeSwitcher from '../ThemeSwitcher'
 
-
-
 type Props = {
   darkMode: boolean
   updateTheme: Function

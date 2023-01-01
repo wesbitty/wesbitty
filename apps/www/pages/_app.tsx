@@ -7,11 +7,9 @@ import { useEffect } from 'react'
 import Meta from '../components/Favicons'
 import '../styles/index.css'
 import { post } from '../@wesbitty/lib/fetchWrapper'
-import React from 'react';
-import { UserProvider } from '@auth0/nextjs-auth0/client';
+import React from 'react'
+import { UserProvider } from '@auth0/nextjs-auth0/client'
 import { ThemeProvider } from 'next-themes'
-
-
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -49,7 +47,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-           <Head>
+      <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Meta />
@@ -75,11 +73,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           cardType: 'summary_large_image',
         }}
       />
-    <ThemeProvider attribute="class">
-     <UserProvider>
-      <Component {...pageProps} />
-      </UserProvider>
-    </ThemeProvider>
+      <ThemeProvider attribute="class">
+        <UserProvider>
+          <Component {...pageProps} />
+        </UserProvider>
+      </ThemeProvider>
     </>
   )
 }

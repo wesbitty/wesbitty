@@ -1,6 +1,5 @@
 import { escape } from '../utils/htmlEscaper'
 
-
 const generateRssItem = (post: any): string => `
   <item>
     <guid>https://wesbitty.com/blog/${post.url}</guid>

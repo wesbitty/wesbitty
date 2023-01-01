@@ -9,40 +9,35 @@ import CaseStudies from 'components/CaseStudies/index'
 import CTABanner from 'components/CTABanner/index'
 import SectionContainer from '../components/Layouts/SectionContainer'
 import TwitterSocialProof from '../components/Sections/TwitterSocialProof'
-import { Auth0Provider } from "@auth0/auth0-react"
-import { useUser } from '@auth0/nextjs-auth0/client';
+import { Auth0Provider } from '@auth0/auth0-react'
+import { useUser } from '@auth0/nextjs-auth0/client'
 import { siteMetadata } from '../@wesbitty/siteMetadata'
 import 'swiper/swiper.min.css'
-
-
-
-
-
 
 type Props = {}
 
 function IndexApi() {
-  const { user, error, isLoading } = useUser();
+  const { user, error, isLoading } = useUser()
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
+  if (isLoading) return <div>Loading...</div>
+  if (error) return <div>{error.message}</div>
 
   if (user) {
     return (
       <div>
         Welcome {user.name}! <a href="/api/auth/logout">Logout</a>
       </div>
-    );
+    )
   }
 
-  return <a href="/api/auth/login">Login</a>;
+  return <a href="/api/auth/login">Login</a>
 }
 
 const Index = ({}: Props) => {
   return (
     <>
       <Layout>
-       <IndexApi />
+        <IndexApi />
         <Container>
           <Hero />
           <Features />

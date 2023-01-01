@@ -1,12 +1,11 @@
-import React from 'react';
-import { withPageAuthRequired } from '@auth0/nextjs-auth0';
-import { useUser } from '@auth0/nextjs-auth0/client';
+import React from 'react'
+import { withPageAuthRequired } from '@auth0/nextjs-auth0'
+import { useUser } from '@auth0/nextjs-auth0/client'
 
-import DefaultLayout from '../components/Layouts/Default';
-
+import DefaultLayout from '../components/Layouts/Default'
 
 export default function ProtectedPage() {
-  const { user, error, isLoading } = useUser();
+  const { user, error, isLoading } = useUser()
 
   return (
     <DefaultLayout>
@@ -28,7 +27,7 @@ export default function ProtectedPage() {
         </>
       )}
     </DefaultLayout>
-  );
+  )
 }
 
-export const getServerSideProps = withPageAuthRequired();
+export const getServerSideProps = withPageAuthRequired()
