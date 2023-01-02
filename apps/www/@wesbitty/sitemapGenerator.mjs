@@ -1,5 +1,5 @@
 import { writeFileSync } from 'fs'
-import { prettier } from 'prettier'
+import prettier from 'prettier'
 import { globby } from 'globby'
 
 async function generate() {

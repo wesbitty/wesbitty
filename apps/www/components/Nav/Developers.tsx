@@ -1,8 +1,9 @@
 import React from 'react'
-import DevelopersData from '~/@wesbitty/data/Developers.json'
-import AnnouncementsData from '~/@wesbitty/data/Announcements.json'
+import DevelopersData from '../../@wesbitty/data/Developers.json'
+import AnnouncementsData from '../../@wesbitty/data/Announcements.json'
 import { useRouter } from 'next/router'
 import { Typography } from '@wesbitty/ui'
+
 
 type Props = {
   text: string

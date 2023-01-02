@@ -240,7 +240,11 @@ const Nav = (props: Props) => {
                   </a>
                 </div>
               </div>
+              <div className="flex items-center right-0">
+              <div className="flex-shrink-0 flex items-center">
               <ThemeSwitch />
+              </div>
+              </div>
               <div className="hidden lg:flex items-center sm:space-x-3">
                 <a href="https://github.com/wesbitty/wesbitty" target="_blank">
                   <Button type="default" icon={<IconPackage />}>

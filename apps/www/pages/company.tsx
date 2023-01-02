@@ -11,17 +11,9 @@ import CompaniesData from '../@wesbitty/data/Companies'
 import InvestorData from '../@wesbitty/data/Investors'
 import TeamData from '../@wesbitty/data/Team'
 import Image from 'next/image'
-import {
-  Button,
-  Card,
-  IconChevronRight,
-  IconGitHub,
-  IconLinkedin,
-  IconTwitter,
-  Space,
-  Typography,
-} from '@wesbitty/ui'
+import { Button, Card, IconChevronRight, IconGitHub, IconLinkedin, IconTwitter, Space, Typography } from '@wesbitty/ui'
 import { NextSeo } from 'next-seo'
+
 
 type Props = {}
 

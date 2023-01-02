@@ -1,6 +1,6 @@
 import Container from '../components/Container'
 import Layout from '../components/Layouts/Default'
-import Hero from '../components/Hero'
+import Hero from '../components/HeaderFeature'
 import Link from 'next/link'
 import {
   Button,
@@ -26,11 +26,13 @@ import CaseStudies from '../components/CaseStudies/index'
 import CTABanner from '../components/CTABanner/index'
 import SectionContainer from '../components/Layouts/SectionContainer'
 import TwitterSocialProof from '../components/Sections/TwitterSocialProof'
-
 // Import Swiper styles if swiper used on page
 import 'swiper/swiper.min.css'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
+
+
+
 
 type Props = {}
 

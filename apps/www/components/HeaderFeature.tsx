@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import SectionContainer from './Layouts/SectionContainer'
 
-const Hero = () => {
+const HeaderFeature = () => {
   const { basePath } = useRouter()
 
   return (
@@ -108,4 +108,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default HeaderFeature

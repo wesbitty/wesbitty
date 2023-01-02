@@ -1,6 +1,6 @@
 import Container from 'components/Container'
 import Layout from '../components/Layouts/Default'
-import Hero from 'components/Hero'
+import Hero from '~/components/HeaderFeature'
 import Features from 'components/Features/index'
 import BuiltExamples from '../components/WesbittyMaker/index'
 import MadeForDevelopers from 'components/MadeForDevelopers/index'
@@ -11,7 +11,6 @@ import SectionContainer from '../components/Layouts/SectionContainer'
 import TwitterSocialProof from '../components/Sections/TwitterSocialProof'
 import { Auth0Provider } from '@auth0/auth0-react'
 import { useUser } from '@auth0/nextjs-auth0/client'
-import { siteMetadata } from '../@wesbitty/siteMetadata'
 import 'swiper/swiper.min.css'
 
 type Props = {}

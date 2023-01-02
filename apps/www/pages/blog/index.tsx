@@ -1,14 +1,16 @@
+import { generateRss } from '../../@wesbitty/generate-rss'
 import fs from 'fs'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
-import { generateRss } from '../../@wesbitty/lib/rss'
 import { getSortedPosts, getAllCategories } from '../../@wesbitty/lib/posts'
 import authors from '../../@wesbitty/lib/authors.json'
 import DefaultLayout from '../../components/Layouts/Default'
 import { Typography, Tabs } from '@wesbitty/ui'
 import PostTypes from '../../@wesbitty/types/post'
 import BlogListItem from '../../components/Blog/BlogListItem'
+
+
 
 export async function getStaticProps() {
   const allPostsData = getSortedPosts('[blog]')

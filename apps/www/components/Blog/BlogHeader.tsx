@@ -1,9 +1,12 @@
 import React from 'react'
 import { Typography } from '@wesbitty/ui'
 
+
+
 interface Props {
   title: string
 }
+
 
 export default function BlogHeader({ title }: Props) {
   return (

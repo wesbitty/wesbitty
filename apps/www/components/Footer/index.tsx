@@ -2,16 +2,16 @@ import { useRouter } from 'next/router'
 import FooterLinks from '../../@wesbitty/data/Footer.json'
 import SectionContainer from '../Layouts/SectionContainer'
 import Link from 'next/link'
-import ThemeSwitcher from '../ThemeSwitcher'
+
+
 
 type Props = {
   darkMode: boolean
-  updateTheme: Function
 }
 
 const Footer = (props: Props) => {
   const { basePath } = useRouter()
-  const { darkMode, updateTheme } = props
+  const { darkMode } = props
 
   return (
     <footer
@@ -105,7 +105,6 @@ const Footer = (props: Props) => {
           <p className="mb-0 self-center text-base text-gray-400 dark:text-dark-400">
             &copy; Wesbitty Inc
           </p>
-          <ThemeSwitcher darkMode={darkMode} updateTheme={updateTheme} />
         </div>
       </SectionContainer>
     </footer>

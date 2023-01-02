@@ -1,8 +1,9 @@
 import { Space, Typography } from '@wesbitty/ui'
-import authors from '~/@wesbitty/lib/authors.json'
+import authors from '../../@wesbitty/lib/authors.json'
 import React from 'react'
 import Image from 'next/image'
-import PostTypes from '~/@wesbitty/types/post'
+import PostTypes from '../../@wesbitty/types/post'
+
 
 interface Props {
   blog: PostTypes
@@ -10,7 +11,7 @@ interface Props {
 
 const BlogListItem = ({ blog }: Props) => {
   // @ts-ignore
-  const author = blog.author ? authors[blog.author] : authors['supabase']
+  const author = blog.author ? authors[blog.author] : authors['wesbitty']
 
   return (
     <div key={blog.slug}>

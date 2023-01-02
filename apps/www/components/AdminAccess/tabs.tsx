@@ -1,5 +1,7 @@
-import TabMarkup from '~/@wesbitty/data/AdminAccess.json'
+import TabMarkup from '../../@wesbitty/data/AdminAccess.json'
 import { Tabs as SBTabs, Typography, Button } from '@wesbitty/ui'
+
+
 
 type Props = {
   tabId: string

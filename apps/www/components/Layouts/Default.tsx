@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import Nav from 'components/Nav/index'
-import Footer from 'components/Footer/index'
+import Nav from '../Nav/index'
+import Footer from '../Footer/index'
 
 type Props = {
   hideHeader?: boolean
@@ -31,7 +31,7 @@ const DefaultLayout = (props: Props) => {
       <div className="min-h-screen bg-white dark:bg-gray-800">
         <main>{children}</main>
       </div>
-      {!hideFooter && <Footer darkMode={darkMode} updateTheme={updateTheme} />}
+      {!hideFooter && <Footer darkMode={darkMode} />}
     </>
   )
 }

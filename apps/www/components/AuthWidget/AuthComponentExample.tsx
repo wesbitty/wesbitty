@@ -4,9 +4,12 @@ import { Button, Card, Auth, Space, Tabs, Typography, IconCode, IconSearch } fro
 import CodeBlock from '../CodeBlock/CodeBlock'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { useRouter } from 'next/router'
 
-const supabase = createClient(
-  'https://rsnibhkhsbfnncjmwnkj.supabase.co',
+
+
+const wesbitty = createClient(
+  'https://rsnibhkhsbfnncjmwnkj.wesbitty.com',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNTIxNDE1MywiZXhwIjoxOTMwNzkwMTUzfQ.OQEbAaTfgDdLCCht251P2JRD3QDnui6nsU8N-tZA_Mc'
 )
 
@@ -14,7 +17,8 @@ function AuthComponentExample() {
   // store API swiper instance
   const [imageSwiper, setImageSwiper] = useState(undefined)
   const [imageSwiperActiveIndex, setImageSwiperActiveIndex] = useState(0)
-
+  const { basePath } = useRouter()
+  
   function handleNavChange(e: number) {
     console.log(e)
     setImageSwiperActiveIndex(e)
@@ -70,17 +74,20 @@ function AuthComponentExample() {
                 <Space size={8} direction="vertical">
                   <div>
                     <Space size={3} direction="vertical">
-                      <img src="https://app.wesbitty.com/img/supabase-dark.svg" width="96" />
-                      <Typography.Title level={3}>{'Acme Company'}</Typography.Title>
+                      <img
+                       src={`${basePath}/Logo/wesbitty-dark-logo.svg`}
+                       alt="Logo"
+                      />
+                      <Typography.Title level={3}>{'Wesbitty Inc'}</Typography.Title>
                     </Space>
                   </div>
-                  <Auth.UserContextProvider supabaseClient={supabase}>
-                    <AuthContainer supabaseClient={supabase}>
+                  <Auth.UserContextProvider supabaseClient={wesbitty}>
+                    <AuthContainer supabaseClient={wesbitty}>
                       <Auth
                         providers={['facebook', 'google', 'github', 'bitbucket', 'gitlab']}
                         socialButtonSize={'medium'}
                         socialLayout={'horizontal'}
-                        supabaseClient={supabase}
+                        supabaseClient={wesbitty}
                         socialColors={false}
                       />
                     </AuthContainer>
@@ -99,7 +106,7 @@ import { createClient } from '@supabase/supabase-js'
 
 export default function app() {
   const supabase = createClient(
-    "https://YOUR-PROJECT-ID.supabase.co",
+    "https://YOUR-PROJECT-ID.wesbitty.com",
     "YOUR-PUBLIC-ANON-KEY"
   );
 
@@ -119,9 +126,9 @@ export default function app() {
   };
 
   return (
-    <Auth.UserContextProvider supabaseClient={supabase}>
-      <Container supabaseClient={supabase}>
-        <Auth supabaseClient={supabase} />
+    <Auth.UserContextProvider supabaseClient={wesbitty}>
+      <Container supabaseClient={wesbitty}>
+        <Auth supabaseClient={wesbitty} />
       </Container>
     </Auth.UserContextProvider>
   );

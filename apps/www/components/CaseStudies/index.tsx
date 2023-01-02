@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router'
-import Benchmark from 'components/CaseStudies/benchmark'
-import SectionHeader from 'components/UI/SectionHeader'
-import CaseStudiesData from '~/@wesbitty/data/CaseStudies.json'
+import Benchmark from '../CaseStudies/benchmark'
+import SectionHeader from '../UI/SectionHeader'
+import CaseStudiesData from '../../@wesbitty/data/CaseStudies.json'
 import { Card, Space, Typography } from '@wesbitty/ui'
 import SectionContainer from '../Layouts/SectionContainer'
+
 
 const CaseStudies = () => {
   const { basePath } = useRouter()
