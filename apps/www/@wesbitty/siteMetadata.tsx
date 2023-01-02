@@ -28,7 +28,7 @@ const siteMetadata = () => {
       <link rel="shortcut icon" href={`${basePath}/favicon/favicon.ico`} />
       <meta name="msapplication-TileColor" content="#1E1E1E" />
       <meta name="msapplication-config" content={`${basePath}/favicon/browserconfig.xml`} />
-      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f5" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1E1E1E" />
       <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
       <link rel="icon" type="image/png" href={`${basePath}/favicon/favicon.ico`} />

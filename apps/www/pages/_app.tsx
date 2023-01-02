@@ -11,6 +11,8 @@ import React from 'react'
 import { UserProvider } from '@auth0/nextjs-auth0/client'
 import { ThemeProvider } from 'next-themes'
 
+
+
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
