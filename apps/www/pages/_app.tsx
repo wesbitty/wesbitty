@@ -4,12 +4,12 @@ import { DefaultSeo } from 'next-seo'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import Meta from '../@wesbitty/siteMetadata'
 import '../styles/index.css'
 import { post } from '../@wesbitty/lib/fetchWrapper'
 import React from 'react'
 import { UserProvider } from '@auth0/nextjs-auth0/client'
 import { ThemeProvider } from 'next-themes'
+import { siteMetadata } from '../@wesbitty/siteMetadata'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -50,7 +50,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Meta />
       <DefaultSeo
         title={site_title}
         description={DESCRIPTION}
@@ -73,7 +72,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           cardType: 'summary_large_image',
         }}
       />
-      <ThemeProvider attribute="class">
+      <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
         <UserProvider>
           <Component {...pageProps} />
         </UserProvider>
