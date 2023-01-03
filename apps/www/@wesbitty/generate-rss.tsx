@@ -1,4 +1,3 @@
-import { escape } from './utils/htmlEscaper'
 const dayjs = require('dayjs')
 var utc = require('dayjs/plugin/utc')
 var advancedFormat = require('dayjs/plugin/advancedFormat')

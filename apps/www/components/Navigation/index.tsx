@@ -153,7 +153,7 @@ const Nav = (props: Props) => {
     <div
       className={
         `
-                  inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700
+                  inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium text-gray-100 hover:text-gray-200
                   dark:text-dark-100 cursor-pointer
                 ` + props.active
       }
@@ -185,7 +185,7 @@ const Nav = (props: Props) => {
     <>
       <Announcement />
       <div className="sticky top-0 z-50">
-        <nav className="bg-white dark:bg-gray-800 border-b dark:border-gray-600">
+        <nav className="bg-black dark:bg-gray-800 border-b dark:border-gray-600">
           {/* <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-10 xl:px-0"> */}
           <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-10 xl:px-0">
             <HamburgerButton toggleFlyOut={() => setOpen(true)} />
@@ -211,7 +211,7 @@ const Nav = (props: Props) => {
                     href="/blog"
                     className={`
                     inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
-                    text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
+                    text-gray-100 hover:text-gray-200 hover:border-gray-100 p-5
                     dark:text-dark-100 dark:hover:border-dark-100
                   `}
                   >
@@ -221,7 +221,7 @@ const Nav = (props: Props) => {
                     href="/pricing"
                     className={`
                     inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
-                    text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
+                    text-gray-100 hover:text-gray-200 hover:border-gray-100 p-5
                     dark:text-dark-100 dark:hover:border-dark-100
                   `}
                   >

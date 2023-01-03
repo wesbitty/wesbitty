@@ -510,11 +510,11 @@ const Reliability = () => {
             <p className="mb-10">
               We're launching{' '}
               <a
-                href="https://status.supabase.com"
+                href="https://status.wesbitty.com"
                 target="_blank"
                 className="text-brand-700 hover:text-brand-800"
               >
-                https://status.supabase.com
+                https://status.wesbitty.com
               </a>{' '}
               to keep track of uptime across all of our services and critical infrastructure.
             </p>
@@ -977,7 +977,7 @@ const Beta = () => {
             //
             // to do: add expiration and modified dates
             // https://github.com/garmeeh/next-seo#article
-            publishedTime: '2020-12-03T00:00:00Z',
+            publishedTime: '2023-01-01T00:00:00Z',
             //
             // to do: author urls should be internal in future
             // currently we have external links to github profiles
@@ -996,7 +996,7 @@ const Beta = () => {
           <div className="shadow-lg py-5 px-5 xl:px-20 bg-dark-800 flex items-center justify-between">
             <Link href="/">
               <a>
-                <img className="h-5" src={`${basePath}/images/logo-dark.png`} />
+                <img className="w-40" src={`${basePath}/images/logo-dark.png`} />
               </a>
             </Link>
             <HamburgerMenu openMenu={() => setMenuOpen(!menuOpen)} />
