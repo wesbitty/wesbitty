@@ -7,11 +7,15 @@ import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { post } from '../@wesbitty/lib/fetchWrapper'
 import React from 'react'
-import { UserProvider } from '@auth0/nextjs-auth0/client'
 import { ThemeProvider } from 'next-themes'
+import { ClientReload } from '../components/ClientReload'
+import Analytics from '../@wesbitty/analytics'
 // Import Website styles
 import '../styles/index.css'
 
+
+const isDevelopment = process.env.NODE_ENV === 'development'
+const isSocket = process.env.SOCKET
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -48,36 +52,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+    <ThemeProvider attribute="class" defaultTheme={Metadata.Theme}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Meta />
-      <DefaultSeo
-        title={Metadata.Title}
-        description={Metadata.Description}
-        openGraph={{
-          type: 'website',
-          url: 'https://wesbitty.com/',
-          site_name: 'Wesbitty Inc',
-          images: [
-            {
-              url: `https://wesbitty.com${basePath}/Logo/logo-preview.png`,
-              width: 800,
-              height: 600,
-              alt: 'Wesbitty Og Image',
-            },
-          ],
-        }}
-        twitter={{
-          handle: '@wesbitty',
-          site: '@wesbitty',
-          cardType: 'summary_large_image',
-        }}
-      />
-      <ThemeProvider attribute="class">
-        <UserProvider>
+      {isDevelopment && isSocket && <ClientReload />}
+       <Analytics />
           <Component {...pageProps} />
-        </UserProvider>
       </ThemeProvider>
     </>
   )
