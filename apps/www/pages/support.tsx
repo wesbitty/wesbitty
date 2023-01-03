@@ -1,6 +1,7 @@
 import Container from '../components/Container'
 import Layout from '../components/Layouts/Default'
 import Hero from '../components/HeaderFeature'
+import { Metadata } from '../@wesbitty/lib/Metadata'
 import Link from 'next/link'
 import {
   Button,
@@ -39,18 +40,18 @@ type Props = {}
 const Index = ({}: Props) => {
   const router = useRouter()
 
-  const meta_title = 'Help &amp Support | Wesbitty'
-  const meta_description =
+  const pageTitle = 'Help &amp Support | {Metadata.SiteName}'
+  const pageDescription =
     'Find help and support for Wesbitty. Our support agents provide answers on all types of issues, including account information, billing, and refunds.'
 
   return (
     <>
       <NextSeo
-        title={meta_title}
-        description={meta_description}
+        title={pageTitle}
+        description={pageDescription}
         openGraph={{
-          title: meta_title,
-          description: meta_description,
+          title: pageTitle,
+          description: pageDescription,
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {

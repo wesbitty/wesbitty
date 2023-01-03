@@ -17,7 +17,7 @@ const CaseStudies = () => {
           title_alt={' with no extra effort'}
           subtitle={'Enterprise Solutions'}
           paragraph={
-            "Supabase is built with proven, enterprise-ready tools. We're supporting everything from fintech providers to social networks. "
+            "Wesbitty is built with proven, enterprise-ready tools. We're supporting everything from fintech providers to social networks. "
           }
         />
       </div>

@@ -1,6 +1,6 @@
 import Container from 'components/Container'
 import Layout from '../components/Layouts/Default'
-import Hero from '~/components/HeaderFeature'
+import HeaderFeature from '../components/HeaderFeature'
 import Features from 'components/Features/index'
 import BuiltExamples from '../components/WesbittyMaker/index'
 import MadeForDevelopers from 'components/MadeForDevelopers/index'
@@ -38,7 +38,7 @@ const Index = ({}: Props) => {
       <Layout>
         <IndexApi />
         <Container>
-          <Hero />
+          <HeaderFeature />
           <Features />
           <div className="relative">
             <div className="section--masked">

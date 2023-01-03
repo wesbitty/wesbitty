@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { Metadata } from '../@wesbitty/lib/Metadata'
 import DefaultLayout from '../components/Layouts/Default'
 import { PricingTableRowDesktop, PricingTableRowMobile } from '../components/PricingTableRow'
 import { Accordion, Badge, Button, Divider, Space, Typography } from '@wesbitty/ui'
@@ -16,18 +17,18 @@ import { NextSeo } from 'next-seo'
 export default function IndexPage() {
   const router = useRouter()
 
-  const meta_title = 'Pricing & fees | Wesbitty'
-  const meta_description =
+  const pageTitle = 'Pricing & fees | Wesbitty Inc'
+  const pageDescription =
     'Explore Wesbitty fees and pricing information. Find our competitive pricing tiers, with no hidden pricing. We have generous free tiers for those getting started, and Pay As You Go for those scaling up.'
 
   return (
     <DefaultLayout>
       <NextSeo
-        title={meta_title}
-        description={meta_description}
+        title={pageTitle}
+        description={pageDescription}
         openGraph={{
-          title: meta_title,
-          description: meta_description,
+          title: pageTitle,
+          description: pageDescription,
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {

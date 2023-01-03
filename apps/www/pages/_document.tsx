@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
         <Head>
           <script async src="https://platform.twitter.com/widgets.js" />
         </Head>
-        <body>
+        <body className="bg-white text-black antialiased dark:bg-gray-900 dark:text-white">
           <Main />
           <NextScript />
         </body>

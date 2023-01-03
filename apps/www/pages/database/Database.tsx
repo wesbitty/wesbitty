@@ -50,18 +50,18 @@ function Database() {
     dashboardSwiper.slideTo(e)
   }
 
-  const meta_title = 'Database | Open source SQL Database'
-  const meta_description =
+  const pageTitle = 'Database | Open source SQL Database'
+  const pageDescription =
     'With supabase’s APIs and easy to use dashboard, it makes designing relational databases easy.'
 
   return (
     <>
       <NextSeo
-        title={meta_title}
-        description={meta_description}
+        title={pageTitle}
+        description={pageDescription}
         openGraph={{
-          title: meta_title,
-          description: meta_description,
+          title: pageTitle,
+          description: pageDescription,
           url: `https://wesbitty.com/auth`,
           images: [
             {
@@ -81,7 +81,7 @@ function Database() {
             </span>,
           ]}
           subheader={[
-            'Every Supabase project is a dedicated PostgreSQL database, trusted by millions of developers.',
+            'Every Wesbitty project is a dedicated PostgreSQL database, trusted by millions of developers.',
             'PostgreSQL is one of the worlds most scalable databases.',
           ]}
           image={[
@@ -124,7 +124,7 @@ function Database() {
               <Typography.Title level={4}>Just Postgres</Typography.Title>
               <Typography.Text>
                 <p className="text-base lg:text-lg">
-                  Every Supabase project is a dedicated Postgres database.
+                  Every Wesbitty project is a dedicated Postgres database.
                 </p>
                 <p>
                   100% portable. Bring your existing Postgres database, or migrate away at any time.
@@ -259,7 +259,7 @@ function Database() {
             text={[
               <p>
                 We introspect your database and provide instant APIs. Focus on building your
-                product, while Supabase handles the CRUD.
+                product, while Wesbitty handles the CRUD.
               </p>,
             ]}
             footer={[
@@ -319,7 +319,7 @@ function Database() {
             <div className="col-span-12 lg:col-span-6 xl:col-span-5 mb-8">
               <Typography.Title level={2}>Extend your database</Typography.Title>
               <Typography.Text className="block mb-8">
-                <p className="lg:text-lg">Supabase works natively with Postgres extensions.</p>
+                <p className="lg:text-lg">Wesbitty works natively with Postgres extensions.</p>
                 <p>
                   Choose from a huge collection of Postgres extensions, enabled with a single click.
                 </p>

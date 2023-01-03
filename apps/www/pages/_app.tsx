@@ -1,16 +1,16 @@
 import Head from 'next/head'
-import { APP_NAME, DESCRIPTION } from '../@wesbitty/lib/constants'
+import { Metadata } from '../@wesbitty/lib/Metadata'
+import Meta from '../@wesbitty/lib/favicon'
 import { DefaultSeo } from 'next-seo'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import Meta from '../@wesbitty/siteMetadata'
-import '../styles/index.css'
 import { post } from '../@wesbitty/lib/fetchWrapper'
 import React from 'react'
 import { UserProvider } from '@auth0/nextjs-auth0/client'
 import { ThemeProvider } from 'next-themes'
-
+// Import Website styles
+import '../styles/index.css'
 
 
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -44,7 +44,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
-  const site_title = `We've Got Your WishList | ${APP_NAME}`
   const { basePath } = useRouter()
 
   return (
@@ -54,15 +53,15 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Meta />
       <DefaultSeo
-        title={site_title}
-        description={DESCRIPTION}
+        title={Metadata.Title}
+        description={Metadata.Description}
         openGraph={{
           type: 'website',
           url: 'https://wesbitty.com/',
-          site_name: 'Wesbitty',
+          site_name: 'Wesbitty Inc',
           images: [
             {
-              url: `https://wesbitty.com${basePath}/images/og/og-image.jpg`,
+              url: `https://wesbitty.com${basePath}/Logo/logo-preview.png`,
               width: 800,
               height: 600,
               alt: 'Wesbitty Og Image',

@@ -1,6 +1,6 @@
 import { Badge, Card, Divider, IconChevronLeft, IconFile, Space, Typography } from '@wesbitty/ui'
 import matter from 'gray-matter'
-import authors from '~/@wesbitty/lib/authors.json'
+import authors from '@wesbitty/lib/authors.json'
 import hydrate from 'next-mdx-remote/hydrate'
 import renderToString from 'next-mdx-remote/render-to-string'
 import { NextSeo } from 'next-seo'
@@ -13,8 +13,8 @@ import CTABanner from 'components/CTABanner'
 import DefaultLayout from 'components/Layouts/Default'
 import Quote from 'components/Quote'
 import ImageGrid from 'components/ImageGrid'
-import { generateReadingTime } from '~/@wesbitty/lib/helpers'
-import { getAllPostSlugs, getPostdata, getSortedPosts } from '~/@wesbitty/lib/posts'
+import { generateReadingTime } from '@wesbitty/lib/helpers'
+import { getAllPostSlugs, getPostdata, getSortedPosts } from '@wesbitty/lib/posts'
 import blogStyles from './[slug].module.css'
 
 // import all components used in blog articles here
@@ -87,7 +87,7 @@ export async function getStaticProps({ params }: any) {
 
 function BlogPostPage(props: any) {
   // @ts-ignore
-  const author = props.blog.author ? authors[props.blog.author] : authors['supabase']
+  const author = props.blog.author ? authors[props.blog.author] : authors['wesbitty']
   const content = hydrate(props.blog.content, { components })
 
   const { basePath } = useRouter()
@@ -132,7 +132,7 @@ function BlogPostPage(props: any) {
         </Space>
       </div>
       <div>
-        <Typography.Text type="secondary">Table of contents</Typography.Text>
+        <Typography.Text type="secondary">Table Of Contents</Typography.Text>
         <Typography>
           <div className={blogStyles['toc']}>
             <ReactMarkdown plugins={[gfm]}>{props.blog.toc.content}</ReactMarkdown>

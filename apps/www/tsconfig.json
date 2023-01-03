@@ -27,5 +27,5 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/protected-page.jsx"
-  ]
+, "@wesbitty/analytics/GoogleAnalytics.ts", "@wesbitty/analytics/Plausible.js" , "@wesbitty/analytics/GoogleAnalytics.js", "@wesbitty/analytics/SimpleAnalytics.js" ]
 }

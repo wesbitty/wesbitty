@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Nav from '../Nav/index'
+import Nav from '../Navigation/index'
 import Footer from '../Footer/index'
 
 type Props = {

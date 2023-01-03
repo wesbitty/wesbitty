@@ -39,18 +39,18 @@ function AuthPage() {
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNTIxNDE1MywiZXhwIjoxOTMwNzkwMTUzfQ.OQEbAaTfgDdLCCht251P2JRD3QDnui6nsU8N-tZA_Mc'
   )
 
-  const meta_title = 'Auth | Built-in user management'
-  const meta_description =
+  const pageTitle = 'Auth | Built-in user management'
+  const pageDescription =
     'Authentication that you can afford that is built in to your wesbitty project.'
 
   return (
     <>
       <NextSeo
-        title={meta_title}
-        description={meta_description}
+        title={pageTitle}
+        description={pageDescription}
         openGraph={{
-          title: meta_title,
-          description: meta_description,
+          title: pageTitle,
+          description: pageDescription,
           url: `https://wesbitty.com/auth`,
           images: [
             {
@@ -225,7 +225,7 @@ function AuthPage() {
               <Typography.Title level={4}>Own your data</Typography.Title>
               <Typography.Text>
                 <p className="text-base">
-                  User data stored in your Supabase database so you never have to worry about 3rd
+                  User data stored in your Wesbitty database so you never have to worry about 3rd
                   party privacy issues. Host your data in 8 different locations.
                 </p>
               </Typography.Text>
@@ -296,7 +296,7 @@ function AuthPage() {
               <Typography.Title level={2}>User permissions without the middleware</Typography.Title>
               <Typography.Text>
                 <p className="text-base lg:text-lg">
-                  Supabase Auth works without any additional servers. Build Authorization rules with
+                  Wesbitty Auth works without any additional servers. Build Authorization rules with
                   Postgres' Row Level Security, controlling who can create, edit and delete specific
                   rows in your database.
                 </p>
@@ -343,7 +343,7 @@ function AuthPage() {
                   Pre-built auth widgets to get started in minutes.
                 </p>
                 <p>
-                  Supabase provides React libraries which handle common scenarios, including logging
+                  Wesbitty provides React libraries which handle common scenarios, including logging
                   in, signing up, magic link and forgot password forms.
                 </p>
               </Typography.Text>

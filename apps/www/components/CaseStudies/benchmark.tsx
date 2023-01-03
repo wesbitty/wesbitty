@@ -24,7 +24,7 @@ const Benchmark = () => {
             </Typography.Title>
             <Typography.Text type="secondary">
               <span className="block text-gray-300">
-                Supabase outperforms equivalent systems by more than 300%.
+                Wesbitty outperforms equivalent systems by more than 300%.
               </span>
               <span className="block text-gray-300">
                 Sign up for our public benchmark release and we'll send it to your inbox.

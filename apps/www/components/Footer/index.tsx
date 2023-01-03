@@ -73,7 +73,7 @@ const Footer = (props: Props) => {
               {FooterLinks.map((segment: any) => {
                 return (
                   <div key={`footer_${segment.title}`}>
-                    <h3 className="text-sm text-gray-300 dark:text-dark-400">{segment.title}</h3>
+                    <h3 className="text-sm text-gray-800 text-base dark:text-dark-100">{segment.title}</h3>
                     <ul className="mt-4 space-y-2">
                       {segment.links.map((link: any, idx: number) => (
                         <li key={`${segment.title}_link_${idx}`}>
@@ -102,8 +102,8 @@ const Footer = (props: Props) => {
           </div>
         </div>
         <div className="mt-32 border-t dark:border-dark pt-8 flex justify-between">
-          <p className="mb-0 self-center text-base text-gray-400 dark:text-dark-400">
-            &copy; Wesbitty Inc
+          <p className="mb-0 self-center text-base text-gray-500 dark:text-dark-100">
+            &copy; 2023 Wesbitty, Inc.
           </p>
         </div>
       </SectionContainer>

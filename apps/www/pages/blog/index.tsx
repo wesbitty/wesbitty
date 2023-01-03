@@ -57,17 +57,17 @@ function Blog(props: any) {
 
   // append 'all' category
   // const categories = props.categories.push('all')
-  const meta_title = "Wesbitty Blog: We've Got Your WishList"
-  const meta_description = 'Get all your Wesbitty News on the Wesbitty blog.'
+  const pageTitle = "Wesbitty Blog: We've Got Your WishList"
+  const pageDescription = 'Get all your Wesbitty News on the Wesbitty blog.'
 
   return (
     <>
       <NextSeo
-        title={meta_title}
-        description={meta_description}
+        title={pageTitle}
+        description={pageDescription}
         openGraph={{
-          title: meta_title,
-          description: meta_description,
+          title: pageTitle,
+          description: pageDescription,
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {

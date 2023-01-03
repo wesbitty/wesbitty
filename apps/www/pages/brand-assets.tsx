@@ -1,14 +1,13 @@
 import Container from 'components/Container'
 import { createClient } from '@supabase/supabase-js'
-import Layout from '~/components/Layouts/Default'
+import Layout from '../components/Layouts/Default'
 import CTABanner from 'components/CTABanner/index'
 import { Button, Typography, IconDownload } from '@wesbitty/ui'
-
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-
-import SectionContainer from '~/components/Layouts/SectionContainer'
+import SectionContainer from '../components/Layouts/SectionContainer'
 import { NextSeo } from 'next-seo'
+
 
 const { Title, Text } = Typography
 
@@ -16,17 +15,17 @@ const Index = () => {
   // base path for images
   const router = useRouter()
 
-  const meta_title = 'Branding | Wesbitty'
-  const meta_description = 'Get Wesbitty Brand assets here.'
+  const pageTitle = 'Branding | Wesbitty Inc'
+  const pageDescription = 'Get Wesbitty Brand assets here.'
 
   return (
     <>
       <NextSeo
-        title={meta_title}
-        description={meta_description}
+        title={pageTitle}
+        description={pageDescription}
         openGraph={{
-          title: meta_title,
-          description: meta_description,
+          title: pageTitle,
+          description: pageDescription,
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {
@@ -61,10 +60,10 @@ const Index = () => {
               <div className="col-span-12 lg:col-span-7 flex items-center">
                 <div className="p-16">
                   <div>
-                    <Typography.Title level={2}>Supabase logos</Typography.Title>
+                    <Typography.Title level={2}>Wesbitty Inc logos</Typography.Title>
                     <Typography.Text>
                       <p>
-                        Download Supabase official logos, including as SVG's, in both light and dark
+                        Download Wesbitty official logos, including as SVG's, in both light and dark
                         theme.
                       </p>
                       <p>Do not use any other color for the wordmark.</p>

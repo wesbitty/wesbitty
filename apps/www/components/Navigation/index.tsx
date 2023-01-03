@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Button, Badge, IconLogIn, IconHome, IconPackage } from '@wesbitty/ui'
-import FlyOut from '../../components/UI/FlyOut'
+import FlyOut from '../UI/FlyOut'
 import Transition from '../../@wesbitty/lib/Transition'
 import ThemeSwitch from '../ThemeSwitch'
 import SolutionsData from '../../@wesbitty/data/Solutions.json'
-import Solutions from '../../components/Nav/Product'
-import Developers from '../../components/Nav/Developers'
-import Announcement from '../../components/Nav/Announcement'
+import Solutions from './Product'
+import Developers from './Developers'
+import Announcement from './Announcement'
 
 type Props = {
   darkMode: boolean
@@ -187,7 +187,7 @@ const Nav = (props: Props) => {
       <div className="sticky top-0 z-50">
         <nav className="bg-white dark:bg-gray-800 border-b dark:border-gray-600">
           {/* <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-10 xl:px-0"> */}
-          <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-16 xl:px-20">
+          <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-10 xl:px-0">
             <HamburgerButton toggleFlyOut={() => setOpen(true)} />
             <div className="flex-1 flex items-center justify-center sm:items-stretch lg:justify-between">
               <div className="flex items-center">
@@ -217,6 +217,16 @@ const Nav = (props: Props) => {
                   >
                     Blog
                   </a>
+                  <a
+                    href="/pricing"
+                    className={`
+                    inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
+                    text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
+                    dark:text-dark-100 dark:hover:border-dark-100
+                  `}
+                  >
+                    Pricing
+                  </a>
                   <FlyOutNavButton
                     title={'Product'}
                     onClick={() => handleToggle(() => setOpenProduct(!openProduct))}
@@ -228,16 +238,6 @@ const Nav = (props: Props) => {
                     onClick={() => handleToggle(() => setOpenDevelopers(!openDevelopers))}
                     active={openDevelopers}
                   />
-                  <a
-                    href="/pricing"
-                    className={`
-                    inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
-                    text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
-                    dark:text-dark-100 dark:hover:border-dark-100
-                  `}
-                  >
-                    Pricing
-                  </a>
                 </div>
               </div>
               <div className="flex items-center right-0">
@@ -310,6 +310,19 @@ const Nav = (props: Props) => {
                   </a>
                 </div>
                 <div className="pt-2 pb-4 space-y-1">
+                <a
+                    href="/blog"
+                    target="_blank"
+                    className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
+                  >
+                    Blog
+                  </a>
+                  <a
+                    href="/pricing"
+                    className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
+                  >
+                    Pricing
+                  </a>
                   <a
                     href="/docs"
                     className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
@@ -327,19 +340,6 @@ const Nav = (props: Props) => {
                     className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
                   >
                     Company
-                  </a>
-                  <a
-                    href="/blog"
-                    target="_blank"
-                    className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
-                  >
-                    Blog
-                  </a>
-                  <a
-                    href="/pricing"
-                    className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"
-                  >
-                    Pricing
                   </a>
                   <a
                     href="https://github.com/wesbitty/wesbitty"
