@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Metadata } from '../@wesbitty/lib/Metadata'
-import Meta from '../@wesbitty/lib/favicon'
+import Meta from '../@wesbitty/lib/MetaFav'
 import { DefaultSeo } from 'next-seo'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
