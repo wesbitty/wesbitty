@@ -1,5 +1,4 @@
 import Container from 'components/Container'
-
 import Layout from '../components/Layouts/Default'
 import HeaderFeature from '../components/HeaderFeature'
 import Features from 'components/Features/index'

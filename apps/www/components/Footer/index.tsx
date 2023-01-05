@@ -2,14 +2,11 @@ import { useRouter } from 'next/router'
 import FooterLinks from '../../@wesbitty/data/Footer.json'
 import SectionContainer from '../Layouts/SectionContainer'
 import Link from 'next/link'
+import { iMode } from '../ColorScheme/ColorSchemeProvider'
 
-type Props = {
-  darkMode: boolean
-}
-
-const Footer = (props: Props) => {
+const Footer = () => {
   const { basePath } = useRouter()
-  const { darkMode } = props
+  const { ThemeMode } = iMode()
 
   return (
     <footer
@@ -27,7 +24,7 @@ const Footer = (props: Props) => {
                 <img
                   className="w-40"
                   src={
-                    darkMode
+                    ThemeMode
                       ? `${basePath}/Logo/wesbitty-dark-logo.svg`
                       : `${basePath}/Logo/wesbitty-light-logo.svg`
                   }

@@ -26,16 +26,21 @@ const NotFound = ({}: Props) => {
       <DefaultLayout hideHeader hideFooter>
         <div className="relative mx-auto flex h-screen w-full flex-col items-center justify-center">
           <div className="text-center">
-            <Typography.Title level={2}>
-              <span style={{ color: '#ffffff' }}>Oops! Page doesn't exist.</span>
-            </Typography.Title>
-            <Space />
-            <div className="col-span-12 mt-4">
-              <Typography.Title level={3}>
-                <span style={{ color: '#bbbbbb' }}>
-                  Sorry, the page you were looking for could not be found.
-                </span>
-              </Typography.Title>
+            <div className="flex flex-col justify-center items-center max-w-2xl mx-auto mb-16">
+              <h1 className="font-bold text-3xl md:text-3xl tracking-tight mb-10 text-black dark:text-white">
+                Oops! Page Not Found
+              </h1>
+              <p className="text-gray-600 dark:text-gray-400 mb-10">
+                Why show a generic 404 when I can make it sound mysterious? It seems you've found
+                something that used to exist, or you spelled something wrong. I'm guessing you
+                spelled something wrong. Can you double check that URL?
+              </p>
+              <Link
+                href="/"
+                className="p-1 sm:p-4 w-64 font-bold mx-auto bg-gray-200 dark:bg-gray-800 text-center rounded-md text-black dark:text-white"
+              >
+                Return Home
+              </Link>
             </div>
           </div>
         </div>

@@ -1,12 +1,12 @@
+import Head from 'next/head'
+import { ColorSchemeProvider } from '../components/ColorScheme/ColorSchemeProvider'
+import { Metadata } from '../@wesbitty/utils/Meta/Metadata'
 import { DefaultSeo } from 'next-seo'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import React from 'react'
-import { Metadata } from '../@wesbitty/utils/Meta/Metadata'
-import { ThemeProvider } from 'next-themes'
 import { post } from '../@wesbitty/lib/fetchWrapper'
-import Head from 'next/head'
 
 // Import Website styles
 import '../styles/index.css'
@@ -95,9 +95,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           cardType: 'summary_large_image',
         }}
       />
-      <ThemeProvider attribute="class" defaultTheme={Metadata.Theme}>
+      <ColorSchemeProvider>
         <Component {...pageProps} />
-      </ThemeProvider>
+      </ColorSchemeProvider>
     </>
   )
 }

@@ -5,9 +5,10 @@ class MyDocument extends Document {
     return (
       <Html lang="en" className="scroll-padding">
         <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <script async src="https://platform.twitter.com/widgets.js" />
         </Head>
-        <body className="bg-white text-black antialiased dark:bg-gray-900 dark:text-white">
+        <body>
           <Main />
           <NextScript />
         </body>

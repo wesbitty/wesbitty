@@ -4,19 +4,16 @@ import { useRouter } from 'next/router'
 import { Button, Badge, IconLogIn, IconHome, IconPackage } from '@wesbitty/ui'
 import FlyOut from '../UI/FlyOut'
 import Transition from '../../@wesbitty/lib/Transition'
-import ThemeSwitch from '../ThemeSwitch'
+import ThemeSwitch from '../ColorScheme/ColorSchemeContext'
+import { iMode } from '../ColorScheme/ColorSchemeProvider'
 import SolutionsData from '../../@wesbitty/data/Solutions.json'
 import Solutions from './Product'
 import Developers from './Developers'
 import Announcement from './Announcement'
 
-type Props = {
-  darkMode: boolean
-}
-
-const Nav = (props: Props) => {
+const Navigation = () => {
   const { basePath } = useRouter()
-  const { darkMode } = props
+  const { ThemeMode } = iMode()
   const [open, setOpen] = useState(false)
 
   const [openProduct, setOpenProduct] = useState(false)
@@ -197,7 +194,7 @@ const Nav = (props: Props) => {
                       <img
                         className="w-40"
                         src={
-                          darkMode
+                          ThemeMode
                             ? `${basePath}/Logo/wesbitty-dark-logo.svg`
                             : `${basePath}/Logo/wesbitty-light-logo.svg`
                         }
@@ -303,7 +300,7 @@ const Nav = (props: Props) => {
               <div className="mt-6 mb-12">
                 <div className="pt-2 pb-4 space-y-1">
                   <a
-                    href="/api/auth/login"
+                    href="/auth/login"
                     className="block pl-3 pr-4 text-base font-medium text-gray-600 dark:text-white"
                   >
                     Sign in
@@ -368,4 +365,4 @@ const Nav = (props: Props) => {
   )
 }
 
-export default Nav
+export default Navigation
