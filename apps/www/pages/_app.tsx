@@ -1,19 +1,17 @@
-import Head from 'next/head'
-import { Metadata } from '../@wesbitty/lib/Metadata'
-import Meta from '../@wesbitty/lib/MetaFav'
 import { DefaultSeo } from 'next-seo'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import { post } from '../@wesbitty/lib/fetchWrapper'
 import React from 'react'
-import { UserProvider } from '@auth0/nextjs-auth0/client'
+import { Metadata } from '../@wesbitty/utils/Meta/Metadata'
 import { ThemeProvider } from 'next-themes'
+import { post } from '../@wesbitty/lib/fetchWrapper'
+import Head from 'next/head'
+
 // Import Website styles
 import '../styles/index.css'
 
-
-export default function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   function telemetry() {
@@ -44,24 +42,47 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
+  const siteTitle = `${Metadata.Description} | ${Metadata.siteName}`
   const { basePath } = useRouter()
 
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href={`${basePath}/favicons/apple-touch-icon.png`}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href={`${basePath}/favicon/favicon-32x32.png`}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href={`${basePath}/favicons/favicon-16x16.png`}
+        />
+        <link rel="manifest" href={`${basePath}/favicons/site.webmanifest`} />
+        <link rel="shortcut icon" href={`${basePath}/favicons/favicon.ico`} />
+        <meta name="msapplication-TileColor" content="#1E1E1E" />
+        <meta name="msapplication-config" content={`${basePath}/favicons/browserconfig.xml`} />
+        <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
+        <link rel="icon" type="image/png" href={`${basePath}/favicons/favicon.ico`} />
+        <link rel="apple-touch-icon" href={`${basePath}/favicons/favicon.ico`} />
       </Head>
-      <Meta />
       <DefaultSeo
-        title={Metadata.Title}
+        title={siteTitle}
         description={Metadata.Description}
         openGraph={{
           type: 'website',
           url: 'https://wesbitty.com/',
-          site_name: 'Wesbitty Inc',
+          site_name: 'Wesbitty',
           images: [
             {
-              url: `https://wesbitty.com${basePath}/Logo/logo-preview.png`,
+              url: `https://wesbitty.com${basePath}/images/og/og-image.jpg`,
               width: 800,
               height: 600,
               alt: 'Wesbitty Og Image',
@@ -75,10 +96,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         }}
       />
       <ThemeProvider attribute="class" defaultTheme={Metadata.Theme}>
-        <UserProvider>
-          <Component {...pageProps} />
-        </UserProvider>
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
   )
 }
+
+export default MyApp

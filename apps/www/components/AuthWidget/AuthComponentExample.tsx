@@ -6,8 +6,6 @@ import CodeBlock from '../CodeBlock/CodeBlock'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useRouter } from 'next/router'
 
-
-
 const wesbitty = createClient(
   'https://rsnibhkhsbfnncjmwnkj.wesbitty.com',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNTIxNDE1MywiZXhwIjoxOTMwNzkwMTUzfQ.OQEbAaTfgDdLCCht251P2JRD3QDnui6nsU8N-tZA_Mc'
@@ -18,7 +16,7 @@ function AuthComponentExample() {
   const [imageSwiper, setImageSwiper] = useState(undefined)
   const [imageSwiperActiveIndex, setImageSwiperActiveIndex] = useState(0)
   const { basePath } = useRouter()
-  
+
   function handleNavChange(e: number) {
     console.log(e)
     setImageSwiperActiveIndex(e)
@@ -74,10 +72,7 @@ function AuthComponentExample() {
                 <Space size={8} direction="vertical">
                   <div>
                     <Space size={3} direction="vertical">
-                      <img
-                       src={`${basePath}/Logo/wesbitty-dark-logo.svg`}
-                       alt="Logo"
-                      />
+                      <img src={`${basePath}/Logo/wesbitty-dark-logo.svg`} alt="Logo" />
                       <Typography.Title level={3}>{'Wesbitty Inc'}</Typography.Title>
                     </Space>
                   </div>

@@ -153,9 +153,9 @@ const Nav = (props: Props) => {
     <div
       className={
         `
-                  inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium text-gray-100 hover:text-gray-200
-                  dark:text-dark-100 cursor-pointer
-                ` + props.active
+        inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700
+        dark:text-dark-100 cursor-pointer
+      ` + props.active
       }
       onClick={props.onClick}
     >
@@ -185,9 +185,9 @@ const Nav = (props: Props) => {
     <>
       <Announcement />
       <div className="sticky top-0 z-50">
-        <nav className="bg-black dark:bg-gray-800 border-b dark:border-gray-600">
+        <nav className="bg-white dark:bg-gray-800 border-b dark:border-gray-600">
           {/* <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-10 xl:px-0"> */}
-          <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-10 xl:px-0">
+          <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-16 xl:px-20">
             <HamburgerButton toggleFlyOut={() => setOpen(true)} />
             <div className="flex-1 flex items-center justify-center sm:items-stretch lg:justify-between">
               <div className="flex items-center">
@@ -211,7 +211,7 @@ const Nav = (props: Props) => {
                     href="/blog"
                     className={`
                     inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
-                    text-gray-100 hover:text-gray-200 hover:border-gray-100 p-5
+                    text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
                     dark:text-dark-100 dark:hover:border-dark-100
                   `}
                   >
@@ -221,7 +221,7 @@ const Nav = (props: Props) => {
                     href="/pricing"
                     className={`
                     inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
-                    text-gray-100 hover:text-gray-200 hover:border-gray-100 p-5
+                    text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
                     dark:text-dark-100 dark:hover:border-dark-100
                   `}
                   >
@@ -241,9 +241,9 @@ const Nav = (props: Props) => {
                 </div>
               </div>
               <div className="flex items-center right-0">
-              <div className="flex-shrink-0 flex items-center">
-              <ThemeSwitch />
-              </div>
+                <div className="flex-shrink-0 flex items-center">
+                  <ThemeSwitch />
+                </div>
               </div>
               <div className="hidden lg:flex items-center sm:space-x-3">
                 <a href="https://github.com/wesbitty/wesbitty" target="_blank">
@@ -310,7 +310,7 @@ const Nav = (props: Props) => {
                   </a>
                 </div>
                 <div className="pt-2 pb-4 space-y-1">
-                <a
+                  <a
                     href="/blog"
                     target="_blank"
                     className="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 dark:hover:bg-dark-600 hover:border-gray-300 dark:text-white"

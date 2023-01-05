@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { Metadata } from '../@wesbitty/lib/Metadata'
+import { Metadata } from '../@wesbitty/utils/Meta/Metadata'
 import DefaultLayout from '../components/Layouts/Default'
 import { PricingTableRowDesktop, PricingTableRowMobile } from '../components/PricingTableRow'
 import { Accordion, Badge, Button, Divider, Space, Typography } from '@wesbitty/ui'
@@ -11,8 +11,6 @@ import ReactMarkdown from 'react-markdown'
 import CTABanner from '../components/CTABanner'
 import Solutions from '../@wesbitty/data/Solutions.json'
 import { NextSeo } from 'next-seo'
-
-
 
 export default function IndexPage() {
   const router = useRouter()

@@ -4,7 +4,6 @@ import AnnouncementsData from '../../@wesbitty/data/Announcements.json'
 import { useRouter } from 'next/router'
 import { Typography } from '@wesbitty/ui'
 
-
 type Props = {
   text: string
   description?: string

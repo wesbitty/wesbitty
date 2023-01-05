@@ -20,12 +20,5 @@
     "incremental": true
   },
   "exclude": ["node_modules"],
-  "include": [
-    "process.d.ts",
-    "next-env.d.ts",
-    "next-auth.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "pages/protected-page.jsx"
-, "@wesbitty/analytics/GoogleAnalytics.ts", "@wesbitty/analytics/Plausible.js" , "@wesbitty/analytics/GoogleAnalytics.js", "@wesbitty/analytics/SimpleAnalytics.js" ]
+  "include": ["next-env.d.ts", "next-auth.d.ts", "**/*.ts", "**/*.tsx"]
 }

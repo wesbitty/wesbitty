@@ -1,6 +1,5 @@
 import { Typography } from '@wesbitty/ui'
 
-
 const SectionHeader = (props: any) => {
   return (
     <div className={'grid grid-cols-12 gap-1 sm:gap-8 ' + props.className}>

@@ -8,8 +8,6 @@ import TableViewCarouselData from '../../@wesbitty/data/products/database/table-
 import { Typography } from '@wesbitty/ui'
 import AdminAccessData from '../../@wesbitty/data/home/admin-access.json'
 
-
-
 const AdminAccess = () => {
   const { basePath } = useRouter()
   const [tabId, setTabId] = useState('tabTableEditor')

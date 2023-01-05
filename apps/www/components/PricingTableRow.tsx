@@ -4,8 +4,6 @@ import { IconHelpCircle, IconWatch, Space, Typography } from '@wesbitty/ui'
 import ReactTooltip from 'react-tooltip'
 import ProductIcon from 'components/ProductIcon'
 
-
-
 const Chevron = (props: any) => (
   <>
     <svg

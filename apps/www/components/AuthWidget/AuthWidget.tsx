@@ -2,9 +2,25 @@ import { useState } from 'react'
 import { createClient, Provider } from '@supabase/supabase-js'
 import DefaultLayout from '../Layouts/Default'
 import CodeBlock from '../CodeBlock/CodeBlock'
-import { Button, Auth, Card, Checkbox, Divider, Radio, Select,Space, Tabs, Typography, Input, Toggle, IconCode, IconZoomIn, IconCopy, IconColumns } from '@wesbitty/ui'
+import {
+  Button,
+  Auth,
+  Card,
+  Checkbox,
+  Divider,
+  Radio,
+  Select,
+  Space,
+  Tabs,
+  Typography,
+  Input,
+  Toggle,
+  IconCode,
+  IconZoomIn,
+  IconCopy,
+  IconColumns,
+} from '@wesbitty/ui'
 import AuthStyles from './Auth.module.css'
-
 
 function AuthPage() {
   const wesbitty = createClient(

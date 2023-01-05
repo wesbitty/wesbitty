@@ -8,8 +8,6 @@ import Examples from '../../@wesbitty/data/Examples.json'
 import Link from 'next/link'
 // import Button from '../Button'
 
-
-
 const BuiltExamples = () => {
   const { basePath } = useRouter()
   return (

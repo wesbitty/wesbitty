@@ -1,7 +1,6 @@
 import { Button, Typography } from '@wesbitty/ui'
 import { useRouter } from 'next/router'
 
-
 const Benchmark = () => {
   const { basePath } = useRouter()
   return (

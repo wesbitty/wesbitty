@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import Transition from '../../@wesbitty/lib/Transition'
 
-
 type Props = {
   title?: string
   children?: React.ReactNode

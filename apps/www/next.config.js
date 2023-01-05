@@ -2,9 +2,6 @@
 const { withWesjet } = require('wesjet-nextjs-plugin')
 
 module.exports = withWesjet({
-  basePath: '',
-  pageExtensions: ['js', 'jsx', 'tsx', 'md', 'mdx'],
-  trailingSlash: false,
   images: {
     domains: [
       'pbs.twimg.com',

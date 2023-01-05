@@ -1,4 +1,4 @@
-import { generateRss } from '../../@wesbitty/generate-rss'
+import { generateRss } from '../../@wesbitty/utils/Meta/generate-rss'
 import fs from 'fs'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
@@ -9,8 +9,6 @@ import DefaultLayout from '../../components/Layouts/Default'
 import { Typography, Tabs } from '@wesbitty/ui'
 import PostTypes from '../../@wesbitty/types/post'
 import BlogListItem from '../../components/Blog/BlogListItem'
-
-
 
 export async function getStaticProps() {
   const allPostsData = getSortedPosts('[blog]')

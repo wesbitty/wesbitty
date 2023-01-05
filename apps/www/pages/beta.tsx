@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Metadata } from '../@wesbitty/lib/Metadata'
+import { Metadata } from '../@wesbitty/utils/Meta/Metadata'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
 import Container from '../components/Container'
@@ -7,12 +7,15 @@ import Layout from '../components/Layouts/Default'
 import CountUp from '../components/CountUp'
 import FlyOut from '../components/UI/FlyOut'
 import CTABanner from '../components/CTABanner/index'
-import { AlphaNumbers, IntroductionSegments, PerformanceComparisonData } from '../@wesbitty/data/BetaPage'
+import {
+  AlphaNumbers,
+  IntroductionSegments,
+  PerformanceComparisonData,
+} from '../@wesbitty/data/BetaPage'
 import { render } from 'react-dom'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 import authors from '../@wesbitty/lib/authors.json'
-
 
 const pageTitle = `We are now in Beta | Wesbitty Inc`
 

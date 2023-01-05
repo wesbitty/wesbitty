@@ -8,7 +8,6 @@ import { useRouter } from 'next/router'
 import SectionContainer from '../components/Layouts/SectionContainer'
 import { NextSeo } from 'next-seo'
 
-
 const { Title, Text } = Typography
 
 const Index = () => {

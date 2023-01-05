@@ -5,13 +5,12 @@
   "description": "Official Template v1",
   "private": true,
   "scripts": {
-    "build": "next build && node ./@wesbitty/sitemapGenerator.mjs",
+    "build": "next build && node ./@wesbitty/utils/Meta/sitemapGenerator.mjs",
     "export": "next export",
     "start": "next start",
-    "analyze": "cross-env ANALYZE=true next build",
     "dev": "next dev --port 3210",
     "typecheck": "tsc",
-    "format:prettier": "prettier --write \"./{pages,components,lib,stores,styles,tests}/**/*.{ts,tsx,md,js,jsx,json}\""
+    "format:prettier": "prettier -w ."
   },
   "dependencies": {
     "@auth0/auth0-react": "^1.12.0",

@@ -11,11 +11,13 @@
   "workspaces": [
     "apps/www",
     "packages/*",
+    "examples/*",
     "tests"
   ],
   "author": "Wesbitty, Inc.",
   "scripts": {
     "build": "lerna run build",
+    "build:www": "lerna run build --scope www",
     "clean": "bash -c 'rm -rf apps/*/.wesjet apps/*/.next packages/*/dist'",
     "format:prettier": "prettier -w .",
     "dev": "lerna run dev --scope www",

@@ -5,8 +5,6 @@ import { useRouter } from 'next/router'
 import ProductIcon from '../ProductIcon'
 import { Typography, Badge } from '@wesbitty/ui'
 
-
-
 const Product = () => {
   const { basePath } = useRouter()
 

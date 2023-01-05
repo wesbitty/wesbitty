@@ -6,7 +6,6 @@ import SectionContainer from '../Layouts/SectionContainer'
 import ProductIcon from '../ProductIcon'
 import TextLink from '../TextLink'
 
-
 const Features = () => {
   const IconSections = Object.values(Solutions).map((solution: any) => {
     const { name, description, icon, label, url } = solution

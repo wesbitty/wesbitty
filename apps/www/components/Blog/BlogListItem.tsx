@@ -4,7 +4,6 @@ import React from 'react'
 import Image from 'next/image'
 import PostTypes from '../../@wesbitty/types/post'
 
-
 interface Props {
   blog: PostTypes
 }

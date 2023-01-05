@@ -1,7 +1,7 @@
 import Container from '../components/Container'
 import Layout from '../components/Layouts/Default'
 import Hero from '../components/HeaderFeature'
-import { Metadata } from '../@wesbitty/lib/Metadata'
+import { Metadata } from '../@wesbitty/utils/Meta/Metadata'
 import Link from 'next/link'
 import {
   Button,
@@ -31,9 +31,6 @@ import TwitterSocialProof from '../components/Sections/TwitterSocialProof'
 import 'swiper/swiper.min.css'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
-
-
-
 
 type Props = {}
 

@@ -1,32 +1,32 @@
 export const Metadata = {
-siteName: "Wesbitty Inc",
-Title: "We've Got Your WishList | Wesbitty Inc",
-Description: "We've Got Your WishList",
-Language: "en-us",
-Theme: "system", // system, dark or light
-SiteUrl: 'https://wesbitty.com',
-SiteRepo: 'https://github.com/wesbitty/wesbitty/tree/apps/www',
-SiteLogo: '/Logo/wesbitty-icon.png',
-Image: '/Logo/wesbitty-icon.png',
-SocialBanner: '/Logo/logo-preview.png',
-Email: 'admin@wesbitty.com',
-Github: 'https://github.com/wesbitty',
-Twitter: 'https://twitter.com/wesbitty',
-Facebook: 'https://facebook.com/wesbitty',
-Youtube: 'https://youtube.com/wesbitty',
-Linkedin: 'https://www.linkedin.com/wesbitty',
-Locale: 'en-US',
-analytics: {
-  // If you want to use an analytics provider you have to add it to the
-  // content security policy in the `next.config.js` file.
-  // supports plausible, simpleAnalytics, umami or googleAnalytics
-  plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
-  simpleAnalytics: false, // true or false
-  umamiWebsiteId: '', // e.g. 123e4567-e89b-12d3-a456-426614174000
-  googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
-  posthogAnalyticsId: '', // posthog.init e.g. phc_5yXvArzvRdqtZIsHkEm3Fkkhm3d0bEYUXCaFISzqPSQ
- },
- newsletter: {
+  siteName: 'Wesbitty Inc',
+  Title: "We've Got Your WishList | Wesbitty Inc",
+  Description: "We've Got Your WishList",
+  Language: 'en-us',
+  Theme: 'system', // system, dark or light
+  SiteUrl: 'https://wesbitty.com',
+  SiteRepo: 'https://github.com/wesbitty/wesbitty/tree/apps/www',
+  SiteLogo: '/Logo/wesbitty-icon.png',
+  Image: '/Logo/wesbitty-icon.png',
+  SocialBanner: '/Logo/logo-preview.png',
+  Email: 'admin@wesbitty.com',
+  Github: 'https://github.com/wesbitty',
+  Twitter: 'https://twitter.com/wesbitty',
+  Facebook: 'https://facebook.com/wesbitty',
+  Youtube: 'https://youtube.com/wesbitty',
+  Linkedin: 'https://www.linkedin.com/wesbitty',
+  Locale: 'en-US',
+  analytics: {
+    // If you want to use an analytics provider you have to add it to the
+    // content security policy in the `next.config.js` file.
+    // supports plausible, simpleAnalytics, umami or googleAnalytics
+    plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
+    simpleAnalytics: false, // true or false
+    umamiWebsiteId: '', // e.g. 123e4567-e89b-12d3-a456-426614174000
+    googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
+    posthogAnalyticsId: '', // posthog.init e.g. phc_5yXvArzvRdqtZIsHkEm3Fkkhm3d0bEYUXCaFISzqPSQ
+  },
+  newsletter: {
     // supports mailchimp, buttondown, convertkit, klaviyo, revue, emailoctopus
     // Please add your .env file and modify it according to your selection
     provider: 'buttondown',
@@ -78,5 +78,5 @@ analytics: {
       // https://help.disqus.com/en/articles/1717111-what-s-a-shortname
       shortname: process.env.NEXT_PUBLIC_DISQUS_SHORTNAME,
     },
-  }
+  },
 }

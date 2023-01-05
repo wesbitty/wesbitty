@@ -29,8 +29,6 @@ import ProductIcon from '../../components/ProductIcon'
 import APISection from '../../components/Sections/APISection'
 import ProductHeader from '../../components/Sections/ProductHeader'
 
-
-
 function StoragePage() {
   // base path for images
   const { basePath } = useRouter()
