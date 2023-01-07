@@ -34,7 +34,6 @@ async function generate() {
               .replace('/auth/Auth', '/auth')
               .replace('/database/Database', '/database')
               .replace('/storage/Storage', '/storage')
-              .replace('/feed.xml', '')
             let route = path === '/index' ? '' : path
 
             if (route.includes('/blog/')) {

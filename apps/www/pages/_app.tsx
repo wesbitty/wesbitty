@@ -1,15 +1,16 @@
 import Head from 'next/head'
 import { ColorSchemeProvider } from '../components/ColorScheme/ColorSchemeProvider'
-import { Metadata } from '../@wesbitty/utils/Meta/Metadata'
+import { Metadata } from '../@wesbitty/utils/schemas/Metadata'
 import { DefaultSeo } from 'next-seo'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import React from 'react'
 import { post } from '../@wesbitty/lib/fetchWrapper'
-
 // Import Website styles
 import '../styles/index.css'
+
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -48,6 +49,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

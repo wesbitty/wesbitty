@@ -1,7 +1,7 @@
 import Container from '../components/Container'
 import Layout from '../components/Layouts/Default'
 import Hero from '../components/HeaderFeature'
-import { Metadata } from '../@wesbitty/utils/Meta/Metadata'
+import { Metadata } from '../@wesbitty/utils/schemas/Metadata'
 import Link from 'next/link'
 import {
   Button,

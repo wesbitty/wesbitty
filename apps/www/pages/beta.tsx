@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Metadata } from '../@wesbitty/utils/Meta/Metadata'
+import { Metadata } from '../@wesbitty/utils/schemas/Metadata'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
 import Container from '../components/Container'
@@ -707,7 +707,7 @@ const BetaPricing = () => (
                 target="_blank"
                 className="text-brand-700 hover:text-brand-800"
               >
-                rory@supabase.io
+                rory@wesbitty.com
               </a>
               )
             </li>
@@ -776,7 +776,7 @@ const OpenSource = () => (
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
             >
-              rory@supabase.io
+              rory@wesbitty.com
             </a>{' '}
             to find out more.
           </p>
@@ -921,7 +921,7 @@ const WhatsNext = () => (
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
             >
-              support@supabase.io
+              support@wesbitty.com
             </a>{' '}
             or join the{' '}
             <a

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { Metadata } from '../@wesbitty/utils/Meta/Metadata'
+import { Metadata } from '../@wesbitty/utils/schemas/Metadata'
 import DefaultLayout from '../components/Layouts/Default'
 import { PricingTableRowDesktop, PricingTableRowMobile } from '../components/PricingTableRow'
 import { Accordion, Badge, Button, Divider, Space, Typography } from '@wesbitty/ui'

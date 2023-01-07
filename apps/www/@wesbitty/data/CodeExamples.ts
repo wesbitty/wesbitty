@@ -18,12 +18,12 @@ export const createUserExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const supabaseUrl = 'https://chat-room.supabase.co'
-  const supabaseKey = 'public-anon-key'
-  const supabase = createClient(supabaseUrl, supabaseKey)
+  const wesbittyUrl = 'https://chat-room.wesbitty.com'
+  const wesbittyKey = 'public-anon-key'
+  const wesbitty = createClient(wesbittyUrl, wesbittyKey)
   
   // Create a new user
-  const { user, error } = await supabase.auth.signUp({
+  const { user, error } = await wesbitty.auth.signUp({
     email: 'example@email.com',
     password: 'example-password',
   })
@@ -40,12 +40,12 @@ export const subscribeExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const supabaseUrl = 'https://chat-room.supabase.co'
-  const supabaseKey = 'public-anon-key'
-  const supabase = createClient(supabaseUrl, supabaseKey)
+  const wesbittyUrl = 'https://chat-room.wesbitty.com'
+  const wesbittyKey = 'public-anon-key'
+  const wesbitty = createClient(wesbittyUrl, wesbittyKey)
   
   // Get notified of all new chat messages
-  const realtime = supabase
+  const realtime = wesbitty
     .from('messages')
     .on('INSERT', message => {
       console.log('New message!', message)
@@ -64,12 +64,12 @@ export const readExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const supabaseUrl = 'https://chat-room.supabase.co'
-  const supabaseKey = 'public-anon-key'
-  const supabase = createClient(supabaseUrl, supabaseKey)
+  const wesbittyUrl = 'https://chat-room.wesbitty.com'
+  const wesbittyKey = 'public-anon-key'
+  const wesbitty = createClient(wesbittyUrl, wesbittyKey)
   
   // Get public rooms and their messages
-  const publicRooms = await supabase
+  const publicRooms = await wesbitty
     .from('rooms')
     .select(\`
       name,
@@ -89,12 +89,12 @@ export const createExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const supabaseUrl = 'https://chat-room.supabase.co'
-  const supabaseKey = 'public-anon-key'
-  const supabase = createClient(supabaseUrl, supabaseKey)
+  const wesbittyUrl = 'https://chat-room.wesbitty.com'
+  const wesbittyKey = 'public-anon-key'
+  const wesbitty = createClient(wesbittyUrl, wesbittyKey)
   
   // Create a new chat room
-  const newRoom = await supabase
+  const newRoom = await wesbitty
     .from('rooms')
     .insert({ name: 'Wesbitty Fan Club', public: true })
     `,
@@ -110,12 +110,12 @@ export const updateExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const supabaseUrl = 'https://chat-room.supabase.co'
-  const supabaseKey = 'public-anon-key'
-  const supabase = createClient(supabaseUrl, supabaseKey)
+  const wesbittyUrl = 'https://chat-room.wesbitty.com'
+  const wesbittyKey = 'public-anon-key'
+  const wesbitty = createClient(wesbittyUrl, wesbittyKey)
   
   // Update multiple users
-  const updatedUsers = await supabase
+  const updatedUsers = await wesbitty
     .from('users')
     .eq('account_type', 'paid')
     .update({ highlight_color: 'gold' })
@@ -124,14 +124,14 @@ export const updateExample: ExampleProps = {
 }
 
 // const heroExample = `
-//   const messages = supabase
+//   const messages = wesbitty
 //     .from('messages')
 //     .select(\`
 //       id, text,
 //       user ( id, name )
 //     \`)
 
-//   const newMessages = supabase
+//   const newMessages = wesbitty
 //     .from('messages')
 //     .on('INSERT', message => console.log('New message!', message) )
 //     .subscribe()
@@ -140,12 +140,12 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
-//   const supabaseUrl = 'https://chat-room.supabase.co'
-//   const supabaseKey = 'public-anon-key'
-//   const supabase = createClient(supabaseUrl, supabaseKey)
+//   const wesbittyUrl = 'https://chat-room.wesbitty.com'
+//   const wesbittyKey = 'public-anon-key'
+//   const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
 //   // Get notified of all new chat messages
-//   const realtime = supabase
+//   const realtime = wesbitty
 //     .from('messages')
 //     .on('INSERT', message => {
 //       console.log('New message!', message)
@@ -156,12 +156,12 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
-//   const supabaseUrl = 'https://chat-room.supabase.co'
-//   const supabaseKey = 'public-anon-key'
-//   const supabase = createClient(supabaseUrl, supabaseKey)
+//   const wesbittyUrl = 'https://chat-room.wesbitty.com'
+//   const wesbittyKey = 'public-anon-key'
+//   const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
 //   // Get public rooms and their messages
-//   const publicRooms = await supabase
+//   const publicRooms = await wesbitty
 //     .from('rooms')
 //     .select(\`
 //       name,
@@ -173,12 +173,12 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
-//   const supabaseUrl = 'https://chat-room.supabase.co'
-//   const supabaseKey = 'public-anon-key'
-//   const supabase = createClient(supabaseUrl, supabaseKey)
+//   const wesbittyUrl = 'https://chat-room.wesbitty.com'
+//   const wesbittyKey = 'public-anon-key'
+//   const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
 //   // Create a new chat room
-//   const newRoom = await supabase
+//   const newRoom = await wesbitty
 //     .from('rooms')
 //     .insert({ name: 'Wesbitty Fan Club', public: true })
 //   `
@@ -186,12 +186,12 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
-//   const supabaseUrl = 'https://chat-room.supabase.co'
-//   const supabaseKey = 'public-anon-key'
-//   const supabase = createClient(supabaseUrl, supabaseKey)
+//   const wesbittyUrl = 'https://chat-room.wesbitty.com'
+//   const wesbittyKey = 'public-anon-key'
+//   const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
 //   // Update multiple users
-//   const updatedUsers = await supabase
+//   const updatedUsers = await wesbitty
 //     .from('users')
 //     .eq('account_type', 'paid')
 //     .update({ highlight_color: 'gold' })
@@ -201,8 +201,8 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js';
 
 //   const supabase = createClient(
-//     process.env.NEXT_PUBLIC_SUPABASE_URL,
-//     process.env.SUPABASE_SECRET_KEY
+//     process.env.NEXT_PUBLIC_WESBITTY_URL,
+//     process.env.WESBITTY_SECRET_KEY
 //   );
 
 //   type User = {
@@ -212,7 +212,7 @@ export const updateExample: ExampleProps = {
 //   };
 
 //   export default async (req: NextApiRequest, res: NextApiResponse) => {
-//     const allOnlineUsers = await supabase
+//     const allOnlineUsers = await wesbitty
 //       .from<User>('users')
 //       .select('*')
 //       .eq('status', 'ONLINE');
@@ -225,12 +225,12 @@ export const updateExample: ExampleProps = {
 
 //   <script>
 //     // Initialize
-//     const supabaseUrl = 'https://chat-room.supabase.co'
-//     const supabaseKey = 'public-anon-key'
-//     const supabase = Wesbitty.createClient(supabaseUrl, supabaseKey)
+//     const wesbittyUrl = 'https://chat-room.wesbitty.com'
+//     const wesbittyKey = 'public-anon-key'
+//     const wesbitty = wesbitty.createClient(wesbittyUrl, wesbittyKey)
 
 //     // Get public rooms and their messages
-//     supabase
+//     wesbitty
 //       .from('rooms')
 //       .select(\`
 //         name,

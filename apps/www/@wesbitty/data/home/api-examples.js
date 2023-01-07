@@ -6,12 +6,12 @@ export default [
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const supabaseUrl = 'https://chat-room.supabase.co'
-const supabaseKey = 'public-anon-key'
-const supabase = createClient(supabaseUrl, supabaseKey)
+const wesbittyUrl = 'https://chat-room.wesbitty.com'
+const wesbittyKey = 'public-anon-key'
+const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
 // Create a new user
-const { user, error } = await supabase.auth.signUp({
+const { user, error } = await wesbitty.auth.signUp({
   email: 'example@email.com',
   password: 'example-password',
 })
@@ -24,12 +24,12 @@ const { user, error } = await supabase.auth.signUp({
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const supabaseUrl = 'https://chat-room.supabase.co'
-const supabaseKey = 'public-anon-key'
-const supabase = createClient(supabaseUrl, supabaseKey)
+const wesbittyUrl = 'https://chat-room.wesbitty.com'
+const wesbittyKey = 'public-anon-key'
+const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
 // Get notified of all new chat messages
-const realtime = supabase
+const realtime = wesbitty
   .from('messages')
   .on('INSERT', message => {
     console.log('New message!', message)
@@ -44,12 +44,12 @@ const realtime = supabase
     code: `import '@supabase/supabase-js'
 
 // Initialize 
-const supabaseUrl = 'https://chat-room.supabase.co'
-const supabaseKey = 'public-anon-key'
-const supabase = createClient(supabaseUrl, supabaseKey)
+const wesbittyUrl = 'https://chat-room.wesbitty.com'
+const wesbittyKey = 'public-anon-key'
+const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
 // Get public rooms and their messages
-const publicRooms = await supabase
+const publicRooms = await wesbitty
   .from('rooms')
   .select(\`
     name,
@@ -65,12 +65,12 @@ const publicRooms = await supabase
     code: `import { createClient } from '@supabase/supabase-js'
 
 // Initialize 
-const supabaseUrl = 'https://chat-room.supabase.co'
-const supabaseKey = 'public-anon-key'
-const supabase = createClient(supabaseUrl, supabaseKey)
+const wesbittyUrl = 'https://chat-room.wesbitty.com'
+const wesbittyKey = 'public-anon-key'
+const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
 // Create a new chat room
-const newRoom = await supabase
+const newRoom = await wesbitty
   .from('rooms')
   .insert({ name: 'Wesbitty Fan Club', public: true })
   `,
@@ -82,12 +82,12 @@ const newRoom = await supabase
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const supabaseUrl = 'https://chat-room.supabase.co'
-const supabaseKey = 'public-anon-key'
-const supabase = createClient(supabaseUrl, supabaseKey)
+const wesbittyUrl = 'https://chat-room.wesbitty.com'
+const wesbittyKey = 'public-anon-key'
+const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
 // Update multiple users
-const updatedUsers = await supabase
+const updatedUsers = await wesbitty
   .from('users')
   .eq('account_type', 'paid')
   .update({ highlight_color: 'gold' })

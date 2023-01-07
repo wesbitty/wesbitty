@@ -5,7 +5,7 @@
   "description": "Official Template v1",
   "private": true,
   "scripts": {
-    "build": "next build && node ./@wesbitty/utils/Meta/sitemapGenerator.mjs",
+    "build": "next build && node ./@wesbitty/utils/schemas/sitemapGenerator.mjs",
     "export": "next export",
     "start": "next start",
     "dev": "next dev --port 3210",

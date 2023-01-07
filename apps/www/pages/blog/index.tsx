@@ -1,4 +1,4 @@
-import { generateRss } from '../../@wesbitty/utils/Meta/generate-rss'
+import { generateRss } from '../../@wesbitty/utils/schemas/generate-rss'
 import fs from 'fs'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
