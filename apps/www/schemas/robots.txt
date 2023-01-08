@@ -1,2 +1,4 @@
 User-agent: *
+Host: https://wesbitty.com
+Allow: /
 Sitemap: https://wesbitty.com/sitemap.xml

@@ -52,6 +52,8 @@ async function generate() {
             return `
             <url>
             <loc>${`https://wesbitty.com${route}`}</loc>
+            <changefreq>daily</changefreq>
+            <changefreq>0.5</changefreq>
         </url>
             `
           })
@@ -65,5 +67,5 @@ async function generate() {
   })
 
   // eslint-disable-next-line no-sync
-  writeFileSync('schemas/sitemap.xml', formatted)
+  writeFileSync('schemas/app_sitemap.xml', formatted)
 }
