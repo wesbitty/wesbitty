@@ -1,5 +1,4 @@
 import { Button, IconLock, IconLogIn } from '@wesbitty/ui'
-import HeaderBlocks from '../../../components/HeaderBlock'
 
 export default function LoginPage() {
   return (
@@ -12,7 +11,6 @@ export default function LoginPage() {
         <body class="h-full">
         ```
       */}
-      <HeaderBlocks />
       <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-md space-y-8">
           <div>

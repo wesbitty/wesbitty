@@ -15,7 +15,7 @@ import {
 import { render } from 'react-dom'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
-import authors from '../@wesbitty/lib/authors.json'
+import authors from '../@wesbitty/data/authors.json'
 
 const Title = `We are now in Beta | ${Metadata.Name}`
 

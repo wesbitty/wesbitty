@@ -1,6 +1,6 @@
 import { Badge, Card, Divider, IconChevronLeft, IconFile, Space, Typography } from '@wesbitty/ui'
 import matter from 'gray-matter'
-import authors from '@wesbitty/lib/authors.json'
+import authors from '@wesbitty/data/authors.json'
 import hydrate from 'next-mdx-remote/hydrate'
 import renderToString from 'next-mdx-remote/render-to-string'
 import { NextSeo } from 'next-seo'

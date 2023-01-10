@@ -9,11 +9,11 @@ import {
   Typography,
 } from '@wesbitty/ui'
 // data
-import ApiExamplesData from '~/@wesbitty/data/products/database/api-examples'
-import ExtensionsExamplesData from '~/@wesbitty/data/products/database/extensions-examples'
-import SqlViewCarouselData from '~/@wesbitty/data/products/database/sql-view-carousel.json'
-import TableViewCarouselData from '~/@wesbitty/data/products/database/table-view-carousel.json'
-import Solutions from '~/@wesbitty/data/Solutions.json'
+import ApiExamplesData from '../../@wesbitty/data/products/database/api-examples'
+import ExtensionsExamplesData from '../../@wesbitty/data/products/database/extensions-examples'
+import SqlViewCarouselData from '../../@wesbitty/data/products/database/sql-view-carousel.json'
+import TableViewCarouselData from '../../@wesbitty/data/products/database/table-view-carousel.json'
+import Solutions from '../../@wesbitty/data/Solutions.json'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import Link from 'next/link'
