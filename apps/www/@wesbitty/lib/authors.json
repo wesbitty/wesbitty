@@ -1,28 +1,25 @@
 {
   "iamraff": {
     "author": "IAmRaff",
-    "author_url": "https://github.com/roryw10",
-    "author_image_ur l": "https://avatars3.githubusercontent.com/u/458736?v=4",
-    "authorURL": "https://github.com/iamraff"
+    "avatar": "https://avatars3.githubusercontent.com/u/458736?v=4",
+    "authorURL": "https://github.com/iamraff",
+    "position": "Developer"
   },
   "bigwellsbob": {
     "author": "Robertson Peter",
-    "author_url": "https://github.com/bigwellsbob",
-    "author_image_url": "https://avatars3.githubusercontent.com/u/458736?v=4",
+    "avatar": "https://avatars3.githubusercontent.com/u/458736?v=4",
     "authorURL": "https://github.com/bigwellsbob",
     "position": "CTO and Co-Founder"
   },
   "lauratheodo": {
     "author": "Laura Theodoratos",
-    "author_url": "https://github.com/lauratheodo",
-    "author_image_url": "https://avatars3.githubusercontent.com/u/458736?v=4",
+    "avatar": "https://avatars3.githubusercontent.com/u/458736?v=4",
     "authorURL": "https://github.com/lauratheodo",
     "position": "CEO and Co-Founder"
   },
   "wesbitty": {
     "author": "Wesbitty",
-    "author_url": "https://github.com/wesbitty",
-    "author_image_url": "https://github.com/wesbitty.png",
+    "avatar": "https://github.com/wesbitty.png",
     "authorURL": "https://github.com/wesbitty",
     "position": "Wesbitty"
   }

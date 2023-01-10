@@ -10,6 +10,8 @@ import DefaultLayout from '../../components/Layouts/Default'
 import { Typography, Tabs } from '@wesbitty/ui'
 import { PostTypes } from '../../@wesbitty/types/post'
 import BlogListItem from '../../components/Blog/BlogListItem'
+import { allPostsFields, PostsField } from 'wesjet/jetpack'
+
 
 export async function getStaticProps() {
   const allPostsData = getSortedPosts('[blog]')
@@ -151,8 +153,8 @@ function FeaturedThumb(blog: PostTypes) {
 
             {author && (
               <div className="flex space-x-3 items-center">
-                {author.author_image_url && (
-                  <img src={author.author_image_url} className="rounded-full w-10" />
+                {author.avatar && (
+                  <img src={author.avatar} className="rounded-full w-10" />
                 )}
                 <div className="flex flex-col">
                   <Typography.Text>{author.author}</Typography.Text>

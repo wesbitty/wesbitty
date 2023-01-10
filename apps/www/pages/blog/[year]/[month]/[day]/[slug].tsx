@@ -16,6 +16,8 @@ import ImageGrid from 'components/ImageGrid'
 import { generateReadingTime } from '@wesbitty/lib/helpers'
 import { getAllPostSlugs, getPostdata, getSortedPosts } from '@wesbitty/lib/posts'
 import blogStyles from './[slug].module.css'
+import { allPostsFields, PostsField } from 'wesjet/jetpack'
+
 
 // import all components used in blog articles here
 // for instance, if you use a button, you must add `Button` in the components object below.
@@ -159,7 +161,7 @@ function BlogPostPage(props: any) {
             //
             // to do: author urls should be internal in future
             // currently we have external links to github profiles
-            authors: [props.blog.author_url],
+            authors: [props.blog.authorURL],
             tags: props.blog.tags.map((cat: string) => {
               return cat
             }),
@@ -210,9 +212,9 @@ function BlogPostPage(props: any) {
                   {author && (
                     <div className="mt-6 mb-8 lg:mb-0">
                       <Space size={4}>
-                        {author.author_image_url && (
+                        {author.avatar && (
                           <img
-                            src={author.author_image_url}
+                            src={author.avatar}
                             className="rounded-full w-10 border dark:border-dark"
                           />
                         )}
