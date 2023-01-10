@@ -1,5 +1,5 @@
 import { NextSeo } from 'next-seo'
-import { getSortedPosts, getAllCategories } from '~/@wesbitty/lib/posts'
+import { getSortedPosts, getAllCategories } from '@wesbitty/lib/posts'
 import Link from 'next/link'
 import DefaultLayout from 'components/Layouts/Default'
 import BlogListItem from 'components/Blog/BlogListItem'
