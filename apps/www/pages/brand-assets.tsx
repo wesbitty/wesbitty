@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import SectionContainer from '../components/Layouts/SectionContainer'
 import { NextSeo } from 'next-seo'
+import { Metadata } from '../@wesbitty/utils/schemas/Metadata'
 
 const { Title, Text } = Typography
 
@@ -14,17 +15,17 @@ const Index = () => {
   // base path for images
   const router = useRouter()
 
-  const pageTitle = 'Branding | Wesbitty Inc'
-  const pageDescription = 'Get Wesbitty Brand assets here.'
+  const pageTitle = `Branding | ${Metadata.Name}`
+  const Description = 'Get Wesbitty Brand assets here.'
 
   return (
     <>
       <NextSeo
         title={pageTitle}
-        description={pageDescription}
+        description={Description}
         openGraph={{
           title: pageTitle,
-          description: pageDescription,
+          description: Description,
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {

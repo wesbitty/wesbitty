@@ -9,8 +9,7 @@
     "export": "next export",
     "start": "next start",
     "dev": "next dev --port 3210",
-    "typecheck": "tsc",
-    "format:prettier": "prettier -w ."
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@fontsource/inter": "4.5.2",

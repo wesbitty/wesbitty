@@ -1,4 +1,5 @@
 import { generateRss } from '../../@wesbitty/utils/schemas/generate-rss'
+import { Metadata } from '../../@wesbitty/utils/schemas/Metadata'
 import fs from 'fs'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
@@ -14,9 +15,7 @@ export async function getStaticProps() {
   const allPostsData = getSortedPosts('[blog]')
   const categories = getAllCategories('[blog]')
   const rss = generateRss(allPostsData)
-
-  // create a rss feed in public directory
-  // rss feed is added via <Head> component in render return
+  // create a rss feed in schemas directory
   fs.writeFileSync('./schemas/rss.xml', rss)
 
   return {
@@ -26,6 +25,12 @@ export async function getStaticProps() {
     },
   }
 }
+
+const Title = `Blog - ${Metadata.Name}`
+const pageTitle =
+  "The Wesbitty Blog | Updates, Ideas, Tips, Trends to help developers build application's."
+const Description =
+  "The Wesbitty Blog | Updates, Ideas, Tips, Trends to help developers build application's."
 
 function Blog(props: any) {
   const [category, setCategory] = useState('all')
@@ -53,19 +58,14 @@ function Blog(props: any) {
     return props.categories.unshift('all')
   }, [])
 
-  // append 'all' category
-  // const categories = props.categories.push('all')
-  const pageTitle = "Wesbitty Blog: We've Got Your WishList"
-  const pageDescription = 'Get all your Wesbitty News on the Wesbitty blog.'
-
   return (
     <>
       <NextSeo
         title={pageTitle}
-        description={pageDescription}
+        description={Description}
         openGraph={{
-          title: pageTitle,
-          description: pageDescription,
+          title: Title,
+          description: Description,
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {

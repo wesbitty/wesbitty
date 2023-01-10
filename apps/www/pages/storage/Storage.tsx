@@ -28,23 +28,22 @@ import SectionContainer from '../../components/Layouts/SectionContainer'
 import ProductIcon from '../../components/ProductIcon'
 import APISection from '../../components/Sections/APISection'
 import ProductHeader from '../../components/Sections/ProductHeader'
+import { Metadata } from '../../@wesbitty/utils/schemas/Metadata'
 
 function StoragePage() {
+  const Title = `Storage - Store any digital content | ${Metadata.Name}`
+  const Description = 'An open source Object store with unlimited scalability, for any file type.'
   // base path for images
   const { basePath } = useRouter()
-
-  const pageTitle = 'Storage | Store any digital content'
-  const pageDescription =
-    'An open source Object store with unlimited scalability, for any file type.'
 
   return (
     <>
       <NextSeo
-        title={pageTitle}
-        description={pageDescription}
+        title={Title}
+        description={Description}
         openGraph={{
-          title: pageTitle,
-          description: pageDescription,
+          title: Title,
+          description: Description,
           url: `https://wesbitty.com/storage`,
           images: [
             {
@@ -184,12 +183,12 @@ function StoragePage() {
                 description={
                   'Update a user account with public profile information, including uploading a profile image.'
                 }
-                author={'supabase'}
+                author={'wesbitty'}
                 author_url={'https://github.com/wesbitty'}
                 author_img={'https://avatars.githubusercontent.com/u/54469796'}
                 repo_name={'nextjs-ts-user-management'}
                 repo_url={
-                  'https://github.com/wesbitty/wesbitty/tree/master/examples/nextjs-ts-user-management'
+                  'https://github.com/wesbitty/wesbitty/tree/master/examples/wesjet-starter'
                 }
                 vercel_deploy_url={
                   'https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fsupabase%2Fsupabase%2Ftree%2Fmaster%2Fexamples%2Fnextjs-ts-user-management&project-name=supabase-user-management&repository-name=supabase-user-management&demo-title=Wesbitty%20User%20Management&demo-description=An%20example%20web%20app%20using%20Wesbitty%20and%20Next.js&demo-url=https%3A%2F%2Fsupabase-nextjs-ts-user-management.vercel.app&demo-image=https%3A%2F%2Fi.imgur.com%2FZ3HkQqe.png&integration-ids=oac_jUduyjQgOyzev1fjrW83NYOv&external-id=nextjs-user-management'

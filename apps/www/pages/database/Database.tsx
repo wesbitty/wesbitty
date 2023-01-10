@@ -33,11 +33,15 @@ import APISection from '../../components/Sections/APISection'
 import GithubExamples from '../../components/Sections/GithubExamples'
 import ProductHeader from '../../components/Sections/ProductHeader'
 import TweetCard from '../../components/TweetCard'
+import { Metadata } from '../../@wesbitty/utils/schemas/Metadata'
 
 // install Swiper's Controller component
 // SwiperCore.use([Controller])
 
 function Database() {
+  const Title = `Database - Open source SQL Database | ${Metadata.Name}`
+  const Description =
+    'With wesbitty’s APIs and easy to use dashboard, it makes designing relational databases easy.'
   // base path for images
   const { basePath } = useRouter()
 
@@ -50,18 +54,14 @@ function Database() {
     dashboardSwiper.slideTo(e)
   }
 
-  const pageTitle = 'Database | Open source SQL Database'
-  const pageDescription =
-    'With supabase’s APIs and easy to use dashboard, it makes designing relational databases easy.'
-
   return (
     <>
       <NextSeo
-        title={pageTitle}
-        description={pageDescription}
+        title={Title}
+        description={Description}
         openGraph={{
-          title: pageTitle,
-          description: pageDescription,
+          title: Title,
+          description: Description,
           url: `https://wesbitty.com/auth`,
           images: [
             {

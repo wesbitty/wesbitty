@@ -37,18 +37,18 @@ type Props = {}
 const Index = ({}: Props) => {
   const router = useRouter()
 
-  const pageTitle = 'Help &amp Support | {Metadata.SiteName}'
-  const pageDescription =
+  const Title = `Help &amp Support | ${Metadata.Name}`
+  const Description =
     'Find help and support for Wesbitty. Our support agents provide answers on all types of issues, including account information, billing, and refunds.'
 
   return (
     <>
       <NextSeo
-        title={pageTitle}
-        description={pageDescription}
+        title={Title}
+        description={Description}
         openGraph={{
-          title: pageTitle,
-          description: pageDescription,
+          title: Title,
+          description: Description,
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {

@@ -1,14 +1,13 @@
 export const Metadata = {
-  siteName: 'Wesbitty Inc',
-  Title: "We've Got Your WishList | Wesbitty Inc",
+  Name: 'Wesbitty Inc',
   Description: "We've Got Your WishList",
   Language: 'en-us',
-  Theme: 'system', // system, dark or light
-  SiteUrl: 'https://wesbitty.com',
-  SiteRepo: 'https://github.com/wesbitty/wesbitty/tree/apps/www',
-  SiteLogo: '/Logo/wesbitty-icon.png',
+  Logo: '/Logo/wesbitty-icon.png}',
   Image: '/Logo/wesbitty-icon.png',
   SocialBanner: '/Logo/logo-preview.png',
+  Theme: 'system', // system, dark or light
+  Url: 'https://wesbitty.com',
+  Repo: 'https://github.com/wesbitty/wesbitty/tree/apps/www',
   Email: 'admin@wesbitty.com',
   Github: 'https://github.com/wesbitty',
   Twitter: 'https://twitter.com/wesbitty',

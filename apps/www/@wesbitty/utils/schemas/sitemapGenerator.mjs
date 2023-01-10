@@ -1,8 +1,8 @@
-import { writeFileSync } from 'fs'
 import prettier from 'prettier'
 import { globby } from 'globby'
+import fs from 'fs'
 
-async function generate() {
+async function generateSitemap() {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
   const pages = await globby([
     'pages/*.js',
@@ -34,6 +34,7 @@ async function generate() {
               .replace('/auth/Auth', '/auth')
               .replace('/database/Database', '/database')
               .replace('/storage/Storage', '/storage')
+
             let route = path === '/index' ? '' : path
 
             if (route.includes('/blog/')) {
@@ -53,7 +54,8 @@ async function generate() {
             <url>
             <loc>${`https://wesbitty.com${route}`}</loc>
             <changefreq>daily</changefreq>
-            <changefreq>0.5</changefreq>
+            <priority>1.0</priority>
+            <lastModified>${new Date().toUTCString()}</lastModified>
         </url>
             `
           })
@@ -66,6 +68,7 @@ async function generate() {
     parser: 'html',
   })
 
-  // eslint-disable-next-line no-sync
-  writeFileSync('schemas/app_sitemap.xml', formatted)
+  fs.writeFileSync('schemas/sitemap.xml', formatted)
 }
+
+generateSitemap()

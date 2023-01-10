@@ -22,24 +22,25 @@ import {
   Typography,
 } from '@wesbitty/ui'
 import { NextSeo } from 'next-seo'
+import { Metadata } from '../@wesbitty/utils/schemas/Metadata'
+
+const Title = `One of the world's fastest-growing open source communities | ${Metadata.Name}`
+const Description =
+  'Wesbitty is the community that builds the infrastructure for your applications. Build using Wesbitty for any size project—from a new startup to even large growing companies'
 
 type Props = {}
 
 const Index = ({}: Props) => {
   const router = useRouter()
 
-  const pageTitle = "One of the world's fastest-growing open source communities | Wesbitty Inc"
-  const pageDescription =
-    'Wesbitty is the community that builds the infrastructure for your applications. Build using Wesbitty for any size project—from a new startup to even large growing companies'
-
   return (
     <>
       <NextSeo
-        title={pageTitle}
-        description={pageDescription}
+        title={Title}
+        description={Description}
         openGraph={{
-          title: pageTitle,
-          description: pageDescription,
+          title: Title,
+          description: Description,
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {

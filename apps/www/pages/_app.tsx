@@ -10,8 +10,6 @@ import { post } from '../@wesbitty/lib/fetchWrapper'
 // Import Website styles
 import '../styles/index.css'
 
-
-
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
@@ -43,13 +41,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
-  const siteTitle = `${Metadata.Description} | ${Metadata.siteName}`
+  const Title = `${Metadata.Description} | ${Metadata.Name}`
   const { basePath } = useRouter()
 
   return (
     <>
       <Head>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -71,17 +69,17 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="shortcut icon" href={`${basePath}/favicons/favicon.ico`} />
         <meta name="msapplication-TileColor" content="#1E1E1E" />
         <meta name="msapplication-config" content={`${basePath}/favicons/browserconfig.xml`} />
-        <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
+        <link rel="alternate" type="application/rss+xml" href={`${basePath}/rss.xml`} />
         <link rel="icon" type="image/png" href={`${basePath}/favicons/favicon.ico`} />
         <link rel="apple-touch-icon" href={`${basePath}/favicons/favicon.ico`} />
       </Head>
       <DefaultSeo
-        title={siteTitle}
+        title={Title}
         description={Metadata.Description}
         openGraph={{
           type: 'website',
           url: 'https://wesbitty.com/',
-          site_name: 'Wesbitty',
+          site_name: 'Wesbitty Inc',
           images: [
             {
               url: `https://wesbitty.com${basePath}/images/og/og-image.jpg`,

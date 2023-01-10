@@ -13,20 +13,20 @@ import Solutions from '../@wesbitty/data/Solutions.json'
 import { NextSeo } from 'next-seo'
 
 export default function IndexPage() {
-  const router = useRouter()
-
-  const pageTitle = 'Pricing & fees | Wesbitty Inc'
-  const pageDescription =
+  const Title = `Pricing & fees | ${Metadata.Name}`
+  const Description =
     'Explore Wesbitty fees and pricing information. Find our competitive pricing tiers, with no hidden pricing. We have generous free tiers for those getting started, and Pay As You Go for those scaling up.'
+
+  const router = useRouter()
 
   return (
     <DefaultLayout>
       <NextSeo
-        title={pageTitle}
-        description={pageDescription}
+        title={Title}
+        description={Description}
         openGraph={{
-          title: pageTitle,
-          description: pageDescription,
+          title: Title,
+          description: Description,
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {

@@ -17,7 +17,7 @@ import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 import authors from '../@wesbitty/lib/authors.json'
 
-const pageTitle = `We are now in Beta | Wesbitty Inc`
+const Title = `We are now in Beta | ${Metadata.Name}`
 
 // Dark text: text-dark-400
 // Light text: text-dark-300
@@ -964,15 +964,15 @@ const Beta = () => {
   return (
     <Layout hideHeader={true}>
       <Head>
-        <title>{pageTitle}</title>
-        <meta name="og:title" property="og:title" content={pageTitle} />
-        <meta name="twitter:site" content={pageTitle} />
-        <meta name="twitter:text:title" content={pageTitle} />
+        <title>{Title}</title>
+        <meta name="og:title" property="og:title" content={Title} />
+        <meta name="twitter:site" content={Title} />
+        <meta name="twitter:text:title" content={Title} />
       </Head>
       <NextSeo
-        title={pageTitle}
+        title={Title}
         openGraph={{
-          title: pageTitle,
+          title: Title,
           description: Metadata.Description,
           url: `https://wesbitty.com/beta`,
           type: 'article',

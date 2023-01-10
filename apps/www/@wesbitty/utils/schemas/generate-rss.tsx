@@ -4,7 +4,7 @@ const generateRssItem = (post: any): string => `
   <title>${post.title}</title>
   <link>https://wesbitty.com/blog/${post.url}</link>
   <description>${post.description}</description>
-  <pubDate>${new Date(post.date).toUTCString()}</pubDate>
+  <publication>${new Date(post.date).toUTCString()}</publication>
 </item>
 `
 
@@ -12,12 +12,12 @@ export const generateRss = (posts: any[]): string => {
   return `
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-      <title>Blog - Wesbitty</title>
+      <title>Blog - Wesbitty Inc</title>
       <link>https://wesbitty.com</link>
-      <description>Latest news from Wesbitty</description>
-      <language>en</language>
-      <lastBuildDate>${new Date(posts[0].date).toUTCString()}</lastBuildDate>
-      <atom:link href="https://wesbitty.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
+      <description>The Wesbitty Blog | Updates, Tips, Ideas, Trends to help developers build application's</description>
+      <language>en-US</language>
+      <lastModified>${new Date(posts[0].date).toUTCString()}</lastModified>
+      <atom:link href="https://wesbitty.com/rss.xml" rel="self" type="application/rss+xml"/>
       ${posts.map(generateRssItem).join('')}
     </channel>
   </rss>
