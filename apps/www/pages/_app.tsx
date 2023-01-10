@@ -51,7 +51,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={`${basePath}/favicons/apple-touch-icon.png`}
+          href={`${basePath}/favicon/apple-touch-icon.png`}
         />
         <link
           rel="icon"
@@ -63,15 +63,15 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href={`${basePath}/favicons/favicon-16x16.png`}
+          href={`${basePath}/favicon/favicon-16x16.png`}
         />
-        <link rel="manifest" href={`${basePath}/favicons/site.webmanifest`} />
-        <link rel="shortcut icon" href={`${basePath}/favicons/favicon.ico`} />
+        <link rel="manifest" href={`${basePath}/favicon/site.webmanifest`} />
+        <link rel="shortcut icon" href={`${basePath}/favicon/favicon.ico`} />
         <meta name="msapplication-TileColor" content="#1E1E1E" />
-        <meta name="msapplication-config" content={`${basePath}/favicons/browserconfig.xml`} />
+        <meta name="msapplication-config" content={`${basePath}/favicon/browserconfig.xml`} />
         <link rel="alternate" type="application/rss+xml" href={`${basePath}/rss.xml`} />
-        <link rel="icon" type="image/png" href={`${basePath}/favicons/favicon.ico`} />
-        <link rel="apple-touch-icon" href={`${basePath}/favicons/favicon.ico`} />
+        <link rel="icon" type="image/png" href={`${basePath}/favicon/favicon.ico`} />
+        <link rel="apple-touch-icon" href={`${basePath}/favicon/favicon.ico`} />
       </Head>
       <DefaultSeo
         title={Title}

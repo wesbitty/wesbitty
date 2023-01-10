@@ -27,7 +27,6 @@ async function generateSitemap() {
             const path = page
               .replace('pages', '')
               .replace('public', '')
-              .replace('schemas', '')
               .replace('[blog]', '/blog')
               .replace('.tsx', '')
               .replace('.mdx', '')
@@ -68,7 +67,7 @@ async function generateSitemap() {
     parser: 'html',
   })
 
-  fs.writeFileSync('schemas/sitemap.xml', formatted)
+  fs.writeFileSync('public/sitemap.xml', formatted)
 }
 
 generateSitemap()

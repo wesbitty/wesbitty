@@ -1,15 +1,15 @@
-import { generateRss } from '../../@wesbitty/utils/schemas/generate-rss'
-import { Metadata } from '../../@wesbitty/utils/schemas/Metadata'
+import { generateRss } from '../@wesbitty/utils/schemas/generate-rss'
+import { Metadata } from '../@wesbitty/utils/schemas/Metadata'
 import fs from 'fs'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
-import { getSortedPosts, getAllCategories } from '../../@wesbitty/lib/posts'
-import authors from '../../@wesbitty/lib/authors.json'
-import DefaultLayout from '../../components/Layouts/Default'
+import { getSortedPosts, getAllCategories } from '../@wesbitty/lib/posts'
+import authors from '../@wesbitty/lib/authors.json'
+import DefaultLayout from '../components/Layouts/Default'
 import { Typography, Tabs } from '@wesbitty/ui'
-import { PostTypes } from '../../@wesbitty/types/post'
-import BlogListItem from '../../components/Blog/BlogListItem'
+import { PostTypes } from '../@wesbitty/types/post'
+import BlogListItem from '../components/Blog/BlogListItem'
 import { allPostsFields, PostsField } from 'wesjet/jetpack'
 
 
@@ -18,7 +18,7 @@ export async function getStaticProps() {
   const categories = getAllCategories('[blog]')
   const GetRss = generateRss(allPostsData)
   // create a rss feed in schemas directory
-  fs.writeFileSync('./schemas/rss.xml', GetRss)
+  fs.writeFileSync('./public/rss.xml', GetRss)
 
   return {
     props: {
