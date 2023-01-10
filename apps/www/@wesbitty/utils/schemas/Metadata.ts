@@ -1,7 +1,7 @@
 export const Metadata = {
   Name: 'Wesbitty Inc',
   Description: "We've Got Your WishList",
-  Language: 'en-us',
+  Language: 'en-US',
   Logo: '/Logo/wesbitty-icon.png}',
   Image: '/Logo/wesbitty-icon.png',
   SocialBanner: '/Logo/logo-preview.png',

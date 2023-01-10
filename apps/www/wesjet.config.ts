@@ -1,4 +1,21 @@
-import { defineDocumentType, makeSource } from 'wesjet/maker'
+import { defineDocumentType, defineNestedType, makeSource } from 'wesjet/maker'
+import { PostTypes } from './@wesbitty/types/post'
+
+const Author = defineNestedType(() => ({
+  name: 'Author',
+  fields: {
+    name: { type: 'string', required: true },
+    picture: { type: 'string', required: true },
+  },
+}))
+
+const Tag = defineNestedType(() => ({
+  name: 'Tag',
+  fields: {
+    name: { type: 'string' },
+  },
+}))
+
 
 const PostsField = defineDocumentType(() => ({
   name: 'PostsField',
@@ -9,9 +26,34 @@ const PostsField = defineDocumentType(() => ({
       description: 'The title of the post',
       required: true,
     },
+    thumb: {
+      type: 'string',
+      required: true,
+    },
+    image: {
+      type: 'string',
+      required: true,
+    },
+    author_url: {
+      type: 'string',
+    },
+    tags: {
+      type: 'markdown',
+      of: Tag,
+    },
+    authorURL: {
+      type: 'string',
+    },
+    excerpt: {
+      type: 'string',
+    },
     date: {
       type: 'date',
-      description: 'The date of the post',
+      required: true,
+    },
+    author: {
+      type: 'string',
+      of: Author,
       required: true,
     },
   },

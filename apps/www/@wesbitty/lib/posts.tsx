@@ -3,8 +3,6 @@ import path from 'path'
 import matter from 'gray-matter'
 import { generateReadingTime } from './helpers'
 
-// substring amount for file names
-// based on YYYY-MM-DD format
 const FILENAME_SUBSTRING = 11
 
 type Directories = '[blog]' | 'PostsField'
@@ -28,7 +26,7 @@ export const getSortedPosts = (directory: Directories, limit?: number, tags?: an
     const { data, content } = matter(fileContents)
 
     const options: Intl.DateTimeFormatOptions = { month: 'long', day: 'numeric', year: 'numeric' }
-    const formattedDate = new Date(data.date).toLocaleDateString('en-IN', options)
+    const formattedDate = new Date(data.date).toLocaleDateString('en-US', options)
 
     const readingTime = generateReadingTime(content)
 

@@ -8,15 +8,15 @@ import { getSortedPosts, getAllCategories } from '../../@wesbitty/lib/posts'
 import authors from '../../@wesbitty/lib/authors.json'
 import DefaultLayout from '../../components/Layouts/Default'
 import { Typography, Tabs } from '@wesbitty/ui'
-import PostTypes from '../../@wesbitty/types/post'
+import { PostTypes } from '../../@wesbitty/types/post'
 import BlogListItem from '../../components/Blog/BlogListItem'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPosts('[blog]')
   const categories = getAllCategories('[blog]')
-  const rss = generateRss(allPostsData)
+  const GetRss = generateRss(allPostsData)
   // create a rss feed in schemas directory
-  fs.writeFileSync('./schemas/rss.xml', rss)
+  fs.writeFileSync('./schemas/rss.xml', GetRss)
 
   return {
     props: {
@@ -125,7 +125,7 @@ function Blog(props: any) {
 
 function FeaturedThumb(blog: PostTypes) {
   // @ts-ignore
-  const author = blog.author ? authors[blog.author] : authors['supabase']
+  const author = blog.author ? authors[blog.author] : authors['wesbitty']
 
   return (
     <div key={blog.slug} className="cursor-pointer w-full">
