@@ -55,7 +55,7 @@ function ApiLayout() {
       <SectionContainer>
           <div className="grid grid-cols-12 lg:gap-16">
 
-            <div className="col-span-12 xl:col-start-8 lg:col-start-7 lg:order-first lg:col-span-6 mt-8 lg:mt-0">
+            <div className="col-span-12 lg:order-first lg:col-span-6 mb-14 lg:mt-0">
             <div style={{ maxWidth: '370px', margin: '0 auto' }}>
                       <Card>
                         <Space size={8} direction="vertical">
@@ -77,7 +77,7 @@ function ApiLayout() {
                 </div>
 
 
-            <div className="order-last col-span-12 lg:col-span-6  xl:col-span-4">
+            <div className="mb-4 order-last col-span-12 lg:col-span-6 xl:col-span-4">
               <Space className="mb-4">
                 <div className="w-8 h-8 rounded-md bg-gray-900 dark:bg-white text-white dark:text-gray-900  flex justify-center items-center">
                   <IconKey size="small" strokeWidth={1.5} />
