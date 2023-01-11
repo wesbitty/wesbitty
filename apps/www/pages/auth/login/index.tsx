@@ -78,17 +78,7 @@ function ApiLayout() {
 
 
          <div className="col-span-12 item-center md:col-span-5 lg:col-span-6">
-              <Space className="mb-4">
-                <div className="w-8 h-8 rounded-md bg-gray-900 dark:bg-white text-white dark:text-gray-900  flex justify-center items-center">
-                  <IconKey size="small" strokeWidth={1.5} />
-                </div>
-                <Typography.Text type="secondary">
-                  <IconX />
-                </Typography.Text>
-                <img className="w-8" src={`${basePath}/images/product/auth/react-icon.svg`} />
-              </Space>
-
-              <Typography.Title level={2} className="mb-4">
+             <Typography.Title level={2} className="mb-4">
                 React Auth
               </Typography.Title>
               <Typography.Text>
@@ -110,25 +100,9 @@ function ApiLayout() {
                   </Button>
                 </a>
               </Link>
-
-              <div className="grid grid-cols-12 md:gap-8 lg:gap-0 xl:gap-16 mt-8">
-                <div className="col-span-12 lg:col-span-12 xl:col-span-4">
-                  <FeatureColumn
-                    icon={<IconBriefcase />}
-                    title="Social login support"
-                    text="Support for social logins are built in and the component "
-                  />
-                </div>
-                <div className="col-span-12 lg:col-span-12 xl:col-span-4">
-                  <FeatureColumn
-                    icon={<IconEye />}
-                    title="User context hooks"
-                    text="Access the auth status from any component."
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+           </div>
+          
+        </div>
         </SectionContainer>
     </DefaultLayout>
   )
