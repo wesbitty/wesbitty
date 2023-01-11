@@ -68,9 +68,7 @@ const Footer = () => {
               {FooterLinks.map((segment: any) => {
                 return (
                   <div key={`footer_${segment.title}`}>
-                    <h3 className="text-sm text-gray-800 text-base dark:text-dark-100">
-                      {segment.title}
-                    </h3>
+                    <h3 className="text-sm text-gray-800 dark:text-dark-100">{segment.title}</h3>
                     <ul className="mt-4 space-y-2">
                       {segment.links.map((link: any, idx: number) => (
                         <li key={`${segment.title}_link_${idx}`}>

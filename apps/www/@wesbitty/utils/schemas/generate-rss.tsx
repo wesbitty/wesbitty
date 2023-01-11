@@ -1,3 +1,5 @@
+import { Metadata } from './Metadata'
+
 const generateRssItem = (post: any): string => `
 <item>
   <guid>https://wesbitty.com/blog/${post.url}</guid>
@@ -15,7 +17,7 @@ export const generateRss = (posts: any[]): string => {
       <title>Blog - Wesbitty Inc</title>
       <link>https://wesbitty.com</link>
       <description>The Wesbitty Blog | Updates, Tips, Ideas, Trends to help developers build application's</description>
-      <language>en-US</language>
+      <language>${Metadata.Locale}</language>
       <lastModified>${new Date(posts[0].date).toUTCString()}</lastModified>
       <atom:link href="https://wesbitty.com/rss.xml" rel="self" type="application/rss+xml"/>
       ${posts.map(generateRssItem).join('')}

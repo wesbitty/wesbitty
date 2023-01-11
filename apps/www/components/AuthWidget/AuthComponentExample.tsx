@@ -100,7 +100,7 @@ import { Auth, Typography, Button } from '@wesbitty/ui'
 import { createClient } from '@supabase/supabase-js'
 
 export default function app() {
-  const supabase = createClient(
+  const wesbitty = createClient(
     "https://YOUR-PROJECT-ID.wesbitty.com",
     "YOUR-PUBLIC-ANON-KEY"
   );

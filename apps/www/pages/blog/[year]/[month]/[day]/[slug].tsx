@@ -18,7 +18,6 @@ import { getAllPostSlugs, getPostdata, getSortedPosts } from '@wesbitty/lib/post
 import blogStyles from './[slug].module.css'
 import { allPostsFields, PostsField } from 'wesjet/jetpack'
 
-
 // import all components used in blog articles here
 // for instance, if you use a button, you must add `Button` in the components object below.
 const components = {

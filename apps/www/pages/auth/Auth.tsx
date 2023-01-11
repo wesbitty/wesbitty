@@ -34,8 +34,8 @@ function AuthPage() {
   const { basePath } = useRouter()
 
   // supabase auth widget project details
-  const supabase = createClient(
-    'https://rsnibhkhsbfnncjmwnkj.supabase.co',
+  const wesbitty = createClient(
+    'https://rsnibhkhsbfnncjmwnkj.wesbitty.com',
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNTIxNDE1MywiZXhwIjoxOTMwNzkwMTUzfQ.OQEbAaTfgDdLCCht251P2JRD3QDnui6nsU8N-tZA_Mc'
   )
 

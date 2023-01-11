@@ -1,5 +1,5 @@
+import { DocumentGen } from 'wesjet/core'
 import { defineDocumentType, defineNestedType, makeSource } from 'wesjet/maker'
-import { PostTypes } from './@wesbitty/types/post'
 
 const Author = defineNestedType(() => ({
   name: 'Author',
@@ -30,9 +30,6 @@ const PostsField = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
-    author_url: {
-      type: 'string',
-    },
     authorURL: {
       type: 'string',
     },
@@ -52,10 +49,14 @@ const PostsField = defineDocumentType(() => ({
   computedFields: {
     url: {
       type: 'string',
-      resolve: (doc) => `/[blog]/${doc._raw.flattenedPath}`,
+      resolve: urlFromFilePath,
     },
   },
 }))
+
+const urlFromFilePath = (doc: DocumentGen): string => {
+  return doc._raw.flattenedPath.replace(/pages\/?/, '')
+}
 
 export default makeSource({
   contentDirPath: '[blog]',
