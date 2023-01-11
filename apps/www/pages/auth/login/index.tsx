@@ -77,7 +77,7 @@ function ApiLayout() {
                 </div>
 
 
-            <div className="order-last col-span-12 lg:col-span-6 xl:col-span-4">
+         <div className="col-span-12 item-center md:col-span-5 lg:col-span-6">
               <Space className="mb-4">
                 <div className="w-8 h-8 rounded-md bg-gray-900 dark:bg-white text-white dark:text-gray-900  flex justify-center items-center">
                   <IconKey size="small" strokeWidth={1.5} />
