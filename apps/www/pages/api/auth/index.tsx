@@ -77,10 +77,11 @@ function AuthPage() {
       <SectionContainer>
           <div className="grid grid-cols-12 lg:gap-16">
 
-            <div className="col-span-12 lg:order-first lg:col-span-6 mb-14 lg:mt-0">
-            <div style={{ maxWidth: '400px', margin: '0 auto' }}>
+          <div className="order-last col-span-12 lg:order-first lg:col-span-6 mt-8 lg:mt-0">
+      
+            <div className="pt-8" style={{ maxWidth: '420px', margin: '0 auto' }}>
                       <Card>
-                        <Space size={8} direction="vertical">
+                        <Space size={4} direction="vertical">
                           <div>
                             <Space size={3} direction="vertical">
                              <Typography.Title level={3}>{companyName}</Typography.Title>
@@ -99,7 +100,9 @@ function AuthPage() {
                 </div>
 
 
-         <div className="col-span-12 item-center md:col-span-5 lg:col-span-6">
+      
+                <div className="col-span-12 lg:col-span-6 lg:col-start-7 xl:col-span-4 xl:col-start-8">
+
              <Typography.Title level={2} className="mb-4">
                 React Auth
               </Typography.Title>
