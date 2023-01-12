@@ -26,11 +26,11 @@ import {
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useRouter } from 'next/router'
-import SectionContainer from '../../../components/Layouts/SectionContainer'
-import DefaultLayout from '../../../components/Layouts/Default'
-import FeatureColumn from '../../../components/FeatureColumn'
+import SectionContainer from '../../components/Layouts/SectionContainer'
+import DefaultLayout from '../../components/Layouts/Default'
+import FeatureColumn from '../../components/FeatureColumn'
 import Link from 'next/link'
-import { Metadata } from '../../../@wesbitty/utils/schemas/Metadata'
+import { Metadata } from '../../@wesbitty/utils/schemas/Metadata'
 import { NextSeo } from 'next-seo'
 
 
