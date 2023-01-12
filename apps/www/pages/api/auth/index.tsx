@@ -27,9 +27,13 @@ import {
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useRouter } from 'next/router'
 import SectionContainer from '../../../components/Layouts/SectionContainer'
-import DefaultLayout from '~/components/Layouts/Default'
-import FeatureColumn from '~/components/FeatureColumn'
+import DefaultLayout from '../../../components/Layouts/Default'
+import FeatureColumn from '../../../components/FeatureColumn'
 import Link from 'next/link'
+import { Metadata } from '../../../@wesbitty/utils/schemas/Metadata'
+import { NextSeo } from 'next-seo'
+
+
 
 const wesbitty = createClient(
   'https://rsnibhkhsbfnncjmwnkj.wesbitty.com',
@@ -37,8 +41,11 @@ const wesbitty = createClient(
 )
 
 
-function ApiLayout() {
-    const { basePath } = useRouter()
+function AuthPage() {
+  const Title = `Auth| ${Metadata.Name}`
+  const Description = "User's Authentication"
+  // base path for images
+  const { basePath } = useRouter()
 
   type SizeProps = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge'
   type LayoutProps = 'horizontal' | 'vertical'
@@ -51,6 +58,21 @@ function ApiLayout() {
   const socials: Provider[] = ['facebook', 'google', 'bitbucket', 'github', 'gitlab']
 
   return (
+    <>
+    <NextSeo
+    title={Title}
+    description={Description}
+    openGraph={{
+      title: Title,
+      description: Description,
+      url: `https://wesbitty.com/auth`,
+      images: [
+        {
+          url: `https://wesbitty.com${basePath}/images/product/database/database-og.jpg`,
+        },
+      ],
+    }}
+  />
     <DefaultLayout hideFooter hideHeader>
       <SectionContainer>
           <div className="grid grid-cols-12 lg:gap-16">
@@ -91,8 +113,8 @@ function ApiLayout() {
                 </p>
               </Typography.Text>
               <Link
-                href="https://github.com/wesbitty/ui#using-supabase-ui-auth"
-                as="https://github.com/wesbitty/ui#using-supabase-ui-auth"
+                href="https://github.com/wesbitty/ui"
+                as="https://github.com/wesbitty/ui"
               >
                 <a>
                   <Button size="small" type="default" className="mt-4" icon={<IconArrowUpRight />}>
@@ -105,7 +127,8 @@ function ApiLayout() {
         </div>
         </SectionContainer>
     </DefaultLayout>
+    </>
   )
 }
 
-export default ApiLayout
+export default AuthPage

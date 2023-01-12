@@ -248,7 +248,7 @@ const Navigation = () => {
                     Start Your Project
                   </Button>
                 </a>
-                <a href="/auth/login">
+                <a href="/api/auth">
                   <Button title="Sign In" type="default" icon={<IconLogIn />}>
                     Sign In
                   </Button>
@@ -300,7 +300,7 @@ const Navigation = () => {
               <div className="mt-6 mb-12">
                 <div className="pt-2 pb-4 space-y-1">
                   <a
-                    href="/auth/login"
+                    href="/api/auth"
                     className="block pl-3 pr-4 text-base font-medium text-gray-600 dark:text-white"
                   >
                     Sign in

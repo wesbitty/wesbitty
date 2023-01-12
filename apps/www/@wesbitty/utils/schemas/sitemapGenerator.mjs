@@ -30,7 +30,6 @@ async function generateSitemap() {
               .replace('[blog]', '/blog')
               .replace('.tsx', '')
               .replace('.mdx', '')
-              .replace('/auth/Auth', '/auth')
               .replace('/database/Database', '/database')
               .replace('/storage/Storage', '/storage')
 

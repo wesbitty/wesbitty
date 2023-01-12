@@ -62,7 +62,7 @@ function Database() {
         openGraph={{
           title: Title,
           description: Description,
-          url: `https://wesbitty.com/auth`,
+          url: `https://wesbitty.com/database`,
           images: [
             {
               url: `https://wesbitty.com${basePath}/images/product/database/database-og.jpg`,
@@ -227,7 +227,7 @@ function Database() {
                       handle="@Elsolo244"
                       img_url={`${basePath}/images/twitter-profiles/v6citnk33y2wpeyzrq05_400x400.jpeg`}
                       quote="Where has
-                @supabase
+                @wesbitty
                 been all my life? 😍"
                     />,
                   ]}
