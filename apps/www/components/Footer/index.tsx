@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import FooterLinks from '../../@wesbitty/data/Footer.json'
+import FooterLinks from '../../[wesbitty]/data/Footer.json'
 import SectionContainer from '../Layouts/SectionContainer'
 import Link from 'next/link'
 import { iMode } from '../ColorScheme/ColorSchemeProvider'

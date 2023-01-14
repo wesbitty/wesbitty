@@ -13,15 +13,32 @@ import Link from 'next/link'
 import DefaultLayout from '../components/Layouts/Default'
 import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
+import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
 
 type Props = {}
 
 const NotFound = ({}: Props) => {
-  const { basePath } = useRouter()
+  const router = useRouter()
+
+  const Title = `Oops! Page Not Found | ${Metadata.Name}`
+  const Description = "404 - Error Page"
 
   return (
     <>
-      <NextSeo title="404 - Page Not Found" description="404 - Page Not Found" />
+      <NextSeo 
+      title="Oops! Page Not Found" 
+      description="404 - Error Page" 
+      openGraph={{
+        title: Title,
+        description: Description,
+          url: `https://wesbitty.com/${router.pathname}`,
+          images: [
+            {
+              url: `https://wesbitty.com/images/og/og-image.jpg`,
+            },
+          ],
+      }}
+      />
       <DefaultLayout hideHeader hideFooter>
         <div className="relative mx-auto flex h-screen w-full flex-col items-center justify-center">
           <div className="text-center">

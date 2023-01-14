@@ -1,9 +1,9 @@
 import { NextSeo } from 'next-seo'
-import { getSortedPosts, getAllCategories } from '@wesbitty/lib/posts'
+import { getSortedPosts, getAllCategories } from '[wesbitty]/lib/posts'
 import Link from 'next/link'
 import DefaultLayout from 'components/Layouts/Default'
 import BlogListItem from 'components/Blog/BlogListItem'
-import { PostTypes } from '../../../@wesbitty/types/post'
+import { PostTypes } from '../../../[wesbitty]/types/post'
 import BlogHeader from 'components/Blog/BlogHeader'
 import { Typography } from '@wesbitty/ui'
 

@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import { ColorSchemeProvider } from '../components/ColorScheme/ColorSchemeProvider'
-import { Metadata } from '../@wesbitty/utils/schemas/Metadata'
+import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
 import { DefaultSeo } from 'next-seo'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import React from 'react'
-import { post } from '../@wesbitty/lib/fetchWrapper'
+import { post } from '../[wesbitty]/lib/fetchWrapper'
 // Import Website styles
 import '../styles/index.css'
 

@@ -1,9 +1,6 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
-
 module.exports = {
-  purge: ['./components/**/*.tsx', './pages/**/*.tsx', './[blog]/*.mdx'],
-  darkMode: 'class',
+  purge: ['./components/**/*.tsx', './pages/**/*.tsx'],
+  darkMode: 'class', // 'media' or 'class'
   mode: 'jit',
   theme: {
     borderColor: (theme) => ({

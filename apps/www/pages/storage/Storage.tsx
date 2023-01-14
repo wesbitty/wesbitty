@@ -10,10 +10,10 @@ import {
   Space,
   Typography,
 } from '@wesbitty/ui'
-import ApiExamples from '../../@wesbitty/data/products/storage/api-examples'
-import DashboardViewData from '../../@wesbitty/data/products/storage/dashboard-carousel.json'
-import StoragePermissionsData from '../../@wesbitty/data/products/storage/permissions-examples'
-import Solutions from '../../@wesbitty/data/Solutions.json'
+import ApiExamples from '../../[wesbitty]/data/products/storage/api-examples'
+import DashboardViewData from '../../[wesbitty]/data/products/storage/dashboard-carousel.json'
+import StoragePermissionsData from '../../[wesbitty]/data/products/storage/permissions-examples'
+import Solutions from '../../[wesbitty]/data/Solutions.json'
 import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
@@ -28,7 +28,7 @@ import SectionContainer from '../../components/Layouts/SectionContainer'
 import ProductIcon from '../../components/ProductIcon'
 import APISection from '../../components/Sections/APISection'
 import ProductHeader from '../../components/Sections/ProductHeader'
-import { Metadata } from '../../@wesbitty/utils/schemas/Metadata'
+import { Metadata } from '../../[wesbitty]/utils/schemas/Metadata'
 
 function StoragePage() {
   const Title = `Storage - Store any digital content | ${Metadata.Name}`

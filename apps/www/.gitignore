@@ -6,6 +6,8 @@
 .pnp.js
 yarn.lock
 
+**/AppConfig.ts
+
 # testing
 /coverage
 
@@ -13,8 +15,14 @@ yarn.lock
 /.next/
 /out/
 
+# firebase
+.firebase
+firebase-debug.log
+
+
 # production
 /build
+/dist
 
 # misc
 .DS_Store
@@ -33,3 +41,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+.firebaserc
+/firebase.json
+/wesjet-env.d.ts
+
+# wesjet
+.wesjet

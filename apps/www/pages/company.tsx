@@ -5,11 +5,11 @@ import SectionHeader from '../components/UI/SectionHeader'
 import CTABanner from '../components/CTABanner/index'
 import ImageGrid from 'components/ImageGrid'
 import SectionContainer from '../components/Layouts/SectionContainer'
-import PressData from '../@wesbitty/data/Press'
-import CommunityData from '../@wesbitty/data/Community'
-import CompaniesData from '../@wesbitty/data/Companies'
-import InvestorData from '../@wesbitty/data/Investors'
-import TeamData from '../@wesbitty/data/Team'
+import PressData from '../[wesbitty]/data/Press'
+import CommunityData from '../[wesbitty]/data/Community'
+import CompaniesData from '../[wesbitty]/data/Companies'
+import InvestorData from '../[wesbitty]/data/Investors'
+import TeamData from '../[wesbitty]/data/Team'
 import Image from 'next/image'
 import {
   Button,
@@ -22,16 +22,17 @@ import {
   Typography,
 } from '@wesbitty/ui'
 import { NextSeo } from 'next-seo'
-import { Metadata } from '../@wesbitty/utils/schemas/Metadata'
+import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
 
-const Title = `One of the world's fastest-growing open source communities | ${Metadata.Name}`
-const Description =
-  'Wesbitty is the community that builds the infrastructure for your applications. Build using Wesbitty for any size project—from a new startup to even large growing companies'
 
 type Props = {}
 
 const Index = ({}: Props) => {
   const router = useRouter()
+
+  const Title = `One of the world's fastest-growing open source communities | ${Metadata.Name}`
+const Description =
+  'Wesbitty is the community that builds the infrastructure for your applications. Build using Wesbitty for any size project—from a new startup to even large growing companies'
 
   return (
     <>

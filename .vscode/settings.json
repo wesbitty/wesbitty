@@ -14,6 +14,7 @@
     "**/*.code-search": true,
     "**/.next": true,
     "**/.wesjet": true,
-    "**/dist": true
+    "**/dist": true,
+    "**/build": true
   }
 }

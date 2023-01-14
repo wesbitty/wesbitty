@@ -9,8 +9,8 @@ import {
   createExample,
   updateExample,
   ExampleProps,
-} from '~/@wesbitty/data/CodeExamples'
-import monokaiCustomTheme from '~/@wesbitty/data/CodeEditorTheme'
+} from '~/[wesbitty]/data/CodeExamples'
+import monokaiCustomTheme from '~/[wesbitty]/data/CodeEditorTheme'
 import { Button, IconCopy, Space, Tabs } from '@wesbitty/ui'
 
 SyntaxHighlighter.registerLanguage('javascript', js)

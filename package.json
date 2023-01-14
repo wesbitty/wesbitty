@@ -18,9 +18,11 @@
   "scripts": {
     "build": "turbo run build",
     "build:www": "turbo run build --filter=www",
-    "clean": "bash -c 'rm -rf apps/*/.wesjet apps/*/.next  apps/*/.turbo examples/*/.turbo examples/*/.wesjet examples/*/.next packages/*/dist'",
-    "format:prettier": "prettier -w .",
     "dev": "turbo run dev --filter=www",
+    "format:prettier": "prettier -w .",
+    "rm": "npm run rm:examples && npm run rm:apps",
+    "rm:examples": "bash -c 'rm -rf examples/*/.turbo examples/*/.wesjet examples/*/.next packages/*/dist'",
+    "rm:apps": "bash -c 'rm -rf apps/*/.wesjet apps/*/.next  apps/*/.turbo'",
     "test": "jest"
   },
   "devDependencies": {

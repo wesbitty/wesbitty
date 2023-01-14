@@ -30,7 +30,7 @@ import SectionContainer from '../../components/Layouts/SectionContainer'
 import DefaultLayout from '../../components/Layouts/Default'
 import FeatureColumn from '../../components/FeatureColumn'
 import Link from 'next/link'
-import { Metadata } from '../../@wesbitty/utils/schemas/Metadata'
+import { Metadata } from '../../[wesbitty]/utils/schemas/Metadata'
 import { NextSeo } from 'next-seo'
 
 
@@ -41,8 +41,8 @@ const wesbitty = createClient(
 )
 
 
-function AuthPage() {
-  const Title = `Auth| ${Metadata.Name}`
+function Index() {
+  const Title = `Authentication | ${Metadata.Name}`
   const Description = "User's Authentication"
   // base path for images
   const { basePath } = useRouter()
@@ -103,8 +103,8 @@ function AuthPage() {
       
                 <div className="col-span-12 lg:col-span-6 lg:col-start-7 xl:col-span-4 xl:col-start-8">
 
-             <Typography.Title level={2} className="mb-4">
-                React Auth
+             <Typography.Title level={3} className="mb-4">
+                User's Authentication
               </Typography.Title>
               <Typography.Text>
                 <p className="text-base lg:text-lg">
@@ -116,8 +116,8 @@ function AuthPage() {
                 </p>
               </Typography.Text>
               <Link
-                href="https://github.com/wesbitty/ui"
-                as="https://github.com/wesbitty/ui"
+                href="/"
+                as="/"
               >
                 <a>
                   <Button size="small" type="default" className="mt-4" icon={<IconArrowUpRight />}>
@@ -134,4 +134,4 @@ function AuthPage() {
   )
 }
 
-export default AuthPage
+export default Index

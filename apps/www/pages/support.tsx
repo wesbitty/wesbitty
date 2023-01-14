@@ -1,7 +1,6 @@
 import Container from '../components/Container'
 import Layout from '../components/Layouts/Default'
-import Hero from '../components/HeaderFeature'
-import { Metadata } from '../@wesbitty/utils/schemas/Metadata'
+import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
 import Link from 'next/link'
 import {
   Button,
@@ -17,16 +16,7 @@ import {
   Divider,
   IconMail,
 } from '@wesbitty/ui'
-import Examples from '../@wesbitty/data/Examples.json'
-import ExampleCard from '../components/ExampleCard'
-import Features from '../components/Features/index'
-import BuiltExamples from '../components/WesbittyMaker/index'
-import MadeForDevelopers from '../components/MadeForDevelopers/index'
-import AdminAccess from '../components/AdminAccess/index'
-import CaseStudies from '../components/CaseStudies/index'
-import CTABanner from '../components/CTABanner/index'
 import SectionContainer from '../components/Layouts/SectionContainer'
-import TwitterSocialProof from '../components/Sections/TwitterSocialProof'
 // Import Swiper styles if swiper used on page
 import 'swiper/swiper.min.css'
 import { useRouter } from 'next/router'

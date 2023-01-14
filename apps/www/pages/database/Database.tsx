@@ -9,11 +9,11 @@ import {
   Typography,
 } from '@wesbitty/ui'
 // data
-import ApiExamplesData from '../../@wesbitty/data/products/database/api-examples'
-import ExtensionsExamplesData from '../../@wesbitty/data/products/database/extensions-examples'
-import SqlViewCarouselData from '../../@wesbitty/data/products/database/sql-view-carousel.json'
-import TableViewCarouselData from '../../@wesbitty/data/products/database/table-view-carousel.json'
-import Solutions from '../../@wesbitty/data/Solutions.json'
+import ApiExamplesData from '../../[wesbitty]/data/products/database/api-examples'
+import ExtensionsExamplesData from '../../[wesbitty]/data/products/database/extensions-examples'
+import SqlViewCarouselData from '../../[wesbitty]/data/products/database/sql-view-carousel.json'
+import TableViewCarouselData from '../../[wesbitty]/data/products/database/table-view-carousel.json'
+import Solutions from '../../[wesbitty]/data/Solutions.json'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -33,7 +33,7 @@ import APISection from '../../components/Sections/APISection'
 import GithubExamples from '../../components/Sections/GithubExamples'
 import ProductHeader from '../../components/Sections/ProductHeader'
 import TweetCard from '../../components/TweetCard'
-import { Metadata } from '../../@wesbitty/utils/schemas/Metadata'
+import { Metadata } from '../../[wesbitty]/utils/schemas/Metadata'
 
 // install Swiper's Controller component
 // SwiperCore.use([Controller])

@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import { Button, Card, Typography, Space, IconGitHub } from '@wesbitty/ui'
 import SectionContainer from '../Layouts/SectionContainer'
 import ExampleCard from '../ExampleCard'
-import Examples from '../../@wesbitty/data/Examples.json'
+import Examples from '../../[wesbitty]/data/Examples.json'
 import Link from 'next/link'
 
 const BuiltExamples = () => {

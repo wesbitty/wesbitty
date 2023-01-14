@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import Benchmark from '../CaseStudies/benchmark'
 import SectionHeader from '../UI/SectionHeader'
-import CaseStudiesData from '../../@wesbitty/data/CaseStudies.json'
+import CaseStudiesData from '../../[wesbitty]/data/CaseStudies.json'
 import { Card, Space, Typography } from '@wesbitty/ui'
 import SectionContainer from '../Layouts/SectionContainer'
 
