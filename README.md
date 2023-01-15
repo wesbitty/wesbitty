@@ -4,8 +4,8 @@
 <a href="https://wesbitty.com/">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="apps/www/public/Logo/og/wesbitty-og.jpg">
-      <img src="apps/www/public/Logo/og/wesbitty-og.jpg" alt="Wesbitty" width="600" height="600" />
-      <img src="apps/www/public/Logo/og/wesbitty-og.jpg" alt="Wesbitty" width="400" />
+      <img src="apps/www/public/Logo/og/wesbitty-og.jpg" alt="Wesbitty" width="600" />
+      <img src="apps/www/public/Logo/og/wesbitty-og.jpg" alt="Wesbitty" width="600" />
     </picture> 
   </a>
 </p>
