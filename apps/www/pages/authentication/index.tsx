@@ -41,7 +41,7 @@ const wesbitty = createClient(
 )
 
 
-function Index() {
+function AuthenticationPage () {
   const Title = `Authentication | ${Metadata.Name}`
   const Description = "User's Authentication"
   // base path for images
@@ -134,4 +134,4 @@ function Index() {
   )
 }
 
-export default Index
+export default AuthenticationPage
