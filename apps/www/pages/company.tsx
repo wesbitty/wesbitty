@@ -24,15 +24,14 @@ import {
 import { NextSeo } from 'next-seo'
 import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
 
-
 type Props = {}
 
 const CompanyPage = ({}: Props) => {
   const router = useRouter()
 
   const Title = `One of the world's fastest-growing open source communities | ${Metadata.Name}`
-const Description =
-  'Wesbitty is the community that builds the infrastructure for your applications. Build using Wesbitty for any size project—from a new startup to even large growing companies'
+  const Description =
+    'Wesbitty is the community that builds the infrastructure for your applications. Build using Wesbitty for any size project—from a new startup to even large growing companies'
 
   return (
     <>

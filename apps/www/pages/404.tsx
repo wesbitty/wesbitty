@@ -21,23 +21,23 @@ const NotFound = ({}: Props) => {
   const router = useRouter()
 
   const Title = `Oops! Page Not Found | ${Metadata.Name}`
-  const Description = "404 - Error Page"
+  const Description = '404 - Error Page'
 
   return (
     <>
-      <NextSeo 
-      title="Oops! Page Not Found" 
-      description="404 - Error Page" 
-      openGraph={{
-        title: Title,
-        description: Description,
+      <NextSeo
+        title="Oops! Page Not Found"
+        description="404 - Error Page"
+        openGraph={{
+          title: Title,
+          description: Description,
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {
               url: `https://wesbitty.com/Logo/og/wesbitty-og.jpg`,
             },
           ],
-      }}
+        }}
       />
       <DefaultLayout hideHeader hideFooter>
         <div className="relative mx-auto flex h-screen w-full flex-col items-center justify-center">

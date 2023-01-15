@@ -33,15 +33,12 @@ import Link from 'next/link'
 import { Metadata } from '../../[wesbitty]/utils/schemas/Metadata'
 import { NextSeo } from 'next-seo'
 
-
-
 const wesbitty = createClient(
   'https://rsnibhkhsbfnncjmwnkj.wesbitty.com',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNTIxNDE1MywiZXhwIjoxOTMwNzkwMTUzfQ.OQEbAaTfgDdLCCht251P2JRD3QDnui6nsU8N-tZA_Mc'
 )
 
-
-function AuthenticationPage () {
+function AuthenticationPage() {
   const Title = `Authentication | ${Metadata.Name}`
   const Description = "User's Authentication"
   // base path for images
@@ -59,51 +56,46 @@ function AuthenticationPage () {
 
   return (
     <>
-    <NextSeo
-    title={Title}
-    description={Description}
-    openGraph={{
-      title: Title,
-      description: Description,
-      url: `https://wesbitty.com/auth`,
-      images: [
-        {
-          url: `https://wesbitty.com${basePath}/images/product/database/database-og.jpg`,
-        },
-      ],
-    }}
-  />
-    <DefaultLayout hideFooter hideHeader>
-      <SectionContainer>
+      <NextSeo
+        title={Title}
+        description={Description}
+        openGraph={{
+          title: Title,
+          description: Description,
+          url: `https://wesbitty.com/auth`,
+          images: [
+            {
+              url: `https://wesbitty.com${basePath}/images/product/database/database-og.jpg`,
+            },
+          ],
+        }}
+      />
+      <DefaultLayout hideFooter hideHeader>
+        <SectionContainer>
           <div className="grid grid-cols-12 lg:gap-16">
-
-          <div className="order-last col-span-12 lg:order-first lg:col-span-6 mt-8 lg:mt-0">
-      
-            <div className="pt-8" style={{ maxWidth: '420px', margin: '0 auto' }}>
-                      <Card>
-                        <Space size={4} direction="vertical">
-                          <div>
-                            <Space size={3} direction="vertical">
-                             <Typography.Title level={3}>{companyName}</Typography.Title>
-                            </Space>
-                          </div>
-                          <Auth
-                            providers={socialLogins ? socials : []}
-                            socialButtonSize={widgetSize}
-                            socialLayout={socialLoginLayout}
-                            supabaseClient={wesbitty}
-                            socialColors={true}
-                          />
-                        </Space>
-                      </Card>
+            <div className="order-last col-span-12 lg:order-first lg:col-span-6 mt-8 lg:mt-0">
+              <div className="pt-8" style={{ maxWidth: '420px', margin: '0 auto' }}>
+                <Card>
+                  <Space size={4} direction="vertical">
+                    <div>
+                      <Space size={3} direction="vertical">
+                        <Typography.Title level={3}>{companyName}</Typography.Title>
+                      </Space>
                     </div>
-                </div>
+                    <Auth
+                      providers={socialLogins ? socials : []}
+                      socialButtonSize={widgetSize}
+                      socialLayout={socialLoginLayout}
+                      supabaseClient={wesbitty}
+                      socialColors={true}
+                    />
+                  </Space>
+                </Card>
+              </div>
+            </div>
 
-
-      
-                <div className="col-span-12 lg:col-span-6 lg:col-start-7 xl:col-span-4 xl:col-start-8">
-
-             <Typography.Title level={3} className="mb-4">
+            <div className="col-span-12 lg:col-span-6 lg:col-start-7 xl:col-span-4 xl:col-start-8">
+              <Typography.Title level={3} className="mb-4">
                 User's Authentication
               </Typography.Title>
               <Typography.Text>
@@ -115,21 +107,17 @@ function AuthenticationPage () {
                   in, signing up, magic link and forgot password forms.
                 </p>
               </Typography.Text>
-              <Link
-                href="/"
-                as="/"
-              >
+              <Link href="/" as="/">
                 <a>
                   <Button size="small" type="default" className="mt-4" icon={<IconArrowUpRight />}>
                     Explore documentation
                   </Button>
                 </a>
               </Link>
-           </div>
-          
-        </div>
+            </div>
+          </div>
         </SectionContainer>
-    </DefaultLayout>
+      </DefaultLayout>
     </>
   )
 }
