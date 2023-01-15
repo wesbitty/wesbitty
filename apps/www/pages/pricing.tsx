@@ -12,7 +12,7 @@ import CTABanner from '../components/CTABanner'
 import Solutions from '../[wesbitty]/data/Solutions.json'
 import { NextSeo } from 'next-seo'
 
-export default function IndexPage() {
+export default function PricingPage() {
   const Title = `Pricing & fees | ${Metadata.Name}`
   const Description =
     'Explore Wesbitty fees and pricing information. Find our competitive pricing tiers, with no hidden pricing. We have generous free tiers for those getting started, and Pay As You Go for those scaling up.'
@@ -30,7 +30,7 @@ export default function IndexPage() {
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {
-              url: `https://wesbitty.com/images/og/og-image.jpg`,
+              url: `https://wesbitty.com/Logo/og/wesbitty-og.jpg`,
             },
           ],
         }}

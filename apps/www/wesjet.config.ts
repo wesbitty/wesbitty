@@ -9,8 +9,8 @@ const Author = defineNestedType(() => ({
   },
 }))
 
-const PostsField = defineDocumentType(() => ({
-  name: 'PostsField',
+const Post = defineDocumentType(() => ({
+  name: 'Post',
   filePathPattern: `**/*.mdx`,
   fields: {
     title: {
@@ -60,5 +60,5 @@ const urlFromFilePath = (doc: DocumentGen): string => {
 
 export default makeSource({
   contentDirPath: '[blog]',
-  documentTypes: [PostsField],
+  documentTypes: [Post],
 })

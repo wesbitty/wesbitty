@@ -1,5 +1,4 @@
 import { Card, Space, Typography } from '@wesbitty/ui'
-import DeveloperSignups from './DeveloperSignups'
 
 type TeamMember = {
   name: string

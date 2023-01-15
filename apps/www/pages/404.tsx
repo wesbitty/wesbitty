@@ -34,7 +34,7 @@ const NotFound = ({}: Props) => {
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {
-              url: `https://wesbitty.com/images/og/og-image.jpg`,
+              url: `https://wesbitty.com/Logo/og/wesbitty-og.jpg`,
             },
           ],
       }}

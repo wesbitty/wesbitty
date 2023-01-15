@@ -11,7 +11,7 @@ import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
 
 const { Title, Text } = Typography
 
-const Index = () => {
+const BrandPage = () => {
   // base path for images
   const router = useRouter()
 
@@ -29,7 +29,7 @@ const Index = () => {
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {
-              url: `https://wesbitty.com/images/og/og-image.jpg`,
+              url: `https://wesbitty.com/Logo/og/wesbitty-og.jpg`,
             },
           ],
         }}
@@ -52,7 +52,7 @@ const Index = () => {
             <div className="grid grid-cols-12 border dark:border-gray-600 rounded-lg shadow-small">
               <div className="col-span-12 lg:col-span-5">
                 <img
-                  src={`/brand-assets/logo-preview.jpg`}
+                  src={`/Logo/logo-preview.jpg`}
                   width="100%"
                   className="object-cover h-full rounded-l-lg"
                 />
@@ -85,4 +85,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default BrandPage

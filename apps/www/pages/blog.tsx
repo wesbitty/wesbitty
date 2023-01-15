@@ -10,7 +10,7 @@ import DefaultLayout from '../components/Layouts/Default'
 import { Typography, Tabs } from '@wesbitty/ui'
 import { PostTypes } from '../[wesbitty]/types/post'
 import BlogListItem from '../components/Blog/BlogListItem'
-import { allPostsFields, PostsField } from 'wesjet/jetpack'
+import { allPosts, Post } from 'wesjet/jetpack'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPosts('[blog]')
@@ -70,7 +70,7 @@ function Blog(props: any) {
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {
-              url: `https://wesbitty.com/images/og/og-image.jpg`,
+              url: `https://wesbitty.com/Logo/og/wesbitty-og.jpg`,
             },
           ],
         }}

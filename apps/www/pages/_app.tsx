@@ -82,7 +82,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           site_name: 'Wesbitty Inc',
           images: [
             {
-              url: `https://wesbitty.com${basePath}/images/og/og-image.jpg`,
+              url: `https://wesbitty.com${basePath}/Logo/og/wesbitty-og.jpg`,
               width: 800,
               height: 600,
               alt: 'Wesbitty Og Image',

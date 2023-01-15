@@ -2,8 +2,8 @@
 FROM node:16-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci
+COPY package.json ./
+RUN npm i
 
 # Rebuild the source code only when needed
 FROM node:16-alpine AS builder

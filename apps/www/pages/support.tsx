@@ -24,7 +24,7 @@ import { NextSeo } from 'next-seo'
 
 type Props = {}
 
-const Index = ({}: Props) => {
+const SupportPage = ({}: Props) => {
   const router = useRouter()
 
   const Title = `Help &amp Support | ${Metadata.Name}`
@@ -42,7 +42,7 @@ const Index = ({}: Props) => {
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {
-              url: `https://wesbitty.com/images/og/og-image.jpg`,
+              url: `https://wesbitty.com/Logo/og/wesbitty-og.jpg`,
             },
           ],
         }}
@@ -212,4 +212,4 @@ const Index = ({}: Props) => {
   )
 }
 
-export default Index
+export default SupportPage

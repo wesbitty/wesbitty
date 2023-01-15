@@ -16,10 +16,9 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"],
       "wesjet/jetpack": ["./.wesjet/jetpack"]
     }
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "wesjet-env.d.ts", "**/*.ts", "**/*.tsx", ".wesjet/jetpack"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".wesjet/jetpack"]
 }

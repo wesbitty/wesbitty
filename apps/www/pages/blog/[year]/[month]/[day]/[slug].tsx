@@ -16,7 +16,7 @@ import ImageGrid from 'components/ImageGrid'
 import { generateReadingTime } from '[wesbitty]/lib/helpers'
 import { getAllPostSlugs, getPostdata, getSortedPosts } from '[wesbitty]/lib/posts'
 import blogStyles from './[slug].module.css'
-import { allPostsFields, PostsField } from 'wesjet/jetpack'
+import { allPosts, Post } from 'wesjet/jetpack'
 
 // import all components used in blog articles here
 // for instance, if you use a button, you must add `Button` in the components object below.
