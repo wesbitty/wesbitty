@@ -11,24 +11,28 @@
   "workspaces": [
     "apps/www",
     "packages/*",
+    "examples/*",
     "tests"
   ],
   "author": "Wesbitty, Inc.",
   "scripts": {
-    "build": "lerna run build",
-    "clean": "bash -c 'rm -rf apps/*/.wesjet apps/*/.next packages/*/dist'",
-    "prettier": "prettier -w .",
-    "dev": "lerna run dev --scope www",
-    "tests": "jest"
+    "build": "turbo run build",
+    "build:www": "turbo run build --filter=www",
+    "dev": "turbo run dev --filter=www",
+    "format:prettier": "prettier -w .",
+    "rm": "npm run rm:examples && npm run rm:apps",
+    "rm:examples": "bash -c 'rm -rf examples/*/.turbo examples/*/.wesjet examples/*/.next packages/*/dist'",
+    "rm:apps": "bash -c 'rm -rf apps/*/.wesjet apps/*/.next  apps/*/.turbo'",
+    "test": "jest"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.2",
-    "lerna": "^6.1.0",
     "npm-run-all": "^4.1.5",
     "prettier": "2.8.0",
     "semver": "^7.3.8",
-    "simple-git-hooks": "^2.8.1"
+    "simple-git-hooks": "^2.8.1",
+    "turbo": "^1.6.3"
   },
   "dependencies": {
     "@babel/core": "^7.20.5",
@@ -37,6 +41,6 @@
     "@babel/preset-typescript": "^7.18.6",
     "babel-jest": "^29.3.1",
     "dotenv": "^16.0.3",
-    "faker": "^6.6.6"
+    "ts-node": "^10.9.1"
   }
 }

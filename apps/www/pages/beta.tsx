@@ -1,23 +1,23 @@
 import Head from 'next/head'
+import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
-import Container from 'components/Container'
+import Container from '../components/Container'
 import Layout from '../components/Layouts/Default'
-import CountUp from 'components/CountUp'
-import FlyOut from 'components/UI/FlyOut'
-import CTABanner from 'components/CTABanner/index'
-import { APP_NAME, DESCRIPTION } from '~/@wesbitty/lib/constants'
+import CountUp from '../components/CountUp'
+import FlyOut from '../components/UI/FlyOut'
+import CTABanner from '../components/CTABanner/index'
 import {
   AlphaNumbers,
   IntroductionSegments,
   PerformanceComparisonData,
-} from '~/@wesbitty/data/BetaPage'
+} from '../[wesbitty]/data/BetaPage'
 import { render } from 'react-dom'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
-import authors from '~/@wesbitty/lib/authors.json'
+import authors from '../[wesbitty]/data/authors.json'
 
-const site_title = `${APP_NAME} | We are now in Beta`
+const Title = `We are now in Beta | ${Metadata.Name}`
 
 // Dark text: text-dark-400
 // Light text: text-dark-300
@@ -224,7 +224,7 @@ const TableOfContents = (props: any) => {
       <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-4">
         <div className="col-span-12 text-base mb-10">
           <p className="text-2xl text-black dark:text-white">
-            Supabase <span className="text-brand-600 dark:text-brand-700">Beta</span> is starting
+            Wesbitty <span className="text-brand-600 dark:text-brand-700">Beta</span> is starting
             now.
           </p>
         </div>
@@ -314,7 +314,7 @@ const Performance = () => {
                       </p>
                       <Bar
                         color={
-                          stat.name === 'Supabase'
+                          stat.name === 'Wesbitty'
                             ? 'bg-brand-600 dark:bg-brand-700'
                             : 'bg-dark-300 dark:bg-dark-400'
                         }
@@ -387,7 +387,7 @@ const Performance = () => {
                 benchmarks
               </a>{' '}
               are open source so that the community can better our methodologies and identify areas
-              of improvement for the tools which we support at Supabase.
+              of improvement for the tools which we support at Wesbitty.
             </p>
           </div>
           <div className="col-span-12 mt-10 mb-10">
@@ -397,18 +397,18 @@ const Performance = () => {
             <p className="mb-10">
               Benchmarks were run from a neutral host (Digital Ocean Droplet 4 GB Memory / 80 GB
               Disk / SGP1 - Ubuntu 20.04 (LTS) x64) against a table/collection pre-populated with 1
-              million rows. The Supabase database and API used are each running on AWS EC2 t3a.micro
+              million rows. The Wesbitty database and API used are each running on AWS EC2 t3a.micro
               instances.
             </p>
             <p className="mb-10">
-              Supabase is available in 7 different geographic regions. We're adding more regions as
+              Wesbitty is available in 7 different geographic regions. We're adding more regions as
               we build up multi-cloud support. Soon we'll offer read-replicas to scale your database
               right to the edge - reducing latency and giving your users a better experience.
             </p>
             <p>
-              One of our key metrics at Supabase is "Time to Value". How fast can a user go from
+              One of our key metrics at Wesbitty is "Time to Value". How fast can a user go from
               sign up, to making their first API request? How fast can they go from development to
-              production? We've built several case studies on our blog, demonstrating how Supabase
+              production? We've built several case studies on our blog, demonstrating how Wesbitty
               enables them to build and scale their product in as little time as possible.
             </p>
           </div>
@@ -513,11 +513,11 @@ const Reliability = () => {
             <p className="mb-10">
               We're launching{' '}
               <a
-                href="https://status.supabase.com"
+                href="https://status.wesbitty.com"
                 target="_blank"
                 className="text-brand-700 hover:text-brand-800"
               >
-                https://status.supabase.com
+                https://status.wesbitty.com
               </a>{' '}
               to keep track of uptime across all of our services and critical infrastructure.
             </p>
@@ -545,7 +545,7 @@ const NewFeaturesAndIntegrations = () => {
         <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
           <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
             <p className="mb-5">
-              If you're new to Supabase, here's a few of the things you get when you choose us as
+              If you're new to Wesbitty, here's a few of the things you get when you choose us as
               your backend.
             </p>
             <ul className="">
@@ -554,7 +554,7 @@ const NewFeaturesAndIntegrations = () => {
                   Auth
                 </p>
                 <p className="mb-5">
-                  If you're new to Supabase, here's a few of the things you get when you choose us
+                  If you're new to Wesbitty, here's a few of the things you get when you choose us
                   as your backend. We provide{' '}
                   <a
                     href="/docs/reference/javascript/auth-signup"
@@ -593,7 +593,7 @@ const NewFeaturesAndIntegrations = () => {
                   >
                     subscribe to changes in your database
                   </a>{' '}
-                  over websockets, receiving your data in realtime. Companies are using Supabase to
+                  over websockets, receiving your data in realtime. Companies are using Wesbitty to
                   build chat applications, trigger notifications, and pipe data to analytics
                   dashboards whenever it changes in their database.
                 </p>
@@ -638,7 +638,7 @@ const NewFeaturesAndIntegrations = () => {
                   Table View
                 </p>
                 <p className="mb-5">
-                  View and edit your data like a spreadsheet from within the Supabase dashboard.
+                  View and edit your data like a spreadsheet from within the Wesbitty dashboard.
                   Build your schema, create complex relationships, and import and export to csv.
                 </p>
                 <VideoShot src={`${basePath}/videos/tabTableEditor.mp4`} />
@@ -649,7 +649,7 @@ const NewFeaturesAndIntegrations = () => {
                 </p>
                 <p className="mb-5">
                   No need to install third party SQL tools, you can run queries directly from the
-                  Supabase Dashboard.
+                  Wesbitty Dashboard.
                 </p>
                 <VideoShot src={`${basePath}/videos/tabSqlEditor.mp4`} />
               </li>
@@ -676,7 +676,7 @@ const BetaPricing = () => (
           <p className="mb-5">Our key aims going into this exercise were:</p>
           <ul className="list-disc list-outside ml-6 mb-10">
             <li className="mb-5">
-              To continue offering free Supabase instances for Students, Hobbyists, and Early
+              To continue offering free Wesbitty instances for Students, Hobbyists, and Early
               Adopters
             </li>
             <li className="mb-5">
@@ -703,11 +703,11 @@ const BetaPricing = () => (
               University (and participating code school) Students will be eligible for 2 years of
               base tier usage (Code Schools can contact{' '}
               <a
-                href="mailto:rory@supabase.io"
+                href="mailto:admin@wesbitty.com"
                 target="_blank"
                 className="text-brand-700 hover:text-brand-800"
               >
-                rory@supabase.io
+                rory@wesbitty.com
               </a>
               )
             </li>
@@ -717,7 +717,7 @@ const BetaPricing = () => (
             </li>
           </ul>
           <p>
-            The Supabase Base Tier is now called the Supabase Pro tier as per the{' '}
+            The Wesbitty Base Tier is now called the Wesbitty Pro tier as per the{' '}
             <a href="https://wesbitty.com/pricing" className="text-brand-700 hover:text-brand-800">
               pricing page
             </a>
@@ -740,14 +740,14 @@ const OpenSource = () => (
             Great software is multi generational and stretches beyond any single company.
           </p>
           <p className="mb-10">
-            Supabase is a collection of many projects, and we rely on making contributors to help us
+            Wesbitty is a collection of many projects, and we rely on making contributors to help us
             build and improve. Because of this, we aim to make open source more accessible and
             attractive to anyone who wants to contribute.
           </p>
           <p className="mb-10">
-            Every dollar that is given to Supabase in{' '}
+            Every dollar that is given to Wesbitty in{' '}
             <a
-              href="https://github.com/sponsors/supabase/"
+              href="https://github.com/sponsors/wesbitty/"
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
             >
@@ -772,11 +772,11 @@ const OpenSource = () => (
             If you teach programming, and you're interested in offering OSS tuition to your
             students, we're actively looking for more education partners. Email{' '}
             <a
-              href="mailto:rory@supabase.io"
+              href="mailto:admin@wesbitty.com"
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
             >
-              rory@supabase.io
+              rory@wesbitty.com
             </a>{' '}
             to find out more.
           </p>
@@ -847,20 +847,20 @@ const ScalingOurTeam = () => (
           </p>
           <p className="mb-10">
             We're also passionate about tech and open source. We hire open source maintainers to
-            work full time on the products we use, and we spend every Friday dogfooding Supabase to
+            work full time on the products we use, and we spend every Friday dogfooding Wesbitty to
             make it better.
           </p>
           <p>
             We are hiring across multiple positions including PostgreSQL engineers, Cloud engineers,
             SRE's, and Developer Advocates. We are a fully remote team, spanning 4 continents and 10
             nationalities. If you are interested and think you can be a factor in the success of
-            Supabase, get in touch at{' '}
+            Wesbitty, get in touch at{' '}
             <a
-              href="mailto:work@supabase.io"
+              href="mailto:admin@wesbitty.com"
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
             >
-              work@supabase.io
+              admin@wesbitty.com
             </a>
             .
           </p>
@@ -882,14 +882,14 @@ const WhatsNext = () => (
         <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
           <p className="mb-5">
             If you watch our repos you'll see that development never stops, we ship every day (and
-            night!). We're constantly improving Supabase based on user feedback. Alongside
+            night!). We're constantly improving Wesbitty based on user feedback. Alongside
             performance, security, and reliability improvements, here are some new features we're
             working on for 2021:
           </p>
           <ul className="list-disc list-outside ml-6 mb-10">
             <li className="mb-5">Storage - Making blob storage easier than ever before</li>
             <li className="mb-5">
-              Functions - write and deploy serverless functions that have access to your Supabase
+              Functions - write and deploy serverless functions that have access to your Wesbitty
               context
             </li>
             <li className="mb-5">
@@ -901,7 +901,7 @@ const WhatsNext = () => (
               base
             </li>
             <li className="mb-5">
-              Multicloud - Spread your Supabase instances across multiple datacenter providers to
+              Multicloud - Spread your Wesbitty instances across multiple datacenter providers to
               protect against outages
             </li>
             <li className="mb-5">
@@ -911,17 +911,17 @@ const WhatsNext = () => (
             <li>
               More client libraries - members of the community are helping us build client libraries
               for many different languages including TypeScript, Python, Dart, C#, and Rust. Come
-              and help us bring Supabase to your favorite language or framework.
+              and help us bring Wesbitty to your favorite language or framework.
             </li>
           </ul>
           <p className="mb-10">
-            We depend on your feedback to continually improve Supabase. Email us at{' '}
+            We depend on your feedback to continually improve Wesbitty. Email us at{' '}
             <a
               href="mailto:admin@wesbitty.com"
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
             >
-              support@supabase.io
+              support@wesbitty.com
             </a>{' '}
             or join the{' '}
             <a
@@ -964,27 +964,27 @@ const Beta = () => {
   return (
     <Layout hideHeader={true}>
       <Head>
-        <title>{site_title}</title>
-        <meta name="og:title" property="og:title" content={site_title} />
-        <meta name="twitter:site" content={site_title} />
-        <meta name="twitter:text:title" content={site_title} />
+        <title>{Title}</title>
+        <meta name="og:title" property="og:title" content={Title} />
+        <meta name="twitter:site" content={Title} />
+        <meta name="twitter:text:title" content={Title} />
       </Head>
       <NextSeo
-        title={site_title}
+        title={Title}
         openGraph={{
-          title: site_title,
-          description: DESCRIPTION,
+          title: Title,
+          description: Metadata.Description,
           url: `https://wesbitty.com/beta`,
           type: 'article',
           article: {
             //
             // to do: add expiration and modified dates
             // https://github.com/garmeeh/next-seo#article
-            publishedTime: '2020-12-03T00:00:00Z',
+            publishedTime: '2023-01-01T00:00:00Z',
             //
             // to do: author urls should be internal in future
             // currently we have external links to github profiles
-            authors: [authors['supabase'].authorURL],
+            authors: [authors['wesbitty'].authorURL],
             tags: ['beta'],
           },
           images: [
@@ -999,7 +999,7 @@ const Beta = () => {
           <div className="shadow-lg py-5 px-5 xl:px-20 bg-dark-800 flex items-center justify-between">
             <Link href="/">
               <a>
-                <img className="h-5" src={`${basePath}/images/logo-dark.png`} />
+                <img className="w-40" src={`${basePath}/images/logo-dark.png`} />
               </a>
             </Link>
             <HamburgerMenu openMenu={() => setMenuOpen(!menuOpen)} />

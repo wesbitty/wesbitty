@@ -3,8 +3,8 @@ import APISection from '../Sections/APISection'
 import SectionContainer from '../Layouts/SectionContainer'
 import FeatureColumn from '../FeatureColumn'
 
-import CodeExamples from '~/@wesbitty/data/home/api-examples'
-import DeveloperFeatures from '~/@wesbitty/data/DeveloperFeatures.json'
+import CodeExamples from '../../[wesbitty]/data/home/api-examples'
+import DeveloperFeatures from '../../[wesbitty]/data/DeveloperFeatures.json'
 import TextLink from '../TextLink'
 
 const MadeForDevelopers = () => {

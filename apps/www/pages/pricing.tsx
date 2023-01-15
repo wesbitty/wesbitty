@@ -1,38 +1,36 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-
+import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
 import DefaultLayout from '../components/Layouts/Default'
 import { PricingTableRowDesktop, PricingTableRowMobile } from '../components/PricingTableRow'
 import { Accordion, Badge, Button, Divider, Space, Typography } from '@wesbitty/ui'
-
-import pricing from '../@wesbitty/data/Pricing.json'
-import pricingFaq from '../@wesbitty/data/PricingFAQ.json'
+import pricing from '../[wesbitty]/data/Pricing.json'
+import pricingFaq from '../[wesbitty]/data/PricingFAQ.json'
 import ReactMarkdown from 'react-markdown'
 import CTABanner from '../components/CTABanner'
-
-import Solutions from '../@wesbitty/data/Solutions.json'
+import Solutions from '../[wesbitty]/data/Solutions.json'
 import { NextSeo } from 'next-seo'
 
-export default function IndexPage() {
-  const router = useRouter()
-
-  const meta_title = 'Pricing & fees | Wesbitty'
-  const meta_description =
+export default function PricingPage() {
+  const Title = `Pricing & fees | ${Metadata.Name}`
+  const Description =
     'Explore Wesbitty fees and pricing information. Find our competitive pricing tiers, with no hidden pricing. We have generous free tiers for those getting started, and Pay As You Go for those scaling up.'
+
+  const router = useRouter()
 
   return (
     <DefaultLayout>
       <NextSeo
-        title={meta_title}
-        description={meta_description}
+        title={Title}
+        description={Description}
         openGraph={{
-          title: meta_title,
-          description: meta_description,
+          title: Title,
+          description: Description,
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {
-              url: `https://wesbitty.com/images/og/og-image.jpg`,
+              url: `https://wesbitty.com/Logo/og/wesbitty-og.jpg`,
             },
           ],
         }}

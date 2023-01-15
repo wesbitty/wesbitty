@@ -1,6 +1,6 @@
 import { Badge, Card, Divider, IconChevronLeft, IconFile, Space, Typography } from '@wesbitty/ui'
 import matter from 'gray-matter'
-import authors from '~/@wesbitty/lib/authors.json'
+import authors from '[wesbitty]/data/authors.json'
 import hydrate from 'next-mdx-remote/hydrate'
 import renderToString from 'next-mdx-remote/render-to-string'
 import { NextSeo } from 'next-seo'
@@ -13,9 +13,10 @@ import CTABanner from 'components/CTABanner'
 import DefaultLayout from 'components/Layouts/Default'
 import Quote from 'components/Quote'
 import ImageGrid from 'components/ImageGrid'
-import { generateReadingTime } from '~/@wesbitty/lib/helpers'
-import { getAllPostSlugs, getPostdata, getSortedPosts } from '~/@wesbitty/lib/posts'
+import { generateReadingTime } from '[wesbitty]/lib/helpers'
+import { getAllPostSlugs, getPostdata, getSortedPosts } from '[wesbitty]/lib/posts'
 import blogStyles from './[slug].module.css'
+import { allPosts, Post } from 'wesjet/jetpack'
 
 // import all components used in blog articles here
 // for instance, if you use a button, you must add `Button` in the components object below.
@@ -87,7 +88,7 @@ export async function getStaticProps({ params }: any) {
 
 function BlogPostPage(props: any) {
   // @ts-ignore
-  const author = props.blog.author ? authors[props.blog.author] : authors['supabase']
+  const author = props.blog.author ? authors[props.blog.author] : authors['wesbitty']
   const content = hydrate(props.blog.content, { components })
 
   const { basePath } = useRouter()
@@ -132,7 +133,7 @@ function BlogPostPage(props: any) {
         </Space>
       </div>
       <div>
-        <Typography.Text type="secondary">Table of contents</Typography.Text>
+        <Typography.Text type="secondary">Table Of Contents</Typography.Text>
         <Typography>
           <div className={blogStyles['toc']}>
             <ReactMarkdown plugins={[gfm]}>{props.blog.toc.content}</ReactMarkdown>
@@ -159,7 +160,7 @@ function BlogPostPage(props: any) {
             //
             // to do: author urls should be internal in future
             // currently we have external links to github profiles
-            authors: [props.blog.author_url],
+            authors: [props.blog.authorURL],
             tags: props.blog.tags.map((cat: string) => {
               return cat
             }),
@@ -210,9 +211,9 @@ function BlogPostPage(props: any) {
                   {author && (
                     <div className="mt-6 mb-8 lg:mb-0">
                       <Space size={4}>
-                        {author.author_image_url && (
+                        {author.avatar && (
                           <img
-                            src={author.author_image_url}
+                            src={author.avatar}
                             className="rounded-full w-10 border dark:border-dark"
                           />
                         )}

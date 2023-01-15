@@ -1,6 +1,6 @@
 import Container from 'components/Container'
 import Layout from '../components/Layouts/Default'
-import Hero from 'components/Hero'
+import HeaderFeature from '../components/HeaderFeature'
 import Features from 'components/Features/index'
 import BuiltExamples from '../components/WesbittyMaker/index'
 import MadeForDevelopers from 'components/MadeForDevelopers/index'
@@ -10,7 +10,6 @@ import CTABanner from 'components/CTABanner/index'
 import SectionContainer from '../components/Layouts/SectionContainer'
 import TwitterSocialProof from '../components/Sections/TwitterSocialProof'
 
-// Import Swiper styles if swiper used on page
 import 'swiper/swiper.min.css'
 
 type Props = {}
@@ -20,7 +19,7 @@ const Index = ({}: Props) => {
     <>
       <Layout>
         <Container>
-          <Hero />
+          <HeaderFeature />
           <Features />
           <div className="relative">
             <div className="section--masked">

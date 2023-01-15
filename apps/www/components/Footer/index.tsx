@@ -1,17 +1,12 @@
 import { useRouter } from 'next/router'
-import FooterLinks from '../../@wesbitty/data/Footer.json'
+import FooterLinks from '../../[wesbitty]/data/Footer.json'
 import SectionContainer from '../Layouts/SectionContainer'
-import DarkModeToggle from '../DarkModeToggle'
 import Link from 'next/link'
+import { iMode } from '../ColorScheme/ColorSchemeProvider'
 
-type Props = {
-  darkMode: boolean
-  updateTheme: Function
-}
-
-const Footer = (props: Props) => {
+const Footer = () => {
   const { basePath } = useRouter()
-  const { darkMode, updateTheme } = props
+  const { ThemeMode } = iMode()
 
   return (
     <footer
@@ -29,7 +24,7 @@ const Footer = (props: Props) => {
                 <img
                   className="w-40"
                   src={
-                    darkMode
+                    ThemeMode
                       ? `${basePath}/Logo/wesbitty-dark-logo.svg`
                       : `${basePath}/Logo/wesbitty-light-logo.svg`
                   }
@@ -73,7 +68,7 @@ const Footer = (props: Props) => {
               {FooterLinks.map((segment: any) => {
                 return (
                   <div key={`footer_${segment.title}`}>
-                    <h3 className="text-sm text-gray-300 dark:text-dark-400">{segment.title}</h3>
+                    <h3 className="text-sm text-gray-800 dark:text-dark-100">{segment.title}</h3>
                     <ul className="mt-4 space-y-2">
                       {segment.links.map((link: any, idx: number) => (
                         <li key={`${segment.title}_link_${idx}`}>
@@ -102,10 +97,9 @@ const Footer = (props: Props) => {
           </div>
         </div>
         <div className="mt-32 border-t dark:border-dark pt-8 flex justify-between">
-          <p className="mb-0 self-center text-base text-gray-400 dark:text-dark-400">
-            &copy; Wesbitty Inc
+          <p className="mb-0 self-center text-base text-gray-500 dark:text-dark-100">
+            &copy; 2023 Wesbitty, Inc.
           </p>
-          <DarkModeToggle darkMode={darkMode} updateTheme={updateTheme} />
         </div>
       </SectionContainer>
     </footer>

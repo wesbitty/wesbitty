@@ -1,8 +1,8 @@
 import { Space, Typography } from '@wesbitty/ui'
-import authors from '~/@wesbitty/lib/authors.json'
+import authors from '../../[wesbitty]/data/authors.json'
 import React from 'react'
 import Image from 'next/image'
-import PostTypes from '~/@wesbitty/types/post'
+import { PostTypes } from '../../[wesbitty]/types/post'
 
 interface Props {
   blog: PostTypes
@@ -10,7 +10,7 @@ interface Props {
 
 const BlogListItem = ({ blog }: Props) => {
   // @ts-ignore
-  const author = blog.author ? authors[blog.author] : authors['supabase']
+  const author = blog.author ? authors[blog.author] : authors['wesbitty']
 
   return (
     <div key={blog.slug}>
@@ -47,9 +47,7 @@ const BlogListItem = ({ blog }: Props) => {
             {author && (
               <div>
                 <Space size={4}>
-                  {author.author_image_url && (
-                    <img src={author.author_image_url} className="rounded-full w-10" />
-                  )}
+                  {author.avatar && <img src={author.avatar} className="rounded-full w-10" />}
                   <Space direction="vertical" size={0}>
                     <Typography.Text>{author.author}</Typography.Text>
                     <Typography.Text type="secondary" small>

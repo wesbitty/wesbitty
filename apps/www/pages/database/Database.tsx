@@ -9,11 +9,11 @@ import {
   Typography,
 } from '@wesbitty/ui'
 // data
-import ApiExamplesData from '~/@wesbitty/data/products/database/api-examples'
-import ExtensionsExamplesData from '~/@wesbitty/data/products/database/extensions-examples'
-import SqlViewCarouselData from '~/@wesbitty/data/products/database/sql-view-carousel.json'
-import TableViewCarouselData from '~/@wesbitty/data/products/database/table-view-carousel.json'
-import Solutions from '~/@wesbitty/data/Solutions.json'
+import ApiExamplesData from '../../[wesbitty]/data/products/database/api-examples'
+import ExtensionsExamplesData from '../../[wesbitty]/data/products/database/extensions-examples'
+import SqlViewCarouselData from '../../[wesbitty]/data/products/database/sql-view-carousel.json'
+import TableViewCarouselData from '../../[wesbitty]/data/products/database/table-view-carousel.json'
+import Solutions from '../../[wesbitty]/data/Solutions.json'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -33,11 +33,15 @@ import APISection from '../../components/Sections/APISection'
 import GithubExamples from '../../components/Sections/GithubExamples'
 import ProductHeader from '../../components/Sections/ProductHeader'
 import TweetCard from '../../components/TweetCard'
+import { Metadata } from '../../[wesbitty]/utils/schemas/Metadata'
 
 // install Swiper's Controller component
 // SwiperCore.use([Controller])
 
 function Database() {
+  const Title = `Database - Open source SQL Database | ${Metadata.Name}`
+  const Description =
+    'With wesbitty’s APIs and easy to use dashboard, it makes designing relational databases easy.'
   // base path for images
   const { basePath } = useRouter()
 
@@ -50,19 +54,15 @@ function Database() {
     dashboardSwiper.slideTo(e)
   }
 
-  const meta_title = 'Database | Open source SQL Database'
-  const meta_description =
-    'With supabase’s APIs and easy to use dashboard, it makes designing relational databases easy.'
-
   return (
     <>
       <NextSeo
-        title={meta_title}
-        description={meta_description}
+        title={Title}
+        description={Description}
         openGraph={{
-          title: meta_title,
-          description: meta_description,
-          url: `https://wesbitty.com/auth`,
+          title: Title,
+          description: Description,
+          url: `https://wesbitty.com/database`,
           images: [
             {
               url: `https://wesbitty.com${basePath}/images/product/database/database-og.jpg`,
@@ -81,7 +81,7 @@ function Database() {
             </span>,
           ]}
           subheader={[
-            'Every Supabase project is a dedicated PostgreSQL database, trusted by millions of developers.',
+            'Every Wesbitty project is a dedicated PostgreSQL database, trusted by millions of developers.',
             'PostgreSQL is one of the worlds most scalable databases.',
           ]}
           image={[
@@ -124,7 +124,7 @@ function Database() {
               <Typography.Title level={4}>Just Postgres</Typography.Title>
               <Typography.Text>
                 <p className="text-base lg:text-lg">
-                  Every Supabase project is a dedicated Postgres database.
+                  Every Wesbitty project is a dedicated Postgres database.
                 </p>
                 <p>
                   100% portable. Bring your existing Postgres database, or migrate away at any time.
@@ -227,7 +227,7 @@ function Database() {
                       handle="@Elsolo244"
                       img_url={`${basePath}/images/twitter-profiles/v6citnk33y2wpeyzrq05_400x400.jpeg`}
                       quote="Where has
-                @supabase
+                @wesbitty
                 been all my life? 😍"
                     />,
                   ]}
@@ -259,7 +259,7 @@ function Database() {
             text={[
               <p>
                 We introspect your database and provide instant APIs. Focus on building your
-                product, while Supabase handles the CRUD.
+                product, while Wesbitty handles the CRUD.
               </p>,
             ]}
             footer={[
@@ -319,7 +319,7 @@ function Database() {
             <div className="col-span-12 lg:col-span-6 xl:col-span-5 mb-8">
               <Typography.Title level={2}>Extend your database</Typography.Title>
               <Typography.Text className="block mb-8">
-                <p className="lg:text-lg">Supabase works natively with Postgres extensions.</p>
+                <p className="lg:text-lg">Wesbitty works natively with Postgres extensions.</p>
                 <p>
                   Choose from a huge collection of Postgres extensions, enabled with a single click.
                 </p>

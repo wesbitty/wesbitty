@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { createClient, Provider } from '@supabase/supabase-js'
-
-import DefaultLayout from '~/components/Layouts/Default'
-import CodeBlock from '~/components/CodeBlock/CodeBlock'
+import DefaultLayout from '../Layouts/Default'
+import CodeBlock from '../CodeBlock/CodeBlock'
 import {
   Button,
   Auth,
@@ -21,12 +20,11 @@ import {
   IconCopy,
   IconColumns,
 } from '@wesbitty/ui'
-
 import AuthStyles from './Auth.module.css'
 
 function AuthPage() {
-  const supabase = createClient(
-    'https://rsnibhkhsbfnncjmwnkj.supabase.co',
+  const wesbitty = createClient(
+    'https://rsnibhkhsbfnncjmwnkj.wesbitty.com',
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNTIxNDE1MywiZXhwIjoxOTMwNzkwMTUzfQ.OQEbAaTfgDdLCCht251P2JRD3QDnui6nsU8N-tZA_Mc'
   )
 
@@ -95,7 +93,7 @@ function AuthPage() {
                             providers={socialLogins ? socials : []}
                             socialButtonSize={widgetSize}
                             socialLayout={socialLoginLayout}
-                            supabaseClient={supabase}
+                            supabaseClient={wesbitty}
                             socialColors={socialColors}
                           />
                         </Space>

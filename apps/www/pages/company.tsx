@@ -5,11 +5,11 @@ import SectionHeader from '../components/UI/SectionHeader'
 import CTABanner from '../components/CTABanner/index'
 import ImageGrid from 'components/ImageGrid'
 import SectionContainer from '../components/Layouts/SectionContainer'
-import PressData from '../@wesbitty/data/Press'
-import CommunityData from '../@wesbitty/data/Community'
-import CompaniesData from '../@wesbitty/data/Companies'
-import InvestorData from '../@wesbitty/data/Investors'
-import TeamData from '../@wesbitty/data/Team'
+import PressData from '../[wesbitty]/data/Press'
+import CommunityData from '../[wesbitty]/data/Community'
+import CompaniesData from '../[wesbitty]/data/Companies'
+import InvestorData from '../[wesbitty]/data/Investors'
+import TeamData from '../[wesbitty]/data/Team'
 import Image from 'next/image'
 import {
   Button,
@@ -22,28 +22,30 @@ import {
   Typography,
 } from '@wesbitty/ui'
 import { NextSeo } from 'next-seo'
+import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
+
 
 type Props = {}
 
-const Index = ({}: Props) => {
+const CompanyPage = ({}: Props) => {
   const router = useRouter()
 
-  const meta_title = "One of the world's fastest-growing open source communities | Wesbitty, Inc."
-  const meta_description =
-    'Wesbitty is the community that builds the infrastructure for your applications. Build using Wesbitty for any size project—from a new startup to even large growing companies'
+  const Title = `One of the world's fastest-growing open source communities | ${Metadata.Name}`
+const Description =
+  'Wesbitty is the community that builds the infrastructure for your applications. Build using Wesbitty for any size project—from a new startup to even large growing companies'
 
   return (
     <>
       <NextSeo
-        title={meta_title}
-        description={meta_description}
+        title={Title}
+        description={Description}
         openGraph={{
-          title: meta_title,
-          description: meta_description,
+          title: Title,
+          description: Description,
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {
-              url: `https://wesbitty.com/images/og/og-image.jpg`,
+              url: `https://wesbitty.com/Logo/og/wesbitty-og.jpg`,
             },
           ],
         }}
@@ -60,7 +62,7 @@ const Index = ({}: Props) => {
   )
 }
 
-export default Index
+export default CompanyPage
 
 const Header = () => {
   return (

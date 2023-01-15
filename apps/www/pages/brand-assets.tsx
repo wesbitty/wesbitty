@@ -1,36 +1,35 @@
 import Container from 'components/Container'
 import { createClient } from '@supabase/supabase-js'
-import Layout from '~/components/Layouts/Default'
+import Layout from '../components/Layouts/Default'
 import CTABanner from 'components/CTABanner/index'
 import { Button, Typography, IconDownload } from '@wesbitty/ui'
-
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-
-import SectionContainer from '~/components/Layouts/SectionContainer'
+import SectionContainer from '../components/Layouts/SectionContainer'
 import { NextSeo } from 'next-seo'
+import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
 
 const { Title, Text } = Typography
 
-const Index = () => {
+const BrandPage = () => {
   // base path for images
   const router = useRouter()
 
-  const meta_title = 'Branding | Wesbitty'
-  const meta_description = 'Get Wesbitty Brand assets here.'
+  const pageTitle = `Branding | ${Metadata.Name}`
+  const Description = 'Get Wesbitty Brand assets here.'
 
   return (
     <>
       <NextSeo
-        title={meta_title}
-        description={meta_description}
+        title={pageTitle}
+        description={Description}
         openGraph={{
-          title: meta_title,
-          description: meta_description,
+          title: pageTitle,
+          description: Description,
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {
-              url: `https://wesbitty.com/images/og/og-image.jpg`,
+              url: `https://wesbitty.com/Logo/og/wesbitty-og.jpg`,
             },
           ],
         }}
@@ -53,7 +52,7 @@ const Index = () => {
             <div className="grid grid-cols-12 border dark:border-gray-600 rounded-lg shadow-small">
               <div className="col-span-12 lg:col-span-5">
                 <img
-                  src={`/brand-assets/logo-preview.jpg`}
+                  src={`/Logo/logo-preview.jpg`}
                   width="100%"
                   className="object-cover h-full rounded-l-lg"
                 />
@@ -61,10 +60,10 @@ const Index = () => {
               <div className="col-span-12 lg:col-span-7 flex items-center">
                 <div className="p-16">
                   <div>
-                    <Typography.Title level={2}>Supabase logos</Typography.Title>
+                    <Typography.Title level={2}>Wesbitty Inc logos</Typography.Title>
                     <Typography.Text>
                       <p>
-                        Download Supabase official logos, including as SVG's, in both light and dark
+                        Download Wesbitty official logos, including as SVG's, in both light and dark
                         theme.
                       </p>
                       <p>Do not use any other color for the wordmark.</p>
@@ -86,4 +85,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default BrandPage

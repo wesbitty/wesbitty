@@ -1,6 +1,6 @@
 import Container from '../components/Container'
 import Layout from '../components/Layouts/Default'
-import Hero from '../components/Hero'
+import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
 import Link from 'next/link'
 import {
   Button,
@@ -16,17 +16,7 @@ import {
   Divider,
   IconMail,
 } from '@wesbitty/ui'
-import Examples from '../@wesbitty/data/Examples.json'
-import ExampleCard from '../components/ExampleCard'
-import Features from '../components/Features/index'
-import BuiltExamples from '../components/WesbittyMaker/index'
-import MadeForDevelopers from '../components/MadeForDevelopers/index'
-import AdminAccess from '../components/AdminAccess/index'
-import CaseStudies from '../components/CaseStudies/index'
-import CTABanner from '../components/CTABanner/index'
 import SectionContainer from '../components/Layouts/SectionContainer'
-import TwitterSocialProof from '../components/Sections/TwitterSocialProof'
-
 // Import Swiper styles if swiper used on page
 import 'swiper/swiper.min.css'
 import { useRouter } from 'next/router'
@@ -34,25 +24,25 @@ import { NextSeo } from 'next-seo'
 
 type Props = {}
 
-const Index = ({}: Props) => {
+const SupportPage = ({}: Props) => {
   const router = useRouter()
 
-  const meta_title = 'Help &amp Support | Wesbitty'
-  const meta_description =
+  const Title = `Help &amp Support | ${Metadata.Name}`
+  const Description =
     'Find help and support for Wesbitty. Our support agents provide answers on all types of issues, including account information, billing, and refunds.'
 
   return (
     <>
       <NextSeo
-        title={meta_title}
-        description={meta_description}
+        title={Title}
+        description={Description}
         openGraph={{
-          title: meta_title,
-          description: meta_description,
+          title: Title,
+          description: Description,
           url: `https://wesbitty.com/${router.pathname}`,
           images: [
             {
-              url: `https://wesbitty.com/images/og/og-image.jpg`,
+              url: `https://wesbitty.com/Logo/og/wesbitty-og.jpg`,
             },
           ],
         }}
@@ -222,4 +212,4 @@ const Index = ({}: Props) => {
   )
 }
 
-export default Index
+export default SupportPage
