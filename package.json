@@ -9,7 +9,7 @@
     "node": ">=14.0.0"
   },
   "workspaces": [
-    "apps/www",
+    "apps/web",
     "packages/*",
     "examples/*",
     "tests"
@@ -17,8 +17,8 @@
   "author": "Wesbitty, Inc.",
   "scripts": {
     "build": "turbo run build",
-    "build:www": "turbo run build --filter=www",
-    "dev": "turbo run dev --filter=www",
+    "build:www": "turbo run build --filter=web",
+    "dev": "turbo run dev --filter=web",
     "format:prettier": "prettier -w .",
     "rm": "npm run rm:examples && npm run rm:apps",
     "rm:examples": "bash -c 'rm -rf examples/*/.turbo examples/*/.wesjet examples/*/.next packages/*/dist'",
