@@ -3,7 +3,7 @@ import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang={Metadata.Locale} className="dark">
+      <Html lang={Metadata.Locale}>
         <Head>
           <script async src="https://platform.twitter.com/widgets.js" />
         </Head>

@@ -53,7 +53,7 @@ const NavFlyOutMenu = (props: any) => {
 const VideoShot = (props: any) => {
   const { src } = props
   return (
-    <div className="p-2 rounded-xl  bg-gradient-to-r from-green-400 via-violet-500 to-blue-500">
+    <div className="p-2 rounded-xl  bg-gradient-to-r from-blue-400 via-violet-500 to-blue-500">
       <div className="shadow-lg rounded-md" style={{ height: 'fit-content' }}>
         <div className="w-full rounded-t-md h-5 bg-dark-400 flex items-center justify-start px-2">
           <div className="h-2 w-2 mr-2 rounded-full bg-dark-500" />

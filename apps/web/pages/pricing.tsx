@@ -46,7 +46,7 @@ export default function PricingPage() {
             </Typography.Text>
             <div className="grid grid-cols-12 gap-8 mt-16">
               {/* <div className="col-span-12 lg:col-span-6">
-                <div className="rounded border border-green-500 dark:border-green-900 bg-green-500 bg-opacity-10 grid grid-cols-6">
+                <div className="rounded border border-blue-500 dark:border-blue-900 bg-blue-500 bg-opacity-10 grid grid-cols-6">
                   <div className="p-6 col-span-6">
                     <Space className="mb-4">
                       <Typography.Title level={3} className="flex gap-2">

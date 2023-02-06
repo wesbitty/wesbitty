@@ -63,7 +63,7 @@ const Navigation = () => {
             <p className="text-base font-medium text-gray-900 dark:text-white space-x-2">
               <span>{name}</span>
               {label && (
-                <Badge dot color="green">
+                <Badge dot color="blue">
                   {label}
                 </Badge>
               )}
@@ -243,11 +243,6 @@ const Navigation = () => {
                 </div>
               </div>
               <div className="hidden lg:flex items-center sm:space-x-3">
-                <a href="https://github.com/wesbitty/wesbitty" target="_blank">
-                  <Button type="default" icon={<IconPackage />}>
-                    Start Your Project
-                  </Button>
-                </a>
                 <a href="/authentication">
                   <Button title="Sign In" type="default" icon={<IconLogIn />}>
                     Sign In
