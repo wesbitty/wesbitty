@@ -30,7 +30,7 @@ function AuthComponentExample() {
       return (
         <>
           <Typography.Text>Signed in: {user.email}</Typography.Text>
-          <Button block onClick={() => props.supabaseClient.auth.signOut()}>
+          <Button block onClick={() => props.wesbittyOauth.auth.signOut()}>
             Sign out
           </Button>
         </>
@@ -76,13 +76,13 @@ function AuthComponentExample() {
                       <Typography.Title level={3}>{'Wesbitty Inc'}</Typography.Title>
                     </Space>
                   </div>
-                  <Auth.UserContextProvider supabaseClient={wesbitty}>
-                    <AuthContainer supabaseClient={wesbitty}>
+                  <Auth.UserContextProvider wesbittyOauth={wesbitty}>
+                    <AuthContainer wesbittyOauth={wesbitty}>
                       <Auth
                         providers={['facebook', 'google', 'github', 'bitbucket', 'gitlab']}
                         socialButtonSize={'medium'}
                         socialLayout={'horizontal'}
-                        supabaseClient={wesbitty}
+                        wesbittyOauth={wesbitty}
                         socialColors={false}
                       />
                     </AuthContainer>
@@ -111,7 +111,7 @@ export default function app() {
       return (
         <div>
           <Typography.Text>Signed in: {user.email}</Typography.Text>
-          <Button block onClick={() => props.supabaseClient.auth.signOut()}>
+          <Button block onClick={() => props.wesbittyOauth.auth.signOut()}>
             Sign out
           </Button>
         </div>
@@ -121,9 +121,9 @@ export default function app() {
   };
 
   return (
-    <Auth.UserContextProvider supabaseClient={wesbitty}>
-      <Container supabaseClient={wesbitty}>
-        <Auth supabaseClient={wesbitty} />
+    <Auth.UserContextProvider wesbittyOauth={wesbitty}>
+      <Container wesbittyOauth={wesbitty}>
+        <Auth wesbittyOauth={wesbitty} />
       </Container>
     </Auth.UserContextProvider>
   );

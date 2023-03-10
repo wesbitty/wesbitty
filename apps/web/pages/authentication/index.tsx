@@ -86,7 +86,7 @@ function AuthenticationPage() {
                       providers={socialLogins ? socials : []}
                       socialButtonSize={widgetSize}
                       socialLayout={socialLoginLayout}
-                      supabaseClient={wesbitty}
+                      wesbittyOauth={wesbitty}
                       socialColors={true}
                     />
                   </Space>

@@ -1,10 +1,83 @@
 {
   "name": "ui",
-  "version": "0.0.0",
+  "version": "0.0.3",
   "description": "",
-  "private": true,
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "author": "Siddharth Venkatesh",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "node --experimental-modules src/lib/Icon/generate.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf dist",
+    "build": "npm run clean && rollup -c"
   },
-  "author": "Wesbitty, Inc."
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1 || 18.1.0",
+    "react-dom": "^17.0.1 || ^18.1.0"
+  },
+  "resolutions": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "dependencies": {
+    "@stitches/core": "^1.2.8",
+    "@stitches/react": "^1.2.8",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.0",
+    "autoprefixer": "^10.4.2",
+    "classnames": "^2.3.2",
+    "deepmerge": "^4.2.2",
+    "formik": "^2.2.9",
+    "lodash": "^4.17.20",
+    "polished": "^4.2.2",
+    "postcss": "^8.4.5",
+    "prop-types": "^15.7.2",
+    "react-feather": "^2.0.8",
+    "tailwindcss": "^3.0.15",
+    "tailwindcss-radix": "^1.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/runtime": "^7.11.2",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-storysource": "^6.5.9",
+    "@types/lodash": "^4.14.172",
+    "@types/react": "^18.0.10",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-add-react-displayname": "^0.0.5",
+    "babel-plugin-macros": "^2.8.0",
+    "cross-env": "^7.0.3",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-hot-toast": "^2.0.0",
+    "react-markdown": "^5.0.3",
+    "react-scripts": "^4.0.3",
+    "react-transition-group": "^4.4.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.28.2",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-node-externals": "^2.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss-modules": "^2.0.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "storybook-dark-mode": "^1.0.4",
+    "typescript": "^4.3.5"
+  }
 }

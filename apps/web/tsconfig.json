@@ -16,6 +16,7 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "~/*": ["./*"],
       "wesjet/jetpack": ["./.wesjet/jetpack"]
     }
   },
