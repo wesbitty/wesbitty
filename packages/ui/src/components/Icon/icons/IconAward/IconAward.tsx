@@ -3,7 +3,7 @@
   import React from 'react'
   // @ts-ignore
   import Icon from 'react-feather/dist/icons/award'
-  import IconBase from '../../IconBase'
+  import IconBase from './../../IconBase'
 
   function IconAward(props: any) {
     return <IconBase icon={Icon} {...props} />
