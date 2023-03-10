@@ -3,8 +3,8 @@
 <p align="center">
 <a href="https://wesbitty.com/">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="apps/web/public/brand/og/wesbitty-og.jpg">
-      <img src="apps/web/public/brand/og/wesbitty-og.jpg" alt="Wesbitty" width="400" />
+      <source media="(prefers-color-scheme: dark)" srcset="apps/web/public/Logo/og/wesbitty-og.jpg">
+      <img src="apps/web/public/Logo/og/wesbitty-og.jpg" alt="Wesbitty" width="400" />
     </picture> 
   </a>
 </p>
