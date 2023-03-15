@@ -4,8 +4,19 @@ const { withWesjet } = require('wesjet-nextjs-plugin')
 module.exports = withWesjet({
   output: 'standalone',
   images: {
-    domains: ['pbs.twimg.com', 'avatars.githubusercontent.com', 'i.imgur.com', 'user-images.githubusercontent.com', 'colab.research.google.com', 'avatars.githubusercontent.com', 'avatars.githubusercontent.com', 'github.com'],
+    domains: [
+      "res.cloudinary.com",
+      "abs.twimg.com",
+      "pbs.twimg.com",
+      "i.imgur.com", 
+      "avatars.githubusercontent.com",
+      "user-images.githubusercontent.com", 
+      "colab.research.google.com", 
+      "github.com"
+    ],
   },
+  reactStrictMode: true,
+  swcMinify: false, // Required to fix: https://nextjs.org/docs/messages/failed-loading-swc
   headers: async () => [
     {
       source: '/:path*',
