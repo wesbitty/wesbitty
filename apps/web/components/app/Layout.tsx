@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import { signOut } from 'next-auth/react'
 import Loader from './Loader'
-import useRequireAuth from '../../lib/useRequireAuth'
+import useRequireAuth from '~/wesbitty/lib/useRequireAuth'
 
 import type { WithChildren } from '~/types'
 
@@ -61,7 +61,8 @@ export default function Layout({ siteId, children }: LayoutProps) {
         <div className="absolute left-0 right-0 h-16 border-b bg-white border-gray-200">
           <div className="flex justify-between items-center h-full max-w-screen-xl mx-auto px-10 sm:px-20">
             <div className="flex space-x-4">
-              <Link href="/" className="flex justify-center items-center">
+              <Link href="/" >
+                <a className="flex justify-center items-center">
                 {session.user && session.user.image && (
                   <div className="h-8 w-8 inline-block rounded-full overflow-hidden align-middle">
                     <Image
@@ -75,6 +76,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
                 <span className="sm:block inline-block ml-3 font-medium truncate">
                   {session.user?.name}
                 </span>
+                </a>
               </Link>
               <div className="h-8 border border-gray-300" />
               <button
@@ -107,52 +109,66 @@ export default function Layout({ siteId, children }: LayoutProps) {
           <div className="absolute left-0 right-0 top-16 flex justify-center items-center font-cal space-x-16 border-b bg-white border-gray-200">
             <Link
               href="/"
-              className={`border-b-2 ${
+              >
+              <a className={`border-b-2 ${
                 tab == '' ? 'border-black' : 'border-transparent'
               } py-3`}
             >
               My Sites
+              </a>
             </Link>
             <Link
               href="/settings"
+              >
+              <a
               className={`border-b-2 ${
                 tab == 'settings' ? 'border-black' : 'border-transparent'
               } py-3`}
             >
               Settings
+              </a>
             </Link>
           </div>
         )}
         {sitePage && (
           <div className="absolute left-0 right-0 top-16 font-cal border-b bg-white border-gray-200">
             <div className="flex justify-between items-center space-x-16 max-w-screen-xl mx-auto px-10 sm:px-20">
-              <Link href="/" className="md:inline-block ml-3 hidden">
+              <Link href="/" >
+              <a className="md:inline-block ml-3 hidden">
                 ← All Sites
+                </a>
               </Link>
               <div className="flex justify-between items-center space-x-10 md:space-x-16">
                 <Link
                   href={`/site/${router.query.id}`}
+                  >
+                  <a
                   className={`border-b-2 ${
                     !tab ? 'border-black' : 'border-transparent'
                   } py-3`}
                 >
                   Posts
+                  </a>
                 </Link>
                 <Link
                   href={`/site/${router.query.id}/drafts`}
-                  className={`border-b-2 ${
+                  >
+                    <a className={`border-b-2 ${
                     tab == 'drafts' ? 'border-black' : 'border-transparent'
                   } py-3`}
                 >
                   Drafts
+                  </a>
                 </Link>
                 <Link
                   href={`/site/${router.query.id}/settings`}
-                  className={`border-b-2 ${
+                  >
+                    <a className={`border-b-2 ${
                     tab == 'settings' ? 'border-black' : 'border-transparent'
                   } py-3`}
                 >
                   Settings
+                  </a>
                 </Link>
               </div>
               <div />
@@ -165,9 +181,11 @@ export default function Layout({ siteId, children }: LayoutProps) {
               {siteId ? (
                 <Link
                   href={`/site/${siteId}`}
-                  className="md:inline-block ml-3 hidden"
+                  >
+                  <a className="md:inline-block ml-3 hidden"
                 >
                   ← All Posts
+                  </a>
                 </Link>
               ) : (
                 <div>
@@ -178,19 +196,23 @@ export default function Layout({ siteId, children }: LayoutProps) {
               <div className="flex justify-between items-center space-x-10 md:space-x-16">
                 <Link
                   href={`/post/${router.query.id}`}
-                  className={`border-b-2 ${
+                  >
+                  <a className={`border-b-2 ${
                     !tab ? 'border-black' : 'border-transparent'
                   } py-3`}
                 >
                   Editor
+                  </a>
                 </Link>
                 <Link
                   href={`/post/${router.query.id}/settings`}
-                  className={`border-b-2 ${
+                  >
+                  <a className={`border-b-2 ${
                     tab == 'settings' ? 'border-black' : 'border-transparent'
                   } py-3`}
                 >
                   Settings
+                  </a>
                 </Link>
               </div>
               <div />
