@@ -40,7 +40,7 @@ function AuthComponentExample() {
   }
 
   return (
-    <div className="sbui-tabs--alt">
+    <div className="wsb-tabs--alt">
       {/* <Tabs
         activeId={imageSwiperActiveIndex.toString()}
         onChange={(id: string) => handleNavChange(Number(id))}

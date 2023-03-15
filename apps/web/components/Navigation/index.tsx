@@ -102,7 +102,7 @@ const Navigation = () => {
 
   const HamburgerButton = (props: HamburgerButtonProps) => (
     <div
-      className="absolute inset-y-0 left-0 px-2 flex items-center lg:hidden"
+      className="absolute inset-y-0 right-0 px-2 flex items-center lg:hidden"
       onClick={() => props.toggleFlyOut()}
     >
       <button
@@ -160,7 +160,7 @@ const Navigation = () => {
         <span>{props.title}</span>
         <svg
           className={
-            'ml-2 h-5 w-5 text-gray-300 group-hover:text-gray-300 transition ease-in-out duration-150' +
+            'ml-2 h-5 w-5 text-gray-200 group-hover:text-gray-300 transition ease-in-out duration-150' +
             (props.active && ' transform rotate-180')
           }
           xmlns="http://www.w3.org/2000/svg"
@@ -185,10 +185,8 @@ const Navigation = () => {
         <nav className="bg-white dark:bg-gray-800 border-b dark:border-gray-600">
           {/* <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-10 xl:px-0"> */}
           <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-16 xl:px-20">
-            <HamburgerButton toggleFlyOut={() => setOpen(true)} />
-            <div className="flex-1 flex items-center justify-center sm:items-stretch lg:justify-between">
-              <div className="flex items-center">
-                <div className="flex-shrink-0 flex items-center">
+            <div className="flex items-center justify-center sm:px-4 lg:justify-between">
+              <div className="flex items-center space-x-2.5">
                   <Link href="/" as="/">
                     <a>
                       <img
@@ -203,6 +201,7 @@ const Navigation = () => {
                     </a>
                   </Link>
                 </div>
+                <HamburgerButton toggleFlyOut={() => setOpen(true)} />
                 <div className="pl-4 hidden sm:ml-6 lg:flex sm:space-x-4">
                   <a
                     href="/blog"
@@ -237,10 +236,8 @@ const Navigation = () => {
                   />
                 </div>
               </div>
-              <div className="flex items-center right-0">
-                <div className="flex-shrink-0 flex items-center">
+              <div className="hidden lg:flex items-center right-0">
                   <ThemeSwitch />
-                </div>
               </div>
               <div className="hidden lg:flex items-center sm:space-x-3">
                 <a href="/authentication">
@@ -249,9 +246,9 @@ const Navigation = () => {
                   </Button>
                 </a>
               </div>
+
             </div>
             {/* <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"></div> */}
-          </div>
           {/* </div> */}
           {/* Mobile Nav Menu */}
           <Transition

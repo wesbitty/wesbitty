@@ -8,7 +8,8 @@
 }
 
 .toc li {
-  @apply text-sm !important;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
   padding-left: 1rem !important;
 }
 
@@ -37,7 +38,7 @@
 }
 
 .article {
-  @apply mb-16;
+  margin-bottom: 4rem; /* 64px */
 }
 
 .article > div > pre {

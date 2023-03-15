@@ -185,7 +185,7 @@ function Database() {
           </div>
         </SectionContainer>
         <div className="grid">
-          <div className={'dashboard-tabs sbui-tabs--underline-alt'}>
+          <div className={'dashboard-tabs wsb-tabs--underline-alt'}>
             <Tabs
               size="xlarge"
               activeId={dashboardSwiperActiveIndex.toString()}

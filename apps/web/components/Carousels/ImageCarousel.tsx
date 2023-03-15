@@ -68,7 +68,7 @@ function ImageCarousel(props: ImageCarouselProps) {
   return (
     <div className="grid grid-cols-12">
       <div className="col-span-12 lg:col-span-6 w-full">
-        <div className="col-span-12 lg:col-span-7 sbui-tabs--alt">
+        <div className="col-span-12 lg:col-span-7 wsb-tabs--alt">
           <div className={props.altTabView ? 'hidden' : 'block'}>
             <Tabs
               scrollable
@@ -134,7 +134,7 @@ function ImageCarousel(props: ImageCarouselProps) {
         </div>
       </div>
       <div className="mt-8 lg:mt-0 col-span-12 lg:col-span-5 lg:col-start-8 xl:col-span-4 xl:col-start-9">
-        <div className={`sbui-tabs--underline-alt ${props.altTabView ? 'block' : 'hidden'} mb-3`}>
+        <div className={`wsb-tabs--underline-alt ${props.altTabView ? 'block' : 'hidden'} mb-3`}>
           <Tabs
             scrollable
             type="underlined"

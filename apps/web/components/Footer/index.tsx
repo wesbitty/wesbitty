@@ -96,8 +96,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-32 border-t dark:border-dark pt-8 flex justify-between">
-          <p className="mb-0 self-center text-base text-gray-500 dark:text-dark-100">
+        <div className="mt-28 border-t dark:border-dark pt-4 flex justify-center">
+          <p className="mb-0 items-center text-base text-gray-500 dark:text-dark-100">
             &copy; 2023 Wesbitty, Inc.
           </p>
         </div>

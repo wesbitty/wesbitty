@@ -48,7 +48,7 @@ function APISection(props: Props) {
         )}
         {props.footer && <div className="py-8">{props.footer}</div>}
       </div>
-      <div className="col-span-12 lg:col-span-7 xl:col-span-6 xl:col-start-7 sbui-tabs--alt">
+      <div className="col-span-12 lg:col-span-7 xl:col-span-6 xl:col-start-7 wsb-tabs--alt">
         <Tabs
           scrollable
           activeId={apiSwiperActiveIndex.toString()}

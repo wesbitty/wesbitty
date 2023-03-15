@@ -68,7 +68,7 @@ p {
   margin-bottom: 16px;
 }
 
-.sbui-border-fix select {
+.wsb-border-fix select {
   @apply border-solid border;
 }
 
@@ -106,14 +106,14 @@ a {
   @apply hover:text-black dark:hover:text-white;
 }
 
-.sbui-tabs--alt div[role='tablist'] .sbui-btn-primary {
+.wsb-tabs--alt div[role='tablist'] .wsb-btn-primary {
   @apply bg-gray-800 text-white dark:bg-gray-600 dark:text-white shadow-none font-normal;
 }
-.sbui-tabs--alt div[role='tablist'] .sbui-btn-text {
+.wsb-tabs--alt div[role='tablist'] .wsb-btn-text {
   @apply dark:text-gray-400 shadow-none font-normal;
 }
 
-.sbui-tabs--underline-alt div[role='tablist'] .sbui-tab-button-underline--active {
+.wsb-tabs--underline-alt div[role='tablist'] .wsb-tab-button-underline--active {
   @apply border-gray-900 dark:border-white;
 }
 /* override position of tabs  */
@@ -178,10 +178,10 @@ th {
 }
 */
 
-.sbui-typography-container thead {
+.wsb-typography-container thead {
   @apply text-gray-500 dark:text-gray-200;
 }
 
-.sbui-typography a {
+.wsb-typography a {
   @apply break-words;
 }

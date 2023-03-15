@@ -60,7 +60,7 @@ function SplitCodeBlockCarousel(props: SplitCodeBlockCarousel) {
   )
 
   return (
-    <div className="col-span-12 lg:col-span-6 lg:col-start-7 sbui-tabs--alt">
+    <div className="col-span-12 lg:col-span-6 lg:col-start-7 wsb-tabs--alt">
       <Tabs
         scrollable
         // @ts-ignore
