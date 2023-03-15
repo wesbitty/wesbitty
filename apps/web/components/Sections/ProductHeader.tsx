@@ -21,7 +21,11 @@ const ProductHeader = (props: Types) => (
           <div className="flex flex-row mb-4 item-center">
             {props.icon && <ProductIcon icon={props.icon} />}
             {props.title && (
-              <Typography.Title level={4} className="ml-3" key={`product-name-${props.title}`}>
+              <Typography.Title
+                level={4}
+                className="ml-3"
+                key={`product-name-${props.title}`}
+              >
                 {props.title}
               </Typography.Title>
             )}

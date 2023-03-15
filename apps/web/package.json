@@ -10,7 +10,7 @@
     "postbuild": "node ./wesbitty/utils/schemas/sitemapGenerator.mjs",
     "export": "next export",
     "start": "next start",
-    "format:": "prettier --ignore-path .gitignore --write .",
+    "format": "prettier --ignore-path .gitignore --write .",
     "lint": "next lint",
     "format:eslint": "eslint --fix .",
     "predev": "prisma generate",

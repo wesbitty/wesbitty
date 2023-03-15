@@ -1,5 +1,11 @@
 import { useRouter } from 'next/router'
-import { Tabs, Typography, Button, IconCornerRightUp, IconArrowUpRight } from '@wesbitty/ui'
+import {
+  Tabs,
+  Typography,
+  Button,
+  IconCornerRightUp,
+  IconArrowUpRight,
+} from '@wesbitty/ui'
 import { useState } from 'react'
 
 // Import Swiper React components
@@ -53,8 +59,9 @@ function ImageCarousel(props: ImageCarouselProps) {
       </Typography.Text>
       <Typography.Text type="secondary">
         <p>
-          This would only allow the authenticated user access to a folder that is named after their
-          own account UID. This is useful for things like profile images.
+          This would only allow the authenticated user access to a folder that
+          is named after their own account UID. This is useful for things like
+          profile images.
         </p>
       </Typography.Text>
       <Typography.Text>
@@ -134,7 +141,11 @@ function ImageCarousel(props: ImageCarouselProps) {
         </div>
       </div>
       <div className="mt-8 lg:mt-0 col-span-12 lg:col-span-5 lg:col-start-8 xl:col-span-4 xl:col-start-9">
-        <div className={`wsb-tabs--underline-alt ${props.altTabView ? 'block' : 'hidden'} mb-3`}>
+        <div
+          className={`wsb-tabs--underline-alt ${
+            props.altTabView ? 'block' : 'hidden'
+          } mb-3`}
+        >
           <Tabs
             scrollable
             type="underlined"

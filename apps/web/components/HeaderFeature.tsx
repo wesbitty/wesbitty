@@ -25,12 +25,16 @@ const HeaderFeature = () => {
                     </h1>
                     <Typography.Text>
                       <p className="mt-5 text-base sm:mt-5 lg:text-lg ">
-                        Create an ecommerce website backed by powerful tools that help you find
-                        customers, drive sales, and manage your day-to-day.
+                        Create an ecommerce website backed by powerful tools
+                        that help you find customers, drive sales, and manage
+                        your day-to-day.
                       </p>
                     </Typography.Text>
                     <Space>
-                      <Link href="https://app.wesbitty.com" as="https://app.wesbitty.com">
+                      <Link
+                        href="https://app.wesbitty.com"
+                        as="https://app.wesbitty.com"
+                      >
                         <a className="mt-10">
                           <Button className="py-3" size="medium">
                             Get Started
@@ -50,7 +54,9 @@ const HeaderFeature = () => {
                         </a>
                       </Link>
                     </Space>
-                    <p className="mt-8 text-sm text-dark-400 tracking-wide sm:mt-10">backed by</p>
+                    <p className="mt-8 text-sm text-dark-400 tracking-wide sm:mt-10">
+                      backed by
+                    </p>
                     <div className="mt-5 w-full sm:max-w-lg lg:ml-0">
                       <div className="flex flex-wrap items-center justify-start">
                         <img

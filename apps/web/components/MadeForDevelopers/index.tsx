@@ -16,20 +16,29 @@ const MadeForDevelopers = () => {
         title={'Instant APIs that do the hard work for you'}
         text={[
           <p className="lg:text-lg" key={'madefordeveloper-para-1'}>
-            We introspect your database to provide APIs instantly. Stop building repetitive CRUD
-            endpoints and focus on your product.
+            We introspect your database to provide APIs instantly. Stop building
+            repetitive CRUD endpoints and focus on your product.
           </p>,
         ]}
         // @ts-ignore
         content={CodeExamples}
         footer={[
-          <dl className="grid gap-y-4 grid-cols-12 md:gap-8" key={'madefordeveloper-footer'}>
+          <dl
+            className="grid gap-y-4 grid-cols-12 md:gap-8"
+            key={'madefordeveloper-footer'}
+          >
             {DeveloperFeatures.map((feature: any, i: number) => {
               return (
-                <div className="col-span-12 md:col-span-6 lg:col-span-6" key={i}>
+                <div
+                  className="col-span-12 md:col-span-6 lg:col-span-6"
+                  key={i}
+                >
                   <div className="lg:mt-5">
                     <dt>
-                      <FeatureColumn title={feature.name} text={feature.description} />
+                      <FeatureColumn
+                        title={feature.name}
+                        text={feature.description}
+                      />
                       {feature.badge && (
                         <div className="block mb-4">
                           <Badge dot color="blue">

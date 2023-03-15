@@ -10,7 +10,9 @@ const BuiltExamples = () => {
   return (
     <SectionContainer className="xl:pt-32">
       <div className="text-center">
-        <Typography.Title level={2}>What can you build with wesbitty?</Typography.Title>
+        <Typography.Title level={2}>
+          What can you build with wesbitty?
+        </Typography.Title>
         <Typography.Text>
           <p className="lg:text-lg">
             There are many example apps and starter projects to get going
@@ -38,7 +40,9 @@ const BuiltExamples = () => {
         {Examples.slice(0, 6).map((example, i) => {
           return (
             <div
-              className={`col-span-12 lg:col-span-6 xl:col-span-4 ${i > 2 && `sm:hidden lg:block`}`}
+              className={`col-span-12 lg:col-span-6 xl:col-span-4 ${
+                i > 2 && `sm:hidden lg:block`
+              }`}
               key={i}
             >
               <ExampleCard {...example} />

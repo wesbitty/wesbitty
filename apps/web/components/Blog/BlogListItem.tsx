@@ -24,7 +24,9 @@ const BlogListItem = ({ blog }: Props) => {
                 <Image
                   layout="fill"
                   src={
-                    !blog.thumb ? `/images/blog/blog-placeholder.png` : `/images/blog/${blog.thumb}`
+                    !blog.thumb
+                      ? `/images/blog/blog-placeholder.png`
+                      : `/images/blog/${blog.thumb}`
                   }
                   objectFit="cover"
                   className="transform duration-100 ease-in scale-100 group-hover:scale-105"
@@ -47,7 +49,9 @@ const BlogListItem = ({ blog }: Props) => {
             {author && (
               <div>
                 <Space size={4}>
-                  {author.avatar && <img src={author.avatar} className="rounded-full w-10" />}
+                  {author.avatar && (
+                    <img src={author.avatar} className="rounded-full w-10" />
+                  )}
                   <Space direction="vertical" size={0}>
                     <Typography.Text>{author.author}</Typography.Text>
                     <Typography.Text type="secondary" small>

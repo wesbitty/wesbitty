@@ -1,23 +1,23 @@
-import { cache } from "react";
-import type { _SiteData } from "~/types";
-import prisma from "~/wesbitty/lib/prisma";
-import remarkMdx from "remark-mdx";
-import { remark } from "remark";
-import { serialize } from "next-mdx-remote/serialize";
-import { replaceExamples, replaceTweets } from "~/wesbitty/lib/remark-plugins";
+import { cache } from 'react'
+import type { _SiteData } from '~/types'
+import prisma from '~/wesbitty/lib/prisma'
+import remarkMdx from 'remark-mdx'
+import { remark } from 'remark'
+import { serialize } from 'next-mdx-remote/serialize'
+import { replaceExamples, replaceTweets } from '~/wesbitty/lib/remark-plugins'
 
 export const getSiteData = cache(async (site: string): Promise<_SiteData> => {
   let filter: {
-    subdomain?: string;
-    customDomain?: string;
+    subdomain?: string
+    customDomain?: string
   } = {
     subdomain: site,
-  };
+  }
 
-  if (site.includes(".")) {
+  if (site.includes('.')) {
     filter = {
       customDomain: site,
-    };
+    }
   }
 
   const data = (await prisma.site.findUnique({
@@ -30,28 +30,28 @@ export const getSiteData = cache(async (site: string): Promise<_SiteData> => {
         },
         orderBy: [
           {
-            createdAt: "desc",
+            createdAt: 'desc',
           },
         ],
       },
     },
-  })) as _SiteData;
+  })) as _SiteData
 
-  return data;
-});
+  return data
+})
 
 export const getPostData = cache(async (site: string, slug: string) => {
   let filter: {
-    subdomain?: string;
-    customDomain?: string;
+    subdomain?: string
+    customDomain?: string
   } = {
     subdomain: site,
-  };
+  }
 
-  if (site.includes(".")) {
+  if (site.includes('.')) {
     filter = {
       customDomain: site,
-    };
+    }
   }
 
   const data = await prisma.post.findFirst({
@@ -68,9 +68,9 @@ export const getPostData = cache(async (site: string, slug: string) => {
         },
       },
     },
-  });
+  })
 
-  if (!data) return { notFound: true, revalidate: 10 };
+  if (!data) return { notFound: true, revalidate: 10 }
 
   const [mdxSource, adjacentPosts] = await Promise.all([
     getMdxSource(data.content!),
@@ -93,7 +93,7 @@ export const getPostData = cache(async (site: string, slug: string) => {
         imageBlurhash: true,
       },
     }),
-  ]);
+  ])
 
   return {
     data: {
@@ -101,8 +101,8 @@ export const getPostData = cache(async (site: string, slug: string) => {
       mdxSource,
     },
     adjacentPosts,
-  };
-});
+  }
+})
 
 async function getMdxSource(postContents: string) {
   // Serialize the content string into MDX
@@ -110,7 +110,7 @@ async function getMdxSource(postContents: string) {
     mdxOptions: {
       remarkPlugins: [replaceTweets, () => replaceExamples(prisma)],
     },
-  });
+  })
 
-  return mdxSource;
+  return mdxSource
 }

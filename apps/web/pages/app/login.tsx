@@ -1,27 +1,26 @@
-import { signIn } from "next-auth/react";
-import Head from "next/head";
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import LoadingDots from "~/components/app/loading-dots";
-import toast, { Toaster } from "react-hot-toast";
+import { signIn } from 'next-auth/react'
+import Head from 'next/head'
+import Image from 'next/image'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
+import LoadingDots from '~/components/app/loading-dots'
+import toast, { Toaster } from 'react-hot-toast'
 
-const pageTitle = "Login";
-const logo = "/favicon.ico";
-const description =
-  "Platforms Starter - Wesbitty Inc";
+const pageTitle = 'Login'
+const logo = '/favicon.ico'
+const description = 'Platforms Starter - Wesbitty Inc'
 
 export default function Login() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
 
   // Get error message added by next/auth in URL.
-  const { query } = useRouter();
-  const { error } = query;
+  const { query } = useRouter()
+  const { error } = query
 
   useEffect(() => {
-    const errorMessage = Array.isArray(error) ? error.pop() : error;
-    errorMessage && toast.error(errorMessage);
-  }, [error]);
+    const errorMessage = Array.isArray(error) ? error.pop() : error
+    errorMessage && toast.error(errorMessage)
+  }, [error])
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -63,7 +62,7 @@ export default function Login() {
           Platforms Starter Kit
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Build multi-tenant applications with custom domains. <br /> Read the{" "}
+          Build multi-tenant applications with custom domains. <br /> Read the{' '}
           <a
             className="font-medium text-black hover:text-gray-800"
             href="https://demo.vercel.pub/platforms-starter-kit"
@@ -80,11 +79,11 @@ export default function Login() {
           <button
             disabled={loading}
             onClick={() => {
-              setLoading(true);
-              signIn("github");
+              setLoading(true)
+              signIn('github')
             }}
             className={`${
-              loading ? "cursor-not-allowed bg-gray-600" : "bg-black"
+              loading ? 'cursor-not-allowed bg-gray-600' : 'bg-black'
             } group flex justify-center items-center space-x-5 w-full sm:px-4 h-16 my-2 rounded-md focus:outline-none`}
           >
             {loading ? (
@@ -104,5 +103,5 @@ export default function Login() {
       </div>
       <Toaster />
     </div>
-  );
+  )
 }

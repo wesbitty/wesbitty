@@ -26,16 +26,25 @@ const CaseStudies = () => {
             <Card
               key={`caseStudy_${idx}`}
               hoverable
-              cover={<img src={`${basePath}/${caseStudy.imgUrl}`} className="h-64 object-cover" />}
+              cover={
+                <img
+                  src={`${basePath}/${caseStudy.imgUrl}`}
+                  className="h-64 object-cover"
+                />
+              }
             >
               <Space className="justify-between h-40" direction="vertical">
                 <div>
                   <Typography.Text small type="secondary">
                     Project example
                   </Typography.Text>
-                  <Typography.Title level={3}>{caseStudy.title}</Typography.Title>
+                  <Typography.Title level={3}>
+                    {caseStudy.title}
+                  </Typography.Title>
                 </div>
-                <Typography.Text type="default">{caseStudy.description}</Typography.Text>
+                <Typography.Text type="default">
+                  {caseStudy.description}
+                </Typography.Text>
               </Space>
             </Card>
           </a>

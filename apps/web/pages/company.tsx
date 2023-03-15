@@ -89,7 +89,9 @@ const Team = () => {
   const IconLink = ({ link, icon }: iIconLink) => {
     return (
       <a href={link} target="_blank">
-        <div className="transition-opacity opacity-50 hover:opacity-75">{icon}</div>
+        <div className="transition-opacity opacity-50 hover:opacity-75">
+          {icon}
+        </div>
       </a>
     )
   }
@@ -102,9 +104,10 @@ const Team = () => {
           <div className="col-span-8 ">
             <Typography.Text>
               <p className="text-lg">
-                Wesbitty is fully remote, with a strong affinity for open source maintainers and
-                ex-Founders. Our engineering team is made up of developers from AWS, Google,
-                Palantir, Stripe, and other YC companies.
+                Wesbitty is fully remote, with a strong affinity for open source
+                maintainers and ex-Founders. Our engineering team is made up of
+                developers from AWS, Google, Palantir, Stripe, and other YC
+                companies.
               </p>
             </Typography.Text>
           </div>
@@ -191,7 +194,11 @@ const Community = () => {
               key={x.title}
               className={`
               space-y-4 text-center lg:text-left
-              ${i !== CommunityData.length - 1 ? 'dark:border-r-dark lg:border-r' : ''}
+              ${
+                i !== CommunityData.length - 1
+                  ? 'dark:border-r-dark lg:border-r'
+                  : ''
+              }
               ${i === 1 ? 'md:border-0 dark:border-r-dark lg:border-r ' : ''}
           `}
             >
@@ -215,7 +222,9 @@ const Community = () => {
                 <Typography.Title level={1} className="mb-0">
                   {x.stat}
                 </Typography.Title>
-                <Typography.Text type="secondary">{x.statLabel}</Typography.Text>
+                <Typography.Text type="secondary">
+                  {x.statLabel}
+                </Typography.Text>
               </div>
             </div>
           ))}
@@ -244,8 +253,8 @@ const Investors = () => {
             <>
               <Typography.Text>
                 <p className="text-lg">
-                  We've raised over $36 million in funding, backed by some of the world's leading
-                  investors.
+                  We've raised over $36 million in funding, backed by some of
+                  the world's leading investors.
                 </p>
               </Typography.Text>
             </>

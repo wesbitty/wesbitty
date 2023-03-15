@@ -5,14 +5,14 @@ module.exports = withWesjet({
   output: 'standalone',
   images: {
     domains: [
-      "res.cloudinary.com",
-      "abs.twimg.com",
-      "pbs.twimg.com",
-      "i.imgur.com", 
-      "avatars.githubusercontent.com",
-      "user-images.githubusercontent.com", 
-      "colab.research.google.com", 
-      "github.com"
+      'res.cloudinary.com',
+      'abs.twimg.com',
+      'pbs.twimg.com',
+      'i.imgur.com',
+      'avatars.githubusercontent.com',
+      'user-images.githubusercontent.com',
+      'colab.research.google.com',
+      'github.com',
     ],
   },
   reactStrictMode: true,

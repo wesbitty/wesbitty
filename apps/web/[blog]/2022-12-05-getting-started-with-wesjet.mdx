@@ -275,7 +275,9 @@ const PostLayout = ({ post }) => {
       <article className="mx-auto max-w-2xl py-16">
         <div className="mb-6 text-center">
           <Link href="/">
-            <a className="text-center text-sm font-bold uppercase text-blue-700">Home</a>
+            <a className="text-center text-sm font-bold uppercase text-blue-700">
+              Home
+            </a>
           </Link>
         </div>
         <div className="mb-6 text-center">
@@ -284,7 +286,10 @@ const PostLayout = ({ post }) => {
             {format(parseISO(post.date), 'LLLL d, yyyy')}
           </time>
         </div>
-        <div className="cl-post-body" dangerouslySetInnerHTML={{ __html: post.body.html }} />
+        <div
+          className="cl-post-body"
+          dangerouslySetInnerHTML={{ __html: post.body.html }}
+        />
       </article>
     </>
   )

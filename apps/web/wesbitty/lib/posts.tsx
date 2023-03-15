@@ -15,7 +15,11 @@ const FILENAME_SUBSTRING = 11
 
 type Directories = '[blog]' | 'PostsField'
 
-export const getSortedPosts = (directory: Directories, limit?: number, tags?: any) => {
+export const getSortedPosts = (
+  directory: Directories,
+  limit?: number,
+  tags?: any
+) => {
   const postDirectory = path.join(process.cwd(), directory)
 
   const fileNames = fs.readdirSync(postDirectory)
@@ -25,14 +29,23 @@ export const getSortedPosts = (directory: Directories, limit?: number, tags?: an
     const fullPath = path.join(postDirectory, filename)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
-    const options: Intl.DateTimeFormatOptions = { month: 'long', day: 'numeric', year: 'numeric' }
-    const formattedDate = new Date(data.date).toLocaleDateString(`${Metadata.Locale}`, options)
+    const options: Intl.DateTimeFormatOptions = {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+    }
+    const formattedDate = new Date(data.date).toLocaleDateString(
+      `${Metadata.Locale}`,
+      options
+    )
     const readingTime = generateReadingTime(content)
 
     let url = ''
     if (directory === '[blog]') {
       const dates = getDatesFromFileName(filename)
-      url = `${dates.year}/${dates.month}/${dates.day}/${slug.substring(FILENAME_SUBSTRING)}`
+      url = `${dates.year}/${dates.month}/${dates.day}/${slug.substring(
+        FILENAME_SUBSTRING
+      )}`
     } else {
       url = `/${directory.replace('_', '')}/${slug}`
     }

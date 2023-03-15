@@ -19,14 +19,17 @@ const Benchmark = () => {
           />
           <div className="px-12 py-5 lg:px-0 lg:py-0">
             <Typography.Title level={4}>
-              <span className="text-white">Built for speed and reliability</span>
+              <span className="text-white">
+                Built for speed and reliability
+              </span>
             </Typography.Title>
             <Typography.Text type="secondary">
               <span className="block text-gray-300">
                 Wesbitty outperforms equivalent systems by more than 300%.
               </span>
               <span className="block text-gray-300">
-                Sign up for our public benchmark release and we'll send it to your inbox.
+                Sign up for our public benchmark release and we'll send it to
+                your inbox.
               </span>
             </Typography.Text>
           </div>

@@ -98,7 +98,12 @@ function Blog(props: any) {
             <div className="mx-auto ">
               <div className="grid grid-cols-12">
                 <div className="col-span-12 lg:col-span-12">
-                  <Tabs scrollable size="medium" onChange={setCategory} defaultActiveId={'all'}>
+                  <Tabs
+                    scrollable
+                    size="medium"
+                    onChange={setCategory}
+                    defaultActiveId={'all'}
+                  >
                     {props.categories.map((categoryId: string) => (
                       <Tabs.Panel id={categoryId} label={categoryId}>
                         {/* <p>{categoryId}</p> */}
@@ -140,7 +145,9 @@ function FeaturedThumb(blog: PostTypes) {
             <div className="flex space-x-2">
               <Typography.Text type="secondary">{blog.date}</Typography.Text>
               <Typography.Text type="secondary">•</Typography.Text>
-              <Typography.Text type="secondary">{blog.readingTime}</Typography.Text>
+              <Typography.Text type="secondary">
+                {blog.readingTime}
+              </Typography.Text>
             </div>
 
             <div>
@@ -152,7 +159,9 @@ function FeaturedThumb(blog: PostTypes) {
 
             {author && (
               <div className="flex space-x-3 items-center">
-                {author.avatar && <img src={author.avatar} className="rounded-full w-10" />}
+                {author.avatar && (
+                  <img src={author.avatar} className="rounded-full w-10" />
+                )}
                 <div className="flex flex-col">
                   <Typography.Text>{author.author}</Typography.Text>
                   <Typography.Text type="secondary" small>

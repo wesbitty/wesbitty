@@ -1,33 +1,33 @@
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-import { useRouter } from "next/router";
-import React from "react";
-import { signOut } from "next-auth/react";
-import Loader from "./Loader";
-import useRequireAuth from "../../lib/useRequireAuth";
+import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+import React from 'react'
+import { signOut } from 'next-auth/react'
+import Loader from './Loader'
+import useRequireAuth from '../../lib/useRequireAuth'
 
-import type { WithChildren } from "~/types";
+import type { WithChildren } from '~/types'
 
 interface LayoutProps extends WithChildren {
-  siteId?: string;
+  siteId?: string
 }
 
 export default function Layout({ siteId, children }: LayoutProps) {
-  const title = "Platforms on Vercel";
+  const title = 'Platforms on Vercel'
   const description =
-    "Create a fullstack application with multi-tenancy and custom domains support using Next.js, Prisma, and PostgreSQL";
-  const logo = "/favicon.ico";
-  const router = useRouter();
-  const sitePage = router.pathname.startsWith("/app/site/[id]");
-  const postPage = router.pathname.startsWith("/app/post/[id]");
-  const rootPage = !sitePage && !postPage;
+    'Create a fullstack application with multi-tenancy and custom domains support using Next.js, Prisma, and PostgreSQL'
+  const logo = '/favicon.ico'
+  const router = useRouter()
+  const sitePage = router.pathname.startsWith('/app/site/[id]')
+  const postPage = router.pathname.startsWith('/app/post/[id]')
+  const rootPage = !sitePage && !postPage
   const tab = rootPage
-    ? router.asPath.split("/")[1]
-    : router.asPath.split("/")[3];
+    ? router.asPath.split('/')[1]
+    : router.asPath.split('/')[3]
 
-  const session = useRequireAuth();
-  if (!session) return <Loader />;
+  const session = useRequireAuth()
+  if (!session) return <Loader />
 
   return (
     <>
@@ -68,7 +68,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
                       src={session.user.image}
                       width={40}
                       height={40}
-                      alt={session.user.name ?? "User avatar"}
+                      alt={session.user.name ?? 'User avatar'}
                     />
                   </div>
                 )}
@@ -108,7 +108,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
             <Link
               href="/"
               className={`border-b-2 ${
-                tab == "" ? "border-black" : "border-transparent"
+                tab == '' ? 'border-black' : 'border-transparent'
               } py-3`}
             >
               My Sites
@@ -116,7 +116,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
             <Link
               href="/settings"
               className={`border-b-2 ${
-                tab == "settings" ? "border-black" : "border-transparent"
+                tab == 'settings' ? 'border-black' : 'border-transparent'
               } py-3`}
             >
               Settings
@@ -133,7 +133,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
                 <Link
                   href={`/site/${router.query.id}`}
                   className={`border-b-2 ${
-                    !tab ? "border-black" : "border-transparent"
+                    !tab ? 'border-black' : 'border-transparent'
                   } py-3`}
                 >
                   Posts
@@ -141,7 +141,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
                 <Link
                   href={`/site/${router.query.id}/drafts`}
                   className={`border-b-2 ${
-                    tab == "drafts" ? "border-black" : "border-transparent"
+                    tab == 'drafts' ? 'border-black' : 'border-transparent'
                   } py-3`}
                 >
                   Drafts
@@ -149,7 +149,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
                 <Link
                   href={`/site/${router.query.id}/settings`}
                   className={`border-b-2 ${
-                    tab == "settings" ? "border-black" : "border-transparent"
+                    tab == 'settings' ? 'border-black' : 'border-transparent'
                   } py-3`}
                 >
                   Settings
@@ -179,7 +179,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
                 <Link
                   href={`/post/${router.query.id}`}
                   className={`border-b-2 ${
-                    !tab ? "border-black" : "border-transparent"
+                    !tab ? 'border-black' : 'border-transparent'
                   } py-3`}
                 >
                   Editor
@@ -187,7 +187,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
                 <Link
                   href={`/post/${router.query.id}/settings`}
                   className={`border-b-2 ${
-                    tab == "settings" ? "border-black" : "border-transparent"
+                    tab == 'settings' ? 'border-black' : 'border-transparent'
                   } py-3`}
                 >
                   Settings
@@ -200,5 +200,5 @@ export default function Layout({ siteId, children }: LayoutProps) {
         <div className="pt-28">{children}</div>
       </div>
     </>
-  );
+  )
 }

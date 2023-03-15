@@ -27,7 +27,9 @@ const Features = () => {
             <Badge dot>{label}</Badge>
           </div>
         )}
-        {url && <TextLink label={label ? 'Get notified' : 'Learn more'} url={url} />}
+        {url && (
+          <TextLink label={label ? 'Get notified' : 'Learn more'} url={url} />
+        )}
       </div>
     )
   })

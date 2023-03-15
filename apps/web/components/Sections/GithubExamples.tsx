@@ -39,11 +39,15 @@ function GithubExamples() {
           </Typography.Title>
           <Typography.Text className="block mb-6">
             <p className="text-base lg:text-lg">
-              Supported by a network of early advocates, contributors, and champions.
+              Supported by a network of early advocates, contributors, and
+              champions.
             </p>
           </Typography.Text>
           <div className="flex space-y-1.5 flex-col lg:space-y-0 lg:space-x-1.5 lg:flex-row justify-center">
-            <Link href="/docs/guides/examples#guides" as="/docs/guides/examples#guides">
+            <Link
+              href="/docs/guides/examples#guides"
+              as="/docs/guides/examples#guides"
+            >
               <a>
                 <Button type="default" icon={<IconBookOpen />}>
                   View guides

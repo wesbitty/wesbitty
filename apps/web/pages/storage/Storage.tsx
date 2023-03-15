@@ -32,7 +32,8 @@ import { Metadata } from '../../wesbitty/utils/schemas/Metadata'
 
 function StoragePage() {
   const Title = `Storage - Store any digital content | ${Metadata.Name}`
-  const Description = 'An open source Object store with unlimited scalability, for any file type.'
+  const Description =
+    'An open source Object store with unlimited scalability, for any file type.'
   // base path for images
   const { basePath } = useRouter()
 
@@ -105,7 +106,8 @@ function StoragePage() {
               <Typography.Title level={4}>Interoperable</Typography.Title>
               <Typography.Text>
                 <p className="text-lg">
-                  Integrates well with the rest of Wesbitty ecosystem, including Auth and Postgres.
+                  Integrates well with the rest of Wesbitty ecosystem, including
+                  Auth and Postgres.
                 </p>
                 {/* <p>
                 Familiar and easy to use permissions mean that your content is secure and accessible
@@ -128,7 +130,8 @@ function StoragePage() {
               <Typography.Title level={4}>Lightning fast</Typography.Title>
               <Typography.Text>
                 <p className="text-lg">
-                  Thin API server layer that leverages Postgres' permissions and performance.
+                  Thin API server layer that leverages Postgres' permissions and
+                  performance.
                 </p>
                 {/* <p>
                 1.3x faster than XXX, your content can be delivered anywhere in the world at the
@@ -150,7 +153,9 @@ function StoragePage() {
               </Typography.Text>
               <Typography.Title level={4}>Dependable</Typography.Title>
               <Typography.Text>
-                <p className="text-lg">Enterprise-level scalability and durability.</p>
+                <p className="text-lg">
+                  Enterprise-level scalability and durability.
+                </p>
                 {/* <p>A durability rating of 99.999999999%.</p> */}
               </Typography.Text>
             </div>
@@ -159,14 +164,16 @@ function StoragePage() {
 
         <SectionContainer className="pt-16">
           <div className="mb-16 block">
-            <Typography.Title>Sleek dashboard for managing your media</Typography.Title>
+            <Typography.Title>
+              Sleek dashboard for managing your media
+            </Typography.Title>
             <Typography.Text>
               <p className="text-lg">
                 A complete Object Explorer so that any of your team can use.
               </p>
               <p>
-                Drag and drop uploading, moving objects, and multiple object selection. As easy as
-                working on your desktop.
+                Drag and drop uploading, moving objects, and multiple object
+                selection. As easy as working on your desktop.
               </p>
             </Typography.Text>
           </div>
@@ -174,7 +181,9 @@ function StoragePage() {
             // @ts-ignore
             content={DashboardViewData}
             footer={[
-              <Typography.Title level={4}>Check out our example app</Typography.Title>,
+              <Typography.Title level={4}>
+                Check out our example app
+              </Typography.Title>,
               // !! Update this example !!
               <ExampleCard
                 type={'example'}
@@ -207,8 +216,8 @@ function StoragePage() {
             text={[
               <p>Built from the ground up for interoperable authentication.</p>,
               <p>
-                Fast and easy to implement using our powerful library clients. Asset optimization
-                and image transformation coming soon!
+                Fast and easy to implement using our powerful library clients.
+                Asset optimization and image transformation coming soon!
               </p>,
             ]}
             footer={[
@@ -255,12 +264,14 @@ function StoragePage() {
                       </Typography.Title>
                       <Typography.Text>
                         <p className="">
-                          Using Postgres Row Level Security to create Object access rules.
+                          Using Postgres Row Level Security to create Object
+                          access rules.
                         </p>
                         <p>
-                          Storage Authorization is built around Postgres so that you can use any
-                          combination of SQL, Postgres functions, and even your own metadata to
-                          write policies.
+                          Storage Authorization is built around Postgres so that
+                          you can use any combination of SQL, Postgres
+                          functions, and even your own metadata to write
+                          policies.
                         </p>
                       </Typography.Text>
                       <Link

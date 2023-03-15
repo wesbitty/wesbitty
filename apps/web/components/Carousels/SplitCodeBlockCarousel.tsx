@@ -49,8 +49,9 @@ function SplitCodeBlockCarousel(props: SplitCodeBlockCarousel) {
       </Typography.Text>
       <Typography.Text type="secondary">
         <p>
-          This would only allow the authenticated user access to a folder that is named after their
-          own account UID. This is useful for things like profile images.
+          This would only allow the authenticated user access to a folder that
+          is named after their own account UID. This is useful for things like
+          profile images.
         </p>
       </Typography.Text>
       <Typography.Text>

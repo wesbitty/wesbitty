@@ -130,7 +130,9 @@ const CodeExamples = () => {
   return (
     <div>
       <div className="grid grid-cols-12 gap-2 xl:gap-8">
-        <div className="col-span-12 text-center lg:col-span-3 lg:hidden">{<TabNav />}</div>
+        <div className="col-span-12 text-center lg:col-span-3 lg:hidden">
+          {<TabNav />}
+        </div>
         <div className="col-span-12 lg:col-span-9">
           <div className="rounded-md rounded-b-lg bg-dark-600 dark:bg-dark-700">
             <div className="p-2 pl-5 flex justify-between items-center">
@@ -142,8 +144,13 @@ const CodeExamples = () => {
                   text={exampleList[example].code[lang]}
                   onCopy={() => setCopied(true)}
                 >
-                  <Button type="outline" icon={copied ? <CopiedIcon /> : <ClipboardIcon />}>
-                    <span className="hidden sm:block">{copied ? 'Copied!' : 'Copy code'}</span>
+                  <Button
+                    type="outline"
+                    icon={copied ? <CopiedIcon /> : <ClipboardIcon />}
+                  >
+                    <span className="hidden sm:block">
+                      {copied ? 'Copied!' : 'Copy code'}
+                    </span>
                   </Button>
                 </CopyToClipboard>
               </div>
@@ -177,7 +184,9 @@ const CodeExamples = () => {
             </SyntaxHighlighter>
           </div>
         </div>
-        <div className="col-span-12 text-center hidden lg:col-span-3 lg:block">{<Buttons />}</div>
+        <div className="col-span-12 text-center hidden lg:col-span-3 lg:block">
+          {<Buttons />}
+        </div>
       </div>
     </div>
   )

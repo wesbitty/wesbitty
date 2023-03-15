@@ -30,7 +30,12 @@ const Developers = () => {
           stroke="currentColor"
           aria-hidden="true"
         >
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icon} />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d={icon}
+          />
         </svg>
         <div className="ml-4">
           <Typography.Title level={5}>{text}</Typography.Title>
@@ -65,7 +70,9 @@ const Developers = () => {
       </nav>
       <div className="col-span-6">
         <div className="m-3 mx-6">
-          <Typography.Text type="secondary">Latest announcements</Typography.Text>
+          <Typography.Text type="secondary">
+            Latest announcements
+          </Typography.Text>
           <ul className="mt-6 space-y-3 pb-6">
             {AnnouncementsData.map((caseStudy: any, idx: number) => (
               <li className="flow-root" key={`flyout_case_${idx}`}>
@@ -84,7 +91,9 @@ const Developers = () => {
                     <Typography.Title level={5} className="mb-0">
                       {caseStudy.title}
                     </Typography.Title>
-                    <Typography.Text type="secondary">{caseStudy.description}</Typography.Text>
+                    <Typography.Text type="secondary">
+                      {caseStudy.description}
+                    </Typography.Text>
                   </div>
                 </a>
               </li>

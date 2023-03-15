@@ -11,7 +11,13 @@ type Props = {
 }
 
 const FlyOut = (props: Props) => {
-  const { title = '', children, className = '', singleBgColor = false, handleCancel } = props
+  const {
+    title = '',
+    children,
+    className = '',
+    singleBgColor = false,
+    handleCancel,
+  } = props
 
   useEffect(() => {
     function handleScroll() {
@@ -42,7 +48,9 @@ const FlyOut = (props: Props) => {
               <div className="bg-white dark:bg-gray-800 border-r dark:border-gray-600 sm:w-full sm:h-1/2 lg:w-1/2 lg:h-full" />
               <div
                 className={`${
-                  singleBgColor ? 'bg-white dark:bg-dark-600' : 'bg-gray-50 dark:bg-gray-800'
+                  singleBgColor
+                    ? 'bg-white dark:bg-dark-600'
+                    : 'bg-gray-50 dark:bg-gray-800'
                 } sm:w-full sm:h-1/2 lg:w-1/2 lg:h-full`}
               />
             </div>

@@ -34,10 +34,17 @@ function AuthPage() {
   const [companyName, setCompanyName] = useState('Acme Company')
   const [widgetSize, setWidgetSize] = useState<SizeProps>('tiny')
   const [socialLogins, setSocialLogins] = useState(true)
-  const [socialLoginLayout, setSocialLoginLayout] = useState<LayoutProps>('horizontal')
+  const [socialLoginLayout, setSocialLoginLayout] =
+    useState<LayoutProps>('horizontal')
   const [socialColors, setSocialColors] = useState(false)
 
-  const socials: Provider[] = ['facebook', 'google', 'bitbucket', 'github', 'gitlab']
+  const socials: Provider[] = [
+    'facebook',
+    'google',
+    'bitbucket',
+    'github',
+    'gitlab',
+  ]
 
   const formSize = 'small'
   const formLayout = 'vertical'
@@ -51,8 +58,9 @@ function AuthPage() {
               ReactJS Auth Widget
             </Typography.Title>
             <Typography.Text>
-              An API built from the groud up just for Storage.With powerful library clients coming
-              soon that allow for asset optimasation and image transformation
+              An API built from the groud up just for Storage.With powerful
+              library clients coming soon that allow for asset optimasation and
+              image transformation
             </Typography.Text>
           </div>
           <div className="col-span-8">
@@ -76,7 +84,11 @@ function AuthPage() {
                     </Space>,
                   ]}
                 >
-                  <Tabs.Panel label="Preview" id="panel-1" icon={<IconZoomIn />}>
+                  <Tabs.Panel
+                    label="Preview"
+                    id="panel-1"
+                    icon={<IconZoomIn />}
+                  >
                     <div style={{ maxWidth: '420px', margin: '0 auto' }}>
                       <Card>
                         <Space size={8} direction="vertical">
@@ -86,7 +98,9 @@ function AuthPage() {
                                 src="https://app.wesbitty.com/img/supabase-dark.svg"
                                 width="96"
                               />
-                              <Typography.Title level={3}>{companyName}</Typography.Title>
+                              <Typography.Title level={3}>
+                                {companyName}
+                              </Typography.Title>
                             </Space>
                           </div>
                           <Auth
@@ -142,7 +156,9 @@ function AuthPage() {
               <div className={`p-8`}>
                 <Space size={12} direction="vertical">
                   <div>
-                    <Typography.Title level={3}>Customise your login form</Typography.Title>
+                    <Typography.Title level={3}>
+                      Customise your login form
+                    </Typography.Title>
                     <Typography.Text>
                       Our ReactJS Auth form will help you get going even quicker{' '}
                     </Typography.Text>
@@ -177,7 +193,9 @@ function AuthPage() {
                               layout={formLayout}
                               name="layout-group"
                               value={socialLoginLayout}
-                              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                              onChange={(
+                                e: React.ChangeEvent<HTMLInputElement>
+                              ) =>
                                 // @ts-ignore
                                 setSocialLoginLayout(e.target.value)
                               }
@@ -222,11 +240,36 @@ function AuthPage() {
                     /* @ts-ignore */
                     onChange={(e) => setWidgetSize(e.target.value)}
                   >
-                    <Radio name="size-group" key={1} label={'tiny'} value={'tiny'} />
-                    <Radio name="size-group" key={2} label={'small'} value={'small'} />
-                    <Radio name="size-group" key={3} label={'medium'} value={'medium'} />
-                    <Radio name="size-group" key={3} label={'large'} value={'large'} />
-                    <Radio name="size-group" key={3} label={'xlarge'} value={'xlarge'} />
+                    <Radio
+                      name="size-group"
+                      key={1}
+                      label={'tiny'}
+                      value={'tiny'}
+                    />
+                    <Radio
+                      name="size-group"
+                      key={2}
+                      label={'small'}
+                      value={'small'}
+                    />
+                    <Radio
+                      name="size-group"
+                      key={3}
+                      label={'medium'}
+                      value={'medium'}
+                    />
+                    <Radio
+                      name="size-group"
+                      key={3}
+                      label={'large'}
+                      value={'large'}
+                    />
+                    <Radio
+                      name="size-group"
+                      key={3}
+                      label={'xlarge'}
+                      value={'xlarge'}
+                    />
                   </Radio.Group>
                 </Space>
               </div>

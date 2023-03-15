@@ -7,7 +7,8 @@ on storage.objects for all
 using ( bucket_id = 'avatars' );
     `,
     detail_title: 'Allow public CRUD access to a bucket',
-    detail_text: "This will allow any user access to the bucket named 'avatars'",
+    detail_text:
+      "This will allow any user access to the bucket named 'avatars'",
     badges_label: '',
     badges: [],
     url: '',

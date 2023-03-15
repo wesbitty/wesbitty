@@ -34,7 +34,10 @@ function TagBlogsPage(props: Props) {
   const { blogs, tag } = props
   return (
     <>
-      <NextSeo title={`Blog | ${tag}`} description="Latest news from the Wesbitty team." />
+      <NextSeo
+        title={`Blog | ${tag}`}
+        description="Latest news from the Wesbitty team."
+      />
       <DefaultLayout>
         <div className="container mx-auto px-8 sm:px-16 xl:px-20 py-16">
           <div className="flex space-x-1">

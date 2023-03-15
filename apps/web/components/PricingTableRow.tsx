@@ -46,7 +46,10 @@ export const PricingTableRowDesktop = (props: any) => {
 
   return (
     <>
-      <tr className="divide-x dark:divide-gray-600" style={{ borderTop: 'none' }}>
+      <tr
+        className="divide-x dark:divide-gray-600"
+        style={{ borderTop: 'none' }}
+      >
         <th
           className="pricing-table__product-row bg-gray-50 dark:bg-gray-700 py-3 pl-6 text-sm font-medium text-gray-900 dark:text-white text-left"
           scope="colgroup"
@@ -89,7 +92,9 @@ export const PricingTableRowDesktop = (props: any) => {
                   ) : typeof tier === 'boolean' && tier === false ? (
                     <Minus tier={tier} />
                   ) : (
-                    <span className="block text-sm text-gray-700 dark:text-white">{tier}</span>
+                    <span className="block text-sm text-gray-700 dark:text-white">
+                      {tier}
+                    </span>
                   )}
                 </td>
               )
@@ -131,17 +136,24 @@ export const PricingTableRowMobile = (props: any) => {
           {category.features.map((feat: any) => {
             return (
               <tr className="border-t border-gray-200 dark:border-gray-600 ">
-                <th className="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">
+                <th
+                  className="py-5 px-4 text-sm font-normal text-gray-500 text-left"
+                  scope="row"
+                >
                   <span>
-                    <Typography.Text type="secondary">{feat.title}</Typography.Text>
+                    <Typography.Text type="secondary">
+                      {feat.title}
+                    </Typography.Text>
                   </span>
                 </th>
                 <td className="py-5 pr-4 text-right">
-                  {typeof feat.tiers[tier] === 'boolean' && feat.tiers[tier] === true ? (
+                  {typeof feat.tiers[tier] === 'boolean' &&
+                  feat.tiers[tier] === true ? (
                     <div className="inline-block">
                       <Chevron tier={tier} />
                     </div>
-                  ) : typeof feat.tiers[tier] === 'boolean' && feat.tiers[tier] === false ? (
+                  ) : typeof feat.tiers[tier] === 'boolean' &&
+                    feat.tiers[tier] === false ? (
                     <div className="inline-block">
                       <Minus tier={tier} />
                     </div>

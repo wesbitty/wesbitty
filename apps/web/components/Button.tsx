@@ -16,9 +16,11 @@ const Button = (props: Props) => {
       ? 'px-3 py-2 shadow-sm border border-transparent text-white bg-brand-700 hover:bg-brand-800 focus:ring-2 focus:ring-offset-2 focus:ring-brand-500'
       : 'text-brand-700 bg-none'
 
-  const textClass = type === 'primary' ? 'font-medium left-3 group-hover:left-0' : 'font-normal'
+  const textClass =
+    type === 'primary' ? 'font-medium left-3 group-hover:left-0' : 'font-normal'
 
-  const arrowClass = type === 'primary' ? '' : 'relative -left-1 group-hover:left-0'
+  const arrowClass =
+    type === 'primary' ? '' : 'relative -left-1 group-hover:left-0'
 
   let buttonStyles = {
     textShadow: 'none',
@@ -44,7 +46,9 @@ const Button = (props: Props) => {
         {text}
       </span>
       {url && (
-        <span className={`ml-2 transition-all opacity-0 group-hover:opacity-100 ${arrowClass}`}>
+        <span
+          className={`ml-2 transition-all opacity-0 group-hover:opacity-100 ${arrowClass}`}
+        >
           →
         </span>
       )}

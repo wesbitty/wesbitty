@@ -38,63 +38,72 @@ const Navigation = () => {
     setOpenDevelopers(false)
   }
 
-  const iconSections = Object.values(SolutionsData).map((solution: any, idx: number) => {
-    const { name, description, icon, label, url } = solution
+  const iconSections = Object.values(SolutionsData).map(
+    (solution: any, idx: number) => {
+      const { name, description, icon, label, url } = solution
 
-    const content = (
-      <div className="mb-3 flex md:h-full lg:flex-col">
-        <div className="flex-shrink-0">
-          <div className="inline-flex items-center justify-center h-10 w-10 rounded-md bg-gray-800 text-white sm:h-12 sm:w-12">
-            {/* <!-- Heroicon name: chart-bar --> */}
-            <svg
-              className="h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={icon} />
-            </svg>
+      const content = (
+        <div className="mb-3 flex md:h-full lg:flex-col">
+          <div className="flex-shrink-0">
+            <div className="inline-flex items-center justify-center h-10 w-10 rounded-md bg-gray-800 text-white sm:h-12 sm:w-12">
+              {/* <!-- Heroicon name: chart-bar --> */}
+              <svg
+                className="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d={icon}
+                />
+              </svg>
+            </div>
+          </div>
+          <div className="ml-4 md:flex-1 md:flex md:flex-col md:justify-between lg:ml-0 lg:mt-4">
+            <div>
+              <p className="text-base font-medium text-gray-900 dark:text-white space-x-2">
+                <span>{name}</span>
+                {label && (
+                  <Badge dot color="blue">
+                    {label}
+                  </Badge>
+                )}
+              </p>
+              <p className="mt-1 text-sm text-gray-500 dark:text-dark-100">
+                {description}
+              </p>
+            </div>
+            {url && (
+              <p className="mt-2 text-sm font-medium text-brand-600 lg:mt-4">
+                Learn more <span aria-hidden="true">&rarr;</span>
+              </p>
+            )}
           </div>
         </div>
-        <div className="ml-4 md:flex-1 md:flex md:flex-col md:justify-between lg:ml-0 lg:mt-4">
-          <div>
-            <p className="text-base font-medium text-gray-900 dark:text-white space-x-2">
-              <span>{name}</span>
-              {label && (
-                <Badge dot color="blue">
-                  {label}
-                </Badge>
-              )}
-            </p>
-            <p className="mt-1 text-sm text-gray-500 dark:text-dark-100">{description}</p>
-          </div>
-          {url && (
-            <p className="mt-2 text-sm font-medium text-brand-600 lg:mt-4">
-              Learn more <span aria-hidden="true">&rarr;</span>
-            </p>
-          )}
+      )
+      return url ? (
+        <a
+          key={`solution_${idx}`}
+          href={url}
+          className="-m-3 p-3 my-2 flex flex-col justify-between rounded-lg hover:bg-gray-50 dark:hover:bg-dark-600 transition ease-in-out duration-150"
+        >
+          {content}
+        </a>
+      ) : (
+        <div
+          key={`solution_${idx}`}
+          className="-m-3 p-3 flex flex-col justify-between rounded-lg transition ease-in-out duration-150"
+        >
+          {content}
         </div>
-      </div>
-    )
-    return url ? (
-      <a
-        key={`solution_${idx}`}
-        href={url}
-        className="-m-3 p-3 my-2 flex flex-col justify-between rounded-lg hover:bg-gray-50 dark:hover:bg-dark-600 transition ease-in-out duration-150"
-      >
-        {content}
-      </a>
-    ) : (
-      <div
-        key={`solution_${idx}`}
-        className="-m-3 p-3 flex flex-col justify-between rounded-lg transition ease-in-out duration-150"
-      >
-        {content}
-      </div>
-    )
-  })
+      )
+    }
+  )
 
   type HamburgerButtonProps = {
     toggleFlyOut: Function
@@ -187,68 +196,71 @@ const Navigation = () => {
           <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-16 xl:px-20">
             <div className="flex items-center justify-center sm:px-4 lg:justify-between">
               <div className="flex items-center space-x-2.5">
-                  <Link href="/" as="/">
-                    <a>
-                      <img
-                        className="w-40"
-                        src={
-                          ThemeMode
-                            ? `${basePath}/Logo/wesbitty-dark-logo.svg`
-                            : `${basePath}/Logo/wesbitty-light-logo.svg`
-                        }
-                        alt="Wesbitty"
-                      />
-                    </a>
-                  </Link>
-                </div>
-                <HamburgerButton toggleFlyOut={() => setOpen(true)} />
-                <div className="pl-4 hidden sm:ml-6 lg:flex sm:space-x-4">
-                  <a
-                    href="/blog"
-                    className={`
+                <Link href="/" as="/">
+                  <a>
+                    <img
+                      className="w-40"
+                      src={
+                        ThemeMode
+                          ? `${basePath}/Logo/wesbitty-dark-logo.svg`
+                          : `${basePath}/Logo/wesbitty-light-logo.svg`
+                      }
+                      alt="Wesbitty"
+                    />
+                  </a>
+                </Link>
+              </div>
+              <HamburgerButton toggleFlyOut={() => setOpen(true)} />
+              <div className="pl-4 hidden sm:ml-6 lg:flex sm:space-x-4">
+                <a
+                  href="/blog"
+                  className={`
                     inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
                     text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
                     dark:text-dark-100 dark:hover:border-dark-100
                   `}
-                  >
-                    Blog
-                  </a>
-                  <a
-                    href="/pricing"
-                    className={`
-                    inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
-                    text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
-                    dark:text-dark-100 dark:hover:border-dark-100
-                  `}
-                  >
-                    Pricing
-                  </a>
-                  <FlyOutNavButton
-                    title={'Product'}
-                    onClick={() => handleToggle(() => setOpenProduct(!openProduct))}
-                    active={openProduct}
-                  />
-                  <FlyOutNavButton
-                    title={'Developers'}
-                    icon={<IconPackage />}
-                    onClick={() => handleToggle(() => setOpenDevelopers(!openDevelopers))}
-                    active={openDevelopers}
-                  />
-                </div>
-              </div>
-              <div className="hidden lg:flex items-center right-0">
-                  <ThemeSwitch />
-              </div>
-              <div className="hidden lg:flex items-center sm:space-x-3">
-                <a href="/authentication">
-                  <Button title="Sign In" type="default" icon={<IconLogIn />}>
-                    Sign In
-                  </Button>
+                >
+                  Blog
                 </a>
+                <a
+                  href="/pricing"
+                  className={`
+                    inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
+                    text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
+                    dark:text-dark-100 dark:hover:border-dark-100
+                  `}
+                >
+                  Pricing
+                </a>
+                <FlyOutNavButton
+                  title={'Product'}
+                  onClick={() =>
+                    handleToggle(() => setOpenProduct(!openProduct))
+                  }
+                  active={openProduct}
+                />
+                <FlyOutNavButton
+                  title={'Developers'}
+                  icon={<IconPackage />}
+                  onClick={() =>
+                    handleToggle(() => setOpenDevelopers(!openDevelopers))
+                  }
+                  active={openDevelopers}
+                />
               </div>
-
             </div>
-            {/* <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"></div> */}
+            <div className="hidden lg:flex items-center right-0">
+              <ThemeSwitch />
+            </div>
+            <div className="hidden lg:flex items-center sm:space-x-3">
+              <a href="/authentication">
+                <Button title="Sign In" type="default" icon={<IconLogIn />}>
+                  Sign In
+                </Button>
+              </a>
+            </div>
+          </div>
+          {/* <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"></div> */}
           {/* </div> */}
           {/* Mobile Nav Menu */}
           <Transition
@@ -339,7 +351,9 @@ const Navigation = () => {
                   </a>
                 </div>
                 <div className="p-3">
-                  <p className="mb-6 text-sm text-gray-400">Products available:</p>
+                  <p className="mb-6 text-sm text-gray-400">
+                    Products available:
+                  </p>
                   {iconSections}
                 </div>
               </div>

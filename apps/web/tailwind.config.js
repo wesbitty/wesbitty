@@ -1,11 +1,11 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
   ],
-  darkMode: "media",
+  darkMode: 'media',
   theme: {
     borderColor: (theme) => ({
       ...theme('colors'),
@@ -89,10 +89,10 @@ module.exports = {
         override: '0px 0px 0px rgba(0, 0, 0, 0)',
       },
       fontFamily: {
-        default: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
-        cal: ["var(--font-cal)", ...defaultTheme.fontFamily.sans],
-        title: ["var(--font-title)", ...defaultTheme.fontFamily.sans],
-        mono: ["Consolas", ...defaultTheme.fontFamily.mono],
+        default: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
+        cal: ['var(--font-cal)', ...defaultTheme.fontFamily.sans],
+        title: ['var(--font-title)', ...defaultTheme.fontFamily.sans],
+        mono: ['Consolas', ...defaultTheme.fontFamily.mono],
         sans: [
           'custom-font',
           'BlinkMacSystemFont',
@@ -114,45 +114,44 @@ module.exports = {
         DEFAULT: {
           css: {
             h1: {
-              fontFamily: "Cal Sans",
+              fontFamily: 'Cal Sans',
             },
             h2: {
-              fontFamily: "Cal Sans",
+              fontFamily: 'Cal Sans',
             },
             h3: {
-              fontFamily: "Cal Sans",
+              fontFamily: 'Cal Sans',
             },
-            "blockquote p:first-of-type::before": { content: "none" },
-            "blockquote p:first-of-type::after": { content: "none" },
+            'blockquote p:first-of-type::before': { content: 'none' },
+            'blockquote p:first-of-type::after': { content: 'none' },
           },
         },
       },
       keyframes: {
         wiggle: {
-          "0%, 100%": {
-            transform: "translateX(0%)",
-            transformOrigin: "50% 50%",
+          '0%, 100%': {
+            transform: 'translateX(0%)',
+            transformOrigin: '50% 50%',
           },
-          "15%": { transform: "translateX(-6px) rotate(-6deg)" },
-          "30%": { transform: "translateX(9px) rotate(6deg)" },
-          "45%": { transform: "translateX(-9px) rotate(-3.6deg)" },
-          "60%": { transform: "translateX(3px) rotate(2.4deg)" },
-          "75%": { transform: "translateX(-2px) rotate(-1.2deg)" },
+          '15%': { transform: 'translateX(-6px) rotate(-6deg)' },
+          '30%': { transform: 'translateX(9px) rotate(6deg)' },
+          '45%': { transform: 'translateX(-9px) rotate(-3.6deg)' },
+          '60%': { transform: 'translateX(3px) rotate(2.4deg)' },
+          '75%': { transform: 'translateX(-2px) rotate(-1.2deg)' },
         },
       },
       animation: {
-        wiggle: "wiggle 0.8s both",
+        wiggle: 'wiggle 0.8s both',
       },
       stroke: (theme) => ({
         white: theme('colors.white'),
         black: theme('colors.black'),
       }),
-      
     },
   },
   plugins: [
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/line-clamp"),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
   ],
 }

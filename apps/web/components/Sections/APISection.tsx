@@ -40,7 +40,12 @@ function APISection(props: Props) {
         {props.documentation_link && (
           <Link href={props.documentation_link} as={props.documentation_link}>
             <a>
-              <Button size="small" className="mt-4" type="default" icon={<IconArrowUpRight />}>
+              <Button
+                size="small"
+                className="mt-4"
+                type="default"
+                icon={<IconArrowUpRight />}
+              >
                 Explore documentation
               </Button>
             </a>
@@ -76,7 +81,11 @@ function APISection(props: Props) {
             {props.content &&
               props.content.map((content: Example, i) => (
                 <SwiperSlide key={i}>
-                  <CodeBlock key={i} lang={content.lang} size={props.size ? props.size : 'small'}>
+                  <CodeBlock
+                    key={i}
+                    lang={content.lang}
+                    size={props.size ? props.size : 'small'}
+                  >
                     {content.code}
                   </CodeBlock>
                 </SwiperSlide>

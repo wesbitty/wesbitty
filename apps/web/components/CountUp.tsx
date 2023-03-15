@@ -11,7 +11,12 @@ const easeOutQuad = (t: number) => t * (2 - t)
 const frameDuration = 1000 / 60
 
 const CountUp = (props: Props) => {
-  const { children, duration = 2000, triggerAnimOnScroll = false, referenceElId = '' } = props
+  const {
+    children,
+    duration = 2000,
+    triggerAnimOnScroll = false,
+    referenceElId = '',
+  } = props
   const countTo = parseInt(children, 10)
   const [count, setCount] = useState<number>(0)
   const [animTriggered, setAnimTriggered] = useState<boolean>(false)
@@ -23,7 +28,8 @@ const CountUp = (props: Props) => {
     async function handleScroll() {
       const reference = document.getElementById(referenceElId)
       if (reference && !animTriggered) {
-        const yOffset = reference.getBoundingClientRect().top - window.innerHeight + 20
+        const yOffset =
+          reference.getBoundingClientRect().top - window.innerHeight + 20
         if (yOffset <= 0) {
           setAnimTriggered(true)
           setCount(0)
@@ -51,7 +57,8 @@ const CountUp = (props: Props) => {
     }
 
     return () => {
-      if (triggerAnimOnScroll) window.removeEventListener('scroll', handleScroll)
+      if (triggerAnimOnScroll)
+        window.removeEventListener('scroll', handleScroll)
     }
   }, [animTriggered])
 
