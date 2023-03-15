@@ -1,12 +1,4 @@
-import {
-  Badge,
-  Card,
-  Divider,
-  IconChevronLeft,
-  IconFile,
-  Space,
-  Typography,
-} from '@wesbitty/ui'
+import { Badge, Card, Divider, IconChevronLeft, IconFile, Space, Typography } from '@wesbitty/ui'
 import matter from 'gray-matter'
 import authors from '~/wesbitty/data/authors.json'
 import hydrate from 'next-mdx-remote/hydrate'
@@ -22,11 +14,7 @@ import DefaultLayout from 'components/Layouts/Default'
 import Quote from 'components/Quote'
 import ImageGrid from 'components/ImageGrid'
 import { generateReadingTime } from '~/wesbitty/lib/helpers'
-import {
-  getAllPostSlugs,
-  getPostdata,
-  getSortedPosts,
-} from '~/wesbitty/lib/posts'
+import { getAllPostSlugs, getPostdata, getSortedPosts } from '~/wesbitty/lib/posts'
 import blogStyles from './[slug].module.css'
 import { allPosts, Post } from 'wesjet/jetpack'
 
@@ -86,8 +74,7 @@ export async function getStaticProps({ params }: any) {
   return {
     props: {
       prevPost: currentIndex === 0 ? null : prevPost ? prevPost : null,
-      nextPost:
-        currentIndex === allPosts.length ? null : nextPost ? nextPost : null,
+      nextPost: currentIndex === allPosts.length ? null : nextPost ? nextPost : null,
       relatedPosts,
       blog: {
         slug: `${params.year}/${params.month}/${params.day}/${params.slug}`,
@@ -101,9 +88,7 @@ export async function getStaticProps({ params }: any) {
 
 function BlogPostPage(props: any) {
   // @ts-ignore
-  const author = props.blog.author
-    ? authors[props.blog.author]
-    : authors['wesbitty']
+  const author = props.blog.author ? authors[props.blog.author] : authors['wesbitty']
   const content = hydrate(props.blog.content, { components })
 
   const { basePath } = useRouter()
@@ -151,9 +136,7 @@ function BlogPostPage(props: any) {
         <Typography.Text type="secondary">Table Of Contents</Typography.Text>
         <Typography>
           <div className={blogStyles['toc']}>
-            <ReactMarkdown plugins={[gfm]}>
-              {props.blog.toc.content}
-            </ReactMarkdown>
+            <ReactMarkdown plugins={[gfm]}>{props.blog.toc.content}</ReactMarkdown>
           </div>
         </Typography>
       </div>
@@ -260,48 +243,30 @@ function BlogPostPage(props: any) {
                   </article>
                   <div className="grid lg:grid-cols-1 gap-8 py-8">
                     <div>
-                      {props.prevPost && (
-                        <NextCard post={props.prevPost} label="Last post" />
-                      )}
+                      {props.prevPost && <NextCard post={props.prevPost} label="Last post" />}
                     </div>
                     <div>
                       {props.nextPost && (
-                        <NextCard
-                          post={props.nextPost}
-                          label="Next post"
-                          className="text-right"
-                        />
+                        <NextCard post={props.nextPost} label="Next post" className="text-right" />
                       )}
                     </div>
                   </div>
                 </div>
                 {/* Sidebar */}
                 <div className="col-span-12 lg:col-span-5 xl:col-span-3 xl:col-start-9 space-y-8">
-                  <Space
-                    direction="vertical"
-                    size={8}
-                    className="lg:mb-16 lg:top-16 lg:sticky"
-                  >
+                  <Space direction="vertical" size={8} className="lg:mb-16 lg:top-16 lg:sticky">
                     <div className="hidden lg:block">{toc}</div>
                     <div>
                       <div className="mb-4">
-                        <Typography.Text type="secondary">
-                          Related articles
-                        </Typography.Text>
+                        <Typography.Text type="secondary">Related articles</Typography.Text>
                       </div>
                       <Space direction="vertical">
                         {props.relatedPosts.map((post: any) => (
-                          <Link
-                            href={`/blog/${post.url}`}
-                            as={`/blog/${post.url}`}
-                          >
+                          <Link href={`/blog/${post.url}`} as={`/blog/${post.url}`}>
                             <div>
                               <Typography.Text className="cursor-pointer">
                                 <Space>
-                                  <IconFile
-                                    size={'small'}
-                                    style={{ minWidth: '1.2rem' }}
-                                  />
+                                  <IconFile size={'small'} style={{ minWidth: '1.2rem' }} />
                                   <span className="hover:text-gray-900 dark:hover:text-white">
                                     {post.title}
                                   </span>

@@ -49,9 +49,8 @@ function SplitCodeBlockCarousel(props: SplitCodeBlockCarousel) {
       </Typography.Text>
       <Typography.Text type="secondary">
         <p>
-          This would only allow the authenticated user access to a folder that
-          is named after their own account UID. This is useful for things like
-          profile images.
+          This would only allow the authenticated user access to a folder that is named after their
+          own account UID. This is useful for things like profile images.
         </p>
       </Typography.Text>
       <Typography.Text>
@@ -128,11 +127,9 @@ function SplitCodeBlockCarousel(props: SplitCodeBlockCarousel) {
                     <Space className="justify-between">
                       {extension.url && (
                         <Link href={extension.url} as={extension.url}>
-                          <a>
-                            <Typography.Text>
-                              <Button type="outline">View documentation</Button>
-                            </Typography.Text>
-                          </a>
+                          <Typography.Text>
+                            <Button type="outline">View documentation</Button>
+                          </Typography.Text>
                         </Link>
                       )}
                       <div>

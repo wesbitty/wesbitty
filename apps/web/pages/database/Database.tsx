@@ -46,8 +46,7 @@ function Database() {
   const { basePath } = useRouter()
 
   const [dashboardSwiper, setDashboardSwiper] = useState(undefined)
-  const [dashboardSwiperActiveIndex, setDashboardSwiperActiveIndex] =
-    useState(0)
+  const [dashboardSwiperActiveIndex, setDashboardSwiperActiveIndex] = useState(0)
 
   function handleDashboardSwiperNav(e: number) {
     setDashboardSwiperActiveIndex(e)
@@ -128,8 +127,7 @@ function Database() {
                   Every Wesbitty project is a dedicated Postgres database.
                 </p>
                 <p>
-                  100% portable. Bring your existing Postgres database, or
-                  migrate away at any time.
+                  100% portable. Bring your existing Postgres database, or migrate away at any time.
                 </p>
               </Typography.Text>
             </div>
@@ -149,8 +147,8 @@ function Database() {
                   Leveraging PostgreSQL's proven Row Level Security.
                 </p>
                 <p>
-                  Integrated with JWT authentication which controls exactly what
-                  your users can access.
+                  Integrated with JWT authentication which controls exactly what your users can
+                  access.
                 </p>
               </Typography.Text>
             </div>
@@ -166,13 +164,8 @@ function Database() {
               </Typography.Text>
               <Typography.Title level={4}>Realtime enabled</Typography.Title>
               <Typography.Text>
-                <p className="text-base lg:text-lg">
-                  Data-change listeners over websockets.
-                </p>
-                <p>
-                  Subscribe and react to database changes, milliseconds after
-                  they happen.
-                </p>
+                <p className="text-base lg:text-lg">Data-change listeners over websockets.</p>
+                <p>Subscribe and react to database changes, milliseconds after they happen.</p>
               </Typography.Text>
             </div>
           </div>
@@ -182,13 +175,10 @@ function Database() {
         <SectionContainer className="text-center md:pb-0 lg:pb-0">
           <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-8 lg:col-start-3">
-              <Typography.Title level={2}>
-                Easy to use dashboard
-              </Typography.Title>
+              <Typography.Title level={2}>Easy to use dashboard</Typography.Title>
               <Typography.Text>
                 <p className="text-base lg:text-lg">
-                  The simplicity of a Table Editor, or the power of a SQL
-                  editor. Your choice.
+                  The simplicity of a Table Editor, or the power of a SQL editor. Your choice.
                 </p>
               </Typography.Text>
             </div>
@@ -268,8 +258,8 @@ function Database() {
             title="Never write an API again"
             text={[
               <p>
-                We introspect your database and provide instant APIs. Focus on
-                building your product, while Wesbitty handles the CRUD.
+                We introspect your database and provide instant APIs. Focus on building your
+                product, while Wesbitty handles the CRUD.
               </p>,
             ]}
             footer={[
@@ -327,16 +317,11 @@ function Database() {
         <SectionContainer className="lg:py-48">
           <div className="grid grid-cols-12 lg:gap-16">
             <div className="col-span-12 lg:col-span-6 xl:col-span-5 mb-8">
-              <Typography.Title level={2}>
-                Extend your database
-              </Typography.Title>
+              <Typography.Title level={2}>Extend your database</Typography.Title>
               <Typography.Text className="block mb-8">
-                <p className="lg:text-lg">
-                  Wesbitty works natively with Postgres extensions.
-                </p>
+                <p className="lg:text-lg">Wesbitty works natively with Postgres extensions.</p>
                 <p>
-                  Choose from a huge collection of Postgres extensions, enabled
-                  with a single click.
+                  Choose from a huge collection of Postgres extensions, enabled with a single click.
                 </p>
               </Typography.Text>
               <FeatureColumn
@@ -345,12 +330,7 @@ function Database() {
               />
               <Link href="/docs/guides/database" as="/docs/guides/database">
                 <a>
-                  <Button
-                    size="small"
-                    className="mt-4"
-                    type="default"
-                    icon={<IconArrowUpRight />}
-                  >
+                  <Button size="small" className="mt-4" type="default" icon={<IconArrowUpRight />}>
                     Explore documentation
                   </Button>
                 </a>

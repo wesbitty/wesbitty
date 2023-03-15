@@ -27,12 +27,9 @@ export async function getSite(
   const { siteId } = req.query
 
   if (Array.isArray(siteId))
-    return res
-      .status(400)
-      .end('Bad request. siteId parameter cannot be an array.')
+    return res.status(400).end('Bad request. siteId parameter cannot be an array.')
 
-  if (!session.user.id)
-    return res.status(500).end('Server failed to get session user ID')
+  if (!session.user.id) return res.status(500).end('Server failed to get session user ID')
 
   try {
     if (siteId) {
@@ -146,9 +143,7 @@ export async function deleteSite(
   if (!site) return res.status(404).end('Site not found')
 
   if (Array.isArray(siteId))
-    return res
-      .status(400)
-      .end('Bad request. siteId parameter cannot be an array.')
+    return res.status(400).end('Bad request. siteId parameter cannot be an array.')
 
   try {
     await prisma.$transaction([
@@ -195,15 +190,7 @@ export async function updateSite(
   const session = await unstable_getServerSession(req, res, authOptions)
   if (!session?.user.id) return res.status(401).end('Unauthorized')
 
-  const {
-    id,
-    currentSubdomain,
-    name,
-    description,
-    font,
-    image,
-    imageBlurhash,
-  } = req.body
+  const { id, currentSubdomain, name, description, font, image, imageBlurhash } = req.body
 
   if (!id || typeof id !== 'string') {
     return res.status(400).json({ error: 'Missing or misconfigured site ID' })

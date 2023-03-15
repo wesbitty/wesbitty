@@ -11,6 +11,8 @@ import { Typography, Tabs } from '@wesbitty/ui'
 import { PostTypes } from '../wesbitty/types/post'
 import BlogListItem from '../components/Blog/BlogListItem'
 import { allPosts, Post } from 'wesjet/jetpack'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPosts('[blog]')
@@ -98,12 +100,7 @@ function Blog(props: any) {
             <div className="mx-auto ">
               <div className="grid grid-cols-12">
                 <div className="col-span-12 lg:col-span-12">
-                  <Tabs
-                    scrollable
-                    size="medium"
-                    onChange={setCategory}
-                    defaultActiveId={'all'}
-                  >
+                  <Tabs scrollable size="medium" onChange={setCategory} defaultActiveId={'all'}>
                     {props.categories.map((categoryId: string) => (
                       <Tabs.Panel id={categoryId} label={categoryId}>
                         {/* <p>{categoryId}</p> */}
@@ -135,44 +132,41 @@ function FeaturedThumb(blog: PostTypes) {
 
   return (
     <div key={blog.slug} className="cursor-pointer w-full">
-      <a href={`/blog/${blog.url}`}>
-        <a className="grid lg:grid-cols-2 gap-8 lg:gap-16">
-          <img
-            className="h-96 w-full object-cover border dark:border-dark rounded-lg"
-            src={`/images/blog/` + (blog.thumb ? blog.thumb : blog.image)}
-          />
-          <div className="flex flex-col space-y-4">
-            <div className="flex space-x-2">
-              <Typography.Text type="secondary">{blog.date}</Typography.Text>
-              <Typography.Text type="secondary">•</Typography.Text>
-              <Typography.Text type="secondary">
-                {blog.readingTime}
-              </Typography.Text>
-            </div>
-
-            <div>
-              <Typography.Title level={2}>{blog.title}</Typography.Title>
-              <Typography.Text className="m-0" type="secondary">
-                <span className="text-xl">{blog.description}</span>
-              </Typography.Text>
-            </div>
-
-            {author && (
-              <div className="flex space-x-3 items-center">
-                {author.avatar && (
-                  <img src={author.avatar} className="rounded-full w-10" />
-                )}
-                <div className="flex flex-col">
-                  <Typography.Text>{author.author}</Typography.Text>
-                  <Typography.Text type="secondary" small>
-                    {author.position}
-                  </Typography.Text>
-                </div>
-              </div>
-            )}
+      <Link href={`/blog/${blog.url}`} className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+        <Image
+          alt="Blog Thumbnail"
+          className="h-96 w-full object-cover border dark:border-dark rounded-lg"
+          src={`/images/blog/` + (blog.thumb ? blog.thumb : blog.image)}
+        />
+        <div className="flex flex-col space-y-4">
+          <div className="flex space-x-2">
+            <Typography.Text type="secondary">{blog.date}</Typography.Text>
+            <Typography.Text type="secondary">•</Typography.Text>
+            <Typography.Text type="secondary">{blog.readingTime}</Typography.Text>
           </div>
-        </a>
-      </a>
+
+          <div>
+            <Typography.Title level={2}>{blog.title}</Typography.Title>
+            <Typography.Text className="m-0" type="secondary">
+              <span className="text-xl">{blog.description}</span>
+            </Typography.Text>
+          </div>
+
+          {author && (
+            <div className="flex space-x-3 items-center">
+              {author.avatar && (
+                <Image alt="Author Avatar" src={author.avatar} className="rounded-full w-10" />
+              )}
+              <div className="flex flex-col">
+                <Typography.Text>{author.author}</Typography.Text>
+                <Typography.Text type="secondary" small>
+                  {author.position}
+                </Typography.Text>
+              </div>
+            </div>
+          )}
+        </div>
+      </Link>
     </div>
   )
 }

@@ -6,9 +6,7 @@ let iconList = {}
 let importList = []
 
 Object.values(icons).map((icon) => {
-  iconList[
-    `Icon${icon.name}`
-  ] = `src/components/Icon/icons/Icon${icon.name}/index.tsx`
+  iconList[`Icon${icon.name}`] = `src/components/Icon/icons/Icon${icon.name}/index.tsx`
   importList.push(`export * as Icon${icon.name} from './Icon${icon.name}'`)
 
   var dir = `src/components/Icon/icons/Icon${icon.name}`
@@ -59,10 +57,6 @@ ${importList
   }
 )
 
-fs.writeFile(
-  `src/lib/Icon/icons.js`,
-  `export default ${util.inspect(iconList)}`,
-  function (err) {
-    if (err) return console.log(err)
-  }
-)
+fs.writeFile(`src/lib/Icon/icons.js`, `export default ${util.inspect(iconList)}`, function (err) {
+  if (err) return console.log(err)
+})

@@ -21,11 +21,7 @@ const ProductHeader = (props: Types) => (
           <div className="flex flex-row mb-4 item-center">
             {props.icon && <ProductIcon icon={props.icon} />}
             {props.title && (
-              <Typography.Title
-                level={4}
-                className="ml-3"
-                key={`product-name-${props.title}`}
-              >
+              <Typography.Title level={4} className="ml-3" key={`product-name-${props.title}`}>
                 {props.title}
               </Typography.Title>
             )}
@@ -46,18 +42,14 @@ const ProductHeader = (props: Types) => (
           </Typography.Text>
         )}
         <div className="mt-12 flex flex-row md:flex-row md:items-center">
-          <Link href="/api/auth/signin" as="/api/auth/signin">
-            <a>
-              <Button size="medium">Start a project</Button>
-            </a>
+          <Link href="/api/auth/signin">
+            <Button size="medium">Start a project</Button>
           </Link>
           {props.documentation_url && (
-            <Link href={props.documentation_url} as={props.documentation_url}>
-              <a>
-                <Button type="text" size="medium" icon={<IconBookOpen />}>
-                  See documentation
-                </Button>
-              </a>
+            <Link href={props.documentation_url}>
+              <Button type="text" size="medium" icon={<IconBookOpen />}>
+                See documentation
+              </Button>
             </Link>
           )}
         </div>

@@ -291,4 +291,3 @@ export * from './components/Icon/icons/IconZapOff/index'
 export * from './components/Icon/icons/IconZap/index'
 export * from './components/Icon/icons/IconZoomIn/index'
 export * from './components/Icon/icons/IconZoomOut/index'
-

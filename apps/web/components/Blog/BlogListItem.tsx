@@ -3,6 +3,7 @@ import authors from '../../wesbitty/data/authors.json'
 import React from 'react'
 import Image from 'next/image'
 import { PostTypes } from '../../wesbitty/types/post'
+import Link from 'next/link'
 
 interface Props {
   blog: PostTypes
@@ -14,7 +15,7 @@ const BlogListItem = ({ blog }: Props) => {
 
   return (
     <div key={blog.slug}>
-      <a href={`/blog/${blog.url}`}>
+      <Link href={`/blog/${blog.url}`}>
         <div className="inline-block min-w-full group">
           <div className="flex flex-col space-y-6">
             <div className="flex flex-col space-y-3">
@@ -24,10 +25,9 @@ const BlogListItem = ({ blog }: Props) => {
                 <Image
                   layout="fill"
                   src={
-                    !blog.thumb
-                      ? `/images/blog/blog-placeholder.png`
-                      : `/images/blog/${blog.thumb}`
+                    !blog.thumb ? `/images/blog/blog-placeholder.png` : `/images/blog/${blog.thumb}`
                   }
+                  alt="Blog Thumbnail"
                   objectFit="cover"
                   className="transform duration-100 ease-in scale-100 group-hover:scale-105"
                 />
@@ -49,9 +49,7 @@ const BlogListItem = ({ blog }: Props) => {
             {author && (
               <div>
                 <Space size={4}>
-                  {author.avatar && (
-                    <img src={author.avatar} className="rounded-full w-10" />
-                  )}
+                  {author.avatar && <img src={author.avatar} className="rounded-full w-10" />}
                   <Space direction="vertical" size={0}>
                     <Typography.Text>{author.author}</Typography.Text>
                     <Typography.Text type="secondary" small>
@@ -63,7 +61,7 @@ const BlogListItem = ({ blog }: Props) => {
             )}
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   )
 }

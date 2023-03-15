@@ -1,15 +1,6 @@
 import { useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
-import {
-  Button,
-  Card,
-  Auth,
-  Space,
-  Tabs,
-  Typography,
-  IconCode,
-  IconSearch,
-} from '@wesbitty/ui'
+import { Button, Card, Auth, Space, Tabs, Typography, IconCode, IconSearch } from '@wesbitty/ui'
 import CodeBlock from '../CodeBlock/CodeBlock'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -76,33 +67,19 @@ function AuthComponentExample() {
           allowTouchMove={false}
         >
           <SwiperSlide key={1}>
-            <div
-              className="pt-8"
-              style={{ maxWidth: '420px', margin: '0 auto' }}
-            >
+            <div className="pt-8" style={{ maxWidth: '420px', margin: '0 auto' }}>
               <Card>
                 <Space size={8} direction="vertical">
                   <div>
                     <Space size={3} direction="vertical">
-                      <img
-                        src={`${basePath}/Logo/wesbitty-dark-logo.svg`}
-                        alt="Logo"
-                      />
-                      <Typography.Title level={3}>
-                        {'Wesbitty Inc'}
-                      </Typography.Title>
+                      <img src={`${basePath}/Logo/wesbitty-dark-logo.svg`} alt="Logo" />
+                      <Typography.Title level={3}>{'Wesbitty Inc'}</Typography.Title>
                     </Space>
                   </div>
                   <Auth.UserContextProvider wesbittyOauth={wesbitty}>
                     <AuthContainer wesbittyOauth={wesbitty}>
                       <Auth
-                        providers={[
-                          'facebook',
-                          'google',
-                          'github',
-                          'bitbucket',
-                          'gitlab',
-                        ]}
+                        providers={['facebook', 'google', 'github', 'bitbucket', 'gitlab']}
                         socialButtonSize={'medium'}
                         socialLayout={'horizontal'}
                         wesbittyOauth={wesbitty}

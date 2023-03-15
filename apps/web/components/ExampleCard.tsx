@@ -7,6 +7,7 @@ import {
   Space,
   Typography,
 } from '@wesbitty/ui'
+import Image from 'next/image'
 import Link from 'next/link'
 
 function ExampleCard(props: any) {
@@ -28,9 +29,10 @@ function ExampleCard(props: any) {
             <p>{props.description}</p>
             <div className="flex flex-row items-center mb-2">
               Created by:
-              <img
+              <Image
                 src={props.author_img}
                 className="ml-2 inline w-6 rounded-full border dark:border-gray-500"
+                alt="Author Image"
               />
               <span className="ml-2">{props.author}</span>
             </div>
@@ -48,49 +50,36 @@ function ExampleCard(props: any) {
           rounded rounded-t-none"
         >
           <Typography.Text>
-            <Link href={props.repo_url} as={props.repo_url}>
-              <a className="flex flex-row items-center" target="_blank">
-                <span>{props.repo_name}</span>
-                <span className="ml-1 inline-block">
-                  <IconGitHub size="small" />
-                </span>
-              </a>
+            <Link
+              href={props.repo_url}
+              as={props.repo_url}
+              className="flex flex-row items-center"
+              target="_blank"
+            >
+              <span>{props.repo_name}</span>
+              <span className="ml-1 inline-block">
+                <IconGitHub size="small" />
+              </span>
             </Link>
           </Typography.Text>
           <Space className="mt-3">
             {props.vercel_deploy_url && (
-              <a
-                target="_blank"
-                href={props.vercel_deploy_url}
-                rel="noreferrer"
-              >
-                <img src="https://vercel.com/button" />
-              </a>
+              <Link target="_blank" href={props.vercel_deploy_url} rel="noreferrer">
+                <Image src="https://vercel.com/button" alt="vercel" />
+              </Link>
             )}
             {props.demo_url && (
-              <Link href={props.demo_url} as={props.demo_url}>
-                <a target="_blank">
-                  <Button
-                    size="tiny"
-                    type="default"
-                    iconRight={<IconArrowUpRight />}
-                  >
-                    Launch Demo
-                  </Button>
-                </a>
+              <Link target="_blank" href={props.demo_url} as={props.demo_url}>
+                <Button size="tiny" type="default" iconRight={<IconArrowUpRight />}>
+                  Launch Demo
+                </Button>
               </Link>
             )}
             {!props.demo_url && (
-              <Link href={props.repo_url} as={props.repo_url}>
-                <a target="_blank">
-                  <Button
-                    size="tiny"
-                    type="default"
-                    iconRight={<IconArrowUpRight />}
-                  >
-                    View Code
-                  </Button>
-                </a>
+              <Link target="_blank" href={props.repo_url} as={props.repo_url}>
+                <Button size="tiny" type="default" iconRight={<IconArrowUpRight />}>
+                  View Code
+                </Button>
               </Link>
             )}
           </Space>

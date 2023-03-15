@@ -188,9 +188,8 @@ export default function PostSettings() {
               <div className="flex flex-col space-y-6 max-w-lg">
                 <h2 className="font-cal text-2xl">Delete Post</h2>
                 <p>
-                  Permanently delete your post and all of its contents from our
-                  platform. This action is not reversible – please continue with
-                  caution.
+                  Permanently delete your post and all of its contents from our platform. This
+                  action is not reversible – please continue with caution.
                 </p>
                 <button
                   onClick={() => {
@@ -215,8 +214,7 @@ export default function PostSettings() {
             <h2 className="font-cal text-2xl mb-6">Delete Post</h2>
             <div className="grid gap-y-5 w-5/6 mx-auto">
               <p className="text-gray-600 mb-3">
-                Are you sure you want to delete your post? This action is not
-                reversible.
+                Are you sure you want to delete your post? This action is not reversible.
               </p>
             </div>
             <div className="flex justify-between items-center mt-10 w-full">

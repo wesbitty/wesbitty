@@ -1,11 +1,8 @@
 import { useRef } from 'react'
-
 import { useRouter } from 'next/router'
-
 import { Swiper, SwiperSlide } from 'swiper/react'
 // import Swiper core and required modules
 import SwiperCore, { Navigation, Pagination } from 'swiper'
-
 import Link from 'next/link'
 import {
   Button,
@@ -17,7 +14,7 @@ import {
   IconBookOpen,
 } from '@wesbitty/ui'
 
-import Examples from '../../wesbitty/data/Examples.json'
+import Examples from '~/wesbitty/data/Examples.json'
 import ExampleCard from '../ExampleCard'
 
 // install Swiper modules
@@ -39,35 +36,22 @@ function GithubExamples() {
           </Typography.Title>
           <Typography.Text className="block mb-6">
             <p className="text-base lg:text-lg">
-              Supported by a network of early advocates, contributors, and
-              champions.
+              Supported by a network of early advocates, contributors, and champions.
             </p>
           </Typography.Text>
           <div className="flex space-y-1.5 flex-col lg:space-y-0 lg:space-x-1.5 lg:flex-row justify-center">
-            <Link
-              href="/docs/guides/examples#guides"
-              as="/docs/guides/examples#guides"
-            >
-              <a>
-                <Button type="default" icon={<IconBookOpen />}>
-                  View guides
-                </Button>
-              </a>
+            <Link href="/docs/guides/examples#guides">
+              <Button type="default" icon={<IconBookOpen />}>
+                View guides
+              </Button>
             </Link>
-            <Link href="/docs/guides/examples" as="/docs/guides/examples">
-              <a>
-                <Button type="default">View all examples</Button>
-              </a>
+            <Link href="/docs/guides/examples">
+              <Button type="default">View all examples</Button>
             </Link>
-            <Link
-              href="https://github.com/wesbitty/wesbitty/tree/master/examples"
-              as="https://github.com/wesbitty/wesbitty/tree/master/examples"
-            >
-              <a>
-                <Button type="default" icon={<IconGitHub />}>
-                  Official GitHub library
-                </Button>
-              </a>
+            <Link href="https://github.com/wesbitty/wesbitty/tree/master/examples">
+              <Button type="default" icon={<IconGitHub />}>
+                Official GitHub library
+              </Button>
             </Link>
           </div>
         </div>

@@ -9,20 +9,13 @@
     "postbuild": "node ./wesbitty/utils/schemas/sitemapGenerator.mjs",
     "export": "next export",
     "start": "next start",
-    "format": "prettier --ignore-path .gitignore --write .",
     "lint": "next lint",
-    "format:eslint": "eslint --fix .",
     "predev": "prisma generate",
     "dev": "next dev -p 3210",
     "type-check": "tsc"
   },
   "prisma": {
     "schema": "wesbitty/data/schema.prisma"
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": false,
-    "singleQuote": true
   },
   "dependencies": {
     "@fontsource/inter": "4.5.2",

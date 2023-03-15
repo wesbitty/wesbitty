@@ -42,26 +42,17 @@ function TwitterSocialProof() {
           <Typography.Title level={2}>Join the community</Typography.Title>
           <Typography.Text>
             <p className="lg:text-lg">
-              Supported by a network of early advocates, contributors, and
-              champions.
+              Supported by a network of early advocates, contributors, and champions.
             </p>
             <div className="my-4">
               <Link
                 href={'https://github.com/wesbitty/wesbitty/discussions'}
-                as={'https://github.com/wesbitty/wesbitty/discussions'}
+                className="block text-sm text-gray-400 dark:text-gray-400 mt-3"
+                target="_blank"
               >
-                <a
-                  className="block text-sm text-gray-400 dark:text-gray-400 mt-3"
-                  target="_blank"
-                >
-                  <Button
-                    size="small"
-                    iconRight={<IconMessageCircle size="tiny" />}
-                    type="default"
-                  >
-                    GitHub discussions
-                  </Button>
-                </a>
+                <Button size="small" iconRight={<IconMessageCircle size="tiny" />} type="default">
+                  GitHub discussions
+                </Button>
               </Link>
             </div>
           </Typography.Text>

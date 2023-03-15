@@ -11,9 +11,7 @@ const SectionHeader = (props: any) => {
           <Typography.Title level={2}>
             <span>{props.title}</span>
             {props.title_alt && (
-              <span className="text-gray-400 dark:text-gray-300 inline">
-                {props.title_alt}
-              </span>
+              <span className="text-gray-400 dark:text-gray-300 inline">{props.title_alt}</span>
             )}
           </Typography.Title>
         </div>

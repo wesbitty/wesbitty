@@ -1,11 +1,5 @@
 import { useRouter } from 'next/router'
-import {
-  Tabs,
-  Typography,
-  Button,
-  IconCornerRightUp,
-  IconArrowUpRight,
-} from '@wesbitty/ui'
+import { Tabs, Typography, Button, IconCornerRightUp, IconArrowUpRight } from '@wesbitty/ui'
 import { useState } from 'react'
 
 // Import Swiper React components
@@ -59,9 +53,8 @@ function ImageCarousel(props: ImageCarouselProps) {
       </Typography.Text>
       <Typography.Text type="secondary">
         <p>
-          This would only allow the authenticated user access to a folder that
-          is named after their own account UID. This is useful for things like
-          profile images.
+          This would only allow the authenticated user access to a folder that is named after their
+          own account UID. This is useful for things like profile images.
         </p>
       </Typography.Text>
       <Typography.Text>
@@ -119,6 +112,7 @@ function ImageCarousel(props: ImageCarouselProps) {
                         src={`${basePath}${content.img_url}`}
                         layout="responsive"
                         width="1460"
+                        alt="Content Image"
                         height="960"
                       />
                     )}
@@ -141,11 +135,7 @@ function ImageCarousel(props: ImageCarouselProps) {
         </div>
       </div>
       <div className="mt-8 lg:mt-0 col-span-12 lg:col-span-5 lg:col-start-8 xl:col-span-4 xl:col-start-9">
-        <div
-          className={`wsb-tabs--underline-alt ${
-            props.altTabView ? 'block' : 'hidden'
-          } mb-3`}
-        >
+        <div className={`wsb-tabs--underline-alt ${props.altTabView ? 'block' : 'hidden'} mb-3`}>
           <Tabs
             scrollable
             type="underlined"
@@ -188,16 +178,14 @@ function ImageCarousel(props: ImageCarouselProps) {
                   {content.url && (
                     <Typography.Text>
                       <Link href={content.url} as={content.url}>
-                        <a>
-                          <Button
-                            className="mb-8"
-                            type="outline"
-                            size="small"
-                            icon={<IconArrowUpRight />}
-                          >
-                            {content.cta ? content.cta : 'View documentation'}
-                          </Button>
-                        </a>
+                        <Button
+                          className="mb-8"
+                          type="outline"
+                          size="small"
+                          icon={<IconArrowUpRight />}
+                        >
+                          {content.cta ? content.cta : 'View documentation'}
+                        </Button>
                       </Link>
                     </Typography.Text>
                   )}

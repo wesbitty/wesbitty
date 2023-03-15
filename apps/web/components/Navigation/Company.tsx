@@ -1,6 +1,7 @@
 import React from 'react'
 import CompanyData from '../../wesbitty/data/Company.json'
 import BlogPostsData from '../../wesbitty/data/BlogPosts.json'
+import Link from 'next/link'
 
 type Props = {
   text: string
@@ -14,44 +15,38 @@ const Company = () => {
     const { text, description, url, icon } = company
 
     const content = (
-      <a
-        href="#"
-        className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 dark:hover:bg-dark-700 transition ease-in-out duration-150"
-      >
-        {/* <!-- Heroicon name: support --> */}
-        <svg
-          className="flex-shrink-0 h-6 w-6 stroke-gray dark:stroke-white "
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          aria-hidden="true"
+      <>
+        <Link
+          href="#"
+          className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 dark:hover:bg-dark-700 transition ease-in-out duration-150"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d={icon}
-          />
-        </svg>
-        <div className="ml-4">
-          <p className="text-base font-medium text-gray-900 dark:text-white">
-            {text}
-          </p>
-          <p className="mt-1 text-sm text-gray-500 dark:text-dark-300">
-            {description}
-          </p>
-        </div>
-      </a>
+          {/* <!-- Heroicon name: support --> */}
+          <svg
+            className="flex-shrink-0 h-6 w-6 stroke-gray dark:stroke-white "
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={icon} />
+          </svg>
+          <div className="ml-4">
+            <p className="text-base font-medium text-gray-900 dark:text-white">{text}</p>
+            <p className="mt-1 text-sm text-gray-500 dark:text-dark-300">{description}</p>
+          </div>
+        </Link>
+      </>
     )
+
     return (
-      <a
+      <Link
         key={text}
         href={url}
         className="-m-3 p-3 flex flex-col justify-between rounded-lg transition ease-in-out duration-150"
       >
         {content}
-      </a>
+      </Link>
     )
   })
 
@@ -71,7 +66,7 @@ const Company = () => {
           <ul className="mt-6 space-y-6">
             {BlogPostsData.map((caseStudy: any, idx: number) => (
               <li className="flow-root" key={`flyout_case_${idx}`}>
-                <a
+                <Link
                   href={caseStudy.url}
                   className="-m-3 py-3 flex rounded-lg hover:bg-gray-100 dark:hover:bg-dark-600 transition ease-in-out duration-150"
                 >
@@ -83,18 +78,18 @@ const Company = () => {
                       {caseStudy.description}
                     </p>
                   </div>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </div>
         <div className="mt-6 text-sm font-medium">
-          <a
+          <Link
             href="/blog"
             className="text-gray-600 hover:text-gray-500 dark:text-brand-600 dark:hover:text-brand-700 transition ease-in-out duration-150"
           >
             View all posts <span aria-hidden="true">&rarr;</span>
-          </a>
+          </Link>
         </div>
       </div>
     </React.Fragment>

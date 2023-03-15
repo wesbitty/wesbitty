@@ -27,9 +27,7 @@ export async function getTwitterMedia(id: string): Promise<Video | undefined> {
         .filter((variant) => variant.content_type === 'video/mp4')
 
         // Get the video with the best bitrate
-        .reduce((prev, current) =>
-          prev.bitrate > current.bitrate ? prev : current
-        )
+        .reduce((prev, current) => (prev.bitrate > current.bitrate ? prev : current))
     )
   } catch (error) {
     console.error(id, error)

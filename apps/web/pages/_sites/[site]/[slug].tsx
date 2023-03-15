@@ -9,11 +9,7 @@ import Layout from '~/components/sites/Layout'
 import Loader from '~/components/sites/Loader'
 import prisma from '~/wesbitty/lib/prisma'
 import Tweet from '~/components/mdx/Tweet'
-import {
-  replaceExamples,
-  replaceLinks,
-  replaceTweets,
-} from '~/wesbitty/lib/remark-plugins'
+import { replaceExamples, replaceLinks, replaceTweets } from '~/wesbitty/lib/remark-plugins'
 
 import type { AdjacentPost, Meta, _SiteSlugData } from '~/types'
 import type { GetStaticPaths, GetStaticProps } from 'next'
@@ -38,19 +34,14 @@ interface PostProps {
   stringifiedAdjacentPosts: string
 }
 
-export default function Post({
-  stringifiedAdjacentPosts,
-  stringifiedData,
-}: PostProps) {
+export default function Post({ stringifiedAdjacentPosts, stringifiedData }: PostProps) {
   const router = useRouter()
   if (router.isFallback) return <Loader />
 
   const data = JSON.parse(stringifiedData) as _SiteSlugData & {
     mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>
   }
-  const adjacentPosts = JSON.parse(
-    stringifiedAdjacentPosts
-  ) as Array<AdjacentPost>
+  const adjacentPosts = JSON.parse(stringifiedAdjacentPosts) as Array<AdjacentPost>
 
   const meta = {
     description: data.description,
@@ -70,9 +61,7 @@ export default function Post({
           <h1 className="font-bold text-3xl font-cal md:text-6xl mb-10 text-gray-800">
             {data.title}
           </h1>
-          <p className="text-md md:text-lg text-gray-600 w-10/12 m-auto">
-            {data.description}
-          </p>
+          <p className="text-md md:text-lg text-gray-600 w-10/12 m-auto">{data.description}</p>
         </div>
         <a
           // if you are using Github OAuth, you can get rid of the Twitter option
@@ -132,16 +121,11 @@ export default function Post({
 
       {adjacentPosts.length > 0 && (
         <div className="relative mt-10 sm:mt-20 mb-20">
-          <div
-            className="absolute inset-0 flex items-center"
-            aria-hidden="true"
-          >
+          <div className="absolute inset-0 flex items-center" aria-hidden="true">
             <div className="w-full border-t border-gray-300" />
           </div>
           <div className="relative flex justify-center">
-            <span className="px-2 bg-white text-sm text-gray-500">
-              Continue Reading
-            </span>
+            <span className="px-2 bg-white text-sm text-gray-500">Continue Reading</span>
           </div>
         </div>
       )}
@@ -208,9 +192,7 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps<PostProps, PathProps> = async ({
-  params,
-}) => {
+export const getStaticProps: GetStaticProps<PostProps, PathProps> = async ({ params }) => {
   if (!params) throw new Error('No path parameters found')
 
   const { site, slug } = params

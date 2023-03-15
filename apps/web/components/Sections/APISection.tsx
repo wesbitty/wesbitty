@@ -38,17 +38,10 @@ function APISection(props: Props) {
         <Typography.Title level={2}>{props.title}</Typography.Title>
         <Typography.Text>{props.text}</Typography.Text>
         {props.documentation_link && (
-          <Link href={props.documentation_link} as={props.documentation_link}>
-            <a>
-              <Button
-                size="small"
-                className="mt-4"
-                type="default"
-                icon={<IconArrowUpRight />}
-              >
-                Explore documentation
-              </Button>
-            </a>
+          <Link href={props.documentation_link}>
+            <Button size="small" className="mt-4" type="default" icon={<IconArrowUpRight />}>
+              Explore documentation
+            </Button>
           </Link>
         )}
         {props.footer && <div className="py-8">{props.footer}</div>}
@@ -81,11 +74,7 @@ function APISection(props: Props) {
             {props.content &&
               props.content.map((content: Example, i) => (
                 <SwiperSlide key={i}>
-                  <CodeBlock
-                    key={i}
-                    lang={content.lang}
-                    size={props.size ? props.size : 'small'}
-                  >
+                  <CodeBlock key={i} lang={content.lang} size={props.size ? props.size : 'small'}>
                     {content.code}
                   </CodeBlock>
                 </SwiperSlide>

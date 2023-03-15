@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import Container from '../components/Container'
+import { Container } from '../components/Container'
 import Layout from '../components/Layouts/Default'
 import SectionHeader from '../components/UI/SectionHeader'
 import CTABanner from '../components/CTABanner/index'
@@ -23,6 +23,7 @@ import {
 } from '@wesbitty/ui'
 import { NextSeo } from 'next-seo'
 import { Metadata } from '../wesbitty/utils/schemas/Metadata'
+import Link from 'next/link'
 
 type Props = {}
 
@@ -89,9 +90,7 @@ const Team = () => {
   const IconLink = ({ link, icon }: iIconLink) => {
     return (
       <a href={link} target="_blank" rel="noreferrer">
-        <div className="transition-opacity opacity-50 hover:opacity-75">
-          {icon}
-        </div>
+        <div className="transition-opacity opacity-50 hover:opacity-75">{icon}</div>
       </a>
     )
   }
@@ -104,17 +103,16 @@ const Team = () => {
           <div className="col-span-8 ">
             <Typography.Text>
               <p className="text-lg">
-                Wesbitty is fully remote, with a strong affinity for open source
-                maintainers and ex-Founders. Our engineering team is made up of
-                developers from AWS, Google, Palantir, Stripe, and other YC
-                companies.
+                Wesbitty is fully remote, with a strong affinity for open source maintainers and
+                ex-Founders. Our engineering team is made up of developers from AWS, Google,
+                Palantir, Stripe, and other YC companies.
               </p>
             </Typography.Text>
           </div>
           <div className=" md:text-right pt-8 md:mt-0 col-span-4">
-            <a href="https://wesbitty.com/about">
+            <Link href="https://wesbitty.com/about">
               <Button size="medium">Join the team</Button>
-            </a>
+            </Link>
           </div>
         </div>
         {/* <div className="mt-5 grid md:gap-8 grid-cols-2 lg:grid-cols-4 w-full">
@@ -194,11 +192,7 @@ const Community = () => {
               key={x.title}
               className={`
               space-y-4 text-center lg:text-left
-              ${
-                i !== CommunityData.length - 1
-                  ? 'dark:border-r-dark lg:border-r'
-                  : ''
-              }
+              ${i !== CommunityData.length - 1 ? 'dark:border-r-dark lg:border-r' : ''}
               ${i === 1 ? 'md:border-0 dark:border-r-dark lg:border-r ' : ''}
           `}
             >
@@ -222,9 +216,7 @@ const Community = () => {
                 <Typography.Title level={1} className="mb-0">
                   {x.stat}
                 </Typography.Title>
-                <Typography.Text type="secondary">
-                  {x.statLabel}
-                </Typography.Text>
+                <Typography.Text type="secondary">{x.statLabel}</Typography.Text>
               </div>
             </div>
           ))}
@@ -253,8 +245,8 @@ const Investors = () => {
             <>
               <Typography.Text>
                 <p className="text-lg">
-                  We've raised over $36 million in funding, backed by some of
-                  the world's leading investors.
+                  We've raised over $36 million in funding, backed by some of the world's leading
+                  investors.
                 </p>
               </Typography.Text>
             </>

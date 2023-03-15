@@ -1,4 +1,4 @@
-import Container from '../components/Container'
+import { Container } from '../components/Container'
 import Layout from '../components/Layouts/Default'
 import { Metadata } from '../wesbitty/utils/schemas/Metadata'
 import Link from 'next/link'
@@ -27,7 +27,7 @@ type Props = {}
 const SupportPage = ({}: Props) => {
   const router = useRouter()
 
-  const Title = `Help &amp Support | ${Metadata.Name}`
+  const Title = `Help & Support | ${Metadata.Name}`
   const Description =
     'Find help and support for Wesbitty. Our support agents provide answers on all types of issues, including account information, billing, and refunds.'
 
@@ -54,8 +54,8 @@ const SupportPage = ({}: Props) => {
               <Typography.Title level={2}>Get Support</Typography.Title>
               <Typography.Text>
                 <p className="lg:text-lg">
-                  Need a bit of help? We're here for you. Check out our current
-                  issues, GitHub discussions, or get email support.
+                  Need a bit of help? We're here for you. Check out our current issues, GitHub
+                  discussions, or get email support.
                 </p>
               </Typography.Text>
             </div>
@@ -75,13 +75,11 @@ const SupportPage = ({}: Props) => {
                     </Typography.Title>
                     <Typography.Text className="block">
                       <p>
-                        Have a general issue or bug that you've found? We'd love
-                        to hear about it in our GitHub issues. This can be
-                        feature requests too!
+                        Have a general issue or bug that you've found? We'd love to hear about it in
+                        our GitHub issues. This can be feature requests too!
                       </p>
                       <p>
-                        <span className="font-bold">Use this for:</span> Bugs
-                        and other issues
+                        <span className="font-bold">Use this for:</span> Bugs and other issues
                       </p>
                     </Typography.Text>
                   </div>
@@ -97,19 +95,10 @@ const SupportPage = ({}: Props) => {
                     rounded rounded-t-none"
                   >
                     <Space className="">
-                      <Link
-                        href="https://github.com/wesbitty/wesbitty/issues"
-                        as="https://github.com/wesbitty/wesbitty/issues"
-                      >
-                        <a target="_blank">
-                          <Button
-                            size="medium"
-                            type="default"
-                            iconRight={<IconGitHub />}
-                          >
-                            Go To Issues
-                          </Button>
-                        </a>
+                      <Link href="https://github.com/wesbitty/wesbitty/issues" target="_blank">
+                        <Button size="medium" type="default" iconRight={<IconGitHub />}>
+                          Go To Issues
+                        </Button>
                       </Link>
                     </Space>
                   </div>
@@ -130,12 +119,11 @@ const SupportPage = ({}: Props) => {
                     </Typography.Title>
                     <Typography.Text className="block">
                       <p>
-                        For help and questions about best practices, join our
-                        GitHub discussions. Browse and ask questions.
+                        For help and questions about best practices, join our GitHub discussions.
+                        Browse and ask questions.
                       </p>
                       <p>
-                        <span className="font-bold">Use this for:</span> General
-                        questions
+                        <span className="font-bold">Use this for:</span> General questions
                       </p>
                     </Typography.Text>
                   </div>
@@ -151,19 +139,10 @@ const SupportPage = ({}: Props) => {
                     rounded rounded-t-none"
                   >
                     <Space className="">
-                      <Link
-                        href="https://github.com/wesbitty/wesbitty/discussions"
-                        as="https://github.com/wesbitty/wesbitty/discussions"
-                      >
-                        <a target="_blank">
-                          <Button
-                            size="medium"
-                            type="default"
-                            iconRight={<IconMessageCircle />}
-                          >
-                            Join The Discussion
-                          </Button>
-                        </a>
+                      <Link href="https://github.com/wesbitty/wesbitty/discussions" target="_blank">
+                        <Button size="medium" type="default" iconRight={<IconMessageCircle />}>
+                          Join The Discussion
+                        </Button>
                       </Link>
                     </Space>
                   </div>
@@ -185,13 +164,12 @@ const SupportPage = ({}: Props) => {
                     </Typography.Title>
                     <Typography.Text className="block">
                       <p>
-                        We offer email based support. If you need SLAs,
-                        guaranteed response times, or have an issue, please
-                        contact us here.
+                        We offer email based support. If you need SLAs, guaranteed response times,
+                        or have an issue, please contact us here.
                       </p>
                       <p>
-                        <span className="font-bold">Use this for:</span> Issues
-                        or questions specific to you
+                        <span className="font-bold">Use this for:</span> Issues or questions
+                        specific to you
                       </p>
                     </Typography.Text>
                   </div>
@@ -207,15 +185,11 @@ const SupportPage = ({}: Props) => {
                     rounded rounded-t-none"
                   >
                     <Space className="">
-                      <a href="mailto:admin@wesbitty.com">
-                        <Button
-                          size="medium"
-                          type="default"
-                          iconRight={<IconMail />}
-                        >
+                      <Link href="mailto:admin@wesbitty.com">
+                        <Button size="medium" type="default" iconRight={<IconMail />}>
                           Email Support
                         </Button>
-                      </a>
+                      </Link>
                     </Space>
                   </div>
                 </div>

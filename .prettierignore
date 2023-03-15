@@ -4,5 +4,6 @@ docker*
 dist*
 .next
 .wesjet
+.turbo
 build
 package-lock.json

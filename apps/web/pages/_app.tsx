@@ -46,20 +46,9 @@ export default function MyApp({
         <link rel="manifest" href={`${basePath}/favicon/site.webmanifest`} />
         <link rel="shortcut icon" href={`${basePath}/favicon/favicon.ico`} />
         <meta name="msapplication-TileColor" content="#1E1E1E" />
-        <meta
-          name="msapplication-config"
-          content={`${basePath}/favicon/browserconfig.xml`}
-        />
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          href={`${basePath}/rss.xml`}
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href={`${basePath}/favicon/favicon.ico`}
-        />
+        <meta name="msapplication-config" content={`${basePath}/favicon/browserconfig.xml`} />
+        <link rel="alternate" type="application/rss+xml" href={`${basePath}/rss.xml`} />
+        <link rel="icon" type="image/png" href={`${basePath}/favicon/favicon.ico`} />
         <link rel="apple-touch-icon" href={`${basePath}/favicon/favicon.ico`} />
       </Head>
       <DefaultSeo

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Button from './Button'
 
 type PostMetaProps = {
@@ -51,7 +52,7 @@ const Card = (props: Props) => {
     })
 
   return (
-    <a
+    <Link
       href={url}
       target="_blank"
       className="flex flex-col rounded-md shadow-lg overflow-hidden relative transition transform hover:-translate-y-1 hover:shadow-2xl"
@@ -67,14 +68,10 @@ const Card = (props: Props) => {
               {iconMarkup}
             </div>
           )} */}
-          <p className="text-sm font-base capitalize text-gray-600 dark:text-dark-300">
-            {type}
-          </p>
+          <p className="text-sm font-base capitalize text-gray-600 dark:text-dark-300">{type}</p>
           <div className="mt-2 flex flex-col justify-between h-32">
             {/* {logoUrl && <img src={logoUrl} className="h-9 my-4" />} */}
-            {title && (
-              <p className="text-xl text-gray-900 dark:text-white">{title}</p>
-            )}
+            {title && <p className="text-xl text-gray-900 dark:text-white">{title}</p>}
             <p className="mt-3 text-base text-gray-500 dark:text-dark-400">
               {type !== 'Project Example' ? postMeta.publishDate : description}
             </p>
@@ -84,16 +81,10 @@ const Card = (props: Props) => {
           <div className="mt-6 flex items-center">
             <div className="flex-shrink-0">
               <span className="sr-only">{postMeta.name}</span>
-              <img
-                className="h-10 w-10 rounded-full"
-                src={postMeta.avatarUrl}
-                alt=""
-              />
+              <img className="h-10 w-10 rounded-full" src={postMeta.avatarUrl} alt="Avatar" />
             </div>
             <div className="ml-3">
-              <p className="text-sm font-medium text-gray-900 dark:text-white">
-                {postMeta.name}
-              </p>
+              <p className="text-sm font-medium text-gray-900 dark:text-white">{postMeta.name}</p>
               <div className="flex space-x-1 text-sm text-gray-500 dark:text-dark-100">
                 <time dateTime="2020-03-16">{postMeta.publishDate}</time>
                 <span aria-hidden="true">&middot;</span>
@@ -102,11 +93,9 @@ const Card = (props: Props) => {
             </div>
           </div>
         )}
-        {ctaText && (
-          <Button className="mt-5" type="secondary" text={ctaText} url={url} />
-        )}
+        {ctaText && <Button className="mt-5" type="secondary" text={ctaText} url={url} />}
       </div>
-    </a>
+    </Link>
   )
 }
 

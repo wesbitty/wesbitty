@@ -4,6 +4,8 @@ import SectionHeader from '../UI/SectionHeader'
 import CaseStudiesData from '../../wesbitty/data/CaseStudies.json'
 import { Card, Space, Typography } from '@wesbitty/ui'
 import SectionContainer from '../Layouts/SectionContainer'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const CaseStudies = () => {
   const { basePath } = useRouter()
@@ -22,12 +24,13 @@ const CaseStudies = () => {
       </div>
       <div className="mt-5 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
         {CaseStudiesData.map((caseStudy: any, idx: number) => (
-          <a href={caseStudy.url} key={idx}>
+          <Link href={caseStudy.url} key={idx}>
             <Card
               key={`caseStudy_${idx}`}
               hoverable
               cover={
-                <img
+                <Image
+                  alt="Casestudy Image"
                   src={`${basePath}/${caseStudy.imgUrl}`}
                   className="h-64 object-cover"
                 />
@@ -38,16 +41,12 @@ const CaseStudies = () => {
                   <Typography.Text small type="secondary">
                     Project example
                   </Typography.Text>
-                  <Typography.Title level={3}>
-                    {caseStudy.title}
-                  </Typography.Title>
+                  <Typography.Title level={3}>{caseStudy.title}</Typography.Title>
                 </div>
-                <Typography.Text type="default">
-                  {caseStudy.description}
-                </Typography.Text>
+                <Typography.Text type="default">{caseStudy.description}</Typography.Text>
               </Space>
             </Card>
-          </a>
+          </Link>
         ))}
       </div>
       {/* <Benchmark /> */}

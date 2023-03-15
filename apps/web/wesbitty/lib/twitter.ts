@@ -10,25 +10,20 @@ const queryParams = queryStringify({
   'tweet.fields':
     'attachments,author_id,public_metrics,created_at,id,in_reply_to_user_id,referenced_tweets,text,entities',
   'user.fields': 'id,name,profile_image_url,protected,url,username,verified',
-  'media.fields':
-    'duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics',
+  'media.fields': 'duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics',
   'poll.fields': 'duration_minutes,end_datetime,id,options,voting_status',
 })
 
 export const getTweets = async (id: string) => {
   try {
-    const response = await fetch(
-      `https://api.twitter.com/2/tweets/${id}?${queryParams}`,
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.TWITTER_AUTH_TOKEN}`,
-        },
-      }
-    )
+    const response = await fetch(`https://api.twitter.com/2/tweets/${id}?${queryParams}`, {
+      headers: {
+        Authorization: `Bearer ${process.env.TWITTER_AUTH_TOKEN}`,
+      },
+    })
     const tweet: Tweet = await response.json()
 
-    if (!tweet.data)
-      throw new Error(`Failed to get tweet data for tweet ID: ${id}`)
+    if (!tweet.data) throw new Error(`Failed to get tweet data for tweet ID: ${id}`)
 
     const getAuthorInfo = (author_id: string) =>
       tweet.includes.users.find((user) => user.id === author_id)
@@ -98,15 +93,11 @@ export const getTweets = async (id: string) => {
           ? null
           : tweet.data?.entities?.urls[0],
       video:
-        media &&
-        media[0] &&
-        (media[0].type === 'video' || media[0].type === 'animated_gif')
+        media && media[0] && (media[0].type === 'video' || media[0].type === 'animated_gif')
           ? await getTwitterMedia(id)
           : null,
     }
   } catch (error) {
-    throw new Error(
-      `Failed to get tweet data for tweet ID: ${id}. Reason: ${error}`
-    )
+    throw new Error(`Failed to get tweet data for tweet ID: ${id}. Reason: ${error}`)
   }
 }

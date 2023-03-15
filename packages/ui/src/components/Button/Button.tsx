@@ -121,7 +121,7 @@ const Button = forwardRef<RefHandle, ButtonProps>(
     // custom button tag
     const CustomButton: React.FC<CustomButtonProps> = ({ ...props }) => {
       const Tag = as as keyof JSX.IntrinsicElements
-      
+
       return <Tag {...props} />
     }
 
@@ -131,27 +131,18 @@ const Button = forwardRef<RefHandle, ButtonProps>(
           (loading ? (
             <IconLoader size={size} className={iconLoaderClasses.join(' ')} />
           ) : icon ? (
-            <IconContext.Provider value={{ contextSize: size }}>
-              {icon}
-            </IconContext.Provider>
+            <IconContext.Provider value={{ contextSize: size }}>{icon}</IconContext.Provider>
           ) : null)}
         {children && <span className={__styles.label}>{children}</span>}
         {iconRight && !loading && (
-          <IconContext.Provider value={{ contextSize: size }}>
-            {iconRight}
-          </IconContext.Provider>
+          <IconContext.Provider value={{ contextSize: size }}>{iconRight}</IconContext.Provider>
         )}
       </>
     )
 
     if (as) {
       return (
-        <CustomButton
-          {...props}
-          className={classes.join(' ')}
-          onClick={onClick}
-          style={style}
-        >
+        <CustomButton {...props} className={classes.join(' ')} onClick={onClick} style={style}>
           {buttonContent}
         </CustomButton>
       )

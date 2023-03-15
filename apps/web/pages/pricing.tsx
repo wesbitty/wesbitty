@@ -3,18 +3,8 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { Metadata } from '../wesbitty/utils/schemas/Metadata'
 import DefaultLayout from '../components/Layouts/Default'
-import {
-  PricingTableRowDesktop,
-  PricingTableRowMobile,
-} from '../components/PricingTableRow'
-import {
-  Accordion,
-  Badge,
-  Button,
-  Divider,
-  Space,
-  Typography,
-} from '@wesbitty/ui'
+import { PricingTableRowDesktop, PricingTableRowMobile } from '../components/PricingTableRow'
+import { Accordion, Badge, Button, Divider, Space, Typography } from '@wesbitty/ui'
 import pricing from '../wesbitty/data/Pricing.json'
 import pricingFaq from '../wesbitty/data/PricingFAQ.json'
 import ReactMarkdown from 'react-markdown'
@@ -48,13 +38,10 @@ export default function PricingPage() {
       <div className="bg-white dark:bg-gray-800">
         <div className="container mx-auto px-6 lg:px-16 xl:px-20 relative pt-24 md:pt-24 lg:pt-24">
           <div className="text-center">
-            <Typography.Title>
-              Predictable pricing, no surprises
-            </Typography.Title>
+            <Typography.Title>Predictable pricing, no surprises</Typography.Title>
             <Typography.Text>
               <p className="text-lg">
-                Start with a hobby project, collaborate with a team, and scale
-                to millions of users.
+                Start with a hobby project, collaborate with a team, and scale to millions of users.
               </p>
             </Typography.Text>
             <div className="grid grid-cols-12 gap-8 mt-16">
@@ -100,29 +87,18 @@ export default function PricingPage() {
           <div className=" lg:hidden">
             {/* Free - Mobile  */}
             <div className="px-4">
-              <h2 className="text-lg leading-6 font-medium text-gray-900 dark:text-white">
-                Free
-              </h2>
+              <h2 className="text-lg leading-6 font-medium text-gray-900 dark:text-white">Free</h2>
               <p className="mt-4">
-                <span className="text-4xl font-normal text-gray-900 dark:text-white">
-                  $0
-                </span>
-                <Typography.Text type="secondary">
-                  /project /month
-                </Typography.Text>
+                <span className="text-4xl font-normal text-gray-900 dark:text-white">$0</span>
+                <Typography.Text type="secondary">/project /month</Typography.Text>
               </p>
               <p className="my-4 text-sm text-gray-500">
                 Perfect for hobby projects and experiments.
               </p>
-              <Link
-                href="https://app.wesbitty.com"
-                as="https://app.wesbitty.com"
-              >
-                <a>
-                  <Button type="outline" size="medium" block>
-                    Get started
-                  </Button>
-                </a>
+              <Link href="https://app.wesbitty.com">
+                <Button type="outline" size="medium" block>
+                  Get started
+                </Button>
               </Link>
             </div>
 
@@ -146,29 +122,18 @@ export default function PricingPage() {
 
             {/* Pro - Mobile  */}
             <div className="px-4 mt-16">
-              <h2 className="text-lg leading-6 font-medium text-gray-900 dark:text-white">
-                Pro
-              </h2>
+              <h2 className="text-lg leading-6 font-medium text-gray-900 dark:text-white">Pro</h2>
               <p className="mt-4">
-                <span className="text-4xl font-normal text-gray-900 dark:text-white">
-                  $25
-                </span>
-                <Typography.Text type="secondary">
-                  /project /month
-                </Typography.Text>
+                <span className="text-4xl font-normal text-gray-900 dark:text-white">$25</span>
+                <Typography.Text type="secondary">/project /month</Typography.Text>
               </p>
               <p className="my-4 text-sm text-gray-500">
                 Everything you need to scale your project into production.
               </p>
-              <Link
-                href="https://app.wesbitty.com"
-                as="https://app.wesbitty.com"
-              >
-                <a>
-                  <Button type="outline" size="medium" block>
-                    Get started
-                  </Button>
-                </a>
+              <Link href="https://app.wesbitty.com">
+                <Button type="outline" size="medium" block>
+                  Get started
+                </Button>
               </Link>
             </div>
 
@@ -196,26 +161,16 @@ export default function PricingPage() {
                 Pay as you go
               </h2>
               <p className="mt-4">
-                <span className="text-4xl font-normal text-gray-900 dark:text-white">
-                  $25
-                </span>
-                <Typography.Text type="secondary">
-                  /project /month plus usage costs
-                </Typography.Text>
+                <span className="text-4xl font-normal text-gray-900 dark:text-white">$25</span>
+                <Typography.Text type="secondary">/project /month plus usage costs</Typography.Text>
               </p>
               <p className="my-4 text-sm text-gray-500">
-                Designated support team, account manager and technical
-                specialist.
+                Designated support team, account manager and technical specialist.
               </p>
-              <Link
-                href="https://app.wesbitty.com"
-                as="https://app.wesbitty.com"
-              >
-                <a>
-                  <Button type="outline" size="medium" block>
-                    Get started
-                  </Button>
-                </a>
+              <Link href="https://app.wesbitty.com">
+                <Button type="outline" size="medium" block>
+                  Get started
+                </Button>
               </Link>
             </div>
 
@@ -234,14 +189,8 @@ export default function PricingPage() {
               tier={'enterprise'}
               icon={Solutions['storage'].icon}
             />
-            <PricingTableRowMobile
-              category={pricing.dashboard}
-              tier={'enterprise'}
-            />
-            <PricingTableRowMobile
-              category={pricing.support}
-              tier={'enterprise'}
-            />
+            <PricingTableRowMobile category={pricing.dashboard} tier={'enterprise'} />
+            <PricingTableRowMobile category={pricing.support} tier={'enterprise'} />
           </div>
 
           {/* <!-- lg+ --> */}
@@ -318,19 +267,10 @@ export default function PricingPage() {
                           Perfect for hobby projects and experiments.
                         </Typography.Text>
                       </p>
-                      <Link
-                        href="https://app.wesbitty.com"
-                        as="https://app.wesbitty.com"
-                      >
-                        <a>
-                          <Button
-                            size="medium"
-                            type="outline"
-                            className="absolute bottom-0"
-                          >
-                            Get started
-                          </Button>
-                        </a>
+                      <Link href="https://app.wesbitty.com">
+                        <Button size="medium" type="outline" className="absolute bottom-0">
+                          Get started
+                        </Button>
                       </Link>
                     </div>
                   </td>
@@ -345,23 +285,13 @@ export default function PricingPage() {
                       </p>
                       <p className="mt-4 mb-16 ">
                         <Typography.Text>
-                          Everything you need to scale your project into
-                          production.
+                          Everything you need to scale your project into production.
                         </Typography.Text>
                       </p>
-                      <Link
-                        href="https://app.wesbitty.com"
-                        as="https://app.wesbitty.com"
-                      >
-                        <a>
-                          <Button
-                            size="medium"
-                            type="outline"
-                            className="absolute bottom-0"
-                          >
-                            Get started
-                          </Button>
-                        </a>
+                      <Link href="https://app.wesbitty.com">
+                        <Button size="medium" type="outline" className="absolute bottom-0">
+                          Get started
+                        </Button>
                       </Link>
                     </div>
                   </td>
@@ -372,30 +302,17 @@ export default function PricingPage() {
                         <span className="text-4xl font-normal text-gray-900 dark:text-white">
                           $25
                         </span>
-                        <Typography.Text>
-                          {' '}
-                          /project /month plus usage costs
-                        </Typography.Text>
+                        <Typography.Text> /project /month plus usage costs</Typography.Text>
                       </p>
                       <p className="mt-4 mb-16 ">
                         <Typography.Text>
-                          Designated support team, account manager and technical
-                          specialist.
+                          Designated support team, account manager and technical specialist.
                         </Typography.Text>
                       </p>
-                      <Link
-                        href="https://app.wesbitty.com"
-                        as="https://app.wesbitty.com"
-                      >
-                        <a>
-                          <Button
-                            size="medium"
-                            type="outline"
-                            className="absolute bottom-0"
-                          >
-                            Get started
-                          </Button>
-                        </a>
+                      <Link href="https://app.wesbitty.com">
+                        <Button size="medium" type="outline" className="absolute bottom-0">
+                          Get started
+                        </Button>
                       </Link>
                     </div>
                   </td>
@@ -423,41 +340,26 @@ export default function PricingPage() {
                   </th>
 
                   <td className="pt-5 px-6">
-                    <Link
-                      href="https://app.wesbitty.com"
-                      as="https://app.wesbitty.com"
-                    >
-                      <a>
-                        <Button size="medium" type="outline" block>
-                          Get started
-                        </Button>
-                      </a>
+                    <Link href="https://app.wesbitty.com">
+                      <Button size="medium" type="outline" block>
+                        Get started
+                      </Button>
                     </Link>
                   </td>
 
                   <td className="pt-5 px-6">
-                    <Link
-                      href="https://app.wesbitty.com"
-                      as="https://app.wesbitty.com"
-                    >
-                      <a>
-                        <Button size="medium" type="outline" block>
-                          Get started
-                        </Button>
-                      </a>
+                    <Link href="https://app.wesbitty.com">
+                      <Button size="medium" type="outline" block>
+                        Get started
+                      </Button>
                     </Link>
                   </td>
 
                   <td className="pt-5 px-6">
-                    <Link
-                      href="mailto:admin@wesbitty.com"
-                      as="mailto:admin@wesbitty.com"
-                    >
-                      <a>
-                        <Button size="medium" type="outline" block>
-                          Contact us
-                        </Button>
-                      </a>
+                    <Link href="mailto:admin@wesbitty.com">
+                      <Button size="medium" type="outline" block>
+                        Contact us
+                      </Button>
                     </Link>
                   </td>
                 </tr>
@@ -469,9 +371,7 @@ export default function PricingPage() {
 
       <div className="bg-gray-50 dark:bg-gray-800 border-t dark:border-gray-600">
         <div className="container mx-auto px-6 lg:px-16 xl:px-20 relative py-16 sm:py-18 md:py-24 lg:py-24">
-          <Typography.Title level={2}>
-            Frequently asked questions
-          </Typography.Title>
+          <Typography.Title level={2}>Frequently asked questions</Typography.Title>
           <div className="mt-16">
             <div className="grid grid-cols-2 gap-y-10 gap-x-10">
               {pricingFaq.map((faq) => {

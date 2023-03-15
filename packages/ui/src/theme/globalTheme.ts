@@ -1,5 +1,5 @@
-import { css, keyframes } from '@storybook/theming';
-import { rgba } from 'polished';
+import { css, keyframes } from '@storybook/theming'
+import { rgba } from 'polished'
 
 const defaults = {
   bg: {
@@ -95,7 +95,7 @@ export const background = {
   negative: '#FEDED2',
   warning: '#FFF5CF',
   calmBlue: '#E3F3FF',
-};
+}
 
 export const color = {
   // Palette
@@ -135,7 +135,7 @@ export const color = {
   negative: '#D43900', // Crimson
   warning: '#A15C20', // Burnt sienna
   selected: '#0271B6', // Navy
-};
+}
 
 export const spacing = {
   padding: {
@@ -147,11 +147,11 @@ export const spacing = {
     small: 5,
     default: 10,
   },
-};
+}
 
 export const easing = {
   rubber: 'cubic-bezier(0.175, 0.885, 0.335, 1.05)',
-};
+}
 
 export const rotate360 = keyframes`
 	from {
@@ -160,25 +160,25 @@ export const rotate360 = keyframes`
 	to {
 		transform: rotate(360deg);
 	}
-`;
+`
 
 export const glow = keyframes`
   0%, 100% { opacity: 1; }
   50% { opacity: .4; }
-`;
+`
 
 export const float = keyframes`
   0% { transform: translateY(1px); }
   25% { transform: translateY(0px); }
   50% { transform: translateY(-3px); }
   100% { transform: translateY(1px); }
-`;
+`
 
 export const jiggle = keyframes`
   0%, 100% { transform:translate3d(0,0,0); }
   12.5%, 62.5% { transform:translate3d(-4px,0,0); }
   37.5%, 87.5% {  transform: translate3d(4px,0,0);  }
-`;
+`
 
 export const shake = keyframes`
   0% { transform:rotate(-3deg) }
@@ -197,15 +197,14 @@ export const shake = keyframes`
   14.31579% { transform:rotate(6deg) }
   15.78947% { transform:rotate(0deg) }
   100% { transform:rotate(0deg) }
-`;
+`
 
 export const inlineGlow = css`
   animation: ${glow} 1.5s ease-in-out infinite;
   background: ${color.tr5};
   color: transparent;
   cursor: progress;
-`;
-
+`
 
 export const typography = {
   type: {
@@ -229,8 +228,7 @@ export const typography = {
     l3: 48,
     code: 90,
   },
-} as const;
-
+} as const
 
 /*
  * Main tailwind utility classes output
@@ -623,10 +621,8 @@ export default {
       ...default__padding_and_text,
     },
     disabled: 'cursor-not-allowed opacity-50 bg-gray-300 dark:bg-gray-800',
-    actions_container:
-      'absolute inset-y-0 right-0 pl-3 pr-1 flex space-x-1 items-center',
-    textarea_actions_container:
-      'absolute inset-y-1.5 right-0 pl-3 pr-1 flex space-x-1 items-start',
+    actions_container: 'absolute inset-y-0 right-0 pl-3 pr-1 flex space-x-1 items-center',
+    textarea_actions_container: 'absolute inset-y-1.5 right-0 pl-3 pr-1 flex space-x-1 items-start',
     textarea_actions_container_items: 'flex items-center',
   },
 
@@ -671,10 +667,8 @@ export default {
       ...default__padding_and_text,
     },
     disabled: 'opacity-50',
-    actions_container:
-      'absolute inset-y-0 right-0 pl-3 pr-1 mr-5 flex items-center',
-    chevron_container:
-      'absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none',
+    actions_container: 'absolute inset-y-0 right-0 pl-3 pr-1 mr-5 flex items-center',
+    chevron_container: 'absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none',
     chevron: 'h-5 w-5 text-gray-600',
   },
 
@@ -719,8 +713,7 @@ export default {
     size: {
       ...default__padding_and_text,
     },
-    actions_container:
-      'absolute inset-y-0 right-0 pl-3 pr-1 flex space-x-1 items-center',
+    actions_container: 'absolute inset-y-0 right-0 pl-3 pr-1 flex space-x-1 items-center',
   },
 
   /*
@@ -1171,8 +1164,7 @@ export default {
     responsive: 'md:grid md:grid-cols-12 md:gap-x-4',
     non_responsive: 'grid grid-cols-12 gap-2',
 
-    labels_horizontal_layout:
-      'flex flex-row space-x-2 justify-between col-span-12',
+    labels_horizontal_layout: 'flex flex-row space-x-2 justify-between col-span-12',
     labels_vertical_layout: 'flex flex-col space-y-2 col-span-4',
 
     data_input_horizontal_layout: 'col-span-12',
@@ -1613,10 +1605,8 @@ export default {
       ...default__padding_and_text,
     },
     disabled: `opacity-50`,
-    actions_container:
-      'absolute inset-y-0 right-0 pl-3 pr-1 flex space-x-1 items-center',
-    chevron_container:
-      'absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none',
+    actions_container: 'absolute inset-y-0 right-0 pl-3 pr-1 flex space-x-1 items-center',
+    chevron_container: 'absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none',
     chevron: 'h-5 w-5 text-gray-600',
     option: `
       w-listbox

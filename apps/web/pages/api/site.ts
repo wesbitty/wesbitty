@@ -20,12 +20,7 @@ export default async function site(req: NextApiRequest, res: NextApiResponse) {
     case HttpMethod.PUT:
       return updateSite(req, res)
     default:
-      res.setHeader('Allow', [
-        HttpMethod.GET,
-        HttpMethod.POST,
-        HttpMethod.DELETE,
-        HttpMethod.PUT,
-      ])
+      res.setHeader('Allow', [HttpMethod.GET, HttpMethod.POST, HttpMethod.DELETE, HttpMethod.PUT])
       return res.status(405).end(`Method ${req.method} Not Allowed`)
   }
 }

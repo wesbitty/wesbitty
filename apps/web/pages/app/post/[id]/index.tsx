@@ -147,8 +147,7 @@ export default function Post() {
   const [disabled, setDisabled] = useState(true)
 
   useEffect(() => {
-    if (data.title && data.description && data.content && !publishing)
-      setDisabled(false)
+    if (data.title && data.description && data.content && !publishing) setDisabled(false)
     else setDisabled(true)
   }, [publishing, data])
 
@@ -236,10 +235,7 @@ export default function Post() {
           />
 
           <div className="relative mb-6">
-            <div
-              className="absolute inset-0 flex items-center"
-              aria-hidden="true"
-            >
+            <div className="absolute inset-0 flex items-center" aria-hidden="true">
               <div className="w-full border-t border-gray-300" />
             </div>
           </div>

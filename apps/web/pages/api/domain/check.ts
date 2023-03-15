@@ -19,9 +19,7 @@ export default async function post(req: NextApiRequest, res: NextApiResponse) {
   const { domain, subdomain = false } = req.query
 
   if (Array.isArray(domain))
-    return res
-      .status(400)
-      .end('Bad request. domain parameter cannot be an array.')
+    return res.status(400).end('Bad request. domain parameter cannot be an array.')
 
   try {
     if (subdomain) {

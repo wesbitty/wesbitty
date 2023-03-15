@@ -6,30 +6,13 @@ import { IconContext } from './IconContext'
 
 interface Props {
   className?: string
-  size?:
-    | 'tiny'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'xlarge'
-    | 'xxlarge'
-    | 'xxxlarge'
-    | number
+  size?: 'tiny' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'xxxlarge' | number
   type?: string
   color?: string
   strokeWidth?: number
   fill?: string
   stroke?: string
-  background?:
-    | 'brand'
-    | 'gray'
-    | 'red'
-    | 'yellow'
-    | 'green'
-    | 'blue'
-    | 'indigo'
-    | 'purple'
-    | 'pink'
+  background?: 'brand' | 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'pink'
   src?: React.ReactNode
   icon?: any
 }
@@ -85,11 +68,7 @@ function IconBase({
 
         // use size prop of this component if one exists
         if (size) {
-          iconSize = size
-            ? typeof size === 'string'
-              ? defaultSizes[size]
-              : size
-            : defaultSize
+          iconSize = size ? (typeof size === 'string' ? defaultSizes[size] : size) : defaultSize
         }
 
         // confitional used for Icons with no color settings
@@ -131,11 +110,7 @@ function IconBase({
           <IconComponent />
         )
 
-        return background ? (
-          <div className={__styles.container}>{Icon}</div>
-        ) : (
-          Icon
-        )
+        return background ? <div className={__styles.container}>{Icon}</div> : Icon
       }}
     </IconContext.Consumer>
   )

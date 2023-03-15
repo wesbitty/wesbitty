@@ -2,7 +2,6 @@
 const { withWesjet } = require('wesjet-nextjs-plugin')
 
 module.exports = withWesjet({
-  output: 'standalone',
   images: {
     domains: [
       'res.cloudinary.com',
@@ -16,7 +15,7 @@ module.exports = withWesjet({
     ],
   },
   reactStrictMode: true,
-  swcMinify: false, // Required to fix: https://nextjs.org/docs/messages/failed-loading-swc
+  swcMinify: false,
   headers: async () => [
     {
       source: '/:path*',

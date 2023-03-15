@@ -1,5 +1,6 @@
 import { Button, IconBookOpen, Space, Typography } from '@wesbitty/ui'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import SectionContainer from './Layouts/SectionContainer'
 
@@ -25,51 +26,36 @@ const HeaderFeature = () => {
                     </h1>
                     <Typography.Text>
                       <p className="mt-5 text-base sm:mt-5 lg:text-lg ">
-                        Create an ecommerce website backed by powerful tools
-                        that help you find customers, drive sales, and manage
-                        your day-to-day.
+                        Create an ecommerce website backed by powerful tools that help you find
+                        customers, drive sales, and manage your day-to-day.
                       </p>
                     </Typography.Text>
                     <Space>
-                      <Link
-                        href="https://app.wesbitty.com"
-                        as="https://app.wesbitty.com"
-                      >
-                        <a className="mt-10">
-                          <Button className="py-3" size="medium">
-                            Get Started
-                          </Button>
-                        </a>
+                      <Link href="https://app.wesbitty.com" className="mt-10">
+                        <Button className="py-3" size="medium">
+                          Get Started
+                        </Button>
                       </Link>
-                      <Link href="/docs" as="/docs">
-                        <a className="mt-10">
-                          <Button
-                            className="py-3"
-                            size="medium"
-                            type="text"
-                            icon={<IconBookOpen />}
-                          >
-                            Documentation
-                          </Button>
-                        </a>
+                      <Link href="/docs" className="mt-10">
+                        <Button className="py-3" size="medium" type="text" icon={<IconBookOpen />}>
+                          Documentation
+                        </Button>
                       </Link>
                     </Space>
-                    <p className="mt-8 text-sm text-dark-400 tracking-wide sm:mt-10">
-                      backed by
-                    </p>
+                    <p className="mt-8 text-sm text-dark-400 tracking-wide sm:mt-10">backed by</p>
                     <div className="mt-5 w-full sm:max-w-lg lg:ml-0">
                       <div className="flex flex-wrap items-center justify-start">
-                        <img
+                        <Image
                           className="h-8 sm:h-10 pr-10 mb-5"
                           src={`${basePath}/images/logos/yc--grey.png`}
                           alt="Y Combinator"
                         />
-                        <img
+                        <Image
                           className="relative h-5 sm:h-7 pr-10 mb-5"
                           src={`${basePath}/images/logos/mozilla--grey.png`}
                           alt="Mozilla"
                         />
-                        <img
+                        <Image
                           className="relative h-5 sm:h-7 pr-10 mb-5"
                           src={`${basePath}/images/logos/coatue.png`}
                           alt="Coatue"

@@ -9,10 +9,7 @@ declare global {
       options: CloudinaryWidgetOptions,
       widgetCallback?: Function
     ) => CloudinaryWidget
-    openUploadWidget: (
-      options: CloudinaryWidgetOptions,
-      widgetCallback?: Function
-    ) => void
+    openUploadWidget: (options: CloudinaryWidgetOptions, widgetCallback?: Function) => void
     setAPIKey: (key: string) => void
     setCloudName: (name: string) => void
     WIDGET_SOURCES: CloudinaryWidgetSource

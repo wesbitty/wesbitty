@@ -6,10 +6,7 @@ import { HttpMethod } from '~/types'
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default async function domain(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function domain(req: NextApiRequest, res: NextApiResponse) {
   const session = await unstable_getServerSession(req, res, authOptions)
   if (!session) return res.status(401).end()
 

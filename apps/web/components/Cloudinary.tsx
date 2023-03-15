@@ -1,11 +1,7 @@
 import Head from 'next/head'
 
 import type { MouseEvent, ReactNode } from 'react'
-import type {
-  CloudinaryCallbackImage,
-  CloudinaryWidget,
-  CloudinaryWidgetResult,
-} from '~/types'
+import type { CloudinaryCallbackImage, CloudinaryWidget, CloudinaryWidgetResult } from '~/types'
 
 interface ChildrenProps {
   open: (e: MouseEvent) => void
@@ -45,13 +41,10 @@ export default function CloudinaryUploadWidget({
   return (
     <>
       <Head>
-        // this is Next.js specific, but if you're using something like Create
-        // React App, you could download the script in componentDidMount using
-        // this method: https://stackoverflow.com/a/34425083/1424568
-        <script
-          src="https://widget.cloudinary.com/v2.0/global/all.js"
-          type="text/javascript"
-        />
+        // this is Next.js specific, but if you're using something like Create // React App, you
+        could download the script in componentDidMount using // this method:
+        https://stackoverflow.com/a/34425083/1424568
+        <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript" />
       </Head>
       {children({ open })}
     </>

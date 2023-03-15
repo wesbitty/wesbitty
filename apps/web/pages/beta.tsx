@@ -60,14 +60,7 @@ const VideoShot = (props: any) => {
           <div className="h-2 w-2 mr-2 rounded-full bg-dark-500" />
           <div className="h-2 w-2 mr-2 rounded-full bg-dark-500" />
         </div>
-        <video
-          className="rounded-b-md"
-          src={src}
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
+        <video className="rounded-b-md" src={src} autoPlay loop muted playsInline>
           Your browser does not support the video tag
         </video>
       </div>
@@ -122,17 +115,11 @@ const Hero = () => {
     >
       <div className="container mx-auto px-8 lg:px-28 py-20 h-full grid grid-cols-12 gap-4 items-center text-dark-300">
         <div className="col-span-12 md:col-span-9 lg:col-span-8 xl:col-span-6 text-white">
-          <p className="mb-10 text-4xl">
-            Wesbitty is an open source Firebase alternative.
-          </p>
+          <p className="mb-10 text-4xl">Wesbitty is an open source Firebase alternative.</p>
           <p className="text-2xl">
             Today, we're moving to <span className="text-brand-700">Beta</span>
           </p>
-          <time
-            itemProp="datePublished"
-            dateTime="2020-12-03"
-            className="opacity-50 text-sm"
-          >
+          <time itemProp="datePublished" dateTime="2020-12-03" className="opacity-50 text-sm">
             Published December 3rd, 2020
           </time>
         </div>
@@ -163,8 +150,8 @@ const Introduction = () => {
         </div>
         <div className="col-span-12 sm:col-span-9 xl:col-span-6 text-base mb-20">
           <p>
-            we've been fortunate to work with thousands of early adopters on
-            improving both our Open Source, and Hosted offerings. Companies like{' '}
+            we've been fortunate to work with thousands of early adopters on improving both our Open
+            Source, and Hosted offerings. Companies like{' '}
             <a
               href="/blog/2020/12/02/case-study-xendit"
               target="_blank"
@@ -214,21 +201,14 @@ const Introduction = () => {
               </div>
               <div className="col-span-7 sm-col-span-8 md:col-span-9 xl:col-span-10">
                 <p className="text-5xl lg:text-6xl">
-                  <CountUp
-                    triggerAnimOnScroll={true}
-                    referenceElId="alphaNumbers"
-                  >
+                  <CountUp triggerAnimOnScroll={true} referenceElId="alphaNumbers">
                     {stat.value}
                   </CountUp>
-                  {stat.unit && (
-                    <span className="text-2xl ml-1">{stat.unit}</span>
-                  )}
+                  {stat.unit && <span className="text-2xl ml-1">{stat.unit}</span>}
                 </p>
               </div>
               <div className="col-span-12 sm:col-span-9 md:col-span-10 col-start-0 sm:col-start-5 md:col-start-4 xl:col-start-3">
-                <p className="text-xs lg:text-base text-dark-300 dark:text-dark-400">
-                  {stat.name}
-                </p>
+                <p className="text-xs lg:text-base text-dark-300 dark:text-dark-400">{stat.name}</p>
               </div>
             </div>
           ))}
@@ -245,17 +225,13 @@ const TableOfContents = (props: any) => {
       <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-4">
         <div className="col-span-12 text-base mb-10">
           <p className="text-2xl text-black dark:text-white">
-            Wesbitty{' '}
-            <span className="text-brand-600 dark:text-brand-700">Beta</span> is
-            starting now.
+            Wesbitty <span className="text-brand-600 dark:text-brand-700">Beta</span> is starting
+            now.
           </p>
         </div>
         <div className="col-span-12 grid grid-cols-12 gap-y-10">
           {IntroductionSegments.map((segment: any, segmentIdx: number) => (
-            <div
-              key={`introSegment_${segmentIdx}`}
-              className="col-span-12 grid grid-cols-12"
-            >
+            <div key={`introSegment_${segmentIdx}`} className="col-span-12 grid grid-cols-12">
               <div className="col-span-12 mb-10 sm:col-span-5 xl:col-span-4 sm:mb-0">
                 <p>{segment.description}</p>
               </div>
@@ -299,8 +275,7 @@ const Performance = () => {
       async function handleScroll() {
         const reference = document.getElementById('performanceCharts')
         if (reference && !animTriggered) {
-          const yOffset =
-            reference.getBoundingClientRect().top - window.innerHeight + 20
+          const yOffset = reference.getBoundingClientRect().top - window.innerHeight + 20
           if (yOffset <= 0) {
             setAnimTriggered(true)
             setCount(0)
@@ -319,12 +294,7 @@ const Performance = () => {
       return () => window.removeEventListener('scroll', handleScroll)
     }, [animTriggered])
 
-    return (
-      <div
-        className={`${color} rounded-full h-3`}
-        style={{ width: `${count.toFixed(2)}%` }}
-      />
-    )
+    return <div className={`${color} rounded-full h-3`} style={{ width: `${count.toFixed(2)}%` }} />
   }
 
   const ComparisonChart = () => {
@@ -332,22 +302,14 @@ const Performance = () => {
     return (
       <div id="performanceCharts">
         {PerformanceComparisonData.map((metric: any) => {
-          const multiplier = (
-            metric.stats[0].value / metric.stats[1].value
-          ).toFixed(1)
+          const multiplier = (metric.stats[0].value / metric.stats[1].value).toFixed(1)
           return (
-            <div
-              key={`${metric.key}`}
-              className="mb-10 text-dark-400 dark:text-dark-300"
-            >
+            <div key={`${metric.key}`} className="mb-10 text-dark-400 dark:text-dark-300">
               <p className="sm:w-36 pb-2 mb-4">{metric.title}</p>
               <div className="flex flex-col sm:flex-row sm:items-center">
                 <div className="w-full sm:w-5/6">
                   {metric.stats.map((stat: any, idx: number) => (
-                    <div
-                      key={`metric_${metric.key}_${idx}`}
-                      className="flex items-center"
-                    >
+                    <div key={`metric_${metric.key}_${idx}`} className="flex items-center">
                       <p className="w-20 lg:w-24 border-r py-2 pr-4 mr-4 text-left sm:text-right">
                         {stat.name}
                       </p>
@@ -357,18 +319,14 @@ const Performance = () => {
                             ? 'bg-brand-600 dark:bg-brand-700'
                             : 'bg-dark-300 dark:bg-dark-400'
                         }
-                        finalPercentage={Math.ceil(
-                          (stat.value / maxValue) * 100
-                        )}
+                        finalPercentage={Math.ceil((stat.value / maxValue) * 100)}
                       />
                       <p className="ml-2">{stat.value}/s</p>
                     </div>
                   ))}
                 </div>
                 <div className="text-left sm:w-1/6 sm:text-right flex flex-col">
-                  <p className="text-6xl text-dark-700 dark:text-dark-100">
-                    {multiplier}x
-                  </p>
+                  <p className="text-6xl text-dark-700 dark:text-dark-100">{multiplier}x</p>
                   <p className="text-sm -mt-2">more {metric.key}s per second</p>
                 </div>
               </div>
@@ -387,14 +345,13 @@ const Performance = () => {
         <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10 items-center">
           <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
             <p className="mb-10">
-              We started Wesbitty to give developers a web-ready database that
-              is delightful to use, without sacrificing speed and scale.
-              Postgres makes this possible, handling massive amounts of data
-              without sacrificing read and write speed.
+              We started Wesbitty to give developers a web-ready database that is delightful to use,
+              without sacrificing speed and scale. Postgres makes this possible, handling massive
+              amounts of data without sacrificing read and write speed.
             </p>
             <p className="mb-10">
-              We tweaked our stack obsessively during our Alpha program to tease
-              out superior performance. We chose the hyper-scalable{' '}
+              We tweaked our stack obsessively during our Alpha program to tease out superior
+              performance. We chose the hyper-scalable{' '}
               <a
                 href="https://elixir-lang.org/"
                 target="_blank"
@@ -421,12 +378,11 @@ const Performance = () => {
               >
                 PostgREST
               </a>{' '}
-              team while they improved the performance of their auto-generated
-              CRUD APIs.
+              team while they improved the performance of their auto-generated CRUD APIs.
             </p>
             <p className="text-dark-400 dark:text-dark-300">
-              We're publishing the results of our benchmarks here and we'll
-              continue to seek gains throughout our Beta program and beyond. Our{' '}
+              We're publishing the results of our benchmarks here and we'll continue to seek gains
+              throughout our Beta program and beyond. Our{' '}
               <a
                 href="https://github.com/wesbitty/benchmarks/"
                 target="_blank"
@@ -435,9 +391,8 @@ const Performance = () => {
               >
                 benchmarks
               </a>{' '}
-              are open source so that the community can better our methodologies
-              and identify areas of improvement for the tools which we support
-              at Wesbitty.
+              are open source so that the community can better our methodologies and identify areas
+              of improvement for the tools which we support at Wesbitty.
             </p>
           </div>
           <div className="col-span-12 mt-10 mb-10">
@@ -445,25 +400,21 @@ const Performance = () => {
           </div>
           <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
             <p className="mb-10">
-              Benchmarks were run from a neutral host (Digital Ocean Droplet 4
-              GB Memory / 80 GB Disk / SGP1 - Ubuntu 20.04 (LTS) x64) against a
-              table/collection pre-populated with 1 million rows. The Wesbitty
-              database and API used are each running on AWS EC2 t3a.micro
+              Benchmarks were run from a neutral host (Digital Ocean Droplet 4 GB Memory / 80 GB
+              Disk / SGP1 - Ubuntu 20.04 (LTS) x64) against a table/collection pre-populated with 1
+              million rows. The Wesbitty database and API used are each running on AWS EC2 t3a.micro
               instances.
             </p>
             <p className="mb-10">
-              Wesbitty is available in 7 different geographic regions. We're
-              adding more regions as we build up multi-cloud support. Soon we'll
-              offer read-replicas to scale your database right to the edge -
-              reducing latency and giving your users a better experience.
+              Wesbitty is available in 7 different geographic regions. We're adding more regions as
+              we build up multi-cloud support. Soon we'll offer read-replicas to scale your database
+              right to the edge - reducing latency and giving your users a better experience.
             </p>
             <p>
-              One of our key metrics at Wesbitty is "Time to Value". How fast
-              can a user go from sign up, to making their first API request? How
-              fast can they go from development to production? We've built
-              several case studies on our blog, demonstrating how Wesbitty
-              enables them to build and scale their product in as little time as
-              possible.
+              One of our key metrics at Wesbitty is "Time to Value". How fast can a user go from
+              sign up, to making their first API request? How fast can they go from development to
+              production? We've built several case studies on our blog, demonstrating how Wesbitty
+              enables them to build and scale their product in as little time as possible.
             </p>
           </div>
         </div>
@@ -481,33 +432,28 @@ const Security = () => {
         <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8">
           <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
             <p className="mb-10">
-              As an infrastructure provider, security has been a priority from
-              day one. While we had to resolve brute force attacks on our
-              customers' databases, we internally run pen tests to ensure that
-              our own systems are air-tight.
+              As an infrastructure provider, security has been a priority from day one. While we had
+              to resolve brute force attacks on our customers' databases, we internally run pen
+              tests to ensure that our own systems are air-tight.
             </p>
             <p className="mb-10">
-              Approaching the launch of our Beta period, we worked with security
-              advisors and specialists globally to enforce new measures and
-              processes:
+              Approaching the launch of our Beta period, we worked with security advisors and
+              specialists globally to enforce new measures and processes:
             </p>
             <ul className="list-disc list-outside ml-6">
               <li className="mb-5">
-                Employed DigitalXRAID to run a full Pen Test on both our
-                internal and customer infrastructure. We immediately patched one
-                medium priority issue and are currently in the process of
-                resolving the minor and informational issues.
+                Employed DigitalXRAID to run a full Pen Test on both our internal and customer
+                infrastructure. We immediately patched one medium priority issue and are currently
+                in the process of resolving the minor and informational issues.
               </li>
               <li className="mb-5">
-                Published a disclosure policy so that ethical hackers can help
-                us find vulnerabilities in our systems. We've received reports
-                from this initiative already, and we'll continue to formalise
-                our bounty program throughout the Beta.
+                Published a disclosure policy so that ethical hackers can help us find
+                vulnerabilities in our systems. We've received reports from this initiative already,
+                and we'll continue to formalise our bounty program throughout the Beta.
               </li>
               <li className="mb-5">
-                We now run an ongoing internal Capture the Flag competition,
-                where team members are challenged to breach various components
-                of our systems.
+                We now run an ongoing internal Capture the Flag competition, where team members are
+                challenged to breach various components of our systems.
               </li>
               <li className="mb-5">
                 Adopted the{' '}
@@ -519,13 +465,12 @@ const Security = () => {
                 >
                   Snyk
                 </a>{' '}
-                dependency monitor as part of our SSDLC on several key component
-                of our system, to help locate potential vulnerabilities in third
-                party Open Source dependencies.
+                dependency monitor as part of our SSDLC on several key component of our system, to
+                help locate potential vulnerabilities in third party Open Source dependencies.
               </li>
               <li>
-                Worked with several of the open source tools that we use to
-                improve their own security. For example, PostgREST{' '}
+                Worked with several of the open source tools that we use to improve their own
+                security. For example, PostgREST{' '}
                 <a
                   href="https://github.com/PostgREST/postgrest/pull/1600#issuecomment-735257952"
                   target="_blank"
@@ -554,25 +499,23 @@ const Reliability = () => {
         <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
           <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
             <p className="mb-5">
-              During Alpha we experienced 2 availability incidents, neither
-              affecting customer access to their data. These were:
+              During Alpha we experienced 2 availability incidents, neither affecting customer
+              access to their data. These were:
             </p>
             <ul className="list-disc list-outside ml-6 mb-10">
               <li className="mb-5">
-                A third-party CDN API outage. As a result, subdomains were not
-                created for new projects.
+                A third-party CDN API outage. As a result, subdomains were not created for new
+                projects.
               </li>
               <li>
-                Cloud resource limits. We maxed out our Virtual Machines limits
-                in some popular regions, and we hit the maximum number of
-                subdomains allowed by our DNS provider. These limitations are
-                artificial and our cloud providers quickly lifted them.
+                Cloud resource limits. We maxed out our Virtual Machines limits in some popular
+                regions, and we hit the maximum number of subdomains allowed by our DNS provider.
+                These limitations are artificial and our cloud providers quickly lifted them.
               </li>
             </ul>
             <p className="mb-10">
-              Availability is one of our highest priority goals. We're
-              continuing efforts to maximize uptime and ensure user data is
-              backed up in a secure and encrypted location.
+              Availability is one of our highest priority goals. We're continuing efforts to
+              maximize uptime and ensure user data is backed up in a secure and encrypted location.
             </p>
             <p className="mb-10">
               We're launching{' '}
@@ -584,16 +527,14 @@ const Reliability = () => {
               >
                 https://status.wesbitty.com
               </a>{' '}
-              to keep track of uptime across all of our services and critical
-              infrastructure.
+              to keep track of uptime across all of our services and critical infrastructure.
             </p>
             <div className="mb-10">
               <VideoShot src={`${basePath}/videos/statusPage.mp4`} />
             </div>
             <p>
-              For our Alpha & Beta Users we take free, encrypted daily database
-              backups up to 20GB. They are available to download at any time via
-              the dashboard.
+              For our Alpha & Beta Users we take free, encrypted daily database backups up to 20GB.
+              They are available to download at any time via the dashboard.
             </p>
           </div>
         </div>
@@ -605,18 +546,15 @@ const Reliability = () => {
 const NewFeaturesAndIntegrations = () => {
   const { basePath } = useRouter()
   return (
-    <div
-      id="newFeaturesAndIntegrations"
-      className="bg-gray-50 dark:bg-dark-700"
-    >
+    <div id="newFeaturesAndIntegrations" className="bg-gray-50 dark:bg-dark-700">
       <div className="container mx-auto px-8 lg:px-28 py-20 grid grid-cols-12 gap-y-10 text-dark-400 dark:text-dark-200">
         <SectionHeader sectionNumber={4} header="New Features & Integrations" />
 
         <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
           <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
             <p className="mb-5">
-              If you're new to Wesbitty, here's a few of the things you get when
-              you choose us as your backend.
+              If you're new to Wesbitty, here's a few of the things you get when you choose us as
+              your backend.
             </p>
             <ul className="">
               <li className="mb-10">
@@ -624,8 +562,8 @@ const NewFeaturesAndIntegrations = () => {
                   Auth
                 </p>
                 <p className="mb-5">
-                  If you're new to Wesbitty, here's a few of the things you get
-                  when you choose us as your backend. We provide{' '}
+                  If you're new to Wesbitty, here's a few of the things you get when you choose us
+                  as your backend. We provide{' '}
                   <a
                     href="/docs/reference/javascript/auth-signup"
                     target="_blank"
@@ -641,14 +579,12 @@ const NewFeaturesAndIntegrations = () => {
                   >
                     HTTP
                   </a>
-                  ) APIs for your users to sign in and out of your application.
-                  You can define the rows in your database that logged-in users
-                  can access (e.g. only his or her shopping cart). We even
-                  provide account confirmation, recovery, and invite email
-                  templates which you can customize on the dashboard, and we
-                  handle the transactional emails for you. We support
-                  passwordless links, and we offer several OAuth providers
-                  including Google, GitHub, with more on the way.
+                  ) APIs for your users to sign in and out of your application. You can define the
+                  rows in your database that logged-in users can access (e.g. only his or her
+                  shopping cart). We even provide account confirmation, recovery, and invite email
+                  templates which you can customize on the dashboard, and we handle the
+                  transactional emails for you. We support passwordless links, and we offer several
+                  OAuth providers including Google, GitHub, with more on the way.
                 </p>
                 <VideoShot src={`${basePath}/videos/tabAuthRules.mp4`} />
               </li>
@@ -665,10 +601,9 @@ const NewFeaturesAndIntegrations = () => {
                   >
                     subscribe to changes in your database
                   </a>{' '}
-                  over websockets, receiving your data in realtime. Companies
-                  are using Wesbitty to build chat applications, trigger
-                  notifications, and pipe data to analytics dashboards whenever
-                  it changes in their database.
+                  over websockets, receiving your data in realtime. Companies are using Wesbitty to
+                  build chat applications, trigger notifications, and pipe data to analytics
+                  dashboards whenever it changes in their database.
                 </p>
               </li>
               <li className="mb-10">
@@ -676,8 +611,8 @@ const NewFeaturesAndIntegrations = () => {
                   CRUD API
                 </p>
                 <p>
-                  You can use your database immediately, without an ORM or an
-                  API backend. We support GraphQL-like{' '}
+                  You can use your database immediately, without an ORM or an API backend. We
+                  support GraphQL-like{' '}
                   <a
                     href="/docs/reference/javascript/select#query-foreign-tables"
                     target="_blank"
@@ -701,10 +636,9 @@ const NewFeaturesAndIntegrations = () => {
                   Quickstart Templates
                 </p>
                 <p>
-                  If you're unfamiliar with SQL, we provide a set of Quickstart
-                  Templates to get you building quickly. Very soon you'll be
-                  able to deploy entire apps (front and back end) with just the
-                  click of a button.
+                  If you're unfamiliar with SQL, we provide a set of Quickstart Templates to get you
+                  building quickly. Very soon you'll be able to deploy entire apps (front and back
+                  end) with just the click of a button.
                 </p>
               </li>
               <li className="mb-10">
@@ -712,9 +646,8 @@ const NewFeaturesAndIntegrations = () => {
                   Table View
                 </p>
                 <p className="mb-5">
-                  View and edit your data like a spreadsheet from within the
-                  Wesbitty dashboard. Build your schema, create complex
-                  relationships, and import and export to csv.
+                  View and edit your data like a spreadsheet from within the Wesbitty dashboard.
+                  Build your schema, create complex relationships, and import and export to csv.
                 </p>
                 <VideoShot src={`${basePath}/videos/tabTableEditor.mp4`} />
               </li>
@@ -723,8 +656,8 @@ const NewFeaturesAndIntegrations = () => {
                   SQL Editor
                 </p>
                 <p className="mb-5">
-                  No need to install third party SQL tools, you can run queries
-                  directly from the Wesbitty Dashboard.
+                  No need to install third party SQL tools, you can run queries directly from the
+                  Wesbitty Dashboard.
                 </p>
                 <VideoShot src={`${basePath}/videos/tabSqlEditor.mp4`} />
               </li>
@@ -743,45 +676,40 @@ const BetaPricing = () => (
 
       <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
         <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
+          <p className="mb-10">For up to date pricing info see: https://wesbitty.com/pricing</p>
           <p className="mb-10">
-            For up to date pricing info see: https://wesbitty.com/pricing
-          </p>
-          <p className="mb-10">
-            We're working closely with many open source projects, infrastructure
-            providers, and of course our Alpha Users, to provide a predictable
-            and sustainable pricing model.
+            We're working closely with many open source projects, infrastructure providers, and of
+            course our Alpha Users, to provide a predictable and sustainable pricing model.
           </p>
           <p className="mb-5">Our key aims going into this exercise were:</p>
           <ul className="list-disc list-outside ml-6 mb-10">
             <li className="mb-5">
-              To continue offering free Wesbitty instances for Students,
-              Hobbyists, and Early Adopters
+              To continue offering free Wesbitty instances for Students, Hobbyists, and Early
+              Adopters
             </li>
             <li className="mb-5">
-              To price based on <span className="italic">predictable</span>{' '}
-              metrics (no shock bills at the end of the month)
+              To price based on <span className="italic">predictable</span> metrics (no shock bills
+              at the end of the month)
             </li>
             <li>
-              To grow with our users, providing a pricing model that supports
-              their growth and allow them to create value for their customers
+              To grow with our users, providing a pricing model that supports their growth and allow
+              them to create value for their customers
             </li>
           </ul>
-          <p className="mb-10">
-            We are committing to the following initiatives:
-          </p>
+          <p className="mb-10">We are committing to the following initiatives:</p>
           <ul className="list-decimal list-outside ml-6 mb-10">
             <li className="mb-5">
-              All Alpha Users will receive credits equivalent of 2 years of base
-              tier usage. These will automatically be credited to your account
-              if you signed up prior to December 2020.
+              All Alpha Users will receive credits equivalent of 2 years of base tier usage. These
+              will automatically be credited to your account if you signed up prior to December
+              2020.
             </li>
             <li className="mb-5">
-              All Beta Users (new users from December 2020) will receive 1 year
-              of base tier usage for free.
+              All Beta Users (new users from December 2020) will receive 1 year of base tier usage
+              for free.
             </li>
             <li className="mb-5">
-              University (and participating code school) Students will be
-              eligible for 2 years of base tier usage (Code Schools can contact{' '}
+              University (and participating code school) Students will be eligible for 2 years of
+              base tier usage (Code Schools can contact{' '}
               <a
                 href="mailto:admin@wesbitty.com"
                 target="_blank"
@@ -793,18 +721,13 @@ const BetaPricing = () => (
               )
             </li>
             <li>
-              Early stage startups participating in selected incubator programs
-              can claim additional credits which can be applied to products
-              outside of the base tier.
+              Early stage startups participating in selected incubator programs can claim additional
+              credits which can be applied to products outside of the base tier.
             </li>
           </ul>
           <p>
-            The Wesbitty Base Tier is now called the Wesbitty Pro tier as per
-            the{' '}
-            <a
-              href="https://wesbitty.com/pricing"
-              className="text-brand-700 hover:text-brand-800"
-            >
+            The Wesbitty Base Tier is now called the Wesbitty Pro tier as per the{' '}
+            <a href="https://wesbitty.com/pricing" className="text-brand-700 hover:text-brand-800">
               pricing page
             </a>
             .
@@ -823,14 +746,12 @@ const OpenSource = () => (
       <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
         <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
           <p className="mb-10">
-            Great software is multi generational and stretches beyond any single
-            company.
+            Great software is multi generational and stretches beyond any single company.
           </p>
           <p className="mb-10">
-            Wesbitty is a collection of many projects, and we rely on making
-            contributors to help us build and improve. Because of this, we aim
-            to make open source more accessible and attractive to anyone who
-            wants to contribute.
+            Wesbitty is a collection of many projects, and we rely on making contributors to help us
+            build and improve. Because of this, we aim to make open source more accessible and
+            attractive to anyone who wants to contribute.
           </p>
           <p className="mb-10">
             Every dollar that is given to Wesbitty in{' '}
@@ -842,12 +763,11 @@ const OpenSource = () => (
             >
               sponsorship
             </a>{' '}
-            will be funneled back to the community to support the next
-            generation of Open Source maintainers.
+            will be funneled back to the community to support the next generation of Open Source
+            maintainers.
           </p>
           <p className="mb-10">
-            One of the biggest barriers to Open Source is knowing exactly how to
-            get started. We're{' '}
+            One of the biggest barriers to Open Source is knowing exactly how to get started. We're{' '}
             <a
               href="/blog/2020/12/02/supabase-striveschool"
               target="_blank"
@@ -855,13 +775,12 @@ const OpenSource = () => (
             >
               partnering with Strive School
             </a>{' '}
-            to educate the next generation of programmers in Open Source -
-            providing tutorials, Founder Office Hours, and other free resources.
+            to educate the next generation of programmers in Open Source - providing tutorials,
+            Founder Office Hours, and other free resources.
           </p>
           <p className="mb-10">
-            If you teach programming, and you're interested in offering OSS
-            tuition to your students, we're actively looking for more education
-            partners. Email{' '}
+            If you teach programming, and you're interested in offering OSS tuition to your
+            students, we're actively looking for more education partners. Email{' '}
             <a
               href="mailto:admin@wesbitty.com"
               target="_blank"
@@ -896,20 +815,18 @@ const FundingPartners = () => (
       <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
         <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
           <p className="mb-10">
-            Building a platform that can offer all the amazing features of
-            Firebase will take resources - more than most open source tools.
-            Ours will be a long journey and it will require the help of many
-            experienced engineers.
+            Building a platform that can offer all the amazing features of Firebase will take
+            resources - more than most open source tools. Ours will be a long journey and it will
+            require the help of many experienced engineers.
           </p>
           <p className="mb-10">
-            The partners we choose for this journey must be aligned with our
-            ethos as an open source company. In a few weeks we'll release the
-            full details of our Seed round. Today, we're happy to announce one
-            key partner who needs no introduction: Mozilla.
+            The partners we choose for this journey must be aligned with our ethos as an open source
+            company. In a few weeks we'll release the full details of our Seed round. Today, we're
+            happy to announce one key partner who needs no introduction: Mozilla.
           </p>
           <p className="mb-10">
-            Open source is at the very core of what Mozilla do - we're humbled
-            and excited to work with them.
+            Open source is at the very core of what Mozilla do - we're humbled and excited to work
+            with them.
           </p>
           <p>
             Follow us on{' '}
@@ -937,21 +854,19 @@ const ScalingOurTeam = () => (
       <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
         <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
           <p className="mb-10">
-            We are extremely proud of our team. We're a mix of 11 engineers,
-            from 8 different countries. Half of the team are previous founders -
-            collectively we've founded 15 companies, generating millions in
-            revenue.
+            We are extremely proud of our team. We're a mix of 11 engineers, from 8 different
+            countries. Half of the team are previous founders - collectively we've founded 15
+            companies, generating millions in revenue.
           </p>
           <p className="mb-10">
-            We're also passionate about tech and open source. We hire open
-            source maintainers to work full time on the products we use, and we
-            spend every Friday dogfooding Wesbitty to make it better.
+            We're also passionate about tech and open source. We hire open source maintainers to
+            work full time on the products we use, and we spend every Friday dogfooding Wesbitty to
+            make it better.
           </p>
           <p>
-            We are hiring across multiple positions including PostgreSQL
-            engineers, Cloud engineers, SRE's, and Developer Advocates. We are a
-            fully remote team, spanning 4 continents and 10 nationalities. If
-            you are interested and think you can be a factor in the success of
+            We are hiring across multiple positions including PostgreSQL engineers, Cloud engineers,
+            SRE's, and Developer Advocates. We are a fully remote team, spanning 4 continents and 10
+            nationalities. If you are interested and think you can be a factor in the success of
             Wesbitty, get in touch at{' '}
             <a
               href="mailto:admin@wesbitty.com"
@@ -980,47 +895,41 @@ const WhatsNext = () => (
       <div className="col-span-12 grid grid-cols-12 gap-x-2 lg:gap-x-8 mb-10">
         <div className="col-span-12 sm:col-span-9 xl:col-span-7 text-base">
           <p className="mb-5">
-            If you watch our repos you'll see that development never stops, we
-            ship every day (and night!). We're constantly improving Wesbitty
-            based on user feedback. Alongside performance, security, and
-            reliability improvements, here are some new features we're working
-            on for 2021:
+            If you watch our repos you'll see that development never stops, we ship every day (and
+            night!). We're constantly improving Wesbitty based on user feedback. Alongside
+            performance, security, and reliability improvements, here are some new features we're
+            working on for 2021:
           </p>
           <ul className="list-disc list-outside ml-6 mb-10">
+            <li className="mb-5">Storage - Making blob storage easier than ever before</li>
             <li className="mb-5">
-              Storage - Making blob storage easier than ever before
+              Functions - write and deploy serverless functions that have access to your Wesbitty
+              context
             </li>
             <li className="mb-5">
-              Functions - write and deploy serverless functions that have access
-              to your Wesbitty context
+              Local Emulator - Making local development more accessible with a quick start CLI for
+              any environment
             </li>
             <li className="mb-5">
-              Local Emulator - Making local development more accessible with a
-              quick start CLI for any environment
+              High Availability - Database and API replicas spread globally to serve a global user
+              base
             </li>
             <li className="mb-5">
-              High Availability - Database and API replicas spread globally to
-              serve a global user base
+              Multicloud - Spread your Wesbitty instances across multiple datacenter providers to
+              protect against outages
             </li>
             <li className="mb-5">
-              Multicloud - Spread your Wesbitty instances across multiple
-              datacenter providers to protect against outages
-            </li>
-            <li className="mb-5">
-              Self Hosted - 'Bring your own cloud' is essential for some
-              businesses, and so we're working on easy-deploy tooling for
-              customers with this requirement
+              Self Hosted - 'Bring your own cloud' is essential for some businesses, and so we're
+              working on easy-deploy tooling for customers with this requirement
             </li>
             <li>
-              More client libraries - members of the community are helping us
-              build client libraries for many different languages including
-              TypeScript, Python, Dart, C#, and Rust. Come and help us bring
-              Wesbitty to your favorite language or framework.
+              More client libraries - members of the community are helping us build client libraries
+              for many different languages including TypeScript, Python, Dart, C#, and Rust. Come
+              and help us bring Wesbitty to your favorite language or framework.
             </li>
           </ul>
           <p className="mb-10">
-            We depend on your feedback to continually improve Wesbitty. Email us
-            at{' '}
+            We depend on your feedback to continually improve Wesbitty. Email us at{' '}
             <a
               href="mailto:admin@wesbitty.com"
               target="_blank"
@@ -1104,15 +1013,12 @@ const Beta = () => {
           ],
         }}
       />
-      <Container >
+      <Container>
         <div className="sticky inset-0 z-50">
           <div className="shadow-lg py-5 px-5 xl:px-20 bg-dark-800 flex items-center justify-between">
             <Link href="/">
               <a>
-                <img
-                  className="w-40"
-                  src={`${basePath}/images/logo-dark.png`}
-                />
+                <img className="w-40" src={`${basePath}/images/logo-dark.png`} />
               </a>
             </Link>
             <HamburgerMenu openMenu={() => setMenuOpen(!menuOpen)} />

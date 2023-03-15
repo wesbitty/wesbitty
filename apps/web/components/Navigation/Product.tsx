@@ -4,6 +4,8 @@ import CaseStudiesData from '../../wesbitty/data/CaseStudies.json'
 import { useRouter } from 'next/router'
 import ProductIcon from '../ProductIcon'
 import { Typography, Badge } from '@wesbitty/ui'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const Product = () => {
   const { basePath } = useRouter()
@@ -35,13 +37,13 @@ const Product = () => {
     )
     return (
       url && (
-        <a
+        <Link
           key={name}
           href={url}
           className="p-3 col-span-6 rounded hover:bg-gray-50 dark:hover:bg-dark-700 transition"
         >
           {content}
-        </a>
+        </Link>
       )
     )
   })
@@ -53,9 +55,7 @@ const Product = () => {
       </nav>
       <div className="col-span-6">
         <div className="m-3 mx-6">
-          <Typography.Text type="secondary">
-            Latest case studies
-          </Typography.Text>
+          <Typography.Text type="secondary">Latest case studies</Typography.Text>
           <ul className="mt-6 space-y-3">
             {CaseStudiesData.map((caseStudy: any, idx: number) => {
               if (idx > 1) {
@@ -63,12 +63,14 @@ const Product = () => {
               }
               return (
                 <li className="flow-root" key={`flyout_case_${idx}`}>
-                  <a
+                  <Link
                     href={caseStudy.url}
                     className="p-3 flex rounded-lg hover:bg-gray-100 dark:hover:bg-dark-700 transition ease-in-out duration-150 border dark:border-gray-600"
                   >
                     <div className="hidden sm:block flex-shrink-0">
-                      <img
+                      <Image
+                        width={32}
+                        height={20}
                         className="w-32 h-20 object-cover rounded-md"
                         src={`${basePath}/${caseStudy.imgUrl}`}
                         alt="caseStudyThumb"
@@ -80,7 +82,7 @@ const Product = () => {
                       </Typography.Title>
                       <Typography.Text>{caseStudy.description}</Typography.Text>
                     </div>
-                  </a>
+                  </Link>
                 </li>
               )
             })}

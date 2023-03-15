@@ -10,12 +10,12 @@ const FeatureSection = (props: any) => {
         <Typography.Title level={4}>Write less code</Typography.Title>
         <Typography.Text>
           <p className="lg:text-lg">
-            Use media in your project without needing to reply on external
-            services or learn new frameworks.
+            Use media in your project without needing to reply on external services or learn new
+            frameworks.
           </p>
           <p>
-            Familiar and easy to use permissions mean that your content is
-            secure and accessible only to the right users
+            Familiar and easy to use permissions mean that your content is secure and accessible
+            only to the right users
           </p>
         </Typography.Text>
       </div>
@@ -26,12 +26,12 @@ const FeatureSection = (props: any) => {
         <Typography.Title level={4}>Blazing fast</Typography.Title>
         <Typography.Text>
           <p className="lg:text-lg">
-            Use media in your project without needing to reply on external
-            services or learn new frameworks.
+            Use media in your project without needing to reply on external services or learn new
+            frameworks.
           </p>
           <p>
-            Familiar and easy to use permissions mean that your content is
-            secure and accessible only to the right users
+            Familiar and easy to use permissions mean that your content is secure and accessible
+            only to the right users
           </p>
         </Typography.Text>
       </div>
@@ -42,12 +42,12 @@ const FeatureSection = (props: any) => {
         <Typography.Title level={4}>Dependable</Typography.Title>
         <Typography.Text>
           <p className="lg:text-lg">
-            Use media in your project without needing to reply on external
-            services or learn new frameworks.
+            Use media in your project without needing to reply on external services or learn new
+            frameworks.
           </p>
           <p>
-            Familiar and easy to use permissions mean that your content is
-            secure and accessible only to the right users
+            Familiar and easy to use permissions mean that your content is secure and accessible
+            only to the right users
           </p>
         </Typography.Text>
       </div>

@@ -1,4 +1,5 @@
 import { Button, Typography } from '@wesbitty/ui'
+import Link from 'next/link'
 
 const CTABanner = (props: any) => {
   const { darkerBg } = props
@@ -16,9 +17,9 @@ const CTABanner = (props: any) => {
         </Typography.Title>
       </div>
       <div className="col-span-12 mt-4">
-        <a href="/api/auth/signin">
+        <Link href="https://app.wesbitty.com">
           <Button size="medium">Start your project</Button>
-        </a>
+        </Link>
       </div>
     </div>
   )

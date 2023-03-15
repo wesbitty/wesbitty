@@ -3,6 +3,8 @@ import DevelopersData from '../../wesbitty/data/Developers.json'
 import AnnouncementsData from '../../wesbitty/data/Announcements.json'
 import { useRouter } from 'next/router'
 import { Typography } from '@wesbitty/ui'
+import Link from 'next/link'
+import Image from 'next/image'
 
 type Props = {
   text: string
@@ -17,7 +19,7 @@ const Developers = () => {
     const { text, description, url, icon } = company
 
     const content = (
-      <a
+      <Link
         href={url}
         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 dark:hover:bg-dark-700 transition ease-in-out duration-150"
       >
@@ -30,12 +32,7 @@ const Developers = () => {
           stroke="currentColor"
           aria-hidden="true"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d={icon}
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={icon} />
         </svg>
         <div className="ml-4">
           <Typography.Title level={5}>{text}</Typography.Title>
@@ -43,16 +40,16 @@ const Developers = () => {
             <p>{description}</p>
           </Typography.Text>
         </div>
-      </a>
+      </Link>
     )
     return url ? (
-      <a
+      <Link
         key={text}
         href={url}
         className="p-3 col-span-6 rounded hover:bg-gray-50 dark:hover:bg-dark-700 transition"
       >
         {content}
-      </a>
+      </Link>
     ) : (
       <div
         key={text}
@@ -70,9 +67,7 @@ const Developers = () => {
       </nav>
       <div className="col-span-6">
         <div className="m-3 mx-6">
-          <Typography.Text type="secondary">
-            Latest announcements
-          </Typography.Text>
+          <Typography.Text type="secondary">Latest announcements</Typography.Text>
           <ul className="mt-6 space-y-3 pb-6">
             {AnnouncementsData.map((caseStudy: any, idx: number) => (
               <li className="flow-root" key={`flyout_case_${idx}`}>
@@ -81,7 +76,9 @@ const Developers = () => {
                   className="p-3 flex rounded-lg hover:bg-gray-100 dark:hover:bg-dark-700 transition ease-in-out duration-150 border dark:border-gray-600"
                 >
                   <div className="hidden sm:block flex-shrink-0">
-                    <img
+                    <Image
+                      width="32"
+                      height="20"
                       className="w-32 h-20 object-cover rounded-md"
                       src={`${basePath}/${caseStudy.imgUrl}`}
                       alt="caseStudyThumb"
@@ -91,9 +88,7 @@ const Developers = () => {
                     <Typography.Title level={5} className="mb-0">
                       {caseStudy.title}
                     </Typography.Title>
-                    <Typography.Text type="secondary">
-                      {caseStudy.description}
-                    </Typography.Text>
+                    <Typography.Text type="secondary">{caseStudy.description}</Typography.Text>
                   </div>
                 </a>
               </li>

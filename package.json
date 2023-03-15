@@ -17,12 +17,12 @@
   "author": "Wesbitty, Inc.",
   "scripts": {
     "build": "turbo run build",
-    "build:www": "turbo run build --filter=web",
+    "build:app": "turbo run build --filter=web",
     "dev": "turbo run dev --filter=web",
-    "format:prettier": "prettier -w .",
-    "rm": "npm run rm:examples && npm run rm:apps",
-    "rm:examples": "bash -c 'rm -rf examples/*/.turbo examples/*/.wesjet examples/*/.next packages/*/dist'",
-    "rm:apps": "bash -c 'rm -rf apps/*/.wesjet apps/*/.next  apps/*/.turbo'",
+    "format": "prettier -w .",
+    "clean": "npm run clean:pkg && npm run clean:app",
+    "clean:pkg": "bash -c 'rm -rf examples/*/.turbo examples/*/.wesjet examples/*/.next packages/*/dist'",
+    "clean:app": "bash -c 'rm -rf apps/*/.wesjet apps/*/.next  apps/*/.turbo'",
     "test": "jest"
   },
   "devDependencies": {

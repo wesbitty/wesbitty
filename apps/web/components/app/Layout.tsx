@@ -22,9 +22,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
   const sitePage = router.pathname.startsWith('/app/site/[id]')
   const postPage = router.pathname.startsWith('/app/post/[id]')
   const rootPage = !sitePage && !postPage
-  const tab = rootPage
-    ? router.asPath.split('/')[1]
-    : router.asPath.split('/')[3]
+  const tab = rootPage ? router.asPath.split('/')[1] : router.asPath.split('/')[3]
 
   const session = useRequireAuth()
   if (!session) return <Loader />
@@ -61,21 +59,21 @@ export default function Layout({ siteId, children }: LayoutProps) {
         <div className="absolute left-0 right-0 h-16 border-b bg-white border-gray-200">
           <div className="flex justify-between items-center h-full max-w-screen-xl mx-auto px-10 sm:px-20">
             <div className="flex space-x-4">
-              <Link href="/" >
+              <Link href="/">
                 <a className="flex justify-center items-center">
-                {session.user && session.user.image && (
-                  <div className="h-8 w-8 inline-block rounded-full overflow-hidden align-middle">
-                    <Image
-                      src={session.user.image}
-                      width={40}
-                      height={40}
-                      alt={session.user.name ?? 'User avatar'}
-                    />
-                  </div>
-                )}
-                <span className="sm:block inline-block ml-3 font-medium truncate">
-                  {session.user?.name}
-                </span>
+                  {session.user && session.user.image && (
+                    <div className="h-8 w-8 inline-block rounded-full overflow-hidden align-middle">
+                      <Image
+                        src={session.user.image}
+                        width={40}
+                        height={40}
+                        alt={session.user.name ?? 'User avatar'}
+                      />
+                    </div>
+                  )}
+                  <span className="sm:block inline-block ml-3 font-medium truncate">
+                    {session.user?.name}
+                  </span>
                 </a>
               </Link>
               <div className="h-8 border border-gray-300" />
@@ -107,25 +105,18 @@ export default function Layout({ siteId, children }: LayoutProps) {
         </div>
         {rootPage && (
           <div className="absolute left-0 right-0 top-16 flex justify-center items-center font-cal space-x-16 border-b bg-white border-gray-200">
-            <Link
-              href="/"
-              >
-              <a className={`border-b-2 ${
-                tab == '' ? 'border-black' : 'border-transparent'
-              } py-3`}
-            >
-              My Sites
+            <Link href="/">
+              <a className={`border-b-2 ${tab == '' ? 'border-black' : 'border-transparent'} py-3`}>
+                My Sites
               </a>
             </Link>
-            <Link
-              href="/settings"
-              >
+            <Link href="/settings">
               <a
-              className={`border-b-2 ${
-                tab == 'settings' ? 'border-black' : 'border-transparent'
-              } py-3`}
-            >
-              Settings
+                className={`border-b-2 ${
+                  tab == 'settings' ? 'border-black' : 'border-transparent'
+                } py-3`}
+              >
+                Settings
               </a>
             </Link>
           </div>
@@ -133,41 +124,31 @@ export default function Layout({ siteId, children }: LayoutProps) {
         {sitePage && (
           <div className="absolute left-0 right-0 top-16 font-cal border-b bg-white border-gray-200">
             <div className="flex justify-between items-center space-x-16 max-w-screen-xl mx-auto px-10 sm:px-20">
-              <Link href="/" >
-              <a className="md:inline-block ml-3 hidden">
-                ← All Sites
-                </a>
+              <Link href="/">
+                <a className="md:inline-block ml-3 hidden">← All Sites</a>
               </Link>
               <div className="flex justify-between items-center space-x-10 md:space-x-16">
-                <Link
-                  href={`/site/${router.query.id}`}
-                  >
+                <Link href={`/site/${router.query.id}`}>
+                  <a className={`border-b-2 ${!tab ? 'border-black' : 'border-transparent'} py-3`}>
+                    Posts
+                  </a>
+                </Link>
+                <Link href={`/site/${router.query.id}/drafts`}>
                   <a
-                  className={`border-b-2 ${
-                    !tab ? 'border-black' : 'border-transparent'
-                  } py-3`}
-                >
-                  Posts
+                    className={`border-b-2 ${
+                      tab == 'drafts' ? 'border-black' : 'border-transparent'
+                    } py-3`}
+                  >
+                    Drafts
                   </a>
                 </Link>
-                <Link
-                  href={`/site/${router.query.id}/drafts`}
+                <Link href={`/site/${router.query.id}/settings`}>
+                  <a
+                    className={`border-b-2 ${
+                      tab == 'settings' ? 'border-black' : 'border-transparent'
+                    } py-3`}
                   >
-                    <a className={`border-b-2 ${
-                    tab == 'drafts' ? 'border-black' : 'border-transparent'
-                  } py-3`}
-                >
-                  Drafts
-                  </a>
-                </Link>
-                <Link
-                  href={`/site/${router.query.id}/settings`}
-                  >
-                    <a className={`border-b-2 ${
-                    tab == 'settings' ? 'border-black' : 'border-transparent'
-                  } py-3`}
-                >
-                  Settings
+                    Settings
                   </a>
                 </Link>
               </div>
@@ -179,13 +160,8 @@ export default function Layout({ siteId, children }: LayoutProps) {
           <div className="absolute left-0 right-0 top-16 font-cal border-b bg-white border-gray-200">
             <div className="flex justify-between items-center space-x-16 max-w-screen-xl mx-auto px-10 sm:px-20">
               {siteId ? (
-                <Link
-                  href={`/site/${siteId}`}
-                  >
-                  <a className="md:inline-block ml-3 hidden"
-                >
-                  ← All Posts
-                  </a>
+                <Link href={`/site/${siteId}`}>
+                  <a className="md:inline-block ml-3 hidden">← All Posts</a>
                 </Link>
               ) : (
                 <div>
@@ -194,24 +170,18 @@ export default function Layout({ siteId, children }: LayoutProps) {
               )}
 
               <div className="flex justify-between items-center space-x-10 md:space-x-16">
-                <Link
-                  href={`/post/${router.query.id}`}
-                  >
-                  <a className={`border-b-2 ${
-                    !tab ? 'border-black' : 'border-transparent'
-                  } py-3`}
-                >
-                  Editor
+                <Link href={`/post/${router.query.id}`}>
+                  <a className={`border-b-2 ${!tab ? 'border-black' : 'border-transparent'} py-3`}>
+                    Editor
                   </a>
                 </Link>
-                <Link
-                  href={`/post/${router.query.id}/settings`}
+                <Link href={`/post/${router.query.id}/settings`}>
+                  <a
+                    className={`border-b-2 ${
+                      tab == 'settings' ? 'border-black' : 'border-transparent'
+                    } py-3`}
                   >
-                  <a className={`border-b-2 ${
-                    tab == 'settings' ? 'border-black' : 'border-transparent'
-                  } py-3`}
-                >
-                  Settings
+                    Settings
                   </a>
                 </Link>
               </div>
