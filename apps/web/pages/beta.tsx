@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { Metadata } from '../wesbitty/utils/schemas/Metadata'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
-import Container from '../components/Container'
+import { Container } from '../components/Container'
 import Layout from '../components/Layouts/Default'
 import CountUp from '../components/CountUp'
 import FlyOut from '../components/UI/FlyOut'
@@ -1104,7 +1104,7 @@ const Beta = () => {
           ],
         }}
       />
-      <Container>
+      <Container >
         <div className="sticky inset-0 z-50">
           <div className="shadow-lg py-5 px-5 xl:px-20 bg-dark-800 flex items-center justify-between">
             <Link href="/">

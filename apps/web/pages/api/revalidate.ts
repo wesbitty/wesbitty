@@ -9,7 +9,7 @@ export default async function handler(
   res.setHeader('Access-Control-Allow-Methods', 'POST')
 
   try {
-    await res.revalidate(urlPath)
+    await res.unstable_revalidate(urlPath)
 
     res.status(200).json({
       message: 'OK',
