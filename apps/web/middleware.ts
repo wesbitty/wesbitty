@@ -1,59 +1,38 @@
-import { getToken } from 'next-auth/jwt'
 import { NextRequest, NextResponse } from 'next/server'
+import { getHostnameDataOrDefault } from './wesbitty/lib/db'
 
 export const config = {
-  matcher: [
-    /*
-     * Match all paths except for:
-     * 1. /api routes
-     * 2. /_next (Next.js internals)
-     * 3. /examples (inside /public)
-     * 4. all root files inside /public (e.g. /favicon.ico)
-     */
-    '/((?!api/|_next/|_static/|examples/|[\\w-]+\\.\\w+).*)',
-  ],
+  matcher: ['/', '/about', '/_sites/:path'],
 }
 
 export default async function middleware(req: NextRequest) {
   const url = req.nextUrl
 
-  // Get hostname of request (e.g. demo.vercel.pub, demo.localhost:3000)
-  const hostname = req.headers.get('host') || 'demo.vercel.pub'
+  // Get hostname (e.g. vercel.com, test.vercel.app, etc.)
+  const hostname = req.headers.get('host')
 
-  // Get the pathname of the request (e.g. /, /about, /blog/first-post)
-  const path = url.pathname
-
-  /*  You have to replace ".vercel.pub" with your own domain if you deploy this example under your domain.
-      You can also use wildcard subdomains on .vercel.app links that are associated with your Vercel team slug
-      in this case, our team slug is "platformize", thus *.platformize.vercel.app works. Do note that you'll
-      still need to add "*.platformize.vercel.app" as a wildcard domain on your Vercel dashboard. */
+  // If localhost, assign the host value manually
+  // If prod, get the custom domain/subdomain value by removing the root URL
+  // (in the case of "subdomain-3.localhost:3000", "localhost:3000" is the root URL)
+  // process.env.NODE_ENV === "production" indicates that the app is deployed to a production environment
+  // process.env.VERCEL === "1" indicates that the app is deployed on Vercel
   const currentHost =
-    process.env.NODE_ENV === 'production' && process.env.VERCEL === '1'
+    process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
       ? hostname
-          .replace(`.vercel.pub`, '')
-          .replace(`.platformize.vercel.app`, '')
-      : hostname.replace(`.localhost:3210`, '')
+        .replace(`.wesbitty.com`, "")
+      : hostname.replace(`.localhost:3210`, "");
 
-  // rewrites for app pages
-  if (currentHost == 'app') {
-    if (
-      url.pathname === '/login' &&
-      (req.cookies.get('next-auth.session-token') ||
-        req.cookies.get('__Secure-next-auth.session-token'))
-    ) {
-      url.pathname = '/'
-      return NextResponse.redirect(url)
-    }
+  const data = await getHostnameDataOrDefault(currentHost)
 
-    url.pathname = `/app${url.pathname}`
-    return NextResponse.rewrite(url)
+  // Prevent security issues – users should not be able to canonically access
+  // the pages/sites folder and its respective contents.
+  if (url.pathname.startsWith(`/_sites`)) {
+    url.pathname = `/404`
+  } else {
+    // console.log('URL 2', req.nextUrl.href)
+    // rewrite to the current subdomain under the pages/sites folder
+    url.pathname = `/_sites/${data.subdomain}${url.pathname}`
   }
 
-  // rewrite root application to `/home` folder
-  if (hostname === 'localhost:3210' || hostname === 'platformize.vercel.app') {
-    return NextResponse.rewrite(new URL(`/${path}`, req.url))
-  }
-
-  // rewrite everything else to `/_sites/[site] dynamic route
-  return NextResponse.rewrite(new URL(`/_sites/${currentHost}${path}`, req.url))
+  return NextResponse.rewrite(url)
 }
