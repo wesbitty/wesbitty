@@ -88,7 +88,7 @@ const Team = () => {
 
   const IconLink = ({ link, icon }: iIconLink) => {
     return (
-      <a href={link} target="_blank">
+      <a href={link} target="_blank" rel="noreferrer">
         <div className="transition-opacity opacity-50 hover:opacity-75">
           {icon}
         </div>
@@ -323,7 +323,7 @@ const Press = () => {
       </div>
       <div className="mt-5 mx-auto grid gap-5 lg:grid-cols-2 lg:max-w-none">
         {PressData.filter((x) => x.type == 'article').map((x) => (
-          <a href={x.href} key={x.href} target="_blank">
+          <a href={x.href} key={x.href} target="_blank" rel="noreferrer">
             <Card key={`press_${x.href}`} hoverable>
               <Space className="justify-between h-40" direction="vertical">
                 <div>
@@ -339,7 +339,7 @@ const Press = () => {
       </div>
       <div className="mt-5 mx-auto grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:max-w-none">
         {PressData.filter((x) => x.type == 'podcast').map((x) => (
-          <a href={x.href} key={x.href} target="_blank">
+          <a href={x.href} key={x.href} target="_blank" rel="noreferrer">
             <Card key={`press_${x.href}`} hoverable>
               <Space className="justify-between h-40" direction="vertical">
                 <div>

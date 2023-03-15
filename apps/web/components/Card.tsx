@@ -55,6 +55,7 @@ const Card = (props: Props) => {
       href={url}
       target="_blank"
       className="flex flex-col rounded-md shadow-lg overflow-hidden relative transition transform hover:-translate-y-1 hover:shadow-2xl"
+      rel="noreferrer"
     >
       <div className="flex-shrink-0 dark:bg-dark-800">
         <img className="h-64 w-full object-cover" src={imgUrl} alt={title} />

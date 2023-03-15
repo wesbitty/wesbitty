@@ -153,6 +153,7 @@ const Introduction = () => {
                 href="https://news.ycombinator.com/item?id=23319901"
                 target="_blank"
                 className="text-brand-700 hover:text-brand-800"
+                rel="noreferrer"
               >
                 Alpha
               </a>{' '}
@@ -398,6 +399,7 @@ const Performance = () => {
                 href="https://elixir-lang.org/"
                 target="_blank"
                 className="text-brand-700 hover:text-brand-800"
+                rel="noreferrer"
               >
                 Elixir
               </a>{' '}
@@ -406,6 +408,7 @@ const Performance = () => {
                 href="https://github.com/wesbitty/realtime"
                 target="_blank"
                 className="text-brand-700 hover:text-brand-800"
+                rel="noreferrer"
               >
                 Realtime engine
               </a>
@@ -414,6 +417,7 @@ const Performance = () => {
                 href="https://postgrest.org/en/v7.0.0/"
                 target="_blank"
                 className="text-brand-700 hover:text-brand-800"
+                rel="noreferrer"
               >
                 PostgREST
               </a>{' '}
@@ -427,6 +431,7 @@ const Performance = () => {
                 href="https://github.com/wesbitty/benchmarks/"
                 target="_blank"
                 className="text-brand-700 hover:text-brand-800"
+                rel="noreferrer"
               >
                 benchmarks
               </a>{' '}
@@ -510,6 +515,7 @@ const Security = () => {
                   href="https://snyk.io/"
                   target="_blank"
                   className="text-brand-700 hover:text-brand-800"
+                  rel="noreferrer"
                 >
                   Snyk
                 </a>{' '}
@@ -524,6 +530,7 @@ const Security = () => {
                   href="https://github.com/PostgREST/postgrest/pull/1600#issuecomment-735257952"
                   target="_blank"
                   className="text-brand-700 hover:text-brand-800"
+                  rel="noreferrer"
                 >
                   now uses
                 </a>{' '}
@@ -573,6 +580,7 @@ const Reliability = () => {
                 href="https://status.wesbitty.com"
                 target="_blank"
                 className="text-brand-700 hover:text-brand-800"
+                rel="noreferrer"
               >
                 https://status.wesbitty.com
               </a>{' '}
@@ -778,6 +786,7 @@ const BetaPricing = () => (
                 href="mailto:admin@wesbitty.com"
                 target="_blank"
                 className="text-brand-700 hover:text-brand-800"
+                rel="noreferrer"
               >
                 rory@wesbitty.com
               </a>
@@ -829,6 +838,7 @@ const OpenSource = () => (
               href="https://github.com/sponsors/wesbitty/"
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
+              rel="noreferrer"
             >
               sponsorship
             </a>{' '}
@@ -856,6 +866,7 @@ const OpenSource = () => (
               href="mailto:admin@wesbitty.com"
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
+              rel="noreferrer"
             >
               rory@wesbitty.com
             </a>{' '}
@@ -867,6 +878,7 @@ const OpenSource = () => (
               href="https://github.com/wesbitty"
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
+              rel="noreferrer"
             >
               our GitHub.
             </a>{' '}
@@ -905,6 +917,7 @@ const FundingPartners = () => (
               href="https://twitter.com/wesbitty"
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
+              rel="noreferrer"
             >
               Twitter
             </a>{' '}
@@ -944,6 +957,7 @@ const ScalingOurTeam = () => (
               href="mailto:admin@wesbitty.com"
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
+              rel="noreferrer"
             >
               admin@wesbitty.com
             </a>
@@ -1011,6 +1025,7 @@ const WhatsNext = () => (
               href="mailto:admin@wesbitty.com"
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
+              rel="noreferrer"
             >
               support@wesbitty.com
             </a>{' '}
@@ -1019,6 +1034,7 @@ const WhatsNext = () => (
               href="https://github.com/wesbitty/wesbitty/discussions"
               target="_blank"
               className="text-brand-700 hover:text-brand-800"
+              rel="noreferrer"
             >
               discussion
             </a>{' '}

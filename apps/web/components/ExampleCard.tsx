@@ -59,7 +59,11 @@ function ExampleCard(props: any) {
           </Typography.Text>
           <Space className="mt-3">
             {props.vercel_deploy_url && (
-              <a target="_blank" href={props.vercel_deploy_url}>
+              <a
+                target="_blank"
+                href={props.vercel_deploy_url}
+                rel="noreferrer"
+              >
                 <img src="https://vercel.com/button" />
               </a>
             )}
