@@ -5,11 +5,11 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { urlPath } = req.body
-  res.setHeader('Access-Control-Allow-Origin', 'https://app.vercel.pub')
+  res.setHeader('Access-Control-Allow-Origin', 'https://app.wesbitty.com')
   res.setHeader('Access-Control-Allow-Methods', 'POST')
 
   try {
-    await res.unstable_revalidate(urlPath)
+    await res.revalidate(urlPath)
 
     res.status(200).json({
       message: 'OK',
