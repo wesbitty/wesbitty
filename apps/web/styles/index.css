@@ -1,18 +1,7 @@
-@import 'tailwindcss/base';
-
-/* Write your own custom base styles here */
-
-/* Start purging... */
-@import 'tailwindcss/components';
-/* Stop purging. */
-
-/* Write you own custom component styles here */
-
-/* Start purging... */
-@import 'tailwindcss/utilities';
-/* Stop purging. */
-
-/* Your own custom utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
 
 @font-face {
   font-family: 'custom-font';
@@ -21,6 +10,7 @@
   font-weight: 400;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'custom-font';
   src: url(/fonts/custom/CustomFont-Medium.woff2) format('woff2'),
@@ -79,8 +69,7 @@ p {
 }
 
 .sbui-border-fix select {
-  @apply border-solid;
-  border-width: 1px;
+  @apply border-solid border;
 }
 
 body {
@@ -100,27 +89,11 @@ body {
 }
 
 .section--bg {
-  @apply bg-gray-50 dark:bg-gray-800;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  transform-origin: 100% 0;
-  transform: skewY(-2deg);
-  overflow: hidden;
-  /* transform-origin: var(--sectionTransformOrigin);
-    transform: skewY(var(--sectionAngle));
-    background: var(--backgroundColor);
-    overflow: 
-    hidden; */
+  @apply bg-gray-50 dark:bg-gray-800 relative w-full h-full top-0 left-0 origin-[100%_0] overflow-hidden;
 }
 
 .section-container {
-  position: relative;
-  /* z-index: 1; */
-  /* display: flex;
-  justify-content: center; */
+  @apply relative;
 }
 
 /* Database page */
@@ -134,14 +107,10 @@ a {
 }
 
 .sbui-tabs--alt div[role='tablist'] .sbui-btn-primary {
-  @apply bg-gray-800 text-white dark:bg-gray-600 dark:text-white;
-  text-shadow: none;
-  font-weight: 400;
+  @apply bg-gray-800 text-white dark:bg-gray-600 dark:text-white shadow-none font-normal;
 }
 .sbui-tabs--alt div[role='tablist'] .sbui-btn-text {
-  @apply dark:text-gray-400;
-  font-weight: 400;
-  shadow: none;
+  @apply dark:text-gray-400 shadow-none font-normal;
 }
 
 .sbui-tabs--underline-alt div[role='tablist'] .sbui-tab-button-underline--active {
@@ -149,7 +118,7 @@ a {
 }
 /* override position of tabs  */
 .dashboard-tabs > div > div > div > div {
-  justify-content: center;
+  @apply justify-center;
 }
 
 /* Auth page */
