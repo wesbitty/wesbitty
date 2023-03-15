@@ -1,5 +1,5 @@
 import { Card, Space, Typography } from '@wesbitty/ui'
-import DeveloperSignups from '[wesbitty]/data/DeveloperSignups'
+import DeveloperSignups from '~/wesbitty/data/DeveloperSignups'
 
 type CommunityItem = {
   title: string
