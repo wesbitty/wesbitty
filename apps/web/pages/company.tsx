@@ -5,11 +5,11 @@ import SectionHeader from '../components/UI/SectionHeader'
 import CTABanner from '../components/CTABanner/index'
 import ImageGrid from 'components/ImageGrid'
 import SectionContainer from '../components/Layouts/SectionContainer'
-import PressData from '../[wesbitty]/data/Press'
-import CommunityData from '../[wesbitty]/data/Community'
-import CompaniesData from '../[wesbitty]/data/Companies'
-import InvestorData from '../[wesbitty]/data/Investors'
-import TeamData from '../[wesbitty]/data/Team'
+import PressData from '../wesbitty/data/Press'
+import CommunityData from '../wesbitty/data/Community'
+import CompaniesData from '../wesbitty/data/Companies'
+import InvestorData from '../wesbitty/data/Investors'
+import TeamData from '../wesbitty/data/Team'
 import Image from 'next/image'
 import {
   Button,
@@ -22,7 +22,7 @@ import {
   Typography,
 } from '@wesbitty/ui'
 import { NextSeo } from 'next-seo'
-import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
+import { Metadata } from '../wesbitty/utils/schemas/Metadata'
 
 type Props = {}
 

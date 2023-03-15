@@ -1,6 +1,6 @@
 import React from 'react'
-import SolutionsData from '../../[wesbitty]/data/Solutions.json'
-import CaseStudiesData from '../../[wesbitty]/data/CaseStudies.json'
+import SolutionsData from '../../wesbitty/data/Solutions.json'
+import CaseStudiesData from '../../wesbitty/data/CaseStudies.json'
 import { useRouter } from 'next/router'
 import ProductIcon from '../ProductIcon'
 import { Typography, Badge } from '@wesbitty/ui'

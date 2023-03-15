@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import Head from "next/head";
 
 import type { MouseEvent, ReactNode } from "react";

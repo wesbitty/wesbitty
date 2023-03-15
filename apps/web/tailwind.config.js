@@ -1,7 +1,11 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
-  purge: ['./components/**/*.tsx', './pages/**/*.tsx'],
-  darkMode: 'class', // 'media' or 'class'
-  mode: 'jit',
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: "media",
   theme: {
     borderColor: (theme) => ({
       ...theme('colors'),
@@ -16,19 +20,10 @@ module.exports = {
     extend: {
       screens: {
         sm: '640px',
-        // => @media (min-width: 640px) { ... }
-
         md: '768px',
-        // => @media (min-width: 768px) { ... }
-
         lg: '1024px',
-        // => @media (min-width: 1024px) { ... }
-
         xl: '1280px',
-        // => @media (min-width: 1280px) { ... }
-
         '2xl': '1536px',
-        // => @media (min-width: 1536px) { ... }
       },
       colors: {
         'gray-light': '#7B7F86',
@@ -49,7 +44,6 @@ module.exports = {
           800: '#38BC81',
           900: '#10633E',
         },
-        // Joshen TODO: At the end just rearrange the values
         dark: {
           100: '#eeeeee',
           200: '#e0e0e0',
@@ -95,6 +89,10 @@ module.exports = {
         override: '0px 0px 0px rgba(0, 0, 0, 0)',
       },
       fontFamily: {
+        default: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
+        cal: ["var(--font-cal)", ...defaultTheme.fontFamily.sans],
+        title: ["var(--font-title)", ...defaultTheme.fontFamily.sans],
+        mono: ["Consolas", ...defaultTheme.fontFamily.mono],
         sans: [
           'custom-font',
           'BlinkMacSystemFont',
@@ -111,23 +109,50 @@ module.exports = {
           'Arial',
           'sans-serif',
         ],
-        mono: ['Source Code Pro', 'Menlo', 'monospace'],
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            h1: {
+              fontFamily: "Cal Sans",
+            },
+            h2: {
+              fontFamily: "Cal Sans",
+            },
+            h3: {
+              fontFamily: "Cal Sans",
+            },
+            "blockquote p:first-of-type::before": { content: "none" },
+            "blockquote p:first-of-type::after": { content: "none" },
+          },
+        },
+      },
+      keyframes: {
+        wiggle: {
+          "0%, 100%": {
+            transform: "translateX(0%)",
+            transformOrigin: "50% 50%",
+          },
+          "15%": { transform: "translateX(-6px) rotate(-6deg)" },
+          "30%": { transform: "translateX(9px) rotate(6deg)" },
+          "45%": { transform: "translateX(-9px) rotate(-3.6deg)" },
+          "60%": { transform: "translateX(3px) rotate(2.4deg)" },
+          "75%": { transform: "translateX(-2px) rotate(-1.2deg)" },
+        },
+      },
+      animation: {
+        wiggle: "wiggle 0.8s both",
       },
       stroke: (theme) => ({
         white: theme('colors.white'),
         black: theme('colors.black'),
       }),
+      
     },
   },
-  // variants: {
-  //   extend: {
-  //     inset: ['group-hover'],
-  //     stroke: ['dark'],
-  //     height: ['hover'],
-  //   },
-  // },
-  plugins: [],
-  corePlugins: {
-    preflight: true,
-  },
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/line-clamp"),
+  ],
 }

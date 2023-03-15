@@ -13,7 +13,7 @@ import Link from 'next/link'
 import DefaultLayout from '../components/Layouts/Default'
 import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
-import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
+import { Metadata } from '../wesbitty/utils/schemas/Metadata'
 
 type Props = {}
 

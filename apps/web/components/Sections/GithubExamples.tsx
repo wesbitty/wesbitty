@@ -17,7 +17,7 @@ import {
   IconBookOpen,
 } from '@wesbitty/ui'
 
-import Examples from '../../[wesbitty]/data/Examples.json'
+import Examples from '../../wesbitty/data/Examples.json'
 import ExampleCard from '../ExampleCard'
 
 // install Swiper modules

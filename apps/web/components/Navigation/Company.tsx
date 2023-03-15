@@ -1,6 +1,6 @@
 import React from 'react'
-import CompanyData from '../../[wesbitty]/data/Company.json'
-import BlogPostsData from '../../[wesbitty]/data/BlogPosts.json'
+import CompanyData from '../../wesbitty/data/Company.json'
+import BlogPostsData from '../../wesbitty/data/BlogPosts.json'
 
 type Props = {
   text: string

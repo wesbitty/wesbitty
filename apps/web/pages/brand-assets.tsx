@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import SectionContainer from '../components/Layouts/SectionContainer'
 import { NextSeo } from 'next-seo'
-import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
+import { Metadata } from '../wesbitty/utils/schemas/Metadata'
 
 const { Title, Text } = Typography
 

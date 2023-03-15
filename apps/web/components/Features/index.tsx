@@ -1,6 +1,6 @@
 import { Button, Badge, Typography, IconArrowRight } from '@wesbitty/ui'
 import SectionHeader from 'components/UI/SectionHeader'
-import Solutions from '../../[wesbitty]/data/Solutions.json'
+import Solutions from '../../wesbitty/data/Solutions.json'
 import Link from 'next/link'
 import SectionContainer from '../Layouts/SectionContainer'
 import ProductIcon from '../ProductIcon'

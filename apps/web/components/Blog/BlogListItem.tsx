@@ -1,8 +1,8 @@
 import { Space, Typography } from '@wesbitty/ui'
-import authors from '../../[wesbitty]/data/authors.json'
+import authors from '../../wesbitty/data/authors.json'
 import React from 'react'
 import Image from 'next/image'
-import { PostTypes } from '../../[wesbitty]/types/post'
+import { PostTypes } from '../../wesbitty/types/post'
 
 interface Props {
   blog: PostTypes

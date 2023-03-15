@@ -1,6 +1,6 @@
 import Container from '../components/Container'
 import Layout from '../components/Layouts/Default'
-import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
+import { Metadata } from '../wesbitty/utils/schemas/Metadata'
 import Link from 'next/link'
 import {
   Button,

@@ -16,7 +16,7 @@ import {
   IconArrowRight,
 } from '@wesbitty/ui'
 
-import Examples from '../../[wesbitty]/data/tweets/Tweets.json'
+import Examples from '../../wesbitty/data/tweets/Tweets.json'
 import TweetCard from '../TweetCard'
 
 // Import Swiper styles

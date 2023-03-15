@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
+import { Metadata } from '../wesbitty/utils/schemas/Metadata'
 class MyDocument extends Document {
   render() {
     return (

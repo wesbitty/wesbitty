@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Metadata } from '../[wesbitty]/utils/schemas/Metadata'
+import { Metadata } from '../wesbitty/utils/schemas/Metadata'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
 import Container from '../components/Container'
@@ -11,11 +11,11 @@ import {
   AlphaNumbers,
   IntroductionSegments,
   PerformanceComparisonData,
-} from '../[wesbitty]/data/BetaPage'
+} from '../wesbitty/data/BetaPage'
 import { render } from 'react-dom'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
-import authors from '../[wesbitty]/data/authors.json'
+import authors from '../wesbitty/data/authors.json'
 
 const Title = `We are now in Beta | ${Metadata.Name}`
 
