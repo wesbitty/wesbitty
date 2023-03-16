@@ -140,7 +140,7 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
           customDomain: null,
         },
         // you can remove this if you want to generate all sites at build time
-        customDomain: "wesbittyapp.netlify.app",
+        customDomain: "bitty.vercel.app",
       },
       select: {
         customDomain: true,

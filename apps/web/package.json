@@ -4,14 +4,12 @@
   "description": "Official Template v1",
   "private": true,
   "scripts": {
-    "prebuild": "prisma generate",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "format:write": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx}\"",
     "format": "prettier \"**/*.{css,js,json,jsx,ts,tsx}\"",
-    "predev": "prisma generate",
-    "dev": "next dev -p 3210",
+    "dev": "prisma generate && next dev",
     "prisma:migrate": "prisma migrate deploy",
     "type-check": "tsc"
   },
