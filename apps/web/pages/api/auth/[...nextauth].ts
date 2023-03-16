@@ -3,7 +3,7 @@ import GitHubProvider from "next-auth/providers/github";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import prisma from "^/wesbitty/lib/prisma";
 
-const VERCEL_DEPLOYMENT = !!process.env.VERCEL_URL;
+const WESBITTYAPP_DEPLOYMENT = !!process.env.VERCEL_URL;
 
 if (!process.env.GITHUB_ID || !process.env.GITHUB_SECRET)
   throw new Error("Failed to initialize Github authentication");
@@ -32,14 +32,14 @@ export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   cookies: {
     sessionToken: {
-      name: `${VERCEL_DEPLOYMENT ? "__Secure-" : ""}next-auth.session-token`,
+      name: `${WESBITTYAPP_DEPLOYMENT ? "__Secure-" : ""}next-auth.session-token`,
       options: {
         httpOnly: true,
         sameSite: "lax",
         path: "/",
         // When working on localhost, the cookie domain must be omitted entirely (https://stackoverflow.com/a/1188145)
-        domain: VERCEL_DEPLOYMENT ? ".wesbitty.netlify.app" : undefined,
-        secure: VERCEL_DEPLOYMENT,
+        domain: WESBITTYAPP_DEPLOYMENT ? ".wesbitty.netlify.app" : undefined,
+        secure: WESBITTYAPP_DEPLOYMENT,
       },
     },
   },
