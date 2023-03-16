@@ -1,14 +1,18 @@
-import { Dialog, Transition } from '@headlessui/react'
-import { Fragment } from 'react'
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment } from "react";
 
-import type { WithChildren } from '~/types'
+import type { WithChildren } from "^/wesbitty/types";
 
 interface ModalProps extends WithChildren {
-  showModal: boolean
-  setShowModal: (state: boolean) => void
+  showModal: boolean;
+  setShowModal: (state: boolean) => void;
 }
 
-export default function Modal({ children, showModal, setShowModal }: ModalProps) {
+export default function Modal({
+  children,
+  showModal,
+  setShowModal,
+}: ModalProps) {
   return (
     <>
       <Transition appear show={showModal} as={Fragment}>
@@ -30,7 +34,10 @@ export default function Modal({ children, showModal, setShowModal }: ModalProps)
               <Dialog.Overlay className="fixed inset-0 bg-gray-500 bg-opacity-75" />
             </Transition.Child>
 
-            <span className="inline-block h-screen align-middle" aria-hidden="true">
+            <span
+              className="inline-block h-screen align-middle"
+              aria-hidden="true"
+            >
               &#8203;
             </span>
             <Transition.Child
@@ -48,5 +55,5 @@ export default function Modal({ children, showModal, setShowModal }: ModalProps)
         </Dialog>
       </Transition>
     </>
-  )
+  );
 }

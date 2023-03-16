@@ -1,26 +1,31 @@
-import { createSite, deleteSite, getSite, updateSite } from '~/wesbitty/lib/api'
-import { unstable_getServerSession } from 'next-auth/next'
+import { createSite, deleteSite, getSite, updateSite } from "^/wesbitty/lib/api";
+import { unstable_getServerSession } from "next-auth/next";
 
-import { authOptions } from './auth/[...nextauth]'
-import { HttpMethod } from '~/types'
+import { authOptions } from "./auth/[...nextauth]";
+import { HttpMethod } from "^/wesbitty/types";
 
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function site(req: NextApiRequest, res: NextApiResponse) {
-  const session = await unstable_getServerSession(req, res, authOptions)
-  if (!session) return res.status(401).end()
+  const session = await unstable_getServerSession(req, res, authOptions);
+  if (!session) return res.status(401).end();
 
   switch (req.method) {
     case HttpMethod.GET:
-      return getSite(req, res, session)
+      return getSite(req, res, session);
     case HttpMethod.POST:
-      return createSite(req, res)
+      return createSite(req, res);
     case HttpMethod.DELETE:
-      return deleteSite(req, res)
+      return deleteSite(req, res);
     case HttpMethod.PUT:
-      return updateSite(req, res)
+      return updateSite(req, res);
     default:
-      res.setHeader('Allow', [HttpMethod.GET, HttpMethod.POST, HttpMethod.DELETE, HttpMethod.PUT])
-      return res.status(405).end(`Method ${req.method} Not Allowed`)
+      res.setHeader("Allow", [
+        HttpMethod.GET,
+        HttpMethod.POST,
+        HttpMethod.DELETE,
+        HttpMethod.PUT,
+      ]);
+      return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }

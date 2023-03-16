@@ -1,31 +1,33 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
-import React from 'react'
-import { signOut } from 'next-auth/react'
-import Loader from './Loader'
-import useRequireAuth from '~/wesbitty/lib/useRequireAuth'
+import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import React from "react";
+import { signOut } from "next-auth/react";
+import Loader from "./Loader";
+import useRequireAuth from "^/wesbitty/lib/useRequireAuth";
 
-import type { WithChildren } from '~/types'
+import type { WithChildren } from "^/wesbitty/types";
 
 interface LayoutProps extends WithChildren {
-  siteId?: string
+  siteId?: string;
 }
 
 export default function Layout({ siteId, children }: LayoutProps) {
-  const title = 'Platforms on Vercel'
+  const title = "We've Got Your WishList - Wesbitty Inc";
   const description =
-    'Create a fullstack application with multi-tenancy and custom domains support using Next.js, Prisma, and PostgreSQL'
-  const logo = '/favicon.ico'
-  const router = useRouter()
-  const sitePage = router.pathname.startsWith('/app/site/[id]')
-  const postPage = router.pathname.startsWith('/app/post/[id]')
-  const rootPage = !sitePage && !postPage
-  const tab = rootPage ? router.asPath.split('/')[1] : router.asPath.split('/')[3]
+    "Create a fullstack application with multi-tenancy and custom domains support using Next.js, Prisma, and PostgreSQL";
+  const logo = "/favicon.ico";
+  const router = useRouter();
+  const sitePage = router.pathname.startsWith("/app/site/[id]");
+  const postPage = router.pathname.startsWith("/app/post/[id]");
+  const rootPage = !sitePage && !postPage;
+  const tab = rootPage
+    ? router.asPath.split("/")[1]
+    : router.asPath.split("/")[3];
 
-  const session = useRequireAuth()
-  if (!session) return <Loader />
+  const session = useRequireAuth();
+  if (!session) return <Loader />;
 
   return (
     <>
@@ -59,22 +61,20 @@ export default function Layout({ siteId, children }: LayoutProps) {
         <div className="absolute left-0 right-0 h-16 border-b bg-white border-gray-200">
           <div className="flex justify-between items-center h-full max-w-screen-xl mx-auto px-10 sm:px-20">
             <div className="flex space-x-4">
-              <Link href="/">
-                <a className="flex justify-center items-center">
-                  {session.user && session.user.image && (
-                    <div className="h-8 w-8 inline-block rounded-full overflow-hidden align-middle">
-                      <Image
-                        src={session.user.image}
-                        width={40}
-                        height={40}
-                        alt={session.user.name ?? 'User avatar'}
-                      />
-                    </div>
-                  )}
-                  <span className="sm:block inline-block ml-3 font-medium truncate">
-                    {session.user?.name}
-                  </span>
-                </a>
+              <Link href="/" className="flex justify-center items-center">
+                {session.user && session.user.image && (
+                  <div className="h-8 w-8 inline-block rounded-full overflow-hidden align-middle">
+                    <Image
+                      src={session.user.image}
+                      width={40}
+                      height={40}
+                      alt={session.user.name ?? "User avatar"}
+                    />
+                  </div>
+                )}
+                <span className="sm:block inline-block ml-3 font-medium truncate">
+                  {session.user?.name}
+                </span>
               </Link>
               <div className="h-8 border border-gray-300" />
               <button
@@ -86,11 +86,11 @@ export default function Layout({ siteId, children }: LayoutProps) {
             </div>
             <a
               className="font-cal flex items-center space-x-2 text-gray-700 px-5 py-3 sm:hover:text-black sm:hover:bg-white transition-all ease-in-out duration-150"
-              href="https://github.com/vercel/platforms"
+              href="https://github.com/wesbitty/wesbitty/tree/main/apps/web"
               rel="noreferrer"
               target="_blank"
             >
-              <p className="hidden sm:block">Build my own</p>
+              <p className="hidden sm:block">Start your project</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -105,51 +105,54 @@ export default function Layout({ siteId, children }: LayoutProps) {
         </div>
         {rootPage && (
           <div className="absolute left-0 right-0 top-16 flex justify-center items-center font-cal space-x-16 border-b bg-white border-gray-200">
-            <Link href="/">
-              <a className={`border-b-2 ${tab == '' ? 'border-black' : 'border-transparent'} py-3`}>
-                My Sites
-              </a>
+            <Link
+              href="/"
+              className={`border-b-2 ${
+                tab == "" ? "border-black" : "border-transparent"
+              } py-3`}
+            >
+              My Sites
             </Link>
-            <Link href="/settings">
-              <a
-                className={`border-b-2 ${
-                  tab == 'settings' ? 'border-black' : 'border-transparent'
-                } py-3`}
-              >
-                Settings
-              </a>
+            <Link
+              href="/settings"
+              className={`border-b-2 ${
+                tab == "settings" ? "border-black" : "border-transparent"
+              } py-3`}
+            >
+              Settings
             </Link>
           </div>
         )}
         {sitePage && (
           <div className="absolute left-0 right-0 top-16 font-cal border-b bg-white border-gray-200">
             <div className="flex justify-between items-center space-x-16 max-w-screen-xl mx-auto px-10 sm:px-20">
-              <Link href="/">
-                <a className="md:inline-block ml-3 hidden">← All Sites</a>
+              <Link href="/" className="md:inline-block ml-3 hidden">
+                ← All Sites
               </Link>
               <div className="flex justify-between items-center space-x-10 md:space-x-16">
-                <Link href={`/site/${router.query.id}`}>
-                  <a className={`border-b-2 ${!tab ? 'border-black' : 'border-transparent'} py-3`}>
-                    Posts
-                  </a>
+                <Link
+                  href={`/site/${router.query.id}`}
+                  className={`border-b-2 ${
+                    !tab ? "border-black" : "border-transparent"
+                  } py-3`}
+                >
+                  Posts
                 </Link>
-                <Link href={`/site/${router.query.id}/drafts`}>
-                  <a
-                    className={`border-b-2 ${
-                      tab == 'drafts' ? 'border-black' : 'border-transparent'
-                    } py-3`}
-                  >
-                    Drafts
-                  </a>
+                <Link
+                  href={`/site/${router.query.id}/drafts`}
+                  className={`border-b-2 ${
+                    tab == "drafts" ? "border-black" : "border-transparent"
+                  } py-3`}
+                >
+                  Drafts
                 </Link>
-                <Link href={`/site/${router.query.id}/settings`}>
-                  <a
-                    className={`border-b-2 ${
-                      tab == 'settings' ? 'border-black' : 'border-transparent'
-                    } py-3`}
-                  >
-                    Settings
-                  </a>
+                <Link
+                  href={`/site/${router.query.id}/settings`}
+                  className={`border-b-2 ${
+                    tab == "settings" ? "border-black" : "border-transparent"
+                  } py-3`}
+                >
+                  Settings
                 </Link>
               </div>
               <div />
@@ -160,8 +163,11 @@ export default function Layout({ siteId, children }: LayoutProps) {
           <div className="absolute left-0 right-0 top-16 font-cal border-b bg-white border-gray-200">
             <div className="flex justify-between items-center space-x-16 max-w-screen-xl mx-auto px-10 sm:px-20">
               {siteId ? (
-                <Link href={`/site/${siteId}`}>
-                  <a className="md:inline-block ml-3 hidden">← All Posts</a>
+                <Link
+                  href={`/site/${siteId}`}
+                  className="md:inline-block ml-3 hidden"
+                >
+                  ← All Posts
                 </Link>
               ) : (
                 <div>
@@ -170,19 +176,21 @@ export default function Layout({ siteId, children }: LayoutProps) {
               )}
 
               <div className="flex justify-between items-center space-x-10 md:space-x-16">
-                <Link href={`/post/${router.query.id}`}>
-                  <a className={`border-b-2 ${!tab ? 'border-black' : 'border-transparent'} py-3`}>
-                    Editor
-                  </a>
+                <Link
+                  href={`/post/${router.query.id}`}
+                  className={`border-b-2 ${
+                    !tab ? "border-black" : "border-transparent"
+                  } py-3`}
+                >
+                  Editor
                 </Link>
-                <Link href={`/post/${router.query.id}/settings`}>
-                  <a
-                    className={`border-b-2 ${
-                      tab == 'settings' ? 'border-black' : 'border-transparent'
-                    } py-3`}
-                  >
-                    Settings
-                  </a>
+                <Link
+                  href={`/post/${router.query.id}/settings`}
+                  className={`border-b-2 ${
+                    tab == "settings" ? "border-black" : "border-transparent"
+                  } py-3`}
+                >
+                  Settings
                 </Link>
               </div>
               <div />
@@ -192,5 +200,5 @@ export default function Layout({ siteId, children }: LayoutProps) {
         <div className="pt-28">{children}</div>
       </div>
     </>
-  )
+  );
 }

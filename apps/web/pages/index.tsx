@@ -1,49 +1,22 @@
-import Container from 'components/Container'
-import Layout from '../components/Layouts/Default'
-import HeaderFeature from '../components/HeaderFeature'
-import Features from 'components/Features/index'
-import BuiltExamples from '../components/WesbittyMaker/index'
-import MadeForDevelopers from 'components/MadeForDevelopers/index'
-import AdminAccess from 'components/AdminAccess/index'
-import CaseStudies from 'components/CaseStudies/index'
-import CTABanner from 'components/CTABanner/index'
-import SectionContainer from '../components/Layouts/SectionContainer'
-import TwitterSocialProof from '../components/Sections/TwitterSocialProof'
+import Head from "next/head";
+import Image from "next/image";
 
-import 'swiper/swiper.min.css'
-
-type Props = {}
-
-const Index = ({}: Props) => {
+export default function Home() {
   return (
-    <>
-      <Layout>
-        <Container>
-          <HeaderFeature />
-          <Features />
-          <div className="relative">
-            <div className="section--masked">
-              <div className="section--bg-masked">
-                <div className="section--bg border-t border-b border-gray-100 dark:border-gray-600"></div>
-              </div>
-              <div className="section-container pt-12 pb-0">
-                <div className="overflow-x-hidden">
-                  <SectionContainer className="mb-0 pb-8">
-                    <TwitterSocialProof />
-                  </SectionContainer>
-                </div>
-              </div>
-            </div>
-          </div>
-          <BuiltExamples />
-          <MadeForDevelopers />
-          <AdminAccess />
-          <CaseStudies />
-          <CTABanner />
-        </Container>
-      </Layout>
-    </>
-  )
-}
+    <div className="flex h-screen bg-black">
+      <Head>
+        <title>We've Got Your WishList - Wesbitty Inc</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-export default Index
+      <div className="m-auto w-48">
+        <Image
+          width={512}
+          height={512}
+          src="/logo.png"
+          alt="Logo - Wesbitty Inc"
+        />
+      </div>
+    </div>
+  );
+}

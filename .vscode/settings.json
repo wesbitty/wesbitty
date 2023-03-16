@@ -16,5 +16,7 @@
     "**/.wesjet": true,
     "**/dist": true,
     "**/build": true
-  }
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

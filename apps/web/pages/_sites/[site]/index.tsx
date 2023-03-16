@@ -1,37 +1,39 @@
-import Layout from '~/components/sites/Layout'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import BlurImage from '~/components/BlurImage'
-import BlogCard from '~/components/BlogCard'
-import Loader from '~/components/sites/Loader'
-import prisma from '~/wesbitty/lib/prisma'
+import Layout from "^/components/sites/Layout";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import BlurImage from "^/components/BlurImage";
+import BlogCard from "^/components/BlogCard";
+import Loader from "^/components/sites/Loader";
+import prisma from "^/wesbitty/lib/prisma";
 
-import type { GetStaticPaths, GetStaticProps } from 'next'
-import type { _SiteData, Meta } from '~/types'
-import type { ParsedUrlQuery } from 'querystring'
-import { placeholderBlurhash, toDateString } from '~/wesbitty/lib/utils'
+import type { GetStaticPaths, GetStaticProps } from "next";
+import type { _SiteData, Meta } from "^/wesbitty/types";
+import type { ParsedUrlQuery } from "querystring";
+import { placeholderBlurhash, toDateString } from "^/wesbitty/lib/utils";
 
 interface PathProps extends ParsedUrlQuery {
-  site: string
+  site: string;
 }
 
 interface IndexProps {
-  stringifiedData: string
+  stringifiedData: string;
 }
 
 export default function Index({ stringifiedData }: IndexProps) {
-  const router = useRouter()
-  if (router.isFallback) return <Loader />
+  const router = useRouter();
+  if (router.isFallback) return <Loader />;
 
-  const data = JSON.parse(stringifiedData) as _SiteData
+  const data = JSON.parse(stringifiedData) as _SiteData;
 
   const meta = {
     title: data.name,
     description: data.description,
-    logo: '/logo.png',
+    logo: "/logo.png",
     ogImage: data.image,
-    ogUrl: data.customDomain ? data.customDomain : `https://${data.subdomain}.vercel.pub`,
-  } as Meta
+    ogUrl: data.customDomain
+      ? data.customDomain
+      : `https://${data.subdomain}.wesbitty.com`,
+  } as Meta;
 
   return (
     <Layout meta={meta} subdomain={data.subdomain ?? undefined}>
@@ -42,8 +44,10 @@ export default function Index({ stringifiedData }: IndexProps) {
               <div className="relative group h-80 sm:h-150 w-full mx-auto overflow-hidden lg:rounded-xl">
                 {data.posts[0].image ? (
                   <BlurImage
-                    alt={data.posts[0].title ?? ''}
-                    blurDataURL={data.posts[0].imageBlurhash ?? placeholderBlurhash}
+                    alt={data.posts[0].title ?? ""}
+                    blurDataURL={
+                      data.posts[0].imageBlurhash ?? placeholderBlurhash
+                    }
                     className="group-hover:scale-105 group-hover:duration-300 h-full w-full object-cover"
                     width={1300}
                     height={630}
@@ -57,13 +61,17 @@ export default function Index({ stringifiedData }: IndexProps) {
                 )}
               </div>
               <div className="mt-10 w-5/6 mx-auto lg:w-full">
-                <h2 className="font-cal text-4xl md:text-6xl my-10">{data.posts[0].title}</h2>
-                <p className="text-base md:text-lg w-full lg:w-2/3">{data.posts[0].description}</p>
+                <h2 className="font-cal text-4xl md:text-6xl my-10">
+                  {data.posts[0].title}
+                </h2>
+                <p className="text-base md:text-lg w-full lg:w-2/3">
+                  {data.posts[0].description}
+                </p>
                 <div className="flex justify-start items-center space-x-4 w-full">
                   <div className="relative w-8 h-8 flex-none rounded-full overflow-hidden">
                     {data.user?.image ? (
                       <BlurImage
-                        alt={data.user?.name ?? 'User Avatar'}
+                        alt={data.user?.name ?? "User Avatar"}
                         width={100}
                         height={100}
                         className="w-full h-full object-cover"
@@ -112,7 +120,7 @@ export default function Index({ stringifiedData }: IndexProps) {
         </div>
       )}
     </Layout>
-  )
+  );
 }
 
 export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
@@ -120,7 +128,7 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
     prisma.site.findMany({
       // you can remove this if you want to generate all sites at build time
       where: {
-        subdomain: 'demo',
+        subdomain: "demo",
       },
       select: {
         subdomain: true,
@@ -132,18 +140,18 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
           customDomain: null,
         },
         // you can remove this if you want to generate all sites at build time
-        customDomain: 'platformize.co',
+        customDomain: "wesbittyapp.netlify.app",
       },
       select: {
         customDomain: true,
       },
     }),
-  ])
+  ]);
 
   const allPaths = [
     ...subdomains.map(({ subdomain }) => subdomain),
     ...customDomains.map(({ customDomain }) => customDomain),
-  ].filter((path) => path) as Array<string>
+  ].filter((path) => path) as Array<string>;
 
   return {
     paths: allPaths.map((path) => ({
@@ -152,25 +160,27 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
       },
     })),
     fallback: true,
-  }
-}
+  };
+};
 
-export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({ params }) => {
-  if (!params) throw new Error('No path parameters found')
+export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
+  params,
+}) => {
+  if (!params) throw new Error("No path parameters found");
 
-  const { site } = params
+  const { site } = params;
 
   let filter: {
-    subdomain?: string
-    customDomain?: string
+    subdomain?: string;
+    customDomain?: string;
   } = {
     subdomain: site,
-  }
+  };
 
-  if (site.includes('.')) {
+  if (site.includes(".")) {
     filter = {
       customDomain: site,
-    }
+    };
   }
 
   const data = (await prisma.site.findUnique({
@@ -183,19 +193,19 @@ export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({ pa
         },
         orderBy: [
           {
-            createdAt: 'desc',
+            createdAt: "desc",
           },
         ],
       },
     },
-  })) as _SiteData
+  })) as _SiteData;
 
-  if (!data) return { notFound: true, revalidate: 10 }
+  if (!data) return { notFound: true, revalidate: 10 };
 
   return {
     props: {
       stringifiedData: JSON.stringify(data),
     },
     revalidate: 3600,
-  }
-}
+  };
+};

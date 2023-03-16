@@ -1,11 +1,14 @@
-import Link from 'next/link'
-import BlurImage from './BlurImage'
+import Link from "next/link";
+import BlurImage from "./BlurImage";
 
-import type { Post } from '@prisma/client'
-import { placeholderBlurhash, toDateString } from '~/wesbitty/lib/utils'
+import type { Post } from "@prisma/client";
+import { placeholderBlurhash, toDateString } from "^/wesbitty/lib/utils";
 
 interface BlogCardProps {
-  data: Pick<Post, 'slug' | 'image' | 'imageBlurhash' | 'title' | 'description' | 'createdAt'>
+  data: Pick<
+    Post,
+    "slug" | "image" | "imageBlurhash" | "title" | "description" | "createdAt"
+  >;
 }
 
 export default function BlogCard({ data }: BlogCardProps) {
@@ -15,7 +18,7 @@ export default function BlogCard({ data }: BlogCardProps) {
         {data.image ? (
           <BlurImage
             src={data.image}
-            alt={data.title ?? 'Blog Post'}
+            alt={data.title ?? "Blog Post"}
             width={500}
             height={400}
             className="w-full h-64 object-cover"
@@ -29,10 +32,14 @@ export default function BlogCard({ data }: BlogCardProps) {
         )}
         <div className="py-8 px-5 h-36 border-t border-gray-200">
           <h3 className="font-cal text-xl tracking-wide">{data.title}</h3>
-          <p className="text-md italic text-gray-600 my-2 truncate">{data.description}</p>
-          <p className="text-sm text-gray-600 my-2">Published {toDateString(data.createdAt)}</p>
+          <p className="text-md italic text-gray-600 my-2 truncate">
+            {data.description}
+          </p>
+          <p className="text-sm text-gray-600 my-2">
+            Published {toDateString(data.createdAt)}
+          </p>
         </div>
       </div>
     </Link>
-  )
+  );
 }

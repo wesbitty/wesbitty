@@ -1,9 +1,9 @@
-import Card from './Card'
+import Card from "./Card";
 
-import type { MdxCardData } from '~/types'
+import type { MdxCardData } from "^/wesbitty/types";
 
 interface ExamplesProps {
-  data: string
+  data: string;
 }
 
 export default function Examples({ data }: ExamplesProps) {
@@ -14,5 +14,5 @@ export default function Examples({ data }: ExamplesProps) {
         <Card data={d} key={d.name} />
       ))}
     </div>
-  )
+  );
 }
