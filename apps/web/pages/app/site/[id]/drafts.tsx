@@ -107,11 +107,11 @@ export default function SiteDrafts() {
                       </p>
                       <a
                         className="font-cal px-3 py-1 tracking-wide rounded bg-gray-200 text-gray-600 absolute bottom-5 left-10 whitespace-nowrap"
-                        href={`https://${data.site?.subdomain}.wesbitty.vercel.app/${post.slug}`}
+                        href={`https://${data.site?.subdomain}.bitty.vercel.app/${post.slug}`}
                         rel="noreferrer"
                         target="_blank"
                       >
-                        {data.site?.subdomain}.wesbitty.vercel.app/{post.slug} ↗
+                        {data.site?.subdomain}.bitty.vercel.app/{post.slug} ↗
                       </a>
                     </div>
                   </div>

@@ -38,7 +38,7 @@ export const authOptions: NextAuthOptions = {
         sameSite: "lax",
         path: "/",
         // When working on localhost, the cookie domain must be omitted entirely (https://stackoverflow.com/a/1188145)
-        domain: WESBITTYAPP_DEPLOYMENT ? ".wesbitty.vercel.app" : undefined,
+        domain: WESBITTYAPP_DEPLOYMENT ? ".bitty.vercel.app" : undefined,
         secure: WESBITTYAPP_DEPLOYMENT,
       },
     },
