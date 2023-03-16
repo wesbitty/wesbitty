@@ -56,7 +56,7 @@ export default function Post({
     description: data.description,
     logo: "/logo.png",
     ogImage: data.image,
-    ogUrl: `https://${data.site?.subdomain}.wesbitty.com/${data.slug}`,
+    ogUrl: `https://${data.site?.subdomain}.wesbitty.netlify.app/${data.slug}`,
     title: data.title,
   } as Meta;
 

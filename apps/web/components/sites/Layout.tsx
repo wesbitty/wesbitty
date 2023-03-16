@@ -132,7 +132,7 @@ export default function Layout({ meta, children, subdomain }: LayoutProps) {
               application with{" "}
               <a
                 className="text-black font-semibold underline"
-                href="https://wesbitty.com"
+                href="https://wesbitty.netlify.app"
                 rel="noreferrer"
                 target="_blank"
               >
@@ -148,7 +148,7 @@ export default function Layout({ meta, children, subdomain }: LayoutProps) {
           >
             <a
               className="flex-auto font-cal text-lg rounded-md py-1 sm:py-3 px-5 text-black border border-gray-200 hover:border-black transition-all ease-in-out duration-150 whitespace-no-wrap"
-              href="https://app.wesbitty.com"
+              href="https://app.wesbitty.netlify.app"
               rel="noreferrer"
               target="_blank"
             >

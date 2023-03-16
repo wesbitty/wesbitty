@@ -32,7 +32,7 @@ export default function Index({ stringifiedData }: IndexProps) {
     ogImage: data.image,
     ogUrl: data.customDomain
       ? data.customDomain
-      : `https://${data.subdomain}.wesbitty.com`,
+      : `https://${data.subdomain}.wesbitty.netlify.app`,
   } as Meta;
 
   return (

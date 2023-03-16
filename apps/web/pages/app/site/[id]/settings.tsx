@@ -121,7 +121,7 @@ export default function SiteSettings() {
         const available = await response.json();
 
         setSubdomainError(
-          available ? null : `${debouncedSubdomain}.wesbitty.com`
+          available ? null : `${debouncedSubdomain}.wesbitty.netlify.app`
         );
       } catch (error) {
         console.error(error);
@@ -246,7 +246,7 @@ export default function SiteSettings() {
                 value={data.subdomain || ""}
               />
               <div className="w-1/2 h-12 flex justify-center items-center font-cal rounded-r-lg border-l border-gray-600 bg-gray-100">
-                wesbitty.com
+                wesbitty.netlify.app
               </div>
             </div>
             {subdomainError && (
