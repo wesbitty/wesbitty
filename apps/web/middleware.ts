@@ -17,7 +17,7 @@ export const config = {
 export default async function middleware(req: NextRequest) {
   const url = req.nextUrl;
 
-  const hostname = req.headers.get("host") || "demo.wesbitty.netlify.app";
+  const hostname = req.headers.get("host") || "demo.wesbitty.vercel.app";
 
   // Get the pathname of the request (e.g. /, /about, /blog/first-post)
   const path = url.pathname;
@@ -25,7 +25,7 @@ export default async function middleware(req: NextRequest) {
   const currentHost =
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
       ? hostname
-          .replace(`.wesbitty.netlify.app`, "")
+          .replace(`.wesbitty.vercel.app`, "")
       : hostname.replace(`.localhost:3210`, "");
 
   // rewrites for app pages
@@ -43,7 +43,7 @@ export default async function middleware(req: NextRequest) {
     return NextResponse.rewrite(url);
   }
 
-  if (hostname === "localhost:3210" || hostname === "wesbitty.netlify.app") {
+  if (hostname === "localhost:3210" || hostname === "wesbitty.vercel.app") {
     return NextResponse.rewrite(new URL(`${path}`, req.url));
   }
 

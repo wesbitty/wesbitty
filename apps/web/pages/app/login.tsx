@@ -66,7 +66,7 @@ export default function Login() {
         Start your project with a Postgres database, Authentication, instant APIs, Edge Functions, Realtime subscriptions, and Storage.<br /> Read the{" "}
           <a
             className="font-medium text-blue-600 hover:text-blue-800"
-            href="https://demo.wesbitty.netlify.app/platform-starter"
+            href="https://demo.wesbitty.vercel.app/platform-starter"
             rel="noreferrer"
             target="_blank"
           >
