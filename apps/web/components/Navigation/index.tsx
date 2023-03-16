@@ -6,7 +6,7 @@ import { Button, Badge, IconLogIn, IconPackage } from '@wesbitty/ui'
 import FlyOut from '../UI/FlyOut'
 import Transition from '../../wesbitty/lib/Transition'
 import ThemeSwitch from '../ColorScheme/ColorSchemeContext'
-import { iMode } from '../ColorScheme/ColorSchemeProvider'
+import { IMode } from '../ColorScheme/ColorSchemeProvider'
 import SolutionsData from '../../wesbitty/data/Solutions.json'
 import Solutions from './Product'
 import Developers from './Developers'
@@ -14,7 +14,7 @@ import Announcement from './Announcement'
 
 const Navigation = () => {
   const { basePath } = useRouter()
-  const { ThemeMode } = iMode()
+  const { ThemeMode } = IMode()
   const [open, setOpen] = useState(false)
 
   const [openProduct, setOpenProduct] = useState(false)

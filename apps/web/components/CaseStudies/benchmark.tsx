@@ -28,13 +28,13 @@ const Benchmark = () => {
                 Wesbitty outperforms equivalent systems by more than 300%.
               </span>
               <span className="block text-gray-300">
-                Sign up for our public benchmark release and we'll send it to your inbox.
+                Sign up for our public benchmark release and we&apos;ll send it to your inbox.
               </span>
             </Typography.Text>
           </div>
         </div>
         <div className="pb-12 px-12 col-span-1 lg:pb-0 lg:px-0 lg:col-span-2 rounded-r-md">
-          <Link href="https://wesbittyapp.vercel.app/subscription/enterpriseBenchmarks">
+          <Link href="https://wesbittyapp.vercel.app/subscription/enterpriseBenchmarks" passHref>
             <Button>Get notified</Button>
           </Link>
         </div>

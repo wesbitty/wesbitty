@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import Button from './Button'
 
@@ -42,7 +43,7 @@ const Card = (props: Props) => {
     icons &&
     icons.map((icon: any) => {
       return (
-        <img
+        <Image
           key={icon.imgAlt}
           className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
           src={icon.imgUrl}
@@ -57,7 +58,7 @@ const Card = (props: Props) => {
       target="_blank"
       className="flex flex-col rounded-md shadow-lg overflow-hidden relative transition transform hover:-translate-y-1 hover:shadow-2xl"
       rel="noreferrer"
-    >
+      passHref>
       <div className="flex-shrink-0 dark:bg-dark-800">
         <img className="h-64 w-full object-cover" src={imgUrl} alt={title} />
       </div>
@@ -81,7 +82,7 @@ const Card = (props: Props) => {
           <div className="mt-6 flex items-center">
             <div className="flex-shrink-0">
               <span className="sr-only">{postMeta.name}</span>
-              <img className="h-10 w-10 rounded-full" src={postMeta.avatarUrl} alt="Avatar" />
+              <Image className="h-10 w-10 rounded-full" src={postMeta.avatarUrl} alt="Avatar" />
             </div>
             <div className="ml-3">
               <p className="text-sm font-medium text-gray-900 dark:text-white">{postMeta.name}</p>

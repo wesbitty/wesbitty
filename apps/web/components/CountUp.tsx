@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-type Props = {
+type CountUpProps = {
   children: any
   duration?: number
   triggerAnimOnScroll?: boolean
@@ -10,7 +10,7 @@ type Props = {
 const easeOutQuad = (t: number) => t * (2 - t)
 const frameDuration = 1000 / 60
 
-const CountUp = (props: Props) => {
+function CountUp(props: CountUpProps) {
   const { children, duration = 2000, triggerAnimOnScroll = false, referenceElId = '' } = props
   const countTo = parseInt(children, 10)
   const [count, setCount] = useState<number>(0)
@@ -32,7 +32,8 @@ const CountUp = (props: Props) => {
             const progress = easeOutQuad(frame / totalFrames)
             setCount(countTo * progress)
 
-            if (frame === totalFrames) clearInterval(counter)
+            if (frame === totalFrames)
+              clearInterval(counter)
           }, frameDuration)
         }
       }
@@ -46,12 +47,14 @@ const CountUp = (props: Props) => {
         const progress = easeOutQuad(frame / totalFrames)
         setCount(countTo * progress)
 
-        if (frame === totalFrames) clearInterval(counter)
+        if (frame === totalFrames)
+          clearInterval(counter)
       }, frameDuration)
     }
 
     return () => {
-      if (triggerAnimOnScroll) window.removeEventListener('scroll', handleScroll)
+      if (triggerAnimOnScroll)
+        window.removeEventListener('scroll', handleScroll)
     }
   }, [animTriggered])
 

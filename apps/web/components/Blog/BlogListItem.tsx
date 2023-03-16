@@ -15,7 +15,7 @@ const BlogListItem = ({ blog }: Props) => {
 
   return (
     <div key={blog.slug}>
-      <Link href={`/blog/${blog.url}`}>
+      <Link href={`/blog/${blog.url}`} passHref>
         <div className="inline-block min-w-full group">
           <div className="flex flex-col space-y-6">
             <div className="flex flex-col space-y-3">
@@ -49,7 +49,7 @@ const BlogListItem = ({ blog }: Props) => {
             {author && (
               <div>
                 <Space size={4}>
-                  {author.avatar && <img src={author.avatar} className="rounded-full w-10" />}
+                  {author.avatar && <Image alt="Avatar" src={author.avatar} className="rounded-full w-10" />}
                   <Space direction="vertical" size={0}>
                     <Typography.Text>{author.author}</Typography.Text>
                     <Typography.Text type="secondary" small>

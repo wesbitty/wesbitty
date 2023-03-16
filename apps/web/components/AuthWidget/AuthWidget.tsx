@@ -21,6 +21,7 @@ import {
   IconColumns,
 } from '@wesbitty/ui'
 import AuthStyles from './Auth.module.css'
+import Image from 'next/image'
 
 function AuthPage() {
   const wesbitty = createClient(
@@ -31,7 +32,7 @@ function AuthPage() {
   type SizeProps = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge'
   type LayoutProps = 'horizontal' | 'vertical'
 
-  const [companyName, setCompanyName] = useState('Acme Company')
+  const [companyName, setCompanyName] = useState('Wesbitty Inc')
   const [widgetSize, setWidgetSize] = useState<SizeProps>('tiny')
   const [socialLogins, setSocialLogins] = useState(true)
   const [socialLoginLayout, setSocialLoginLayout] = useState<LayoutProps>('horizontal')
@@ -76,14 +77,15 @@ function AuthPage() {
                     </Space>,
                   ]}
                 >
-                  <Tabs.Panel label="Preview" id="panel-1" icon={<IconZoomIn />}>
+                  <Tabs.Panel label="Preview" key="panel-1" icon={<IconZoomIn />}>
                     <div style={{ maxWidth: '420px', margin: '0 auto' }}>
                       <Card>
                         <Space size={8} direction="vertical">
                           <div>
                             <Space size={3} direction="vertical">
-                              <img
-                                src="https://app.wesbitty.com/img/supabase-dark.svg"
+                              <Image
+                                alt='Logo'
+                                src="/Logo/wesbitty-dark.svg"
                                 width="96"
                               />
                               <Typography.Title level={3}>{companyName}</Typography.Title>
@@ -114,8 +116,8 @@ function AuthPage() {
   
   export default function app() { 
   
-      const supabase = createClient(
-          'https://YOUR-PROJECT-ID.supabase.co',
+      const wesbitty = createClient(
+          'https://YOUR-PROJECT-ID.wesbitty.com',
           'YOUR-PUBLIC-ANON-KEY'
       )
   

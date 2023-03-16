@@ -22,7 +22,7 @@ const Developers = () => {
       <Link
         href={url}
         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 dark:hover:bg-dark-700 transition ease-in-out duration-150"
-      >
+      passHref>
         {/* <!-- Heroicon name: support --> */}
         <svg
           className="flex-shrink-0 h-6 w-6 stroke-gray dark:stroke-white "

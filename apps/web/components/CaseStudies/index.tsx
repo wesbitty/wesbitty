@@ -24,7 +24,7 @@ const CaseStudies = () => {
       </div>
       <div className="mt-5 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
         {CaseStudiesData.map((caseStudy: any, idx: number) => (
-          <Link href={caseStudy.url} key={idx}>
+          <Link href={caseStudy.url} key={idx} passHref>
             <Card
               key={`caseStudy_${idx}`}
               hoverable

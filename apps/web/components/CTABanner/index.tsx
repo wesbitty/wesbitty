@@ -17,7 +17,7 @@ const CTABanner = (props: any) => {
         </Typography.Title>
       </div>
       <div className="col-span-12 mt-4">
-        <Link href="https://app.wesbitty.com">
+        <Link href="https://app.wesbitty.com" passHref>
           <Button size="medium">Start your project</Button>
         </Link>
       </div>

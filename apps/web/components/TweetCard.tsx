@@ -27,7 +27,7 @@ function TweetCard(props: TweetCardProps) {
         {props.handle}
       </Typography.Text>
       <Typography.Text>
-        <p className="text-base mt-3 text-gray-900 dark:text-white">"{props.quote}"</p>
+        <p className="text-base mt-3 text-gray-900 dark:text-white">&quot;{props.quote}&quot;</p>
       </Typography.Text>
     </div>
   )

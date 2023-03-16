@@ -2,12 +2,12 @@ import { useRouter } from 'next/router'
 import FooterLinks from '../../wesbitty/data/Footer.json'
 import SectionContainer from '../Layouts/SectionContainer'
 import Link from 'next/link'
-import { iMode } from '../ColorScheme/ColorSchemeProvider'
+import { IMode } from '../ColorScheme/ColorSchemeProvider'
 import Image from 'next/image'
 
 const Footer = () => {
   const { basePath } = useRouter()
-  const { ThemeMode } = iMode()
+  const { ThemeMode } = IMode()
 
   return (
     <footer

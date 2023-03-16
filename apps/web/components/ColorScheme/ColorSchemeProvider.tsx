@@ -14,7 +14,7 @@ export const ColorSchemeContext = createContext<ColorSchemeProps>({
   updateThemeMode: () => {},
 })
 
-export const iMode = () => useContext(ColorSchemeContext)
+export const IMode = () => useContext(ColorSchemeContext)
 
 export const ColorSchemeProvider = ({ children }: ColorSchemeProviderProps) => {
   const [ThemeMode, setIsThemeMode] = useState(false)
