@@ -10,7 +10,6 @@ import {
   IconGitHub,
   IconArrowLeft,
   IconArrowRight,
-  Space,
   IconBookOpen,
 } from '@wesbitty/ui'
 
@@ -21,9 +20,6 @@ import ExampleCard from '../ExampleCard'
 SwiperCore.use([Navigation, Pagination])
 
 function GithubExamples() {
-  // base path for images
-  const { basePath } = useRouter()
-
   const prevRef = useRef(null)
   const nextRef = useRef(null)
 
@@ -40,15 +36,15 @@ function GithubExamples() {
             </p>
           </Typography.Text>
           <div className="flex space-y-1.5 flex-col lg:space-y-0 lg:space-x-1.5 lg:flex-row justify-center">
-            <Link href="/docs/guides/examples#guides">
+            <Link href="/docs/guides/examples#guides" passHref>
               <Button type="default" icon={<IconBookOpen />}>
                 View guides
               </Button>
             </Link>
-            <Link href="/docs/guides/examples">
+            <Link href="/docs/guides/examples" passHref>
               <Button type="default">View all examples</Button>
             </Link>
-            <Link href="https://github.com/wesbitty/wesbitty/tree/master/examples">
+            <Link href="https://github.com/wesbitty/wesbitty/tree/master/examples" passHref>
               <Button type="default" icon={<IconGitHub />}>
                 Official GitHub library
               </Button>

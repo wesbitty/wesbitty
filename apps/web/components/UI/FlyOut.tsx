@@ -11,7 +11,7 @@ type Props = {
 }
 
 const FlyOut = (props: Props) => {
-  const { title = '', children, className = '', singleBgColor = false, handleCancel } = props
+  const { children, singleBgColor = false, handleCancel = 'true' } = props
 
   useEffect(() => {
     function handleScroll() {

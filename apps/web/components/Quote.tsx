@@ -1,4 +1,5 @@
 import { Space, Typography } from '@wesbitty/ui'
+import Image from 'next/image'
 import React from 'react'
 
 interface Props {
@@ -17,7 +18,8 @@ export default function Quote(props: Props) {
           {children}
         </blockquote>
         <Space size={4} className="align-center">
-          <img
+          <Image
+            alt="Avatar"
             src={'/images/blog/avatars/' + img}
             className="rounded-full w-16 h-16 object-cover text-center"
             style={{ margin: 0 }}

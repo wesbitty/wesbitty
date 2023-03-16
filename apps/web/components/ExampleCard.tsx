@@ -55,7 +55,7 @@ function ExampleCard(props: any) {
               as={props.repo_url}
               className="flex flex-row items-center"
               target="_blank"
-            >
+              passHref>
               <span>{props.repo_name}</span>
               <span className="ml-1 inline-block">
                 <IconGitHub size="small" />
@@ -64,19 +64,19 @@ function ExampleCard(props: any) {
           </Typography.Text>
           <Space className="mt-3">
             {props.vercel_deploy_url && (
-              <Link target="_blank" href={props.vercel_deploy_url} rel="noreferrer">
+              <Link target="_blank" href={props.vercel_deploy_url} rel="noreferrer" passHref>
                 <Image src="https://vercel.com/button" alt="vercel" />
               </Link>
             )}
             {props.demo_url && (
-              <Link target="_blank" href={props.demo_url} as={props.demo_url}>
+              <Link target="_blank" href={props.demo_url} as={props.demo_url} passHref>
                 <Button size="tiny" type="default" iconRight={<IconArrowUpRight />}>
                   Launch Demo
                 </Button>
               </Link>
             )}
             {!props.demo_url && (
-              <Link target="_blank" href={props.repo_url} as={props.repo_url}>
+              <Link target="_blank" href={props.repo_url} as={props.repo_url} passHref>
                 <Button size="tiny" type="default" iconRight={<IconArrowUpRight />}>
                   View Code
                 </Button>

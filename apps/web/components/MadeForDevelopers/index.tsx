@@ -1,8 +1,7 @@
-import { Badge, Button, IconArrowUpRight, IconMail } from '@wesbitty/ui'
+import { Badge } from '@wesbitty/ui'
 import APISection from '../Sections/APISection'
 import SectionContainer from '../Layouts/SectionContainer'
 import FeatureColumn from '../FeatureColumn'
-
 import CodeExamples from '../../wesbitty/data/home/api-examples'
 import DeveloperFeatures from '../../wesbitty/data/DeveloperFeatures.json'
 import TextLink from '../TextLink'

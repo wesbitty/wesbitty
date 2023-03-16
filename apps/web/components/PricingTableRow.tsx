@@ -1,6 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { IconHelpCircle, IconWatch, Space, Typography } from '@wesbitty/ui'
+import { IconHelpCircle, Space, Typography } from '@wesbitty/ui'
 import ReactTooltip from 'react-tooltip'
 import ProductIcon from 'components/ProductIcon'
 
@@ -63,25 +62,25 @@ export const PricingTableRowDesktop = (props: any) => {
         <td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></td>
       </tr>
 
-      {category.features.map((feat: any) => {
+      {category.features.map((prop: any) => {
         return (
           <tr className="divide-x dark:divide-gray-600">
             <th
               className="flex items-center py-5 px-6 text-sm font-normal text-gray-500 dark:text-gray-300 text-left"
               scope="row"
             >
-              <span>{feat.title} </span>
-              {feat.tooltip && (
+              <span>{prop.title} </span>
+              {prop.tooltip && (
                 <span
                   className="ml-2 cursor-pointer hover:text-gray-800 dark:hover:text-white"
-                  data-tip={feat.tooltip}
+                  data-tip={prop.tooltip}
                 >
                   <IconHelpCircle size="small" />
                 </span>
               )}
             </th>
 
-            {Object.values(feat.tiers).map((tier: any) => {
+            {Object.values(prop.tiers).map((tier: any) => {
               return (
                 <td className="py-5 px-6">
                   {typeof tier === 'boolean' && tier === true ? (
@@ -128,26 +127,26 @@ export const PricingTableRowMobile = (props: any) => {
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-200 dark:divide-gray-600 ">
-          {category.features.map((feat: any) => {
+          {category.features.map((prop: any) => {
             return (
               <tr className="border-t border-gray-200 dark:border-gray-600 ">
                 <th className="py-5 px-4 text-sm font-normal text-gray-500 text-left" scope="row">
                   <span>
-                    <Typography.Text type="secondary">{feat.title}</Typography.Text>
+                    <Typography.Text type="secondary">{prop.title}</Typography.Text>
                   </span>
                 </th>
                 <td className="py-5 pr-4 text-right">
-                  {typeof feat.tiers[tier] === 'boolean' && feat.tiers[tier] === true ? (
+                  {typeof prop.tiers[tier] === 'boolean' && prop.tiers[tier] === true ? (
                     <div className="inline-block">
                       <Chevron tier={tier} />
                     </div>
-                  ) : typeof feat.tiers[tier] === 'boolean' && feat.tiers[tier] === false ? (
+                  ) : typeof prop.tiers[tier] === 'boolean' && prop.tiers[tier] === false ? (
                     <div className="inline-block">
                       <Minus tier={tier} />
                     </div>
                   ) : (
                     <span className="block text-sm text-gray-700 dark:text-white">
-                      {feat.tiers[tier]}
+                      {prop.tiers[tier]}
                     </span>
                   )}
                 </td>

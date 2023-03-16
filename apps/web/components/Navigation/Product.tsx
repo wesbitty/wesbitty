@@ -66,7 +66,7 @@ const Product = () => {
                   <Link
                     href={caseStudy.url}
                     className="p-3 flex rounded-lg hover:bg-gray-100 dark:hover:bg-dark-700 transition ease-in-out duration-150 border dark:border-gray-600"
-                  >
+                    passHref>
                     <div className="hidden sm:block flex-shrink-0">
                       <Image
                         width={32}

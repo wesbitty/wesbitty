@@ -11,7 +11,7 @@ import {
   ExampleProps,
 } from '../../wesbitty/data/CodeExamples'
 import monokaiCustomTheme from '../../wesbitty/data/CodeEditorTheme'
-import { Button, IconCopy, Space, Tabs } from '@wesbitty/ui'
+import { Button, Space, Tabs } from '@wesbitty/ui'
 
 SyntaxHighlighter.registerLanguage('javascript', js)
 
@@ -73,8 +73,7 @@ const CodeExamples = () => {
 
   const Buttons = () => (
     <Space direction="vertical" size={1}>
-      {Object.values(exampleList).map((x, i) => {
-        const length: number = Object.values(exampleList).length - 1
+      {Object.values(exampleList).map((x) => {
         return (
           <Button
             block

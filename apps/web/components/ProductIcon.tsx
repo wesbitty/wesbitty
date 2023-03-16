@@ -1,8 +1,8 @@
-interface ProductIcon {
+interface ProductIconProps {
   icon: string
 }
 
-function ProductIcon({ icon }: ProductIcon) {
+function ProductIcon({ icon }: ProductIconProps) {
   return (
     <div className="inline-flex items-center justify-center rounded-md bg-gray-800 dark:bg-white text-white h-8 w-8">
       <svg

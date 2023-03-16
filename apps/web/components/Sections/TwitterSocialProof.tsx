@@ -1,24 +1,17 @@
 import { useRef } from 'react'
-
 import { useRouter } from 'next/router'
-
 import { Swiper, SwiperSlide } from 'swiper/react'
 // import Swiper core and required modules
 import SwiperCore, { Navigation, Pagination } from 'swiper'
-
 import {
   Button,
   Typography,
   IconMessageCircle,
-  Space,
-  IconAlignLeft,
   IconArrowLeft,
   IconArrowRight,
 } from '@wesbitty/ui'
-
-import Examples from '../../wesbitty/data/tweets/Tweets.json'
+import Examples from '~/wesbitty/data/tweets/Tweets.json'
 import TweetCard from '../TweetCard'
-
 // Import Swiper styles
 import 'swiper/swiper.min.css'
 import 'swiper/components/navigation/navigation.min.css'
@@ -49,7 +42,7 @@ function TwitterSocialProof() {
                 href={'https://github.com/wesbitty/wesbitty/discussions'}
                 className="block text-sm text-gray-400 dark:text-gray-400 mt-3"
                 target="_blank"
-              >
+              passHref>
                 <Button size="small" iconRight={<IconMessageCircle size="tiny" />} type="default">
                   GitHub discussions
                 </Button>

@@ -1,8 +1,8 @@
-import { Button, IconBookOpen, IconKey, Space, Typography } from '@wesbitty/ui'
+import { Button, IconBookOpen, Typography } from '@wesbitty/ui'
 import Link from 'next/link'
 import ProductIcon from '../ProductIcon'
+import React from 'react'
 
-type subheader = string
 interface Types {
   h1: string | React.ReactNode
   subheader: string[]
@@ -42,11 +42,11 @@ const ProductHeader = (props: Types) => (
           </Typography.Text>
         )}
         <div className="mt-12 flex flex-row md:flex-row md:items-center">
-          <Link href="/api/auth/signin">
+          <Link href="https://app.wesbitty.com" passHref>
             <Button size="medium">Start a project</Button>
           </Link>
           {props.documentation_url && (
-            <Link href={props.documentation_url}>
+            <Link href={props.documentation_url} passHref>
               <Button type="text" size="medium" icon={<IconBookOpen />}>
                 See documentation
               </Button>

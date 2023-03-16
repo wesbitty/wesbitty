@@ -1,6 +1,6 @@
 import { IconDatabase, Typography } from '@wesbitty/ui'
 
-const FeatureSection = (props: any) => {
+const FeatureSection = () => {
   return (
     <div className="grid grid-cols-12">
       <div className="col-span-3">

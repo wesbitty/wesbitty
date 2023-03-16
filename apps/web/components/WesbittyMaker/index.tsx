@@ -1,12 +1,11 @@
 import { useRouter } from 'next/router'
-import { Button, Card, Typography, Space, IconGitHub } from '@wesbitty/ui'
+import { Button, Typography, Space, IconGitHub } from '@wesbitty/ui'
 import SectionContainer from '../Layouts/SectionContainer'
 import ExampleCard from '../ExampleCard'
 import Examples from '../../wesbitty/data/Examples.json'
 import Link from 'next/link'
 
 const BuiltExamples = () => {
-  const { basePath } = useRouter()
 
   return (
     <SectionContainer className="xl:pt-32">
@@ -17,10 +16,10 @@ const BuiltExamples = () => {
             There are many example apps and starter projects to get going
           </p>
           <Space className="justify-center">
-            <Link href="/docs/guides/examples">
+            <Link href="/docs/guides/examples" passHref>
               <Button type="default">View all examples</Button>
             </Link>
-            <Link href="https://github.com/wesbitty/wesbitty/tree/master/examples">
+            <Link href="https://github.com/wesbitty/wesbitty/tree/master/examples" passHref>
               <Button type="default" icon={<IconGitHub />}>
                 Official github library
               </Button>

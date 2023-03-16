@@ -1,6 +1,4 @@
-import { useRouter } from 'next/router'
 import Image from 'next/image'
-
 import Link from 'next/link'
 interface iImages {
   name: string
@@ -69,7 +67,7 @@ const ImageGrid = ({
         const Container = ({ children, link }: any) => {
           if (x.link) {
             return (
-              <Link href={link}>
+              <Link href={link} passHref>
                 <div className="cursor-pointer transform duration-100 ease-in-out scale-100 hover:scale-105 hover:shadow-sm hover:z-50">
                   {children}
                 </div>

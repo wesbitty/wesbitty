@@ -16,13 +16,13 @@ const Announcement = () => {
 
   // window.localStorage is kept inside useEffect
   // to prevent error
-  useEffect(function () {
+  useEffect(() => {
     if (!window.localStorage.getItem(announcementKey)) {
       return setHidden(false)
     }
   }, [])
 
-  function handleClose(event: any) {
+  function handleClose(event: any): void {
     event.stopPropagation()
 
     window.localStorage.setItem(announcementKey, 'hidden')

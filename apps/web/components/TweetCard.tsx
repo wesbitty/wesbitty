@@ -1,13 +1,13 @@
 import { IconTwitter, Typography } from '@wesbitty/ui'
 import Image from 'next/image'
 
-interface TweetCard {
+interface TweetCardProps {
   handle: string
   quote: string
   img_url: string
 }
 
-function TweetCard(props: TweetCard) {
+function TweetCard(props: TweetCardProps) {
   return (
     <div className="bg-white dark:bg-dark-800 rounded-lg border border-gray-100 dark:border-gray-600 p-6">
       <div className="relative">
@@ -19,7 +19,7 @@ function TweetCard(props: TweetCard) {
           style={{ background: '#00acee' }}
         >
           <div className="text-white">
-            <IconTwitter fill={'white'} size="tiny" />
+            <IconTwitter fill={'white'} size="tiny"/>
           </div>
         </div>
       </div>

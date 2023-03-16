@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { Button, Badge, IconLogIn, IconHome, IconPackage } from '@wesbitty/ui'
+import { Button, Badge, IconLogIn, IconPackage } from '@wesbitty/ui'
 import FlyOut from '../UI/FlyOut'
 import Transition from '../../wesbitty/lib/Transition'
 import ThemeSwitch from '../ColorScheme/ColorSchemeContext'
@@ -188,7 +188,7 @@ const Navigation = () => {
           <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-16 xl:px-20">
             <div className="flex items-center justify-center sm:px-4 lg:justify-between">
               <div className="flex items-center space-x-2.5">
-                <Link href="/">
+                <Link href="/" passHref>
                   <Image
                     className="w-40"
                     src={
@@ -239,7 +239,7 @@ const Navigation = () => {
               <ThemeSwitch />
             </div>
             <div className="hidden lg:flex items-center sm:space-x-3">
-              <Link href="/authentication">
+              <Link href="/authentication" passHref>
                 <Button title="Sign In" type="default" icon={<IconLogIn />}>
                   Sign In
                 </Button>

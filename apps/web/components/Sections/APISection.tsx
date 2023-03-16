@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import React from 'react'
 // Import Swiper React components
 import { Button, IconArrowUpRight, Tabs, Typography } from '@wesbitty/ui'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -38,7 +39,7 @@ function APISection(props: Props) {
         <Typography.Title level={2}>{props.title}</Typography.Title>
         <Typography.Text>{props.text}</Typography.Text>
         {props.documentation_link && (
-          <Link href={props.documentation_link}>
+          <Link href={props.documentation_link} passHref>
             <Button size="small" className="mt-4" type="default" icon={<IconArrowUpRight />}>
               Explore documentation
             </Button>

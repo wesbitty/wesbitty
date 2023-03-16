@@ -31,12 +31,12 @@ const HeaderFeature = () => {
                       </p>
                     </Typography.Text>
                     <Space>
-                      <Link href="https://app.wesbitty.com" className="mt-10">
+                      <Link href="https://app.wesbitty.com" className="mt-10" passHref>
                         <Button className="py-3" size="medium">
                           Get Started
                         </Button>
                       </Link>
-                      <Link href="/docs" className="mt-10">
+                      <Link href="/docs" className="mt-10" passHref>
                         <Button className="py-3" size="medium" type="text" icon={<IconBookOpen />}>
                           Documentation
                         </Button>
