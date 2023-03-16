@@ -22,3 +22,6 @@ __pycache__
 
 # env
 .env.local
+
+# Local Netlify folder
+.netlify

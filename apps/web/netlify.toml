@@ -3,7 +3,6 @@
 
 [build]
 command = "npm run build"
-publish = "apps/web/.next"
 
 [template.environment]
 NEXTAUTH_SECRET = "Secret, use https://generate-secret.now.sh/32 to create one."
