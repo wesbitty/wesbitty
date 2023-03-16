@@ -25,22 +25,22 @@ export default async function middleware(req: NextRequest) {
   const currentHost =
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
       ? hostname
-          .replace(`.vercel.pub`, "")
           .replace(`.wesbitty.com`, "")
       : hostname.replace(`.localhost:3210`, "");
 
   // rewrites for app pages
-  if (currentHost === "app") {
-    const session = await getToken({
-      req,
-      secret: process.env.NEXTAUTH_SECRET,
-    });
-    if (!session?.email && path !== "/login") {
-      return NextResponse.redirect(new URL("/login", req.url));
-    } else if (session?.email && path === "/login") {
-      return NextResponse.redirect(new URL("/", req.url));
+  if (currentHost == "app") {
+    if (
+      url.pathname === "/login" &&
+      (req.cookies.get("next-auth.session-token") ||
+        req.cookies.get("__Secure-next-auth.session-token"))
+    ) {
+      url.pathname = "/";
+      return NextResponse.redirect(url);
     }
-    return NextResponse.rewrite(new URL(`/_app${path}`, req.url));
+
+    url.pathname = `/app${url.pathname}`;
+    return NextResponse.rewrite(url);
   }
 
   if (hostname === "localhost:3210" || hostname === "wesbitty.com") {

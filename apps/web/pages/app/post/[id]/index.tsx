@@ -191,7 +191,7 @@ export default function Post() {
       if (response.ok) {
         mutate(`/api/post?postId=${postId}`);
         router.push(
-          `https://${post?.site?.subdomain}.vercel.pub/${post?.slug}`
+          `https://${post?.site?.subdomain}.wesbitty.com/${post?.slug}`
         );
       }
     } catch (error) {

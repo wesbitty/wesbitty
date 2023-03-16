@@ -199,7 +199,7 @@ export async function deletePost(
     if (response?.site?.subdomain) {
       // revalidate for subdomain
       await revalidate(
-        `https://${response.site?.subdomain}.vercel.pub`, // hostname to be revalidated
+        `https://${response.site?.subdomain}.wesbitty.com`, // hostname to be revalidated
         response.site.subdomain, // siteId
         response.slug // slugname for the post
       );
@@ -291,7 +291,7 @@ export async function updatePost(
     if (subdomain) {
       // revalidate for subdomain
       await revalidate(
-        `https://${subdomain}.vercel.pub`, // hostname to be revalidated
+        `https://${subdomain}.wesbitty.com`, // hostname to be revalidated
         subdomain, // siteId
         slug // slugname for the post
       );
