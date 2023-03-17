@@ -1,4 +1,4 @@
-import type { MediaTweet } from "^/wesbitty/types";
+import type { MediaTweet } from "~/wesbitty/types";
 
 interface Video {
   bitrate: number;

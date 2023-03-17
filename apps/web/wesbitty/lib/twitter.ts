@@ -2,7 +2,7 @@ import { stringify as queryStringify } from "querystring";
 
 import { getTwitterMedia } from "./twitter-media";
 
-import type { Tweet, TweetData } from "^/wesbitty/types";
+import type { Tweet, TweetData } from "~/wesbitty/types";
 
 const queryParams = queryStringify({
   expansions:
