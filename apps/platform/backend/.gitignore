@@ -1,9 +1,0 @@
-.env
-yarn.lock
-config
-migrations
-seeders
-models
-node_modules
-yarn-error.log
-tmp
