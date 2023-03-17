@@ -1,6 +1,6 @@
 import Card from "./Card";
 
-import type { MdxCardData } from "^/wesbitty/types";
+import type { MdxCardData } from "~/wesbitty/types";
 
 interface ExamplesProps {
   data: string;
