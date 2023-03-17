@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 import type { ComponentProps } from "react";
-import type { WithClassName } from "^/wesbitty/types";
+import type { WithClassName } from "~/wesbitty/types";
 
 interface BlurImageProps extends WithClassName, ComponentProps<typeof Image> {
   alt: string;
