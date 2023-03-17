@@ -30,7 +30,7 @@ export default async function middleware(req: NextRequest) {
   const currentHost =
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
        ? hostname
-          .replace(`.localhost.3000`, "")
+          .replace(`.localhost:3000`, "")
           .replace(`.bitty.vercel.app`, "")
         :hostname.replace(`.wesbitty.org`, "");
 
