@@ -3,19 +3,19 @@ import useSWR from "swr";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
-import BlurImage from "^/components/BlurImage";
-import CloudinaryUploadWidget from "^/components/Cloudinary";
-import Layout from "^/components/app/Layout";
-import Loader from "^/components/app/Loader";
-import LoadingDots from "^/components/app/loading-dots";
-import Modal from "^/components/Modal";
-import { fetcher } from "^/wesbitty/lib/fetcher";
-import { HttpMethod } from "^/wesbitty/types";
+import BlurImage from "~/components/BlurImage";
+import CloudinaryUploadWidget from "~/components/Cloudinary";
+import Layout from "~/components/app/Layout";
+import Loader from "~/components/app/Loader";
+import LoadingDots from "~/components/app/loading-dots";
+import Modal from "~/components/Modal";
+import { fetcher } from "~/wesbitty/lib/fetcher";
+import { HttpMethod } from "~/wesbitty/types";
 
 import type { ChangeEvent } from "react";
 
-import type { WithSitePost } from "^/wesbitty/types";
-import { placeholderBlurhash } from "^/wesbitty/lib/utils";
+import type { WithSitePost } from "~/wesbitty/types";
+import { placeholderBlurhash } from "~/wesbitty/lib/utils";
 
 interface SettingsData {
   slug: string;
@@ -127,7 +127,7 @@ export default function PostSettings() {
               <h2 className="font-cal text-2xl">Post Slug</h2>
               <div className="border border-gray-700 rounded-lg flex items-center max-w-lg">
                 <span className="px-5 font-cal rounded-l-lg border-r border-gray-600 whitespace-nowrap">
-                  {settings?.site?.subdomain}.bitty.vercel.app/
+                  {settings?.site?.subdomain}.wesbitty.org/
                 </span>
                 <input
                   className="w-full px-5 py-3 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-none rounded-r-lg placeholder-gray-400"
