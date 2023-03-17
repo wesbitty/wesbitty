@@ -18,7 +18,7 @@ export default async function middleware(req: NextRequest) {
   const url = req.nextUrl;
 
   // Get hostname of request (e.g. demo.wesbitty.org, demo.localhost:3000)
-  const hostname = req.headers.get("host") || "demo.wesbitty.org";
+  const hostname = req.headers.get("host") || "wesbitty.org";
 
   // Get the pathname of the request (e.g. /, /about, /blog/first-post)
   const path = url.pathname;
@@ -44,13 +44,12 @@ export default async function middleware(req: NextRequest) {
       url.pathname = "/";
       return NextResponse.redirect(url);
     }
-
     url.pathname = `/app${url.pathname}`;
     return NextResponse.rewrite(url);
   }
 
   // rewrite root application to `/home` folder
-  if (hostname === "localhost:3000" || hostname === "bitty.vercel.app") {
+  if (hostname === "localhost:3000" || hostname === "bitty.vercel.app" || hostname === "wesbitty.org") {
     return NextResponse.rewrite(new URL(`/home${path}`, req.url));
   }
 
