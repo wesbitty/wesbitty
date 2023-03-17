@@ -1,8 +1,8 @@
 import useSWR, { mutate } from "swr";
 import { useState } from "react";
-import LoadingDots from "^/components/app/loading-dots";
-import { fetcher } from "^/wesbitty/lib/fetcher";
-import { HttpMethod } from "^/wesbitty/types";
+import LoadingDots from "~/components/app/loading-dots";
+import { fetcher } from "~/wesbitty/lib/fetcher";
+import { HttpMethod } from "~/wesbitty/types";
 
 import type { Site } from "@prisma/client";
 
@@ -191,7 +191,7 @@ export default function DomainCard({ data }: DomainCardProps) {
                 <div>
                   <p className="text-sm font-bold">Value</p>
                   <p className="text-sm font-mono mt-2">
-                    {recordType == "CNAME" ? `cname.bitty.vercel.app` : `76.76.21.21`}
+                    {recordType == "CNAME" ? `cname.wesbitty.org` : `76.76.21.21`}
                   </p>
                 </div>
               </div>

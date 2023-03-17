@@ -2,7 +2,7 @@ import Link from "next/link";
 import BlurImage from "./BlurImage";
 
 import type { Post } from "@prisma/client";
-import { placeholderBlurhash, toDateString } from "^/wesbitty/lib/utils";
+import { placeholderBlurhash, toDateString } from "~/wesbitty/lib/utils";
 
 interface BlogCardProps {
   data: Pick<
