@@ -18,15 +18,10 @@ export default async function middleware(req: NextRequest) {
   const url = req.nextUrl;
 
   // Get hostname of request (e.g. demo.wesbitty.org, demo.localhost:3000)
-  const hostname = req.headers.get("host") || "demo.wesbitty.org";
+  const hostname = req.headers.get("host") || "wesbitty.org";
 
   // Get the pathname of the request (e.g. /, /about, /blog/first-post)
   const path = url.pathname;
-
-  // Only for demo purposes - remove this if you want to use your root domain as the landing page
-  if (hostname === "wesbitty.org" || hostname === "bitty.vercel.app") {
-    return NextResponse.redirect("https://demo.wesbitty.org");
-  }
 
   /*  You have to replace ".wesbitty.org" with your own domain if you deploy this example under your domain.
       You can also use wildcard subdomains on .vercel.app links that are associated with your Vercel team slug
@@ -55,7 +50,7 @@ export default async function middleware(req: NextRequest) {
   }
 
   // rewrite root application to `index` file
-  if (hostname === "localhost:3000" || hostname === "bitty.vercel.app") {
+  if (hostname === "localhost:3000" || hostname === "wesbitty.org" || hostname === "bitty.vercel.app") {
     return NextResponse.rewrite(new URL(`${path}`, req.url));
   }
 
