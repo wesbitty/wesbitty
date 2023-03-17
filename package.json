@@ -17,8 +17,8 @@
   "author": "Wesbitty, Inc.",
   "scripts": {
     "build": "turbo run build",
-    "build:app": "turbo run build --filter=web",
-    "dev": "turbo run dev --filter=web",
+    "build:app": "turbo run build --filter={apps/web}",
+    "dev": "turbo run dev --filter={apps/web}",
     "format": "prettier -w .",
     "clean": "npm run clean:pkg && npm run clean:app",
     "clean:pkg": "bash -c 'rm -rf examples/*/.turbo examples/*/.wesjet examples/*/.next packages/*/dist'",
