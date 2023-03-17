@@ -7,7 +7,7 @@ import type {
   CloudinaryCallbackImage,
   CloudinaryWidget,
   CloudinaryWidgetResult,
-} from "^/wesbitty/types";
+} from "~/wesbitty/types";
 
 interface ChildrenProps {
   open: (e: MouseEvent) => void;
