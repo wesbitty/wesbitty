@@ -1,8 +1,8 @@
-import { createSite, deleteSite, getSite, updateSite } from "^/wesbitty/lib/api";
+import { createSite, deleteSite, getSite, updateSite } from "~/wesbitty/lib/api";
 import { unstable_getServerSession } from "next-auth/next";
 
 import { authOptions } from "./auth/[...nextauth]";
-import { HttpMethod } from "^/wesbitty/types";
+import { HttpMethod } from "~/wesbitty/types";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 

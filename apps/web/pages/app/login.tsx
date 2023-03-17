@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import LoadingDots from "^/components/app/loading-dots";
+import LoadingDots from "~/components/app/loading-dots";
 import toast, { Toaster } from "react-hot-toast";
 
 const pageTitle = "Sign In | Wesbitty Inc";
@@ -66,7 +66,7 @@ export default function Login() {
         Start your project with a Postgres database, Authentication, instant APIs, Edge Functions, Realtime subscriptions, and Storage.<br /> Read the{" "}
           <a
             className="font-medium text-blue-600 hover:text-blue-800"
-            href="https://demo.bitty.vercel.app/platform-starter"
+            href="https://demo.wesbitty.org/platform-starter"
             rel="noreferrer"
             target="_blank"
           >

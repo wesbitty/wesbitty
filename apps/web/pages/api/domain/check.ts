@@ -1,5 +1,5 @@
-import prisma from "^/wesbitty/lib/prisma";
-import { HttpMethod } from "^/wesbitty/types";
+import prisma from "~/wesbitty/lib/prisma";
+import { HttpMethod } from "~/wesbitty/types";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 
