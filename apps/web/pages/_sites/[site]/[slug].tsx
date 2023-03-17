@@ -2,24 +2,24 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { useRouter } from "next/router";
 
-import BlogCard from "^/components/BlogCard";
-import BlurImage from "^/components/BlurImage";
-import Examples from "^/components/mdx/Examples";
-import Layout from "^/components/sites/Layout";
-import Loader from "^/components/sites/Loader";
-import prisma from "^/wesbitty/lib/prisma";
-import Tweet from "^/components/mdx/Tweet";
+import BlogCard from "~/components/BlogCard";
+import BlurImage from "~/components/BlurImage";
+import Examples from "~/components/mdx/Examples";
+import Layout from "~/components/sites/Layout";
+import Loader from "~/components/sites/Loader";
+import prisma from "~/wesbitty/lib/prisma";
+import Tweet from "~/components/mdx/Tweet";
 import {
   replaceExamples,
   replaceLinks,
   replaceTweets,
-} from "^/wesbitty/lib/remark-plugins";
+} from "~/wesbitty/lib/remark-plugins";
 
-import type { AdjacentPost, Meta, _SiteSlugData } from "^/wesbitty/types";
+import type { AdjacentPost, Meta, _SiteSlugData } from "~/wesbitty/types";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import type { ParsedUrlQuery } from "querystring";
-import { placeholderBlurhash, toDateString } from "^/wesbitty/lib/utils";
+import { placeholderBlurhash, toDateString } from "~/wesbitty/lib/utils";
 
 const components = {
   a: replaceLinks,
@@ -56,7 +56,7 @@ export default function Post({
     description: data.description,
     logo: "/logo.png",
     ogImage: data.image,
-    ogUrl: `https://${data.site?.subdomain}.bitty.vercel.app/${data.slug}`,
+    ogUrl: `https://${data.site?.subdomain}.wesbitty.org/${data.slug}`,
     title: data.title,
   } as Meta;
 
