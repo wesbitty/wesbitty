@@ -17,14 +17,25 @@ export const config = {
 export default async function middleware(req: NextRequest) {
   const url = req.nextUrl;
 
-  const hostname = req.headers.get("host") || "demo.bitty.vercel.app";
+  // Get hostname of request (e.g. demo.wesbitty.org, demo.localhost:3000)
+  const hostname = req.headers.get("host") || "demo.wesbitty.org";
 
   // Get the pathname of the request (e.g. /, /about, /blog/first-post)
   const path = url.pathname;
 
+  // Only for demo purposes - remove this if you want to use your root domain as the landing page
+  if (hostname === "wesbitty.org" || hostname === "bitty.vercel.app") {
+    return NextResponse.redirect("https://demo.wesbitty.org");
+  }
+
+  /*  You have to replace ".wesbitty.org" with your own domain if you deploy this example under your domain.
+      You can also use wildcard subdomains on .vercel.app links that are associated with your Vercel team slug
+      in this case, our team slug is "platformize", thus *.bitty.vercel.app works. Do note that you'll
+      still need to add "*.bitty.vercel.app" as a wildcard domain on your Vercel dashboard. */
   const currentHost =
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
       ? hostname
+          .replace(`.wesbitty.org`, "")
           .replace(`.bitty.vercel.app`, "")
       : hostname.replace(`.localhost:3000`, "");
 
@@ -43,6 +54,7 @@ export default async function middleware(req: NextRequest) {
     return NextResponse.rewrite(url);
   }
 
+  // rewrite root application to `index` file
   if (hostname === "localhost:3000" || hostname === "bitty.vercel.app") {
     return NextResponse.rewrite(new URL(`${path}`, req.url));
   }
