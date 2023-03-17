@@ -18,7 +18,7 @@ export default async function middleware(req: NextRequest) {
   const url = req.nextUrl;
 
   // Get hostname of request (e.g. demo.wesbitty.org, demo.localhost:3000)
-  const hostname = req.headers.get("host") || "wesbitty.org";
+  const hostname = req.headers.get("host") || "bitty.vercel.app";
 
   // Get the pathname of the request (e.g. /, /about, /blog/first-post)
   const path = url.pathname;
@@ -30,8 +30,8 @@ export default async function middleware(req: NextRequest) {
   const currentHost =
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
       ? hostname
-          .replace(`.wesbitty.org`, "")
-      : hostname.replace(`.localhost:3000`, "");
+          .replace(`.localhost:3000`, "")
+      : hostname.replace(`.wesbitty.org`, "");
 
   // rewrites for app pages
   if (currentHost == "app") {
