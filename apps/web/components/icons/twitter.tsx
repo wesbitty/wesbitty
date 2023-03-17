@@ -1,4 +1,4 @@
-import type { BaseIconProps } from "^/wesbitty/types";
+import type { BaseIconProps } from "~/wesbitty/types";
 
 interface TwitterIconProps extends BaseIconProps {}
 
