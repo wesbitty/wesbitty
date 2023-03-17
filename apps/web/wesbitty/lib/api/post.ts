@@ -1,14 +1,14 @@
-import prisma from "^/wesbitty/lib/prisma";
+import prisma from "~/wesbitty/lib/prisma";
 
 import { NextApiRequest, NextApiResponse } from "next";
 import { unstable_getServerSession } from "next-auth/next";
 import { authOptions } from "pages/api/auth/[...nextauth]";
 import type { Post, Site } from ".prisma/client";
 import type { Session } from "next-auth";
-import { revalidate } from "^/wesbitty/lib/revalidate";
-import { getBlurDataURL, placeholderBlurhash } from "^/wesbitty/lib/utils";
+import { revalidate } from "~/wesbitty/lib/revalidate";
+import { getBlurDataURL, placeholderBlurhash } from "~/wesbitty/lib/utils";
 
-import type { WithSitePost } from "^/wesbitty/types";
+import type { WithSitePost } from "~/wesbitty/types";
 
 interface AllPosts {
   posts: Array<Post>;
@@ -199,7 +199,7 @@ export async function deletePost(
     if (response?.site?.subdomain) {
       // revalidate for subdomain
       await revalidate(
-        `https://${response.site?.subdomain}.bitty.vercel.app`, // hostname to be revalidated
+        `https://${response.site?.subdomain}.wesbitty.org`, // hostname to be revalidated
         response.site.subdomain, // siteId
         response.slug // slugname for the post
       );
@@ -291,7 +291,7 @@ export async function updatePost(
     if (subdomain) {
       // revalidate for subdomain
       await revalidate(
-        `https://${subdomain}.bitty.vercel.app`, // hostname to be revalidated
+        `https://${subdomain}.wesbitty.org`, // hostname to be revalidated
         subdomain, // siteId
         slug // slugname for the post
       );

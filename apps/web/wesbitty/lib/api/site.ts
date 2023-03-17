@@ -2,7 +2,7 @@ import cuid from "cuid";
 import { NextApiRequest, NextApiResponse } from "next";
 import { unstable_getServerSession } from "next-auth/next";
 import { authOptions } from "pages/api/auth/[...nextauth]";
-import prisma from "^/wesbitty/lib/prisma";
+import prisma from "~/wesbitty/lib/prisma";
 
 import type { Site } from ".prisma/client";
 import type { Session } from "next-auth";
