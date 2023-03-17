@@ -1,62 +1,27 @@
-import { getToken } from "next-auth/jwt";
-import { NextRequest, NextResponse } from "next/server";
-
-export const config = {
-  matcher: [
-    /*
-     * Match all paths except for:
-     * 1. /api routes
-     * 2. /_next (Next.js internals)
-     * 3. /examples (inside /public)
-     * 4. all root files inside /public (e.g. /favicon.ico)
-     */
-    "/((?!api/|_next/|_static/|examples/|[\\w-]+\\.\\w+).*)",
-  ],
-};
+import { NextRequest, NextResponse } from 'next/server';
 
 export default async function middleware(req: NextRequest) {
-  const url = req.nextUrl;
+  const host  = process.env.APP_URL
+  const url = req.nextUrl.clone();
+  const { pathname } = req.nextUrl;
+  const hostname = req.headers.get('host');
+ 
+  const currentHost = 
+  process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
+  .replace(`.${host}`, '');
 
-  // Get hostname of request (e.g. demo.wesbitty.org, demo.localhost:3000)
-  const hostname = req.headers.get("host") || "demo.wesbitty.org";
 
-  // Get the pathname of the request (e.g. /, /about, /blog/first-post)
-  const path = url.pathname;
+  if (pathname.startsWith(`/_sites`)) {
+    return new Response(null, { status: 404 });
+  }
 
-  /*  You have to replace ".vercel.pub" with your own domain if you deploy this example under your domain.
-      You can also use wildcard subdomains on .vercel.app links that are associated with your Vercel team slug
-      in this case, our team slug is "platformize", thus *.platformize.vercel.app works. Do note that you'll
-      still need to add "*.platformize.vercel.app" as a wildcard domain on your Vercel dashboard. */
-  const currentHost =
-    process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
-      ? hostname
-          .replace(`.bitty.vercel.app`, "")
-          .replace(`.wesbitty.org`, "")
-      : hostname.replace(`.localhost:3000`, "");
-
- if (!url.pathname.includes(".") && !url.pathname.startsWith("/api")) {
-  // rewrites for app pages
-  if (currentHost == "app") {
-    if (
-      url.pathname === "/login" &&
-      (req.cookies.get("next-auth.session-token") ||
-        req.cookies.get("__Secure-next-auth.session-token"))
-    ) {
-      url.pathname = "/";
-      return NextResponse.redirect(url);
+  if (!pathname.includes('.') && !pathname.startsWith('/api')) {
+    if (hostname === host) {
+      url.pathname = `${pathname}`;
+    } else {
+      url.pathname = `/_sites/${currentHost}${pathname}`;
     }
 
-    url.pathname = `/app${url.pathname}`;
     return NextResponse.rewrite(url);
   }
-
-  // rewrite root application to `/home` folder
-  if (hostname === "localhost:3000" || hostname === "wesbitty.org") {
-    return NextResponse.rewrite(new URL(`${path}`, req.url));
-  }
-
-  // rewrite everything else to `/_sites/[site] dynamic route
-  return NextResponse.rewrite(
-    new URL(`/_sites/${currentHost}${path}`, req.url));
-  }
-}
+};
