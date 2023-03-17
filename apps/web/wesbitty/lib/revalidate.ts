@@ -1,4 +1,4 @@
-import { HttpMethod } from "^/wesbitty/types";
+import { HttpMethod } from "~/wesbitty/types";
 
 export async function revalidate(
   hostname: string, // hostname to be revalidated
