@@ -11,6 +11,7 @@
     "lint": "next lint",
     "predev": "prisma generate",
     "dev": "next dev",
+    "clean": "bash -c 'rm -rf /vercel .next'",
     "prisma:migrate": "prisma migrate deploy",
     "start": "next start",
     "type-check": "tsc"
