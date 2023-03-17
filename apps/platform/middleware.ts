@@ -31,7 +31,6 @@ export default async function middleware(req: NextRequest) {
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
       ? hostname
           .replace(`.wesbitty.org`, "")
-          .replace(`.bitty.vercel.app`, "")
       : hostname.replace(`.localhost:3000`, "");
 
   // rewrites for app pages
@@ -49,7 +48,7 @@ export default async function middleware(req: NextRequest) {
   }
 
   // rewrite root application to `/home` folder
-  if (hostname === "localhost:3000" || hostname === "bitty.vercel.app" || hostname === "wesbitty.org") {
+  if (hostname === "localhost:3000" || hostname === "wesbitty.org") {
     return NextResponse.rewrite(new URL(`/home${path}`, req.url));
   }
 
