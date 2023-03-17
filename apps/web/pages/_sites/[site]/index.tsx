@@ -1,15 +1,15 @@
-import Layout from "^/components/sites/Layout";
+import Layout from "~/components/sites/Layout";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import BlurImage from "^/components/BlurImage";
-import BlogCard from "^/components/BlogCard";
-import Loader from "^/components/sites/Loader";
-import prisma from "^/wesbitty/lib/prisma";
+import BlurImage from "~/components/BlurImage";
+import BlogCard from "~/components/BlogCard";
+import Loader from "~/components/sites/Loader";
+import prisma from "~/wesbitty/lib/prisma";
 
 import type { GetStaticPaths, GetStaticProps } from "next";
-import type { _SiteData, Meta } from "^/wesbitty/types";
+import type { _SiteData, Meta } from "~/wesbitty/types";
 import type { ParsedUrlQuery } from "querystring";
-import { placeholderBlurhash, toDateString } from "^/wesbitty/lib/utils";
+import { placeholderBlurhash, toDateString } from "~/wesbitty/lib/utils";
 
 interface PathProps extends ParsedUrlQuery {
   site: string;
@@ -32,7 +32,7 @@ export default function Index({ stringifiedData }: IndexProps) {
     ogImage: data.image,
     ogUrl: data.customDomain
       ? data.customDomain
-      : `https://${data.subdomain}.bitty.vercel.app`,
+      : `https://${data.subdomain}.wesbitty.org`,
   } as Meta;
 
   return (
@@ -140,7 +140,7 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
           customDomain: null,
         },
         // you can remove this if you want to generate all sites at build time
-        customDomain: "bitty.vercel.app",
+        customDomain: "platformize.co",
       },
       select: {
         customDomain: true,

@@ -1,15 +1,15 @@
 import { useState, useEffect, useRef } from "react";
-import Layout from "^/components/app/Layout";
-import BlurImage from "^/components/BlurImage";
-import Modal from "^/components/Modal";
-import LoadingDots from "^/components/app/loading-dots";
+import Layout from "~/components/app/Layout";
+import BlurImage from "~/components/BlurImage";
+import Modal from "~/components/Modal";
+import LoadingDots from "~/components/app/loading-dots";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import { useDebounce } from "use-debounce";
-import { fetcher } from "^/wesbitty/lib/fetcher";
-import { HttpMethod } from "^/wesbitty/types";
+import { fetcher } from "~/wesbitty/lib/fetcher";
+import { HttpMethod } from "~/wesbitty/types";
 
 import type { FormEvent } from "react";
 import type { Site } from "@prisma/client";
@@ -35,7 +35,7 @@ export default function AppIndex() {
         if (available) {
           setError(null);
         } else {
-          setError(`${debouncedSubdomain}.bitty.vercel.app`);
+          setError(`${debouncedSubdomain}.wesbitty.org`);
         }
       }
     }
@@ -109,7 +109,7 @@ export default function AppIndex() {
                 type="text"
               />
               <span className="px-5 bg-gray-100 h-full flex items-center rounded-r-lg border-l border-gray-600">
-                .bitty.vercel.app
+                .wesbitty.org
               </span>
             </div>
             {error && (
@@ -195,12 +195,12 @@ export default function AppIndex() {
                       </p>
                       <a
                         className="font-cal px-3 py-1 tracking-wide rounded bg-gray-200 text-gray-600 absolute bottom-5 left-10 whitespace-nowrap"
-                        href={`https://${site.subdomain}.bitty.vercel.app`}
+                        href={`https://${site.subdomain}.wesbitty.org`}
                         onClick={(e) => e.stopPropagation()}
                         rel="noreferrer"
                         target="_blank"
                       >
-                        {site.subdomain}.bitty.vercel.app ↗
+                        {site.subdomain}.wesbitty.org ↗
                       </a>
                     </div>
                   </div>

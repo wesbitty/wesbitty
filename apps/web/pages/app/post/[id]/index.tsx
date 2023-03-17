@@ -5,15 +5,15 @@ import { useDebounce } from "use-debounce";
 import { useRouter } from "next/router";
 import { useState, useEffect, useCallback } from "react";
 
-import Layout from "^/components/app/Layout";
-import Loader from "^/components/app/Loader";
-import LoadingDots from "^/components/app/loading-dots";
-import { fetcher } from "^/wesbitty/lib/fetcher";
-import { HttpMethod } from "^/wesbitty/types";
+import Layout from "~/components/app/Layout";
+import Loader from "~/components/app/Loader";
+import LoadingDots from "~/components/app/loading-dots";
+import { fetcher } from "~/wesbitty/lib/fetcher";
+import { HttpMethod } from "~/wesbitty/types";
 
 import type { ChangeEvent } from "react";
 
-import type { WithSitePost } from "^/wesbitty/types";
+import type { WithSitePost } from "~/wesbitty/types";
 
 interface PostData {
   title: string;
@@ -191,7 +191,7 @@ export default function Post() {
       if (response.ok) {
         mutate(`/api/post?postId=${postId}`);
         router.push(
-          `https://${post?.site?.subdomain}.bitty.vercel.app/${post?.slug}`
+          `https://${post?.site?.subdomain}.wesbitty.org/${post?.slug}`
         );
       }
     } catch (error) {
