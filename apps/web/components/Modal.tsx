@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
-import type { WithChildren } from "^/wesbitty/types";
+import type { WithChildren } from "~/wesbitty/types";
 
 interface ModalProps extends WithChildren {
   showModal: boolean;
