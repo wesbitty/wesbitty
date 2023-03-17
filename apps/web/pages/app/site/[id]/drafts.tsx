@@ -3,11 +3,11 @@ import useSWR from "swr";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-import BlurImage from "^/components/BlurImage";
-import Layout from "^/components/app/Layout";
-import LoadingDots from "^/components/app/loading-dots";
-import { fetcher } from "^/wesbitty/lib/fetcher";
-import { HttpMethod } from "^/wesbitty/types";
+import BlurImage from "~/components/BlurImage";
+import Layout from "~/components/app/Layout";
+import LoadingDots from "~/components/app/loading-dots";
+import { fetcher } from "~/wesbitty/lib/fetcher";
+import { HttpMethod } from "~/wesbitty/types";
 
 import type { Post, Site } from "@prisma/client";
 
@@ -107,11 +107,11 @@ export default function SiteDrafts() {
                       </p>
                       <a
                         className="font-cal px-3 py-1 tracking-wide rounded bg-gray-200 text-gray-600 absolute bottom-5 left-10 whitespace-nowrap"
-                        href={`https://${data.site?.subdomain}.bitty.vercel.app/${post.slug}`}
+                        href={`https://${data.site?.subdomain}.wesbitty.org/${post.slug}`}
                         rel="noreferrer"
                         target="_blank"
                       >
-                        {data.site?.subdomain}.bitty.vercel.app/{post.slug} ↗
+                        {data.site?.subdomain}.wesbitty.org/{post.slug} ↗
                       </a>
                     </div>
                   </div>
