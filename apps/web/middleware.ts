@@ -34,6 +34,7 @@ export default async function middleware(req: NextRequest) {
           .replace(`.wesbitty.org`, "")
       : hostname.replace(`.localhost:3000`, "");
 
+ if (!url.pathname.includes(".") && !url.pathname.startsWith("/api")) {
   // rewrites for app pages
   if (currentHost == "app") {
     if (
@@ -56,6 +57,6 @@ export default async function middleware(req: NextRequest) {
 
   // rewrite everything else to `/_sites/[site] dynamic route
   return NextResponse.rewrite(
-    new URL(`/_sites/${currentHost}${path}`, req.url)
-  );
+    new URL(`/_sites/${currentHost}${path}`, req.url));
+  }
 }
