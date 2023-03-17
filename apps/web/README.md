@@ -1,4 +1,4 @@
-# WesBitty Template v1
+# Wesbitty Template v1
 
 Getting started with wesbitty template
 
