@@ -18,7 +18,7 @@ export default async function middleware(req: NextRequest) {
   const url = req.nextUrl;
 
   // Get hostname of request (e.g. demo.vercel.pub, demo.localhost:3000)
-  const hostname = req.headers.get("host") || "";
+  const hostname = req.headers.get("host") || "platforms.vercel.app";
 
   // Get the pathname of the request (e.g. /, /about, /blog/first-post)
   const path = url.pathname;
@@ -30,9 +30,9 @@ export default async function middleware(req: NextRequest) {
   const currentHost =
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
        ? hostname
-          .replace(`.wesbitty.org`, "")
+          .replace(`.localhost.3000`, "")
           .replace(`.bitty.vercel.app`, "")
-        :hostname.replace(`.localhost:3000`, "");
+        :hostname.replace(`.wesbitty.org`, "");
 
   // rewrites for app pages
   if (currentHost == "app") {
@@ -50,7 +50,7 @@ export default async function middleware(req: NextRequest) {
   }
 
   // rewrite root application to `/home` folder
-  if (hostname === "localhost:3000" || hostname === "bitty.vercel.app") {
+  if (hostname === "wesbitty.org" || hostname === "bitty.vercel.app") {
     return NextResponse.rewrite(new URL(`/home${path}`, req.url));
   }
 
