@@ -3,9 +3,10 @@ import GitHubProvider from "next-auth/providers/github";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import prisma from "~/wesbitty/lib/prisma";
 
-const VERCEL_DEPLOYMENT = !!process.env.VERCEL_URL;
+const VERCEL_DEPLOYMENT = process.env.VERCEL_URL;
+const secret = process.env.NEXTAUTH_SECRET
 
-if (!process.env.GITHUB_ID || !process.env.GITHUB_SECRET)
+if (!process.env.GITHUB_ID || !process.env.GITHUB_SECRET || secret)
   throw new Error("Failed to initialize Github authentication");
 
 export const authOptions: NextAuthOptions = {

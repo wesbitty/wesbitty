@@ -1,6 +1,8 @@
 import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
 
+const secret = process.env.NEXTAUTH_SECRET
+
 export const config = {
   matcher: [
     /*
@@ -50,7 +52,7 @@ export default async function middleware(req: NextRequest) {
   }
 
   // rewrite root application to `/home` folder
-  if (hostname === "localhost:3000" || hostname === "wesbitty.org") {
+  if (hostname === "localhost:3000" || hostname === "bitty.vercel.app") {
     return NextResponse.rewrite(new URL(`/home${path}`, req.url));
   }
 
