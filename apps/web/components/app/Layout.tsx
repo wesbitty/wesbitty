@@ -5,16 +5,16 @@ import { useRouter } from "next/router";
 import React from "react";
 import { signOut } from "next-auth/react";
 import Loader from "./Loader";
-import useRequireAuth from "^/wesbitty/lib/useRequireAuth";
+import useRequireAuth from "~/wesbitty/lib/useRequireAuth";
 
-import type { WithChildren } from "^/wesbitty/types";
+import type { WithChildren } from "~/wesbitty/types";
 
 interface LayoutProps extends WithChildren {
   siteId?: string;
 }
 
 export default function Layout({ siteId, children }: LayoutProps) {
-  const title = "We've Got Your WishList - Wesbitty Inc";
+  const title = "Platforms on Vercel";
   const description =
     "Create a fullstack application with multi-tenancy and custom domains support using Next.js, Prisma, and PostgreSQL";
   const logo = "/favicon.ico";
@@ -86,11 +86,11 @@ export default function Layout({ siteId, children }: LayoutProps) {
             </div>
             <a
               className="font-cal flex items-center space-x-2 text-gray-700 px-5 py-3 sm:hover:text-black sm:hover:bg-white transition-all ease-in-out duration-150"
-              href="https://github.com/wesbitty/wesbitty/tree/main/apps/web"
+              href="https://github.com/vercel/platforms"
               rel="noreferrer"
               target="_blank"
             >
-              <p className="hidden sm:block">Start your project</p>
+              <p className="hidden sm:block">Build my own</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"

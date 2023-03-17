@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import Cookies from "js-cookie";
 
-import type { Meta, WithChildren } from "^/wesbitty/types";
+import type { Meta, WithChildren } from "~/wesbitty/types";
 
 interface LayoutProps extends WithChildren {
   meta?: Meta;
@@ -121,7 +121,7 @@ export default function Layout({ meta, children, subdomain }: LayoutProps) {
           </button>
           <div className="text-center lg:text-left">
             <p className="font-cal text-lg sm:text-2xl text-black">
-              Platforms Demo
+              Platforms Starter Kit Demo
             </p>
             <p
               className={`${
@@ -132,7 +132,7 @@ export default function Layout({ meta, children, subdomain }: LayoutProps) {
               application with{" "}
               <a
                 className="text-black font-semibold underline"
-                href="https://bitty.vercel.app"
+                href="https://platformize.co"
                 rel="noreferrer"
                 target="_blank"
               >
@@ -148,11 +148,11 @@ export default function Layout({ meta, children, subdomain }: LayoutProps) {
           >
             <a
               className="flex-auto font-cal text-lg rounded-md py-1 sm:py-3 px-5 text-black border border-gray-200 hover:border-black transition-all ease-in-out duration-150 whitespace-no-wrap"
-              href="https://app.bitty.vercel.app"
+              href="https://app.wesbitty.org"
               rel="noreferrer"
               target="_blank"
             >
-              Create your project
+              Create your publication
             </a>
             <a
               className="flex-auto font-cal text-lg bg-black text-white border border-black rounded-md py-1 sm:py-3 px-5 hover:text-black hover:bg-white transition-all ease-in-out duration-150 whitespace-no-wrap"
