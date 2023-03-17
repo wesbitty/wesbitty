@@ -1,10 +1,10 @@
 import { cache } from "react";
-import type { _SiteData } from "^/wesbitty/types";
-import prisma from "^/wesbitty/lib/prisma";
+import type { _SiteData } from "~/wesbitty/types";
+import prisma from "~/wesbitty/lib/prisma";
 import remarkMdx from "remark-mdx";
 import { remark } from "remark";
 import { serialize } from "next-mdx-remote/serialize";
-import { replaceExamples, replaceTweets } from "^/wesbitty/lib/remark-plugins";
+import { replaceExamples, replaceTweets } from "~/wesbitty/lib/remark-plugins";
 
 export const getSiteData = cache(async (site: string): Promise<_SiteData> => {
   let filter: {
