@@ -1,4 +1,4 @@
-import { HttpMethod } from "^/wesbitty/types";
+import { HttpMethod } from "~/wesbitty/types";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 
