@@ -21,8 +21,8 @@ coverage
 __pycache__
 
 # env
-.env.local
-.env.production
+.env.local*
+.env.production*
 
 
 # Local Netlify folder
