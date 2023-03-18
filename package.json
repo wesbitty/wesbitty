@@ -19,25 +19,36 @@
     "build": "turbo run build",
     "build:app": "turbo run build --filter={apps/web}",
     "dev": "turbo run dev --filter={apps/web}",
-    "format": "prettier -w .",
+    "format": "prettier --write \"apps/**/*.{js,jsx,ts,tsx,css,md,json}\"",
     "clean": "npm run clean:pkg && npm run clean:app",
     "clean:pkg": "bash -c 'rm -rf examples/*/.turbo examples/*/.wesjet examples/*/.next packages/*/dist'",
     "clean:app": "bash -c 'rm -rf .vercel apps/*/.wesjet apps/*/.next  apps/*/.turbo'",
     "test": "jest"
   },
-  "devDependencies": {
-    "npm-run-all": "^4.1.5",
-    "prettier": "2.8.0",
-    "semver": "^7.3.8",
-    "turbo": "^1.6.3"
-  },
   "dependencies": {
+    "@mdx-js/react": "^2.1.1",
+    "mini-svg-data-uri": "^1.4.4"
+  },
+  "devDependencies": {
     "@babel/core": "^7.20.5",
-    "@babel/eslint-parser": "^7.19.1",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-typescript": "^7.18.6",
-    "babel-jest": "^29.3.1",
-    "dotenv": "^16.0.3",
-    "ts-node": "^10.9.1"
+    "@babel/preset-env": "^7.19.1",
+    "@babel/preset-typescript": "^7.16.6",
+    "@supabase/supabase-js": "^1.35.3",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^14.14.14",
+    "autoprefixer": "^10.4.4",
+    "axios": "^0.24.0",
+    "babel-jest": "^27.3.1",
+    "dotenv": "^10.0.0",
+    "faker": "^5.5.3",
+    "jest": "^27.3.1",
+    "postcss": "^8.4.12",
+    "prettier": "^2.6.2",
+    "prettier-plugin-tailwindcss": "^0.1.8",
+    "tailwindcss": "^3.0.24",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^9.1.1",
+    "turbo": "latest",
+    "typescript": "^4.5.2"
   }
 }
