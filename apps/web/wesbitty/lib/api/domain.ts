@@ -27,7 +27,7 @@ export async function createDomain(
       {
         body: `{\n  "name": "${domain}"\n}`,
         headers: {
-          Authorization: `Bearer ${process.env.AUTH_BEARER_TOKEN}`,
+          Authorization: `Bearer ${process.env.VERCEL_ACCESS_TOKEN}`,
           "Content-Type": "application/json",
         },
         method: HttpMethod.POST,
@@ -82,7 +82,7 @@ export async function deleteDomain(
       `https://api.vercel.com/v6/domains/${domain}?teamId=${process.env.TEAM_ID_VERCEL}`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.AUTH_BEARER_TOKEN}`,
+          Authorization: `Bearer ${process.env.VERCEL_ACCESS_TOKEN}`,
         },
         method: HttpMethod.DELETE,
       }

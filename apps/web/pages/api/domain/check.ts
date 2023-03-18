@@ -43,7 +43,7 @@ export default async function post(req: NextApiRequest, res: NextApiResponse) {
       {
         method: HttpMethod.GET,
         headers: {
-          Authorization: `Bearer ${process.env.AUTH_BEARER_TOKEN}`,
+          Authorization: `Bearer ${process.env.VERCEL_ACCESS_TOKEN}`,
           "Content-Type": "application/json",
         },
       }

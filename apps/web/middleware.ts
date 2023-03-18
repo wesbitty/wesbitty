@@ -36,7 +36,7 @@ export default async function middleware(req: NextRequest) {
   }
 
   if (hostname === "localhost:3000" || hostname === "bitty.vercel.app") {
-    return NextResponse.rewrite(new URL(`/home${path}`, req.url));
+    return NextResponse.rewrite(new URL(`${path}`, req.url));
   }
 
   return NextResponse.rewrite(
