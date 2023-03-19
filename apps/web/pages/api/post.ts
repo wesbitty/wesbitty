@@ -1,31 +1,26 @@
-import { createPost, deletePost, getPost, updatePost } from "~/wesbitty/lib/api";
-import { unstable_getServerSession } from "next-auth/next";
+import { createPost, deletePost, getPost, updatePost } from '~/lib/api'
+import { unstable_getServerSession } from 'next-auth/next'
 
-import { authOptions } from "./auth/[...nextauth]";
-import { HttpMethod } from "~/wesbitty/types";
+import { authOptions } from './auth/[...nextauth]'
+import { HttpMethod } from '~/types'
 
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default async function post(req: NextApiRequest, res: NextApiResponse) {
-  const session = await unstable_getServerSession(req, res, authOptions);
-  if (!session) return res.status(401).end();
+  const session = await unstable_getServerSession(req, res, authOptions)
+  if (!session) return res.status(401).end()
 
   switch (req.method) {
     case HttpMethod.GET:
-      return getPost(req, res, session);
+      return getPost(req, res, session)
     case HttpMethod.POST:
-      return createPost(req, res, session);
+      return createPost(req, res, session)
     case HttpMethod.DELETE:
-      return deletePost(req, res, session);
+      return deletePost(req, res, session)
     case HttpMethod.PUT:
-      return updatePost(req, res, session);
+      return updatePost(req, res, session)
     default:
-      res.setHeader("Allow", [
-        HttpMethod.GET,
-        HttpMethod.POST,
-        HttpMethod.DELETE,
-        HttpMethod.PUT,
-      ]);
-      return res.status(405).end(`Method ${req.method} Not Allowed`);
+      res.setHeader('Allow', [HttpMethod.GET, HttpMethod.POST, HttpMethod.DELETE, HttpMethod.PUT])
+      return res.status(405).end(`Method ${req.method} Not Allowed`)
   }
 }

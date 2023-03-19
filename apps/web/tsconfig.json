@@ -1,45 +1,20 @@
 {
+  "extends": "tsconfig/nextjs.json",
   "compilerOptions": {
-    "target": "esnext",
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./*"
-      ],
-      "~/types/*": [
-        "wesbitty/types/*"
-      ]
+      "~/components/*": ["components/*"],
+      "~/schemas/*": ["wesbitty/schemas/*"],
+      "wesjet/jetpack": ["./.wesjet/jetpack"],
+      "~/styles/*": ["styles/*"],
+      "~/data/*": ["wesbitty/data/*"],
+      "~/utils/*": ["wesbitty/utils/*"],
+      "~/lib/*": ["wesbitty/lib/*"],
+      "~/types": ["wesbitty/types/index"],
+      "~/types/*": ["wesbitty/types/*"]
     },
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "noEmit": true,
-    "incremental": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    "plugins": [{"name": "next"}],
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".wesjet/jetpack"],
+  "exclude": ["node_modules"]
 }

@@ -1,13 +1,8 @@
-import type { BaseIconProps } from "~/wesbitty/types";
+import type { BaseIconProps } from '~/types'
 
 interface NotFoundIconProps extends BaseIconProps {}
 
-const NotFoundIcon = ({
-  className,
-  color,
-  height,
-  width,
-}: NotFoundIconProps) => {
+const NotFoundIcon = ({ className, color, height, width }: NotFoundIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +19,7 @@ const NotFoundIcon = ({
         <path d="M480.308 308.5l-18.032 18.031a6.5 6.5 0 109.193 9.193l18.031-18.032 18.031 18.032a6.5 6.5 0 109.193-9.193L498.692 308.5l18.032-18.031a6.5 6.5 0 10-9.193-9.193L489.5 299.308l-18.031-18.032a6.5 6.5 0 10-9.193 9.193l18.032 18.031zM489 382c-40.87 0-74-33.13-74-74s33.13-74 74-74 74 33.13 74 74-33.13 74-74 74z"></path>
       </g>
     </svg>
-  );
-};
+  )
+}
 
-export default NotFoundIcon;
+export default NotFoundIcon

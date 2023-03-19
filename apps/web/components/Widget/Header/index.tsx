@@ -1,0 +1,377 @@
+import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+import { Button, Badge, IconLogIn, IconPackage } from '@wesbitty/ui'
+import FlyOut from '../UI/FlyOut'
+import Transition from '~/utils/transition'
+import SolutionsData from '~/data/Solutions.json'
+import Solutions from './Product'
+import Developers from './Developers'
+import Announcement from './Announcement'
+import { AppModeToggle, useTheme } from '../../ColorScheme'
+import { Metadata } from '~/schemas/metadata'
+import toast from 'react-hot-toast'
+
+const Header = () => {
+  const { basePath } = useRouter()
+  const { AppMode } = useTheme()
+  const [open, setOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  const [openProduct, setOpenProduct] = useState(false)
+  const [openDevelopers, setOpenDevelopers] = useState(false)
+  // Get error message added by next/auth in URL.
+  const { query } = useRouter()
+  const { error } = query
+
+  useEffect(() => {
+    setMounted(true)
+    const errorMessage = Array.isArray(error) ? error.pop() : error
+    errorMessage && toast.error(errorMessage)
+  }, [error])
+
+  React.useEffect(() => {
+    if (open) {
+      // Prevent scrolling on mount
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+  }, [open])
+
+  function handleToggle(callback: any) {
+    handleCancel()
+    callback()
+  }
+
+  function handleCancel() {
+    setOpenProduct(false)
+    setOpenDevelopers(false)
+  }
+
+  const iconSections = Object.values(SolutionsData).map((solution: any, idx: number) => {
+    const { name, description, icon, label, url } = solution
+
+    const content = (
+      <div className="mb-3 flex md:h-full lg:flex-col">
+        <div className="flex-shrink-0">
+          <div className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-gray-800 text-white sm:h-12 sm:w-12">
+            {/* <!-- Heroicon name: chart-bar --> */}
+            <svg
+              className="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={icon} />
+            </svg>
+          </div>
+        </div>
+        <div className="ml-4 md:flex md:flex-1 md:flex-col md:justify-between lg:ml-0 lg:mt-4">
+          <div>
+            <p className="space-x-2 text-base font-medium text-gray-900 dark:text-white">
+              <span>{name}</span>
+              {label && (
+                <Badge dot color="blue">
+                  {label}
+                </Badge>
+              )}
+            </p>
+            <p className="dark:text-dark-100 mt-1 text-sm text-gray-500">{description}</p>
+          </div>
+          {url && (
+            <p className="text-brand-600 mt-2 text-sm font-medium lg:mt-4">
+              Learn more <span aria-hidden="true">&rarr;</span>
+            </p>
+          )}
+        </div>
+      </div>
+    )
+    return url ? (
+      <Link
+        key={`solution_${idx}`}
+        href={url}
+        className="dark:hover:bg-dark-600 -m-3 my-2 flex flex-col justify-between rounded-lg p-3 transition duration-150 ease-in-out hover:bg-gray-50"
+      >
+        {content}
+      </Link>
+    ) : (
+      <div
+        key={`solution_${idx}`}
+        className="-m-3 flex flex-col justify-between rounded-lg p-3 transition duration-150 ease-in-out"
+      >
+        {content}
+      </div>
+    )
+  })
+
+  type HamburgerButtonProps = {
+    toggleFlyOut: Function
+  }
+
+  const HamburgerButton = (props: HamburgerButtonProps) => (
+    <div
+      className="absolute inset-y-0 left-0 flex items-center px-2 lg:hidden"
+      onClick={() => props.toggleFlyOut()}
+    >
+      <button
+        className="focus:ring-brand-700 inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset"
+        aria-expanded="false"
+      >
+        <span className="sr-only">Open main menu</span>
+
+        <svg
+          className="block h-6 w-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+
+        <svg
+          className="hidden h-6 w-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+  )
+
+  const FlyOutNavButton = (props: any) => (
+    <div
+      className={
+        `
+        dark:text-dark-100 inline-flex cursor-pointer items-center border-b-2 border-transparent px-1 text-sm font-medium
+        text-gray-500 hover:text-gray-700
+      ` + props.active
+      }
+      onClick={props.onClick}
+    >
+      <>
+        <span>{props.title}</span>
+        <svg
+          className={
+            'ml-2 h-5 w-5 text-gray-300 transition duration-150 ease-in-out group-hover:text-gray-300' +
+            (props.active && ' rotate-180 transform')
+          }
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            fillRule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </>
+    </div>
+  )
+
+  return (
+    <>
+      <Announcement />
+      <div className="sticky top-0 z-50">
+        <nav className="border-b bg-white dark:border-gray-600 dark:bg-gray-800">
+          {/* <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-10 xl:px-0"> */}
+          <div className="relative mx-auto flex h-16 justify-between lg:container lg:px-16 xl:px-20">
+            <HamburgerButton toggleFlyOut={() => setOpen(true)} />
+            <div className="flex flex-1 items-center justify-center sm:items-stretch lg:justify-between">
+              <div className="flex items-center">
+                <div className="flex flex-shrink-0 items-center">
+                  <Link href="/">
+                    <Image
+                      className="w-40"
+                      src={
+                        AppMode
+                          ? `${basePath}${Metadata.DarkLogo}`
+                          : `${basePath}${Metadata.LightLogo}`
+                      }
+                      alt="Wesbitty Logo"
+                    />
+                  </Link>
+                </div>
+                <div className="hidden pl-4 sm:ml-6 sm:space-x-4 lg:flex">
+                  <Link
+                    href="/blog"
+                    className={`
+                    dark:text-dark-100 dark:hover:border-dark-100 inline-flex items-center border-b-2 border-transparent p-5
+                    px-1 text-sm font-medium text-gray-500
+                    hover:border-gray-500 hover:text-gray-700
+                  `}
+                  >
+                    Blog
+                  </Link>
+                  <Link
+                    href="/pricing"
+                    className={`
+                    dark:text-dark-100 dark:hover:border-dark-100 inline-flex items-center border-b-2 border-transparent p-5
+                    px-1 text-sm font-medium text-gray-500
+                    hover:border-gray-500 hover:text-gray-700
+                  `}
+                  >
+                    Pricing
+                  </Link>
+                  <Link
+                    href="/developer"
+                    className={`
+                    dark:text-dark-100 dark:hover:border-dark-100 inline-flex items-center border-b-2 border-transparent p-5
+                    px-1 text-sm font-medium text-gray-500
+                    hover:border-gray-500 hover:text-gray-700
+                  `}
+                  >
+                    Developer
+                  </Link>
+                  <FlyOutNavButton
+                    title={'Product'}
+                    onClick={() => handleToggle(() => setOpenProduct(!openProduct))}
+                    active={openProduct}
+                  />
+                </div>
+              </div>
+              <div className="right-0 flex items-center">
+                <div className="flex flex-shrink-0 items-center">
+                  <AppModeToggle />
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <Link href="http://app.localhost:3000">
+                  <Button type="default" iconRight={<IconPackage />}>
+                    Start Your Project
+                  </Button>
+                </Link>
+                <Link href="http://app.localhost:3000">
+                  <Button type="default" iconRight={<IconLogIn />}>
+                    Sign In
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <Transition
+            appear={true}
+            show={open}
+            enter="transition ease-out duration-200"
+            enterFrom="opacity-0 translate-y-1"
+            enterTo="opacity-100 translate-y-0"
+            leave="transition ease-in duration-150"
+            leaveFrom="opacity-100 translate-y-0"
+            leaveTo="opacity-0 translate-y-1"
+          >
+            <div className="dark:bg-dark-700 fixed -inset-y-0 z-50 h-screen w-screen transform overflow-y-scroll bg-white p-4 md:p-8">
+              <div className="absolute right-4 top-4 items-center justify-between">
+                <div className="-mr-2">
+                  <button
+                    onClick={() => setOpen(false)}
+                    type="button"
+                    className="focus:ring-brand-500 dark:bg-dark-800 inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset"
+                  >
+                    <span className="sr-only">Close menu</span>
+                    <svg
+                      className="h-6 w-6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              {/* </div> */}
+              <div className="mt-6 mb-12">
+                <div className="space-y-1 pt-2 pb-4">
+                  <Link
+                    href="/login"
+                    className="block pl-3 pr-4 text-base font-medium text-gray-600 dark:text-white"
+                  >
+                    Sign in
+                  </Link>
+                </div>
+                <div className="space-y-1 pt-2 pb-4">
+                  <Link
+                    href="/blog"
+                    className="dark:hover:bg-dark-600 block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800 dark:text-white"
+                  >
+                    Blog
+                  </Link>
+                  <Link
+                    href="/pricing"
+                    className="dark:hover:bg-dark-600 block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800 dark:text-white"
+                  >
+                    Pricing
+                  </Link>
+                  <Link
+                    href="/docs"
+                    className="dark:hover:bg-dark-600 block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800 dark:text-white"
+                  >
+                    Product
+                  </Link>
+                  <Link
+                    href="/docs"
+                    className="dark:hover:bg-dark-600 block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800 dark:text-white"
+                  >
+                    Developers
+                  </Link>
+                  <Link
+                    href="/docs"
+                    className="dark:hover:bg-dark-600 block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800 dark:text-white"
+                  >
+                    Company
+                  </Link>
+                  <Link
+                    href={Metadata.Github}
+                    target="_blank"
+                    className="dark:hover:bg-dark-600 block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800 dark:text-white"
+                  >
+                    GitHub
+                  </Link>
+                </div>
+                <div className="p-3">
+                  <p className="mb-6 text-sm text-gray-400">Products available:</p>
+                  {iconSections}
+                </div>
+              </div>
+            </div>
+          </Transition>
+        </nav>
+        <FlyOut open={openProduct} handleCancel={handleCancel}>
+          <Solutions />
+        </FlyOut>
+        <FlyOut open={openDevelopers} handleCancel={handleCancel}>
+          <Developers />
+        </FlyOut>
+      </div>
+    </>
+  )
+}
+
+export default Header

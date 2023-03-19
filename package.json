@@ -9,7 +9,7 @@
     "node": ">=14.0.0"
   },
   "workspaces": [
-    "apps/web",
+    "apps/*",
     "packages/*",
     "examples/*",
     "tests"
@@ -18,12 +18,19 @@
   "scripts": {
     "build": "turbo run build",
     "build:app": "turbo run build --filter={apps/web}",
+    "db:migrate:deploy": "turbo run db:migrate:deploy",
+    "db:push": "turbo run db:push",
+    "db:seed": "turbo run db:seed",
     "dev": "turbo run dev --filter={apps/web}",
-    "format": "prettier --write \"apps/**/*.{js,jsx,ts,tsx,css,md,json}\"",
-    "clean": "npm run clean:pkg && npm run clean:app",
-    "clean:pkg": "bash -c 'rm -rf examples/*/.turbo examples/*/.wesjet examples/*/.next packages/*/dist'",
-    "clean:app": "bash -c 'rm -rf .vercel apps/*/.wesjet apps/*/.next  apps/*/.turbo'",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "generate": "turbo run generate",
+    "lint": "turbo run lint",
+    "clean": "bash -c 'rm -rf examples/*/.turbo examples/*/.wesjet examples/*/.next packages/*/dist .vercel apps/*/.wesjet apps/*/.next  apps/*/.turbo'",
     "test": "jest"
+  },
+  "prisma": {
+    "schema": "packages/database/prisma/schema.prisma",
+    "seed": "tsx packages/database/src/seed.ts"
   },
   "dependencies": {
     "@mdx-js/react": "^2.1.1",
@@ -33,21 +40,15 @@
     "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.19.1",
     "@babel/preset-typescript": "^7.16.6",
-    "@supabase/supabase-js": "^1.35.3",
     "@types/jest": "^27.0.3",
-    "@types/node": "^14.14.14",
-    "autoprefixer": "^10.4.4",
     "axios": "^0.24.0",
     "babel-jest": "^27.3.1",
     "dotenv": "^10.0.0",
-    "faker": "^5.5.3",
     "jest": "^27.3.1",
-    "postcss": "^8.4.12",
     "prettier": "^2.6.2",
-    "prettier-plugin-tailwindcss": "^0.1.8",
-    "tailwindcss": "^3.0.24",
     "ts-jest": "^27.0.7",
     "ts-node": "^9.1.1",
+    "tsx": "^3.7.1",
     "turbo": "latest",
     "typescript": "^4.5.2"
   }

@@ -1,12 +1,12 @@
-import cuid from "cuid";
-import { NextApiRequest, NextApiResponse } from "next";
-import { unstable_getServerSession } from "next-auth/next";
-import { authOptions } from "pages/api/auth/[...nextauth]";
-import prisma from "~/wesbitty/lib/prisma";
+import cuid from 'cuid'
+import { NextApiRequest, NextApiResponse } from 'next'
+import { unstable_getServerSession } from 'next-auth/next'
+import { authOptions } from 'pages/api/auth/[...nextauth]'
+import prisma from '~/lib/prisma'
 
-import type { Site } from ".prisma/client";
-import type { Session } from "next-auth";
-import { placeholderBlurhash } from "../utils";
+import type { Site } from '.prisma/client'
+import type { Session } from 'next-auth'
+import { placeholderBlurhash } from '../utils'
 
 /**
  * Get Site
@@ -24,15 +24,12 @@ export async function getSite(
   res: NextApiResponse,
   session: Session
 ): Promise<void | NextApiResponse<Array<Site> | (Site | null)>> {
-  const { siteId } = req.query;
+  const { siteId } = req.query
 
   if (Array.isArray(siteId))
-    return res
-      .status(400)
-      .end("Bad request. siteId parameter cannot be an array.");
+    return res.status(400).end('Bad request. siteId parameter cannot be an array.')
 
-  if (!session.user.id)
-    return res.status(500).end("Server failed to get session user ID");
+  if (!session.user.id) return res.status(500).end('Server failed to get session user ID')
 
   try {
     if (siteId) {
@@ -43,9 +40,9 @@ export async function getSite(
             id: session.user.id,
           },
         },
-      });
+      })
 
-      return res.status(200).json(settings);
+      return res.status(200).json(settings)
     }
 
     const sites = await prisma.site.findMany({
@@ -54,12 +51,12 @@ export async function getSite(
           id: session.user.id,
         },
       },
-    });
+    })
 
-    return res.status(200).json(sites);
+    return res.status(200).json(sites)
   } catch (error) {
-    console.error(error);
-    return res.status(500).end(error);
+    console.error(error)
+    return res.status(500).end(error)
   }
 }
 
@@ -82,11 +79,11 @@ export async function createSite(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void | NextApiResponse<{
-  siteId: string;
+  siteId: string
 }>> {
-  const { name, subdomain, description, userId } = req.body;
+  const { name, subdomain, description, userId } = req.body
 
-  const sub = subdomain.replace(/[^a-zA-Z0-9/-]+/g, "");
+  const sub = subdomain.replace(/[^a-zA-Z0-9/-]+/g, '')
 
   try {
     const response = await prisma.site.create({
@@ -94,8 +91,8 @@ export async function createSite(
         name: name,
         description: description,
         subdomain: sub.length > 0 ? sub : cuid(),
-        logo: "/logo.png",
-        image: `/placeholder.png`,
+        logo: '/logo.png',
+        image: `/brand/placeholder.png`,
         imageBlurhash: placeholderBlurhash,
         user: {
           connect: {
@@ -103,14 +100,14 @@ export async function createSite(
           },
         },
       },
-    });
+    })
 
     return res.status(201).json({
       siteId: response.id,
-    });
+    })
   } catch (error) {
-    console.error(error);
-    return res.status(500).end(error);
+    console.error(error)
+    return res.status(500).end(error)
   }
 }
 
@@ -127,12 +124,12 @@ export async function deleteSite(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void | NextApiResponse> {
-  const session = await unstable_getServerSession(req, res, authOptions);
-  if (!session?.user.id) return res.status(401).end("Unauthorized");
-  const { siteId } = req.query;
+  const session = await unstable_getServerSession(req, res, authOptions)
+  if (!session?.user.id) return res.status(401).end('Unauthorized')
+  const { siteId } = req.query
 
-  if (!siteId || typeof siteId !== "string") {
-    return res.status(400).json({ error: "Missing or misconfigured site ID" });
+  if (!siteId || typeof siteId !== 'string') {
+    return res.status(400).json({ error: 'Missing or misconfigured site ID' })
   }
 
   const site = await prisma.site.findFirst({
@@ -142,13 +139,11 @@ export async function deleteSite(
         id: session.user.id,
       },
     },
-  });
-  if (!site) return res.status(404).end("Site not found");
+  })
+  if (!site) return res.status(404).end('Site not found')
 
   if (Array.isArray(siteId))
-    return res
-      .status(400)
-      .end("Bad request. siteId parameter cannot be an array.");
+    return res.status(400).end('Bad request. siteId parameter cannot be an array.')
 
   try {
     await prisma.$transaction([
@@ -164,12 +159,12 @@ export async function deleteSite(
           id: siteId,
         },
       }),
-    ]);
+    ])
 
-    return res.status(200).end();
+    return res.status(200).end()
   } catch (error) {
-    console.error(error);
-    return res.status(500).end(error);
+    console.error(error)
+    return res.status(500).end(error)
   }
 }
 
@@ -192,21 +187,13 @@ export async function updateSite(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void | NextApiResponse<Site>> {
-  const session = await unstable_getServerSession(req, res, authOptions);
-  if (!session?.user.id) return res.status(401).end("Unauthorized");
+  const session = await unstable_getServerSession(req, res, authOptions)
+  if (!session?.user.id) return res.status(401).end('Unauthorized')
 
-  const {
-    id,
-    currentSubdomain,
-    name,
-    description,
-    font,
-    image,
-    imageBlurhash,
-  } = req.body;
+  const { id, currentSubdomain, name, description, font, image, imageBlurhash } = req.body
 
-  if (!id || typeof id !== "string") {
-    return res.status(400).json({ error: "Missing or misconfigured site ID" });
+  if (!id || typeof id !== 'string') {
+    return res.status(400).json({ error: 'Missing or misconfigured site ID' })
   }
 
   const site = await prisma.site.findFirst({
@@ -216,11 +203,11 @@ export async function updateSite(
         id: session.user.id,
       },
     },
-  });
-  if (!site) return res.status(404).end("Site not found");
+  })
+  if (!site) return res.status(404).end('Site not found')
 
-  const sub = req.body.subdomain.replace(/[^a-zA-Z0-9/-]+/g, "");
-  const subdomain = sub.length > 0 ? sub : currentSubdomain;
+  const sub = req.body.subdomain.replace(/[^a-zA-Z0-9/-]+/g, '')
+  const subdomain = sub.length > 0 ? sub : currentSubdomain
 
   try {
     const response = await prisma.site.update({
@@ -235,11 +222,11 @@ export async function updateSite(
         image,
         imageBlurhash,
       },
-    });
+    })
 
-    return res.status(200).json(response);
+    return res.status(200).json(response)
   } catch (error) {
-    console.error(error);
-    return res.status(500).end(error);
+    console.error(error)
+    return res.status(500).end(error)
   }
 }

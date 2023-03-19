@@ -1,0 +1,71 @@
+[
+  {
+    "title": "Product",
+    "elements": [
+      {
+        "text": "Wesjet",
+        "href": "/product/wesjet"
+      },
+      {
+        "text": "Brand Assets",
+        "href": "/brand/assets"
+      },
+      {
+        "text": "Api Functions",
+        "href": "#"
+      }
+    ]
+  },
+  {
+    "title": "About",
+    "elements": [
+      {
+        "text": "Wesbitty, Inc",
+        "href": "/brand/wesbitty"
+      },
+      {
+        "text": "Investors",
+        "href": "/brand/investors"
+      },
+      {
+        "text": "Policies",
+        "href": "/policy"
+      },
+      {
+        "text": "Terms of Use",
+        "href": "/brand/terms"
+      }
+    ]
+  },
+  {
+    "title": "Developers",
+    "elements": [
+      {
+        "text": "Documentation",
+        "href": "/docs"
+      },
+      {
+        "text": "API Reference",
+        "href": "/docs/client/wesjet-client",
+        "url": "/docs/client/wesjet-client"
+      },
+      {
+        "text": "Guides",
+        "href": "/docs/guides/examples"
+      }
+    ]
+  },
+  {
+    "title": "Help",
+    "elements": [
+      {
+        "text": "Help Center",
+        "href": "/support"
+      },
+      {
+        "text": "Privacy settings",
+        "href": "/server"
+      }
+    ]
+  }
+]

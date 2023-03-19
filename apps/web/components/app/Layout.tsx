@@ -1,33 +1,30 @@
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-import { useRouter } from "next/router";
-import React from "react";
-import { signOut } from "next-auth/react";
-import Loader from "./Loader";
-import useRequireAuth from "../../wesbitty/lib/useRequireAuth";
-
-import type { WithChildren } from "~/wesbitty/types";
+import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+import React from 'react'
+import { signOut } from 'next-auth/react'
+import Loader from './Loader'
+import useRequireAuth from '~/lib/useRequireAuth'
+import type { WithChildren } from '~/types'
 
 interface LayoutProps extends WithChildren {
-  siteId?: string;
+  siteId?: string
 }
 
 export default function Layout({ siteId, children }: LayoutProps) {
-  const title = "Platforms on Vercel";
+  const title = 'Platforms on Vercel'
   const description =
-    "Create a fullstack application with multi-tenancy and custom domains support using Next.js, Prisma, and PostgreSQL";
-  const logo = "/favicon.ico";
-  const router = useRouter();
-  const sitePage = router.pathname.startsWith("/app/site/[id]");
-  const postPage = router.pathname.startsWith("/app/post/[id]");
-  const rootPage = !sitePage && !postPage;
-  const tab = rootPage
-    ? router.asPath.split("/")[1]
-    : router.asPath.split("/")[3];
+    'Create a fullstack application with multi-tenancy and custom domains support using Next.js, Prisma, and PostgreSQL'
+  const logo = '/favicon.ico'
+  const router = useRouter()
+  const sitePage = router.pathname.startsWith('/app/site/[id]')
+  const postPage = router.pathname.startsWith('/app/post/[id]')
+  const rootPage = !sitePage && !postPage
+  const tab = rootPage ? router.asPath.split('/')[1] : router.asPath.split('/')[3]
 
-  const session = useRequireAuth();
-  if (!session) return <Loader />;
+  const session = useRequireAuth()
+  if (!session) return <Loader />
 
   return (
     <>
@@ -58,34 +55,34 @@ export default function Layout({ siteId, children }: LayoutProps) {
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={logo} />
         </Head>
-        <div className="absolute left-0 right-0 h-16 border-b bg-white border-gray-200">
-          <div className="flex justify-between items-center h-full max-w-screen-xl mx-auto px-10 sm:px-20">
+        <div className="absolute left-0 right-0 h-16 border-b border-gray-200 bg-white">
+          <div className="mx-auto flex h-full max-w-screen-xl items-center justify-between px-10 sm:px-20">
             <div className="flex space-x-4">
-              <Link href="/" className="flex justify-center items-center">
+              <Link href="/" className="flex items-center justify-center">
                 {session.user && session.user.image && (
-                  <div className="h-8 w-8 inline-block rounded-full overflow-hidden align-middle">
+                  <div className="inline-block h-8 w-8 overflow-hidden rounded-full align-middle">
                     <Image
                       src={session.user.image}
                       width={40}
                       height={40}
-                      alt={session.user.name ?? "User avatar"}
+                      alt={session.user.name ?? 'User avatar'}
                     />
                   </div>
                 )}
-                <span className="sm:block inline-block ml-3 font-medium truncate">
+                <span className="ml-3 inline-block truncate font-medium sm:block">
                   {session.user?.name}
                 </span>
               </Link>
               <div className="h-8 border border-gray-300" />
               <button
-                className="text-gray-500 hover:text-gray-700 transition-all ease-in-out duration-150"
+                className="text-gray-500 transition-all duration-150 ease-in-out hover:text-gray-700"
                 onClick={() => signOut()}
               >
                 Logout
               </button>
             </div>
             <a
-              className="font-cal flex items-center space-x-2 text-gray-700 px-5 py-3 sm:hover:text-black sm:hover:bg-white transition-all ease-in-out duration-150"
+              className="font-cal flex items-center space-x-2 px-5 py-3 text-gray-700 transition-all duration-150 ease-in-out sm:hover:bg-white sm:hover:text-black"
               href="https://github.com/vercel/platforms"
               rel="noreferrer"
               target="_blank"
@@ -104,19 +101,17 @@ export default function Layout({ siteId, children }: LayoutProps) {
           </div>
         </div>
         {rootPage && (
-          <div className="absolute left-0 right-0 top-16 flex justify-center items-center font-cal space-x-16 border-b bg-white border-gray-200">
+          <div className="font-cal absolute left-0 right-0 top-16 flex items-center justify-center space-x-16 border-b border-gray-200 bg-white">
             <Link
               href="/"
-              className={`border-b-2 ${
-                tab == "" ? "border-black" : "border-transparent"
-              } py-3`}
+              className={`border-b-2 ${tab == '' ? 'border-black' : 'border-transparent'} py-3`}
             >
               My Sites
             </Link>
             <Link
               href="/settings"
               className={`border-b-2 ${
-                tab == "settings" ? "border-black" : "border-transparent"
+                tab == 'settings' ? 'border-black' : 'border-transparent'
               } py-3`}
             >
               Settings
@@ -124,24 +119,22 @@ export default function Layout({ siteId, children }: LayoutProps) {
           </div>
         )}
         {sitePage && (
-          <div className="absolute left-0 right-0 top-16 font-cal border-b bg-white border-gray-200">
-            <div className="flex justify-between items-center space-x-16 max-w-screen-xl mx-auto px-10 sm:px-20">
-              <Link href="/" className="md:inline-block ml-3 hidden">
+          <div className="font-cal absolute left-0 right-0 top-16 border-b border-gray-200 bg-white">
+            <div className="mx-auto flex max-w-screen-xl items-center justify-between space-x-16 px-10 sm:px-20">
+              <Link href="/" className="ml-3 hidden md:inline-block">
                 ← All Sites
               </Link>
-              <div className="flex justify-between items-center space-x-10 md:space-x-16">
+              <div className="flex items-center justify-between space-x-10 md:space-x-16">
                 <Link
                   href={`/site/${router.query.id}`}
-                  className={`border-b-2 ${
-                    !tab ? "border-black" : "border-transparent"
-                  } py-3`}
+                  className={`border-b-2 ${!tab ? 'border-black' : 'border-transparent'} py-3`}
                 >
                   Posts
                 </Link>
                 <Link
                   href={`/site/${router.query.id}/drafts`}
                   className={`border-b-2 ${
-                    tab == "drafts" ? "border-black" : "border-transparent"
+                    tab == 'drafts' ? 'border-black' : 'border-transparent'
                   } py-3`}
                 >
                   Drafts
@@ -149,7 +142,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
                 <Link
                   href={`/site/${router.query.id}/settings`}
                   className={`border-b-2 ${
-                    tab == "settings" ? "border-black" : "border-transparent"
+                    tab == 'settings' ? 'border-black' : 'border-transparent'
                   } py-3`}
                 >
                   Settings
@@ -160,34 +153,29 @@ export default function Layout({ siteId, children }: LayoutProps) {
           </div>
         )}
         {postPage && (
-          <div className="absolute left-0 right-0 top-16 font-cal border-b bg-white border-gray-200">
-            <div className="flex justify-between items-center space-x-16 max-w-screen-xl mx-auto px-10 sm:px-20">
+          <div className="font-cal absolute left-0 right-0 top-16 border-b border-gray-200 bg-white">
+            <div className="mx-auto flex max-w-screen-xl items-center justify-between space-x-16 px-10 sm:px-20">
               {siteId ? (
-                <Link
-                  href={`/site/${siteId}`}
-                  className="md:inline-block ml-3 hidden"
-                >
+                <Link href={`/site/${siteId}`} className="ml-3 hidden md:inline-block">
                   ← All Posts
                 </Link>
               ) : (
                 <div>
-                  ←<p className="md:inline-block ml-3 hidden">All Posts</p>
+                  ←<p className="ml-3 hidden md:inline-block">All Posts</p>
                 </div>
               )}
 
-              <div className="flex justify-between items-center space-x-10 md:space-x-16">
+              <div className="flex items-center justify-between space-x-10 md:space-x-16">
                 <Link
                   href={`/post/${router.query.id}`}
-                  className={`border-b-2 ${
-                    !tab ? "border-black" : "border-transparent"
-                  } py-3`}
+                  className={`border-b-2 ${!tab ? 'border-black' : 'border-transparent'} py-3`}
                 >
                   Editor
                 </Link>
                 <Link
                   href={`/post/${router.query.id}/settings`}
                   className={`border-b-2 ${
-                    tab == "settings" ? "border-black" : "border-transparent"
+                    tab == 'settings' ? 'border-black' : 'border-transparent'
                   } py-3`}
                 >
                   Settings
@@ -200,5 +188,5 @@ export default function Layout({ siteId, children }: LayoutProps) {
         <div className="pt-28">{children}</div>
       </div>
     </>
-  );
+  )
 }
