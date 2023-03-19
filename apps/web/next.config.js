@@ -1,7 +1,10 @@
+const { withWesjet } = require('wesjet-nextjs-plugin')
+
 /**
  * @type {import('next').NextConfig}
  */
-module.exports = {
+module.exports = withWesjet({
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   images: {
     domains: [
       'res.cloudinary.com',
@@ -12,4 +15,4 @@ module.exports = {
   },
   reactStrictMode: true,
   swcMinify: false, // Required to fix: https://nextjs.org/docs/messages/failed-loading-swc
-}
+})
