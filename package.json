@@ -18,10 +18,9 @@
   "scripts": {
     "build": "turbo run build",
     "build:app": "turbo run build --filter={apps/web}",
-    "dev": "turbo run dev --filter={apps/web}",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "generate": "turbo run generate",
     "lint": "turbo run lint",
+    "dev": "turbo run dev --filter={apps/web}",
+    "prettier": "prettier --write \"**/*.{css,ts,tsx,md,mdx}\"",
     "clean": "bash -c 'rm -rf examples/*/.turbo examples/*/.wesjet examples/*/.next packages/*/dist .vercel apps/*/.wesjet apps/*/.next  apps/*/.turbo'",
     "test": "jest"
   },
