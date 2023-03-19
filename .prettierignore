@@ -1,5 +1,6 @@
 .expo
 node_modules
+package-lock.json
 docker*
 dist*
 .next
@@ -7,4 +8,3 @@ dist*
 .vercel
 .turbo
 build
-package-lock.json
