@@ -20,7 +20,7 @@
     "build:app": "turbo run build --filter={apps/web}",
     "dev": "turbo run dev --filter={apps/web}",
     "lint": "turbo run lint",
-    "prettier": "prettier --write \"**/*.{css,ts,tsx,md,mdx}\"",
+    "prettier": "prettier --write \"**/*.{css,ts,tsx,md,mdx,json}\"",
     "clean": "bash -c 'rm -rf examples/*/.turbo examples/*/.wesjet examples/*/.next packages/*/dist .vercel apps/*/.wesjet apps/*/.next  apps/*/.turbo'",
     "test": "jest"
   },
