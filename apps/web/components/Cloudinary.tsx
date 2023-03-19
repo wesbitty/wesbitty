@@ -29,7 +29,7 @@ export default function CloudinaryUploadWidget({
         if (!error && result && result.event === 'success') {
           callback(result.info)
         }
-      },
+      }
     )
 
     widget.open()

@@ -35,7 +35,7 @@ export function replaceTweets<T extends Node>() {
       visit(tree, 'text', (node: any) => {
         if (
           node.value.match(
-            /https?:\/\/twitter\.com\/(?:#!\/)?(\w+)\/status(?:es)?\/(\d+)([^\?])(\?.*)?/g,
+            /https?:\/\/twitter\.com\/(?:#!\/)?(\w+)\/status(?:es)?\/(\d+)([^\?])(\?.*)?/g
           )
         ) {
           nodesToChange.push({

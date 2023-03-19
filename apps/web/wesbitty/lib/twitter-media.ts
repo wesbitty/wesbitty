@@ -14,7 +14,7 @@ export async function getTwitterMedia(id: string): Promise<Video | undefined> {
         headers: {
           Authorization: `Bearer ${process.env.TWITTER_AUTH_TOKEN}`,
         },
-      },
+      }
     )
 
     if (!response.ok) throw new Error('Failed to fetch Twitter media')

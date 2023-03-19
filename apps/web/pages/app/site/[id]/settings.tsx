@@ -310,14 +310,14 @@ export default function SiteSettings() {
                           (res) => {
                             if (res.ok) {
                               toast.success(
-                                `Requested delegation for ${error.domain}. Try adding the domain again in a few minutes.`,
+                                `Requested delegation for ${error.domain}. Try adding the domain again in a few minutes.`
                               )
                             } else {
                               alert(
-                                'There was an error requesting delegation. Please try again later.',
+                                'There was an error requesting delegation. Please try again later.'
                               )
                             }
-                          },
+                          }
                         )
                       }}
                     >

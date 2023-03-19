@@ -44,7 +44,7 @@ export default async function post(req: NextApiRequest, res: NextApiResponse) {
           Authorization: `Bearer ${process.env.AUTH_BEARER_TOKEN}`,
           'Content-Type': 'application/json',
         },
-      },
+      }
     )
 
     const data = await response.json()

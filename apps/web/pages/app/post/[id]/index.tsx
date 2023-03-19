@@ -65,20 +65,20 @@ export default function Post() {
       dedupingInterval: 1000,
       onError: () => router.push('/'),
       revalidateOnFocus: false,
-    },
+    }
   )
 
   const [savedState, setSavedState] = useState(
     post
       ? `Last saved at ${Intl.DateTimeFormat('en', { month: 'short' }).format(
-          new Date(post.updatedAt),
+          new Date(post.updatedAt)
         )} ${Intl.DateTimeFormat('en', { day: '2-digit' }).format(
-          new Date(post.updatedAt),
+          new Date(post.updatedAt)
         )} ${Intl.DateTimeFormat('en', {
           hour: 'numeric',
           minute: 'numeric',
         }).format(new Date(post.updatedAt))}`
-      : 'Saving changes...',
+      : 'Saving changes...'
   )
 
   const [data, setData] = useState<PostData>({
@@ -120,13 +120,13 @@ export default function Post() {
           const responseData = await response.json()
           setSavedState(
             `Last save ${Intl.DateTimeFormat('en', { month: 'short' }).format(
-              new Date(responseData.updatedAt),
+              new Date(responseData.updatedAt)
             )} ${Intl.DateTimeFormat('en', { day: '2-digit' }).format(
-              new Date(responseData.updatedAt),
+              new Date(responseData.updatedAt)
             )} at ${Intl.DateTimeFormat('en', {
               hour: 'numeric',
               minute: 'numeric',
-            }).format(new Date(responseData.updatedAt))}`,
+            }).format(new Date(responseData.updatedAt))}`
           )
         } else {
           setSavedState('Failed to save.')
@@ -136,7 +136,7 @@ export default function Post() {
         console.error(error)
       }
     },
-    [postId],
+    [postId]
   )
 
   useEffect(() => {

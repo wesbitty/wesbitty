@@ -3,7 +3,7 @@ import { HttpMethod } from '~/types'
 export async function revalidate(
   hostname: string, // hostname to be revalidated
   siteId: string, // siteId
-  slug: string, // slugname for the post
+  slug: string // slugname for the post
 ) {
   const urlPaths = [`/_sites/${siteId}/${slug}`, `/_sites/${siteId}`]
 
@@ -19,8 +19,8 @@ export async function revalidate(
           body: JSON.stringify({
             urlPath,
           }),
-        }),
-      ),
+        })
+      )
     )
   } catch (err) {
     console.error(err)

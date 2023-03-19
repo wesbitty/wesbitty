@@ -73,7 +73,7 @@ const Button = forwardRef<RefHandle, ButtonProps>(
       textAlign = 'center',
       ...props
     }: ButtonProps,
-    ref,
+    ref
   ) => {
     // button ref
     // const containerRef = useRef<HTMLElement>(null)
@@ -168,7 +168,7 @@ const Button = forwardRef<RefHandle, ButtonProps>(
         // </span>
       )
     }
-  },
+  }
 )
 
 export default Button

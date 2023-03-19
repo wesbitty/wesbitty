@@ -14,7 +14,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
  */
 export async function createDomain(
   req: NextApiRequest,
-  res: NextApiResponse,
+  res: NextApiResponse
 ): Promise<void | NextApiResponse> {
   const { domain, siteId } = req.query
 
@@ -31,7 +31,7 @@ export async function createDomain(
           'Content-Type': 'application/json',
         },
         method: HttpMethod.POST,
-      },
+      }
     )
 
     const data = await response.json()
@@ -70,7 +70,7 @@ export async function createDomain(
  */
 export async function deleteDomain(
   req: NextApiRequest,
-  res: NextApiResponse,
+  res: NextApiResponse
 ): Promise<void | NextApiResponse> {
   const { domain, siteId } = req.query
 
@@ -85,7 +85,7 @@ export async function deleteDomain(
           Authorization: `Bearer ${process.env.AUTH_BEARER_TOKEN}`,
         },
         method: HttpMethod.DELETE,
-      },
+      }
     )
 
     await response.json()

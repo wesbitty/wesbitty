@@ -20,7 +20,7 @@ Object.values(icons).map((icon) => {
     `export { default as Icon${icon.name} } from './Icon${icon.name}'`,
     function (err) {
       if (err) return console.log(err)
-    },
+    }
   )
 
   fs.writeFile(
@@ -40,7 +40,7 @@ Object.values(icons).map((icon) => {
   `,
     function (err) {
       if (err) return console.log(err)
-    },
+    }
   )
 })
 
@@ -54,7 +54,7 @@ ${importList
   .join('')}`,
   function (err) {
     if (err) return console.log(err)
-  },
+  }
 )
 
 fs.writeFile(`src/lib/Icon/icons.js`, `export default ${util.inspect(iconList)}`, function (err) {

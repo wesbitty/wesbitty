@@ -76,8 +76,8 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
       (match) =>
         `<a style="color: rgb(29,161,242); font-weight:normal; text-decoration: none" href="${match}" target="_blank">${match.replace(
           /^http(s?):\/\//i,
-          '',
-        )}</a>`,
+          ''
+        )}</a>`
     )
     // Format all @ mentions
     .replace(
@@ -85,8 +85,8 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
       (match) =>
         `<a style="color: rgb(29,161,242); font-weight:normal; text-decoration: none" href="https://twitter.com/${match.replace(
           '@',
-          '',
-        )}" target="_blank">${match}</a>`,
+          ''
+        )}" target="_blank">${match}</a>`
     )
     // Format all # hashtags
     .replace(
@@ -94,8 +94,8 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
       (match) =>
         `<a style="color: rgb(29,161,242); font-weight:normal; text-decoration: none" href="https://twitter.com/hashtag/${match.replace(
           '#',
-          '',
-        )}" target="_blank">${match}</a>`,
+          ''
+        )}" target="_blank">${match}</a>`
     )
 
   const quoteTweet = referenced_tweets && referenced_tweets.find((t) => t.type === 'quoted')
@@ -265,7 +265,7 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
                     <div
                       className={classNames(
                         option.position == 1 ? 'font-bold' : '',
-                        'relative text-black my-2 cursor-pointer px-3 whitespace-nowrap flex justify-between',
+                        'relative text-black my-2 cursor-pointer px-3 whitespace-nowrap flex justify-between'
                       )}
                     >
                       <p className="!my-0 z-10">{option.label}</p>
@@ -275,7 +275,7 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
                       <div
                         className={classNames(
                           option.position == 1 ? 'font-bold bg-[#1da1f2]' : 'bg-gray-300',
-                          'absolute top-0 left-0 rounded-md w-full h-full',
+                          'absolute top-0 left-0 rounded-md w-full h-full'
                         )}
                         style={{
                           width: `${Math.round((option.votes / poll.total_votes) * 100)}%`,

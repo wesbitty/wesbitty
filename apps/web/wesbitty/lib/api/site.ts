@@ -22,7 +22,7 @@ import { placeholderBlurhash } from '../utils'
 export async function getSite(
   req: NextApiRequest,
   res: NextApiResponse,
-  session: Session,
+  session: Session
 ): Promise<void | NextApiResponse<Array<Site> | (Site | null)>> {
   const { siteId } = req.query
 
@@ -77,7 +77,7 @@ export async function getSite(
  */
 export async function createSite(
   req: NextApiRequest,
-  res: NextApiResponse,
+  res: NextApiResponse
 ): Promise<void | NextApiResponse<{
   siteId: string
 }>> {
@@ -122,7 +122,7 @@ export async function createSite(
  */
 export async function deleteSite(
   req: NextApiRequest,
-  res: NextApiResponse,
+  res: NextApiResponse
 ): Promise<void | NextApiResponse> {
   const session = await unstable_getServerSession(req, res, authOptions)
   if (!session?.user.id) return res.status(401).end('Unauthorized')
@@ -185,7 +185,7 @@ export async function deleteSite(
  */
 export async function updateSite(
   req: NextApiRequest,
-  res: NextApiResponse,
+  res: NextApiResponse
 ): Promise<void | NextApiResponse<Site>> {
   const session = await unstable_getServerSession(req, res, authOptions)
   if (!session?.user.id) return res.status(401).end('Unauthorized')
