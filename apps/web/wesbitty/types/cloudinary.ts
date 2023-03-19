@@ -3,11 +3,11 @@ declare global {
     applyUploadWidget: (
       element: unknown,
       options: CloudinaryWidgetOptions,
-      widgetCallback?: Function
+      widgetCallback?: Function,
     ) => void
     createUploadWidget: (
       options: CloudinaryWidgetOptions,
-      widgetCallback?: Function
+      widgetCallback?: Function,
     ) => CloudinaryWidget
     openUploadWidget: (options: CloudinaryWidgetOptions, widgetCallback?: Function) => void
     setAPIKey: (key: string) => void

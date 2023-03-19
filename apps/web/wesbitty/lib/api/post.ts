@@ -28,7 +28,7 @@ interface AllPosts {
 export async function getPost(
   req: NextApiRequest,
   res: NextApiResponse,
-  session: Session
+  session: Session,
 ): Promise<void | NextApiResponse<AllPosts | (WithSitePost | null)>> {
   const { postId, siteId, published } = req.query
 
@@ -105,7 +105,7 @@ export async function getPost(
 export async function createPost(
   req: NextApiRequest,
   res: NextApiResponse,
-  session: Session
+  session: Session,
 ): Promise<void | NextApiResponse<{
   postId: string
 }>> {
@@ -159,7 +159,7 @@ export async function createPost(
 export async function deletePost(
   req: NextApiRequest,
   res: NextApiResponse,
-  session: Session
+  session: Session,
 ): Promise<void | NextApiResponse> {
   const { postId } = req.query
 
@@ -197,7 +197,7 @@ export async function deletePost(
       await revalidate(
         `https://${response.site?.subdomain}.wesbitty.org`, // hostname to be revalidated
         response.site.subdomain, // siteId
-        response.slug // slugname for the post
+        response.slug, // slugname for the post
       )
     }
     if (response?.site?.customDomain)
@@ -205,7 +205,7 @@ export async function deletePost(
       await revalidate(
         `https://${response.site.customDomain}`, // hostname to be revalidated
         response.site.customDomain, // siteId
-        response.slug // slugname for the post
+        response.slug, // slugname for the post
       )
 
     return res.status(200).end()
@@ -235,7 +235,7 @@ export async function deletePost(
 export async function updatePost(
   req: NextApiRequest,
   res: NextApiResponse,
-  session: Session
+  session: Session,
 ): Promise<void | NextApiResponse<Post>> {
   const { id, title, description, content, slug, image, published, subdomain, customDomain } =
     req.body
@@ -278,7 +278,7 @@ export async function updatePost(
       await revalidate(
         `https://${subdomain}.wesbitty.org`, // hostname to be revalidated
         subdomain, // siteId
-        slug // slugname for the post
+        slug, // slugname for the post
       )
     }
     if (customDomain)
@@ -286,7 +286,7 @@ export async function updatePost(
       await revalidate(
         `https://${customDomain}`, // hostname to be revalidated
         customDomain, // siteId
-        slug // slugname for the post
+        slug, // slugname for the post
       )
 
     return res.status(200).json(post)

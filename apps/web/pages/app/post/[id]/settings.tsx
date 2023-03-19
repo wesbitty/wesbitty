@@ -36,7 +36,7 @@ export default function PostSettings() {
     {
       onError: () => router.push('/'),
       revalidateOnFocus: false,
-    }
+    },
   )
 
   const [saving, setSaving] = useState(false)

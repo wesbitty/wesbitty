@@ -22,5 +22,5 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Format Prettier
-        run: npm run prettier
+      - name: Check Prettier
+        run: npx prettier --check .

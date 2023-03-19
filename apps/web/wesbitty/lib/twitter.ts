@@ -29,11 +29,11 @@ export const getTweets = async (id: string) => {
     const getReferencedTweets = (mainTweet: TweetData) =>
       mainTweet?.referenced_tweets?.map((referencedTweet) => {
         const fullReferencedTweet = tweet.includes.tweets?.find(
-          (tweet) => tweet.id === referencedTweet.id
+          (tweet) => tweet.id === referencedTweet.id,
         )
         if (!fullReferencedTweet)
           throw new Error(
-            `Failed to find full tweet from referenced tweet ID: ${referencedTweet.id}`
+            `Failed to find full tweet from referenced tweet ID: ${referencedTweet.id}`,
           )
 
         return {
@@ -75,7 +75,7 @@ export const getTweets = async (id: string) => {
     })
 
     const media = tweet.data?.attachments?.media_keys?.map((key) =>
-      tweet.includes.media?.find((media) => media.media_key === key)
+      tweet.includes.media?.find((media) => media.media_key === key),
     )
 
     const referenced_tweets = getReferencedTweets(tweet.data)

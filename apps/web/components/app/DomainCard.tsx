@@ -19,7 +19,7 @@ export default function DomainCard({ data }: DomainCardProps) {
   const { data: valid, isValidating } = useSWR<Site>(
     `/api/domain/check?domain=${data.customDomain}`,
     fetcher,
-    { revalidateOnMount: true, refreshInterval: 5000 }
+    { revalidateOnMount: true, refreshInterval: 5000 },
   )
   const [recordType, setRecordType] = useState('CNAME')
   const [removing, setRemoving] = useState(false)

@@ -14,7 +14,7 @@ export default async function requestDelegation(req: NextApiRequest, res: NextAp
           'Content-Type': 'application/json',
         },
         method: HttpMethod.POST,
-      }
+      },
     )
 
     res.status(response.ok ? 200 : 403).end()

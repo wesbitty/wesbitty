@@ -27,7 +27,7 @@ export default function SiteDrafts() {
     fetcher,
     {
       onSuccess: (data) => !data?.site && router.push('/'),
-    }
+    },
   )
 
   async function createPost(siteId: string) {

@@ -56,7 +56,7 @@ const ThemeProvider: React.FC<Props> = ({
       // mode,
       // toggleMode,
     }),
-    []
+    [],
   )
 
   // console.log('defaultTheme', defaultTheme)
