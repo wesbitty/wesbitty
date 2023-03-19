@@ -8,33 +8,15 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "~/components/*": [
-        "components/*"
-      ],
-      "~/data/*": [
-        "wesbitty/data/*"
-      ],
-      "~/layouts/*": [
-        "layouts/*"
-      ],
-      "~/lib/*": [
-        "wesbitty/lib/*"
-      ],
-      "~/styles/*": [
-        "styles/*"
-      ],
-      "~/types": [
-        "wesbitty/types/index"
-      ],
-      "~/types/*": [
-        "wesbitty/types/*"
-      ]
+      "~/components/*": ["components/*"],
+      "~/data/*": ["wesbitty/data/*"],
+      "~/layouts/*": ["layouts/*"],
+      "~/lib/*": ["wesbitty/lib/*"],
+      "~/styles/*": ["styles/*"],
+      "~/types": ["wesbitty/types/index"],
+      "~/types/*": ["wesbitty/types/*"]
     },
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "noEmit": true,
     "incremental": true,
@@ -48,13 +30,6 @@
       }
     ]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

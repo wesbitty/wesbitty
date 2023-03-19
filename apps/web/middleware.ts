@@ -48,7 +48,11 @@ export default async function middleware(req: NextRequest) {
   }
 
   // rewrite root application to `/home` folder
-  if (hostname === 'localhost:3000' || hostname === 'wesbitty.org' || hostname === 'bitty.vercel.app') {
+  if (
+    hostname === 'localhost:3000' ||
+    hostname === 'wesbitty.org' ||
+    hostname === 'bitty.vercel.app'
+  ) {
     return NextResponse.rewrite(new URL(`/home${path}`, req.url))
   }
 
