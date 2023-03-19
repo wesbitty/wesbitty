@@ -1,21 +1,21 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".wesjet/*", ".next/**", "!.next/cache/**"]
+    "outputs": ["build/**", ".next/**", "dist/**"],
+    "dependsOn": ["^build"]
     },
-    "db:migrate:deploy": {},
-    "db:push": {},
-    "db:seed": {},
+    "test": {
+    "outputs": ["coverage/**"],
+    "dependsOn": []
+    },
+    "lint": {},
     "dev": {
-      "cache": false,
-      "persistent": true
+    "cache": false,
+    "persistent": true
     },
-    "generate": {
-      "dependsOn": ["^generate"]
-    },
-    "lint": {}
+    "clean": {
+    "cache": false
+    }
   }
 }

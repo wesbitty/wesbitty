@@ -1,12 +1,13 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { useRouter } from 'next/router'
-import BlogCard from '~/components/Cards/BlogCard'
+
+import BlogCard from '~/components/BlogCard'
 import BlurImage from '~/components/BlurImage'
 import Examples from '~/components/mdx/Examples'
 import Layout from '~/components/sites/Layout'
 import Loader from '~/components/sites/Loader'
-import { prisma } from "database";
+import prisma from '~/lib/prisma'
 import Tweet from '~/components/mdx/Tweet'
 import { replaceExamples, replaceLinks, replaceTweets } from '~/lib/remark-plugins'
 
@@ -52,15 +53,15 @@ export default function Post({ stringifiedAdjacentPosts, stringifiedData }: Post
 
   return (
     <Layout meta={meta} subdomain={data.site?.subdomain ?? undefined}>
-      <div className="flex flex-col items-center justify-center">
-        <div className="m-auto w-full text-center md:w-7/12">
-          <p className="m-auto my-5 w-10/12 text-sm font-light text-gray-500 md:text-base">
+      <div className="flex flex-col justify-center items-center">
+        <div className="text-center w-full md:w-7/12 m-auto">
+          <p className="text-sm md:text-base font-light text-gray-500 w-10/12 m-auto my-5">
             {toDateString(data.createdAt)}
           </p>
-          <h1 className="font-cal mb-10 text-3xl font-bold text-gray-800 md:text-6xl">
+          <h1 className="font-bold text-3xl font-cal md:text-6xl mb-10 text-gray-800">
             {data.title}
           </h1>
-          <p className="text-md m-auto w-10/12 text-gray-600 md:text-lg">{data.description}</p>
+          <p className="text-md md:text-lg text-gray-600 w-10/12 m-auto">{data.description}</p>
         </div>
         <a
           // if you are using Github OAuth, you can get rid of the Twitter option
@@ -73,7 +74,7 @@ export default function Post({ stringifiedAdjacentPosts, stringifiedData }: Post
           target="_blank"
         >
           <div className="my-8">
-            <div className="relative inline-block h-8 w-8 overflow-hidden rounded-full align-middle md:h-12 md:w-12">
+            <div className="relative w-8 h-8 md:w-12 md:h-12 rounded-full overflow-hidden inline-block align-middle">
               {data.site?.user?.image ? (
                 <BlurImage
                   alt={data.site?.user?.name ?? 'User Avatar'}
@@ -82,54 +83,54 @@ export default function Post({ stringifiedAdjacentPosts, stringifiedData }: Post
                   width={80}
                 />
               ) : (
-                <div className="absolute flex h-full w-full select-none items-center justify-center bg-gray-100 text-4xl text-gray-500">
+                <div className="absolute flex items-center justify-center w-full h-full bg-gray-100 text-gray-500 text-4xl select-none">
                   ?
                 </div>
               )}
             </div>
-            <div className="text-md ml-3 inline-block align-middle md:text-lg">
+            <div className="inline-block text-md md:text-lg align-middle ml-3">
               by <span className="font-semibold">{data.site?.user?.name}</span>
             </div>
           </div>
         </a>
       </div>
-      <div className="md:h-150 relative m-auto mb-10 h-80 w-full max-w-screen-lg overflow-hidden md:mb-20 md:w-5/6 md:rounded-2xl lg:w-2/3">
+      <div className="relative h-80 md:h-150 w-full max-w-screen-lg lg:w-2/3 md:w-5/6 m-auto mb-10 md:mb-20 md:rounded-2xl overflow-hidden">
         {data.image ? (
           <BlurImage
             alt={data.title ?? 'Post image'}
             width={1200}
             height={630}
-            className="h-full w-full object-cover"
+            className="w-full h-full object-cover"
             placeholder="blur"
             blurDataURL={data.imageBlurhash ?? placeholderBlurhash}
             src={data.image}
           />
         ) : (
-          <div className="absolute flex h-full w-full select-none items-center justify-center bg-gray-100 text-4xl text-gray-500">
+          <div className="absolute flex items-center justify-center w-full h-full bg-gray-100 text-gray-500 text-4xl select-none">
             ?
           </div>
         )}
       </div>
 
       <article
-        className="prose prose-md sm:prose-lg m-auto w-11/12 sm:w-3/4"
+        className="w-11/12 sm:w-3/4 m-auto prose prose-md sm:prose-lg"
         suppressHydrationWarning={true}
       >
         <MDXRemote {...data.mdxSource} components={components} />
       </article>
 
       {adjacentPosts.length > 0 && (
-        <div className="relative mt-10 mb-20 sm:mt-20">
+        <div className="relative mt-10 sm:mt-20 mb-20">
           <div className="absolute inset-0 flex items-center" aria-hidden="true">
             <div className="w-full border-t border-gray-300" />
           </div>
           <div className="relative flex justify-center">
-            <span className="bg-white px-2 text-sm text-gray-500">Continue Reading</span>
+            <span className="px-2 bg-white text-sm text-gray-500">Continue Reading</span>
           </div>
         </div>
       )}
       {adjacentPosts && (
-        <div className="mx-5 mb-20 grid max-w-screen-xl grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:mx-12 xl:grid-cols-3 2xl:mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8 mx-5 lg:mx-12 2xl:mx-auto mb-20 max-w-screen-xl">
           {adjacentPosts.map((data, index) => (
             <BlogCard key={index} data={data} />
           ))}

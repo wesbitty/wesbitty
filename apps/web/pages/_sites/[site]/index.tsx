@@ -2,9 +2,9 @@ import Layout from '~/components/sites/Layout'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import BlurImage from '~/components/BlurImage'
-import BlogCard from '~/components/Cards/BlogCard'
+import BlogCard from '~/components/BlogCard'
 import Loader from '~/components/sites/Loader'
-import { prisma } from "database";
+import prisma from '~/lib/prisma'
 
 import type { GetStaticPaths, GetStaticProps } from 'next'
 import type { _SiteData, Meta } from '~/types'
@@ -35,51 +35,51 @@ export default function Index({ stringifiedData }: IndexProps) {
 
   return (
     <Layout meta={meta} subdomain={data.subdomain ?? undefined}>
-      <div className="mb-20 w-full">
+      <div className="w-full mb-20">
         {data.posts.length > 0 ? (
-          <div className="mx-auto w-full max-w-screen-xl md:mb-28 lg:w-5/6">
+          <div className="w-full max-w-screen-xl lg:w-5/6 mx-auto md:mb-28">
             <Link href={`/${data.posts[0].slug}`}>
-              <div className="sm:h-150 group relative mx-auto h-80 w-full overflow-hidden lg:rounded-xl">
+              <div className="relative group h-80 sm:h-150 w-full mx-auto overflow-hidden lg:rounded-xl">
                 {data.posts[0].image ? (
                   <BlurImage
                     alt={data.posts[0].title ?? ''}
                     blurDataURL={data.posts[0].imageBlurhash ?? placeholderBlurhash}
-                    className="h-full w-full object-cover group-hover:scale-105 group-hover:duration-300"
+                    className="group-hover:scale-105 group-hover:duration-300 h-full w-full object-cover"
                     width={1300}
                     height={630}
                     placeholder="blur"
                     src={data.posts[0].image}
                   />
                 ) : (
-                  <div className="absolute flex h-full w-full select-none items-center justify-center bg-gray-100 text-4xl text-gray-500">
+                  <div className="absolute flex items-center justify-center w-full h-full bg-gray-100 text-gray-500 text-4xl select-none">
                     ?
                   </div>
                 )}
               </div>
-              <div className="mx-auto mt-10 w-5/6 lg:w-full">
-                <h2 className="font-cal my-10 text-4xl md:text-6xl">{data.posts[0].title}</h2>
-                <p className="w-full text-base md:text-lg lg:w-2/3">{data.posts[0].description}</p>
-                <div className="flex w-full items-center justify-start space-x-4">
-                  <div className="relative h-8 w-8 flex-none overflow-hidden rounded-full">
+              <div className="mt-10 w-5/6 mx-auto lg:w-full">
+                <h2 className="font-cal text-4xl md:text-6xl my-10">{data.posts[0].title}</h2>
+                <p className="text-base md:text-lg w-full lg:w-2/3">{data.posts[0].description}</p>
+                <div className="flex justify-start items-center space-x-4 w-full">
+                  <div className="relative w-8 h-8 flex-none rounded-full overflow-hidden">
                     {data.user?.image ? (
                       <BlurImage
                         alt={data.user?.name ?? 'User Avatar'}
                         width={100}
                         height={100}
-                        className="h-full w-full object-cover"
+                        className="w-full h-full object-cover"
                         src={data.user?.image}
                       />
                     ) : (
-                      <div className="absolute flex h-full w-full select-none items-center justify-center bg-gray-100 text-4xl text-gray-500">
+                      <div className="absolute flex items-center justify-center w-full h-full bg-gray-100 text-gray-500 text-4xl select-none">
                         ?
                       </div>
                     )}
                   </div>
-                  <p className="ml-3 inline-block whitespace-nowrap align-middle text-sm font-semibold md:text-base">
+                  <p className="inline-block font-semibold text-sm md:text-base align-middle ml-3 whitespace-nowrap">
                     {data.user?.name}
                   </p>
-                  <div className="h-6 border-l border-gray-600" />
-                  <p className="m-auto my-5 w-10/12 text-sm font-light text-gray-500 md:text-base">
+                  <div className="border-l border-gray-600 h-6" />
+                  <p className="text-sm md:text-base font-light text-gray-500 w-10/12 m-auto my-5">
                     {toDateString(data.posts[0].createdAt)}
                   </p>
                 </div>
@@ -87,7 +87,7 @@ export default function Index({ stringifiedData }: IndexProps) {
             </Link>
           </div>
         ) : (
-          <div className="flex flex-col items-center justify-center py-20">
+          <div className="flex flex-col justify-center items-center py-20">
             <BlurImage
               src="/empty-state.png"
               alt="No Posts"
@@ -96,15 +96,15 @@ export default function Index({ stringifiedData }: IndexProps) {
               placeholder="blur"
               blurDataURL={placeholderBlurhash}
             />
-            <p className="font-cal text-2xl text-gray-600">No posts yet.</p>
+            <p className="text-2xl font-cal text-gray-600">No posts yet.</p>
           </div>
         )}
       </div>
 
       {data.posts.length > 1 && (
-        <div className="mx-5 mb-20 max-w-screen-xl lg:mx-24 2xl:mx-auto">
-          <h2 className="font-cal mb-10 text-4xl md:text-5xl">More stories</h2>
-          <div className="grid w-full grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mx-5 lg:mx-24 2xl:mx-auto mb-20 max-w-screen-xl">
+          <h2 className="font-cal text-4xl md:text-5xl mb-10">More stories</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8 w-full">
             {data.posts.slice(1).map((metadata, index) => (
               <BlogCard key={index} data={metadata} />
             ))}

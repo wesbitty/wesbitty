@@ -6,6 +6,7 @@ import React from 'react'
 import { signOut } from 'next-auth/react'
 import Loader from './Loader'
 import useRequireAuth from '~/lib/useRequireAuth'
+
 import type { WithChildren } from '~/types'
 
 interface LayoutProps extends WithChildren {
@@ -55,12 +56,12 @@ export default function Layout({ siteId, children }: LayoutProps) {
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={logo} />
         </Head>
-        <div className="absolute left-0 right-0 h-16 border-b border-gray-200 bg-white">
-          <div className="mx-auto flex h-full max-w-screen-xl items-center justify-between px-10 sm:px-20">
+        <div className="absolute left-0 right-0 h-16 border-b bg-white border-gray-200">
+          <div className="flex justify-between items-center h-full max-w-screen-xl mx-auto px-10 sm:px-20">
             <div className="flex space-x-4">
-              <Link href="/" className="flex items-center justify-center">
+              <Link href="/" className="flex justify-center items-center">
                 {session.user && session.user.image && (
-                  <div className="inline-block h-8 w-8 overflow-hidden rounded-full align-middle">
+                  <div className="h-8 w-8 inline-block rounded-full overflow-hidden align-middle">
                     <Image
                       src={session.user.image}
                       width={40}
@@ -69,20 +70,20 @@ export default function Layout({ siteId, children }: LayoutProps) {
                     />
                   </div>
                 )}
-                <span className="ml-3 inline-block truncate font-medium sm:block">
+                <span className="sm:block inline-block ml-3 font-medium truncate">
                   {session.user?.name}
                 </span>
               </Link>
               <div className="h-8 border border-gray-300" />
               <button
-                className="text-gray-500 transition-all duration-150 ease-in-out hover:text-gray-700"
+                className="text-gray-500 hover:text-gray-700 transition-all ease-in-out duration-150"
                 onClick={() => signOut()}
               >
                 Logout
               </button>
             </div>
             <a
-              className="font-cal flex items-center space-x-2 px-5 py-3 text-gray-700 transition-all duration-150 ease-in-out sm:hover:bg-white sm:hover:text-black"
+              className="font-cal flex items-center space-x-2 text-gray-700 px-5 py-3 sm:hover:text-black sm:hover:bg-white transition-all ease-in-out duration-150"
               href="https://github.com/vercel/platforms"
               rel="noreferrer"
               target="_blank"
@@ -101,7 +102,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
           </div>
         </div>
         {rootPage && (
-          <div className="font-cal absolute left-0 right-0 top-16 flex items-center justify-center space-x-16 border-b border-gray-200 bg-white">
+          <div className="absolute left-0 right-0 top-16 flex justify-center items-center font-cal space-x-16 border-b bg-white border-gray-200">
             <Link
               href="/"
               className={`border-b-2 ${tab == '' ? 'border-black' : 'border-transparent'} py-3`}
@@ -119,12 +120,12 @@ export default function Layout({ siteId, children }: LayoutProps) {
           </div>
         )}
         {sitePage && (
-          <div className="font-cal absolute left-0 right-0 top-16 border-b border-gray-200 bg-white">
-            <div className="mx-auto flex max-w-screen-xl items-center justify-between space-x-16 px-10 sm:px-20">
-              <Link href="/" className="ml-3 hidden md:inline-block">
+          <div className="absolute left-0 right-0 top-16 font-cal border-b bg-white border-gray-200">
+            <div className="flex justify-between items-center space-x-16 max-w-screen-xl mx-auto px-10 sm:px-20">
+              <Link href="/" className="md:inline-block ml-3 hidden">
                 ← All Sites
               </Link>
-              <div className="flex items-center justify-between space-x-10 md:space-x-16">
+              <div className="flex justify-between items-center space-x-10 md:space-x-16">
                 <Link
                   href={`/site/${router.query.id}`}
                   className={`border-b-2 ${!tab ? 'border-black' : 'border-transparent'} py-3`}
@@ -153,19 +154,19 @@ export default function Layout({ siteId, children }: LayoutProps) {
           </div>
         )}
         {postPage && (
-          <div className="font-cal absolute left-0 right-0 top-16 border-b border-gray-200 bg-white">
-            <div className="mx-auto flex max-w-screen-xl items-center justify-between space-x-16 px-10 sm:px-20">
+          <div className="absolute left-0 right-0 top-16 font-cal border-b bg-white border-gray-200">
+            <div className="flex justify-between items-center space-x-16 max-w-screen-xl mx-auto px-10 sm:px-20">
               {siteId ? (
-                <Link href={`/site/${siteId}`} className="ml-3 hidden md:inline-block">
+                <Link href={`/site/${siteId}`} className="md:inline-block ml-3 hidden">
                   ← All Posts
                 </Link>
               ) : (
                 <div>
-                  ←<p className="ml-3 hidden md:inline-block">All Posts</p>
+                  ←<p className="md:inline-block ml-3 hidden">All Posts</p>
                 </div>
               )}
 
-              <div className="flex items-center justify-between space-x-10 md:space-x-16">
+              <div className="flex justify-between items-center space-x-10 md:space-x-16">
                 <Link
                   href={`/post/${router.query.id}`}
                   className={`border-b-2 ${!tab ? 'border-black' : 'border-transparent'} py-3`}

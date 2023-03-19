@@ -1,6 +1,7 @@
 import cn from 'clsx'
 import Image from 'next/image'
 import { useState } from 'react'
+
 import type { ComponentProps } from 'react'
 import type { WithClassName } from '~/types'
 
@@ -18,7 +19,7 @@ export default function BlurImage(props: BlurImageProps) {
       className={cn(
         props.className,
         'duration-700 ease-in-out',
-        isLoading ? 'scale-110 blur-2xl grayscale' : 'scale-100 blur-0 grayscale-0'
+        isLoading ? 'grayscale blur-2xl scale-110' : 'grayscale-0 blur-0 scale-100'
       )}
       onLoadingComplete={() => setLoading(false)}
     />

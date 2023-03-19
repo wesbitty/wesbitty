@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { visit } from 'unist-util-visit'
+
 import { getTweets } from '~/lib/twitter'
+
 import type { Literal, Node } from 'unist'
 import type { Example, PrismaClient } from '@prisma/client'
 

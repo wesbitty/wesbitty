@@ -24,7 +24,7 @@ export default function Login() {
   }, [error])
 
   return (
-    <div className="flex min-h-screen flex-col justify-center bg-gray-100 py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <Head>
         <title>{pageTitle}</title>
         <link rel="icon" href={logo} />
@@ -75,7 +75,7 @@ export default function Login() {
         </p>
       </div>
 
-      <div className="mx-auto mt-8 w-11/12 sm:w-full sm:max-w-md">
+      <div className="mt-8 mx-auto sm:w-full w-11/12 sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow-md sm:rounded-lg sm:px-10">
           <button
             disabled={loading}
@@ -85,13 +85,13 @@ export default function Login() {
             }}
             className={`${
               loading ? 'cursor-not-allowed bg-gray-600' : 'bg-black'
-            } group my-2 flex h-16 w-full items-center justify-center space-x-5 rounded-md focus:outline-none sm:px-4`}
+            } group flex justify-center items-center space-x-5 w-full sm:px-4 h-16 my-2 rounded-md focus:outline-none`}
           >
             {loading ? (
               <LoadingDots color="#fff" />
             ) : (
               <svg
-                className="group-hover:animate-wiggle h-8 w-8"
+                className="w-8 h-8 group-hover:animate-wiggle"
                 aria-hidden="true"
                 fill="white"
                 viewBox="0 0 24 24"

@@ -1,20 +1,17 @@
-import Container from '../../components/Widget/Container'
-import { Default } from '../../components/Widget/Default'
-import HeaderFeature from '../../components/Features/hero'
-import 'swiper/swiper.min.css'
+import Head from 'next/head'
+import Image from 'next/image'
 
-type Props = {}
-
-const Index = ({}: Props) => {
+export default function Home() {
   return (
-    <>
-      <Default>
-        <Container>
-          <HeaderFeature />
-        </Container>
-      </Default>
-    </>
+    <div className="flex h-screen bg-black">
+      <Head>
+        <title>Platforms on Vercel</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <div className="m-auto w-48">
+        <Image width={512} height={512} src="/logo.png" alt="Platforms on Vercel" />
+      </div>
+    </div>
   )
 }
-
-export default Index

@@ -40,7 +40,7 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
   if (!parsedMetadata) {
     return (
       <div
-        className={`${className} tweet my-4 flex h-[36rem] w-full items-center justify-center rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-500 transition-all hover:bg-gray-100`}
+        className={`${className} tweet rounded-lg flex justify-center items-center my-4 w-full h-[36rem] text-sm text-gray-500 border border-gray-300 bg-gray-50 hover:bg-gray-100 transition-all`}
       >
         There was an error loading this tweet.
       </div>
@@ -106,7 +106,7 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
     <div
       className={`${
         className || ''
-      } my-4 w-full rounded-lg border border-gray-300 bg-white px-8 pt-6 pb-2`}
+      } rounded-lg border border-gray-300 bg-white px-8 pt-6 pb-2 my-4 w-full`}
     >
       <div className="flex items-center">
         <a href={authorUrl} target="_blank" rel="noopener noreferrer">
@@ -114,7 +114,7 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
             alt={author.username}
             height={48}
             width={48}
-            className="!my-2 flex overflow-hidden rounded-full"
+            className="flex rounded-full overflow-hidden !my-2"
             src={author.profile_image_url}
           />
         </a>
@@ -122,17 +122,17 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
           href={authorUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="author ml-4 flex flex-col !no-underline"
+          className="author flex flex-col ml-4 !no-underline"
         >
           <span
-            className="mt-1 flex items-center font-bold leading-5 text-gray-900"
+            className="flex items-center font-bold text-gray-900 leading-5 mt-1"
             title={author.name}
           >
             {author.name}
             {author.verified ? (
               <svg
                 aria-label="Verified Account"
-                className="ml-1 inline h-4 w-4 text-blue-500"
+                className="ml-1 text-blue-500 inline h-4 w-4"
                 viewBox="0 0 24 24"
               >
                 <g fill="currentColor">
@@ -141,7 +141,7 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
               </svg>
             ) : null}
           </span>
-          <span className="text-base !text-gray-500" title={`@${author.username}`}>
+          <span className="!text-gray-500 text-base" title={`@${author.username}`}>
             @{author.username}
           </span>
         </a>
@@ -155,10 +155,10 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
         </a>
       </div>
       {repliedTo && repliedTo.username && (
-        <div className="mt-5 text-base text-gray-500">
+        <div className="text-gray-500 text-base mt-5">
           Replying to{' '}
           <a
-            className="!text-[#1da1f2] !no-underline"
+            className="!no-underline !text-[#1da1f2]"
             href={`https://twitter.com/${repliedTo.author.username}`}
             rel="noreferrer"
             target="_blank"
@@ -168,15 +168,15 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
         </div>
       )}
       <div
-        className="mt-4 mb-2 whitespace-pre-wrap text-lg leading-normal text-gray-700"
+        className="mt-4 mb-2 leading-normal whitespace-pre-wrap text-lg text-gray-700"
         dangerouslySetInnerHTML={{ __html: formattedText }}
       />
       {media && media.length ? (
         <div
           className={
             media.length === 1
-              ? 'my-2 inline-grid grid-cols-1 gap-x-2 gap-y-2'
-              : 'my-2 inline-grid grid-cols-2 gap-x-2 gap-y-2'
+              ? 'inline-grid grid-cols-1 gap-x-2 gap-y-2 my-2'
+              : 'inline-grid grid-cols-2 gap-x-2 gap-y-2 my-2'
           }
         >
           {media.map((m, i) => (
@@ -184,7 +184,7 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
               {m.type == 'video' || m.type == 'animated_gif' ? (
                 video ? (
                   <video
-                    className="-mt-10 rounded-2xl"
+                    className="rounded-2xl -mt-10"
                     loop
                     width="2048px"
                     height="2048px"
@@ -200,7 +200,7 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
                     width={2048}
                     height={m.height * (2048 / m.width)}
                     src={m.preview_image_url}
-                    className="rounded-2xl transition-all duration-150 ease-in-out hover:brightness-90"
+                    className="rounded-2xl hover:brightness-90 transition-all ease-in-out duration-150"
                   />
                 )
               ) : (
@@ -210,7 +210,7 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
                   width={2048}
                   height={m.height * (2048 / m.width)}
                   src={m.url}
-                  className="rounded-2xl transition-all duration-150 ease-in-out hover:brightness-90"
+                  className="rounded-2xl hover:brightness-90 transition-all ease-in-out duration-150"
                 />
               )}
             </a>
@@ -219,14 +219,14 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
       ) : null}
       {url_meta?.images ? (
         <a className="!no-underline" href={url_meta.unwound_url} rel="noreferrer" target="_blank">
-          <div className="my-5 overflow-hidden rounded-2xl border border-gray-200 drop-shadow-sm">
+          <div className="rounded-2xl overflow-hidden border border-gray-200 drop-shadow-sm my-5">
             <BlurImage
               key={url_meta.unwound_url}
               alt={url_meta.title}
               width={2048}
               height={1000}
               src={url_meta.images[0].url}
-              className="!my-0 h-[300px] w-full object-cover transition-all duration-150 ease-in-out hover:brightness-90"
+              className="w-full h-[300px] object-cover !my-0 hover:brightness-90 transition-all ease-in-out duration-150"
             />
             <div className="w-full bg-white px-8 py-6">
               <p className="!m-0 font-semibold">{url_meta.title}</p>
@@ -249,12 +249,12 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
                     rel="noreferrer"
                     target="_blank"
                   >
-                    <div className="my-2 rounded-3xl border border-[#1da1f2] text-center font-bold text-[#1da1f2] transition-all duration-150 ease-in-out hover:bg-[#1da1f2] hover:bg-opacity-10">
+                    <div className="text-center font-bold text-[#1da1f2] border border-[#1da1f2] rounded-3xl my-2 hover:bg-[#1da1f2] hover:bg-opacity-10 transition-all ease-in-out duration-150">
                       {option.label}
                     </div>
                   </a>
                 ))}
-                <div className="mt-4 text-base text-gray-500">
+                <div className="text-gray-500 text-base mt-4">
                   {poll.total_votes} votes · {getRemainingTime(poll.end_datetime)} left
                 </div>
               </div>
@@ -265,17 +265,17 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
                     <div
                       className={classNames(
                         option.position == 1 ? 'font-bold' : '',
-                        'relative my-2 flex cursor-pointer justify-between whitespace-nowrap px-3 text-black'
+                        'relative text-black my-2 cursor-pointer px-3 whitespace-nowrap flex justify-between'
                       )}
                     >
-                      <p className="z-10 !my-0">{option.label}</p>
-                      <p className="z-10 !my-0">{`${((option.votes / poll.total_votes) * 100)
+                      <p className="!my-0 z-10">{option.label}</p>
+                      <p className="!my-0 z-10">{`${((option.votes / poll.total_votes) * 100)
                         .toFixed(1)
                         .replace('.0', '')}%`}</p>
                       <div
                         className={classNames(
-                          option.position == 1 ? 'bg-[#1da1f2] font-bold' : 'bg-gray-300',
-                          'absolute top-0 left-0 h-full w-full rounded-md'
+                          option.position == 1 ? 'font-bold bg-[#1da1f2]' : 'bg-gray-300',
+                          'absolute top-0 left-0 rounded-md w-full h-full'
                         )}
                         style={{
                           width: `${Math.round((option.votes / poll.total_votes) * 100)}%`,
@@ -284,7 +284,7 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
                     </div>
                   </>
                 ))}
-                <div className="mt-4 text-base text-gray-500">
+                <div className="text-gray-500 text-base mt-4">
                   {poll.total_votes} votes · Final results
                 </div>
               </div>
@@ -296,7 +296,7 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
         <Tweet id={quoteTweet.id} metadata={JSON.stringify(quoteTweet)} />
       )}
       <a
-        className="mt-3 mb-4 block text-base !text-gray-500 !no-underline hover:!underline"
+        className="block mt-3 mb-4 !text-gray-500 text-base hover:!underline !no-underline"
         href={tweetUrl}
         target="_blank"
         rel="noopener noreferrer"
@@ -305,14 +305,14 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
           {format(createdAt, 'h:mm a - MMM d, y')}
         </time>
       </a>
-      <div className="mt-2 flex space-x-2 border-t border-gray-300 pt-1 text-base text-gray-700 md:space-x-6">
+      <div className="border-t border-gray-300 pt-1 flex space-x-2 md:space-x-6 text-base text-gray-700 mt-2">
         <a
-          className="group flex items-center space-x-1 !text-gray-500 !no-underline transition"
+          className="flex items-center !text-gray-500 group transition !no-underline space-x-1"
           href={likeUrl}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-full group-hover:bg-red-100 group-hover:!text-red-600">
+          <div className="group-hover:!text-red-600 rounded-full w-10 h-10 group-hover:bg-red-100 flex items-center justify-center">
             <svg width="24" height="24" viewBox="0 0 24 24">
               <path
                 className="fill-current"
@@ -325,12 +325,12 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
           </span>
         </a>
         <a
-          className="group mr-4 flex items-center space-x-1 !text-gray-500 !no-underline transition"
+          className="flex items-center mr-4 !text-gray-500 group transition !no-underline space-x-1"
           href={retweetUrl}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-full group-hover:bg-purple-100 group-hover:!text-purple-600">
+          <div className="group-hover:!text-purple-600 rounded-full w-10 h-10 group-hover:bg-purple-100 flex items-center justify-center">
             <svg width="24" height="24" viewBox="0 0 24 24">
               <path
                 className="fill-current"
@@ -343,12 +343,12 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
           </span>
         </a>
         <a
-          className="group mr-4 flex items-center space-x-1 !text-gray-500 !no-underline transition"
+          className="flex items-center mr-4 !text-gray-500 group transition !no-underline space-x-1"
           href={replyUrl}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-full group-hover:bg-blue-100 group-hover:!text-[#1da1f2]">
+          <div className="group-hover:!text-[#1da1f2] rounded-full w-10 h-10 group-hover:bg-blue-100 flex items-center justify-center">
             <svg width="24" height="24" viewBox="0 0 24 24">
               <path
                 className="fill-current"
@@ -361,14 +361,14 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
           </span>
         </a>
         <button
-          className="group mr-4 flex items-center space-x-1 !text-gray-500 !no-underline transition"
+          className="flex items-center mr-4 !text-gray-500 group transition !no-underline space-x-1"
           onClick={() => {
             navigator.clipboard.writeText(tweetUrl)
             setCopied(true)
             setTimeout(() => setCopied(false), 5000)
           }}
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-full group-hover:bg-green-100 group-hover:!text-green-600">
+          <div className="group-hover:!text-green-600 rounded-full w-10 h-10 group-hover:bg-green-100 flex items-center justify-center">
             <svg width="24" height="24" viewBox="0 0 24 24">
               <path
                 className="fill-current"
@@ -380,7 +380,7 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
               />
             </svg>
           </div>
-          <span className="hidden group-hover:!text-green-600 group-hover:!underline sm:block">
+          <span className="group-hover:!text-green-600 group-hover:!underline sm:block hidden">
             {copied ? 'Copied!' : 'Copy link to Tweet'}
           </span>
         </button>

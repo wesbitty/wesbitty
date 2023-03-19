@@ -1,13 +1,13 @@
 <p align="center">
   <a href="https://demo.wesbitty.org">
     <img src="https://assets.vercel.com/image/upload/v1588805858/repositories/vercel/logo.png" height="96">
-    <h3 align="center">Wesbitty Official Template v1</h3>
+    <h3 align="center">Platforms Starter Kit</h3>
   </a>
 </p>
 
 <p align="center">
   The <em>all-in-one</em> starter kit <br/>
-  in building wesbitty template.
+  for building platforms on Vercel.
 </p>
 
 <p align="center">

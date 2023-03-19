@@ -3,9 +3,9 @@ export default function Loader() {
 
   return (
     <div className="flex h-screen">
-      <div className="m-auto flex">
+      <div className="flex m-auto">
         <div className={`${circleCommonClasses} mr-2 animate-bounce`}></div>
-        <div className={`${circleCommonClasses} animate-bounce200 mr-2`}></div>
+        <div className={`${circleCommonClasses} mr-2 animate-bounce200`}></div>
         <div className={`${circleCommonClasses} animate-bounce400`}></div>
       </div>
     </div>

@@ -1,13 +1,13 @@
 export default function Loader() {
   return (
-    <div className="my-10 w-full">
-      <div className="mx-auto h-10 w-60 animate-pulse bg-gray-200 md:rounded-md" />
-      <div className="mx-auto my-12 w-full max-w-screen-xl md:w-3/4">
-        <div className="sm:h-150 mx-auto h-80 w-full animate-pulse bg-gray-200 md:rounded-xl" />
-        <div className="mx-auto mt-10 flex w-5/6 flex-col space-y-4 md:w-full">
-          <div className="h-20 w-48 animate-pulse rounded-md bg-gray-200" />
-          <div className="h-12 w-96 animate-pulse rounded-md bg-gray-200" />
-          <div className="h-12 w-80 animate-pulse rounded-md bg-gray-200" />
+    <div className="w-full my-10">
+      <div className="h-10 w-60 mx-auto bg-gray-200 animate-pulse md:rounded-md" />
+      <div className="w-full max-w-screen-xl md:w-3/4 mx-auto my-12">
+        <div className="h-80 sm:h-150 w-full mx-auto bg-gray-200 animate-pulse md:rounded-xl" />
+        <div className="mt-10 w-5/6 mx-auto md:w-full flex flex-col space-y-4">
+          <div className="h-20 w-48 bg-gray-200 animate-pulse rounded-md" />
+          <div className="h-12 w-96 bg-gray-200 animate-pulse rounded-md" />
+          <div className="h-12 w-80 bg-gray-200 animate-pulse rounded-md" />
         </div>
       </div>
     </div>

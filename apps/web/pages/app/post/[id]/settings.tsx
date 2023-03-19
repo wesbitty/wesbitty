@@ -2,6 +2,7 @@ import toast, { Toaster } from 'react-hot-toast'
 import useSWR from 'swr'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
+
 import BlurImage from '~/components/BlurImage'
 import CloudinaryUploadWidget from '~/components/Cloudinary'
 import Layout from '~/components/app/Layout'
@@ -10,7 +11,9 @@ import LoadingDots from '~/components/app/loading-dots'
 import Modal from '~/components/Modal'
 import { fetcher } from '~/lib/fetcher'
 import { HttpMethod } from '~/types'
+
 import type { ChangeEvent } from 'react'
+
 import type { WithSitePost } from '~/types'
 import { placeholderBlurhash } from '~/lib/utils'
 
@@ -117,17 +120,17 @@ export default function PostSettings() {
             duration: 10000,
           }}
         />
-        <div className="mx-auto mt-20 mb-16 max-w-screen-xl px-10 sm:px-20">
-          <h1 className="font-cal mb-12 text-5xl">Post Settings</h1>
+        <div className="max-w-screen-xl mx-auto px-10 sm:px-20 mt-20 mb-16">
+          <h1 className="font-cal text-5xl mb-12">Post Settings</h1>
           <div className="mb-28 flex flex-col space-y-12">
             <div className="space-y-6">
               <h2 className="font-cal text-2xl">Post Slug</h2>
-              <div className="flex max-w-lg items-center rounded-lg border border-gray-700">
-                <span className="font-cal whitespace-nowrap rounded-l-lg border-r border-gray-600 px-5">
+              <div className="border border-gray-700 rounded-lg flex items-center max-w-lg">
+                <span className="px-5 font-cal rounded-l-lg border-r border-gray-600 whitespace-nowrap">
                   {settings?.site?.subdomain}.wesbitty.org/
                 </span>
                 <input
-                  className="font-cal w-full rounded-none rounded-r-lg border-none bg-white px-5 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-0"
+                  className="w-full px-5 py-3 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-none rounded-r-lg placeholder-gray-400"
                   type="text"
                   name="slug"
                   placeholder="post-slug"
@@ -142,8 +145,8 @@ export default function PostSettings() {
               <h2 className="font-cal text-2xl">Thumbnail Image</h2>
               <div
                 className={`${
-                  data.image ? '' : 'h-150 animate-pulse bg-gray-300'
-                } relative mt-5 w-full rounded-md border-2 border-dashed border-gray-800`}
+                  data.image ? '' : 'animate-pulse bg-gray-300 h-150'
+                } relative mt-5 w-full border-2 border-gray-800 border-dashed rounded-md`}
               >
                 <CloudinaryUploadWidget
                   callback={(e) =>
@@ -156,7 +159,7 @@ export default function PostSettings() {
                   {({ open }) => (
                     <button
                       onClick={open}
-                      className="absolute z-10 flex h-full w-full flex-col items-center justify-center rounded-md bg-gray-200 opacity-0 transition-all duration-200 ease-linear hover:opacity-100"
+                      className="absolute w-full h-full rounded-md bg-gray-200 z-10 flex flex-col justify-center items-center opacity-0 hover:opacity-100 transition-all ease-linear duration-200"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -178,14 +181,14 @@ export default function PostSettings() {
                     width={800}
                     height={500}
                     placeholder="blur"
-                    className="h-full w-full rounded-md object-cover"
+                    className="rounded-md w-full h-full object-cover"
                     blurDataURL={data.imageBlurhash || placeholderBlurhash}
                   />
                 )}
               </div>
 
-              <div className="h-10 w-full" />
-              <div className="flex max-w-lg flex-col space-y-6">
+              <div className="w-full h-10" />
+              <div className="flex flex-col space-y-6 max-w-lg">
                 <h2 className="font-cal text-2xl">Delete Post</h2>
                 <p>
                   Permanently delete your post and all of its contents from our platform. This
@@ -195,7 +198,7 @@ export default function PostSettings() {
                   onClick={() => {
                     setShowDeleteModal(true)
                   }}
-                  className="font-cal max-w-max rounded-md border border-solid border-red-500 bg-red-500 px-5 py-3 text-white transition-all duration-150 ease-in-out hover:bg-white hover:text-red-500 focus:outline-none"
+                  className="bg-red-500 text-white border-red-500 hover:text-red-500 hover:bg-white px-5 py-3 max-w-max font-cal border-solid border rounded-md focus:outline-none transition-all ease-in-out duration-150"
                 >
                   Delete Post
                 </button>
@@ -209,18 +212,18 @@ export default function PostSettings() {
               event.preventDefault()
               await deletePost(postId as string)
             }}
-            className="inline-block w-full max-w-md overflow-hidden rounded-lg bg-white pt-8 text-center align-middle shadow-xl transition-all"
+            className="inline-block w-full max-w-md pt-8 overflow-hidden text-center align-middle transition-all bg-white shadow-xl rounded-lg"
           >
-            <h2 className="font-cal mb-6 text-2xl">Delete Post</h2>
-            <div className="mx-auto grid w-5/6 gap-y-5">
-              <p className="mb-3 text-gray-600">
+            <h2 className="font-cal text-2xl mb-6">Delete Post</h2>
+            <div className="grid gap-y-5 w-5/6 mx-auto">
+              <p className="text-gray-600 mb-3">
                 Are you sure you want to delete your post? This action is not reversible.
               </p>
             </div>
-            <div className="mt-10 flex w-full items-center justify-between">
+            <div className="flex justify-between items-center mt-10 w-full">
               <button
                 type="button"
-                className="w-full rounded-bl border-t border-gray-300 px-5 py-5 text-sm text-gray-400 transition-all duration-150 ease-in-out hover:text-black focus:outline-none focus:ring-0"
+                className="w-full px-5 py-5 text-sm text-gray-400 hover:text-black border-t border-gray-300 rounded-bl focus:outline-none focus:ring-0 transition-all ease-in-out duration-150"
                 onClick={() => setShowDeleteModal(false)}
               >
                 CANCEL
@@ -231,17 +234,17 @@ export default function PostSettings() {
                 disabled={deletingPost}
                 className={`${
                   deletingPost
-                    ? 'cursor-not-allowed bg-gray-50 text-gray-400'
+                    ? 'cursor-not-allowed text-gray-400 bg-gray-50'
                     : 'bg-white text-gray-600 hover:text-black'
-                } w-full rounded-br border-t border-l border-gray-300 px-5 py-5 text-sm transition-all duration-150 ease-in-out focus:outline-none focus:ring-0`}
+                } w-full px-5 py-5 text-sm border-t border-l border-gray-300 rounded-br focus:outline-none focus:ring-0 transition-all ease-in-out duration-150`}
               >
                 {deletingPost ? <LoadingDots /> : 'DELETE POST'}
               </button>
             </div>
           </form>
         </Modal>
-        <footer className="fixed inset-x-0 bottom-0 z-20 h-20 border-t border-solid border-gray-500 bg-white">
-          <div className="mx-auto flex h-full max-w-screen-xl items-center justify-end px-10 sm:px-20">
+        <footer className="h-20 z-20 fixed bottom-0 inset-x-0 border-solid border-t border-gray-500 bg-white">
+          <div className="max-w-screen-xl mx-auto px-10 sm:px-20 h-full flex justify-end items-center">
             <button
               onClick={() => {
                 savePostSettings(data)
@@ -249,9 +252,9 @@ export default function PostSettings() {
               disabled={saving}
               className={`${
                 saving
-                  ? 'cursor-not-allowed border-gray-300 bg-gray-300'
-                  : 'border-black bg-black hover:bg-white hover:text-black'
-              } mx-2 h-12 w-36 border-2 text-lg text-white transition-all duration-150 ease-in-out focus:outline-none`}
+                  ? 'cursor-not-allowed bg-gray-300 border-gray-300'
+                  : 'bg-black hover:bg-white hover:text-black border-black'
+              } mx-2 w-36 h-12 text-lg text-white border-2 focus:outline-none transition-all ease-in-out duration-150`}
             >
               {saving ? <LoadingDots /> : 'Save Changes'}
             </button>

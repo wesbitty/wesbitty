@@ -3,9 +3,10 @@ import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import useSWR, { mutate } from 'swr'
+
 import BlurImage from '~/components/BlurImage'
 import CloudinaryUploadWidget from '~/components/Cloudinary'
-import DomainCard from '~/components/Cards/AppDomainCard'
+import DomainCard from '~/components/app/DomainCard'
 import Layout from '~/components/app/Layout'
 import LoadingDots from '~/components/app/loading-dots'
 import Modal from '~/components/Modal'
@@ -159,14 +160,14 @@ export default function SiteSettings() {
           duration: 10000,
         }}
       />
-      <div className="mx-auto mt-20 mb-16 max-w-screen-xl px-10 sm:px-20">
-        <h1 className="font-cal mb-12 text-5xl">Site Settings</h1>
+      <div className="max-w-screen-xl mx-auto px-10 sm:px-20 mt-20 mb-16">
+        <h1 className="font-cal text-5xl mb-12">Site Settings</h1>
         <div className="mb-28 flex flex-col space-y-12">
           <div className="flex flex-col space-y-6">
             <h2 className="font-cal text-2xl">Name</h2>
-            <div className="flex max-w-lg items-center overflow-hidden rounded-lg border border-gray-700">
+            <div className="border border-gray-700 rounded-lg overflow-hidden flex items-center max-w-lg">
               <input
-                className="font-cal w-full rounded-none border-none bg-white px-5 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-0"
+                className="w-full px-5 py-3 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-none placeholder-gray-400"
                 name="name"
                 onInput={(e) =>
                   setData((data) => ({
@@ -182,9 +183,9 @@ export default function SiteSettings() {
           </div>
           <div className="flex flex-col space-y-6">
             <h2 className="font-cal text-2xl">Description</h2>
-            <div className="flex max-w-lg items-center overflow-hidden rounded-lg border border-gray-700">
+            <div className="border border-gray-700 rounded-lg overflow-hidden flex items-center max-w-lg">
               <textarea
-                className="font-cal w-full rounded-none border-none bg-white px-5 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-0"
+                className="w-full px-5 py-3 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-none placeholder-gray-400"
                 name="description"
                 onInput={(e) =>
                   setData((data) => ({
@@ -200,7 +201,7 @@ export default function SiteSettings() {
           </div>
           <div className="flex flex-col space-y-6">
             <h2 className="font-cal text-2xl">Font</h2>
-            <div className="flex max-w-lg items-center overflow-hidden rounded-lg border border-gray-700">
+            <div className="border border-gray-700 rounded-lg overflow-hidden flex items-center max-w-lg">
               <select
                 onChange={(e) =>
                   setData((data) => ({
@@ -209,7 +210,7 @@ export default function SiteSettings() {
                   }))
                 }
                 value={data?.font || 'font-cal'}
-                className="font-cal w-full rounded-none border-none bg-white px-5 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-0"
+                className="w-full px-5 py-3 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-none placeholder-gray-400"
               >
                 <option value="font-cal">Cal Sans</option>
                 <option value="font-lora">Lora</option>
@@ -219,9 +220,9 @@ export default function SiteSettings() {
           </div>
           <div className="flex flex-col space-y-6">
             <h2 className="font-cal text-2xl">Subdomain</h2>
-            <div className="flex max-w-lg items-center rounded-lg border border-gray-700">
+            <div className="border border-gray-700 rounded-lg flex items-center max-w-lg">
               <input
-                className="font-cal w-1/2 rounded-none rounded-l-lg border-none bg-white px-5 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-0"
+                className="w-1/2 px-5 py-3 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-none rounded-l-lg placeholder-gray-400"
                 name="subdomain"
                 onInput={(e) =>
                   setData((data) => ({
@@ -233,7 +234,7 @@ export default function SiteSettings() {
                 type="text"
                 value={data.subdomain || ''}
               />
-              <div className="font-cal flex h-12 w-1/2 items-center justify-center rounded-r-lg border-l border-gray-600 bg-gray-100">
+              <div className="w-1/2 h-12 flex justify-center items-center font-cal rounded-r-lg border-l border-gray-600 bg-gray-100">
                 wesbitty.org
               </div>
             </div>
@@ -253,12 +254,12 @@ export default function SiteSettings() {
                   e.preventDefault()
                   await handleCustomDomain()
                 }}
-                className="flex max-w-lg items-center justify-start space-x-3"
+                className="flex justify-start items-center space-x-3 max-w-lg"
               >
-                <div className="flex-auto overflow-hidden rounded-lg border border-gray-700">
+                <div className="border border-gray-700 flex-auto rounded-lg overflow-hidden">
                   <input
                     autoComplete="off"
-                    className="font-cal w-full rounded-none border-none bg-white px-5 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-0"
+                    className="w-full px-5 py-3 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-none placeholder-gray-400"
                     name="customDomain"
                     onInput={(e) => {
                       setData((data) => ({
@@ -274,14 +275,14 @@ export default function SiteSettings() {
                 </div>
                 <button
                   type="submit"
-                  className="font-cal w-28 rounded-md border border-solid border-black bg-black px-5 py-3 text-white transition-all duration-150 ease-in-out hover:bg-white hover:text-black focus:outline-none"
+                  className="bg-black text-white border-black hover:text-black hover:bg-white px-5 py-3 w-28 font-cal border-solid border rounded-md focus:outline-none transition-all ease-in-out duration-150"
                 >
                   {adding ? <LoadingDots /> : 'Add'}
                 </button>
               </form>
             )}
             {error && (
-              <div className="mt-5 flex w-full max-w-2xl items-center space-x-2 text-left text-sm text-red-500">
+              <div className="text-red-500 text-left w-full max-w-2xl mt-5 text-sm flex items-center space-x-2">
                 <svg
                   viewBox="0 0 24 24"
                   width="20"
@@ -332,12 +333,12 @@ export default function SiteSettings() {
               </div>
             )}
           </div>
-          <div className="relative flex flex-col space-y-6">
+          <div className="flex flex-col space-y-6 relative">
             <h2 className="font-cal text-2xl">Thumbnail Image</h2>
             <div
               className={`${
-                data.image ? '' : 'h-150 animate-pulse bg-gray-300'
-              } relative mt-5 w-full rounded-md border-2 border-dashed border-gray-800`}
+                data.image ? '' : 'animate-pulse bg-gray-300 h-150'
+              } relative mt-5 w-full border-2 border-gray-800 border-dashed rounded-md`}
             >
               <CloudinaryUploadWidget
                 callback={(e) =>
@@ -350,7 +351,7 @@ export default function SiteSettings() {
                 {({ open }) => (
                   <button
                     onClick={open}
-                    className="absolute z-10 flex h-full w-full flex-col items-center justify-center rounded-md bg-gray-200 opacity-0 transition-all duration-200 ease-linear hover:opacity-100"
+                    className="absolute w-full h-full rounded-md bg-gray-200 z-10 flex flex-col justify-center items-center opacity-0 hover:opacity-100 transition-all ease-linear duration-200"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -369,7 +370,7 @@ export default function SiteSettings() {
                 <BlurImage
                   alt="Cover Photo"
                   blurDataURL={data.imageBlurhash ?? undefined}
-                  className="w-full rounded-md object-cover"
+                  className="rounded-md w-full object-cover"
                   height={500}
                   placeholder="blur"
                   src={data.image}
@@ -377,8 +378,8 @@ export default function SiteSettings() {
                 />
               )}
             </div>
-            <div className="h-10 w-full" />
-            <div className="flex max-w-lg flex-col space-y-6">
+            <div className="w-full h-10" />
+            <div className="flex flex-col space-y-6 max-w-lg">
               <h2 className="font-cal text-2xl">Delete Site</h2>
               <p>
                 Permanently delete your site and all of its contents from our platform. This action
@@ -388,7 +389,7 @@ export default function SiteSettings() {
                 onClick={() => {
                   setShowDeleteModal(true)
                 }}
-                className="font-cal max-w-max rounded-md border border-solid border-red-500 bg-red-500 px-5 py-3 text-white transition-all duration-150 ease-in-out hover:bg-white hover:text-red-500 focus:outline-none"
+                className="bg-red-500 text-white border-red-500 hover:text-red-500 hover:bg-white px-5 py-3 max-w-max font-cal border-solid border rounded-md focus:outline-none transition-all ease-in-out duration-150"
               >
                 Delete Site
               </button>
@@ -402,17 +403,17 @@ export default function SiteSettings() {
             event.preventDefault()
             await deleteSite(siteId as string)
           }}
-          className="inline-block w-full max-w-md overflow-hidden rounded-lg bg-white pt-8 text-center align-middle shadow-xl transition-all"
+          className="inline-block w-full max-w-md pt-8 overflow-hidden text-center align-middle transition-all bg-white shadow-xl rounded-lg"
         >
-          <h2 className="font-cal mb-6 text-2xl">Delete Site</h2>
-          <div className="mx-auto grid w-5/6 gap-y-5">
-            <p className="mb-3 text-gray-600">
+          <h2 className="font-cal text-2xl mb-6">Delete Site</h2>
+          <div className="grid gap-y-5 w-5/6 mx-auto">
+            <p className="text-gray-600 mb-3">
               Are you sure you want to delete your site? This action is not reversible. Type in the
               full name of your site (<b>{data.name}</b>) to confirm.
             </p>
-            <div className="flex-start flex items-center overflow-hidden rounded-lg border border-gray-700">
+            <div className="border border-gray-700 rounded-lg flex flex-start items-center overflow-hidden">
               <input
-                className="w-full rounded-none rounded-r-lg border-none bg-white px-5 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-0"
+                className="w-full px-5 py-3 text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-none rounded-r-lg placeholder-gray-400"
                 type="text"
                 name="name"
                 placeholder={data.name ?? ''}
@@ -420,10 +421,10 @@ export default function SiteSettings() {
               />
             </div>
           </div>
-          <div className="mt-10 flex w-full items-center justify-between">
+          <div className="flex justify-between items-center mt-10 w-full">
             <button
               type="button"
-              className="w-full rounded-bl border-t border-gray-300 px-5 py-5 text-sm text-gray-400 transition-all duration-150 ease-in-out hover:text-black focus:outline-none focus:ring-0"
+              className="w-full px-5 py-5 text-sm text-gray-400 hover:text-black border-t border-gray-300 rounded-bl focus:outline-none focus:ring-0 transition-all ease-in-out duration-150"
               onClick={() => setShowDeleteModal(false)}
             >
               CANCEL
@@ -434,9 +435,9 @@ export default function SiteSettings() {
               disabled={deletingSite}
               className={`${
                 deletingSite
-                  ? 'cursor-not-allowed bg-gray-50 text-gray-400'
+                  ? 'cursor-not-allowed text-gray-400 bg-gray-50'
                   : 'bg-white text-gray-600 hover:text-black'
-              } w-full rounded-br border-t border-l border-gray-300 px-5 py-5 text-sm transition-all duration-150 ease-in-out focus:outline-none focus:ring-0`}
+              } w-full px-5 py-5 text-sm border-t border-l border-gray-300 rounded-br focus:outline-none focus:ring-0 transition-all ease-in-out duration-150`}
             >
               {deletingSite ? <LoadingDots /> : 'DELETE SITE'}
             </button>
@@ -444,8 +445,8 @@ export default function SiteSettings() {
         </form>
       </Modal>
 
-      <footer className="fixed inset-x-0 bottom-0 z-20 h-20 border-t border-solid border-gray-500 bg-white">
-        <div className="mx-auto flex h-full max-w-screen-xl items-center justify-end px-10 sm:px-20">
+      <footer className="h-20 z-20 fixed bottom-0 inset-x-0 border-solid border-t border-gray-500 bg-white">
+        <div className="max-w-screen-xl mx-auto px-10 sm:px-20 h-full flex justify-end items-center">
           <button
             onClick={() => {
               saveSiteSettings(data)
@@ -453,9 +454,9 @@ export default function SiteSettings() {
             disabled={saving || subdomainError !== null}
             className={`${
               saving || subdomainError
-                ? 'cursor-not-allowed border-gray-300 bg-gray-300'
-                : 'border-black bg-black hover:bg-white hover:text-black'
-            } mx-2 h-12 w-36 rounded-md border-2 text-lg text-white transition-all duration-150 ease-in-out focus:outline-none`}
+                ? 'cursor-not-allowed bg-gray-300 border-gray-300'
+                : 'bg-black hover:bg-white hover:text-black border-black'
+            } mx-2 rounded-md w-36 h-12 text-lg text-white border-2 focus:outline-none transition-all ease-in-out duration-150`}
           >
             {saving ? <LoadingDots /> : 'Save Changes'}
           </button>

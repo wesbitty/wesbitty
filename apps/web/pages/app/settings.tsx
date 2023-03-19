@@ -4,8 +4,10 @@ import BlurImage from '~/components/BlurImage'
 import CloudinaryUploadWidget from '~/components/Cloudinary'
 import LoadingDots from '~/components/app/loading-dots'
 import { HttpMethod } from '~/types'
+
 import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
+
 import type { UserSettings } from '~/types'
 
 export default function AppSettings() {
@@ -44,14 +46,14 @@ export default function AppSettings() {
             duration: 10000,
           }}
         />
-        <div className="mx-auto mt-10 mb-16 max-w-screen-xl px-10 sm:px-20">
-          <h1 className="font-cal mb-12 text-5xl">Settings</h1>
+        <div className="max-w-screen-xl mx-auto px-10 sm:px-20 mt-10 mb-16">
+          <h1 className="font-cal text-5xl mb-12">Settings</h1>
           <div className="mb-28 flex flex-col space-y-12">
             <div className="space-y-6">
               <h2 className="font-cal text-2xl">Name</h2>
-              <div className="flex max-w-lg items-center overflow-hidden rounded-lg border border-gray-700">
+              <div className="border border-gray-700 rounded-lg flex items-center max-w-lg overflow-hidden">
                 <input
-                  className="font-cal w-full rounded-lg border-none bg-white px-5 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-0"
+                  className="w-full px-5 py-3 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-lg placeholder-gray-400"
                   type="text"
                   name="name"
                   placeholder="Your awesome name"
@@ -67,9 +69,9 @@ export default function AppSettings() {
             </div>
             <div className="space-y-6">
               <h2 className="font-cal text-2xl">Email</h2>
-              <div className="flex max-w-lg items-center overflow-hidden rounded-lg border border-gray-700">
+              <div className="border border-gray-700 rounded-lg flex items-center max-w-lg overflow-hidden">
                 <input
-                  className="font-cal w-full rounded-lg border-none bg-white px-5 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-0"
+                  className="w-full px-5 py-3 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-lg placeholder-gray-400"
                   type="email"
                   name="email"
                   placeholder="panic@thedis.co"
@@ -87,8 +89,8 @@ export default function AppSettings() {
               <h2 className="font-cal text-2xl">Display Picture</h2>
               <div
                 className={`${
-                  data?.image ? '' : 'h-150 animate-pulse bg-gray-300'
-                } relative mt-5 w-48 rounded-md border-2 border-dashed border-gray-800`}
+                  data?.image ? '' : 'animate-pulse bg-gray-300 h-150'
+                } relative mt-5 w-48 border-2 border-gray-800 border-dashed rounded-md`}
               >
                 <CloudinaryUploadWidget
                   callback={(e) =>
@@ -101,7 +103,7 @@ export default function AppSettings() {
                   {({ open }) => (
                     <button
                       onClick={open}
-                      className="absolute z-10 flex h-full w-full flex-col items-center justify-center rounded-md bg-gray-200 opacity-0 transition-all duration-200 ease-linear hover:opacity-100"
+                      className="absolute w-full h-full rounded-md bg-gray-200 z-10 flex flex-col justify-center items-center opacity-0 hover:opacity-100 transition-all ease-linear duration-200"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -122,15 +124,15 @@ export default function AppSettings() {
                     alt="Cover Photo"
                     width={100}
                     height={100}
-                    className="w-full rounded-md"
+                    className="rounded-md w-full"
                   />
                 )}
               </div>
             </div>
           </div>
         </div>
-        <footer className="fixed inset-x-0 bottom-0 z-20 h-20 border-t border-solid border-gray-500 bg-white">
-          <div className="mx-auto flex h-full max-w-screen-xl items-center justify-end px-10 sm:px-20">
+        <footer className="h-20 z-20 fixed bottom-0 inset-x-0 border-solid border-t border-gray-500 bg-white">
+          <div className="max-w-screen-xl mx-auto px-10 sm:px-20 h-full flex justify-end items-center">
             <button
               onClick={() => {
                 saveSettings(data)
@@ -138,9 +140,9 @@ export default function AppSettings() {
               disabled={saving}
               className={`${
                 saving
-                  ? 'cursor-not-allowed border-gray-300 bg-gray-300'
-                  : 'border-black bg-black hover:bg-white hover:text-black'
-              } mx-2 h-12 w-36 border-2 text-lg text-white transition-all duration-150 ease-in-out focus:outline-none`}
+                  ? 'cursor-not-allowed bg-gray-300 border-gray-300'
+                  : 'bg-black hover:bg-white hover:text-black border-black'
+              } mx-2 w-36 h-12 text-lg text-white border-2 focus:outline-none transition-all ease-in-out duration-150`}
             >
               {saving ? <LoadingDots /> : 'Save Changes'}
             </button>
