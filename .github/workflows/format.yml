@@ -1,4 +1,4 @@
-name: Check & Format Code With Prettier
+name: Format
 
 on:
   push:
