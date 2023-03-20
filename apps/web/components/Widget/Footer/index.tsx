@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import FooterLinks from '../../../wesbitty/data/Footer.json'
+import FooterLinks from '~/data/Footer.json'
 import { Section } from '../Section'
 import Link from 'next/link'
 
