@@ -8,8 +8,8 @@ type Props = {
 const Container: FC<any> = ({ children }: Props) => {
   return (
     <>
-  <div>{children}</div>
-  </>
+      <div>{children}</div>
+    </>
   )
 }
 

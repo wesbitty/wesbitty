@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from "next/image";
+import Image from 'next/image'
 import SolutionsData from '../../../wesbitty/data/Solutions.json'
 import CaseStudiesData from '../../../wesbitty/data/CaseStudies.json'
 import { useRouter } from 'next/router'

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 import { Card, Space, Typography } from '@wesbitty/ui'
 import DeveloperSignups from 'wesbitty/data/DeveloperSignups'
 

@@ -241,11 +241,9 @@ const Header = () => {
                     Start Your Project
                   </Button>
                 </Link>
-                <Link
-                href="https://app.wesbitty.org"
-                >
-                <Button title="Sign In" type="default" icon={<IconLogIn />}>
-                  Sign In
+                <Link href="https://app.wesbitty.org">
+                  <Button title="Sign In" type="default" icon={<IconLogIn />}>
+                    Sign In
                   </Button>
                 </Link>
               </div>

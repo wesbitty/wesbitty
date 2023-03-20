@@ -3,7 +3,7 @@ import DevelopersData from '~/data/Developers.json'
 import AnnouncementsData from '~/data/Announcements.json'
 import { useRouter } from 'next/router'
 import { Typography } from '@wesbitty/ui'
-import Image from "next/image";
+import Image from 'next/image'
 import Link from 'next/link'
 
 type Props = {

@@ -8,8 +8,7 @@ import toast, { Toaster } from 'react-hot-toast'
 
 const pageTitle = 'Authentication • Wesbitty Inc'
 const logo = '/favicon.ico'
-const description =
-  'User Management.'
+const description = 'User Management.'
 
 export default function Login() {
   const [loading, setLoading] = useState(false)
@@ -63,7 +62,8 @@ export default function Login() {
           The Global Commerce Platform
         </h2>
         <p className="mt-6 text-center text-sm text-gray-600">
-        Build your business with Wesbitty to sell online, offline, and everywhere in between. <br /> Read the{' '}
+          Build your business with Wesbitty to sell online, offline, and everywhere in between.{' '}
+          <br /> Read the{' '}
           <a
             className="font-medium text-black hover:text-gray-800"
             href="https://demo.wesbitty.org/platforms-starter-kit"

@@ -1,6 +1,6 @@
 import { Button, IconBookOpen, Space, Typography } from '@wesbitty/ui'
 import Link from 'next/link'
-import Image from "next/image";
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { Section } from '../Widget/Section'
 
@@ -31,24 +31,20 @@ const HeaderFeature = () => {
                       </p>
                     </Typography.Text>
                     <Space>
-                      <Link href="https://app.wesbitty.com" as="https://app.wesbitty.com"
-                      className="mt-10">
-                          <Button className="py-3" size="medium">
-                            Get Started
-                          </Button>
-                      </Link>
-                      <Link href="/docs" as="/docs"
-                      className="mt-10"
+                      <Link
+                        href="https://app.wesbitty.com"
+                        as="https://app.wesbitty.com"
+                        className="mt-10"
                       >
-                          <Button
-                            className="py-3"
-                            size="medium"
-                            type="text"
-                            icon={<IconBookOpen />}
-                          >
-                            Documentation
-                          </Button>
-                        </Link>
+                        <Button className="py-3" size="medium">
+                          Get Started
+                        </Button>
+                      </Link>
+                      <Link href="/docs" as="/docs" className="mt-10">
+                        <Button className="py-3" size="medium" type="text" icon={<IconBookOpen />}>
+                          Documentation
+                        </Button>
+                      </Link>
                     </Space>
                     <p className="mt-8 text-sm text-dark-400 tracking-wide sm:mt-10">backed by</p>
                     <div className="mt-5 w-full sm:max-w-lg lg:ml-0">

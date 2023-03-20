@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 import { Space, Typography } from '@wesbitty/ui'
 import authors from '../../../wesbitty/data/authors.json'
 import React from 'react'
@@ -29,8 +29,9 @@ const ListItem: FC<{ post: Post }> = ({ post }) => {
                   width={452}
                   height={240}
                   style={{
-                    objectFit: "cover"
-                  }} />
+                    objectFit: 'cover',
+                  }}
+                />
               </div>
 
               <div>
@@ -63,7 +64,7 @@ const ListItem: FC<{ post: Post }> = ({ post }) => {
         </div>
       </Link>
     </div>
-  );
+  )
 }
 
 export default ListItem
