@@ -12,11 +12,17 @@ const HeaderFeature = () => {
       <Section className="pb-0 pt-24">
         <div className="relative">
           <main className="">
+
             <div className="mx-auto">
-              <div className="lg:grid lg:grid-cols-12 lg:gap-16">
-                <div className="md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center">
-                  <div className="sm:mx-auto md:w-3/4 lg:w-full lg:mx-0">
-                    <h1 className="mt-4 text-4xl text-gray-800 dark:text-white sm:mt-5 sm:leading-none lg:mt-6 lg:text-5xl xl:text-6xl">
+            <div className="lg:grid lg:grid-cols-12 lg:gap-16">
+                <div className="md:mx-auto md:max-w-2xl lg:col-span-6 lg:flex lg:items-center lg:text-left">
+                  <div
+                    className="
+                    space-y-12 sm:mx-auto md:w-3/4 lg:mx-0
+                    lg:w-full"
+                  >
+                  <div>
+                    <h1 className="text-gray-800 dark:text-white sm:mt-5 text-2xl sm:text-3xl sm:leading-none lg:text-4xl xl:text-5xl">
                       <span className="block text-gray-800 dark:text-white">
                         Empowering entrepreneurs
                       </span>
@@ -24,13 +30,15 @@ const HeaderFeature = () => {
                         to grow their businesses around the globe.
                       </span>
                     </h1>
-                    <Typography.Text>
-                      <p className="mt-5 text-base sm:mt-5 lg:text-lg ">
+                    <div>
+                      <p className="p mt-1.5 text-sm sm:mt-5 sm:text-base lg:text-lg">
                         Create an ecommerce website backed by powerful tools that help you find
                         customers, drive sales, and manage your day-to-day.
                       </p>
-                    </Typography.Text>
-                    <Space>
+                    </div>
+                    </div>
+
+                    <div className="flex items-center gap-2">
                       <Link
                         href="https://app.wesbitty.org"
                         as="https://app.wesbitty.org"
@@ -45,7 +53,8 @@ const HeaderFeature = () => {
                           Documentation
                         </Button>
                       </Link>
-                    </Space>
+                    </div>
+                    <div className="flex flex-col gap-4">
                     <p className="mt-8 text-sm text-dark-400 tracking-wide sm:mt-10">backed by</p>
                     <div className="mt-5 w-full sm:max-w-lg lg:ml-0">
                       <div className="flex flex-wrap items-center justify-start">
@@ -64,6 +73,7 @@ const HeaderFeature = () => {
                           src={`${basePath}/images/company-logos/coatue.png`}
                           alt="Coatue"
                         />
+                      </div>
                       </div>
                     </div>
                   </div>
