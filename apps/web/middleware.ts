@@ -32,7 +32,6 @@ export default async function middleware(req: NextRequest) {
       ? hostname.replace(`.wesbitty.org`, '').replace(`.bitty.vercel.app`, '')
       : hostname.replace(`.localhost:3000`, '')
 
-  // rewrites for app pages
   if (currentHost == 'app') {
     if (
       url.pathname === '/login' &&
@@ -47,15 +46,13 @@ export default async function middleware(req: NextRequest) {
     return NextResponse.rewrite(url)
   }
 
-  // rewrite root application to `/home` folder
   if (
     hostname === 'localhost:3000' ||
     hostname === 'wesbitty.org' ||
     hostname === 'bitty.vercel.app'
   ) {
-    return NextResponse.rewrite(new URL(`/home${path}`, req.url))
+    return NextResponse.rewrite(new URL(`${path}`, req.url))
   }
 
-  // rewrite everything else to `/_sites/[site] dynamic route
   return NextResponse.rewrite(new URL(`/_sites/${currentHost}${path}`, req.url))
 }
