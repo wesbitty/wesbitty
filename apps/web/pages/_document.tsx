@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { Metadata } from '~/feed/metadata'
+import { Metadata } from '~/utils/Metadata'
 
 class MyDocument extends Document {
   render() {
