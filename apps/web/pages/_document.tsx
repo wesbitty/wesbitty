@@ -4,7 +4,7 @@ import { Metadata } from '~/feed/metadata'
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang={Metadata.Locale}>
+      <Html lang={Metadata.Language}>
         <Head>
           <script async src="https://platform.twitter.com/widgets.js" />
         </Head>
