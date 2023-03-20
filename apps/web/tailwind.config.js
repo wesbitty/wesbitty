@@ -107,12 +107,6 @@ module.exports = {
       lineHeight: {
         tight: 1.2,
       },
-      fontSize: {
-        '5xl': '2.5rem',
-        '6xl': '2.75rem',
-        '7xl': '4.5rem',
-        '8xl': '6.25rem',
-      },
       boxShadow: {
         'light-small': '0px 4px 8px 2px rgba(107, 114, 128, 0.08)',
         small: '0 5px 10px rgba(0, 0, 0, 0.12)',
@@ -123,8 +117,7 @@ module.exports = {
         default: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
         cal: ['var(--font-cal)', ...defaultTheme.fontFamily.sans],
         title: ['var(--font-title)', ...defaultTheme.fontFamily.sans],
-        mono: ['Office Code Pro', 'Source Code Pro', 'Menlo', 'monospace', 'Consolas', ...defaultTheme.fontFamily.mono],
-        sans: ['custom-font', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        mono: ['Consolas', ...defaultTheme.fontFamily.mono],
       },
       stroke: (theme) => ({
         white: theme('colors.white'),

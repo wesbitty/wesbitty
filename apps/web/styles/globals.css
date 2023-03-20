@@ -8,37 +8,14 @@
   }
 }
 
-@layer base {
-  @font-face {
-    font-family: 'custom-font';
-    src: url(./_fonts/CustomFont-Book.woff2) format('woff2'),
-      url(./_fonts/CustomFont-Book.woff) format('woff');
-    font-weight: 400;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'custom-font';
-    src: url(./_fonts/CustomFont-Medium.woff2) format('woff2'),
-      url(./_fonts/CustomFont-Medium.woff) format('woff');
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-/* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
   margin-bottom: 16px;
 }
 
-h1,
-h2 {
+h1,h2 {
   line-height: 1.2 !important;
 }
-
+  
 @media only screen and (max-width: 960px) {
   h1 {
     font-size: 2.2rem !important;
@@ -130,4 +107,3 @@ table .thead--plans th {
   top: 0;
   z-index: 5;
  }
-}
