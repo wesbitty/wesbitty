@@ -1,7 +1,7 @@
 import { Analytics } from '@vercel/analytics/react'
 import { SessionProvider } from 'next-auth/react'
 import type { Session } from 'next-auth'
-import { cal, inter } from '~/styles/CustomFonts'
+import { cal, inter } from '~/styles/fonts'
 import cx from 'classnames'
 import { useRouter } from 'next/router'
 import '~/styles/globals.css'

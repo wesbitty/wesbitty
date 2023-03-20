@@ -21,12 +21,7 @@ module.exports = {
     }),
     extend: {
       screens: {
-        sm: '640px',
-        md: '768px',
-        lg: '1024px',
-        xl: '1280px',
-        '1.5xl': '1440px',
-        '2xl': '1536px',
+        xs: '480px',
       },
       colors: {
         current: 'currentColor',
@@ -128,7 +123,7 @@ module.exports = {
         default: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
         cal: ['var(--font-cal)', ...defaultTheme.fontFamily.sans],
         title: ['var(--font-title)', ...defaultTheme.fontFamily.sans],
-        mono: ['Consolas', ...defaultTheme.fontFamily.mono],
+        mono: ['Office Code Pro', 'Source Code Pro', 'Menlo', 'monospace', 'Consolas', ...defaultTheme.fontFamily.mono],
         sans: ['custom-font', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
       },
       stroke: (theme) => ({
