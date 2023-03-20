@@ -3,13 +3,11 @@ import { useEffect, useState } from 'react'
 import FooterLinks from '../../../wesbitty/data/Footer.json'
 import { Section } from '../Section'
 import Link from 'next/link'
-import { useTheme } from 'components/ColorScheme'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
-  const { basePath } = useRouter()
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme, resolvedTheme } = useTheme()
+
   useEffect(() => setMounted(true), [])
 
   return (
@@ -26,12 +24,8 @@ const Footer = () => {
             <Link href="/">
               <img
                 className="w-40"
-                src={
-                  mounted && (theme === 'dark' || resolvedTheme === 'dark')
-                    ? `${basePath}/brand/logo/wesbitty-dark-logo.svg`
-                    : `${basePath}/brand/logo/wesbitty-light-logo.svg`
-                }
-                alt="Wesbitty"
+                src="/brand/logo/wesbitty-light-logo.svg"
+                alt="Wesbitty Logo"
               />
             </Link>
             <div className="flex space-x-6">

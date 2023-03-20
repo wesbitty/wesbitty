@@ -8,14 +8,10 @@ import SolutionsData from '../../../wesbitty/data/Solutions.json'
 import Solutions from './Product'
 import Developers from './Developers'
 import Announcement from './Announcement'
-import Mode from '../../ColorScheme/mode'
-import { useTheme } from 'components/ColorScheme'
-import { signIn } from 'next-auth/react'
 
 const Header = () => {
-  const { basePath } = useRouter()
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme, resolvedTheme } = useTheme()
+
   useEffect(() => setMounted(true), [])
 
   const [open, setOpen] = useState(false)
@@ -196,12 +192,8 @@ const Header = () => {
                   <Link href="/">
                     <img
                       className="w-40"
-                      src={
-                        mounted && (theme === 'dark' || resolvedTheme === 'dark')
-                          ? `${basePath}/brand/logo/wesbitty-dark-logo.svg`
-                          : `${basePath}/brand/logo/wesbitty-light-logo.svg`
-                      }
-                      alt="Wesbitty"
+                      src="/brand/logo/wesbitty-light-logo.svg"
+                      alt="Wesbitty Logo"
                     />
                   </Link>
                 </div>
@@ -243,11 +235,6 @@ const Header = () => {
                   />
                 </div>
               </div>
-              <div className="flex items-center right-0">
-                <div className="flex-shrink-0 flex items-center">
-                  <Mode />
-                </div>
-              </div>
               <div className="hidden lg:flex items-center sm:space-x-3">
                 <Link href="https://github.com/wesbitty/wesbitty" target="_blank">
                   <Button type="default" icon={<IconPackage />}>
@@ -255,7 +242,7 @@ const Header = () => {
                   </Button>
                 </Link>
                 <Link
-                href="/login"
+                href="https://app.wesbitty.org"
                 >
                 <Button title="Sign In" type="default" icon={<IconLogIn />}>
                   Sign In

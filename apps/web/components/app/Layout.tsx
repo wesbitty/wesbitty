@@ -14,9 +14,9 @@ interface LayoutProps extends WithChildren {
 }
 
 export default function Layout({ siteId, children }: LayoutProps) {
-  const title = 'Platforms on Vercel'
+  const title = 'My Store • Home • - Wesbitty'
   const description =
-    'Create a fullstack application with multi-tenancy and custom domains support using Next.js, Prisma, and PostgreSQL'
+    'Manage your business, add new products, and find your audience with the Wesbitty app.'
   const logo = '/favicon.ico'
   const router = useRouter()
   const sitePage = router.pathname.startsWith('/app/site/[id]')
