@@ -8,7 +8,7 @@ export const generateRss = (rss: any[]): string => {
       <title>${Metadata.Name}</title>
       <Link>${Metadata.Url}</link>
       <description>${Metadata.Description}</description>
-      <language>${Metadata.Locale}</language>
+      <language>${Metadata.Language}</language>
       <atom:link href="https://wesbitty.com/rss.xml" rel="self" type="application/rss+xml"/>
       ${rss.map(blogRss).join('')}
     </channel>
