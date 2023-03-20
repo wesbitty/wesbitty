@@ -42,34 +42,34 @@ const HeaderFeature = () => {
                       <Link
                         href="https://app.wesbitty.org"
                         as="https://app.wesbitty.org"
-                        className="mt-10"
+                        className=""
                       >
                         <Button className="py-3" size="medium">
                           Get Started
                         </Button>
                       </Link>
-                      <Link href="/docs" as="/docs" className="mt-10">
+                      <Link href="/docs" as="/docs" className="">
                         <Button className="py-3" size="medium" type="text" icon={<IconBookOpen />}>
                           Documentation
                         </Button>
                       </Link>
                     </div>
                     <div className="flex flex-col gap-4">
-                    <p className="mt-8 text-sm text-dark-400 tracking-wide sm:mt-10">backed by</p>
-                    <div className="mt-5 w-full sm:max-w-lg lg:ml-0">
-                      <div className="flex flex-wrap items-center justify-start">
+                    <p className="mt-8 text-xs text-dark-400 tracking-wide sm:mt-10">backed by</p>
+                    <div className="w-full sm:max-w-lg lg:ml-0">
+                      <div className="flex flex-wrap items-center justify-start gap-y-8 sm:flex-nowrap">
                         <img
-                          className="h-8 sm:h-10 pr-10 mb-5"
+                          className="relative h-6 pr-5 sm:h-6 md:pr-10"
                           src={`${basePath}/images/company-logos/grayYC.png`}
                           alt="Y Combinator"
                         />
                         <img
-                          className="relative h-5 sm:h-7 pr-10 mb-5"
+                          className="relative h-6 pr-5 sm:h-6 md:pr-10"
                           src={`${basePath}/images/company-logos/mozilla-transparent.png`}
                           alt="Mozilla"
                         />
                         <img
-                          className="relative h-5 sm:h-7 pr-10 mb-5"
+                          className="relative h-6 pr-5 sm:h-6 md:pr-10"
                           src={`${basePath}/images/company-logos/coatue.png`}
                           alt="Coatue"
                         />
@@ -78,9 +78,9 @@ const HeaderFeature = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex content-center mt-16 sm:mt-24 lg:absolute lg:-right-80 lg:w-9/12 lg:mt-0 lg:col-span-6 xl:relative xl:right-0 xl:w-full">
-                  <div className="flex flex-col items-center justify-center relative w-full rounded-md">
-                    <div className="w-full rounded-t-md h-5 bg-dark-700 flex items-center justify-start px-2">
+                <div className="mt-16 flex content-center sm:mt-24 lg:absolute lg:-right-80 lg:col-span-6 lg:mt-0 lg:w-9/12 xl:relative xl:right-0 xl:w-full">
+                  <div className="relative flex w-full flex-col items-center justify-center rounded-md">
+                    <div className="bg-dark-400 flex h-5 w-full items-center justify-start rounded-t-md px-2">
                       <div className="h-2 w-2 mr-2 rounded-full bg-dark-500" />
                       <div className="h-2 w-2 mr-2 rounded-full bg-dark-500" />
                       <div className="h-2 w-2 mr-2 rounded-full bg-dark-500" />
