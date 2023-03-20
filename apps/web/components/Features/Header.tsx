@@ -32,8 +32,8 @@ const HeaderFeature = () => {
                     </Typography.Text>
                     <Space>
                       <Link
-                        href="https://app.wesbitty.com"
-                        as="https://app.wesbitty.com"
+                        href="https://app.wesbitty.org"
+                        as="https://app.wesbitty.org"
                         className="mt-10"
                       >
                         <Button className="py-3" size="medium">
