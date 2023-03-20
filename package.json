@@ -4,10 +4,6 @@
   "version": "0.0.0",
   "license": "Apache-2.0",
   "private": true,
-  "engines": {
-    "npm": ">=7.0.0",
-    "node": ">=14.0.0"
-  },
   "workspaces": [
     "apps/*",
     "packages/*",
@@ -16,8 +12,8 @@
   ],
   "author": "Wesbitty, Inc.",
   "scripts": {
-    "build": "turbo run build",
-    "build:app": "turbo run build --filter={apps/web}",
+    "build": "yarn workspaces run build",
+    "build:app": "yarn workspace run build --filter={apps/web}",
     "lint": "turbo run lint",
     "dev": "turbo run dev --filter={apps/web}",
     "prettier": "prettier --write \"**/*.{css,ts,tsx,md,mdx}\"",
@@ -41,7 +37,7 @@
     "ts-jest": "^27.0.7",
     "ts-node": "^9.1.1",
     "tsx": "^3.7.1",
-    "turbo": "latest",
     "typescript": "^4.5.2"
-  }
+  },
+  "packageManager": "yarn@3.5.0"
 }
