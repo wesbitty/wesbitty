@@ -51,17 +51,17 @@ const HeaderFeature = () => {
                       <div className="flex flex-wrap items-center justify-start">
                         <img
                           className="h-8 sm:h-10 pr-10 mb-5"
-                          src={`${basePath}/images/company/logos/yc--grey.png`}
+                          src={`${basePath}/images/company-logos/grayYC.png`}
                           alt="Y Combinator"
                         />
                         <img
                           className="relative h-5 sm:h-7 pr-10 mb-5"
-                          src={`${basePath}/images/company/logos/mozilla--grey.png`}
+                          src={`${basePath}/images/company-logos/mozilla-transparent.png`}
                           alt="Mozilla"
                         />
                         <img
                           className="relative h-5 sm:h-7 pr-10 mb-5"
-                          src={`${basePath}/images/company/logos/coatue.png`}
+                          src={`${basePath}/images/company-logos/coatue.png`}
                           alt="Coatue"
                         />
                       </div>
