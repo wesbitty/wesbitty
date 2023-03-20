@@ -2,7 +2,7 @@
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
-      "outputs": ["build/**", ".next/**", "dist/**"],
+      "outputs": ["build/**", ".wesjet/**", ".next/**", "dist/**"],
       "dependsOn": ["^build"]
     },
     "test": {
