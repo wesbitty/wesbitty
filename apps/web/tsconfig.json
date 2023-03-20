@@ -12,7 +12,7 @@
       "~/data/*": ["wesbitty/data/*"],
       "~/utils/*": ["wesbitty/utils/*"],
       "wesjet/jetpack": ["./.wesjet/jetpack"],
-      "~/lib/*": ["wesbitty/meta_tags/*"],
+      "~/lib/*": ["wesbitty/lib/*"],
       "~/styles/*": ["styles/*"],
       "~/types": ["wesbitty/types/index"],
       "~/types/*": ["wesbitty/types/*"]
