@@ -100,9 +100,9 @@ const SupportPage = ({}: Props) => {
                         href="https://github.com/wesbitty/wesbitty/issues"
                         as="https://github.com/wesbitty/wesbitty/issues"
                       >
-                          <Button size="medium" type="default" iconRight={<IconGitHub />}>
-                            Go To Issues
-                          </Button>
+                        <Button size="medium" type="default" iconRight={<IconGitHub />}>
+                          Go To Issues
+                        </Button>
                       </Link>
                     </Space>
                   </div>
@@ -148,9 +148,9 @@ const SupportPage = ({}: Props) => {
                         href="https://github.com/wesbitty/wesbitty/discussions"
                         as="https://github.com/wesbitty/wesbitty/discussions"
                       >
-                          <Button size="medium" type="default" iconRight={<IconMessageCircle />}>
-                            Join The Discussion
-                          </Button>
+                        <Button size="medium" type="default" iconRight={<IconMessageCircle />}>
+                          Join The Discussion
+                        </Button>
                       </Link>
                     </Space>
                   </div>

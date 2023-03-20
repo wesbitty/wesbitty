@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import { Section } from '../components/Widget/Section'
 import { NextSeo } from 'next-seo'
 import { Metadata } from '~/utils/Metadata'
-import Image from "next/image";
+import Image from 'next/image'
 
 const { Title, Text } = Typography
 
