@@ -185,9 +185,9 @@ const Header = () => {
         <nav className="bg-white dark:bg-gray-800 border-b dark:border-gray-600">
           {/* <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-10 xl:px-0"> */}
           <div className="container mx-auto relative flex justify-between h-16 lg:px-16 xl:px-20">
-            <div className="flex-1 flex items-center justify-center sm:items-stretch lg:justify-between">
+            <div className="flex items-center justify-center sm:items-stretch lg:justify-between">
               <div className="flex items-center">
-                <div className="flex-shrink-0 flex items-center">
+                <div className="flex items-center space-x-2.5">
                   <Link href="/">
                     <img
                       className="w-40"
@@ -293,7 +293,7 @@ const Header = () => {
               <div className="mt-6 mb-12">
                 <div className="pt-2 pb-4 space-y-1">
                   <Link
-                    href="/login"
+                    href="https://app.wesbitty.org"
                     className="block pl-3 pr-4 text-base font-medium text-gray-600 dark:text-white"
                   >
                     Sign in
