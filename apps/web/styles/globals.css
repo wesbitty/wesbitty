@@ -4,6 +4,112 @@
 
 @layer utilities {
   .overflow-hidden {
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 16px;
+}
+
+h1,
+h2 {
+  line-height: 1.2 !important;
+}
+
+@media only screen and (max-width: 960px) {
+  h1 {
+    font-size: 2.2rem !important;
+  }
+  h2 {
+    font-size: 2rem !important;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+  h2 {
+    font-size: 1.8rem !important;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  h1 {
+    font-size: 1.8rem !important;
+  }
+  h2 {
+    font-size: 1.6rem !important;
+  }
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+.sbui-border-fix select {
+  @apply border-solid;
+  border-width: 1px;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section--masked {
+  overflow: hidden;
+}
+
+.section--bg-masked {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.section--bg {
+  @apply bg-gray-50 dark:bg-gray-800;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform-origin: 100% 0;
+  transform: skewY(-2deg);
+  overflow: hidden;
+}
+
+.section-container {
+  position: relative;
+}
+
+a {
+  @apply hover:text-black dark:hover:text-white;
+}
+
+table {
+  margin-top: 1em;
+  border-collapse: collapse;
+}
+
+table .thead--plans th {
+  @apply py-4;
+  position: sticky;
+  border-collapse: separate;
+  top: 0;
+  z-index: 5;
+}
+
+.pricing-table__product-row {
+  /* @apply py-4; */
+  position: sticky;
+  border-collapse: separate;
+  top: 0;
+  z-index: 5;
 }

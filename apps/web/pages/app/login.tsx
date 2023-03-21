@@ -6,10 +6,9 @@ import { useRouter } from 'next/router'
 import LoadingDots from '~/components/app/loading-dots'
 import toast, { Toaster } from 'react-hot-toast'
 
-const pageTitle = 'Login'
+const pageTitle = 'Authentication • Wesbitty Inc'
 const logo = '/favicon.ico'
-const description =
-  'Platforms Starter Kit is a comprehensive template for building multi-tenant applications with custom domains.'
+const description = 'User Management.'
 
 export default function Login() {
   const [loading, setLoading] = useState(false)
@@ -45,25 +44,26 @@ export default function Login() {
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@Elegance" />
-        <meta name="twitter:creator" content="@StevenTey" />
+        <meta name="twitter:site" content="@wesbitty" />
+        <meta name="twitter:creator" content="@wesbitty" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={logo} />
       </Head>
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <Image
-          alt="Platforms Starter Kit"
+          alt="Platform"
           width={100}
           height={100}
           className="relative mx-auto h-12 w-auto"
-          src="/logo.png"
+          src="/brand/logo.png"
         />
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Platforms Starter Kit
+          The Global Commerce Platform
         </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
-          Build multi-tenant applications with custom domains. <br /> Read the{' '}
+        <p className="mt-6 text-center text-sm text-gray-600">
+          Build your business with Wesbitty to sell online, offline, and everywhere in between.{' '}
+          <br /> Read the{' '}
           <a
             className="font-medium text-black hover:text-gray-800"
             href="https://demo.wesbitty.org/platforms-starter-kit"

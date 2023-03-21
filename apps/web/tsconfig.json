@@ -10,7 +10,8 @@
     "paths": {
       "~/components/*": ["components/*"],
       "~/data/*": ["wesbitty/data/*"],
-      "~/layouts/*": ["layouts/*"],
+      "~/utils/*": ["wesbitty/utils/*"],
+      "wesjet/jetpack": ["./.wesjet/jetpack"],
       "~/lib/*": ["wesbitty/lib/*"],
       "~/styles/*": ["styles/*"],
       "~/types": ["wesbitty/types/index"],
@@ -30,6 +31,11 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts", "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".wesjet/jetpack"
+  ],
   "exclude": ["node_modules"]
 }

@@ -2,11 +2,19 @@ node_modules/
 
 dist*
 
+/.yarn/*
+!/.yarn/releases
+!/.yarn/plugins
+!/.yarn/sdks
+!/.yarn/patches
+
 # wesjet cache
 .wesjet
 
+# Next.js Output
 .next
 
+# Turbo
 .turbo
 
 # Ignore artifacts:
@@ -23,7 +31,6 @@ __pycache__
 # env
 .env.local*
 .env.production*
-
 
 # Local Netlify folder
 .netlify
