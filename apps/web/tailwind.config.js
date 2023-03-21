@@ -1,6 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
-const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette')
 const svgToDataUri = require('mini-svg-data-uri')
 
 module.exports = {
@@ -42,7 +41,6 @@ module.exports = {
           800: '#38BC81',
           900: '#10633E',
         },
-        // Joshen TODO: At the end just rearrange the values
         dark: {
           100: '#eeeeee',
           200: '#e0e0e0',
