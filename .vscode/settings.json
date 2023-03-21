@@ -24,10 +24,10 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "css.lint.unknownAtRules": "ignore",
 
-	"editor.formatOnSave": true,
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": false,
     "source.fixAll": true,
     "source.addMissingImports": true
-  },
+  }
 }

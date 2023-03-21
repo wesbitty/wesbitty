@@ -31,11 +31,6 @@
       }
     ]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts", "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".wesjet/jetpack"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".wesjet/jetpack"],
   "exclude": ["node_modules"]
 }

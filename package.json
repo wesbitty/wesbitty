@@ -1,7 +1,7 @@
 {
   "private": true,
   "license": "Apache-2.0",
-  "engines" : {
+  "engines": {
     "node": "16.x || 18.x || 19.x"
   },
   "workspaces": [
@@ -18,7 +18,7 @@
     "build:examples": "npm run build -w=./examples",
     "build:packages": "npm run build -w=./packages",
     "dev": "npm run dev -w=./apps/web",
-    "prettier": "prettier --write \"**/*.{css,ts,tsx,md,mdx}\"",
+    "prettier": "prettier --write .",
     "clean": "bash -c 'rm -rf examples/*/.wesjet examples/*/.next packages/*/dist .vercel apps/*/.wesjet apps/*/.next'",
     "test": "jest"
   },
