@@ -15,6 +15,7 @@
   ],
   "author": "Wesbitty, Inc.",
   "scripts": {
+    "prebuild": "npm run generate --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
     "build:app": "npm run build -w=./apps/web",
     "build:examples": "npm run build -w=./examples",

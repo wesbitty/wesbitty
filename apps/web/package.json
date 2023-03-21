@@ -1,15 +1,17 @@
 {
   "private": true,
   "scripts": {
+    "prebuild": "npm run generate",
     "build": "next build",
-    "dev": "next dev",
+    "start": "next start",
+    "lint": "next lint",
     "format:write": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx}\"",
     "format": "prettier \"**/*.{css,js,json,jsx,ts,tsx}\"",
-    "lint": "next lint",
-    "prebuild": "prisma generate",
-    "predev": "prisma generate",
+    "predev": "npm run generate",
+    "dev": "next dev",
+    "generate": "prisma generate",
+    "prisma:push": "prisma db push",
     "prisma:migrate": "prisma migrate deploy",
-    "start": "next start",
     "type-check": "tsc"
   },
   "prisma": {
