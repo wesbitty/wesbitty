@@ -1,6 +1,8 @@
 import { defineDocumentType, defineNestedType, makeSource } from 'wesjet/maker'
 import { DocumentGen } from 'wesjet/core'
 
+const contentDirPath = './[blog]'
+
 const urlFromFilePath = (doc: DocumentGen): string => {
   return doc._raw.flattenedPath.replace(/pages\/?/, '')
 }
@@ -66,6 +68,6 @@ const Post = defineDocumentType(() => ({
 }))
 
 export default makeSource({
-  contentDirPath: '[blog]',
+  contentDirPath,
   documentTypes: [Post],
 })
