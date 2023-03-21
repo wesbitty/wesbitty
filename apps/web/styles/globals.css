@@ -8,14 +8,20 @@
   }
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 16px;
 }
 
-h1,h2 {
+h1,
+h2 {
   line-height: 1.2 !important;
 }
-  
+
 @media only screen and (max-width: 960px) {
   h1 {
     font-size: 2.2rem !important;
@@ -98,7 +104,7 @@ table .thead--plans th {
   border-collapse: separate;
   top: 0;
   z-index: 5;
- }
+}
 
 .pricing-table__product-row {
   /* @apply py-4; */
@@ -106,4 +112,4 @@ table .thead--plans th {
   border-collapse: separate;
   top: 0;
   z-index: 5;
- }
+}

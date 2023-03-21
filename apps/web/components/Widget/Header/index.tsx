@@ -185,7 +185,7 @@ const Header = () => {
         <nav className="bg-white dark:bg-gray-800 border-b dark:border-gray-600">
           {/* <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-10 xl:px-0"> */}
           <div className="relative mx-auto flex h-16 justify-between lg:container lg:px-16 xl:px-20">
-          <div className="flex flex-1 items-center justify-center sm:items-stretch lg:justify-between">
+            <div className="flex flex-1 items-center justify-center sm:items-stretch lg:justify-between">
               <div className="flex items-center">
                 <div className="flex items-center space-x-2.5">
                   <Link href="/">
@@ -246,7 +246,7 @@ const Header = () => {
                     Sign In
                   </Button>
                 </Link>
-                </div>
+              </div>
             </div>
             {/* <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"></div> */}
           </div>
@@ -262,7 +262,7 @@ const Header = () => {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-1"
           >
-          <div className="p-4 md:p-8 h-screen w-screen fixed bg-white transform overflow-y-scroll -inset-y-0 z-50 dark:bg-dark-700">
+            <div className="p-4 md:p-8 h-screen w-screen fixed bg-white transform overflow-y-scroll -inset-y-0 z-50 dark:bg-dark-700">
               <div className="absolute right-4 top-4 items-center justify-between">
                 <div className="-mr-2">
                   <button

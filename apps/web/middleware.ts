@@ -2,9 +2,7 @@ import { getToken } from 'next-auth/jwt'
 import { NextRequest, NextResponse } from 'next/server'
 
 export const config = {
-  matcher: [
-    '/((?!api/|_next/|_static/|brand/|images/|examples/|[\\w-]+\\.\\w+).*)',
-  ],
+  matcher: ['/((?!api/|_next/|_static/|brand/|images/|examples/|[\\w-]+\\.\\w+).*)'],
 }
 
 export default async function middleware(req: NextRequest) {

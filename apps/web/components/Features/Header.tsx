@@ -12,30 +12,29 @@ const HeaderFeature = () => {
       <Section className="pb-0 pt-24">
         <div className="relative">
           <main className="">
-
             <div className="mx-auto">
-            <div className="lg:grid lg:grid-cols-12 lg:gap-16">
+              <div className="lg:grid lg:grid-cols-12 lg:gap-16">
                 <div className="md:mx-auto md:max-w-2xl lg:col-span-6 lg:flex lg:items-center lg:text-left">
                   <div
                     className="
                     space-y-12 sm:mx-auto md:w-3/4 lg:mx-0
                     lg:w-full"
                   >
-                  <div>
-                    <h1 className="text-gray-800 dark:text-white sm:mt-5 text-2xl sm:text-3xl sm:leading-none lg:text-4xl xl:text-5xl">
-                      <span className="block text-gray-800 dark:text-white">
-                        Empowering entrepreneurs
-                      </span>
-                      <span className="text-brand-600 md:ml-0 block">
-                        to grow their businesses around the globe.
-                      </span>
-                    </h1>
                     <div>
-                      <p className="p mt-1.5 text-sm sm:mt-5 sm:text-base lg:text-lg">
-                        Create an ecommerce website backed by powerful tools that help you find
-                        customers, drive sales, and manage your day-to-day.
-                      </p>
-                    </div>
+                      <h1 className="text-gray-800 dark:text-white sm:mt-5 text-2xl sm:text-3xl sm:leading-none lg:text-4xl xl:text-5xl">
+                        <span className="block text-gray-800 dark:text-white">
+                          Empowering entrepreneurs
+                        </span>
+                        <span className="text-brand-600 md:ml-0 block">
+                          to grow their businesses around the globe.
+                        </span>
+                      </h1>
+                      <div>
+                        <p className="p mt-1.5 text-sm sm:mt-5 sm:text-base lg:text-lg">
+                          Create an ecommerce website backed by powerful tools that help you find
+                          customers, drive sales, and manage your day-to-day.
+                        </p>
+                      </div>
                     </div>
 
                     <div className="flex items-center gap-2">
@@ -55,25 +54,25 @@ const HeaderFeature = () => {
                       </Link>
                     </div>
                     <div className="flex flex-col gap-4">
-                    <p className="mt-8 text-xs text-dark-400 tracking-wide sm:mt-10">backed by</p>
-                    <div className="w-full sm:max-w-lg lg:ml-0">
-                      <div className="flex flex-wrap items-center justify-start gap-y-8 sm:flex-nowrap">
-                        <img
-                          className="relative h-6 pr-5 sm:h-6 md:pr-10"
-                          src={`${basePath}/images/company-logos/grayYC.png`}
-                          alt="Y Combinator"
-                        />
-                        <img
-                          className="relative h-6 pr-5 sm:h-6 md:pr-10"
-                          src={`${basePath}/images/company-logos/mozilla-transparent.png`}
-                          alt="Mozilla"
-                        />
-                        <img
-                          className="relative h-6 pr-5 sm:h-6 md:pr-10"
-                          src={`${basePath}/images/company-logos/coatue.png`}
-                          alt="Coatue"
-                        />
-                      </div>
+                      <p className="mt-8 text-xs text-dark-400 tracking-wide sm:mt-10">backed by</p>
+                      <div className="w-full sm:max-w-lg lg:ml-0">
+                        <div className="flex flex-wrap items-center justify-start gap-y-8 sm:flex-nowrap">
+                          <img
+                            className="relative h-6 pr-5 sm:h-6 md:pr-10"
+                            src={`${basePath}/images/company-logos/grayYC.png`}
+                            alt="Y Combinator"
+                          />
+                          <img
+                            className="relative h-6 pr-5 sm:h-6 md:pr-10"
+                            src={`${basePath}/images/company-logos/mozilla-transparent.png`}
+                            alt="Mozilla"
+                          />
+                          <img
+                            className="relative h-6 pr-5 sm:h-6 md:pr-10"
+                            src={`${basePath}/images/company-logos/coatue.png`}
+                            alt="Coatue"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
