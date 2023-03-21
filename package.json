@@ -4,21 +4,24 @@
   "version": "0.0.0",
   "license": "Apache-2.0",
   "private": true,
+  "engines": {
+    "node": "16.x"
+  },
   "workspaces": [
-    "apps/*",
+    "apps/web",
     "packages/*",
     "examples/*",
     "tests"
   ],
   "author": "Wesbitty, Inc.",
   "scripts": {
-    "build": "yarn workspaces run build",
-    "build:app": "yarn workspace web run build",
-    "build:docs": "yarn workspace docs run build",
-    "lint": "turbo run lint",
-    "dev": "turbo run dev --filter={apps/web}",
+    "build": "npm run build --workspaces --if-present",
+    "build:app": "npm run build -w=./apps/web",
+    "build:examples": "npm run build -w=./examples",
+    "build:packages": "npm run build -w=./packages",
+    "dev": "npm run dev -w=./apps/web",
     "prettier": "prettier --write \"**/*.{css,ts,tsx,md,mdx}\"",
-    "clean": "bash -c 'rm -rf examples/*/.turbo examples/*/.wesjet examples/*/.next packages/*/dist .vercel apps/*/.wesjet apps/*/.next  apps/*/.turbo'",
+    "clean": "bash -c 'rm -rf examples/*/.wesjet examples/*/.next packages/*/dist .vercel apps/*/.wesjet apps/*/.next'",
     "test": "jest"
   },
   "dependencies": {
@@ -39,6 +42,5 @@
     "ts-node": "^9.1.1",
     "tsx": "^3.7.1",
     "typescript": "^4.5.2"
-  },
-  "packageManager": "yarn@3.5.0"
+  }
 }

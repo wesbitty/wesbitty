@@ -1,6 +1,0 @@
-{
-  "extends": "@wesbitty/tsconfig/library.json",
-  "compilerOptions": {
-    "rootDir": "."
-  }
-}
