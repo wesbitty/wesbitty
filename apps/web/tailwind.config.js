@@ -3,7 +3,7 @@ const colors = require('tailwindcss/colors')
 const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette')
 const svgToDataUri = require('mini-svg-data-uri')
 
-module.exports = ({
+module.exports = {
   content: [
     './[blog]/**/*.{md,mdx}',
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -247,10 +247,10 @@ module.exports = ({
         xs: '480px',
       },
       fontFamily: {
-        default: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
-        cal: ["var(--font-cal)", ...defaultTheme.fontFamily.sans],
-        title: ["var(--font-title)", ...defaultTheme.fontFamily.sans],
-        mono: ["Consolas", ...defaultTheme.fontFamily.mono],
+        default: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
+        cal: ['var(--font-cal)', ...defaultTheme.fontFamily.sans],
+        title: ['var(--font-title)', ...defaultTheme.fontFamily.sans],
+        mono: ['Consolas', ...defaultTheme.fontFamily.mono],
       },
       backgroundImage: (theme) => ({
         squiggle: `url("${svgToDataUri(
@@ -273,8 +273,8 @@ module.exports = ({
   },
   plugins: [
     require('@tailwindcss/typography'),
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/line-clamp"),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
     function ({ addUtilities, addVariant }) {
       addUtilities({
         // prose (tailwind typography) helpers
@@ -285,4 +285,4 @@ module.exports = ({
       })
     },
   ],
-})
+}

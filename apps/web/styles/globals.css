@@ -191,7 +191,6 @@ table .thead--plans th {
   z-index: 5;
 }
 
-
 .video-container {
   @apply overflow-hidden rounded-xl border;
   position: relative;

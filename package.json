@@ -14,10 +14,10 @@
   "scripts": {
     "prebuild": "npm run generate --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
-    "build:app": "npm run build --workspace=apps/web/",
+    "build:app": "npm run build --workspace=apps/web",
     "build:examples": "npm run build --workspace=examples/*",
     "build:packages": "npm run build --workspace=packages/*",
-    "dev": "npm run dev --workspace=apps/web/",
+    "dev": "npm run dev --workspace=apps/web",
     "prettier": "prettier --write .",
     "clean": "bash -c 'rm -rf examples/*/.wesjet examples/*/.next packages/*/dist .vercel apps/*/.wesjet apps/*/.next'",
     "test": "jest"

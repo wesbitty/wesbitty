@@ -8,8 +8,6 @@ const HeaderFeature = () => {
   const { basePath } = useRouter()
 
   return (
-
-
     <div className="overflow-hidden">
       <Section className="pb-0 pt-24">
         <div className="relative">
@@ -17,28 +15,27 @@ const HeaderFeature = () => {
             <div className="mx-auto">
               <div className="lg:grid lg:grid-cols-12 lg:gap-16">
                 <div className="md:mx-auto md:max-w-2xl lg:col-span-6 lg:flex lg:items-center lg:text-left">
-                  <div
-                    className="space-y-12 sm:mx-auto md:w-3/4 lg:mx-0 lg:w-full"
-                  >
+                  <div className="space-y-12 sm:mx-auto md:w-3/4 lg:mx-0 lg:w-full">
                     <div>
                       <h1 className="text-gray-800 dark:text-white text-2xl sm:text-3xl sm:leading-none lg:text-4xl xl:text-5xl">
                         <span className="block">Build better app</span>
-                        <span className="text-brand-900 block md:ml-0">in a few steps.</span>
+                        <span className="text-blue-900 block md:ml-0">in a few steps.</span>
                       </h1>
                       <div>
-                        <p className="p mt-1.5 text-sm sm:mt-5 sm:text-base lg:text-lg ">
-                          Start your business website with Wesbitty to sell online, offline, and everywhere in between, no credit card required.
+                        <p className="mt-1.5 text-sm sm:mt-5 sm:text-base lg:text-lg ">
+                          Start your business website with Wesbitty to sell online, offline, and
+                          everywhere in between, no credit card required.
                         </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
                       <Link href="https://app.wesbitty.org" as="https://app.wesbitty.org" passHref>
-                        <Button as="a" size="small" className="text-white">
+                        <Button size="small" className="text-white bg-blue-600">
                           Start your project
                         </Button>
                       </Link>
                       <Link href="/docs" as="/docs" passHref>
-                        <Button as="a" size="small" type="default" icon={<IconBookOpen />}>
+                        <Button size="small" type="default" icon={<IconBookOpen />}>
                           Documentation
                         </Button>
                       </Link>
