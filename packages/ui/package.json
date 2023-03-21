@@ -8,8 +8,10 @@
   "files": [
     "dist"
   ],
-  "keywords": [],
-  "author": "Siddharth Venkatesh",
+  "keywords": [
+    "Components Libary"
+  ],
+  "author": "Wesbitty Inc",
   "scripts": {
     "prebuild": "node --experimental-modules src/lib/Icon/generate.js",
     "test": "echo \"Error: no test specified\" && exit 1",
