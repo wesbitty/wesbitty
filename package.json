@@ -1,11 +1,8 @@
 {
-  "name": "wesbitty",
-  "description": "We've Got Your Wishlist",
-  "version": "0.0.0",
-  "license": "Apache-2.0",
   "private": true,
+  "license": "Apache-2.0",
   "engines" : {
-    "node" : ">=18.15.0" 
+    "node": "16.x || 18.x || 19.x"
   },
   "workspaces": [
     "apps/web",
