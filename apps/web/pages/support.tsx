@@ -1,5 +1,5 @@
-import Container from '../components/Widget/Container'
-import { Default } from '../components/Widget/Default'
+import Container from '~/Widget/Container'
+import { Default } from '~/Widget/Default'
 import { Metadata } from '~/utils/Metadata'
 import Link from 'next/link'
 import {
@@ -16,8 +16,7 @@ import {
   Divider,
   IconMail,
 } from '@wesbitty/ui'
-import { Section } from '../components/Widget/Section'
-// Import Swiper styles if swiper used on page
+import { Section } from '~/Widget/Section'
 import 'swiper/swiper.min.css'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
@@ -42,7 +41,7 @@ const SupportPage = ({}: Props) => {
           url: `${Metadata.Url}/${router.pathname}`,
           images: [
             {
-              url: `${Metadata.Url}/brand/og-image.jpg`,
+              url: `${Metadata.Url}/brand/og-image.png`,
             },
           ],
         }}
