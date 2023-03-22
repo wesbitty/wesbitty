@@ -9,6 +9,8 @@
     "baseUrl": ".",
     "paths": {
       "~/components/*": ["components/*"],
+      "~/Layouts/*": ["components/Layouts/*"],
+      "~/Widget/*": ["components/Widget/*"],
       "~/data/*": ["wesbitty/data/*"],
       "~/utils/*": ["wesbitty/utils/*"],
       "wesjet/jetpack": ["./.wesjet/jetpack"],
