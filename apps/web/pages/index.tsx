@@ -1,6 +1,6 @@
-import { Default } from '~/components/Widget/Default'
-import Container from '~/components/Widget/Container'
-import HeaderFeature from '~/components/Features/Header'
+import { Default } from '~/Widget/Default'
+import Container from '~/Widget/Container'
+import { Hero } from '~/components/Features/Hero'
 
 type Props = {}
 
@@ -9,7 +9,7 @@ const Index = ({}: Props) => {
     <>
       <Default>
         <Container>
-          <HeaderFeature />
+          <Hero />
         </Container>
       </Default>
     </>
