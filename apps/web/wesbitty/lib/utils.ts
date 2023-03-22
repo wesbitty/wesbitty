@@ -14,7 +14,7 @@ export const getBlurDataURL = async (url: string | null) => {
   if (!url) {
     return null
   }
-  const prefix = 'https://res.cloudinary.com/vercel-platforms/image/upload/'
+  const prefix = 'https://res.cloudinary.com/wesbitty/image/upload/'
   const suffix = url.split(prefix)[1]
   const response = await fetch(`${prefix}w_210,e_blur:5000,q_auto,f_auto/${suffix}`)
   const buffer = await response.arrayBuffer()
