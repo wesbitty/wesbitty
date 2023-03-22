@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { Section } from '../Widget/Section'
 
-const HeaderFeature = () => {
+export const Hero = () => {
   const { basePath } = useRouter()
 
   return (
@@ -99,5 +99,3 @@ const HeaderFeature = () => {
     </div>
   )
 }
-
-export default HeaderFeature
