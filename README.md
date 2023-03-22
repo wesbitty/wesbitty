@@ -1,5 +1,3 @@
-# <p align="center">[Wesbitty Inc](https://wesbitty.com/)</p>
-
 <p align="center">
 <a href="https://wesbitty.com/">
     <picture>
