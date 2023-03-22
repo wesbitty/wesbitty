@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
-import SolutionsData from '../../../wesbitty/data/Solutions.json'
-import CaseStudiesData from '../../../wesbitty/data/CaseStudies.json'
+import SolutionsData from '~/data/Solutions.json'
+import CaseStudiesData from '~/data/CaseStudies.json'
 import { useRouter } from 'next/router'
-import ProductIcon from '../../icons/product'
+import ProductIcon from '~/components/Icons/product'
 import { Typography, Badge } from '@wesbitty/ui'
 import Link from 'next/link'
 

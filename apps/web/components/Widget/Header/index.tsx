@@ -5,9 +5,9 @@ import { Button, Badge, IconLogIn, IconHome, IconPackage } from '@wesbitty/ui'
 import FlyOut from '../UI/FlyOut'
 import Transition from '~/utils/transition'
 import SolutionsData from '~/data/Solutions.json'
-import Solutions from './Product'
-import Developers from './Developers'
-import Announcement from './Announcement'
+import Solutions from './Navigation/Product'
+import Developers from './Navigation/Developers'
+import Announcement from './Navigation/Announcement'
 
 const Header = () => {
   const [mounted, setMounted] = useState(false)
