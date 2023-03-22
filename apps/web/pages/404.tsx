@@ -11,13 +11,13 @@ import {
   Typography,
 } from '@wesbitty/ui'
 import Link from 'next/link'
-import { Default } from '../components/Widget/Default'
+import { Default } from '~/Widget/Default'
 import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import { Metadata } from '~/utils/Metadata'
-import { ErrorWidget } from '../components/Widget/Error'
-import { Section } from '../components/Widget/Section'
-import Container from '../components/Widget/Container'
+import { ErrorWidget } from '~/Widget/Error'
+import { Section } from '~/Widget/Section'
+import Container from '~/Widget/Container'
 
 const NotFound = () => {
   const Title = `Oops! Not Found | ${Metadata.Name}`
@@ -35,7 +35,7 @@ const NotFound = () => {
           url: `${Metadata.Url}/404`,
           images: [
             {
-              url: `${Metadata.Url}${basePath}/brand/og-image.jpg`,
+              url: `${Metadata.Url}${basePath}/brand/og-image.png`,
             },
           ],
         }}
