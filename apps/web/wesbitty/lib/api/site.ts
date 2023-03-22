@@ -91,8 +91,8 @@ export async function createSite(
         name: name,
         description: description,
         subdomain: sub.length > 0 ? sub : cuid(),
-        logo: '/logo.png',
-        image: `/placeholder.png`,
+        logo: '/brand/logo.png',
+        image: `/images/placeholder.png`,
         imageBlurhash: placeholderBlurhash,
         user: {
           connect: {
