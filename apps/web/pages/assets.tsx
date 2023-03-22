@@ -1,10 +1,10 @@
-import Container from 'components/Widget/Container'
+import Container from '~/Widget/Container'
 import { createClient } from '@supabase/supabase-js'
-import { Default } from '../components/Widget/Default'
+import { Default } from '~/Widget/Default'
 import { Button, Typography, IconDownload } from '@wesbitty/ui'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Section } from '../components/Widget/Section'
+import { Section } from '~/Widget/Section'
 import { NextSeo } from 'next-seo'
 import { Metadata } from '~/utils/Metadata'
 import Image from 'next/image'
@@ -29,7 +29,7 @@ const BrandPage = () => {
           url: `${Metadata.Url}/${router.pathname}`,
           images: [
             {
-              url: `${Metadata.Url}/brand/og-image.jpg`,
+              url: `${Metadata.Url}/brand/og-image.png`,
             },
           ],
         }}
