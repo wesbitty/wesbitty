@@ -3,17 +3,14 @@ import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import useSWR, { mutate } from 'swr'
-
-import BlurImage from '~/components/BlurImage'
+import BlurImage from '~/components/Image/BlurImage'
 import CloudinaryUploadWidget from '~/components/Cloudinary'
-import DomainCard from '~/components/app/DomainCard'
-import Layout from '~/components/app/Layout'
-import LoadingDots from '~/components/app/loading-dots'
+import DomainCard from '~/Layouts/Dashboard/DomainCard'
+import Layout from '~/Layouts/Dashboard/Layout'
+import LoadingDots from '~/Layouts/Dashboard/loading-dots'
 import Modal from '~/components/Modal'
-
 import { fetcher } from '~/lib/fetcher'
 import { HttpMethod } from '~/types'
-
 import type { Site } from '@prisma/client'
 
 interface SettingsData

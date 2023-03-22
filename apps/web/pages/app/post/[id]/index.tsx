@@ -4,15 +4,12 @@ import useSWR, { mutate } from 'swr'
 import { useDebounce } from 'use-debounce'
 import { useRouter } from 'next/router'
 import { useState, useEffect, useCallback } from 'react'
-
-import Layout from '~/components/app/Layout'
-import Loader from '~/components/app/Loader'
-import LoadingDots from '~/components/app/loading-dots'
+import Layout from '~/Layouts/Dashboard/Layout'
+import Loader from '~/Layouts/Dashboard/Loader'
+import LoadingDots from '~/Layouts/Dashboard/loading-dots'
 import { fetcher } from '~/lib/fetcher'
 import { HttpMethod } from '~/types'
-
 import type { ChangeEvent } from 'react'
-
 import type { WithSitePost } from '~/types'
 
 interface PostData {
