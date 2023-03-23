@@ -51,12 +51,15 @@ const BrandPage = () => {
           <Section>
             <div className="grid grid-cols-12 border dark:border-gray-600 rounded-lg shadow-small">
               <div className="col-span-12 lg:col-span-5">
-                <Image
-                  alt="Brand Assets"
-                  src={`/brand/logo-preview.jpg`}
-                  width="100"
-                  className="object-cover h-full rounded-l-lg"
-                />
+                <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+                  <Image
+                    alt="Brand Assets"
+                    src={`/brand/logo-preview.jpg`}
+                    layout="fill"
+                    objectFit="contain"
+                    className="object-cover h-full rounded-l-lg"
+                  />
+                </div>
               </div>
               <div className="col-span-12 lg:col-span-7 flex items-center">
                 <div className="p-16">
