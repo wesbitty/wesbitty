@@ -1,9 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev --port 4041",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "dev": "next dev --port 4041",
+    "clean": "bash -c 'rm -rf .next .wesjet'"
   },
   "dependencies": {
     "date-fns": "2.29.3",
