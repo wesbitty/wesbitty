@@ -44,8 +44,8 @@ const NotFound = () => {
           <Container>
             <main className="grid min-h-full place-items-center bg-white py-24 px-6 sm:py-32 lg:px-8">
               <div className="text-center">
-                <p className="flex items-center text-center font-semibold text-5xl mb-4 text-indigo-600">
-                  404 <IconFrown size="10"  type="secondary" />
+                <p className="font-semibold text-5xl mb-4 text-indigo-600">
+                  404 <IconFrown size="10" type="secondary" />
                 </p>
                 <h1 className="mt-4 text2xl font-bold tracking-tight text-gray-900 sm:text-5xl">
                   Page Not Found
