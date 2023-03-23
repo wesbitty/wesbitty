@@ -24,7 +24,7 @@ interface SettingsData
     | 'customDomain'
     | 'image'
     | 'imageBlurhash'
-  > {}
+  > { }
 
 export default function SiteSettings() {
   const router = useRouter()
@@ -160,7 +160,7 @@ export default function SiteSettings() {
       <div className="max-w-screen-xl mx-auto px-10 sm:px-20 mt-20 mb-16">
         <h1 className="font-cal text-5xl mb-12">Site Settings</h1>
         <div className="mb-28 flex flex-col space-y-12">
-          <div className="flex flex-col space-y-6">
+          <div className="flex flex-col space-y-4">
             <h2 className="font-cal text-2xl">Name</h2>
             <div className="border border-gray-700 rounded-lg overflow-hidden flex items-center max-w-lg">
               <input
@@ -178,7 +178,7 @@ export default function SiteSettings() {
               />
             </div>
           </div>
-          <div className="flex flex-col space-y-6">
+          <div className="flex flex-col space-y-4">
             <h2 className="font-cal text-2xl">Description</h2>
             <div className="border border-gray-700 rounded-lg overflow-hidden flex items-center max-w-lg">
               <textarea
@@ -196,7 +196,7 @@ export default function SiteSettings() {
               />
             </div>
           </div>
-          <div className="flex flex-col space-y-6">
+          <div className="flex flex-col space-y-4">
             <h2 className="font-cal text-2xl">Font</h2>
             <div className="border border-gray-700 rounded-lg overflow-hidden flex items-center max-w-lg">
               <select
@@ -215,7 +215,7 @@ export default function SiteSettings() {
               </select>
             </div>
           </div>
-          <div className="flex flex-col space-y-6">
+          <div className="flex flex-col space-y-4">
             <h2 className="font-cal text-2xl">Subdomain</h2>
             <div className="border border-gray-700 rounded-lg flex items-center max-w-lg">
               <input
@@ -241,7 +241,7 @@ export default function SiteSettings() {
               </p>
             )}
           </div>
-          <div className="flex flex-col space-y-6">
+          <div className="flex flex-col space-y-4">
             <h2 className="font-cal text-2xl">Custom Domain</h2>
             {settings?.customDomain ? (
               <DomainCard data={data} />
@@ -330,12 +330,11 @@ export default function SiteSettings() {
               </div>
             )}
           </div>
-          <div className="flex flex-col space-y-6 relative">
-            <h2 className="font-cal text-2xl">Thumbnail Image</h2>
+          <div className="flex flex-col space-y-4 relative">
+            <h2 className="font-cal text-2xl">Thumbnail</h2>
             <div
-              className={`${
-                data.image ? '' : 'animate-pulse bg-gray-300 h-150'
-              } relative mt-5 w-full border-2 border-gray-800 border-dashed rounded-md`}
+              className={`${data.image ? '' : 'animate-pulse bg-gray-300 min-h-full'
+                } relative mt-5 min-w-full border-2 border-gray-800 border-dashed rounded-md`}
             >
               <CloudinaryUploadWidget
                 callback={(e) =>
@@ -376,7 +375,7 @@ export default function SiteSettings() {
               )}
             </div>
             <div className="w-full h-10" />
-            <div className="flex flex-col space-y-6 max-w-lg">
+            <div className="flex flex-col space-y-4 max-w-lg">
               <h2 className="font-cal text-2xl">Delete Site</h2>
               <p>
                 Permanently delete your site and all of its contents from our platform. This action
@@ -430,11 +429,10 @@ export default function SiteSettings() {
             <button
               type="submit"
               disabled={deletingSite}
-              className={`${
-                deletingSite
+              className={`${deletingSite
                   ? 'cursor-not-allowed text-gray-400 bg-gray-50'
                   : 'bg-white text-gray-600 hover:text-black'
-              } w-full px-5 py-5 text-sm border-t border-l border-gray-300 rounded-br focus:outline-none focus:ring-0 transition-all ease-in-out duration-150`}
+                } w-full px-5 py-5 text-sm border-t border-l border-gray-300 rounded-br focus:outline-none focus:ring-0 transition-all ease-in-out duration-150`}
             >
               {deletingSite ? <LoadingDots /> : 'DELETE SITE'}
             </button>
@@ -449,11 +447,10 @@ export default function SiteSettings() {
               saveSiteSettings(data)
             }}
             disabled={saving || subdomainError !== null}
-            className={`${
-              saving || subdomainError
+            className={`${saving || subdomainError
                 ? 'cursor-not-allowed bg-gray-300 border-gray-300'
                 : 'bg-black hover:bg-white hover:text-black border-black'
-            } mx-2 rounded-md w-36 h-12 text-lg text-white border-2 focus:outline-none transition-all ease-in-out duration-150`}
+              } mx-2 rounded-md w-36 h-12 text-lg text-white border-2 focus:outline-none transition-all ease-in-out duration-150`}
           >
             {saving ? <LoadingDots /> : 'Save Changes'}
           </button>
