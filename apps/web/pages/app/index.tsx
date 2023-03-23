@@ -12,6 +12,7 @@ import { fetcher } from '~/lib/fetcher'
 import { HttpMethod } from '~/types'
 import type { FormEvent } from 'react'
 import type { Site } from '@prisma/client'
+import { Section } from '~/Widget/Section'
 
 export default function AppIndex() {
   const [showModal, setShowModal] = useState<boolean>(false)
@@ -150,14 +151,14 @@ export default function AppIndex() {
         </form>
       </Modal>
 
-      <div className="py-20 max-w-screen-xl mx-auto px-10 sm:px-20">
+      <Section>
         <div className="flex flex-col sm:flex-row space-y-5 sm:space-y-0 justify-between items-center">
           <h1 className="font-cal text-2xl">Dashboard</h1>
           <button
             onClick={() => setShowModal(true)}
-            className="font-cal text-lg w-3/4 sm:w-40 tracking-wide text-white bg-black border-black border-2 px-5 py-3 hover:bg-white hover:text-black transition-all ease-in-out duration-150"
+            className="font-cal inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:ring-gray-400"
           >
-            New Site <span className="ml-2">＋</span>
+            New Site <span className="-mr-1 ml-1.5 h-5 w-5 text-gray-400">＋</span>
           </button>
         </div>
         <div className="my-10 grid gap-y-10">
@@ -232,7 +233,7 @@ export default function AppIndex() {
             ))
           )}
         </div>
-      </div>
+      </Section>
     </Layout>
   )
 }
