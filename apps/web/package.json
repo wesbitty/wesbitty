@@ -65,7 +65,6 @@
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.10",
-    "@wesbitty/config": "*",
     "autoprefixer": "^10.4.13",
     "file-loader": "^6.2.0",
     "inquirer": "^8.1.1",
