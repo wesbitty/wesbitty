@@ -1,24 +1,12 @@
 module.exports = {
-  extends: [
-    'next',
-    'react-hooks',
-    'prettier'
-  ],
+  extends: ['next', 'prettier'],
   settings: {
     next: {
-      rootDir: ['apps/*/', 'packages/*/'],
+      rootDir: ["apps/*/", "packages/*/"],
     },
   },
   rules: {
-    '@next/next/no-html-link-for-pages': 'off',
-    '@next/next/no-page-custom-font': 'off',
-    "react/no-unescaped-entities": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
+    "@next/next/no-html-link-for-pages": "off",
+    "react/jsx-key": "off",
   },
-  parserOptions: {
-    babelOptions: {
-      presets: [require.resolve('next/babel')],
-    },
-  },
-}
+};
