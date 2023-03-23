@@ -22,25 +22,20 @@ module.exports = {
       dark: theme('colors.gray.600', 'currentColor'),
     }),
     extend: {
+      screens: {
+        xs: '480px',
+      },
       colors: {
+        current: "currentColor",
+        success: '#0070f3',
+        cyan: '#79FFE1',
         'gray-light': '#7B7F86',
         'gray-dark': '#7B7F86',
         'accent-1': '#FAFAFA',
         'accent-2': '#EAEAEA',
         'accent-7': '#333',
-        success: '#0070f3',
-        cyan: '#79FFE1',
-        brand: {
-          100: '#82dab0',
-          200: '#69d3a0',
-          300: '#50cb90',
-          400: '#C5F1DD',
-          500: '#9FE7C7',
-          600: '#65D9A5',
-          700: '#3ECF8E',
-          800: '#38BC81',
-          900: '#10633E',
-        },
+        gray: colors.gray,
+        brand: colors.green,
         dark: {
           100: '#eeeeee',
           200: '#e0e0e0',
@@ -52,17 +47,21 @@ module.exports = {
           800: '#181818',
           900: '#0f0f0f',
         },
-        gray: {
-          100: '#eeeeee',
-          200: '#e0e0e0',
-          300: '#bbbbbb',
-          400: '#666666',
-          500: '#444444',
-          600: '#2a2a2a',
-          700: '#1f1f1f',
-          800: '#181818',
-          900: '#0f0f0f',
-        },
+      },
+      width: {
+        1536: "1536px",
+      },
+      height: {
+        150: "37.5rem",
+      },
+      margin: {
+        30: "7.5rem",
+      },
+      fontFamily: {
+        default: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
+        cal: ['var(--font-cal)', ...defaultTheme.fontFamily.sans],
+        title: ['var(--font-title)', ...defaultTheme.fontFamily.sans],
+        mono: ['Consolas', ...defaultTheme.fontFamily.mono],
       },
       typography: ({ theme }) => ({
         DEFAULT: {
@@ -109,13 +108,18 @@ module.exports = {
             // reset all header font weights
             'h1, h2, h3, h4, h5': {
               fontWeight: '400',
+              fontFamily: "Cal Sans",
             },
             h2: {
               fontWeight: '400',
+              fontFamily: "Cal Sans",
             },
             p: {
               fontWeight: '400',
+              fontFamily: "Cal Sans",
             },
+            "blockquote p:first-of-type::before": { content: "none" },
+            "blockquote p:first-of-type::after": { content: "none" },
             pre: {
               background: 'none',
               padding: 0,
@@ -161,7 +165,6 @@ module.exports = {
               alignItems: 'center',
               justifyContent: 'center',
             },
-
             'p img': {
               border: '1px solid ' + theme('colors.slate[400]'),
               borderRadius: '4px',
@@ -198,58 +201,7 @@ module.exports = {
             },
           },
         },
-
-        toc: {
-          css: {
-            ul: {
-              'list-style-type': 'none',
-              'padding-left': 0,
-              margin: 0,
-              li: {
-                'padding-left': 0,
-              },
-              a: {
-                display: 'block',
-                marginBottom: '0.4rem',
-                'text-decoration': 'none',
-                fontSize: '0.8rem',
-                fontWeight: '200',
-                color: theme('colors.slate[900]'),
-                '&:hover': {
-                  color: theme('colors.slate[900]'),
-                },
-                'font-weight': '400',
-              },
-              // margin: 0,
-              ul: {
-                'list-style-type': 'none',
-                li: {
-                  marginTop: '0.2rem',
-                  marginBottom: '0.2rem',
-                  'padding-left': '0 !important',
-                  'margin-left': '0.5rem',
-                },
-                a: {
-                  fontWeight: '200',
-                  color: theme('colors.slate[800]'),
-                  '&:hover': {
-                    color: theme('colors.slate[900]'),
-                  },
-                },
-              },
-            },
-          },
-        },
       }),
-      screens: {
-        xs: '480px',
-      },
-      fontFamily: {
-        default: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
-        cal: ['var(--font-cal)', ...defaultTheme.fontFamily.sans],
-        title: ['var(--font-title)', ...defaultTheme.fontFamily.sans],
-        mono: ['Consolas', ...defaultTheme.fontFamily.mono],
-      },
       backgroundImage: (theme) => ({
         squiggle: `url("${svgToDataUri(
           `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" enable-background="new 0 0 6 3" width="6" height="3" fill="${theme(
@@ -258,12 +210,24 @@ module.exports = {
         )}")`,
       }),
       keyframes: {
+        wiggle: {
+          "0%, 100%": {
+            transform: "translateX(0%)",
+            transformOrigin: "50% 50%",
+          },
+          "15%": { transform: "translateX(-6px) rotate(-6deg)" },
+          "30%": { transform: "translateX(9px) rotate(6deg)" },
+          "45%": { transform: "translateX(-9px) rotate(-3.6deg)" },
+          "60%": { transform: "translateX(3px) rotate(2.4deg)" },
+          "75%": { transform: "translateX(-2px) rotate(-1.2deg)" },
+        },
         'flash-code': {
           '0%': { backgroundColor: 'rgba(63, 207, 142, 0.1)' },
           '100%': { backgroundColor: 'transparent' },
         },
       },
       animation: {
+        wiggle: "wiggle 0.8s both",
         'flash-code': 'flash-code 1s forwards',
         'flash-code-slow': 'flash-code 2s forwards',
       },
@@ -273,14 +237,5 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
     require('@tailwindcss/line-clamp'),
-    function ({ addUtilities, addVariant }) {
-      addUtilities({
-        // prose (tailwind typography) helpers
-        // useful for removing margins in prose styled sections
-        '.prose--remove-p-margin p': {
-          margin: '0',
-        },
-      })
-    },
   ],
 }
