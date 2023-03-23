@@ -51,9 +51,10 @@ const BrandPage = () => {
           <Section>
             <div className="grid grid-cols-12 border dark:border-gray-600 rounded-lg shadow-small">
               <div className="col-span-12 lg:col-span-5">
-                <img
+                <Image
+                  alt='Brand Assets'
                   src={`/brand/logo-preview.jpg`}
-                  width="100%"
+                  width="100"
                   className="object-cover h-full rounded-l-lg"
                 />
               </div>

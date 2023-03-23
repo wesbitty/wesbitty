@@ -26,7 +26,7 @@ module.exports = {
         xs: '480px',
       },
       colors: {
-        current: "currentColor",
+        current: 'currentColor',
         success: '#0070f3',
         cyan: '#79FFE1',
         'gray-light': '#7B7F86',
@@ -49,13 +49,13 @@ module.exports = {
         },
       },
       width: {
-        1536: "1536px",
+        1536: '1536px',
       },
       height: {
-        150: "37.5rem",
+        150: '37.5rem',
       },
       margin: {
-        30: "7.5rem",
+        30: '7.5rem',
       },
       fontFamily: {
         default: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
@@ -108,18 +108,18 @@ module.exports = {
             // reset all header font weights
             'h1, h2, h3, h4, h5': {
               fontWeight: '400',
-              fontFamily: "Cal Sans",
+              fontFamily: 'Cal Sans',
             },
             h2: {
               fontWeight: '400',
-              fontFamily: "Cal Sans",
+              fontFamily: 'Cal Sans',
             },
             p: {
               fontWeight: '400',
-              fontFamily: "Cal Sans",
+              fontFamily: 'Cal Sans',
             },
-            "blockquote p:first-of-type::before": { content: "none" },
-            "blockquote p:first-of-type::after": { content: "none" },
+            'blockquote p:first-of-type::before': { content: 'none' },
+            'blockquote p:first-of-type::after': { content: 'none' },
             pre: {
               background: 'none',
               padding: 0,
@@ -211,15 +211,15 @@ module.exports = {
       }),
       keyframes: {
         wiggle: {
-          "0%, 100%": {
-            transform: "translateX(0%)",
-            transformOrigin: "50% 50%",
+          '0%, 100%': {
+            transform: 'translateX(0%)',
+            transformOrigin: '50% 50%',
           },
-          "15%": { transform: "translateX(-6px) rotate(-6deg)" },
-          "30%": { transform: "translateX(9px) rotate(6deg)" },
-          "45%": { transform: "translateX(-9px) rotate(-3.6deg)" },
-          "60%": { transform: "translateX(3px) rotate(2.4deg)" },
-          "75%": { transform: "translateX(-2px) rotate(-1.2deg)" },
+          '15%': { transform: 'translateX(-6px) rotate(-6deg)' },
+          '30%': { transform: 'translateX(9px) rotate(6deg)' },
+          '45%': { transform: 'translateX(-9px) rotate(-3.6deg)' },
+          '60%': { transform: 'translateX(3px) rotate(2.4deg)' },
+          '75%': { transform: 'translateX(-2px) rotate(-1.2deg)' },
         },
         'flash-code': {
           '0%': { backgroundColor: 'rgba(63, 207, 142, 0.1)' },
@@ -227,7 +227,7 @@ module.exports = {
         },
       },
       animation: {
-        wiggle: "wiggle 0.8s both",
+        wiggle: 'wiggle 0.8s both',
         'flash-code': 'flash-code 1s forwards',
         'flash-code-slow': 'flash-code 2s forwards',
       },

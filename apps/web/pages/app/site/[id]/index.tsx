@@ -56,10 +56,11 @@ export default function SiteIndex() {
               setCreatingPost(true)
               createPost(siteId as string)
             }}
-            className={`${creatingPost
+            className={`${
+              creatingPost
                 ? 'cursor-not-allowed bg-gray-300 border-gray-300'
                 : 'text-white bg-black hover:bg-white hover:text-black border-black'
-              } font-cal text-lg w-1/2 sm:w-32 tracking-wide border-2 px-3 py-2 transition-all ease-in-out duration-150`}
+            } font-cal text-lg w-1/2 sm:w-32 tracking-wide border-2 px-3 py-2 transition-all ease-in-out duration-150`}
           >
             {creatingPost ? (
               <LoadingDots />

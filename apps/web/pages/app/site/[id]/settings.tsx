@@ -24,7 +24,7 @@ interface SettingsData
     | 'customDomain'
     | 'image'
     | 'imageBlurhash'
-  > { }
+  > {}
 
 export default function SiteSettings() {
   const router = useRouter()
@@ -333,8 +333,9 @@ export default function SiteSettings() {
           <div className="flex flex-col space-y-4 relative">
             <h2 className="font-cal text-2xl">Thumbnail</h2>
             <div
-              className={`${data.image ? '' : 'animate-pulse bg-gray-300 min-h-full'
-                } relative mt-5 min-w-full border-2 border-gray-800 border-dashed rounded-md`}
+              className={`${
+                data.image ? '' : 'animate-pulse bg-gray-300 min-h-full'
+              } relative mt-5 min-w-full border-2 border-gray-800 border-dashed rounded-md`}
             >
               <CloudinaryUploadWidget
                 callback={(e) =>
@@ -429,10 +430,11 @@ export default function SiteSettings() {
             <button
               type="submit"
               disabled={deletingSite}
-              className={`${deletingSite
+              className={`${
+                deletingSite
                   ? 'cursor-not-allowed text-gray-400 bg-gray-50'
                   : 'bg-white text-gray-600 hover:text-black'
-                } w-full px-5 py-5 text-sm border-t border-l border-gray-300 rounded-br focus:outline-none focus:ring-0 transition-all ease-in-out duration-150`}
+              } w-full px-5 py-5 text-sm border-t border-l border-gray-300 rounded-br focus:outline-none focus:ring-0 transition-all ease-in-out duration-150`}
             >
               {deletingSite ? <LoadingDots /> : 'DELETE SITE'}
             </button>
@@ -447,10 +449,11 @@ export default function SiteSettings() {
               saveSiteSettings(data)
             }}
             disabled={saving || subdomainError !== null}
-            className={`${saving || subdomainError
+            className={`${
+              saving || subdomainError
                 ? 'cursor-not-allowed bg-gray-300 border-gray-300'
                 : 'bg-black hover:bg-white hover:text-black border-black'
-              } mx-2 rounded-md w-36 h-12 text-lg text-white border-2 focus:outline-none transition-all ease-in-out duration-150`}
+            } mx-2 rounded-md w-36 h-12 text-lg text-white border-2 focus:outline-none transition-all ease-in-out duration-150`}
           >
             {saving ? <LoadingDots /> : 'Save Changes'}
           </button>
