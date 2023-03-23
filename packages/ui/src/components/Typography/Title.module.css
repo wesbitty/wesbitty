@@ -22,6 +22,3 @@ h4.sbui-typography-title {
 h5.sbui-typography-title {
   @apply text-base;
 }
-/* a {
-  @apply text-blue-600 underline;
-} */

@@ -1,16 +1,14 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { useRouter } from 'next/router'
-
-import BlogCard from '~/components/BlogCard'
-import BlurImage from '~/components/BlurImage'
-import Examples from '~/components/mdx/Examples'
-import Layout from '~/components/sites/Layout'
-import Loader from '~/components/sites/Loader'
+import BlogCard from '~/components/Cards/BlogCard'
+import BlurImage from '~/components/Image/BlurImage'
+import Examples from '~/Layouts/MDX/Examples'
+import Layout from '~/Layouts/Sites/Layout'
+import Loader from '~/Layouts/Sites/Loader'
 import prisma from '~/lib/prisma'
-import Tweet from '~/components/mdx/Tweet'
+import Tweet from '~/Layouts/MDX/Tweet'
 import { replaceExamples, replaceLinks, replaceTweets } from '~/lib/remark-plugins'
-
 import type { AdjacentPost, Meta, _SiteSlugData } from '~/types'
 import type { GetStaticPaths, GetStaticProps } from 'next'
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
@@ -45,7 +43,7 @@ export default function Post({ stringifiedAdjacentPosts, stringifiedData }: Post
 
   const meta = {
     description: data.description,
-    logo: '/logo.png',
+    logo: '/brand/logo.png',
     ogImage: data.image,
     ogUrl: `https://${data.site?.subdomain}.wesbitty.org/${data.slug}`,
     title: data.title,

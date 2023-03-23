@@ -9,6 +9,8 @@
     "baseUrl": ".",
     "paths": {
       "~/components/*": ["components/*"],
+      "~/Layouts/*": ["components/Layouts/*"],
+      "~/Widget/*": ["components/Widget/*"],
       "~/data/*": ["wesbitty/data/*"],
       "~/utils/*": ["wesbitty/utils/*"],
       "wesjet/jetpack": ["./.wesjet/jetpack"],
@@ -17,11 +19,7 @@
       "~/types": ["wesbitty/types/index"],
       "~/types/*": ["wesbitty/types/*"]
     },
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "noEmit": true,
     "incremental": true,
@@ -35,11 +33,6 @@
       }
     ]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts", "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".wesjet/jetpack"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".wesjet/jetpack"],
   "exclude": ["node_modules"]
 }

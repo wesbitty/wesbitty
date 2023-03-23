@@ -2,13 +2,11 @@ import Link from 'next/link'
 import useSWR from 'swr'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-
-import BlurImage from '~/components/BlurImage'
-import Layout from '~/components/app/Layout'
-import LoadingDots from '~/components/app/loading-dots'
+import BlurImage from '~/components/Image/BlurImage'
+import Layout from '~/Layouts/Dashboard/Layout'
+import LoadingDots from '~/Layouts/Dashboard/loading-dots'
 import { fetcher } from '~/lib/fetcher'
 import { HttpMethod } from '~/types'
-
 import type { Post, Site } from '@prisma/client'
 
 interface SitePostData {

@@ -30,7 +30,6 @@
 .sbui-typography-text-disabled {
   @apply text-gray-300;
   @apply dark:text-gray-400;
-  /* color: rgba(0,0,0,.25)', */
   cursor: not-allowed;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -56,7 +55,6 @@ mark.sbui-typography-text {
 }
 
 code.sbui-typography-text {
-  /* margin: 0 .2em; */
   padding: 0.2em 0.4em 0.1em;
   /* font-size: 85%; */
   background: hsla(0, 0%, 58.8%, 0.1);
@@ -65,7 +63,6 @@ code.sbui-typography-text {
 }
 
 kbd.sbui-typography-text {
-  /* margin: 0 .2em; */
   padding: 0.15em 0.4em 0.1em;
   /* font-size: 90%; */
   background: hsla(0, 0%, 58.8%, 0.06);

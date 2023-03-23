@@ -1,13 +1,11 @@
-import Layout from '~/components/app/Layout'
+import Layout from '~/Layouts/Dashboard/Layout'
 import toast, { Toaster } from 'react-hot-toast'
-import BlurImage from '~/components/BlurImage'
+import BlurImage from '~/components/Image/BlurImage'
 import CloudinaryUploadWidget from '~/components/Cloudinary'
-import LoadingDots from '~/components/app/loading-dots'
+import LoadingDots from '~/Layouts/Dashboard/loading-dots'
 import { HttpMethod } from '~/types'
-
 import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
-
 import type { UserSettings } from '~/types'
 
 export default function AppSettings() {
@@ -49,7 +47,7 @@ export default function AppSettings() {
         <div className="max-w-screen-xl mx-auto px-10 sm:px-20 mt-10 mb-16">
           <h1 className="font-cal text-5xl mb-12">Settings</h1>
           <div className="mb-28 flex flex-col space-y-12">
-            <div className="space-y-6">
+            <div className="space-y-4">
               <h2 className="font-cal text-2xl">Name</h2>
               <div className="border border-gray-700 rounded-lg flex items-center max-w-lg overflow-hidden">
                 <input
@@ -67,7 +65,7 @@ export default function AppSettings() {
                 />
               </div>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-4">
               <h2 className="font-cal text-2xl">Email</h2>
               <div className="border border-gray-700 rounded-lg flex items-center max-w-lg overflow-hidden">
                 <input
@@ -85,7 +83,7 @@ export default function AppSettings() {
                 />
               </div>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-4">
               <h2 className="font-cal text-2xl">Display Picture</h2>
               <div
                 className={`${

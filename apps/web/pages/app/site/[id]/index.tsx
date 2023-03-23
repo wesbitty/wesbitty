@@ -2,13 +2,11 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import Link from 'next/link'
 import useSWR from 'swr'
-
-import BlurImage from '~/components/BlurImage'
-import Layout from '~/components/app/Layout'
-import LoadingDots from '~/components/app/loading-dots'
+import BlurImage from '~/components/Image/BlurImage'
+import Layout from '~/Layouts/Dashboard/Layout'
+import LoadingDots from '~/Layouts/Dashboard/loading-dots'
 import { fetcher } from '~/lib/fetcher'
 import { HttpMethod } from '~/types'
-
 import type { Post, Site } from '@prisma/client'
 
 interface SitePostData {
@@ -50,9 +48,9 @@ export default function SiteIndex() {
 
   return (
     <Layout>
-      <div className="py-20 max-w-screen-xl mx-auto px-10 sm:px-20">
-        <div className="flex flex-col sm:flex-row space-y-5 sm:space-y-0 justify-between items-center">
-          <h1 className="font-cal text-5xl">Posts for {data ? data?.site?.name : '...'}</h1>
+      <div className="py-16 max-w-screen-xl mx-auto px-10 sm:px-20">
+        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 justify-between items-center">
+          <h1 className="font-cal text-2xl">Posts</h1>
           <button
             onClick={() => {
               setCreatingPost(true)
@@ -62,7 +60,7 @@ export default function SiteIndex() {
               creatingPost
                 ? 'cursor-not-allowed bg-gray-300 border-gray-300'
                 : 'text-white bg-black hover:bg-white hover:text-black border-black'
-            } font-cal text-lg w-3/4 sm:w-40 tracking-wide border-2 px-5 py-3 transition-all ease-in-out duration-150`}
+            } font-cal text-lg w-1/2 sm:w-32 tracking-wide border-2 px-3 py-2 transition-all ease-in-out duration-150`}
           >
             {creatingPost ? (
               <LoadingDots />

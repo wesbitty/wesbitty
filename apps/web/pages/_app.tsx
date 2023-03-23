@@ -5,7 +5,6 @@ import { cal, inter } from '~/styles/fonts'
 import cx from 'classnames'
 import { useRouter } from 'next/router'
 import '~/styles/globals.css'
-
 import type { AppProps } from 'next/app'
 import { Metadata } from '~/utils/Metadata'
 import { DefaultSeo } from 'next-seo'
@@ -28,7 +27,7 @@ export default function App({
           site_name: `${Metadata.Name}`,
           images: [
             {
-              url: `${Metadata.Url}${basePath}/brand/og-image.jpg`,
+              url: `${Metadata.Url}${basePath}/brand/og-image.png`,
               width: 800,
               height: 600,
               alt: 'Wesbitty Og Image',

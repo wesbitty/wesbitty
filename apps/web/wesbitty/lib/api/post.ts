@@ -128,7 +128,7 @@ export async function createPost(
   try {
     const response = await prisma.post.create({
       data: {
-        image: `/placeholder.png`,
+        image: `/images/placeholder.png`,
         imageBlurhash: placeholderBlurhash,
         site: {
           connect: {

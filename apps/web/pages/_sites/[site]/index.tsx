@@ -1,11 +1,10 @@
-import Layout from '~/components/sites/Layout'
+import Layout from '~/Layouts/Sites/Layout'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import BlurImage from '~/components/BlurImage'
-import BlogCard from '~/components/BlogCard'
-import Loader from '~/components/sites/Loader'
+import BlurImage from '~/components/Image/BlurImage'
+import BlogCard from '~/components/Cards/BlogCard'
+import Loader from '~/Layouts/Sites/Loader'
 import prisma from '~/lib/prisma'
-
 import type { GetStaticPaths, GetStaticProps } from 'next'
 import type { _SiteData, Meta } from '~/types'
 import type { ParsedUrlQuery } from 'querystring'
@@ -28,7 +27,7 @@ export default function Index({ stringifiedData }: IndexProps) {
   const meta = {
     title: data.name,
     description: data.description,
-    logo: '/logo.png',
+    logo: '/brand/logo.png',
     ogImage: data.image,
     ogUrl: data.customDomain ? data.customDomain : `https://${data.subdomain}.wesbitty.org`,
   } as Meta
@@ -89,7 +88,7 @@ export default function Index({ stringifiedData }: IndexProps) {
         ) : (
           <div className="flex flex-col justify-center items-center py-20">
             <BlurImage
-              src="/empty-state.png"
+              src="/images/empty-state.png"
               alt="No Posts"
               width={613}
               height={420}

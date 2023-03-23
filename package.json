@@ -1,7 +1,7 @@
 {
   "private": true,
   "license": "Apache-2.0",
-  "engines" : {
+  "engines": {
     "node": "16.x || 18.x || 19.x"
   },
   "workspaces": [
@@ -12,33 +12,32 @@
   ],
   "author": "Wesbitty, Inc.",
   "scripts": {
-    "prebuild": "npm run generate --workspaces --if-present",
+    "prebuild": "npm run prebuild --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
-    "build:app": "npm run build -w=./apps/web",
-    "build:examples": "npm run build -w=./examples",
-    "build:packages": "npm run build -w=./packages",
-    "dev": "npm run dev -w=./apps/web",
-    "prettier": "prettier --write \"**/*.{css,ts,tsx,md,mdx}\"",
-    "clean": "bash -c 'rm -rf examples/*/.wesjet examples/*/.next packages/*/dist .vercel apps/*/.wesjet apps/*/.next'",
+    "build:app": "npm run build --workspace=apps/web",
+    "build:examples": "npm run build --workspace=examples/*",
+    "build:packages": "npm run build --workspace=packages/*",
+    "dev": "npm run dev --workspace=apps/web",
+    "prettier": "prettier --write .",
+    "clean": "npm run clean --workspaces --if-present",
     "test": "jest"
   },
   "dependencies": {
-    "@mdx-js/react": "^2.1.1",
-    "mini-svg-data-uri": "^1.4.4"
+    "@mdx-js/react": "^2.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.19.1",
     "@babel/preset-typescript": "^7.16.6",
     "@types/jest": "^27.0.3",
-    "axios": "^0.24.0",
     "babel-jest": "^27.3.1",
-    "dotenv": "^10.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "workspace:*",
     "jest": "^27.3.1",
-    "prettier": "^2.6.2",
+    "prettier": "^2.5.1",
     "ts-jest": "^27.0.7",
     "ts-node": "^9.1.1",
-    "tsx": "^3.7.1",
-    "typescript": "^4.5.2"
+    "tsx": "3.7.1",
+    "typescript": "4.8.4"
   }
 }

@@ -2,18 +2,15 @@ import toast, { Toaster } from 'react-hot-toast'
 import useSWR from 'swr'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
-
-import BlurImage from '~/components/BlurImage'
+import BlurImage from '~/components/Image/BlurImage'
 import CloudinaryUploadWidget from '~/components/Cloudinary'
-import Layout from '~/components/app/Layout'
-import Loader from '~/components/app/Loader'
-import LoadingDots from '~/components/app/loading-dots'
+import Layout from '~/Layouts/Dashboard/Layout'
+import Loader from '~/Layouts/Dashboard/Loader'
+import LoadingDots from '~/Layouts/Dashboard/loading-dots'
 import Modal from '~/components/Modal'
 import { fetcher } from '~/lib/fetcher'
 import { HttpMethod } from '~/types'
-
 import type { ChangeEvent } from 'react'
-
 import type { WithSitePost } from '~/types'
 import { placeholderBlurhash } from '~/lib/utils'
 
@@ -120,17 +117,17 @@ export default function PostSettings() {
             duration: 10000,
           }}
         />
-        <div className="max-w-screen-xl mx-auto px-10 sm:px-20 mt-20 mb-16">
-          <h1 className="font-cal text-5xl mb-12">Post Settings</h1>
+        <div className="max-w-screen-xl mx-auto px-10 sm:px-20 mt-20 mb-8">
+          <h1 className="font-cal text-2xl mb-6">Post Settings</h1>
           <div className="mb-28 flex flex-col space-y-12">
-            <div className="space-y-6">
-              <h2 className="font-cal text-2xl">Post Slug</h2>
+            <div className="space-y-4">
+              <h2 className="font-cal text-sm font-medium">Post Slug</h2>
               <div className="border border-gray-700 rounded-lg flex items-center max-w-lg">
-                <span className="px-5 font-cal rounded-l-lg border-r border-gray-600 whitespace-nowrap">
+                <span className="px-3 font-cal rounded-l-lg border-r border-gray-600 whitespace-nowrap">
                   {settings?.site?.subdomain}.wesbitty.org/
                 </span>
                 <input
-                  className="w-full px-5 py-3 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-none rounded-r-lg placeholder-gray-400"
+                  className="w-full px-3 py-2 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-none rounded-r-lg placeholder-gray-400"
                   type="text"
                   name="slug"
                   placeholder="post-slug"
@@ -141,12 +138,12 @@ export default function PostSettings() {
                 />
               </div>
             </div>
-            <div className="space-y-6">
-              <h2 className="font-cal text-2xl">Thumbnail Image</h2>
+            <div className="space-y-4">
+              <h2 className="font-cal text-sm font-medium">Thumbnail</h2>
               <div
                 className={`${
-                  data.image ? '' : 'animate-pulse bg-gray-300 h-150'
-                } relative mt-5 w-full border-2 border-gray-800 border-dashed rounded-md`}
+                  data.image ? '' : 'animate-pulse bg-gray-300 h-auto'
+                } relative mt-5 w-auto border-2 border-gray-800 border-dashed rounded-md`}
               >
                 <CloudinaryUploadWidget
                   callback={(e) =>
@@ -188,7 +185,7 @@ export default function PostSettings() {
               </div>
 
               <div className="w-full h-10" />
-              <div className="flex flex-col space-y-6 max-w-lg">
+              <div className="flex flex-col space-y-4 max-w-lg">
                 <h2 className="font-cal text-2xl">Delete Post</h2>
                 <p>
                   Permanently delete your post and all of its contents from our platform. This

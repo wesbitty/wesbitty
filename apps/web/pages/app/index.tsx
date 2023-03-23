@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
-import Layout from '~/components/app/Layout'
-import BlurImage from '~/components/BlurImage'
+import Layout from '~/Layouts/Dashboard/Layout'
+import BlurImage from '~/components/Image/BlurImage'
 import Modal from '~/components/Modal'
-import LoadingDots from '~/components/app/loading-dots'
+import LoadingDots from '~/Layouts/Dashboard/loading-dots'
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
@@ -10,7 +10,6 @@ import useSWR from 'swr'
 import { useDebounce } from 'use-debounce'
 import { fetcher } from '~/lib/fetcher'
 import { HttpMethod } from '~/types'
-
 import type { FormEvent } from 'react'
 import type { Site } from '@prisma/client'
 
@@ -153,7 +152,7 @@ export default function AppIndex() {
 
       <div className="py-20 max-w-screen-xl mx-auto px-10 sm:px-20">
         <div className="flex flex-col sm:flex-row space-y-5 sm:space-y-0 justify-between items-center">
-          <h1 className="font-cal text-5xl">My Sites</h1>
+          <h1 className="font-cal text-2xl">Dashboard</h1>
           <button
             onClick={() => setShowModal(true)}
             className="font-cal text-lg w-3/4 sm:w-40 tracking-wide text-white bg-black border-black border-2 px-5 py-3 hover:bg-white hover:text-black transition-all ease-in-out duration-150"

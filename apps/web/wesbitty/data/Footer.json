@@ -4,36 +4,40 @@
     "elements": [
       {
         "text": "Wesjet",
-        "href": "/product/wesjet"
+        "href": "/products/wesjet"
       },
       {
-        "text": "Brand Assets",
-        "href": "/brand/assets"
+        "text": "Pricing",
+        "href": "/pricing"
       },
       {
-        "text": "Api Functions",
-        "href": "#"
+        "text": "FAQ",
+        "href": "/faq"
       }
     ]
   },
   {
-    "title": "About",
+    "title": "Company",
     "elements": [
       {
         "text": "Wesbitty, Inc",
-        "href": "/about/wesbitty"
+        "href": "/about"
       },
       {
         "text": "Investors",
-        "href": "/about/investors"
+        "href": "/investors"
+      },
+      {
+        "text": "Careers",
+        "href": "/careers"
       },
       {
         "text": "Policies",
-        "href": "/policy"
+        "href": "/policies"
       },
       {
-        "text": "Terms of Use",
-        "href": "/about/terms"
+        "text": "Brand Assets",
+        "href": "/assets"
       }
     ]
   },
@@ -56,15 +60,15 @@
     ]
   },
   {
-    "title": "Help",
+    "title": "Help ",
     "elements": [
       {
-        "text": "Help Center",
+        "text": "Technical Support",
         "href": "/support"
       },
       {
         "text": "Privacy settings",
-        "href": "/server"
+        "href": "#"
       }
     ]
   }
