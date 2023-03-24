@@ -8,6 +8,6 @@ tasks:
 
   - name: Install Deps
   - init: |
-     npm install
-     npm run build
+      npm install
+      npm run build
     command: npm run prettier
