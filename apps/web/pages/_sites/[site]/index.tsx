@@ -138,8 +138,6 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
         NOT: {
           customDomain: null,
         },
-        // you can remove this if you want to generate all sites at build time
-        customDomain: 'platformize.co',
       },
       select: {
         customDomain: true,
