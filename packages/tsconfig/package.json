@@ -1,9 +1,28 @@
 {
-  "name": "@wesbitty/tsconfig",
-  "version": "0.0.0",
+  "name": "tsconfig",
+  "version": "0.0.1-beta",
   "private": true,
   "license": "MIT",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "description": "These are base shared `tsconfig.json`s from which all other `tsconfig.json`'s inherit from.",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wesbitty/wesbitty.git"
+  },
+  "keywords": [
+    "tsconfig",
+    "react",
+    "typescript"
+  ],
+  "author": "Wesbitty Inc",
+  "bugs": {
+    "url": "https://github.com/wesbitty/wesbitty/issues"
+  },
+  "homepage": "https://github.com/wesbitty/wesbitty#readme"
 }

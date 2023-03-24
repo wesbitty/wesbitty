@@ -23,7 +23,9 @@ export default function Layout({ meta, children, subdomain }: LayoutProps) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [onScroll])
 
-  const [closeModal, setCloseModal] = useState<boolean>(!!Cookies.get('closeModal'))
+  const [closeModal, setCloseModal] = useState<boolean>(
+    !!Cookies.get('closeModal')
+  )
 
   useEffect(() => {
     if (closeModal) {
@@ -69,10 +71,17 @@ export default function Layout({ meta, children, subdomain }: LayoutProps) {
           <Link href="/" className="flex justify-center items-center">
             {meta?.logo && (
               <div className="h-8 w-8 inline-block rounded-full overflow-hidden align-middle">
-                <Image alt={meta?.title ?? 'Logo'} height={40} src={meta?.logo} width={40} />
+                <Image
+                  alt={meta?.title ?? 'Logo'}
+                  height={40}
+                  src={meta?.logo}
+                  width={40}
+                />
               </div>
             )}
-            <span className="inline-block ml-3 font-medium truncate">{meta?.title}</span>
+            <span className="inline-block ml-3 font-medium truncate">
+              {meta?.title}
+            </span>
           </Link>
         </div>
       </div>
@@ -107,13 +116,16 @@ export default function Layout({ meta, children, subdomain }: LayoutProps) {
             </svg>
           </button>
           <div className="text-center lg:text-left">
-            <p className="font-cal text-lg sm:text-2xl text-black">Platforms Starter Kit Demo</p>
+            <p className="font-cal text-lg sm:text-2xl text-black">
+              Platforms Starter Kit Demo
+            </p>
             <p
               className={`${
                 closeModal ? 'lg:block hidden' : ''
               } text-sm text-gray-700 mt-2 lg:mt-0`}
             >
-              This is a demo site showcasing how to build a multi-tenant application with{' '}
+              This is a demo site showcasing how to build a multi-tenant
+              application with{' '}
               <a
                 className="text-black font-semibold underline"
                 href="https://wesbitty.org"

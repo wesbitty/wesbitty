@@ -1,43 +1,63 @@
 {
-  "private": true,
+  "name": "wesbitty",
+  "description": "We've Got Your WishList",
+  "version": "0.0.0",
   "license": "Apache-2.0",
+  "private": true,
   "engines": {
-    "node": "16.x || 18.x || 19.x"
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
   },
   "workspaces": [
-    "apps/web",
+    "packages/@wesjet/*",
     "packages/*",
-    "examples/*",
-    "tests"
+    "apps/*",
+    "examples/*"
   ],
   "author": "Wesbitty, Inc.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wesbitty/wesbitty.git"
+  },
+  "keywords": [
+    "wesbitty",
+    "platform",
+    "e-commerce",
+    "store"
+  ],
   "scripts": {
-    "prebuild": "npm run prebuild --workspaces --if-present",
-    "build": "npm run build --workspaces --if-present",
-    "build:app": "npm run build --workspace=apps/web",
-    "build:examples": "npm run build --workspace=examples/*",
-    "build:packages": "npm run build --workspace=packages/*",
+    "postinstall": "ts-patch install",
+    "prepare": "ts-patch install -s",
+    "build": "turbo run build",
+    "build:app": "turbo run build --filter={apps/web}",
     "dev": "npm run dev --workspace=apps/web",
+    "lint": "turbo run lint",
     "prettier": "prettier --write .",
     "clean": "npm run clean --workspaces --if-present",
-    "test": "jest"
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate --schema=./wesbitty/db/schema.prisma",
+    "docker:up": "cd wesbitty/docker && docker-compose up -d",
+    "docker:down": "cd wesbitty/docker && docker-compose down",
+    "test": "turbo run test"
   },
-  "dependencies": {
-    "@mdx-js/react": "^2.1.1"
+  "prisma": {
+    "schema": "wesbitty/db/schema.prisma"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.5",
+    "@babel/cli": "^7.21.0",
     "@babel/preset-env": "^7.19.1",
     "@babel/preset-typescript": "^7.16.6",
     "@types/jest": "^27.0.3",
     "babel-jest": "^27.3.1",
     "eslint": "^7.32.0",
-    "eslint-config-custom": "workspace:*",
+    "eslint-plugin-wesjet": "^0.0.1-beta",
     "jest": "^27.3.1",
     "prettier": "^2.5.1",
     "ts-jest": "^27.0.7",
     "ts-node": "^9.1.1",
+    "ts-patch": "^2.1.0",
     "tsx": "3.7.1",
-    "typescript": "4.8.4"
+    "turbo": "^1.8.5",
+    "typescript": "^4.5.3"
   }
 }

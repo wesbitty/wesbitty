@@ -55,7 +55,9 @@ const Product = () => {
       </nav>
       <div className="col-span-6">
         <div className="m-3 mx-6">
-          <Typography.Text type="secondary">Latest case studies</Typography.Text>
+          <Typography.Text type="secondary">
+            Latest case studies
+          </Typography.Text>
           <ul className="mt-6 space-y-3">
             {CaseStudiesData.map((caseStudy: any, idx: number) => {
               if (idx > 1) {

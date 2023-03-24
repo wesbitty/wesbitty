@@ -2,7 +2,10 @@ import { HttpMethod } from '~/types'
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default async function requestDelegation(req: NextApiRequest, res: NextApiResponse) {
+export default async function requestDelegation(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const { domain } = req.query
 
   try {

@@ -34,7 +34,11 @@ export default function App({
             },
           ],
         }}
-        twitter={{ handle: '@wesbitty', site: '@wesbitty', cardType: 'summary_large_image' }}
+        twitter={{
+          handle: '@wesbitty',
+          site: '@wesbitty',
+          cardType: 'summary_large_image',
+        }}
       />
       <SessionProvider session={session}>
         <main className={cx(cal.variable, inter.variable)}>

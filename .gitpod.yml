@@ -1,0 +1,11 @@
+tasks:
+  - name: Install Pscale
+  - init: cd ../../home/gitpod/.config && mkdir planetscale && cd ../../../workspace/wesbitty
+    command: brew install planetscale/tap/pscale
+
+  - name: Install Mysql-client
+    command: brew install mysql-client
+
+  - name: Install deps
+  - init: npm install && npm run build
+    command: npm run prettier

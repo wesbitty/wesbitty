@@ -25,7 +25,6 @@ coverage
 
 # Python
 .venv
-.gitpod.yml
 __pycache__
 
 # env

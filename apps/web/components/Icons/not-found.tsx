@@ -2,7 +2,12 @@ import type { BaseIconProps } from '~/types'
 
 interface NotFoundIconProps extends BaseIconProps {}
 
-const NotFoundIcon = ({ className, color, height, width }: NotFoundIconProps) => {
+const NotFoundIcon = ({
+  className,
+  color,
+  height,
+  width,
+}: NotFoundIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "globalEnv": ["PORT"],
+  "pipeline": {
+    "build": {
+      "outputs": [
+        "dist/**",
+        ".wesjet/jetpack/**",
+        ".next/**",
+        "!.next/cache/**",
+        "public/dist/**"
+      ],
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "outputs": ["coverage/**"],
+      "dependsOn": []
+    },
+    "lint": {
+      "dependsOn": ["^build"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "generate": {
+      "dependsOn": ["^prisma:generate"]
+    },
+    "migrate": {
+      "dependsOn": ["^prisma:generate"]
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}

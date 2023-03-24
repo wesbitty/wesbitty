@@ -1,8 +1,6 @@
+const path = require('path')
 const { withWesjet } = require('wesjet-nextjs-plugin')
 
-/**
- * @type {import('next').NextConfig}
- */
 module.exports = withWesjet({
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   images: {
@@ -14,5 +12,10 @@ module.exports = withWesjet({
     ],
   },
   reactStrictMode: true,
-  swcMinify: false, // Required to fix: https://nextjs.org/docs/messages/failed-loading-swc
+  swcMinify: false,
+  transpilePackages: ['ui'],
+  output: 'standalone',
+  experimental: {
+    outputFileTracingRoot: path.join(__dirname, '../../'),
+  },
 })

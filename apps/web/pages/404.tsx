@@ -60,7 +60,10 @@ const NotFound = () => {
                   >
                     Go back home
                   </Link>
-                  <Link href="/support" className="text-sm font-semibold text-gray-900">
+                  <Link
+                    href="/support"
+                    className="text-sm font-semibold text-gray-900"
+                  >
                     Contact support <span aria-hidden="true">&rarr;</span>
                   </Link>
                 </div>

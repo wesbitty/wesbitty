@@ -147,7 +147,11 @@ module.exports = {
               counterReset: 'item',
               listStyleType: 'none',
             },
-            'ol li': { display: 'block', position: 'relative', paddingLeft: '1rem' },
+            'ol li': {
+              display: 'block',
+              position: 'relative',
+              paddingLeft: '1rem',
+            },
             'ol li::before': {
               position: 'absolute',
               top: '0.25rem',

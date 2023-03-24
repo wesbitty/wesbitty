@@ -24,7 +24,12 @@ const data: CommunityItem[] = [
             key={signup.title}
             className="col-span-1 flex justify-center py-8 px-8 border border-dashed"
           >
-            <img key={signup.title} className="max-h-12" src={signup.img} alt={signup.title} />
+            <img
+              key={signup.title}
+              className="max-h-12"
+              src={signup.img}
+              alt={signup.title}
+            />
           </div>
         ))}
       </div>

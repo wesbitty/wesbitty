@@ -50,7 +50,10 @@ export default function SiteDrafts() {
     <Layout>
       <div className="py-20 max-w-screen-xl mx-auto px-10 sm:px-20">
         <div className="flex flex-col sm:flex-row space-y-5 sm:space-y-0 justify-between items-center">
-          <h1 className="font-cal text-5xl"> Drafts for {data ? data?.site?.name : '...'}</h1>
+          <h1 className="font-cal text-5xl">
+            {' '}
+            Drafts for {data ? data?.site?.name : '...'}
+          </h1>
           <button
             onClick={() => {
               setCreatingPost(true)
@@ -93,9 +96,12 @@ export default function SiteDrafts() {
                       )}
                     </div>
                     <div className="relative p-10">
-                      <h2 className="font-cal text-3xl">{post.title || 'Untitled Post'}</h2>
+                      <h2 className="font-cal text-3xl">
+                        {post.title || 'Untitled Post'}
+                      </h2>
                       <p className="text-base my-5">
-                        {post.description || 'No description provided. Click to edit.'}
+                        {post.description ||
+                          'No description provided. Click to edit.'}
                       </p>
                       <a
                         className="font-cal px-3 py-1 tracking-wide rounded bg-gray-200 text-gray-600 absolute bottom-5 left-10 whitespace-nowrap"

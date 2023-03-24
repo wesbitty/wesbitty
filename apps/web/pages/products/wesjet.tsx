@@ -37,8 +37,9 @@ const WesjetPage = () => {
                 <Title>Wesjet</Title>
                 <Title level={3}>Wesjet Api documentation.</Title>
                 <Text>
-                  Wesjet is a content preprocessor that validates and transforms your content into
-                  type-safe JSON you can easily import into your application.
+                  Wesjet is a content preprocessor that validates and transforms
+                  your content into type-safe JSON you can easily import into
+                  your application.
                 </Text>
               </div>
             </div>

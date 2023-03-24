@@ -2,7 +2,11 @@
 
 import Head from 'next/head'
 import type { MouseEvent, ReactNode } from 'react'
-import type { CloudinaryCallbackImage, CloudinaryWidget, CloudinaryWidgetResult } from '~/types'
+import type {
+  CloudinaryCallbackImage,
+  CloudinaryWidget,
+  CloudinaryWidgetResult,
+} from '~/types'
 
 interface ChildrenProps {
   open: (e: MouseEvent) => void
@@ -42,7 +46,10 @@ export default function CloudinaryUploadWidget({
   return (
     <>
       <Head>
-        <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript" />
+        <script
+          src="https://widget.cloudinary.com/v2.0/global/all.js"
+          type="text/javascript"
+        />
       </Head>
       {children({ open })}
     </>

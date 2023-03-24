@@ -1,10 +1,12 @@
 {
+  "name": "wesjet-starter",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "build": "next build",
     "start": "next start",
     "dev": "next dev --port 4040",
-    "clean": "bash -c 'rm -rf .next .wesjet'"
+    "clean": "rm -rf .turbo .next .wesjet"
   },
   "dependencies": {
     "date-fns": "2.29.3",

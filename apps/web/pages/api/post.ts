@@ -20,7 +20,12 @@ export default async function post(req: NextApiRequest, res: NextApiResponse) {
     case HttpMethod.PUT:
       return updatePost(req, res, session)
     default:
-      res.setHeader('Allow', [HttpMethod.GET, HttpMethod.POST, HttpMethod.DELETE, HttpMethod.PUT])
+      res.setHeader('Allow', [
+        HttpMethod.GET,
+        HttpMethod.POST,
+        HttpMethod.DELETE,
+        HttpMethod.PUT,
+      ])
       return res.status(405).end(`Method ${req.method} Not Allowed`)
   }
 }

@@ -112,7 +112,9 @@ export async function createPost(
   const { siteId } = req.query
 
   if (!siteId || typeof siteId !== 'string' || !session?.user?.id) {
-    return res.status(400).json({ error: 'Missing or misconfigured site ID or session ID' })
+    return res
+      .status(400)
+      .json({ error: 'Missing or misconfigured site ID or session ID' })
   }
 
   const site = await prisma.site.findFirst({
@@ -164,7 +166,9 @@ export async function deletePost(
   const { postId } = req.query
 
   if (!postId || typeof postId !== 'string' || !session?.user?.id) {
-    return res.status(400).json({ error: 'Missing or misconfigured site ID or session ID' })
+    return res
+      .status(400)
+      .json({ error: 'Missing or misconfigured site ID or session ID' })
   }
 
   const site = await prisma.site.findFirst({
@@ -237,11 +241,22 @@ export async function updatePost(
   res: NextApiResponse,
   session: Session
 ): Promise<void | NextApiResponse<Post>> {
-  const { id, title, description, content, slug, image, published, subdomain, customDomain } =
-    req.body
+  const {
+    id,
+    title,
+    description,
+    content,
+    slug,
+    image,
+    published,
+    subdomain,
+    customDomain,
+  } = req.body
 
   if (!id || typeof id !== 'string' || !session?.user?.id) {
-    return res.status(400).json({ error: 'Missing or misconfigured site ID or session ID' })
+    return res
+      .status(400)
+      .json({ error: 'Missing or misconfigured site ID or session ID' })
   }
 
   const site = await prisma.site.findFirst({

@@ -62,8 +62,8 @@ export default function Login() {
           The Global Commerce Platform
         </h2>
         <p className="mt-6 text-center text-sm text-gray-600">
-          Build your business with Wesbitty to sell online, offline, and everywhere in between.{' '}
-          <br /> Read the{' '}
+          Build your business with Wesbitty to sell online, offline, and
+          everywhere in between. <br /> Read the{' '}
           <a
             className="font-medium text-black hover:text-gray-800"
             href="https://demo.wesbitty.org/platforms-starter-kit"

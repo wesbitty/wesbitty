@@ -104,29 +104,29 @@ export const Post = defineDocumentType(() => ({
   computedFields: {
     url: {
       type: 'string',
-      resolve: (post) => `/allBlogPost/${post._raw.flattenedPath}`,
+      resolve: (post) => `/[blog]/${post._raw.flattenedPath}`,
     },
   },
 }))
 
 export default makeSource({
-  contentDirPath: 'allBlogPost',
+  contentDirPath: '[blog]',
   documentTypes: [Post],
 })
 ```
 
-This configuration specifies a single document type called `Post`. These documents are expected to be `.md` files that live within a `allBlogPost` directory in your project. And data objects generated from these files will have the following properties:
+This configuration specifies a single document type called `Post`. These documents are expected to be `.md` files that live within a `[blog]` directory in your project. And data objects generated from these files will have the following properties:
 
 - `title`: String pulled from the file's frontmatter.
 - `date`: JavaScript `Date` object, pulled from the file's frontmatter.
 - `body`: An object that contains the `raw` content from the markdown file and the converted `html` string. (This is built into Wesjet by default and does not have to be defined.)
-- `url`: A string that takes the name of the file (without the extension) and prepends `/allBlogPost/` to it, thus defining that path at which that content will be available on your site. (More on this soon.)
+- `url`: A string that takes the name of the file (without the extension) and prepends `/[blog]/` to it, thus defining that path at which that content will be available on your site. (More on this soon.)
 
 ## 4. Add Post Content
 
-Create a few markdown files in a `allBlogPost` directory and add some content to those files.
+Create a few markdown files in a `[blog]` directory and add some content to those files.
 
-Here's an example of what a post file at `allBlogPost/post-01.md` might look like:
+Here's an example of what a post file at `[blog]/post-01.md` might look like:
 
 ```txt
 ---
@@ -147,10 +147,10 @@ excepteur elit ipsum aute pariatur in. Cupidatat ex culpa velit culpa ad non
 labore exercitation irure laborum.
 ```
 
-The examples to follow will have three allBlogPost in this structure:
+The examples to follow will have three [blog] in this structure:
 
 ```txt
-allBlogPost/
+[blog]/
 ├── post-01.md
 ├── post-02.md
 └── post-03.md
@@ -231,13 +231,13 @@ Now you're ready to take it for a spin. Fire up the Next.js dev server.
 npm run dev
 ```
 
-And visit localhost:3000 in your browser. You should see a listing of the posts you added to the `allBlogPost` directory!
+And visit localhost:3000 in your browser. You should see a listing of the posts you added to the `[blog]` directory!
 
 ## 6. Add Post Layout
 
-Notice that if you click on individual allBlogPost, you get a 404 error. That's because we haven't created the pages for these allBlogPost. Let's do that!
+Notice that if you click on individual [blog], you get a 404 error. That's because we haven't created the pages for these [blog]. Let's do that!
 
-Create the page at `pages/allBlogPost/[slug].js` and add the following code.
+Create the page at `pages/[blog]/[slug].js` and add the following code.
 
 ```jsx
 // pages/posts/[slug].js

@@ -24,7 +24,9 @@ export default function Layout({ siteId, children }: LayoutProps) {
   const sitePage = router.pathname.startsWith('/app/site/[id]')
   const postPage = router.pathname.startsWith('/app/post/[id]')
   const rootPage = !sitePage && !postPage
-  const tab = rootPage ? router.asPath.split('/')[1] : router.asPath.split('/')[3]
+  const tab = rootPage
+    ? router.asPath.split('/')[1]
+    : router.asPath.split('/')[3]
 
   const session = useRequireAuth()
   if (!session) return <Loader />
@@ -85,14 +87,14 @@ export default function Layout({ siteId, children }: LayoutProps) {
             <Menu as="div" className="relative inline-block text-left">
               <div>
                 <Menu.Button className="h-8 w-8 inline-block rounded-full overflow-hidden align-middle">
-                {session.user && session.user.image && (
+                  {session.user && session.user.image && (
                     <Image
                       src={session.user.image}
                       width={40}
                       height={40}
                       alt={session.user.name ?? 'User avatar'}
                     />
-                )}
+                  )}
                 </Menu.Button>
               </div>
 
@@ -112,11 +114,13 @@ export default function Layout({ siteId, children }: LayoutProps) {
                         <a
                           href="#"
                           className={classNames(
-                            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                            active
+                              ? 'bg-gray-100 text-gray-900'
+                              : 'text-gray-700',
                             'block px-4 py-2 text-sm'
                           )}
                         >
-                        Sign in as: {session.user?.name}
+                          Sign in as: {session.user?.name}
                         </a>
                       )}
                     </Menu.Item>
@@ -125,7 +129,9 @@ export default function Layout({ siteId, children }: LayoutProps) {
                         <a
                           href="/"
                           className={classNames(
-                            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                            active
+                              ? 'bg-gray-100 text-gray-900'
+                              : 'text-gray-700',
                             'block px-4 py-2 text-sm'
                           )}
                         >
@@ -138,7 +144,9 @@ export default function Layout({ siteId, children }: LayoutProps) {
                         <a
                           href="/settings"
                           className={classNames(
-                            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                            active
+                              ? 'bg-gray-100 text-gray-900'
+                              : 'text-gray-700',
                             'block px-4 py-2 text-sm'
                           )}
                         >
@@ -153,7 +161,9 @@ export default function Layout({ siteId, children }: LayoutProps) {
                             type="submit"
                             onClick={() => signOut()}
                             className={classNames(
-                              active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                              active
+                                ? 'bg-gray-100 text-gray-900'
+                                : 'text-gray-700',
                               'block w-full px-4 py-2 text-left text-sm'
                             )}
                           >
@@ -172,7 +182,9 @@ export default function Layout({ siteId, children }: LayoutProps) {
           <div className="absolute left-0 right-0 top-16 flex justify-center items-center font-cal space-x-16 border-b bg-white border-gray-200">
             <Link
               href="/"
-              className={`border-b-2 ${tab == '' ? 'border-black' : 'border-transparent'} py-3`}
+              className={`border-b-2 ${
+                tab == '' ? 'border-black' : 'border-transparent'
+              } py-3`}
             >
               My Sites
             </Link>
@@ -195,7 +207,9 @@ export default function Layout({ siteId, children }: LayoutProps) {
               <div className="flex justify-between items-center space-x-10 md:space-x-16">
                 <Link
                   href={`/site/${router.query.id}`}
-                  className={`border-b-2 ${!tab ? 'border-black' : 'border-transparent'} py-3`}
+                  className={`border-b-2 ${
+                    !tab ? 'border-black' : 'border-transparent'
+                  } py-3`}
                 >
                   Posts
                 </Link>
@@ -224,7 +238,10 @@ export default function Layout({ siteId, children }: LayoutProps) {
           <div className="absolute left-0 right-0 top-16 font-cal border-b bg-white border-gray-200">
             <div className="flex justify-between items-center space-x-16 max-w-screen-xl mx-auto px-10 sm:px-20">
               {siteId ? (
-                <Link href={`/site/${siteId}`} className="md:inline-block ml-3 hidden">
+                <Link
+                  href={`/site/${siteId}`}
+                  className="md:inline-block ml-3 hidden"
+                >
                   ← All Posts
                 </Link>
               ) : (
@@ -236,7 +253,9 @@ export default function Layout({ siteId, children }: LayoutProps) {
               <div className="flex justify-between items-center space-x-10 md:space-x-16">
                 <Link
                   href={`/post/${router.query.id}`}
-                  className={`border-b-2 ${!tab ? 'border-black' : 'border-transparent'} py-3`}
+                  className={`border-b-2 ${
+                    !tab ? 'border-black' : 'border-transparent'
+                  } py-3`}
                 >
                   Editor
                 </Link>
