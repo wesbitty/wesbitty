@@ -26,22 +26,15 @@
     "store"
   ],
   "scripts": {
-    "postinstall": "ts-patch install",
-    "prepare": "ts-patch install -s",
     "build": "turbo run build",
     "build:app": "turbo run build --filter={apps/web}",
+    "dev": "npm run dev --workspace=apps/web",
     "lint": "turbo run lint",
     "prettier": "prettier --write .",
-    "dev": "npm run dev --workspace=apps/web",
-    "clean": "npm run clean --workspaces --if-present",
-    "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate --schema=./wesbitty/db/schema.prisma",
-    "docker:up": "cd wesbitty/docker && docker-compose up -d",
-    "docker:down": "cd wesbitty/docker && docker-compose down",
+    "clean": "turbo run clean",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
     "test": "turbo run test"
-  },
-  "prisma": {
-    "schema": "wesbitty/db/schema.prisma"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",

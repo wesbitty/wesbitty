@@ -1,56 +1,54 @@
-# This Dockerfile is copy-pasted into our main docs at /docs/handbook/deploying-with-docker.
-# Make sure you update both files!
-
-FROM node:alpine AS builder
-# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+# Install dependencies only when needed
+FROM node:16-alpine AS deps
 RUN apk add --no-cache libc6-compat
-RUN apk update
-# Set working directory
+
+# set working directory
 WORKDIR /app
-RUN npm install turbo --global
+
+# Copy package and lockfile
+COPY package.json package-lock.json ./
+COPY wesbitty/database ./prisma/
+RUN apt-get -qy update && apt-get -qy install openssl
+
+# install deps
+RUN npm ci
+
+# Rebuild the source code only when needed
+FROM node:16-alpine AS builder
+
+WORKDIR /app
+
+COPY --from=deps /app/node_modules ./node_modules
+
 COPY . .
-RUN turbo prune --scope=web --docker
 
-# Add lockfile and package.json's of isolated subworkspace
-FROM node:alpine AS installer
-RUN apk add --no-cache libc6-compat
-RUN apk update
+# build project
+RUN npm run build
+
+# Production image, copy all the files and run next
+FROM node:16-alpine AS runner
 WORKDIR /app
 
-# First install the dependencies (as they change less often)
-COPY .gitignore .gitignore
-COPY --from=builder /app/out/json/ .
-COPY --from=builder /app/out/package-lock.json ./package-lock.json
-RUN npm install
+ENV NODE_ENV production
 
-# Build the project
-COPY --from=builder /app/out/full/ .
-COPY turbo.json turbo.json
+RUN addgroup --system --gid 1001 bloggroup
+RUN adduser --system --uid 1001 bloguser
 
-# Uncomment and use build args to enable remote caching
-# ARG TURBO_TEAM
-# ENV TURBO_TEAM=$TURBO_TEAM
-
-# ARG TURBO_TOKEN
-# ENV TURBO_TOKEN=$TURBO_TOKEN
-
-RUN turbo run build --filter=web...
-
-FROM node:alpine AS runner
-WORKDIR /app
-
-# Don't run production as root
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-USER nextjs
-
-COPY --from=installer /app/apps/web/next.config.js .
-COPY --from=installer /app/apps/web/package.json .
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/package.json ./package.json
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=installer --chown=nextjs:nodejs /app/apps/web/.next/standalone ./
-COPY --from=installer --chown=nextjs:nodejs /app/apps/web/.next/static ./apps/web/.next/static
-COPY --from=installer --chown=nextjs:nodejs /app/apps/web/public ./apps/web/public
+COPY --from=builder --chown=bloguser:bloggroup /app/.next/standalone ./
+COPY --from=builder --chown=bloguser:bloggroup /app/.next/static ./.next/static
 
-CMD node apps/web/server.js
+USER bloguser
+
+EXPOSE 3000
+ENV PORT 3000
+
+# enable run as production
+ENV NODE_ENV=production
+
+# start app
+CMD ["node", "server.js"]

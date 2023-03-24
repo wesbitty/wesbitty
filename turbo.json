@@ -6,7 +6,6 @@
     "build": {
       "outputs": [
         "dist/**",
-        ".wesjet/jetpack/**",
         ".next/**",
         "!.next/cache/**",
         "public/dist/**"
@@ -23,12 +22,6 @@
     "dev": {
       "cache": false,
       "persistent": true
-    },
-    "generate": {
-      "dependsOn": ["^prisma:generate"]
-    },
-    "migrate": {
-      "dependsOn": ["^prisma:generate"]
     },
     "clean": {
       "cache": false
