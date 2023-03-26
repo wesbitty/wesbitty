@@ -159,7 +159,7 @@ const Header = () => {
     <div
       className={
         `
-        inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700
+        inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium text-stone-600 hover:text-stone-700
         dark:text-dark-100 cursor-pointer
       ` + props.active
       }
@@ -169,7 +169,7 @@ const Header = () => {
         <span>{props.title}</span>
         <svg
           className={
-            'ml-2 h-5 w-5 text-gray-300 group-hover:text-gray-300 transition ease-in-out duration-150' +
+            'ml-2 h-5 w-5 text-gray-600 group-hover:text-gray-700 transition ease-in-out duration-150' +
             (props.active && ' transform rotate-180')
           }
           xmlns="http://www.w3.org/2000/svg"
@@ -189,9 +189,9 @@ const Header = () => {
 
   return (
     <>
-      <Announcement />
+      {/*<Announcement />*/}
       <div className="sticky top-0 z-50">
-        <nav className="bg-white dark:bg-gray-800 border-b dark:border-gray-600">
+        <nav className="bg-stone-100 dark:bg-gray-800 border-b dark:border-gray-600">
           {/* <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-10 xl:px-0"> */}
           <div className="relative mx-auto flex h-16 justify-between lg:container lg:px-16 xl:px-20">
             <div className="flex flex-1 items-center justify-center sm:items-stretch lg:justify-between">
@@ -247,15 +247,12 @@ const Header = () => {
                 </div>
               </div>
               <div className="hidden lg:flex items-center sm:space-x-3">
-                <Link
-                  href="https://github.com/wesbitty/wesbitty"
-                  target="_blank"
-                >
+                <Link href="https://app.wesbitty.org" target="_blank">
                   <Button type="default" icon={<IconPackage />}>
                     Start Your Project
                   </Button>
                 </Link>
-                <Link href="https://app.wesbitty.org">
+                <Link href="https://app.wesbitty.org/login">
                   <Button title="Sign In" type="default" icon={<IconLogIn />}>
                     Sign In
                   </Button>

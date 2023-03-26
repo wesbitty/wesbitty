@@ -12,7 +12,8 @@
     "packages/@wesjet/*",
     "packages/*",
     "apps/*",
-    "examples/*"
+    "examples/*",
+    "tests"
   ],
   "author": "Wesbitty, Inc.",
   "repository": {

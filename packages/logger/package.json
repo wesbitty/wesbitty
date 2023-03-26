@@ -10,9 +10,9 @@
   ],
   "scripts": {
     "build": "tsc",
-    "clean": "rm -rf dist",
     "dev": "tsc -w",
     "lint": "eslint \"src/**/*.ts*\"",
+    "clean": "rm -rf dist",
     "test": "jest"
   },
   "jest": {

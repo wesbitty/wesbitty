@@ -18,7 +18,7 @@ export const Default = (props: Props) => {
   return (
     <>
       {!hideHeader && <Header />}
-      <div className="min-h-screen bg-white dark:bg-gray-800">
+      <div className="min-h-screen bg-stone-50 dark:bg-gray-800">
         <main>{children}</main>
       </div>
       {!hideFooter && <Footer />}

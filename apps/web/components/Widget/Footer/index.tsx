@@ -120,9 +120,12 @@ const Footer = () => {
         </div>
       </div>
       <div className="mt-12 border-t dark:border-dark flex justify-center">
-        <p className="mb-0 self-center text-base py-4 text-gray-500 dark:text-dark-100">
+        <Link
+          href="https://wesbitty.org"
+          className="mb-0 self-center text-base py-4 link-text dark:text-dark-100"
+        >
           &copy; <span>{currentYear}</span> Wesbitty, Inc.
-        </p>
+        </Link>
       </div>
     </footer>
   )

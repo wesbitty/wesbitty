@@ -5,15 +5,17 @@
   "private": true,
   "scripts": {
     "build": "prisma generate && next build",
-    "start": "next start",
-    "dev": "prisma generate && next dev",
     "lint": "next lint",
     "format:write": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx}\"",
+    "start": "next start",
+    "dev": "prisma generate && next dev",
     "clean": "rm -rf .next .wesjet",
+    "gen:prisma": "prisma generate",
+    "gen:prisma_push": "prisma db push",
     "type-check": "tsc"
   },
   "prisma": {
-    "schema": "wesbitty/database/schema.prisma"
+    "schema": "wesbitty/data/schema.prisma"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",
@@ -25,6 +27,7 @@
     "@supabase/supabase-js": "^1.6.0",
     "@vercel/analytics": "^0.1.6",
     "@wesbitty/ui": "^0.0.3",
+    "bcrypt": "^5.1.0",
     "classnames": "^2.3.2",
     "clsx": "^1.2.1",
     "cuid": "^2.1.8",
@@ -61,6 +64,7 @@
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.8",
+    "@types/bcrypt": "^5.0.0",
     "@types/classnames": "^2.2.10",
     "@types/js-cookie": "^3.0.2",
     "@types/node": "^17.0.12",

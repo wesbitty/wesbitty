@@ -14,9 +14,8 @@
   "author": "Wesbitty Inc",
   "scripts": {
     "prebuild": "node --experimental-modules src/lib/Icon/generate.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf dist",
-    "build": "npm run clean && rollup -c"
+    "build": "rollup -c",
+    "clean": "rm -rf dist"
   },
   "optionalDependencies": {
     "fsevents": "^2.3.2"

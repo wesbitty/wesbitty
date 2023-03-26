@@ -10,4 +10,4 @@ tasks:
   - init: |
       npm install
       npm run build
-    command: npm run prettier
+    command: cd apps/web && npm run start
