@@ -53,8 +53,8 @@ const SupportPage = ({}: Props) => {
               <Typography.Title level={2}>Get Support</Typography.Title>
               <Typography.Text>
                 <p className="lg:text-lg">
-                  Need a bit of help? We're here for you. Check out our current issues, GitHub
-                  discussions, or get email support.
+                  Need a bit of help? We're here for you. Check out our current
+                  issues, GitHub discussions, or get email support.
                 </p>
               </Typography.Text>
             </div>
@@ -74,11 +74,13 @@ const SupportPage = ({}: Props) => {
                     </Typography.Title>
                     <Typography.Text className="block">
                       <p>
-                        Have a general issue or bug that you've found? We'd love to hear about it in
-                        our GitHub issues. This can be feature requests too!
+                        Have a general issue or bug that you've found? We'd love
+                        to hear about it in our GitHub issues. This can be
+                        feature requests too!
                       </p>
                       <p>
-                        <span className="font-bold">Use this for:</span> Bugs and other issues
+                        <span className="font-bold">Use this for:</span> Bugs
+                        and other issues
                       </p>
                     </Typography.Text>
                   </div>
@@ -99,7 +101,11 @@ const SupportPage = ({}: Props) => {
                         href="https://github.com/wesbitty/wesbitty/issues"
                         as="https://github.com/wesbitty/wesbitty/issues"
                       >
-                        <Button size="medium" type="default" iconRight={<IconGitHub />}>
+                        <Button
+                          size="medium"
+                          type="default"
+                          iconRight={<IconGitHub />}
+                        >
                           Go To Issues
                         </Button>
                       </Link>
@@ -122,11 +128,12 @@ const SupportPage = ({}: Props) => {
                     </Typography.Title>
                     <Typography.Text className="block">
                       <p>
-                        For help and questions about best practices, join our GitHub discussions.
-                        Browse and ask questions.
+                        For help and questions about best practices, join our
+                        GitHub discussions. Browse and ask questions.
                       </p>
                       <p>
-                        <span className="font-bold">Use this for:</span> General questions
+                        <span className="font-bold">Use this for:</span> General
+                        questions
                       </p>
                     </Typography.Text>
                   </div>
@@ -147,7 +154,11 @@ const SupportPage = ({}: Props) => {
                         href="https://github.com/wesbitty/wesbitty/discussions"
                         as="https://github.com/wesbitty/wesbitty/discussions"
                       >
-                        <Button size="medium" type="default" iconRight={<IconMessageCircle />}>
+                        <Button
+                          size="medium"
+                          type="default"
+                          iconRight={<IconMessageCircle />}
+                        >
                           Join The Discussion
                         </Button>
                       </Link>
@@ -171,12 +182,13 @@ const SupportPage = ({}: Props) => {
                     </Typography.Title>
                     <Typography.Text className="block">
                       <p>
-                        We offer email based support. If you need SLAs, guaranteed response times,
-                        or have an issue, please contact us here.
+                        We offer email based support. If you need SLAs,
+                        guaranteed response times, or have an issue, please
+                        contact us here.
                       </p>
                       <p>
-                        <span className="font-bold">Use this for:</span> Issues or questions
-                        specific to you
+                        <span className="font-bold">Use this for:</span> Issues
+                        or questions specific to you
                       </p>
                     </Typography.Text>
                   </div>
@@ -193,7 +205,11 @@ const SupportPage = ({}: Props) => {
                   >
                     <Space className="">
                       <Link href="mailto:admin@wesbitty.com">
-                        <Button size="medium" type="default" iconRight={<IconMail />}>
+                        <Button
+                          size="medium"
+                          type="default"
+                          iconRight={<IconMail />}
+                        >
                           Email Support
                         </Button>
                       </Link>

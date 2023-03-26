@@ -29,7 +29,9 @@ export default function Index({ stringifiedData }: IndexProps) {
     description: data.description,
     logo: '/brand/logo.png',
     ogImage: data.image,
-    ogUrl: data.customDomain ? data.customDomain : `https://${data.subdomain}.wesbitty.org`,
+    ogUrl: data.customDomain
+      ? data.customDomain
+      : `https://${data.subdomain}.wesbitty.org`,
   } as Meta
 
   return (
@@ -42,7 +44,9 @@ export default function Index({ stringifiedData }: IndexProps) {
                 {data.posts[0].image ? (
                   <BlurImage
                     alt={data.posts[0].title ?? ''}
-                    blurDataURL={data.posts[0].imageBlurhash ?? placeholderBlurhash}
+                    blurDataURL={
+                      data.posts[0].imageBlurhash ?? placeholderBlurhash
+                    }
                     className="group-hover:scale-105 group-hover:duration-300 h-full w-full object-cover"
                     width={1300}
                     height={630}
@@ -56,8 +60,12 @@ export default function Index({ stringifiedData }: IndexProps) {
                 )}
               </div>
               <div className="mt-10 w-5/6 mx-auto lg:w-full">
-                <h2 className="font-cal text-4xl md:text-6xl my-10">{data.posts[0].title}</h2>
-                <p className="text-base md:text-lg w-full lg:w-2/3">{data.posts[0].description}</p>
+                <h2 className="font-cal text-4xl md:text-6xl my-10">
+                  {data.posts[0].title}
+                </h2>
+                <p className="text-base md:text-lg w-full lg:w-2/3">
+                  {data.posts[0].description}
+                </p>
                 <div className="flex justify-start items-center space-x-4 w-full">
                   <div className="relative w-8 h-8 flex-none rounded-full overflow-hidden">
                     {data.user?.image ? (
@@ -130,8 +138,6 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
         NOT: {
           customDomain: null,
         },
-        // you can remove this if you want to generate all sites at build time
-        customDomain: 'platformize.co',
       },
       select: {
         customDomain: true,
@@ -154,7 +160,9 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
+  params,
+}) => {
   if (!params) throw new Error('No path parameters found')
 
   const { site } = params

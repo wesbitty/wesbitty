@@ -23,7 +23,9 @@ const ListItem: FC<{ post: Post }> = ({ post }) => {
                 <Image
                   alt="Thumbnail"
                   src={
-                    !post.thumb ? `/images/blog/blog-placeholder.png` : `/images/blog/${post.thumb}`
+                    !post.thumb
+                      ? `/images/blog/blog-placeholder.png`
+                      : `/images/blog/${post.thumb}`
                   }
                   className="p-1 bg-sky-50 border rounded max-w-sm"
                   width={452}
@@ -50,7 +52,13 @@ const ListItem: FC<{ post: Post }> = ({ post }) => {
             {author && (
               <div>
                 <Space size={4}>
-                  {author.avatar && <img src={author.avatar} className="rounded-full w-10" />}
+                  {author.avatar && (
+                    <Image
+                      alt="Avatar"
+                      src={author.avatar}
+                      className="rounded-full w-10"
+                    />
+                  )}
                   <Space direction="vertical" size={0}>
                     <Typography.Text>{author.author}</Typography.Text>
                     <Typography.Text type="secondary" small>

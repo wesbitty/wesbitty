@@ -86,7 +86,14 @@ const windmillConfig = {
     backgroundOpacity: ['responsive', 'hover', 'focus', 'dark'],
     backgroundColor: ['responsive', 'hover', 'focus', 'active', 'odd', 'dark'],
     display: ['responsive', 'dark'],
-    textColor: ['responsive', 'focus', 'focus-within', 'hover', 'active', 'dark'],
+    textColor: [
+      'responsive',
+      'focus',
+      'focus-within',
+      'hover',
+      'active',
+      'dark',
+    ],
     placeholderColor: ['responsive', 'focus', 'dark'],
     borderColor: ['responsive', 'hover', 'focus', 'dark'],
     divideColor: ['responsive', 'dark'],
@@ -117,7 +124,9 @@ function wrapper(tailwindConfig) {
   } else {
     purge = tailwindConfig.purge
   }
-  return deepMerge({ ...tailwindConfig, purge }, windmillConfig, { arrayMerge: arrayMergeFn })
+  return deepMerge({ ...tailwindConfig, purge }, windmillConfig, {
+    arrayMerge: arrayMergeFn,
+  })
 }
 
 module.exports = wrapper

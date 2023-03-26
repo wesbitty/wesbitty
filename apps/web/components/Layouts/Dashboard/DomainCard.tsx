@@ -7,7 +7,13 @@ import type { Site } from '@prisma/client'
 
 type DomainData = Pick<
   Site,
-  'customDomain' | 'description' | 'id' | 'image' | 'imageBlurhash' | 'name' | 'subdomain'
+  | 'customDomain'
+  | 'description'
+  | 'id'
+  | 'image'
+  | 'imageBlurhash'
+  | 'name'
+  | 'subdomain'
 >
 
 interface DomainCardProps<T = DomainData> {
@@ -72,9 +78,12 @@ export default function DomainCard({ data }: DomainCardProps) {
           <button
             onClick={async () => {
               setRemoving(true)
-              await fetch(`/api/domain?domain=${data.customDomain}&siteId=${data.id}`, {
-                method: HttpMethod.DELETE,
-              }).then((res) => {
+              await fetch(
+                `/api/domain?domain=${data.customDomain}&siteId=${data.id}`,
+                {
+                  method: HttpMethod.DELETE,
+                }
+              ).then((res) => {
                 setRemoving(false)
                 if (res.ok) {
                   mutate(`/api/site?siteId=${data.id}`)
@@ -106,7 +115,11 @@ export default function DomainCard({ data }: DomainCardProps) {
           <circle cx="12" cy="12" r="10" fill={valid ? '#1976d2' : '#d32f2f'} />
           {valid ? (
             <>
-              <path d="M8 11.8571L10.5 14.3572L15.8572 9" fill="none" stroke="white" />
+              <path
+                d="M8 11.8571L10.5 14.3572L15.8572 9"
+                fill="none"
+                stroke="white"
+              />
             </>
           ) : (
             <>
@@ -115,7 +128,11 @@ export default function DomainCard({ data }: DomainCardProps) {
             </>
           )}
         </svg>
-        <p className={`${valid ? 'text-black font-normal' : 'text-red-700 font-medium'} text-sm`}>
+        <p
+          className={`${
+            valid ? 'text-black font-normal' : 'text-red-700 font-medium'
+          } text-sm`}
+        >
           {valid ? 'Valid' : 'Invalid'} Configuration
         </p>
       </div>
@@ -129,7 +146,9 @@ export default function DomainCard({ data }: DomainCardProps) {
               <button
                 onClick={() => setRecordType('CNAME')}
                 className={`${
-                  recordType == 'CNAME' ? 'text-black border-black' : 'text-gray-400 border-white'
+                  recordType == 'CNAME'
+                    ? 'text-black border-black'
+                    : 'text-gray-400 border-white'
                 } text-sm border-b-2 pb-1 transition-all ease duration-150`}
               >
                 CNAME Record (subdomains)
@@ -139,7 +158,9 @@ export default function DomainCard({ data }: DomainCardProps) {
                 <button
                   onClick={() => setRecordType('A')}
                   className={`${
-                    recordType == 'A' ? 'text-black border-black' : 'text-gray-400 border-white'
+                    recordType == 'A'
+                      ? 'text-black border-black'
+                      : 'text-gray-400 border-white'
                   } text-sm border-b-2 pb-1 transition-all ease duration-150`}
                 >
                   A Record (apex domain)
@@ -169,7 +190,9 @@ export default function DomainCard({ data }: DomainCardProps) {
                 <div>
                   <p className="text-sm font-bold">Value</p>
                   <p className="text-sm font-mono mt-2">
-                    {recordType == 'CNAME' ? `cname.wesbitty.org` : `76.76.21.21`}
+                    {recordType == 'CNAME'
+                      ? `cname.wesbitty.org`
+                      : `76.76.21.21`}
                   </p>
                 </div>
               </div>

@@ -7,7 +7,11 @@ interface ModalProps extends WithChildren {
   setShowModal: (state: boolean) => void
 }
 
-export default function Modal({ children, showModal, setShowModal }: ModalProps) {
+export default function Modal({
+  children,
+  showModal,
+  setShowModal,
+}: ModalProps) {
   return (
     <>
       <Transition appear show={showModal} as={Fragment}>
@@ -29,7 +33,10 @@ export default function Modal({ children, showModal, setShowModal }: ModalProps)
               <Dialog.Overlay className="fixed inset-0 bg-gray-500 bg-opacity-75" />
             </Transition.Child>
 
-            <span className="inline-block h-screen align-middle" aria-hidden="true">
+            <span
+              className="inline-block h-screen align-middle"
+              aria-hidden="true"
+            >
               &#8203;
             </span>
             <Transition.Child

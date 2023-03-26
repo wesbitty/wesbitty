@@ -97,9 +97,11 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
         )}" target="_blank">${match}</a>`
     )
 
-  const quoteTweet = referenced_tweets && referenced_tweets.find((t) => t.type === 'quoted')
+  const quoteTweet =
+    referenced_tweets && referenced_tweets.find((t) => t.type === 'quoted')
 
-  const repliedTo = referenced_tweets && referenced_tweets.find((t) => t.type === 'replied_to')
+  const repliedTo =
+    referenced_tweets && referenced_tweets.find((t) => t.type === 'replied_to')
 
   return (
     <div
@@ -140,12 +142,25 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
               </svg>
             ) : null}
           </span>
-          <span className="!text-gray-500 text-base" title={`@${author.username}`}>
+          <span
+            className="!text-gray-500 text-base"
+            title={`@${author.username}`}
+          >
             @{author.username}
           </span>
         </a>
-        <a className="ml-auto" href={tweetUrl} target="_blank" rel="noopener noreferrer">
-          <svg viewBox="328 355 335 276" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <a
+          className="ml-auto"
+          href={tweetUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg
+            viewBox="328 355 335 276"
+            height="24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               d="M 630, 425    A 195, 195 0 0 1 331, 600    A 142, 142 0 0 0 428, 570    A  70,  70 0 0 1 370, 523    A  70,  70 0 0 0 401, 521    A  70,  70 0 0 1 344, 455    A  70,  70 0 0 0 372, 460    A  70,  70 0 0 1 354, 370    A 195, 195 0 0 0 495, 442    A  67,  67 0 0 1 611, 380    A 117, 117 0 0 0 654, 363    A  65,  65 0 0 1 623, 401    A 117, 117 0 0 0 662, 390    A  65,  65 0 0 1 630, 425    Z"
               style={{ fill: '#3BA9EE' }}
@@ -217,7 +232,12 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
         </div>
       ) : null}
       {url_meta?.images ? (
-        <a className="!no-underline" href={url_meta.unwound_url} rel="noreferrer" target="_blank">
+        <a
+          className="!no-underline"
+          href={url_meta.unwound_url}
+          rel="noreferrer"
+          target="_blank"
+        >
           <div className="rounded-2xl overflow-hidden border border-gray-200 drop-shadow-sm my-5">
             <BlurImage
               key={url_meta.unwound_url}
@@ -229,7 +249,9 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
             />
             <div className="w-full bg-white px-8 py-6">
               <p className="!m-0 font-semibold">{url_meta.title}</p>
-              <p className="!m-0 text-sm font-normal text-gray-600">{url_meta.description}</p>
+              <p className="!m-0 text-sm font-normal text-gray-600">
+                {url_meta.description}
+              </p>
             </div>
           </div>
         </a>
@@ -237,7 +259,10 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
       {polls && (
         <div className="mt-5">
           {polls.map((poll) => {
-            poll.total_votes = poll.options.reduce((sum, option) => sum + option.votes, 0)
+            poll.total_votes = poll.options.reduce(
+              (sum, option) => sum + option.votes,
+              0
+            )
             return poll.voting_status == 'open' ? (
               <div>
                 {poll.options.map((option, i) => (
@@ -254,7 +279,8 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
                   </a>
                 ))}
                 <div className="text-gray-500 text-base mt-4">
-                  {poll.total_votes} votes · {getRemainingTime(poll.end_datetime)} left
+                  {poll.total_votes} votes ·{' '}
+                  {getRemainingTime(poll.end_datetime)} left
                 </div>
               </div>
             ) : (
@@ -268,16 +294,23 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
                       )}
                     >
                       <p className="!my-0 z-10">{option.label}</p>
-                      <p className="!my-0 z-10">{`${((option.votes / poll.total_votes) * 100)
+                      <p className="!my-0 z-10">{`${(
+                        (option.votes / poll.total_votes) *
+                        100
+                      )
                         .toFixed(1)
                         .replace('.0', '')}%`}</p>
                       <div
                         className={classNames(
-                          option.position == 1 ? 'font-bold bg-[#1da1f2]' : 'bg-gray-300',
+                          option.position == 1
+                            ? 'font-bold bg-[#1da1f2]'
+                            : 'bg-gray-300',
                           'absolute top-0 left-0 rounded-md w-full h-full'
                         )}
                         style={{
-                          width: `${Math.round((option.votes / poll.total_votes) * 100)}%`,
+                          width: `${Math.round(
+                            (option.votes / poll.total_votes) * 100
+                          )}%`,
                         }}
                       />
                     </div>
@@ -300,7 +333,10 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <time title={`Time Posted: ${createdAt.toUTCString()}`} dateTime={createdAt.toISOString()}>
+        <time
+          title={`Time Posted: ${createdAt.toUTCString()}`}
+          dateTime={createdAt.toISOString()}
+        >
           {format(createdAt, 'h:mm a - MMM d, y')}
         </time>
       </a>

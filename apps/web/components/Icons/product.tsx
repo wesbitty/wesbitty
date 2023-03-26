@@ -12,7 +12,12 @@ function ProductIcon({ icon }: ProductIcon) {
         viewBox="0 0 24 24"
         aria-hidden="true"
       >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={icon} />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d={icon}
+        />
       </svg>
     </div>
   )

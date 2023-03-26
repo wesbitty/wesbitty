@@ -19,23 +19,34 @@ export const Hero = () => {
                     <div>
                       <h1 className="text-gray-800 dark:text-white text-2xl sm:text-3xl sm:leading-none lg:text-4xl xl:text-5xl">
                         <span className="block">Build better app</span>
-                        <span className="text-blue-900 block md:ml-0">in a few steps.</span>
+                        <span className="text-blue-900 block md:ml-0">
+                          in a few steps.
+                        </span>
                       </h1>
                       <div>
                         <p className="mt-1.5 text-sm sm:mt-5 sm:text-base lg:text-lg ">
-                          Start your business website with Wesbitty to sell online, offline, and
-                          everywhere in between, no credit card required.
+                          Start your business website with Wesbitty to sell
+                          online, offline, and everywhere in between, no credit
+                          card required.
                         </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Link href="https://app.wesbitty.org" as="https://app.wesbitty.org" passHref>
+                      <Link
+                        href="https://app.wesbitty.org"
+                        as="https://app.wesbitty.org"
+                        passHref
+                      >
                         <Button size="small" className="text-white bg-blue-600">
                           Start your project
                         </Button>
                       </Link>
                       <Link href="/docs" as="/docs" passHref>
-                        <Button size="small" type="default" icon={<IconBookOpen />}>
+                        <Button
+                          size="small"
+                          type="default"
+                          icon={<IconBookOpen />}
+                        >
                           Documentation
                         </Button>
                       </Link>

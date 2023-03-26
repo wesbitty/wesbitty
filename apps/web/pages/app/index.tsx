@@ -28,7 +28,9 @@ export default function AppIndex() {
   useEffect(() => {
     async function checkSubDomain() {
       if (debouncedSubdomain.length > 0) {
-        const response = await fetch(`/api/domain/check?domain=${debouncedSubdomain}&subdomain=1`)
+        const response = await fetch(
+          `/api/domain/check?domain=${debouncedSubdomain}&subdomain=1`
+        )
         const available = await response.json()
         if (available) {
           setError(null)
@@ -109,7 +111,8 @@ export default function AppIndex() {
             </div>
             {error && (
               <p className="px-5 text-left text-red-500">
-                <b>{error}</b> is not available. Please choose another subdomain.
+                <b>{error}</b> is not available. Please choose another
+                subdomain.
               </p>
             )}
             <div className="border border-gray-700 rounded-lg flex flex-start items-top">
@@ -158,7 +161,8 @@ export default function AppIndex() {
             onClick={() => setShowModal(true)}
             className="font-cal inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:ring-gray-400"
           >
-            New Site <span className="-mr-1 ml-1.5 h-5 w-5 text-gray-400">＋</span>
+            New Site{' '}
+            <span className="-mr-1 ml-1.5 h-5 w-5 text-gray-400">＋</span>
           </button>
         </div>
         <div className="my-10 grid gap-y-10">
@@ -184,7 +188,9 @@ export default function AppIndex() {
                     </div>
                     <div className="relative p-10">
                       <h2 className="font-cal text-3xl">{site.name}</h2>
-                      <p className="text-base my-5 line-clamp-3">{site.description}</p>
+                      <p className="text-base my-5 line-clamp-3">
+                        {site.description}
+                      </p>
                       <a
                         className="font-cal px-3 py-1 tracking-wide rounded bg-gray-200 text-gray-600 absolute bottom-5 left-10 whitespace-nowrap"
                         href={`https://${site.subdomain}.wesbitty.org`}

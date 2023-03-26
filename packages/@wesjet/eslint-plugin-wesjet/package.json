@@ -1,0 +1,37 @@
+{
+  "name": "eslint-plugin-wesjet",
+  "version": "0.0.1-beta",
+  "license": "MIT",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Shareable custom eslint parser",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wesbitty/wesbitty.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "parser"
+  ],
+  "author": "Wesbitty Inc",
+  "bugs": {
+    "url": "https://github.com/wesbitty/wesbitty/issues"
+  },
+  "homepage": "https://github.com/wesbitty/wesbitty#readme",
+  "devDependencies": {
+    "eslint-config-next": "latest",
+    "@types/prettier": "^2.7.2",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-config-turbo": "latest",
+    "prettier": "^2.8.4"
+  }
+}

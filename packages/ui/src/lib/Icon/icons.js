@@ -11,13 +11,16 @@ export default {
   IconAnchor: 'src/components/Icon/icons/IconAnchor/index.tsx',
   IconAperture: 'src/components/Icon/icons/IconAperture/index.tsx',
   IconArchive: 'src/components/Icon/icons/IconArchive/index.tsx',
-  IconArrowDownCircle: 'src/components/Icon/icons/IconArrowDownCircle/index.tsx',
+  IconArrowDownCircle:
+    'src/components/Icon/icons/IconArrowDownCircle/index.tsx',
   IconArrowDownLeft: 'src/components/Icon/icons/IconArrowDownLeft/index.tsx',
   IconArrowDownRight: 'src/components/Icon/icons/IconArrowDownRight/index.tsx',
   IconArrowDown: 'src/components/Icon/icons/IconArrowDown/index.tsx',
-  IconArrowLeftCircle: 'src/components/Icon/icons/IconArrowLeftCircle/index.tsx',
+  IconArrowLeftCircle:
+    'src/components/Icon/icons/IconArrowLeftCircle/index.tsx',
   IconArrowLeft: 'src/components/Icon/icons/IconArrowLeft/index.tsx',
-  IconArrowRightCircle: 'src/components/Icon/icons/IconArrowRightCircle/index.tsx',
+  IconArrowRightCircle:
+    'src/components/Icon/icons/IconArrowRightCircle/index.tsx',
   IconArrowRight: 'src/components/Icon/icons/IconArrowRight/index.tsx',
   IconArrowUpCircle: 'src/components/Icon/icons/IconArrowUpCircle/index.tsx',
   IconArrowUpLeft: 'src/components/Icon/icons/IconArrowUpLeft/index.tsx',
@@ -27,7 +30,8 @@ export default {
   IconAward: 'src/components/Icon/icons/IconAward/index.tsx',
   IconBarChart2: 'src/components/Icon/icons/IconBarChart2/index.tsx',
   IconBarChart: 'src/components/Icon/icons/IconBarChart/index.tsx',
-  IconBatteryCharging: 'src/components/Icon/icons/IconBatteryCharging/index.tsx',
+  IconBatteryCharging:
+    'src/components/Icon/icons/IconBatteryCharging/index.tsx',
   IconBattery: 'src/components/Icon/icons/IconBattery/index.tsx',
   IconBellOff: 'src/components/Icon/icons/IconBellOff/index.tsx',
   IconBell: 'src/components/Icon/icons/IconBell/index.tsx',
@@ -72,10 +76,12 @@ export default {
   IconCompass: 'src/components/Icon/icons/IconCompass/index.tsx',
   IconCopy: 'src/components/Icon/icons/IconCopy/index.tsx',
   IconCornerDownLeft: 'src/components/Icon/icons/IconCornerDownLeft/index.tsx',
-  IconCornerDownRight: 'src/components/Icon/icons/IconCornerDownRight/index.tsx',
+  IconCornerDownRight:
+    'src/components/Icon/icons/IconCornerDownRight/index.tsx',
   IconCornerLeftDown: 'src/components/Icon/icons/IconCornerLeftDown/index.tsx',
   IconCornerLeftUp: 'src/components/Icon/icons/IconCornerLeftUp/index.tsx',
-  IconCornerRightDown: 'src/components/Icon/icons/IconCornerRightDown/index.tsx',
+  IconCornerRightDown:
+    'src/components/Icon/icons/IconCornerRightDown/index.tsx',
   IconCornerRightUp: 'src/components/Icon/icons/IconCornerRightUp/index.tsx',
   IconCornerUpLeft: 'src/components/Icon/icons/IconCornerUpLeft/index.tsx',
   IconCornerUpRight: 'src/components/Icon/icons/IconCornerUpRight/index.tsx',

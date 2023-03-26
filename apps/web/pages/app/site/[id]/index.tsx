@@ -95,7 +95,9 @@ export default function SiteIndex() {
                     </div>
                     <div className="relative p-10">
                       <h2 className="font-cal text-3xl">{post.title}</h2>
-                      <p className="text-base my-5 line-clamp-3">{post.description}</p>
+                      <p className="text-base my-5 line-clamp-3">
+                        {post.description}
+                      </p>
                       <a
                         className="font-cal px-3 py-1 tracking-wide rounded bg-gray-200 text-gray-600 absolute bottom-5 left-10 whitespace-nowrap"
                         href={`https://${data.site?.subdomain}.wesbitty.org/${post.slug}`}

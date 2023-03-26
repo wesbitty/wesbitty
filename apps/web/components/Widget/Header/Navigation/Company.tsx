@@ -28,11 +28,20 @@ const Company = () => {
           stroke="currentColor"
           aria-hidden="true"
         >
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icon} />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d={icon}
+          />
         </svg>
         <div className="ml-4">
-          <p className="text-base font-medium text-gray-900 dark:text-white">{text}</p>
-          <p className="mt-1 text-sm text-gray-500 dark:text-dark-300">{description}</p>
+          <p className="text-base font-medium text-gray-900 dark:text-white">
+            {text}
+          </p>
+          <p className="mt-1 text-sm text-gray-500 dark:text-dark-300">
+            {description}
+          </p>
         </div>
       </Link>
     )

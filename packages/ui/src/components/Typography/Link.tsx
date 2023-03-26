@@ -12,7 +12,14 @@ interface Props {
   onClick?: HandlerFunction
 }
 
-function Link({ children, target = '_blank', href, className, onClick, style }: Props) {
+function Link({
+  children,
+  target = '_blank',
+  href,
+  className,
+  onClick,
+  style,
+}: Props) {
   // let classes = [
   //   LinkStyles['sbui-typography'],
   //   LinkStyles['sbui-typography-link'],

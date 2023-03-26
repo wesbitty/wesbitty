@@ -1,14 +1,13 @@
 import React from 'react'
 import {
-  Badge,
   Button,
-  IconArrowUpRight,
+  IconMail,
+  IconArrowRight,
+  IconHome,
   IconFrown,
-  IconShuffle,
-  IconX,
-  Space,
-  Tabs,
-  Typography,
+  IconLink2,
+  IconLink,
+  IconPause,
 } from '@wesbitty/ui'
 import Link from 'next/link'
 import { Default } from '~/Widget/Default'
@@ -17,6 +16,7 @@ import { useRouter } from 'next/router'
 import { Metadata } from '~/utils/Metadata'
 import { Section } from '~/Widget/Section'
 import Container from '~/Widget/Container'
+import Image from 'next/image'
 
 const NotFound = () => {
   const Title = `Oops! Not Found | ${Metadata.Name}`
@@ -40,34 +40,47 @@ const NotFound = () => {
         }}
       />
       <Default hideHeader hideFooter>
-        <Section>
-          <Container>
-            <main className="grid min-h-full place-items-center bg-white py-24 px-6 sm:py-32 lg:px-8">
-              <div className="text-center">
-                <p className="font-semibold text-5xl mb-4 text-indigo-600">
-                  404 <IconFrown size="10" type="secondary" />
-                </p>
-                <h1 className="mt-4 text2xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                  Page Not Found
-                </h1>
-                <p className="mt-6 text-base leading-7 text-gray-600">
-                  Sorry, we couldn’t find the page you’re looking for.
-                </p>
-                <div className="mt-10 flex items-center justify-center gap-x-6">
-                  <Link
-                    href="/"
-                    className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  >
-                    Go back home
-                  </Link>
-                  <Link href="/support" className="text-sm font-semibold text-gray-900">
-                    Contact support <span aria-hidden="true">&rarr;</span>
-                  </Link>
-                </div>
-              </div>
-            </main>
-          </Container>
-        </Section>
+        <div className="flex h-screen bg-slate-100">
+          <div className="w-screen h-screen flex flex-col justify-center items-center">
+            <div className="flex justify-center">
+              <h1 className="font-bold text-5xl text-gray-600">404</h1>
+              <IconLink2
+                size="xxxlarge"
+                strokeWidth={2}
+                className={'text-center text-sky-600 ml-4'}
+              />
+            </div>
+
+            <div className="flex max-w-screen-xs mt-10">
+              <h2 className="text-gray-500 font-medium text-2xl">
+                This page could not be found{' '}
+              </h2>
+              <IconFrown
+                size="xlarge"
+                strokeWidth={2}
+                className={'text-center text-sky-600 ml-4'}
+              />
+            </div>
+            <div className="flex space-x-4 mt-6">
+              <Link
+                href="https://wesbitty.org"
+                prefetch={false} // workaround until https://github.com/vercel/vercel/pull/8978 is deployed
+                className="text-gray-600 underline hover:text-gray-500 transition-all"
+              >
+                Go back home
+              </Link>
+              <p className="text-black">·</p>
+              <Link
+                href="/support"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 underline hover:text-gray-500 transition-all"
+              >
+                Report Isues
+              </Link>
+            </div>
+          </div>
+        </div>
       </Default>
     </>
   )

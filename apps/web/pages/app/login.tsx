@@ -5,9 +5,10 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import LoadingDots from '~/Layouts/Dashboard/loading-dots'
 import toast, { Toaster } from 'react-hot-toast'
+import { Metadata } from '~/utils/Metadata'
+import { NextSeo } from 'next-seo'
 
 const pageTitle = 'Authentication • Wesbitty Inc'
-const logo = '/favicon.ico'
 const description = 'User Management.'
 
 export default function Login() {
@@ -23,86 +24,61 @@ export default function Login() {
   }, [error])
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <Head>
-        <title>{pageTitle}</title>
-        <link rel="icon" href={logo} />
-        <link rel="shortcut icon" type="image/x-icon" href={logo} />
-        <link rel="apple-touch-icon" sizes="180x180" href={logo} />
-        <meta name="theme-color" content="#7b46f6" />
+    <>
+      <NextSeo
+        title={pageTitle}
+        description={description}
+        openGraph={{
+          title: pageTitle,
+          description: description,
+          url: `${Metadata.Url}/login`,
+          images: [
+            {
+              url: `${Metadata.Url}/brand/og-image.png`,
+            },
+          ],
+        }}
+      />
+      <div className="flex h-screen w-screen items-center justify-center bg-gray-50">
+        <div className="z-10 w-full max-w-md overflow-hidden rounded-2xl border border-gray-100 shadow-xl">
+          <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16">
+            <Image
+              alt="Platform"
+              className="h-10 w-10 rounded-full"
+              width={20}
+              height={20}
+              src="/brand/logo.png"
+            />
+            <h3 className="text-3xl font-semibold">Wesbitty Inc</h3>
+            <p className="text-sm text-gray-500">
+              The global commerce platform
+            </p>
+          </div>
 
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <div className="flex flex-col space-y-4 bg-gray-50 px-4 py-8 sm:px-16">
+            <button
+              disabled={loading}
+              onClick={() => {
+                setLoading(true)
+                signIn('github')
+              }}
+              className={`${
+                loading
+                  ? 'cursor-not-allowed border-gray-200 bg-gray-100'
+                  : 'border-black bg-black text-white hover:bg-white hover:text-black'
+              } flex h-10 w-full items-center justify-center rounded-md border text-sm transition-all focus:outline-none`}
+            >
+              {loading ? (
+                <LoadingDots color="#808080" />
+              ) : (
+                <div className="text-center text-sm">Sign In With Github</div>
+              )}
+            </button>
+          </div>
 
-        <meta itemProp="name" content={pageTitle} />
-        <meta itemProp="description" content={description} />
-        <meta itemProp="image" content={logo} />
-        <meta name="description" content={description} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={logo} />
-        <meta property="og:type" content="website" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@wesbitty" />
-        <meta name="twitter:creator" content="@wesbitty" />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={logo} />
-      </Head>
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <Image
-          alt="Platform"
-          width={100}
-          height={100}
-          className="relative mx-auto h-12 w-auto"
-          src="/brand/logo.png"
-        />
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          The Global Commerce Platform
-        </h2>
-        <p className="mt-6 text-center text-sm text-gray-600">
-          Build your business with Wesbitty to sell online, offline, and everywhere in between.{' '}
-          <br /> Read the{' '}
-          <a
-            className="font-medium text-black hover:text-gray-800"
-            href="https://demo.wesbitty.org/platforms-starter-kit"
-            rel="noreferrer"
-            target="_blank"
-          >
-            blog post
-          </a>
-        </p>
-      </div>
-
-      <div className="mt-8 mx-auto sm:w-full w-11/12 sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow-md sm:rounded-lg sm:px-10">
-          <button
-            disabled={loading}
-            onClick={() => {
-              setLoading(true)
-              signIn('github')
-            }}
-            className={`${
-              loading ? 'cursor-not-allowed bg-gray-600' : 'bg-black'
-            } group flex justify-center items-center space-x-5 w-full sm:px-4 h-16 my-2 rounded-md focus:outline-none`}
-          >
-            {loading ? (
-              <LoadingDots color="#fff" />
-            ) : (
-              <svg
-                className="w-8 h-8 group-hover:animate-wiggle"
-                aria-hidden="true"
-                fill="white"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
-            )}
-          </button>
+          <Toaster />
         </div>
       </div>
-      <Toaster />
-    </div>
+    </>
   )
 }

@@ -31,10 +31,14 @@ export default function SiteSettings() {
   const { id } = router.query
   const siteId = id
 
-  const { data: settings } = useSWR<Site | null>(siteId && `/api/site?siteId=${siteId}`, fetcher, {
-    onError: () => router.push('/'),
-    revalidateOnFocus: false,
-  })
+  const { data: settings } = useSWR<Site | null>(
+    siteId && `/api/site?siteId=${siteId}`,
+    fetcher,
+    {
+      onError: () => router.push('/'),
+      revalidateOnFocus: false,
+    }
+  )
 
   const [saving, setSaving] = useState(false)
   const [adding, setAdding] = useState(false)
@@ -107,11 +111,15 @@ export default function SiteSettings() {
   useEffect(() => {
     async function checkSubdomain() {
       try {
-        const response = await fetch(`/api/domain/check?domain=${debouncedSubdomain}&subdomain=1`)
+        const response = await fetch(
+          `/api/domain/check?domain=${debouncedSubdomain}&subdomain=1`
+        )
 
         const available = await response.json()
 
-        setSubdomainError(available ? null : `${debouncedSubdomain}.wesbitty.org`)
+        setSubdomainError(
+          available ? null : `${debouncedSubdomain}.wesbitty.org`
+        )
       } catch (error) {
         console.error(error)
       }
@@ -131,9 +139,12 @@ export default function SiteSettings() {
     setAdding(true)
 
     try {
-      const response = await fetch(`/api/domain?domain=${customDomain}&siteId=${siteId}`, {
-        method: HttpMethod.POST,
-      })
+      const response = await fetch(
+        `/api/domain?domain=${customDomain}&siteId=${siteId}`,
+        {
+          method: HttpMethod.POST,
+        }
+      )
 
       if (!response.ok)
         throw {
@@ -237,7 +248,8 @@ export default function SiteSettings() {
             </div>
             {subdomainError && (
               <p className="px-5 text-left text-red-500">
-                <b>{subdomainError}</b> is not available. Please choose another subdomain.
+                <b>{subdomainError}</b> is not available. Please choose another
+                subdomain.
               </p>
             )}
           </div>
@@ -303,19 +315,19 @@ export default function SiteSettings() {
                       className="ml-1"
                       onClick={async (e) => {
                         e.preventDefault()
-                        await fetch(`/api/request-delegation?domain=${error.domain}`).then(
-                          (res) => {
-                            if (res.ok) {
-                              toast.success(
-                                `Requested delegation for ${error.domain}. Try adding the domain again in a few minutes.`
-                              )
-                            } else {
-                              alert(
-                                'There was an error requesting delegation. Please try again later.'
-                              )
-                            }
+                        await fetch(
+                          `/api/request-delegation?domain=${error.domain}`
+                        ).then((res) => {
+                          if (res.ok) {
+                            toast.success(
+                              `Requested delegation for ${error.domain}. Try adding the domain again in a few minutes.`
+                            )
+                          } else {
+                            alert(
+                              'There was an error requesting delegation. Please try again later.'
+                            )
                           }
-                        )
+                        })
                       }}
                     >
                       <u>Click here to request access.</u>
@@ -323,8 +335,8 @@ export default function SiteSettings() {
                   </p>
                 ) : (
                   <p>
-                    Cannot add <b>{error.domain}</b> since it&apos;s already assigned to another
-                    project.
+                    Cannot add <b>{error.domain}</b> since it&apos;s already
+                    assigned to another project.
                   </p>
                 )}
               </div>
@@ -379,8 +391,9 @@ export default function SiteSettings() {
             <div className="flex flex-col space-y-4 max-w-lg">
               <h2 className="font-cal text-2xl">Delete Site</h2>
               <p>
-                Permanently delete your site and all of its contents from our platform. This action
-                is not reversible – please continue with caution.
+                Permanently delete your site and all of its contents from our
+                platform. This action is not reversible – please continue with
+                caution.
               </p>
               <button
                 onClick={() => {
@@ -405,8 +418,9 @@ export default function SiteSettings() {
           <h2 className="font-cal text-2xl mb-6">Delete Site</h2>
           <div className="grid gap-y-5 w-5/6 mx-auto">
             <p className="text-gray-600 mb-3">
-              Are you sure you want to delete your site? This action is not reversible. Type in the
-              full name of your site (<b>{data.name}</b>) to confirm.
+              Are you sure you want to delete your site? This action is not
+              reversible. Type in the full name of your site (<b>{data.name}</b>
+              ) to confirm.
             </p>
             <div className="border border-gray-700 rounded-lg flex flex-start items-center overflow-hidden">
               <input
