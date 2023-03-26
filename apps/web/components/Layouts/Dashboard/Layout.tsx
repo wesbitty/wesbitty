@@ -85,14 +85,14 @@ export default function Layout({ siteId, children }: LayoutProps) {
             <Menu as="div" className="relative inline-block text-left">
               <div>
                 <Menu.Button className="h-8 w-8 inline-block rounded-full overflow-hidden align-middle">
-                {session.user && session.user.image && (
+                  {session.user && session.user.image && (
                     <Image
                       src={session.user.image}
                       width={40}
                       height={40}
                       alt={session.user.name ?? 'User avatar'}
                     />
-                )}
+                  )}
                 </Menu.Button>
               </div>
 
@@ -116,7 +116,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
                             'block px-4 py-2 text-sm'
                           )}
                         >
-                        Sign in as: {session.user?.name}
+                          Sign in as: {session.user?.name}
                         </a>
                       )}
                     </Menu.Item>

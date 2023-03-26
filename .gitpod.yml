@@ -1,0 +1,12 @@
+# List the start up tasks. Learn more: https://www.gitpod.io/docs/configure/workspaces/tasks
+tasks:
+  - name: Script Task
+    init: cd ../../home/gitpod/.config && mkdir planetscale && cd ../../../workspace/wesbitty
+    command: |
+      brew install planetscale/tap/pscale
+      brew install mysql-client
+  - name: Install Deps
+  - init: |
+      npm install
+      npm run build
+    command: cd apps/web && npm run start
