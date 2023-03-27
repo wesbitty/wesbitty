@@ -24,14 +24,74 @@ export const Hero = () => {
                         </span>
                       </h1>
                       <div>
-                        <p className="mt-1.5 text-sm sm:mt-5 sm:text-base lg:text-lg ">
+                        <p className="mt-4 text-3xl font-extrabold tracking-[-0.04em] text-black sm:text-5xl sm:leading-[3.5rem]">
+                          Build Better Store, in a few steps.
+                        </p>
+                        <div className="flex flex-wrap mt-4">
+                          <div className="flex items-center text-sm font-medium text-slate-500">
+                            <svg
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-8 w-8 flex-none stroke-current text-slate-400"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path d="M5 4.15h22.5l-2 20.5-9.25 4-9.25-4-2-20.5Z"></path>
+                              <path d="M20.5 9.15H12v5.5h8.5v6l-4.25 2-4.25-2v-2.5"></path>
+                            </svg>
+                            <span className="ml-2.5">HTML</span>
+                          </div>
+                          <div className="flex items-center text-sm font-medium text-slate-500 ml-6">
+                            <svg
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-8 w-8 flex-none stroke-current text-slate-400"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <ellipse cx="16" cy="16" rx="13" ry="5"></ellipse>
+                              <ellipse
+                                cx="16"
+                                cy="16"
+                                rx="13"
+                                ry="5"
+                                transform="rotate(60 16 16)"
+                              ></ellipse>
+                              <ellipse
+                                rx="13"
+                                ry="5"
+                                transform="matrix(-.5 .86603 .86603 .5 16 16)"
+                              ></ellipse>
+                              <circle cx="16" cy="16" r="2"></circle>
+                            </svg>
+                            <span className="ml-2.5">React</span>
+                          </div>
+                          <div className="flex items-center text-sm font-medium text-slate-500 ml-6">
+                            <svg
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-8 w-8 flex-none stroke-current text-slate-400"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path d="M19.924 5 16 11.644 12.075 5H3l13 23L29 5h-9.076Z"></path>
+                              <path d="M19.879 5 16 11.26 12.121 5H8l8 13 8-13h-4.121Z"></path>
+                            </svg>
+                            <span className="ml-2.5">Vue</span>
+                          </div>
+                        </div>
+
+                        <p className="mt-4 text-base leading-7 text-slate-700">
                           Start your business website with Wesbitty to sell
                           online, offline, and everywhere in between, no credit
                           card required.
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="mt-8 flex items-center gap-4">
                       <Link
                         href="https://app.wesbitty.org"
                         as="https://app.wesbitty.org"

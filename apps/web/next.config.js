@@ -13,5 +13,4 @@ module.exports = withWesjet({
   reactStrictMode: true,
   swcMinify: false,
   transpilePackages: ['ui'],
-  output: 'standalone',
 })
