@@ -21,11 +21,8 @@ import 'swiper/swiper.min.css'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
 
-type Props = {}
-
-const SupportPage = ({}: Props) => {
+function SupportPage() {
   const router = useRouter()
-
   const Title = `Help & Support | ${Metadata.Name}`
   const Description =
     'Find help and support for Wesbitty. Our support agents provide answers on all types of issues, including account information, billing, and refunds.'

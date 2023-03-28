@@ -12,7 +12,7 @@ module.exports = {
   theme: {
     borderColor: (theme) => ({
       ...theme('colors'),
-      DEFAULT: '#f0f2f5',
+      DEFAULT: theme('colors.gray.200'),
       dark: theme('colors.gray.600', 'currentColor'),
     }),
     divideColor: (theme) => ({
@@ -138,6 +138,10 @@ module.exports = {
             transform: 'translateX(0%)',
             transformOrigin: '50% 50%',
           },
+          'flash-code': {
+            '0%': { backgroundColor: 'rgba(63, 207, 142, 0.1)' },
+            '100%': { backgroundColor: 'transparent' },
+          },
           '15%': { transform: 'translateX(-6px) rotate(-6deg)' },
           '30%': { transform: 'translateX(9px) rotate(6deg)' },
           '45%': { transform: 'translateX(-9px) rotate(-3.6deg)' },
@@ -147,6 +151,8 @@ module.exports = {
       },
       animation: {
         wiggle: 'wiggle 0.8s both',
+        'flash-code': 'flash-code 1s forwards',
+        'flash-code-slow': 'flash-code 2s forwards',
       },
     },
   },

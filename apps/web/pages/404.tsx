@@ -18,7 +18,7 @@ import { Section } from '~/Widget/Section'
 import Container from '~/Widget/Container'
 import Image from 'next/image'
 
-const NotFound = () => {
+function ErrorPage() {
   const Title = `Oops! Not Found | ${Metadata.Name}`
   const Description = 'Oops! Not Found'
   const { basePath } = useRouter()
@@ -86,4 +86,4 @@ const NotFound = () => {
   )
 }
 
-export default NotFound
+export default ErrorPage

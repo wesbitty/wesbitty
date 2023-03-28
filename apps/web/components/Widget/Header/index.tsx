@@ -115,7 +115,7 @@ const Header = () => {
       onClick={() => props.toggleFlyOut()}
     >
       <button
-        className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-700"
+        className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-700"
         aria-expanded="false"
       >
         <span className="sr-only">Open main menu</span>
@@ -159,7 +159,7 @@ const Header = () => {
     <div
       className={
         `
-        inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium text-stone-600 hover:text-stone-700
+        inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700
         dark:text-dark-100 cursor-pointer
       ` + props.active
       }
@@ -169,7 +169,7 @@ const Header = () => {
         <span>{props.title}</span>
         <svg
           className={
-            'ml-2 h-5 w-5 text-gray-600 group-hover:text-gray-700 transition ease-in-out duration-150' +
+            'ml-2 h-5 w-5 text-gray-700 group-hover:text-gray-700 transition ease-in-out duration-150' +
             (props.active && ' transform rotate-180')
           }
           xmlns="http://www.w3.org/2000/svg"
@@ -191,73 +191,65 @@ const Header = () => {
     <>
       {/*<Announcement />*/}
       <div className="sticky top-0 z-50">
-        <nav className="bg-stone-100 dark:bg-gray-800 border-b dark:border-gray-600">
+        <nav className="bg-slate-100 dark:bg-gray-800 border-b dark:border-gray-600">
           {/* <div className="lg:container mx-auto relative flex justify-between h-16 lg:px-10 xl:px-0"> */}
-          <div className="relative mx-auto flex h-16 justify-between lg:container lg:px-16 xl:px-20">
-            <div className="flex flex-1 items-center justify-center sm:items-stretch lg:justify-between">
-              <div className="flex items-center">
-                <div className="flex items-center space-x-2.5">
-                  <Link href="/">
-                    <img
-                      className="w-40"
-                      src="/brand/logo/wesbitty-light-logo.svg"
-                      alt="Wesbitty Logo"
-                    />
-                  </Link>
-                </div>
-                <HamburgerButton toggleFlyOut={() => setOpen(true)} />
-                <div className="hidden pl-8 sm:ml-6 sm:space-x-4 lg:flex">
-                  <Link
-                    href="/blog"
-                    className={`
-                    inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
-                    text-gray-700 hover:text-gray-700 hover:border-gray-500 p-5
-                    dark:text-dark-100 dark:hover:border-dark-100
-                  `}
-                  >
-                    Blog
-                  </Link>
-                  <Link
-                    href="/pricing"
-                    className={`
-                    inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
-                    text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
-                    dark:text-dark-100 dark:hover:border-dark-100
-                  `}
-                  >
-                    Pricing
-                  </Link>
-                  <Link
-                    href="/developer"
-                    className={`
-                    inline-flex items-center px-1 border-b-2 border-transparent text-sm font-medium
-                    text-gray-500 hover:text-gray-700 hover:border-gray-500 p-5
-                    dark:text-dark-100 dark:hover:border-dark-100
-                  `}
-                  >
-                    Developer
-                  </Link>
-                  <FlyOutNavButton
-                    title={'Product'}
-                    onClick={() =>
-                      handleToggle(() => setOpenProduct(!openProduct))
-                    }
-                    active={openProduct}
+          <div className="mx-auto flex h-16 w-full max-w-screen-2xl items-center justify-between px-4 md:px-8 lg:px-16">
+            <div className="flex items-center">
+              <div className="flex items-center space-x-2.5">
+                <Link href="/">
+                  <img
+                    className="w-40"
+                    src="/brand/logo/wesbitty-light-logo.svg"
+                    alt="Wesbitty Logo"
                   />
-                </div>
-              </div>
-              <div className="hidden lg:flex items-center sm:space-x-3">
-                <Link href="https://app.wesbitty.org" target="_blank">
-                  <Button type="default" icon={<IconPackage />}>
-                    Start Your Project
-                  </Button>
-                </Link>
-                <Link href="https://app.wesbitty.org/login">
-                  <Button title="Sign In" type="default" icon={<IconLogIn />}>
-                    Sign In
-                  </Button>
                 </Link>
               </div>
+              <HamburgerButton toggleFlyOut={() => setOpen(true)} />
+              <div className="hidden pl-8 sm:ml-6 sm:space-x-4 lg:flex">
+                <Link
+                  href="/blog"
+                  className={`
+                    flex h-8 items-center text-gray-500 rounded-md bg-transparent mx-1 m-5 px-3 text-sm font-medium leading-none hover:bg-gray-100 hover:text-gray-600
+                  `}
+                >
+                  Blog
+                </Link>
+                <Link
+                  href="/pricing"
+                  className={`
+                    flex h-8 items-center text-gray-500 rounded-md bg-transparent mx-1 m-5 px-3 text-sm font-medium leading-none hover:bg-gray-100 hover:text-gray-600
+                  `}
+                >
+                  Pricing
+                </Link>
+                <Link
+                  href="/developer"
+                  className={`
+                    flex h-8 items-center text-gray-500 rounded-md bg-transparent mx-1 m-5 px-3 text-sm font-medium leading-none hover:bg-gray-100 hover:text-gray-600
+                  `}
+                >
+                  Developer
+                </Link>
+                <FlyOutNavButton
+                  title={'Product'}
+                  onClick={() =>
+                    handleToggle(() => setOpenProduct(!openProduct))
+                  }
+                  active={openProduct}
+                />
+              </div>
+            </div>
+            <div className="hidden lg:flex items-center sm:space-x-3">
+              <Link href="https://app.wesbitty.org" target="_blank">
+                <Button type="default" icon={<IconPackage />}>
+                  Start Your Project
+                </Button>
+              </Link>
+              <Link href="https://app.wesbitty.org/login">
+                <Button title="Sign In" type="default" icon={<IconLogIn />}>
+                  Sign In
+                </Button>
+              </Link>
             </div>
             {/* <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"></div> */}
           </div>

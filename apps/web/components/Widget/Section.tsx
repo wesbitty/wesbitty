@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import Image from 'next/image'
 
 interface Props {
   children: React.ReactNode
@@ -7,10 +8,7 @@ interface Props {
 
 export const Section = ({ children, className }: Props) => (
   <div
-    className={classNames(
-      `sm:py-12 container relative mx-auto px-6 py-12 md:py-24 lg:px-16 lg:py-24 xl:px-20`,
-      className
-    )}
+    className={`container mx-auto px-6 lg:px-16 xl:px-20 relative py-16 sm:py-18 md:py-24 lg:py-24 ${className}`}
   >
     {children}
   </div>

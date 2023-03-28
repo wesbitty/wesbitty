@@ -5,10 +5,11 @@
   "private": true,
   "scripts": {
     "build": "prisma generate && next build",
-    "lint": "next lint",
-    "format:write": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx}\"",
+    "export": "next export",
     "start": "next start",
     "dev": "prisma generate && next dev",
+    "lint": "next lint",
+    "prettier": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx}\"",
     "clean": "rm -rf .next .wesjet",
     "gen:prisma": "prisma generate",
     "gen:prisma_push": "prisma db push",

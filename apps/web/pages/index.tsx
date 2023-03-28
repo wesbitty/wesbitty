@@ -2,9 +2,7 @@ import { Default } from '~/Widget/Default'
 import Container from '~/Widget/Container'
 import { Hero } from '~/components/Features/Hero'
 
-type Props = {}
-
-const Index = ({}: Props) => {
+function Index() {
   return (
     <>
       <Default>
