@@ -45,16 +45,16 @@ export default function AppSettings() {
             duration: 10000,
           }}
         />
-        <Section className="mb-16">
+        <Section className="mb-4">
           <h1 className="font-cal text-2xl underline underline-offset-8 mb-8">
             Public profile
           </h1>
-          <div className="mb-28 flex flex-col space-y-12">
+          <div className="mb-16 flex flex-col space-y-12">
             <div className="space-y-2">
-              <h2 className="font-cal text-sm">Name</h2>
+              <h2 className="font-cal text-base">Name</h2>
               <div className="border border-gray-700 rounded-lg flex items-center max-w-lg overflow-hidden">
                 <input
-                  className="w-full px-5 py-3 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-lg placeholder-gray-400"
+                  className="w-full px-3 py-2 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-lg placeholder-gray-400"
                   type="text"
                   name="name"
                   placeholder="Your awesome name"
@@ -67,15 +67,19 @@ export default function AppSettings() {
                   }
                 />
               </div>
+              <p className="text-slate-600">
+                Your name may appear around Wesbitty where you contributed or
+                are mentioned. You can remove it at any time.
+              </p>
             </div>
             <div className="space-y-2">
-              <h2 className="font-cal text-sm">Email</h2>
+              <h2 className="font-cal text-base">Email</h2>
               <div className="border border-gray-700 rounded-lg flex items-center max-w-lg overflow-hidden">
                 <input
-                  className="w-full px-5 py-3 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-lg placeholder-gray-400"
+                  className="w-full px-3 py-2 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-lg placeholder-gray-400"
                   type="email"
                   name="email"
-                  placeholder="panic@thedis.co"
+                  placeholder="robertson@gmail.com"
                   value={data?.email || ''}
                   onInput={(e) =>
                     setData({
@@ -87,7 +91,7 @@ export default function AppSettings() {
               </div>
             </div>
             <div className="space-y-2">
-              <h2 className="font-cal text-sm">Profile picture</h2>
+              <h2 className="font-cal text-base">Profile picture</h2>
               <div
                 className={`${
                   data?.image ? '' : 'animate-pulse bg-gray-300 h-150'
@@ -130,25 +134,26 @@ export default function AppSettings() {
                 )}
               </div>
             </div>
+
+            <div className="space-x-4">
+              <div className="items-center">
+                <button
+                  onClick={() => {
+                    saveSettings(data)
+                  }}
+                  disabled={saving}
+                  className={`${
+                    saving
+                      ? 'cursor-not-allowed bg-gray-300 border-gray-300'
+                      : 'bg-gray-700 hover:bg-gray-500 text-white border-gray-300'
+                  } px-4 py-2 text-base text-white border-2 focus:outline-none transition-all ease-in-out duration-150`}
+                >
+                  {saving ? <LoadingDots /> : 'Update profile'}
+                </button>
+              </div>
+            </div>
           </div>
         </Section>
-        <footer className="h-20 z-20 fixed bottom-0 inset-x-0 border-solid border-t border-gray-500 bg-white">
-          <div className="max-w-screen-xl mx-auto px-10 sm:px-20 h-full flex justify-end items-center">
-            <button
-              onClick={() => {
-                saveSettings(data)
-              }}
-              disabled={saving}
-              className={`${
-                saving
-                  ? 'cursor-not-allowed bg-gray-300 border-gray-300'
-                  : 'bg-black hover:bg-white hover:text-black border-black'
-              } mx-2 w-36 h-12 text-lg text-white border-2 focus:outline-none transition-all ease-in-out duration-150`}
-            >
-              {saving ? <LoadingDots /> : 'Save Changes'}
-            </button>
-          </div>
-        </footer>
       </Layout>
     </>
   )

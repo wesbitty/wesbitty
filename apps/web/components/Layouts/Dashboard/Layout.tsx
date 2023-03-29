@@ -103,7 +103,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
                         alt={session.user.name ?? 'User avatar'}
                       />
                     </span>
-                    <ChevronDownIcon className="h-5 w-5" aria-hidden="false" />
+                    <ChevronDownIcon className="h-5 w-5" />
                   </>
                 )}
               </Menu.Button>
@@ -131,8 +131,8 @@ export default function Layout({ siteId, children }: LayoutProps) {
                   <Menu.Item>
                     <Link
                       href="/"
-                      className={`bg-gray-100 ${
-                        tab == '' ? 'text-gray-900' : 'text-gray-700'
+                      className={`bg-white ${
+                        tab == '' ? 'text-gray-600' : 'text-gray-700'
                       } block px-4 py-2 text-sm`}
                     >
                       My stores
@@ -141,8 +141,8 @@ export default function Layout({ siteId, children }: LayoutProps) {
                   <Menu.Item>
                     <Link
                       href="/settings"
-                      className={`bg-gray-100 ${
-                        tab == 'settings' ? 'text-gray-900' : 'text-gray-700'
+                      className={`bg-white ${
+                        tab == 'settings' ? 'text-gray-600' : 'text-gray-700'
                       } block px-4 py-2 text-sm`}
                     >
                       Settings
@@ -153,7 +153,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
                       <button
                         type="submit"
                         onClick={() => signOut()}
-                        className="bg-gray-100 text-gray-900 block w-full px-4 py-2 text-left text-sm border-t"
+                        className="bg-white text-gray-600 block w-full px-4 py-2 text-left text-sm border-t"
                       >
                         Sign out
                       </button>
