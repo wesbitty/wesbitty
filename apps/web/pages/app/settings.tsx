@@ -8,6 +8,8 @@ import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
 import type { UserSettings } from '~/types'
 import { Section } from '~/Widget/Section'
+import { Button } from '@wesbitty/ui'
+import Link from 'next/link'
 
 export default function AppSettings() {
   const { data: session } = useSession()
@@ -135,9 +137,18 @@ export default function AppSettings() {
               </div>
             </div>
 
-            <div className="space-x-4">
-              <div className="items-center">
-                <button
+            <div className="mt-6">
+              <div className="space-y-2">
+                <p className="text-slate-600">
+                  All of the fields on this page are optional and can be deleted
+                  at any time, and by filling them out, you're giving us consent
+                  to share this data wherever your user profile appears. Please
+                  see our
+                  <Link href="/privacy">privacy statement</Link> to learn more
+                  about how we use this information.
+                </p>
+                <Button
+                  type="primary"
                   onClick={() => {
                     saveSettings(data)
                   }}
@@ -145,11 +156,11 @@ export default function AppSettings() {
                   className={`${
                     saving
                       ? 'cursor-not-allowed bg-gray-300 border-gray-300'
-                      : 'bg-gray-700 hover:bg-gray-500 text-white border-gray-300'
-                  } px-4 py-2 text-base text-white border-2 focus:outline-none transition-all ease-in-out duration-150`}
+                      : ''
+                  } focus:outline-none transition-all ease-in-out duration-150`}
                 >
                   {saving ? <LoadingDots /> : 'Update profile'}
-                </button>
+                </Button>
               </div>
             </div>
           </div>
