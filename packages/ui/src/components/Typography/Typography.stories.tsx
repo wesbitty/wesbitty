@@ -1,7 +1,7 @@
 import React from 'react'
 // import { AutoForm } from 'uniforms'
 // @ts-ignore
-import MarkdownExample from './../../lib/MarkdownSample.md'
+import MarkdownExample from '../../lib/MarkdownSample.md'
 import ReactMarkdown from 'react-markdown'
 const gfm = require('remark-gfm')
 
@@ -34,32 +34,32 @@ export const Titles = () => (
 
 export const Texts = () => (
   <>
-    <Text>Supabase UI (default)</Text>
+    <Text>Wesbitty-UI (default)</Text>
     <br />
-    <Text type="secondary">Supabase UI (secondary)</Text>
+    <Text type="secondary">Wesbittu UI (secondary)</Text>
     <br />
-    <Text type="success">Supabase UI (success)</Text>
+    <Text type="success">Wesbitty UI (success)</Text>
     <br />
-    <Text type="warning">Supabase UI (warning)</Text>
+    <Text type="warning">Wesbitty UI (warning)</Text>
     <br />
-    <Text type="danger">Supabase UI (danger)</Text>
+    <Text type="danger">Wesbitty UI (danger)</Text>
     <br />
-    <Text disabled>Supabase UI (disabled)</Text>
+    <Text disabled>Wesbitty UI (disabled)</Text>
     <br />
-    <Text mark>Supabase UI (mark)</Text>
+    <Text mark>Wesbitty UI (mark)</Text>
     <br />
-    <Text code>Supabase UI (code)</Text>
+    <Text code>Wesbitty UI (code)</Text>
     <br />
-    <Text keyboard>Supabase UI (keyboard)</Text>
+    <Text keyboard>Wesbitty UI (keyboard)</Text>
     <br />
-    <Text underline>Supabase UI (underline)</Text>
+    <Text underline>Wesbitty UI (underline)</Text>
     <br />
-    <Text strikethrough>Supabase UI (strikethrough)</Text>
+    <Text strikethrough>Wesbitty UI (strikethrough)</Text>
     <br />
-    <Text strong>Supabase UI (strong)</Text>
+    <Text strong>Wesbitty UI (strong)</Text>
     <br />
-    <Link href="https://supabase.io" target="_blank">
-      Supabase (Link)
+    <Link href="https://wesbitty.com" target="_blank">
+      Wesbitty (Link)
     </Link>
   </>
 )

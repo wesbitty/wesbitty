@@ -1,8 +1,49 @@
 // GENERAL
 export * from './components/Button'
 export * from './components/Typography/index'
+export * from './components/Icon/index'
+// export * from './components/Image/index'
 
-export * from './components/ThemeProvider/index'
+// FORM
+export * from './components/Select'
+export * from './components/Listbox/index'
+export * from './components/Checkbox/index'
+export * from './components/Input'
+export * from './components/InputNumber/index'
+export * from './components/Radio/index'
+export * from './components/Toggle/index'
+export * from './components/Upload/index'
+export * from './components/Form/index'
+
+// DISPLAYS
+export * from './components/Card/index'
+export * from './components/Badge'
+export * from './components/Tabs'
+export * from './components/Alert'
+export * from './components/Accordion'
+export * from './components/Collapsible/index'
+
+export * from './components/Header'
+export * from './theme/ColorScheme/index'
+
+// NAV
+export * from './components/Menu/index'
+
+// OVERLAYS
+export * from './components/Modal/index'
+export * from './components/SidePanel/index'
+export * from './components/Dropdown'
+export * from './components/Popover/index'
+// export * from './components/Toast/index'
+
+// UTILITIES
+export * from './components/Space'
+export * from './components/Loading'
+export * from './components/Divider'
+export * from './theme/Provider/index'
+
+// AUTH
+// export * from './components/Auth/index'
 
 // ICONS
 export * from './components/Icon/icons/IconActivity/index'

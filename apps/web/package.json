@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "build": "prisma generate && next build",
+    "build:svg": "npx svgr --out-dir components/Icons components/Icons",
     "export": "next export",
     "start": "next start",
     "dev": "prisma generate && next dev",
@@ -28,6 +29,7 @@
     "@supabase/supabase-js": "^1.6.0",
     "@vercel/analytics": "^0.1.6",
     "@wesbitty/ui": "^0.0.3",
+    "@windmill/react-ui": "^0.6.0",
     "bcrypt": "^5.1.0",
     "classnames": "^2.3.2",
     "clsx": "^1.2.1",
@@ -47,7 +49,9 @@
     "react-confetti": "^6.1.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.0",
+    "react-router-dom": "^6.9.0",
     "react-textarea-autosize": "^8.4.0",
+    "react-tooltip": "^4.2.17",
     "remark": "^14.0.2",
     "remark-gfm": "^1.0.0",
     "remark-html": "^15.0.2",
@@ -61,6 +65,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@svgr/cli": "^6.1.1",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.8",

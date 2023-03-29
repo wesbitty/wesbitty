@@ -33,6 +33,7 @@ export default async function middleware(req: NextRequest) {
 
   if (
     hostname === 'localhost:3000' ||
+    hostname === '3000-wesbitty-wesbitty-uom3hmtxs5c.ws-eu93.gitpod.io' ||
     hostname === 'wesbitty.org' ||
     hostname === 'bitty.vercel.app'
   ) {

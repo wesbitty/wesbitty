@@ -5,24 +5,24 @@ const defaults = {
   bg: {
     brand: {
       primary: 'bg-gray-600 dark:text-white',
-      secondary: 'bg-gray-200 dark:text-white',
+      secondary: 'bg-gray-600 dark:text-white',
     },
   },
   text: {
-    brand: 'text-gray-700 dark:text-white',
-    body: 'text-gray-600 dark:text-white',
+    brand: 'text-gray-600 dark:text-gray-100',
+    body: 'text-gray-600 dark:text-gray-100',
     title: 'text-gray-700 dark:text-white',
   },
   border: {
-    brand: 'border-sky-600',
-    primary: 'border-gray-700',
-    secondary: 'border-gray-400',
-    alternative: 'border-gray-600 dark:border-gray-200',
+    brand: 'border-violet-700 dark:border-violet-400',
+    primary: 'border-gray-700 dark:border-gray-100',
+    secondary: 'border-blue-400',
+    alternative: 'border-amber-700 dark:border-amber-600',
   },
-  placeholder: 'placeholder-gray-800 dark:text-white',
+  placeholder: 'placeholder-gray-600 dark:placeholder-gray-100',
   focus: `
     outline-none
-    focus:ring-current focus:ring-2
+    focus:ring-current focus:ring-1
   `,
   'focus-visible': `
     outline-none
@@ -71,11 +71,7 @@ const default__padding_and_text = {
   xlarge: `${defaults.size.text.xlarge} ${defaults.size.padding.xlarge}`,
 }
 
-/*
- * Animations
- *
- */
-
+/** ANIMATIONS **/
 const default___animations = {
   accordion: {
     enter: 'transition-max-height ease-in-out duration-700 overflow-hidden',
@@ -86,126 +82,6 @@ const default___animations = {
     leaveTo: 'max-h-0',
   },
 }
-
-// Global style variables
-export const background = {
-  app: '#F6F9FC',
-  appInverse: '#7A8997',
-  positive: '#E1FFD4',
-  negative: '#FEDED2',
-  warning: '#FFF5CF',
-  calmBlue: '#E3F3FF',
-}
-
-export const color = {
-  // Palette
-  primary: '#FF4785', // Coral
-  secondary: '#029CFD', // Ocean
-  tertiary: '#E3E6E8', // Light grey
-
-  orange: '#FC521F',
-  gold: '#FFAE00',
-  green: '#66BF3C',
-  seafoam: '#37D5D3',
-  purple: '#6F2CAC',
-  ultraviolet: '#2A0481',
-  red: '#ff4400',
-
-  // Calm
-  bluelight: '#E3F3FF', // rgba($color.blue, 12%)
-  bluelighter: '#F5FBFF',
-
-  // Monochrome
-  lightest: '#FFFFFF',
-  lighter: '#F7FAFC',
-  light: '#EEF3F6',
-  mediumlight: '#ECF4F9',
-  medium: '#D9E8F2',
-  mediumdark: '#73828C',
-  dark: '#5C6870',
-  darker: '#454E54',
-  darkest: '#2E3438',
-  tr10: 'rgba(0, 0, 0, 0.1)',
-  tr5: 'rgba(0, 0, 0, 0.05)',
-
-  border: 'hsla(203, 50%, 30%, 0.15)',
-
-  // Status
-  positive: '#448028', // Evergreen
-  negative: '#D43900', // Crimson
-  warning: '#A15C20', // Burnt sienna
-  selected: '#0271B6', // Navy
-}
-
-export const spacing = {
-  padding: {
-    small: 10,
-    medium: 20,
-    large: 30,
-  },
-  borderRadius: {
-    small: 5,
-    default: 10,
-  },
-}
-
-export const easing = {
-  rubber: 'cubic-bezier(0.175, 0.885, 0.335, 1.05)',
-}
-
-export const rotate360 = keyframes`
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-`
-
-export const glow = keyframes`
-  0%, 100% { opacity: 1; }
-  50% { opacity: .4; }
-`
-
-export const float = keyframes`
-  0% { transform: translateY(1px); }
-  25% { transform: translateY(0px); }
-  50% { transform: translateY(-3px); }
-  100% { transform: translateY(1px); }
-`
-
-export const jiggle = keyframes`
-  0%, 100% { transform:translate3d(0,0,0); }
-  12.5%, 62.5% { transform:translate3d(-4px,0,0); }
-  37.5%, 87.5% {  transform: translate3d(4px,0,0);  }
-`
-
-export const shake = keyframes`
-  0% { transform:rotate(-3deg) }
-  1.68421% { transform:rotate(3deg) }
-  2.10526% { transform:rotate(6deg) }
-  3.78947% { transform:rotate(-6deg) }
-  4.21053% { transform:rotate(-6deg) }
-  5.89474% { transform:rotate(6deg) }
-  6.31579% { transform:rotate(6deg) }
-  8% { transform:rotate(-6deg) }
-  8.42105% { transform:rotate(-6deg) }
-  10.10526% { transform:rotate(6deg) }
-  10.52632% { transform:rotate(6deg) }
-  12.21053% { transform:rotate(-6deg) }
-  12.63158% { transform:rotate(-6deg) }
-  14.31579% { transform:rotate(6deg) }
-  15.78947% { transform:rotate(0deg) }
-  100% { transform:rotate(0deg) }
-`
-
-export const inlineGlow = css`
-  animation: ${glow} 1.5s ease-in-out infinite;
-  background: ${color.tr5};
-  color: transparent;
-  cursor: progress;
-`
-
 export const typography = {
   type: {
     primary: '"Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif',
@@ -228,15 +104,78 @@ export const typography = {
     l3: 48,
     code: 90,
   },
-} as const
+}
+export const glow = keyframes`
+  0%, 100% { opacity: 1; }
+  50% { opacity: .4; }
+`
+// Global style variables
 
-/*
- * Main tailwind utility classes output
- *
- */
+export const subheading = {
+  regular: css({
+    fontSize: 13,
+    fontWeight: 'bolder',
+    lineHeight: '18px',
+    letterSpacing: '0.38em',
+  }),
+  small: css({
+    fontSize: 11,
+    fontWeight: 'bolder',
+    lineHeight: '16px',
+    letterSpacing: '0.38em',
+  }),
+}
+
+export const code = {
+  regular: css({
+    fontFamily: 'inherit',
+    fontSize: '12px',
+    fontWeight: 'normal',
+    lineHeight: '17px',
+  }),
+
+  small: css({
+    fontFamily: 'monospace',
+    fontSize: '12px',
+    fontWeight: 'normal',
+    lineHeight: '14px',
+  }),
+}
+
+export const spacing = {
+  padding: {
+    small: 10,
+    medium: 20,
+    large: 30,
+  },
+  borderRadius: {
+    small: 5,
+    default: 10,
+  },
+}
+
+export const wsbcolor = {
+  // Calm
+  bluelight: '#E3F3FF', // rgba($color.blue, 12%)
+  bluelighter: '#F5FBFF',
+  // Monochrome
+  lightest: '#FFFFFF',
+  lighter: '#F7FAFC',
+  light: '#EEF3F6',
+  mediumlight: '#ECF4F9',
+  medium: '#D9E8F2',
+  mediumdark: '#73828C',
+
+  tr10: 'rgba(0, 0, 0, 0.1)',
+  tr5: 'rgba(0, 0, 0, 0.05)',
+  // Border
+  border: 'hsla(203, 50%, 30%, 0.15)',
+}
+
+/** GLOBAL THEME **/
 
 export default {
-  // Accordion
+  /** ACCORDION **/
   accordion: {
     variants: {
       default: {
@@ -326,11 +265,7 @@ export default {
     },
   },
 
-  /*
-   * Badge
-   *
-   */
-
+  /** BADGE **/
   badge: {
     base: 'inline-flex items-center px-2 py-1 leading-5 rounded-full text-xs font-medium',
     size: {
@@ -355,48 +290,44 @@ export default {
     },
   },
 
-  /*
-   * Alert
-   *
-   */
-
+  /** ALERT **/
   alert: {
     base: `
       relative rounded border py-4 px-6 
       flex space-x-4 items-start 
     `,
-    header: 'block text-base font-normal mb-1',
+    title: 'block text-base font-normal mb-1',
     description: `text-sm`,
     variant: {
       danger: {
         base: `bg-red-600 border-red-700`,
         icon: `text-white dark:text-red-300`,
-        header: `text-white`,
-        description: `text-white`,
+        title: `text-gray-50`,
+        description: `text-gray-100`,
       },
       warning: {
         base: `bg-yellow-600 border-gray-300`,
-        icon: `text-white`,
-        header: `text-white`,
-        description: `text-white`,
+        icon: `text-gray-50`,
+        title: `text-gray-50`,
+        description: `text-gray-100`,
       },
       info: {
         base: `bg-blue-600 border-blue-700`,
-        icon: `text-white`,
-        header: `text-white`,
-        description: `text-white`,
+        icon: `text-gray-50`,
+        title: `text-gray-50`,
+        description: `text-gray-100`,
       },
       success: {
         base: `bg-green-600 border-gray-700`,
         icon: `text-white`,
-        header: `text-white`,
-        description: `text-white`,
+        title: `text-gray-50`,
+        description: `text-gray-100`,
       },
       neutral: {
         base: `bg-gray-700 border-gray-500`,
-        icon: `text-gray-300`,
-        header: `text-gray-300`,
-        description: `text-gray-300`,
+        icon: `text-gray-200`,
+        title: `text-gray-100`,
+        description: `text-gray-200`,
       },
     },
     close: `
@@ -409,14 +340,10 @@ export default {
       opacity-100 hover:opacity-150`,
   },
 
-  /*
-   * Card
-   */
-
+  /** CARD **/
   card: {
     base: `
-      bg-white dark:bg-scaleDark-700
-      
+      bg-gray-100 dark:bg-gray-200   
       border
       ${defaults.border.primary} 
       flex flex-col 
@@ -429,10 +356,7 @@ export default {
     content: 'p-8',
   },
 
-  /*
-   * Tabs
-   */
-
+  /** TABS **/
   tabs: {
     base: `w-full justify-between space-y-4`,
     underlined: {
@@ -443,7 +367,7 @@ export default {
       base: ` 
         relative 
         cursor-pointer 
-        text-gray-900 
+        text-gray-600 dark:text-white
         flex 
         items-center 
         space-x-2
@@ -453,13 +377,15 @@ export default {
         focus-visible:ring 
         focus-visible:ring-gray-700
         focus-visible:border-gray-900
+        dark:focus-visible:ring-gray-100
+        dark:focus-visible:border-gray-200
       `,
       inactive: `
         hover:text-gray-900
       `,
       active: `
         text-gray-900
-        border-b-2 border-gray-900
+        border-b-2 border-gray-900 dark:border-gray-100
       `,
     },
     pills: {
@@ -482,11 +408,11 @@ export default {
       inactive: `
         bg-gray-200
         border border-gray-700 hover:border-gray-900
-        text-gray-900 hover:text-gray-900
+        text-gray-800 hover:text-gray-900
       `,
       active: `
-        bg-gray-900
-        text-gray-200
+        bg-sky-500
+        text-gray-100
         border-gray-900 
       `,
     },
@@ -495,27 +421,187 @@ export default {
       ...default__padding_and_text,
     },
     scrollable: `overflow-auto whitespace-nowrap no-scrollbar mask-fadeout-right`,
-    content: `focus:outline-none focus:ring text-gray-900`,
+    content: `focus:outline-none focus:ring text-gray-900 dark:text-white`,
   },
 
-  // Button
+  /** AUTH **/
+  auth: {
+    base: `w-80 m-auto mt-16`,
+    label: `block text-sm text-gray-700 dark:text-gray-100 font-medium`,
+  },
+
+  /** UPLOAD */
+  upload: {
+    dragger: `
+    block text-sm font-medium leading-6 text-gray-900
+    cursor-pointer max-w-lg
+    px-6 pt-5 pb-6
+    mt-2 flex justify-center rounded-md 
+    border-2 border-dashed border-gray-300
+    `,
+    dragger_dragged: `bg-sky-100`,
+  },
+
+  /** DIVIDER */
+  divider: {
+    span: `text-sm text-slate-700 dark:text-slate-100 inline-block px-2;`,
+    base: `w-full flex items-center whitespace-nowrap`,
+    vertical: `bg-gray-200 dark:bg-dark-500 w-px h-inherit`,
+    light: `bg-gray-100 dark:bg-dark-600`,
+    no_text: `
+    border-gray-200 dark:border-dark-500 
+    border-b-1 border-b-solid
+    `,
+    orientation: {
+      left: `
+      border-b border-solid
+      top-2/4
+      relative inline-block w-full
+      `,
+      center: `
+        border-gray-200 dark:border-dark-500;
+        border-solid border-b-2 top-2/4
+        content relative inline-block w-6/12
+        `,
+      right: `      
+      border-gray-200 dark:border-dark-500
+      border-b border-solid
+      top-2/4
+      relative inline-block w-full
+      `,
+    },
+  },
+
+  /** TYPOGRAPHY **/
+  typography: {
+    title: {
+      base: `text-slate-700 font-medium dark:text-white`,
+      level: {
+        1: `text-5xl`,
+        2: `text-4xl`,
+        3: `text-2xl`,
+        4: `text-lg`,
+        5: `text-base`,
+      },
+    },
+    text: {
+      base: `
+      text-sm text-typography-body-light 
+      dark:text-typography-body-dark
+      `,
+      small: `text-xs`,
+      type: {
+        secondary: `
+      text-typography-body-secondary-light 
+      dark:text-typography-body-secondary-dark
+      `,
+        success: `
+      text-green-500 dark:text-green-500
+      `,
+        warning: `
+      text-yellow-500 dark:text-yellow-500
+      `,
+        danger: `
+      text-red-500 dark:text-red-500
+      `,
+      },
+      disable: `
+      text-gray-300 dark:text-gray-400
+      cursor-not-allowed pointer-events-none
+      `,
+      underline: `underline`,
+      strikethrough: `line-through`,
+      mark: `p-0 text-yellow-600`,
+      code: `bg-gray-300 border border-gray-400 rounded-sm p-1 px-2 pb-0.5`,
+    },
+    link: 'text-sm  h4 text-gray-600 dark:text-gray-50',
+  },
+
+  // BREADCRUMB
+  breadcrumb: {
+    container: 'flex flex-row items-center',
+    sep: 'mx-2 text-gray-600 dark:text-gray-200',
+    item: 'text-gray-600 dark:text-gray-100 cursor-pointer',
+    item_active: 'text-sky-600 dark:text-sky-800',
+    item_container: 'flex items-center',
+    size: {
+      ...default__padding_and_text,
+    },
+  },
+
+  // SPACE
+  space: {
+    base: 'flex',
+    block: 'block',
+    row: 'space-x-2 flex flex-row items-center',
+    col: 'space-y-2 flex flex-col',
+    'wsb-space-y-0': `space-y-0`,
+    'wsb-space-y-1': `space-y-1`,
+    'wsb-space-y-2': `space-y-2`,
+    'wsb-space-y-3': `space-y-3`,
+    'wsb-space-y-4': `space-y-4`,
+    'wsb-space-y-5': `space-y-5`,
+    'wsb-space-y-6': `space-y-6`,
+    'wsb-space-y-7': `space-y-7`,
+    'wsb-space-y-8': `space-y-8`,
+    'wsb-space-y-9': `space-y-9`,
+    'wsb-space-y-10': `space-x-10`,
+    'wsb-space-x-0': `space-x-0`,
+    'wsb-space-x-1': `space-x-1`,
+    'wsb-space-x-2': `space-x-2`,
+    'wsb-space-x-3': `space-x-3`,
+    'wsb-space-x-4': `space-x-4`,
+    'wsb-space-x-5': `space-x-5`,
+    'wsb-space-x-6': `space-x-6`,
+    'wsb-space-x-7': `space-x-7`,
+    'wsb-space-x-8': `space-x-8`,
+    'wsb-space-x-9': `space-x-9`,
+    'wsb-space-x-10': `space-x-10`,
+    'wsb-minus-space-y-0': `-space-y-0`,
+    'wsb-minus-space-y-1': `-space-y-1`,
+    'wsb-minus-space-y-2': `-space-y-2`,
+    'wsb-minus-space-y-3': `-space-y-3`,
+    'wsb-minus-space-y-4': `-space-y-4`,
+    'wsb-minus-space-y-5': `-space-y-5`,
+    'wsb-minus-space-y-6': `-space-y-6`,
+    'wsb-minus-space-y-7': `-space-y-7`,
+    'wsb-minus-space-y-8': `-space-y-8`,
+    'wsb-minus-space-y-9': `-space-y-9`,
+    'wsb-minus-space-y-10': `-space-y-10`,
+    'wsb-minus-space-x-0': `-space-x-0`,
+    'wsb-minus-space-x-1': `-space-x-1`,
+    'wsb-minus-space-x-2': `-space-x-2`,
+    'wsb-minus-space-x-3': `-space-x-3`,
+    'wsb-minus-space-x-4': `-space-x-4`,
+    'wsb-minus-space-x-5': `-space-x-5`,
+    'wsb-minus-space-x-6': `-space-x-6`,
+    'wsb-minus-space-x-7': `-space-x-7`,
+    'wsb-minus-space-x-8': `-space-x-8`,
+    'wsb-minus-space-x-9': `-space-x-9`,
+    'wsb-minus-space-x-10': `-space-x-10`,
+  },
+
+  // BUTTON
   button: {
     base: `
-      relative 
-      cursor-pointer 
-      inline-flex items-center space-x-2 
-      text-center
-      font-regular
-      transition ease-out duration-200 
-      rounded 
-      ${defaults['focus-visible']}
+    relative cursor-pointer 
+    inline-flex items-center 
+    space-x-2 
+    text-center 
+    border border-solid 
+    transition ease-out duration-200 
+    outline-none
+    font-regular
+    rounded 
+    ${defaults['focus-visible']}
     `,
     label: `truncate`,
     container: 'inline-flex font-medium',
     type: {
       primary: `
-        bg-blue-600 hover:bg-blue-500 text-white shadow-md 
-        opacity-100
+        bg-sky-600 hover:bg-sky-500 text-white shadow-md 
+        opacity-100 items-center text-center
+        shadow-sky-800 hover:shadow-sky-600
         focus-visible:outline-sky-600
       `,
       secondary: `
@@ -525,21 +611,24 @@ export default {
         focus-visible:outline-green-600
       `,
       default: `
-        text-white bg-indigo-600 hover:bg-indigo-500
-        shadow-lg shadow-indigo-500/50
-        opacity-100
-        focus-visible:outline-sky-600      
+       bg-transparent items-center text-center
+       border-gray-600 text-gray-800 
+       hover:border-sky-500 hover:ring-1 hover:ring-sky-500
+       dark:border-gray-100 dark:text-white
+       focus-visible:outline-gray-700
       `,
       alternative: `
-        bg-cyan-500 shadow-lg shadow-cyan-100 text-white
-        focus-visible:border-sky-800
-        focus-visible:outline-sky-600
+        bg-cyan-500 shadow-md text-white
+        opacity-100
+        shadow-cyan-800 hover:shadow-cyan-600
+        focus-visible:border-cyan-800
+        focus-visible:outline-cyan-600
       `,
       outline: `
         text-gray-900 dark:text-white
         bg-transparent 
-        border-gray-500 hover:border-gray-700
-        dark:border-white hover:dark:border-gray-300
+        border-gray-500 hover:border-gray-800
+        dark:border-gray-200 hover:dark:border-white
         focus-visible:outline-gray-700
       `,
       dashed: `
@@ -551,7 +640,7 @@ export default {
       focus-visible:outline-gray-300
       `,
       link: `
-        text-sky-600
+        text-blue-600 text-sm
         border border-transparent
         hover:bg-sky-200
         border-opacity-0
@@ -560,9 +649,10 @@ export default {
         focus-visible:outline-gray-700
       `,
       text: `
-        text-gray-900 bg-gray-100 
-        hover:bg-gray-200
+        text-gray-900 bg-gray-50 
+        hover:bg-gray-300
         shadow-none
+        items-center text-center
         focus-visible:outline-gray-700
       `,
       danger: `
@@ -595,22 +685,25 @@ export default {
   input: {
     base: `
       block box-border w-full 
-      rounded-md shadow-sm 
-      transition-all text-gray-900 border
-      focus:shadow-md
+      rounded-md shadow-sm
+      transition-all border
+      text-slate-700 font-medium
       ${defaults.focus}
-      focus:border-gray-800
-      focus:ring-gray-400
       ${defaults.placeholder}
+      focus:border-sky-500 
+      focus:ring-1 focus:ring-sky-500
     `,
     variants: {
       standard: `
-        bg-scaleA-200
-        border border-gray-700
+        bg-transparent
+        border border-gray-600
+        placeholder:text-gray-600
+        dark:placeholder:text-gray-100
+        dark:border-gray-200
         `,
       error: `
         bg-red-100
-        border border-red-700 
+        border border-red-600 
         focus:ring-red-500
         placeholder:text-red-600
        `,
@@ -620,12 +713,13 @@ export default {
     size: {
       ...default__padding_and_text,
     },
-    disabled: 'cursor-not-allowed opacity-50 bg-gray-300 dark:bg-gray-800',
+    disabled: 'cursor-not-allowed opacity-50 bg-gray-100 dark:bg-gray-500',
     actions_container:
       'absolute inset-y-0 right-0 pl-3 pr-1 flex space-x-1 items-center',
     textarea_actions_container:
-      'absolute inset-y-1.5 right-0 pl-3 pr-1 flex space-x-1 items-start',
-    textarea_actions_container_items: 'flex items-center',
+      'absolute inset-y-1.5 right-0 text-slate-700 dark:text-gray-100 pl-3 pr-1 flex space-x-1 items-start',
+    textarea_actions_container_items:
+      'text-slate-700 dark:text-gray-100 flex items-center',
   },
 
   /*
@@ -637,24 +731,24 @@ export default {
       block 
       box-border 
       w-full 
-      rounded-md 
+      rounded-md
       shadow-sm 
       transition-all
-      text-gray-900  
+      text-gray-800  
       border
       focus:shadow-md
       ${defaults.focus}
       focus:border-gray-900
       focus:ring-gray-400
       ${defaults.placeholder}
-
       appearance-none
       bg-none
     `,
     variants: {
       standard: `
-        bg-gray-200
-        border border-gray-700
+        bg-gray-100
+        border border-gray-300
+        focus:ring-sky-500
         `,
       error: `
         bg-red-100
@@ -663,7 +757,11 @@ export default {
         placeholder:text-red-600
        `,
     },
-    container: 'relative',
+    container: 'relative rounded-md border-solid border-gray-300',
+    option: `
+    block box-border w-full 
+    rounded bg-white mx-6 my-2
+    `,
     with_icon: 'pl-10',
     size: {
       ...default__padding_and_text,
@@ -673,7 +771,7 @@ export default {
       'absolute inset-y-0 right-0 pl-3 pr-1 mr-5 flex items-center',
     chevron_container:
       'absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none',
-    chevron: 'h-5 w-5 text-gray-600',
+    chevron: 'h-5 w-5 text-gray-800',
   },
 
   /*
@@ -688,21 +786,18 @@ export default {
       rounded-md 
       shadow-sm 
       transition-all
-      text-gray-900  
+      text-gray-800  
       border
       focus:shadow-md
       ${defaults.focus}
-      focus:border-gray-900
-      focus:ring-gray-400
       ${defaults.placeholder}
-
       appearance-none
-      bg-none
+      bg-transparent
     `,
     variants: {
       standard: `
-        bg-scaleA-200
-        border border-gray-700
+        bg-transparent
+        border border-gray-600
       `,
       error: `
         bg-red-100
@@ -721,32 +816,13 @@ export default {
       'absolute inset-y-0 right-0 pl-3 pr-1 flex space-x-1 items-center',
   },
 
-  /*
-   *  Checkbox
-   *
-   * 
-   * This Checkbox requires a plugin in your config:
-  
-    ```
-    // tailwind.config.js
-    module.exports = {
-      // ...
-      plugins: [
-        // ...
-        require('@tailwindcss/forms'),
-      ],
-    }
-    ```
-   * 
-   * 
-  */
-
+  //  Checkbox
   checkbox: {
     base: `
       bg-transparent 
       ${defaults.focus}
       focus:ring-gray-400
-      text-sky-700 
+      text-sky-600 
       border-gray-800
       dark:border-gray-200 
       shadow-sm
@@ -763,55 +839,36 @@ export default {
     },
     disabled: 'opacity-50',
     label: {
-      base: `text-gray-900 dark:text-white cursor-pointer`,
+      base: `text-gray-600 dark:text-white cursor-pointer`,
       ...defaults.size.text,
     },
     label_before: {
-      base: 'text-gray-800 dark:text-gray-200',
+      base: 'text-gray-600 dark:text-gray-100',
       ...defaults.size.text,
     },
     label_after: {
-      base: 'text-gray-800 dark:text-gray-200',
+      base: 'text-gray-600 dark:text-gray-100',
       ...defaults.size.text,
     },
     description: {
-      base: `text-gray-800 dark:text-gray-200`,
+      base: `text-gray-600 dark:text-gray-100`,
       ...defaults.size.text,
     },
     group: `space-y-3`,
   },
 
-  /*
-   *  Radio
-   *
-   * 
-   * This Radio requires a plugin in your config:
-  
-    ```
-    // tailwind.config.js
-    module.exports = {
-      // ...
-      plugins: [
-        // ...
-        require('@tailwindcss/forms'),
-      ],
-    }
-    ```
-   * 
-   * 
-  */
-
+  // RADIO
   radio: {
     base: `
       absolute
-      ${defaults.focus}
-      focus:ring-sky-400
       border-gray-600    
-      text-sky-600
+      text-gray-600
       shadow-sm
       cursor-pointer
       peer
-      bg-gray-300
+      bg-gray-400
+      ${defaults.focus}
+      focus:ring-sky-400
     `,
     hidden: `absolute opacity-0`,
     size: {
@@ -845,14 +902,14 @@ export default {
           xlarge: `px-8 p-4`,
         },
         inactive: `
-          bg-gray-100 dark:bg-gray-400
-          border-gray-500 dark:border-gray-500
-          hover:border-gray-700 hover:dark:border-gray-700
-          hover:bg-gray-200 dark:hover:bg-gray-500
+          bg-gray-100 dark:bg-transparent
+          border-gray-500 dark:border-gray-200
+          hover:border-gray-700 hover:dark:border-gray-300
+          hover:bg-gray-200 dark:hover:bg-gray-400
         `,
         active: `
-          bg-gray-300 dark:bg-gray-600 z-10
-          border-gray-900 dark:border-gray-900 
+          bg-sky-400 z-10
+          border-gray-900 dark:border-gray-100 
           border-1
         `,
         radio_offset: 'left-4',
@@ -881,14 +938,14 @@ export default {
           xlarge: `px-8 p-4`,
         },
         inactive: `
-          bg-gray-100 dark:bg-gray-400
-          border-gray-500 dark:border-gray-500
-          hover:border-gray-700 hover:dark:border-gray-700
-          hover:bg-gray-200 dark:hover:bg-gray-500
+          bg-gray-100 dark:bg-transparent
+          border-gray-500 dark:border-gray-100
+          hover:border-gray-700 hover:dark:border-gray-200
+          hover:bg-gray-200 dark:hover:bg-gray-400
         `,
         active: `
-          bg-gray-300 dark:bg-gray-600 z-10
-          border-gray-900 dark:border-gray-900 
+          bg-sky-400 z-10
+          border-gray-900 dark:border-gray-100 
           border-1
         `,
         radio_offset: 'left-4',
@@ -921,14 +978,14 @@ export default {
           xlarge: `px-8 p-4`,
         },
         inactive: `
-          bg-gray-100 dark:bg-gray-400
-          border-gray-500 dark:border-gray-500
-          hover:border-gray-700 hover:dark:border-gray-700
+          bg-gray-100 dark:bg-transparent
+          border-gray-500 dark:border-gray-100
+          hover:border-gray-700 hover:dark:border-gray-200
           hover:bg-gray-200 dark:hover:bg-gray-500
         `,
         active: `
-          bg-gray-300 dark:bg-gray-500 z-10
-          border-gray-900 dark:border-gray-900 border-1
+          bg-sky-400 z-10
+          border-gray-900 dark:border-gray-100 border-1
         `,
         radio_offset: 'left-4',
       },
@@ -957,14 +1014,14 @@ export default {
           xlarge: `px-8 p-4`,
         },
         inactive: `
-          bg-gray-100 dark:bg-gray-400
-          border-gray-500 dark:border-gray-500
-          hover:border-gray-700 hover:dark:border-gray-700
+          bg-gray-100 dark:bg-transparent
+          border-gray-500 dark:border-gray-200
+          hover:border-gray-700 hover:dark:border-gray-200
           hover:bg-gray-200 dark:hover:bg-gray-500
         `,
         active: `
-          bg-gray-300 dark:bg-gray-600 z-10
-          border-gray-900 dark:border-gray-900 
+          bg-sky-500 z-10
+          border-gray-900 dark:border-gray-100 
           border-1
         `,
         radio_offset: 'left-4',
@@ -999,7 +1056,7 @@ export default {
       },
     },
     label: {
-      base: `text-gray-900 dark:text-white cursor-pointer`,
+      base: `text-gray-600 dark:text-white cursor-pointer`,
       ...defaults.size.text,
     },
     label_before: {
@@ -1011,16 +1068,17 @@ export default {
       ...defaults.size.text,
     },
     description: {
-      base: `text-gray-900 dark:text-white`,
+      base: `text-gray-600 dark:text-white`,
       ...defaults.size.text,
     },
     optionalLabel: {
-      base: `text-gray-900 dark:text-white`,
+      base: `text-gray-600 dark:text-white`,
       ...defaults.size.text,
     },
     disabled: `opacity-50 cursor-auto border-dashed`,
   },
 
+  // SIDEPANEL
   sidepanel: {
     base: `
       bg-gray-100 dark:bg-gray-300
@@ -1103,13 +1161,12 @@ export default {
       transition-colors ease-in-out duration-200
       ${defaults.focus}
       focus:ring-gray-400
-      bg-gray-500
-
-      hover:bg-gray-700
+      bg-sky-400
+      hover:bg-sky-500
     `,
     active: `
-      bg-sky-900    
-      hover:bg-sky-900    
+      bg-sky-600    
+      hover:bg-sky-700    
     `,
     handle_container: {
       tiny: 'h-4 w-7',
@@ -1144,13 +1201,9 @@ export default {
     disabled: 'opacity-75 cursor-not-allowed',
   },
 
-  /*
-   *  Form Layout
-   */
-
+  // FORM LAYOUT
   form_layout: {
     container: 'grid gap-2',
-
     flex: {
       left: {
         base: 'flex flex-row gap-6',
@@ -1165,7 +1218,6 @@ export default {
         data_input: 'text-right',
       },
     },
-
     responsive: 'md:grid md:grid-cols-12 md:gap-x-4',
     non_responsive: 'grid grid-cols-12 gap-2',
 
@@ -1173,48 +1225,46 @@ export default {
       'flex flex-row space-x-2 justify-between col-span-12',
     labels_vertical_layout: 'flex flex-col space-y-2 col-span-4',
 
-    data_input_horizontal_layout: 'col-span-12',
-
     non_box_data_input_spacing_vertical: 'my-3',
     non_box_data_input_spacing_horizontal: 'my-3 md:mt-0 mb-3',
 
     data_input_vertical_layout: 'col-span-8',
-
+    data_input_horizontal_layout: 'col-span-12',
     data_input_vertical_layout__align_right: 'text-right',
 
     label: {
-      base: 'block text-gray-900',
+      base: 'block text-slate-700 font-medium dark:text-slate-100',
       size: {
         ...defaults.size.text,
       },
     },
     label_optional: {
-      base: 'text-gray-900',
+      base: 'text-slate-700 font-medium dark:text-white',
       size: {
         ...defaults.size.text,
       },
     },
     description: {
-      base: 'mt-2 text-gray-900',
+      base: 'mt-2 text-gray-600 dark:text-gray-50',
       size: {
         ...defaults.size.text,
       },
     },
     label_before: {
-      base: 'text-gray-500 ',
+      base: 'text-gray-500 dark:text-gray-100',
       size: {
         ...defaults.size.text,
       },
     },
     label_after: {
-      base: 'text-gray-500',
+      base: 'text-gray-500 dark:text-gray-50',
       size: {
         ...defaults.size.text,
       },
     },
     error: {
       base: `
-        text-red-900 
+        text-red-600
         transition-all
         data-show:mt-2
         data-show:animate-slide-down-normal
@@ -1555,7 +1605,8 @@ export default {
       w-full 
       rounded-md 
       shadow-sm 
-      text-gray-900  
+      text-gray-600
+      dark:text-gray-700 
       border
       focus:shadow-md
       ${defaults.focus}
@@ -1570,9 +1621,8 @@ export default {
     label: `truncate`,
     variants: {
       standard: `
-        bg-scaleA-200
+        bg-gray-100
         border border-gray-700
-
         aria-expanded:border-gray-900
         aria-expanded:ring-gray-400
         aria-expanded:ring-2
@@ -1598,7 +1648,6 @@ export default {
       border-gray-100 dark:border-gray-600 max-h-60 
       rounded-md py-1 text-base 
       sm:text-sm z-10 overflow-hidden overflow-y-scroll
-
       origin-dropdown
       data-open:animate-dropdown-content-show
       data-closed:animate-dropdown-content-hide
@@ -1619,22 +1668,21 @@ export default {
     option: `
       w-listbox
       transition cursor-pointer select-none relative py-2 pl-3 pr-9 
-      text-gray-900
+      text-gray-600
+      dark:text-gray-700
       text-sm
-
-      focus:bg-gray-300 dark:focus:bg-gray-500
-      focus:text-gray-900
+      focus:bg-gray-200 dark:focus:bg-gray-500
+      focus:text-gray-800
       border-none
       focus:outline-none
     `,
-    option_active: `text-gray-900 bg-gray-600`,
+    option_active: `text-gray-900 bg-gray-200`,
     option_disabled: `cursor-not-allowed opacity-50`,
     option_inner: `flex items-center space-x-3`,
     option_check: `absolute inset-y-0 right-0 flex items-center pr-3 text-sky-900`,
     option_check_active: `text-sky-900`,
     option_check_icon: `h-5 w-5`,
   },
-
   collapsible: {
     content: `
       data-open:animate-slide-down-normal

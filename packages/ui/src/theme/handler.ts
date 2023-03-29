@@ -1,13 +1,13 @@
 import { useContext } from 'react'
-import defaultTheme from './globalTheme'
-import { ThemeContext } from '../components/ThemeProvider/ThemeProvider'
+import globalTheme from './globalTheme'
+import { ThemeContext } from './Provider/ThemeProvider'
 
-export default function styleHandler(target: string) {
+function styleHandler(target: string) {
   let {
     theme: { [target]: __styles },
   }: any = useContext(ThemeContext)
 
-  if (!__styles) __styles = defaultTheme.button
+  if (!__styles) __styles = globalTheme.button
 
   // console.log(__styles)
 
@@ -26,3 +26,5 @@ export default function styleHandler(target: string) {
 
   return __styles
 }
+
+export default styleHandler
