@@ -155,7 +155,7 @@ export default function AppIndex() {
       </Modal>
 
       <Section>
-        <div className="flex flex-col sm:flex-row space-y-5 sm:space-y-0 justify-between items-center">
+        <div className="flex space-y-4 sm:space-y-0 justify-between items-center">
           <h1 className="font-cal text-2xl">Dashboard</h1>
           <button
             onClick={() => setShowModal(true)}

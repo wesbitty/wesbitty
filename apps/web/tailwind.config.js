@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const { fontFamily } = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
@@ -80,33 +80,18 @@ module.exports = {
       letterSpacing: {
         tighter: '-.04em',
       },
-      fontSize: {
-        '5xl': '2.5rem',
-        '6xl': '2.75rem',
-        '7xl': '4.5rem',
-        '8xl': '6.25rem',
-      },
       fontFamily: {
-        default: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
-        cal: ['var(--font-cal)', ...defaultTheme.fontFamily.sans],
-        title: ['var(--font-title)', ...defaultTheme.fontFamily.sans],
+        default: ['var(--font-inter)', ...fontFamily.sans],
+        cal: ['var(--font-cal)', ...fontFamily.sans],
+        title: ['var(--font-title)', ...fontFamily.sans],
         sans: [
           'custom-font',
-          'BlinkMacSystemFont',
-          '-apple-system',
-          'Segoe UI',
-          'Roboto',
-          'Oxygen',
-          'Ubuntu',
-          'Cantarell',
-          'Fira Sans',
-          'Droid Sans',
           'Helvetica Neue',
           'Helvetica',
           'Arial',
           'sans-serif',
         ],
-        mono: ['Source Code Pro', 'Menlo', 'monospace'],
+        mono: ['Office Code Pro', 'Source Code Pro', 'Menlo', 'monospace'],
       },
       stroke: (theme) => ({
         white: theme('colors.white'),

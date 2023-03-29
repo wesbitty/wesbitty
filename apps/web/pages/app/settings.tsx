@@ -7,6 +7,7 @@ import { HttpMethod } from '~/types'
 import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
 import type { UserSettings } from '~/types'
+import { Section } from '~/Widget/Section'
 
 export default function AppSettings() {
   const { data: session } = useSession()
@@ -44,11 +45,13 @@ export default function AppSettings() {
             duration: 10000,
           }}
         />
-        <div className="max-w-screen-xl mx-auto px-10 sm:px-20 mt-10 mb-16">
-          <h1 className="font-cal text-5xl mb-12">Settings</h1>
+        <Section className="mb-16">
+          <h1 className="font-cal text-2xl underline underline-offset-8 mb-8">
+            Public profile
+          </h1>
           <div className="mb-28 flex flex-col space-y-12">
-            <div className="space-y-4">
-              <h2 className="font-cal text-2xl">Name</h2>
+            <div className="space-y-2">
+              <h2 className="font-cal text-sm">Name</h2>
               <div className="border border-gray-700 rounded-lg flex items-center max-w-lg overflow-hidden">
                 <input
                   className="w-full px-5 py-3 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-lg placeholder-gray-400"
@@ -65,8 +68,8 @@ export default function AppSettings() {
                 />
               </div>
             </div>
-            <div className="space-y-4">
-              <h2 className="font-cal text-2xl">Email</h2>
+            <div className="space-y-2">
+              <h2 className="font-cal text-sm">Email</h2>
               <div className="border border-gray-700 rounded-lg flex items-center max-w-lg overflow-hidden">
                 <input
                   className="w-full px-5 py-3 font-cal text-gray-700 bg-white border-none focus:outline-none focus:ring-0 rounded-lg placeholder-gray-400"
@@ -83,8 +86,8 @@ export default function AppSettings() {
                 />
               </div>
             </div>
-            <div className="space-y-4">
-              <h2 className="font-cal text-2xl">Display Picture</h2>
+            <div className="space-y-2">
+              <h2 className="font-cal text-sm">Profile picture</h2>
               <div
                 className={`${
                   data?.image ? '' : 'animate-pulse bg-gray-300 h-150'
@@ -111,7 +114,7 @@ export default function AppSettings() {
                       >
                         <path d="M16 16h-3v5h-2v-5h-3l4-4 4 4zm3.479-5.908c-.212-3.951-3.473-7.092-7.479-7.092s-7.267 3.141-7.479 7.092c-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h3.5v-2h-3.5c-1.93 0-3.5-1.57-3.5-3.5 0-2.797 2.479-3.833 4.433-3.72-.167-4.218 2.208-6.78 5.567-6.78 3.453 0 5.891 2.797 5.567 6.78 1.745-.046 4.433.751 4.433 3.72 0 1.93-1.57 3.5-3.5 3.5h-3.5v2h3.5c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408z" />
                       </svg>
-                      <p>Upload another image</p>
+                      <p>Upload a photo...</p>
                     </button>
                   )}
                 </CloudinaryUploadWidget>
@@ -128,7 +131,7 @@ export default function AppSettings() {
               </div>
             </div>
           </div>
-        </div>
+        </Section>
         <footer className="h-20 z-20 fixed bottom-0 inset-x-0 border-solid border-t border-gray-500 bg-white">
           <div className="max-w-screen-xl mx-auto px-10 sm:px-20 h-full flex justify-end items-center">
             <button

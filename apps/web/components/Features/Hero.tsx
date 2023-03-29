@@ -17,7 +17,7 @@ export const Hero = () => {
                 <div className="md:mx-auto md:max-w-2xl lg:col-span-6 lg:flex lg:items-center lg:text-left">
                   <div className="space-y-12 sm:mx-auto md:w-3/4 lg:mx-0 lg:w-full">
                     <div>
-                      <p className="mt-4 text-2xl font-extrabold tracking-[-0.04em] text-gray-800 sm:text-5xl sm:leading-[3.5rem]">
+                      <p className="mt-4 text-3xl font-extrabold tracking-[-0.04em] text-slate-900 sm:text-5xl sm:leading-[3.5rem]">
                         Build Better Store, in a few steps.
                       </p>
                       <div className="flex flex-wrap mt-4">
@@ -26,9 +26,9 @@ export const Hero = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-8 w-8 flex-none stroke-current text-slate-400"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           >
                             <path d="M5 4.15h22.5l-2 20.5-9.25 4-9.25-4-2-20.5Z"></path>
                             <path d="M20.5 9.15H12v5.5h8.5v6l-4.25 2-4.25-2v-2.5"></path>
@@ -40,9 +40,9 @@ export const Hero = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-8 w-8 flex-none stroke-current text-slate-400"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           >
                             <ellipse cx="16" cy="16" rx="13" ry="5"></ellipse>
                             <ellipse
@@ -66,9 +66,9 @@ export const Hero = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-8 w-8 flex-none stroke-current text-slate-400"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           >
                             <path d="M19.924 5 16 11.644 12.075 5H3l13 23L29 5h-9.076Z"></path>
                             <path d="M19.879 5 16 11.26 12.121 5H8l8 13 8-13h-4.121Z"></path>
@@ -142,9 +142,9 @@ export const Hero = () => {
                       className="h-10 w-10 shrink-0 transform-cpu rounded-lg shadow-md shadow-indigo-500/[.12]"
                       viewBox="0 0 40 40"
                       fill="none"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <path
                         d="M.75 8A7.25 7.25 0 018 .75h24A7.25 7.25 0 0139.25 8v24A7.25 7.25 0 0132 39.25H8A7.25 7.25 0 01.75 32V8z"
@@ -177,9 +177,9 @@ export const Hero = () => {
                       className="h-10 w-10 shrink-0 transform-cpu rounded-lg shadow-md shadow-indigo-500/[.12]"
                       viewBox="0 0 40 40"
                       fill="none"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <path
                         d="M.75 8A7.25 7.25 0 018 .75h24A7.25 7.25 0 0139.25 8v24A7.25 7.25 0 0132 39.25H8A7.25 7.25 0 01.75 32V8z"
@@ -211,9 +211,9 @@ export const Hero = () => {
                       className="h-10 w-10 shrink-0 transform-cpu rounded-lg shadow-md shadow-indigo-500/[.12]"
                       viewBox="0 0 40 40"
                       fill="none"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <path
                         d="M.75 8A7.25 7.25 0 018 .75h24A7.25 7.25 0 0139.25 8v24A7.25 7.25 0 0132 39.25H8A7.25 7.25 0 01.75 32V8z"

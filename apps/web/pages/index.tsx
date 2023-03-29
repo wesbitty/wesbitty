@@ -2,7 +2,7 @@ import { Default } from '~/Widget/Default'
 import Container from '~/Widget/Container'
 import { Hero } from '~/components/Features/Hero'
 
-function Index() {
+export default function Home() {
   return (
     <>
       <Default>
@@ -13,5 +13,3 @@ function Index() {
     </>
   )
 }
-
-export default Index
