@@ -31,10 +31,7 @@ export default async function middleware(req: NextRequest) {
     return NextResponse.rewrite(url)
   }
 
-  if (
-    hostname === 'localhost:3000' ||
-    hostname === 'wesbitty.org'
-  ) {
+  if (hostname === 'localhost:3000' || hostname === 'wesbitty.org') {
     return NextResponse.rewrite(new URL(`${path}`, req.url))
   }
 

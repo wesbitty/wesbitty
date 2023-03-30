@@ -67,7 +67,6 @@
   "devDependencies": {
     "@svgr/cli": "^6.1.1",
     "@tailwindcss/forms": "^0.5.3",
-    "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.8",
     "@types/bcrypt": "^5.0.0",
     "@types/classnames": "^2.2.10",
@@ -85,7 +84,7 @@
     "postcss-preset-env": "^7.8.3",
     "prettier": "^2.2.1",
     "prisma": "^4.12.0",
-    "tailwindcss": "^3.2.4",
+    "tailwindcss": "^3.1.8",
     "tsconfig": "0.0.1-beta",
     "typescript": "^4.5.3",
     "wesjet": "^0.0.9",

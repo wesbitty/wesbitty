@@ -10,10 +10,10 @@ export default async function requestDelegation(
 
   try {
     const response = await fetch(
-      `https://api.vercel.com/v6/domains/${domain}/request-delegation?teamId=${process.env.TEAM_ID_VERCEL}`,
+      `https://api.vercel.com/v6/domains/${domain}/request-delegation?teamId=${process.env.VERCEL_ORG_ID}`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.AUTH_BEARER_TOKEN}`,
+          Authorization: `Bearer ${process.env.VERCEL_TOKEN}`,
           'Content-Type': 'application/json',
         },
         method: HttpMethod.POST,

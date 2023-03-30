@@ -144,6 +144,14 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
-    require('@tailwindcss/line-clamp'),
+    function ({ addUtilities, addVariant }) {
+      addUtilities({
+        // prose (tailwind typography) helpers
+        // useful for removing margins in prose styled sections
+        '.prose--remove-p-margin p': {
+          margin: '0',
+        },
+      })
+    },
   ],
 }
