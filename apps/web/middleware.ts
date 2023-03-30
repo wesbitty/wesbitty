@@ -14,7 +14,7 @@ export default async function middleware(req: NextRequest) {
 
   const currentHost =
     process.env.NODE_ENV === 'production' && process.env.VERCEL === '1'
-      ? hostname.replace(`.wesbitty.org`, '').replace(`.bitty.vercel.app`, '')
+      ? hostname.replace(`.wesbitty.org`, '')
       : hostname.replace(`.localhost:3000`, '')
 
   if (currentHost == 'app') {
@@ -33,9 +33,7 @@ export default async function middleware(req: NextRequest) {
 
   if (
     hostname === 'localhost:3000' ||
-    hostname === '3000-wesbitty-wesbitty-uom3hmtxs5c.ws-eu93.gitpod.io' ||
-    hostname === 'wesbitty.org' ||
-    hostname === 'bitty.vercel.app'
+    hostname === 'wesbitty.org'
   ) {
     return NextResponse.rewrite(new URL(`${path}`, req.url))
   }
