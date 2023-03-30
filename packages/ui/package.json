@@ -20,7 +20,7 @@
   "sideEffects": false,
   "source": "src/index.tsx",
   "scripts": {
-    "prebuild": "node --experimental-modules src/lib/Icon/generate.js",
+    "#prebuild": "node --experimental-modules src/lib/Icon/generate.js",
     "build": "rollup -c",
     "build-storybook": "build-storybook",
     "gen:doc": "tsc --declaration --outDir docs --declarationMap",
