@@ -20,7 +20,7 @@ jobs:
       - name: Deploy
         uses: amondnet/vercel-action@v20
         with:
-          vercel-token: ${{ secrets.VERCEL_ACCESS_TOKEN }}
+          vercel-token: ${{ secrets.AUTH_BEARER_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-args: '--prod'
           vercel-org-id: ${{ secrets.TEAM_ID_VERCEL}}
