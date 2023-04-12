@@ -32,10 +32,12 @@
     "dev": "npm run dev --workspace=apps/web",
     "lint": "turbo run lint",
     "prettier": "prettier --write .",
+    "pre-commit": "lint-staged",
     "clean": "turbo run clean",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
@@ -45,7 +47,9 @@
     "babel-jest": "^27.3.1",
     "eslint": "^7.32.0",
     "eslint-plugin-wesjet": "^0.0.1-beta",
+    "husky": "^8.0.3",
     "jest": "^27.3.1",
+    "lint-staged": "^13.2.1",
     "prettier": "^2.5.1",
     "ts-jest": "^27.0.7",
     "ts-node": "^9.1.1",
