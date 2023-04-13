@@ -46,7 +46,7 @@
     "@types/jest": "^27.0.3",
     "babel-jest": "^27.3.1",
     "eslint": "^7.32.0",
-    "eslint-plugin-wesjet": "^0.0.1-beta",
+    "eslint-config-wesjet": "^0.0.19",
     "husky": "^8.0.3",
     "jest": "^27.3.1",
     "lint-staged": "^13.2.1",
