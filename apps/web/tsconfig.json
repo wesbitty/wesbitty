@@ -13,7 +13,7 @@
       "~/Widget/*": ["components/Widget/*"],
       "~/data/*": ["wesbitty/data/*"],
       "~/utils/*": ["wesbitty/utils/*"],
-      "wesjet/jetpack": ["./.wesjet/jetpack"],
+      "wesjet/static": ["./.wesjet/static"],
       "~/lib/*": ["wesbitty/lib/*"],
       "~/styles/*": ["styles/*"],
       "~/types": ["wesbitty/types/index"],
@@ -38,7 +38,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".wesjet/jetpack"
+    ".wesjet/static"
   ],
   "exclude": ["node_modules"]
 }

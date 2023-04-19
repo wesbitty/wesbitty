@@ -63,7 +63,8 @@
     "ui": "0.0.3-beta",
     "unist-util-visit": "^4.1.1",
     "use-debounce": "^9.0.2",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "wesjet": "^0.0.30"
   },
   "devDependencies": {
     "@svgr/cli": "^6.1.1",
@@ -86,8 +87,6 @@
     "prisma": "^4.12.0",
     "tailwindcss": "^3.1.8",
     "tsconfig": "0.0.1-beta",
-    "typescript": "^4.5.3",
-    "wesjet": "^0.0.9",
-    "wesjet-nextjs-plugin": "^0.0.9"
+    "typescript": "^4.5.3"
   }
 }

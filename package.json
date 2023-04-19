@@ -27,6 +27,7 @@
     "store"
   ],
   "scripts": {
+    "prepare": "husky install",
     "build": "turbo run build",
     "build:app": "turbo run build --filter={apps/web}",
     "dev": "npm run dev --workspace=apps/web",
@@ -36,8 +37,7 @@
     "clean": "turbo run clean",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
-    "test": "turbo run test",
-    "prepare": "husky install"
+    "test": "turbo run test"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",

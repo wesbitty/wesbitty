@@ -1,9 +1,9 @@
-import { defineDocumentType, defineNestedType, makeSource } from 'wesjet/maker'
+import { defineDocumentType, defineNestedType, makeSource } from 'wesjet/preset'
 import { DocumentGen } from 'wesjet/core'
 
-const contentDirPath = '[blog]'
+const contentDirPath = '[Post]'
 
-const urlFromFilePath = (doc: DocumentGen): string => {
+const url = (doc: DocumentGen): string => {
   return doc._raw.flattenedPath.replace(/pages\/?/, '')
 }
 
@@ -58,7 +58,7 @@ const Post = defineDocumentType(() => ({
   computedFields: {
     url_path: {
       type: 'string',
-      resolve: urlFromFilePath,
+      resolve: url,
     },
     slug: {
       type: 'string',
