@@ -1,6 +1,6 @@
 import React from 'react'
 import { Typography } from '@wesbitty/ui'
-import { Post } from 'wesjet/jetpack'
+import { Post } from 'wesjet/static'
 import { FC } from 'react'
 
 export const BlogHeader: FC<{ post: Post }> = ({ post }) => {

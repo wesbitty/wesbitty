@@ -3,7 +3,7 @@ import { DocumentGen } from 'wesjet/core'
 
 const contentDirPath = '[Post]'
 
-const url = (doc: DocumentGen): string => {
+const urlFromFilePath = (doc: DocumentGen): string => {
   return doc._raw.flattenedPath.replace(/pages\/?/, '')
 }
 
@@ -58,7 +58,7 @@ const Post = defineDocumentType(() => ({
   computedFields: {
     url_path: {
       type: 'string',
-      resolve: url,
+      resolve: urlFromFilePath,
     },
     slug: {
       type: 'string',

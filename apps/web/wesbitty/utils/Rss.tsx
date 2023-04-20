@@ -1,5 +1,5 @@
 import { Metadata } from './Metadata'
-import { Post } from 'wesjet/jetpack'
+import { Post } from 'wesjet/static'
 
 export const generateRss = (rss: any[]): string => {
   return `

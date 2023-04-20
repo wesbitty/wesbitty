@@ -1,3 +1,5 @@
 const { wesjetConfig } = require('wesjet/next')
 
-module.exports = wesjetConfig({})
+module.exports = wesjetConfig({
+  reactStrictMode: true,
+})

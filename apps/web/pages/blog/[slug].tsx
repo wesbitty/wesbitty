@@ -1,25 +1,25 @@
 import Head from 'next/head'
 import { format, parseISO } from 'date-fns'
 import { allPosts, Post } from 'wesjet/static'
+import { defineStaticProps } from '~/utils/next'
 
 export async function getStaticPaths() {
-  const paths: string[] = allPosts.map((post) => post.url)
+  const paths: string[] = allPosts.map((post) => post.slug)
   return {
     paths,
     fallback: false,
   }
 }
 
-export async function getStaticProps({ params }) {
-  const post: Post = allPosts.find(
-    (post) => post._raw.flattenedPath === params.slug
-  )
+export const getStaticProps = defineStaticProps(async (context) => {
+  const params = context.params as unknown as Post
+  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
   return {
     props: {
       post,
     },
   }
-}
+})
 
 const PostLayout = ({ post }: { post: Post }) => {
   return (
