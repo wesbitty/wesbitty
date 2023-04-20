@@ -28,15 +28,15 @@
   ],
   "scripts": {
     "prepare": "husky install",
+    "pre-commit": "lint-staged",
     "build": "turbo run build",
     "build:app": "turbo run build --filter={apps/web}",
     "dev": "npm run dev --workspace=apps/web",
     "lint": "turbo run lint",
     "prettier": "prettier --write .",
-    "pre-commit": "lint-staged",
     "clean": "turbo run clean",
-    "docker:up": "docker-compose up -d",
-    "docker:down": "docker-compose down",
+    "schema:up": "pscale connect wesbitty main",
+    "schema:generate": "cd ./apps/web && npx prisma generate",
     "test": "turbo run test"
   },
   "devDependencies": {
