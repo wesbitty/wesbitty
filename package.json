@@ -24,7 +24,7 @@
     "wesbitty",
     "platform",
     "e-commerce",
-    "store"
+    "wesjet"
   ],
   "scripts": {
     "prepare": "husky install",
@@ -32,7 +32,7 @@
     "build": "turbo run build",
     "build:app": "turbo run build --filter={apps/web}",
     "dev": "npm run dev --workspace=apps/web",
-    "lint": "turbo run lint",
+    "lint": "eslint . --ext .ts --fix",
     "prettier": "prettier --write .",
     "clean": "turbo run clean",
     "schema:up": "pscale connect wesbitty main",
@@ -45,8 +45,8 @@
     "@babel/preset-typescript": "^7.16.6",
     "@types/jest": "^27.0.3",
     "babel-jest": "^27.3.1",
-    "eslint": "^7.32.0",
-    "eslint-plugin-wesjet": "^0.0.30",
+    "eslint": "^8.32.0",
+    "eslint-plugin-wesjet": "^0.0.34-rc.1",
     "husky": "^8.0.3",
     "jest": "^27.3.1",
     "lint-staged": "^13.2.1",
