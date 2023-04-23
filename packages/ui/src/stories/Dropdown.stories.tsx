@@ -64,7 +64,7 @@ export const DefaultFull = (args: any) => {
               </Typography.Text>
 
               <Typography.Text small strong>
-                user@wesbitty.com{' '}
+                user@wesbitty.org{' '}
               </Typography.Text>
             </div>
           </Dropdown.Misc>,
@@ -138,7 +138,7 @@ export const Default = (args: any) => (
             </Typography.Text>
 
             <Typography.Text small strong>
-              user@wesbitty.com{' '}
+              user@wesbitty.org{' '}
             </Typography.Text>
           </div>
         </Dropdown.Misc>,
@@ -170,7 +170,7 @@ export const doNotcloseOverlay = (args: any) => (
       overlay={[
         <Dropdown.Misc>
           <Typography.Text>Signed in as </Typography.Text>
-          <Typography.Text strong>user@wesbitty.com </Typography.Text>
+          <Typography.Text strong>user@wesbitty.org </Typography.Text>
         </Dropdown.Misc>,
         <Dropdown.Seperator />,
         <Dropdown.Item>Account</Dropdown.Item>,
@@ -205,7 +205,7 @@ export const withCustomStyles = (args: any) => (
       overlay={[
         <Dropdown.Item>
           <Typography.Text>Signed in as </Typography.Text>
-          <Typography.Text strong>user@wesbitty.com </Typography.Text>
+          <Typography.Text strong>user@wesbitty.org </Typography.Text>
         </Dropdown.Item>,
         <Dropdown.Seperator />,
         <Dropdown.Item>Account</Dropdown.Item>,
@@ -237,11 +237,11 @@ export const SearchList = (args: any) => (
         </Dropdown.Item>,
         <Dropdown.Item>
           <Typography.Text>Signed in as </Typography.Text>
-          <Typography.Text strong>user@wesbitty.com </Typography.Text>
+          <Typography.Text strong>user@wesbitty.org </Typography.Text>
         </Dropdown.Item>,
         <Dropdown.Item>
           <Typography.Text>Signed in as </Typography.Text>
-          <Typography.Text strong>user@wesbitty.com </Typography.Text>
+          <Typography.Text strong>user@wesbitty.org </Typography.Text>
         </Dropdown.Item>,
         <Dropdown.Seperator />,
         <Dropdown.Item icon={<IconLogIn />}>

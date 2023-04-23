@@ -83,10 +83,10 @@ const PostLayout = ({ post }: { post: Post }) => {
         openGraph={{
           title: slugTitle,
           description: slugDescription,
-          url: `https://wesbitty.com/${router.pathname}`,
+          url: `https://wesbitty.org/${router.pathname}`,
           images: [
             {
-              url: `https://wesbitty.com/brand/og/wesbitty-og.jpg`,
+              url: `https://wesbitty.org/brand/og/wesbitty-og.jpg`,
             },
           ],
         }}
@@ -94,7 +94,7 @@ const PostLayout = ({ post }: { post: Post }) => {
           {
             rel: 'alternate',
             type: 'application/rss+xml',
-            href: `https://wesbitty.com/rss.xml`,
+            href: `https://wesbitty.org/rss.xml`,
           },
         ]}
       />

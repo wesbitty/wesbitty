@@ -18,7 +18,7 @@ export const createUserExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const wesbittyUrl = 'https://chat-room.wesbitty.com'
+  const wesbittyUrl = 'https://chat-room.wesbitty.org'
   const wesbittyKey = 'public-anon-key'
   const wesbitty = createClient(wesbittyUrl, wesbittyKey)
   
@@ -40,7 +40,7 @@ export const subscribeExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const wesbittyUrl = 'https://chat-room.wesbitty.com'
+  const wesbittyUrl = 'https://chat-room.wesbitty.org'
   const wesbittyKey = 'public-anon-key'
   const wesbitty = createClient(wesbittyUrl, wesbittyKey)
   
@@ -64,7 +64,7 @@ export const readExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const wesbittyUrl = 'https://chat-room.wesbitty.com'
+  const wesbittyUrl = 'https://chat-room.wesbitty.org'
   const wesbittyKey = 'public-anon-key'
   const wesbitty = createClient(wesbittyUrl, wesbittyKey)
   
@@ -89,7 +89,7 @@ export const createExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const wesbittyUrl = 'https://chat-room.wesbitty.com'
+  const wesbittyUrl = 'https://chat-room.wesbitty.org'
   const wesbittyKey = 'public-anon-key'
   const wesbitty = createClient(wesbittyUrl, wesbittyKey)
   
@@ -110,7 +110,7 @@ export const updateExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const wesbittyUrl = 'https://chat-room.wesbitty.com'
+  const wesbittyUrl = 'https://chat-room.wesbitty.org'
   const wesbittyKey = 'public-anon-key'
   const wesbitty = createClient(wesbittyUrl, wesbittyKey)
   
@@ -140,7 +140,7 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
-//   const wesbittyUrl = 'https://chat-room.wesbitty.com'
+//   const wesbittyUrl = 'https://chat-room.wesbitty.org'
 //   const wesbittyKey = 'public-anon-key'
 //   const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
@@ -156,7 +156,7 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
-//   const wesbittyUrl = 'https://chat-room.wesbitty.com'
+//   const wesbittyUrl = 'https://chat-room.wesbitty.org'
 //   const wesbittyKey = 'public-anon-key'
 //   const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
@@ -173,7 +173,7 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
-//   const wesbittyUrl = 'https://chat-room.wesbitty.com'
+//   const wesbittyUrl = 'https://chat-room.wesbitty.org'
 //   const wesbittyKey = 'public-anon-key'
 //   const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
@@ -186,7 +186,7 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
-//   const wesbittyUrl = 'https://chat-room.wesbitty.com'
+//   const wesbittyUrl = 'https://chat-room.wesbitty.org'
 //   const wesbittyKey = 'public-anon-key'
 //   const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
@@ -225,7 +225,7 @@ export const updateExample: ExampleProps = {
 
 //   <script>
 //     // Initialize
-//     const wesbittyUrl = 'https://chat-room.wesbitty.com'
+//     const wesbittyUrl = 'https://chat-room.wesbitty.org'
 //     const wesbittyKey = 'public-anon-key'
 //     const wesbitty = wesbitty.createClient(wesbittyUrl, wesbittyKey)
 

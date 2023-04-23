@@ -197,7 +197,7 @@ const { Text } = Typography
 
 // Create a single supabase client for interacting with your database
 const wesbittyOauth = createClient(
-  'https://fgutddcvhhjrddcvvb.wesbitty.com',
+  'https://fgutddcvhhjrddcvvb.wesbitty.org',
   'public-anon-key'
 )
 

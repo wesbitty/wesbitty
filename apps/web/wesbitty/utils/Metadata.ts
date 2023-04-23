@@ -8,7 +8,7 @@ export const Metadata = {
   Theme: 'system', // system, dark or light
   Url: 'https://wesbitty.org',
   TemplateRepo: 'https://github.com/wesbitty/wesbitty/tree/main/apps/web',
-  Email: 'admin@wesbitty.com',
+  Email: 'admin@wesbitty.org',
   Github: 'https://github.com/wesbitty/wesbitty',
   Twitter: 'https://twitter.com/wesbitty',
   Facebook: 'https://facebook.com/wesbitty',

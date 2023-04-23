@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://wesbitty.com/">
+<a href="https://wesbitty.org/">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://wesbitty.org/brand/og-image.png">
       <img src="https://wesbitty.org/brand/og-image.png" alt="Wesbitty" />
@@ -20,7 +20,7 @@
 
 ## Getting Started
 
-Visit [https://wesbitty.com/developer](https://wesbitty.com/developer) to get started with Wesjet.
+Visit [https://wesbitty.org/developer](https://wesbitty.org/developer) to get started with Wesjet.
 
 ### Installation
 

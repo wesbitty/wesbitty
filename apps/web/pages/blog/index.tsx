@@ -43,10 +43,10 @@ const BlogPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
         openGraph={{
           title: pageTitle,
           description: pageDescription,
-          url: `https://wesbitty.com/${router.pathname}`,
+          url: `https://wesbitty.org/${router.pathname}`,
           images: [
             {
-              url: `https://wesbitty.com/brand/og/wesbitty-og.jpg`,
+              url: `https://wesbitty.org/brand/og/wesbitty-og.jpg`,
             },
           ],
         }}
@@ -54,7 +54,7 @@ const BlogPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
           {
             rel: 'alternate',
             type: 'application/rss+xml',
-            href: `https://wesbitty.com/rss.xml`,
+            href: `https://wesbitty.org/rss.xml`,
           },
         ]}
       />

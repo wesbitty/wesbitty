@@ -58,7 +58,7 @@ export const Texts = () => (
     <br />
     <Text strong>Wesbitty UI (strong)</Text>
     <br />
-    <Link href="https://wesbitty.com" target="_blank">
+    <Link href="https://wesbitty.org" target="_blank">
       Wesbitty (Link)
     </Link>
   </>

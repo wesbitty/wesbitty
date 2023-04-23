@@ -203,7 +203,7 @@ const SupportPage = ({}: Props) => {
                     rounded rounded-t-none"
                   >
                     <Space className="">
-                      <Link href="mailto:admin@wesbitty.com">
+                      <Link href="mailto:admin@wesbitty.org">
                         <Button
                           size="medium"
                           type="default"

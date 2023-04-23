@@ -1,11 +1,9 @@
 {
-  "name": "tsconfig",
-  "description": "These are base shared `tsconfig.json`s from which all other `tsconfig.json`'s inherit from.",
-  "version": "0.0.1-beta",
+  "name": "@wesbitty/tsconfig",
+  "version": "0.0.0",
   "private": true,
   "license": "MIT",
   "publishConfig": {
     "access": "public"
-  },
-  "devDependencies": {}
+  }
 }

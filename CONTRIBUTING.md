@@ -2,7 +2,7 @@
 
 When contributing to this repository, please first discuss the change you wish to make via [GitHub Discussions](https://github.com/wesbitty/wesbitty/discussions/new) with the owners of this repository before submitting a Pull Request.
 
-Please read our [Code of Conduct](CODE_OF_CONDUCT.md) and follow it in all your interactions with the project.
+Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) and follow it in all your interactions with the project.
 
 # Developing Wesbitty, Inc.
 
@@ -11,25 +11,23 @@ Please read our [Code of Conduct](CODE_OF_CONDUCT.md) and follow it in all your 
 2. [Local development](#local-development)
    - [Fork the repository](#fork-the-repository)
    - [Clone the repo](#clone-the-repo)
-   - [Running Lerna](#running-lerna)
+   - [Running turborepo](#running-turborepo)
      - [Shared components](#shared-components)
      - [Installing packages](#installing-packages)
 3. [Create a pull request](#create-a-pull-request)
 
-- [Common tasks](#common-tasks)
-  - [Add a redirect](#add-a-redirect)
 - [Community channels](#community-channels)
 
 ## Getting started
 
-Thanks for your interest in [Wesbitty](https://wesbitty.com) and for wanting to contribute! Before you begin, read the
-[code of conduct](https://github.com/wesbitty/.github/blob/master/CODE_OF_CONDUCT.md) and check out the
+Thanks for your interest in [Wesbitty](https://wesbitty.org) and for wanting to contribute! Before you begin, read the
+[code of conduct](./CODE_OF_CONDUCT.md) and check out the
 [existing issues](https://github.com/wesbitty/wesbitty/issues).
-This document describes how to set up your development environment to build and test [Wesbitty](https://wesbitty.com).
+This document describes how to set up your development environment to build and test [Wesbitty](https://wesbitty.org).
 
 ### Install dependencies
 
-You need to install and configure the following dependencies on your machine to build [Wesbitty](https://wesbitty.com):
+You need to install and configure the following dependencies on your machine to build [Wesbitty](https://wesbitty.org):
 
 - [Git](http://git-scm.com/)
 - [Node.js v18.x (LTS)](http://nodejs.org)
@@ -43,7 +41,7 @@ Make sure all the tests pass before making changes.
 
 ### Fork the repository
 
-To contribute code to [Wesbitty](https://wesbitty.com), you must fork the [Wesbitty Repository](https://github.com/wesbitty/wesbitty).
+To contribute code to [Wesbitty](https://wesbitty.org), you must fork the [Wesbitty Repository](https://github.com/wesbitty/wesbitty).
 
 ### Clone the repo
 
@@ -60,9 +58,9 @@ To get started, execute the following:
    cd wesbitty
    ```
 
-### Running Lerna
+### Running turborepo
 
-[Wesbitty](https://wesbitty.com) uses [Lerna](https://lerna.js.org) to manage and run this monorepo.
+[Wesbitty](https://wesbitty.org) uses [Turborepo](https://turborepo.org/docs) to manage and run this monorepo.
 
 1. Install the dependences in the root of the repo.
 
@@ -77,11 +75,11 @@ To get started, execute the following:
 
 Then visit, and edit, any of the following sites:
 
-| Site                                           | Directory   | Scope name       | Description                          | Local development server |
-| ---------------------------------------------- | ----------- | ---------------- | ------------------------------------ | ------------------------ |
-| [wesbitty.com](https://wesbitty.com)           | `/apps/www` | www              | The main website                     | http://localhost:8080    |
-| [app.wesbitty.com](https://app.wesbitty.com)   | `/#`        | In processing... | Studio dashboard                     | http://localhost:3000    |
-| [wesbitty.com/docs](https://wesbitty.com/docs) | `/about`    | docs             | Guides and Reference (Next.js based) | http://localhost:4000    |
+| Site                                           | Directory                        | Scope name       | Description                          | Local development server   |
+| ---------------------------------------------- | -------------------------------- | ---------------- | ------------------------------------ | -------------------------- |
+| [wesbitty.org](https://wesbitty.org)           | `/apps/web`                      | web              | The main website                     | http://localhost:3000      |
+| [app.wesbitty.org](https://app.wesbitty.org)   | `/apps/web/pages/app`            | In processing... | Platform Dashboard                   | http://localhost:3000      |
+| [wesbitty.org/docs](https://wesbitty.org/docs) | `/apps/web/pages/brand/wesbitty` | docs             | Guides and Reference (Next.js based) | http://localhost:3000/docs |
 
 #### Running sites individually
 
@@ -95,9 +93,8 @@ npm run dev
 
 The Monorepo has a set of shared components under `/packages`:
 
-- `/packages/config`: All shared config
-- `/packages/framework`: Wesbitty Api.
-- `/packages/eslint-custom-config`: Shared Eslint Configuration settings
+- `/packages/ui`: Wesbitty UI Library.
+- `/packages/tsconfig`: Shared Typescript Configuration settings
 
 #### Installing packages
 
@@ -107,9 +104,8 @@ The format is: `npm install <package name> -w=<workspace to install in>`.
 
 For example:
 
-- `npm install react -w config`: installs into `./packages/config`
-- `npm install react -w www`: installs into `./apps/www`
-- `npm install react -w tests`: installs into `./tests`
+- `npm install @types/node -w ui`: installs into `./packages/ui`
+- `npm install @types/node -w web`: installs into `./apps/web`
 
 You do not need to install `devDependencies` in each workspace. These can all be installed in the root package.
 
@@ -117,20 +113,12 @@ You do not need to install `devDependencies` in each workspace. These can all be
 
 ## Create a pull request
 
-After making your changes, open a pull request (PR). Once you submit your pull request, others from the Wesbitty team/community will review it with you.
+After making your changes, open a pull request (PR). Once you submit your pull request, others from the Wesbitty Team/Community will review it with you.
 
 Did you have an issue, like a merge conflict, or don't know how to open a pull request? Check out [GitHub's pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests) tutorial on how to resolve merge conflicts and other issues. Once your PR has been merged, you will be proudly listed as a contributor in the [contributor chart](https://github.com/wesbitty/wesbitty/graphs/contributors).
 
 ---
 
-## Common tasks
-
-### Add a redirect
-
-Create a new entry in the [`redirects.js`](https://github.com/wesbitty/wesbitty/blob/master/apps/www/lib/redirects.js) file in our main site.
-
----
-
 ## Community channels
 
-Stuck somewhere? Have any questions? Join the [Discord Community Server](https://discord.wesbitty.com/) or the [Github Discussions](https://github.com/wesbitty/wesbitty/discussions). We are here to help!
+Stuck somewhere? Have any questions? Join the [Discord Community Server](https://discord.wesbitty.org/) or the [Github Discussions](https://github.com/wesbitty/wesbitty/discussions). We are here to help!

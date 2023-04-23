@@ -8,38 +8,38 @@
       <atom:link href="https://wesbitty.org/rss.xml" rel="self" type="application/rss+xml"/>
       
 <item>
-  <title>Introducing Wesjet SDK</title>
-  <Link>https://wesbitty.org/blog/introducing-wesjet</link>
-  <description>Introducing Wesjet SDK to the public.</description>
-  <publication>Wed, 04 Jan 2023 00:00:00 GMT</publication>
-</item>
-
-<item>
-  <title>Introduction to Wesbitty</title>
-  <Link>https://wesbitty.org/blog/introduction-to-wesbitty</link>
-  <description>The Open source platform for frontend developers, We've Got Your WishList.</description>
-  <publication>Tue, 03 Jan 2023 00:00:00 GMT</publication>
+  <title>Getting Started with Wesjet</title>
+  <Link>https://wesbitty.org/blog/getting-started-with-wesjet</link>
+  <description>Features and Usage guiding user's in appplication using wesjet.</description>
+  <publication>Sat, 22 Apr 2023 00:00:00 GMT</publication>
 </item>
 
 <item>
   <title>Wesbitty Inc Launch Announcement!</title>
   <Link>https://wesbitty.org/blog/wesbitty-launch-announcement</link>
   <description>Introducing the new Wesbitty, Inc.</description>
-  <publication>Sun, 01 Jan 2023 00:00:00 GMT</publication>
-</item>
-
-<item>
-  <title>Getting Started with Wesjet</title>
-  <Link>https://wesbitty.org/blog/getting-started-with-wesjet</link>
-  <description>Features and Usage guiding user's in appplication using wesjet.</description>
-  <publication>Mon, 05 Dec 2022 00:00:00 GMT</publication>
+  <publication>Sat, 22 Apr 2023 00:00:00 GMT</publication>
 </item>
 
 <item>
   <title>What are Wesjet Templates?</title>
   <Link>https://wesbitty.org/blog/what-are-wesjet-templates</link>
   <description>What are wesjet templates and what are they used for?</description>
-  <publication>Mon, 05 Dec 2022 00:00:00 GMT</publication>
+  <publication>Sat, 22 Apr 2023 00:00:00 GMT</publication>
+</item>
+
+<item>
+  <title>Introduction to Wesbitty</title>
+  <Link>https://wesbitty.org/blog/introduction-to-wesbitty</link>
+  <description>The Open source platform for frontend developers, We've Got Your WishList.</description>
+  <publication>Tue, 11 Apr 2023 00:00:00 GMT</publication>
+</item>
+
+<item>
+  <title>Introducing Wesjet SDK</title>
+  <Link>https://wesbitty.org/blog/introducing-wesjet</link>
+  <description>Introducing Wesjet SDK to the public.</description>
+  <publication>Mon, 10 Apr 2023 00:00:00 GMT</publication>
 </item>
 
     </channel>
