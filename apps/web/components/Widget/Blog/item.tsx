@@ -28,8 +28,8 @@ const ListItem: FC<{ post: Post }> = ({ post }) => {
                       : `/images/blog/${post.thumb}`
                   }
                   className="p-1 bg-sky-50 border rounded max-w-sm"
-                  width={452}
-                  height={240}
+                  width={500}
+                  height={500}
                   style={{
                     objectFit: 'cover',
                   }}
