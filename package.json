@@ -35,7 +35,7 @@
     "lint": "eslint . --ext .ts --fix",
     "prettier": "prettier --write .",
     "clean": "turbo run clean",
-    "schema:up": "pscale connect wesbitty main",
+    "schema:up": "cd apps/web && pscale connect wesbitty main",
     "schema:generate": "cd ./apps/web && npx prisma generate",
     "test": "turbo run test"
   },
