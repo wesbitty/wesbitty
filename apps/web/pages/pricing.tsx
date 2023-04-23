@@ -14,7 +14,9 @@ import pricingFaq from '~/data/PricingFAQ.json'
 import ReactMarkdown from 'react-markdown'
 import Solutions from '~/data/Solutions.json'
 
-export default function IndexPage() {
+type Props = {}
+
+export default function PricingPage({}: Props) {
   const { basePath } = useRouter()
 
   return (

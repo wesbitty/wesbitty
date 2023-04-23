@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: ['plugin:wesjet/vital'],
+  extends: ['plugin:wesjet/recommended'],
 }

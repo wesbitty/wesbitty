@@ -6,7 +6,7 @@ authorURL: https://github.com/wesbitty
 image: roboflow-gallery.png
 thumb: roboflow-gallery.png
 label: product
-date: '2022-12-05'
+date: 2023-04-22
 ---
 
 This tutorial will get you comfortable with the basics of Wesjet by walking through how to to build a simple blog site using Next.js.
@@ -64,16 +64,16 @@ Then add the following lines to your `tsconfig.json` or `jsconfig.json` file:
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "wesjet/jetpack": ["./.wesjet/jetpack"]
+      "wesjet/static": ["./.wesjet/static"]
       // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     }
   },
-  "include": ["next-env.d.ts", "**/*.tsx", "**/*.ts", ".wesjet/jetpack"]
+  "include": ["next-env.d.ts", "**/*.tsx", "**/*.ts", ".wesjet/static"]
   //                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 }
 ```
 
-Wesjet generates files in the `.wesjet/jetpack` directory. This tells JavaScript (or TypeScript) to create an alias of `wesjet/jetpack` to the compiled files directory.
+Wesjet generates files in the `.wesjet/static` directory. This tells JavaScript (or TypeScript) to create an alias of `wesjet/static` to the compiled files directory.
 
 ## 3. Define Post Schema
 
@@ -178,7 +178,7 @@ Replace the default home page (`pages/index.js`) with a listing of all the posts
 import Head from 'next/head'
 import Link from 'next/link'
 import { compareDesc, format, parseISO } from 'date-fns'
-import { allPosts } from 'wesjet/jetpack'
+import { allPosts } from 'wesjet/static'
 
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
@@ -219,7 +219,7 @@ export default function Home({ posts }) {
 }
 ```
 
-Notice that the data was already available to us as `allPosts`, coming from `wesjet/jetpack`. We used `allPosts` to sort the post in reverse chronological order, and then sent the posts to the home page as props.
+Notice that the data was already available to us as `allPosts`, coming from `wesjet/static`. We used `allPosts` to sort the post in reverse chronological order, and then sent the posts to the home page as props.
 
 The home page then used the post data to map through the individual posts and render `PostCard` components. As your site grows, you'll want to break these components out into their own files. We're showing everything in the same file here to keep things simple.
 
@@ -245,7 +245,7 @@ Create the page at `pages/[blog]/[slug].js` and add the following code.
 import Head from 'next/head'
 import Link from 'next/link'
 import { format, parseISO } from 'date-fns'
-import { allPosts } from 'wesjet/jetpack'
+import { allPosts } from 'wesjet/static'
 
 export async function getStaticPaths() {
   const paths = allPosts.map((post) => post.url)
@@ -291,7 +291,7 @@ const PostLayout = ({ post }) => {
 export default PostLayout
 ```
 
-Notice again that we're importing data from `wesjet/jetpack`. This is the beauty of Wesjet. It has already loaded and shaped our date and keeps the logic in `getStaticPaths()` and `getStaticProps()` nice and simple.
+Notice again that we're importing data from `wesjet/static`. This is the beauty of Wesjet. It has already loaded and shaped our date and keeps the logic in `getStaticPaths()` and `getStaticProps()` nice and simple.
 
 Now clicking on a post link from the home page should lead you to a working post page.
 

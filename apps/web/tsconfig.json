@@ -5,6 +5,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "noImplicitAny": true,
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
@@ -13,7 +14,7 @@
       "~/Widget/*": ["components/Widget/*"],
       "~/data/*": ["wesbitty/data/*"],
       "~/utils/*": ["wesbitty/utils/*"],
-      "wesjet/jetpack": ["./.wesjet/jetpack"],
+      "wesjet/static": ["./.wesjet/static"],
       "~/lib/*": ["wesbitty/lib/*"],
       "~/styles/*": ["styles/*"],
       "~/types": ["wesbitty/types/index"],
@@ -27,18 +28,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    "plugins": [{ "name": "next" }]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".wesjet/jetpack"
+    ".wesjet/static"
   ],
   "exclude": ["node_modules"]
 }

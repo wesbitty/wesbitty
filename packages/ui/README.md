@@ -5,10 +5,6 @@ Wesbitty UI is a React UI library.
 🚧  
 Note: Wesbitty UI is still a work-in-progress until a major release is published.
 
-[![Product hunt](https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=290768&theme=light)](https://www.producthunt.com/posts/wesbitty-ui)
-
-[View docs](https://ui.wesbitty.com/developer)
-
 ## Install Wesbitty UI
 
 ### Install TailwindCSS
@@ -201,7 +197,7 @@ const { Text } = Typography
 
 // Create a single supabase client for interacting with your database
 const wesbittyOauth = createClient(
-  'https://xyzcompany.wesbitty.com',
+  'https://fgutddcvhhjrddcvvb.wesbitty.com',
   'public-anon-key'
 )
 
@@ -259,9 +255,8 @@ _Data Input_
 - [ ] Form
 
 _Layout_
+~
 
-- [ ] ~~Layout~~
-- [ ] ~~Grid (Flex)~~
 - [x] Divider
 - [x] Space (Flex)
 
