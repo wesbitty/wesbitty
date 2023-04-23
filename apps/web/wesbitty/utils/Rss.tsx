@@ -9,7 +9,7 @@ export const generateRss = (rss: any[]): string => {
       <Link>${Metadata.Url}</link>
       <description>${Metadata.Description}</description>
       <language>${Metadata.Language}</language>
-      <atom:link href="https://wesbitty.com/rss.xml" rel="self" type="application/rss+xml"/>
+      <atom:link href="https://wesbitty.org/rss.xml" rel="self" type="application/rss+xml"/>
       ${rss.map(blogRss).join('')}
     </channel>
   </rss>
@@ -19,7 +19,7 @@ export const generateRss = (rss: any[]): string => {
 const blogRss = (post: Post): string => `
 <item>
   <title>${post.title}</title>
-  <Link>https://wesbitty.com${post.slug}</link>
+  <Link>https://wesbitty.org${post.slug}</link>
   <description>${post.description}</description>
   <publication>${new Date(post.date).toUTCString()}</publication>
 </item>

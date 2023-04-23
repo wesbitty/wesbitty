@@ -6,6 +6,7 @@
   "scripts": {
     "build": "prisma generate && next build",
     "build:svg": "npx svgr --out-dir components/Icons components/Icons",
+    "postbuild": "node ./wesbitty/utils/Sitemap.mjs",
     "export": "next export",
     "start": "next start",
     "dev": "prisma generate && next dev",
