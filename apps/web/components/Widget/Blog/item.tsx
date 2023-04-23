@@ -53,7 +53,7 @@ const ListItem: FC<{ post: Post }> = ({ post }) => {
               <div>
                 <Space size={4}>
                   {author.avatar && (
-                    <Image
+                    <img
                       alt="Avatar"
                       src={author.avatar}
                       className="rounded-full w-10"

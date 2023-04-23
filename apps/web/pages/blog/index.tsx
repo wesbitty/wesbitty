@@ -1,45 +1,81 @@
-import Link from 'next/link'
-import { compareDesc, format, parseISO } from 'date-fns'
-import { allPosts, Post } from 'wesjet/static'
+import type { InferGetStaticPropsType } from 'next'
+import { MakeReload } from 'wesjet/next/hook'
+import type { FC } from 'react'
+import { allPosts } from 'wesjet/static'
+import { Default } from '~/components/Widget/Default'
+import { defineStaticProps } from '~/utils/next'
+import ListItem from '~/components/Widget/Blog/item'
+import { Metadata } from '~/utils/Metadata'
+import { Typography, Space, Tabs } from '@wesbitty/ui'
+import { generateRss } from '~/utils/Rss'
+import fs from 'fs'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+import { NextSeo } from 'next-seo'
 
-export async function getStaticProps() {
-  const blog: Post[] = allPosts.sort((a, b) => {
-    return compareDesc(new Date(a.date), new Date(b.date))
-  })
-  return { props: { blog } }
-}
+export const getStaticProps = defineStaticProps(async (context) => {
+  const posts = allPosts.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  )
+  const GetRss = generateRss(posts)
+  fs.writeFileSync('./public/rss.xml', GetRss)
 
-function PostCard(post: Post) {
+  return { props: { posts } }
+})
+
+const BlogPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  posts,
+}) => {
+  const router = useRouter()
+
+  const pageTitle = `Blog - ${Metadata.Name}`
+  const pageDescription =
+    "The Wesbitty Blog | Updates, Ideas, Tips, Trends to help developers build application's."
+  const Title = 'The Wesbitty Blog'
+  const Description =
+    "Updates, Ideas, Tips, Trends to help developers build application's."
+
   return (
-    <div className="mb-8">
-      <h2 className="text-xl">
-        <Link
-          href={post.url_path}
-          className="text-blue-700 hover:text-blue-900"
-          legacyBehavior
-        >
-          {post.title}
-        </Link>
-      </h2>
-      <time dateTime={post.date} className="block text-xs text-gray-600 mb-2">
-        {format(parseISO(post.date), 'LLLL d, yyyy')}
-      </time>
-      <div
-        className="text-sm"
-        dangerouslySetInnerHTML={{ __html: post.body.html }}
+    <>
+      <NextSeo
+        title={pageTitle}
+        description={pageDescription}
+        openGraph={{
+          title: pageTitle,
+          description: pageDescription,
+          url: `https://wesbitty.com/${router.pathname}`,
+          images: [
+            {
+              url: `https://wesbitty.com/brand/og/wesbitty-og.jpg`,
+            },
+          ],
+        }}
+        additionalLinkTags={[
+          {
+            rel: 'alternate',
+            type: 'application/rss+xml',
+            href: `https://wesbitty.com/rss.xml`,
+          },
+        ]}
       />
-    </div>
+      <Default>
+        <div className="mx-auto w-full max-w-screen-xl space-y-16 px-4 py-8 md:px-8 md:py-24 lg:space-y-24 lg:py-32">
+          <div className="max-w-3xl space-y-8">
+            <Typography.Title level={3}>{Title}</Typography.Title>
+            <Typography.Text type="default">{Description}</Typography.Text>
+          </div>
+
+          <ul className="grid grid-cols-12 py-6 lg:gap-16">
+            {posts.map((post, index) => (
+              <div className="col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4 mb-16">
+                <ListItem key={index} post={post} />
+              </div>
+            ))}
+          </ul>
+        </div>
+      </Default>
+    </>
   )
 }
 
-export default function Home({ blog }: { blog: Post[] }) {
-  return (
-    <div className="max-w-xl mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-8 text-center">Wesjet Starter</h1>
-
-      {blog.map((post, idx) => (
-        <PostCard key={idx} {...post} />
-      ))}
-    </div>
-  )
-}
+export default BlogPage
