@@ -24,18 +24,22 @@ export const getStaticProps = defineStaticProps(async (context) => {
 const PostLayout = ({ post }: { post: Post }) => {
   return (
     <>
-      <Head>
-        <title>{post.title}</title>
-      </Head>
-      <article className="max-w-xl mx-auto py-8">
-        <div className="text-center mb-8">
-          <time dateTime={post.date} className="text-xs text-gray-600 mb-1">
-            {format(parseISO(post.date), 'LLLL d, yyyy')}
-          </time>
-          <h1>{post.title}</h1>
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: post.body.html }} />
-      </article>
+      <div
+        className="
+    container mx-auto px-8 py-16 sm:px-16
+    xl:px-20
+    "
+      >
+        <article className="max-w-xl mx-auto py-8">
+          <div className="text-center mb-8">
+            <time dateTime={post.date} className="text-xs text-gray-600 mb-1">
+              {format(parseISO(post.date), 'LLLL d, yyyy')}
+            </time>
+            <h1>{post.title}</h1>
+          </div>
+          <div dangerouslySetInnerHTML={{ __html: post.body.html }} />
+        </article>
+      </div>
     </>
   )
 }

@@ -1,14 +1,11 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { Metadata } from '~/utils/Metadata'
 
-class MyDocument extends Document {
+export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang={Metadata.Language}>
-        <Head>
-          <script async src="https://platform.twitter.com/widgets.js" />
-        </Head>
-        <body>
+      <Html lang="en">
+        <Head></Head>
+        <body className="">
           <Main />
           <NextScript />
         </body>
@@ -16,5 +13,3 @@ class MyDocument extends Document {
     )
   }
 }
-
-export default MyDocument

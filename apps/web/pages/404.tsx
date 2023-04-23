@@ -18,9 +18,12 @@ import { Section } from '~/Widget/Section'
 import Container from '~/Widget/Container'
 import Image from 'next/image'
 
-function ErrorPage() {
+type Props = {}
+
+const ErrorPage = ({}: Props) => {
   const Title = `Oops! Not Found | ${Metadata.Name}`
   const Description = 'Oops! Not Found'
+
   const { basePath } = useRouter()
 
   return (

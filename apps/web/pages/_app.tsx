@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react'
+import Head from 'next/head'
 import { SessionProvider } from 'next-auth/react'
 import type { Session } from 'next-auth'
 import { cal, inter } from '~/styles/fonts'
@@ -18,6 +19,9 @@ export default function App({
 
   return (
     <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <DefaultSeo
         title={AppTitle}
         description={`${Metadata.Description}`}

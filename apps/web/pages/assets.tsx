@@ -8,8 +8,11 @@ import { NextSeo } from 'next-seo'
 import { Metadata } from '~/utils/Metadata'
 import Image from 'next/image'
 
-function BrandAssetPage() {
+type Props = {}
+
+const BrandAssetPage = ({}: Props) => {
   const router = useRouter()
+
   const { Title, Text } = Typography
   const pageTitle = `Brand Assets - ${Metadata.Name}`
   const Description = 'Get Wesbitty Brand assets here.'
