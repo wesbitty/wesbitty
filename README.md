@@ -17,7 +17,7 @@
 
 ## Documentation
 
-For details on how to use Wesbitty, check out our [documentation](https://wesbitty.org/docs).
+For details on how to use [Wesbitty](https://wesbitty.org), check out our [documentation](https://wesbitty.org/docs).
 
 ## Contributing
 
