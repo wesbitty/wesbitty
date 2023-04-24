@@ -1,8 +1,8 @@
 name: Deploy To Vercel
 
 on:
- push:
-   branches:
+  push:
+    branches:
       - main
 
 env:

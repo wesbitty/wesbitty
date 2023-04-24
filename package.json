@@ -9,7 +9,6 @@
     "npm": ">=7.0.0"
   },
   "workspaces": [
-    "packages/@wesjet/*",
     "packages/*",
     "apps/*",
     "examples/*",
@@ -33,7 +32,7 @@
     "build:app": "turbo run build --filter={apps/web}",
     "dev": "npm run dev --workspace=apps/web",
     "lint": "eslint . --ext .ts --fix",
-    "prettier": "prettier --write .",
+    "format": "prettier --write .",
     "clean": "turbo run clean",
     "schema:generate": "cd ./apps/web && npx prisma generate",
     "schema:up": "cd apps/web && pscale connect wesbitty main",
