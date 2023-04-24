@@ -7,7 +7,7 @@
   </a>
 </p>
 
-<p align="center">✨ Wesbitty Powerbase repository is built with Lerna and Npm PackageManager.</P>
+<p align="center">✨ Wesbitty Repository is built with [TurboRepo](https://turbo.build) and [Npm](https://docs.npmjs.com) to manage and run this monorepo.</P>
 <br/>
 
 <p align="center">
