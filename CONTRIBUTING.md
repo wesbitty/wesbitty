@@ -78,7 +78,7 @@ Then visit, and edit, any of the following sites:
 | Site                                           | Directory                        | Scope name       | Description                          | Local development server   |
 | ---------------------------------------------- | -------------------------------- | ---------------- | ------------------------------------ | -------------------------- |
 | [wesbitty.org](https://wesbitty.org)           | `/apps/web`                      | web              | The main website                     | http://localhost:3000      |
-| [app.wesbitty.org](https://app.wesbitty.org)   | `/apps/web/pages/app`            | In processing... | Platform Dashboard                   | http://localhost:3000      |
+| [app.wesbitty.org](https://app.wesbitty.org)   | `/apps/web/pages/app`            | In processing... | Platform Dashboard                   | http://app.localhost:3000  |
 | [wesbitty.org/docs](https://wesbitty.org/docs) | `/apps/web/pages/brand/wesbitty` | docs             | Guides and Reference (Next.js based) | http://localhost:3000/docs |
 
 #### Running sites individually

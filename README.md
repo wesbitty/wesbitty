@@ -31,7 +31,7 @@ npm install
 
 ### Contributing
 
-See [CONTRIBUTING.md](https://github.com/wesbitty/wesbitty/blob/master/.github/CONTRIBUTING.md) for more information.
+See [CONTRIBUTING.md](https://github.com/wesbitty/wesbitty/blob/main/.github/CONTRIBUTING.md) for more information.
 
 ### Community
 
@@ -39,4 +39,4 @@ The [Wesbitty Community](https://github.com/wesbitty/wesbitty/discussions) can b
 
 To chat with other community members, you can join the [Wesbitty discord](https://discord.com).
 
-Our [Code Of Conduct](https://github.com/wesbitty/wesbitty/blob/master/.github/CODE_OF_CONDUCT.md) applies to all Wesbitty community channels.
+Our [Code Of Conduct](https://github.com/wesbitty/wesbitty/blob/main/.github/CODE_OF_CONDUCT.md) applies to all Wesbitty community channels.
