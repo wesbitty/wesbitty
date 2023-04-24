@@ -1,6 +1,4 @@
 {
-  "github": {
-    "enabled": false,
-    "silent": true
-  }
+  "buildCommand": "npx turbo build",
+  "ignoreCommand": "npx dlx turbo-ignore"
 }
