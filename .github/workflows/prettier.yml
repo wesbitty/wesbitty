@@ -5,9 +5,9 @@ name: Check & Format Code With Prettier
 
 on:
   push:
-    branches: ['main']
+    branches: ['platform/v1']
   pull_request:
-    branches: ['main']
+    branches: ['']
 
 permissions:
   contents: read
