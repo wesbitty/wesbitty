@@ -64,7 +64,7 @@ const Footer = () => {
               </Link>
 
               <Link
-                href="https://discord.wesbitty.com/"
+                href="https://discord.wesbitty.org/"
                 className="text-gray-300 hover:text-gray-400"
               >
                 <span className="sr-only">Discord</span>

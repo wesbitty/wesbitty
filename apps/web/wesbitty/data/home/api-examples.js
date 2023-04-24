@@ -6,7 +6,7 @@ export default [
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const wesbittyUrl = 'https://chat-room.wesbitty.com'
+const wesbittyUrl = 'https://chat-room.wesbitty.org'
 const wesbittyKey = 'public-anon-key'
 const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
@@ -24,7 +24,7 @@ const { user, error } = await wesbitty.auth.signUp({
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const wesbittyUrl = 'https://chat-room.wesbitty.com'
+const wesbittyUrl = 'https://chat-room.wesbitty.org'
 const wesbittyKey = 'public-anon-key'
 const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
@@ -44,7 +44,7 @@ const realtime = wesbitty
     code: `import '@supabase/supabase-js'
 
 // Initialize 
-const wesbittyUrl = 'https://chat-room.wesbitty.com'
+const wesbittyUrl = 'https://chat-room.wesbitty.org'
 const wesbittyKey = 'public-anon-key'
 const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
@@ -65,7 +65,7 @@ const publicRooms = await wesbitty
     code: `import { createClient } from '@supabase/supabase-js'
 
 // Initialize 
-const wesbittyUrl = 'https://chat-room.wesbitty.com'
+const wesbittyUrl = 'https://chat-room.wesbitty.org'
 const wesbittyKey = 'public-anon-key'
 const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 
@@ -82,7 +82,7 @@ const newRoom = await wesbitty
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const wesbittyUrl = 'https://chat-room.wesbitty.com'
+const wesbittyUrl = 'https://chat-room.wesbitty.org'
 const wesbittyKey = 'public-anon-key'
 const wesbitty = createClient(wesbittyUrl, wesbittyKey)
 

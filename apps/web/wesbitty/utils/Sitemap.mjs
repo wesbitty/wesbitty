@@ -5,11 +5,12 @@ import fs from 'fs'
 async function generateSitemap() {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
   const pages = await globby([
-    'pages/*.js',
+    'pages/*.ts',
     'pages/*.tsx',
     'pages/*/*.tsx',
-    'wesbitty/data/**/*.mdx',
-    '[blog]/*.mdx',
+    '!pages/404.tsx',
+    '!wesbitty/data/**/*.mdx',
+    '[Post]/*.mdx',
     '!pages/index.tsx',
     '!pages/app',
     '!pages/_app.tsx',
@@ -29,7 +30,7 @@ async function generateSitemap() {
               .replace('.mdx', '')
               .replace('pages', '')
               .replace('public', '')
-              .replace('[blog]', '/blog')
+              .replace('[Post]', '/blog')
               .replace('/blog/[slug]', '/blog')
 
             let route = path === '/index' ? '' : path
@@ -40,7 +41,7 @@ async function generateSitemap() {
 
             return `
             <url>
-            <loc>${`https://wesbitty.com${route}`}</loc>
+            <loc>${`https://wesbitty.org${route}`}</loc>
             <lastModified>${new Date().toUTCString()}</lastModified>
         </url>
             `

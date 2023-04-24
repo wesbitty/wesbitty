@@ -490,7 +490,7 @@ const AuthForm = () => {
 }
 
 // type to do later..
-let domainInitialState: any = ['https://wesbitty.com', 'http://localhost:3000']
+let domainInitialState: any = ['https://wesbitty.org', 'http://localhost:3000']
 
 // AuthFormSchema.map((provider) => {
 //   domainInitialState[`${provider.name.toLowerCase()}-active`] =

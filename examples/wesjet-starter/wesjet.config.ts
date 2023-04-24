@@ -1,6 +1,6 @@
-import { defineDocumentType, makeSource } from 'wesjet/maker'
+import { defineDocumentType, makeSource } from 'wesjet/preset'
 
-const contentDirPath = '[blog]'
+const contentDirPath = '[Post]'
 
 const Post = defineDocumentType(() => ({
   name: 'Post',

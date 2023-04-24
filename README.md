@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://wesbitty.com/">
+<a href="https://wesbitty.org/">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://wesbitty.org/brand/og-image.png">
       <img src="https://wesbitty.org/brand/og-image.png" alt="Wesbitty" />
@@ -20,7 +20,7 @@
 
 ## Getting Started
 
-Visit [https://wesbitty.com/developer](https://wesbitty.com/developer) to get started with Wesjet.
+Visit [https://wesbitty.org/developer](https://wesbitty.org/developer) to get started with Wesjet.
 
 ### Installation
 
@@ -31,7 +31,7 @@ npm install
 
 ### Contributing
 
-See [CONTRIBUTING.md](https://github.com/wesbitty/wesbitty/blob/master/.github/CONTRIBUTING.md) for more information.
+See [CONTRIBUTING.md](https://github.com/wesbitty/wesbitty/blob/main/.github/CONTRIBUTING.md) for more information.
 
 ### Community
 
@@ -39,4 +39,4 @@ The [Wesbitty Community](https://github.com/wesbitty/wesbitty/discussions) can b
 
 To chat with other community members, you can join the [Wesbitty discord](https://discord.com).
 
-Our [Code Of Conduct](https://github.com/wesbitty/wesbitty/blob/master/.github/CODE_OF_CONDUCT.md) applies to all Wesbitty community channels.
+Our [Code Of Conduct](https://github.com/wesbitty/wesbitty/blob/main/.github/CODE_OF_CONDUCT.md) applies to all Wesbitty community channels.

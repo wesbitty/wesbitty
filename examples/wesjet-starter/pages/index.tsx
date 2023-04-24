@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { compareDesc, format, parseISO } from 'date-fns'
-import { allPosts, Post } from 'wesjet/jetpack'
+import { allPosts, Post } from 'wesjet/static'
 
 export async function getStaticProps() {
   const blog: Post[] = allPosts.sort((a, b) => {

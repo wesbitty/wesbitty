@@ -1,6 +1,6 @@
-const { withWesjet } = require('wesjet-nextjs-plugin')
+const { wesjetConfig } = require('wesjet/next')
 
-module.exports = withWesjet({
+module.exports = wesjetConfig({
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   images: {
     domains: [

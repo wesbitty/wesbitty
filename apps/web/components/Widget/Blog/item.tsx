@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Space, Typography } from '@wesbitty/ui'
 import authors from '../../../wesbitty/data/authors.json'
 import React from 'react'
-import { Post } from 'wesjet/jetpack'
+import { Post } from 'wesjet/static'
 import { FC } from 'react'
 import { format } from 'date-fns'
 import Link from 'next/link'
@@ -28,8 +28,8 @@ const ListItem: FC<{ post: Post }> = ({ post }) => {
                       : `/images/blog/${post.thumb}`
                   }
                   className="p-1 bg-sky-50 border rounded max-w-sm"
-                  width={452}
-                  height={240}
+                  width={500}
+                  height={500}
                   style={{
                     objectFit: 'cover',
                   }}
@@ -53,7 +53,7 @@ const ListItem: FC<{ post: Post }> = ({ post }) => {
               <div>
                 <Space size={4}>
                   {author.avatar && (
-                    <Image
+                    <img
                       alt="Avatar"
                       src={author.avatar}
                       className="rounded-full w-10"

@@ -1,14 +1,16 @@
-name: Format
+name: Check & Format Code
 
 on:
   push:
     branches:
       - main
   pull_request:
+    branches:
+      - main
 
 jobs:
-  lint:
-    name: Lint
+  check-code:
+    name: Check Code
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

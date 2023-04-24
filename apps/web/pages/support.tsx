@@ -21,7 +21,9 @@ import 'swiper/swiper.min.css'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
 
-function SupportPage() {
+type Props = {}
+
+const SupportPage = ({}: Props) => {
   const router = useRouter()
   const Title = `Help & Support | ${Metadata.Name}`
   const Description =
@@ -201,7 +203,7 @@ function SupportPage() {
                     rounded rounded-t-none"
                   >
                     <Space className="">
-                      <Link href="mailto:admin@wesbitty.com">
+                      <Link href="mailto:admin@wesbitty.org">
                         <Button
                           size="medium"
                           type="default"

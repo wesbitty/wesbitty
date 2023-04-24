@@ -24,20 +24,20 @@
     "wesbitty",
     "platform",
     "e-commerce",
-    "store"
+    "wesjet"
   ],
   "scripts": {
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
     "build": "turbo run build",
     "build:app": "turbo run build --filter={apps/web}",
     "dev": "npm run dev --workspace=apps/web",
-    "lint": "turbo run lint",
-    "prettier": "prettier --write .",
-    "pre-commit": "lint-staged",
+    "lint": "eslint . --ext .ts --fix",
+    "format": "prettier --write .",
     "clean": "turbo run clean",
-    "docker:up": "docker-compose up -d",
-    "docker:down": "docker-compose down",
-    "test": "turbo run test",
-    "prepare": "husky install"
+    "schema:generate": "cd ./apps/web && npx prisma generate",
+    "schema:up": "cd apps/web && pscale connect wesbitty main",
+    "test": "turbo run test"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
@@ -45,8 +45,8 @@
     "@babel/preset-typescript": "^7.16.6",
     "@types/jest": "^27.0.3",
     "babel-jest": "^27.3.1",
-    "eslint": "^7.32.0",
-    "eslint-config-wesjet": "^0.0.19",
+    "eslint": "^8.32.0",
+    "eslint-plugin-wesjet": "^0.0.34-rc.1",
     "husky": "^8.0.3",
     "jest": "^27.3.1",
     "lint-staged": "^13.2.1",

@@ -16,9 +16,11 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "wesjet/jetpack": ["./.wesjet/jetpack"]
-    }
+      "~/*": ["./*"],
+      "wesjet/static": ["./.wesjet/static"]
+    },
+    "plugins": [{ "name": "next" }]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".wesjet/jetpack"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".wesjet/static"],
   "exclude": ["node_modules"]
 }
