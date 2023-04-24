@@ -5,9 +5,9 @@ name: Check & Format Code With Prettier
 
 on:
   push:
-    branches: ['vercel/build']
+    branches: ['main']
   pull_request:
-    branches: ['vercel/build']
+    branches: ['main']
 
 permissions:
   contents: read
