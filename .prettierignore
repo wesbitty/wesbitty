@@ -1,6 +1,9 @@
 .expo
 node_modules
 package-lock.json
+
+CODE_OF_CONDUCT.md
+
 docker*
 dist*
 .next
