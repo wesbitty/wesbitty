@@ -1,4 +1,3 @@
 {
-  "buildCommand": "npx turbo build",
-  "ignoreCommand": "npx dlx turbo-ignore"
+  "buildCommand": "npx turbo build"
 }
