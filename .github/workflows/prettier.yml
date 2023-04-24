@@ -7,7 +7,7 @@ on:
   push:
     branches: ['vercel/build']
   pull_request:
-    branches: ['']
+    branches: ['vercel/build']
 
 permissions:
   contents: read

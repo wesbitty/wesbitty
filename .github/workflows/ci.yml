@@ -3,6 +3,8 @@ name: Vercel
 on:
   push:
     branches: ['vercel/build']
+  pull_request:
+    branches: ['vercel/build']
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -18,7 +20,7 @@ jobs:
         run: npm install --global vercel@latest
 
       - name: Vercel Pull
-        run: vercel pull --yes
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
