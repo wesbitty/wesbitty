@@ -11,8 +11,8 @@
 
 <p align="center">
   <a href="https://wesbitty.org/brand/changelog"><strong>Changelog</strong></a> ·
-  <a href="https://wesbitty.org/cli"><strong>CLI</strong></a>
-  <a href="https://wesbitty.org/docs"><strong>Documentation</strong></a> ·
+  <a href="https://wesbitty.org/cli"><strong>CLI</strong></a> ·
+  <a href="https://wesbitty.org/docs"><strong>Documentation</strong></a>
 </p>
 <br/>
 
