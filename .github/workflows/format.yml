@@ -2,14 +2,19 @@ name: Check & Format Code
 
 on:
   push:
-    branches:
-      - main
+    branches: ['main']
   pull_request:
-    branches:
-      - main
+    branches: ['']
+
+permissions:
+  contents: read
 
 jobs:
   check-code:
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
     name: Check Code
     runs-on: ubuntu-latest
     steps:

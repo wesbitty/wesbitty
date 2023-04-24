@@ -10,6 +10,9 @@ module.exports = wesjetConfig({
       'avatars.githubusercontent.com',
     ],
   },
+  experimental: {
+    outputStandalone: true,
+  },
   reactStrictMode: true,
   swcMinify: false,
   transpilePackages: ['ui'],
