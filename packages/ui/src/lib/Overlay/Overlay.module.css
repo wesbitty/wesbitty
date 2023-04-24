@@ -43,8 +43,8 @@
   transform-origin: center;
   transform-origin: bottom center;
   left: 50%;
-  -webkit-transform: translateX(-50%)',
-  transform: translateX(-50%)',
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .sbui-overlay-container--topRight {
@@ -53,7 +53,7 @@
   position: absolute;
   left: 0;
   transform-origin: top left;
-  transform: translatey(-100%)',
+  transform: translatey(-100%);
 }
 
 .sbui-overlay-container--topLeft {
@@ -62,7 +62,7 @@
   position: absolute;
   right: 0;
   transform-origin: top left;
-  transform: translatey(-100%)',
+  transform: translatey(-100%);
 }
 
 .sbui-overlay-container--topCenter {
@@ -71,5 +71,5 @@
   position: absolute;
   left: 50%;
   transform-origin: top left;
-  transform: translatey(-100%) translateX(-50%)',
+  transform: translatey(-100%) translateX(-50%);
 }

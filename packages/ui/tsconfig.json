@@ -14,23 +14,25 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "emitDeclarationOnly": true,
-
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitAny": true,
     "preserveConstEnums": true,
-
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./*"]
     }
   },
-  "include": ["src/components/**/*", "src/types.tsx"],
+  "include": [
+    "src/components/**/*",
+    "src/types.tsx",
+    "src/theme/ColorScheme/*",
+    "src/theme/Provider"
+  ],
   "exclude": ["node_modules", "src/__tests__"]
 }
