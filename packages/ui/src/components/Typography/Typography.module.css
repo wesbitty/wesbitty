@@ -31,8 +31,8 @@
 
 .sbui-typography code {
   padding: 0.2em 0.4em 0.1em;
-  background: hsla(0, 0%, 58.8%, 0.1)',
-  border: 1px solid hsla(0, 0%, 39.2%, 0.2)',
+  background: hsla(0, 0%, 58.8%, 0.1);
+  border: 1px solid hsla(0, 0%, 39.2%, 0.2);
   border-radius: 3px;
 }
 
@@ -92,5 +92,5 @@
 
 .dark .sbui-typography::selection {
   /* @apply bg-sky-500; */
-  backgroundcolor: '#6f7bb635';
+  background-color: #6f7bb635;
 }
