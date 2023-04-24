@@ -1,9 +1,8 @@
-name: Deploy To Vercel
+name: Vercel
 
 on:
   push:
-    branches:
-      - main
+    branches: ['vercel/build']
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
