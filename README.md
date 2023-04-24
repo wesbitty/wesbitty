@@ -1,13 +1,19 @@
 <p align="center">
-<a href="https://wesbitty.org/">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://wesbitty.org/brand/og-image.png">
-      <img src="https://wesbitty.org/brand/og-image.png" alt="Wesbitty" />
-    </picture> 
+  <a href="https://wesbitty.org">
+    <img src="https://res.cloudinary.com/wesbitty/image/upload/v1681349717/brand/logo.png" height="96">
+    <h3 align="center">Wesbitty</h3>
   </a>
 </p>
 
-<p align="center">✨ Wesbitty Repository is built with [TurboRepo](https://turbo.build) and [Npm](https://docs.npmjs.com) to manage and run this monorepo.</P>
+<p align="center">
+  We've Got Your WishList
+</p>
+
+<p align="center">
+  <a href="https://wesbitty.org/brand/changelog"><strong>Changelog</strong></a> ·
+  <a href="https://wesbitty.org/cli"><strong>CLI</strong></a>
+  <a href="https://wesbitty.org/docs"><strong>Documentation</strong></a> ·
+</p>
 <br/>
 
 <p align="center">
