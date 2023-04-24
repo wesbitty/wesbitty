@@ -1,13 +1,19 @@
 <p align="center">
-<a href="https://wesbitty.org/">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://wesbitty.org/brand/og-image.png">
-      <img src="https://wesbitty.org/brand/og-image.png" alt="Wesbitty" />
-    </picture> 
+  <a href="https://wesbitty.org">
+    <img src="https://res.cloudinary.com/wesbitty/image/upload/v1681349717/brand/logo.png" height="96">
+    <h3 align="center">Wesbitty</h3>
   </a>
 </p>
 
-<p align="center">✨ Wesbitty Powerbase repository is built with Lerna and Npm PackageManager.</P>
+<p align="center">
+  We've Got Your WishList
+</p>
+
+<p align="center">
+  <a href="https://wesbitty.org/brand/changelog"><strong>Changelog</strong></a> ·
+  <a href="https://wesbitty.org/cli"><strong>CLI</strong></a> ·
+  <a href="https://wesbitty.org/docs"><strong>Documentation</strong></a>
+</p>
 <br/>
 
 <p align="center">
@@ -18,20 +24,17 @@
 <a href="#backers"><img src="https://opencollective.com/wesbitty/backers/badge.svg?style=for-the-badge&logo=Wesbitty&logoColor=ffffff&color=66BF3C" alt="Backers on Open Collective" /></a>
 </p>
 
-## Getting Started
+## Documentation
 
-Visit [https://wesbitty.org/developer](https://wesbitty.org/developer) to get started with Wesjet.
+For details on how to use Vercel, check out our [documentation](https://wesbitty.org/docs).
 
-### Installation
+## Contributing
 
-```sh
-git clone https://github.com/wesbitty/wesbitty.git
-npm install
-```
+This project uses [Npm](https://npmjs.com/) to install dependencies and run scripts.
 
-### Contributing
+You can use the `build` script to run local changes as if you were invoking Wesbitty CLI. For example, `wesbitty build` could be run with local changes with `npm run build`.
 
-See [CONTRIBUTING.md](https://github.com/wesbitty/wesbitty/blob/main/.github/CONTRIBUTING.md) for more information.
+See the [Contributing Guidelines](./CONTRIBUTING.md) for more details.
 
 ### Community
 
@@ -40,3 +43,10 @@ The [Wesbitty Community](https://github.com/wesbitty/wesbitty/discussions) can b
 To chat with other community members, you can join the [Wesbitty discord](https://discord.com).
 
 Our [Code Of Conduct](https://github.com/wesbitty/wesbitty/blob/main/.github/CODE_OF_CONDUCT.md) applies to all Wesbitty community channels.
+
+
+## Reference
+
+- [Code of Conduct](https://github.com/wesbitty/wesbitty/blob/main/.github/CODE_OF_CONDUCT.md)
+- [Contributing Guidelines](https://github.com/wesbitty/wesbitty/blob/main/CONTRIBUTING.md)
+- [Apache 2.0 License](./LICENSE)

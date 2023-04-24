@@ -60,7 +60,7 @@ To get started, execute the following:
 
 ### Developing
 
-[Wesbitty](https://wesbitty.org) uses [Npm](https://docs.npmjs.com) to manage and run this monorepo.
+[Wesbitty](https://wesbitty.org) uses [Lerna](https://lerna.js.org) & [Npm](https://docs.npmjs.com) to manage and run this monorepo.
 
 1. Install the dependences in the root of the repo.
 

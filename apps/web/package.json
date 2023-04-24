@@ -1,7 +1,7 @@
 {
   "name": "web",
   "description": "wesbitty template v1",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "prisma generate && next build",
@@ -12,7 +12,7 @@
     "dev": "prisma generate && next dev",
     "lint": "next lint",
     "prettier": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx}\"",
-    "clean": "rm -rf .next .turbo .wesjet",
+    "clean": "rm -rf .next .wesjet",
     "gen:prisma": "prisma generate",
     "gen:prisma_push": "prisma db push",
     "type-check": "tsc"

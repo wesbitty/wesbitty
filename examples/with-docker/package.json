@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "dev": "next dev --port 4041",
-    "clean": "rm -rf .next .wesjet .turbo"
+    "clean": "rm -rf .next .wesjet"
   },
   "dependencies": {
     "date-fns": "2.29.3",
