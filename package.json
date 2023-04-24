@@ -9,7 +9,6 @@
     "npm": ">=7.0.0"
   },
   "workspaces": [
-    "packages/@wesjet/*",
     "packages/*",
     "apps/*",
     "examples/*",
