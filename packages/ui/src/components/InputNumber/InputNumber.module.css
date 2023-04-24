@@ -24,7 +24,7 @@
 }
 
 .sbui-inputnumber:focus {
-  box-shadow: 0 0 0 2px rgba(62, 207, 142, 0.1)',
+  box-shadow: 0 0 0 2px rgba(62, 207, 142, 0.1);
   outline: 0;
 }
 
@@ -61,8 +61,8 @@
   font-size: 13px;
   line-height: 1.5;
   padding: 0;
-  -webkit-transform: translateX(-100%)',
-  transform: translateX(-100%)',
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
