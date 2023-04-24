@@ -6,26 +6,26 @@ Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) and follow it in all you
 
 # Developing Wesbitty, Inc.
 
-1. [Getting started](#getting-started)
-   - [Install dependencies](#install-dependencies)
-2. [Local development](#local-development)
-   - [Fork the repository](#fork-the-repository)
-   - [Clone the repo](#clone-the-repo)
-   - [Running turborepo](#running-turborepo)
+1. [Getting Started](#getting-started)
+   - [Install Dependencies](#install-dependencies)
+2. [Local Development](#local-development)
+   - [Fork the Repository](#fork-the-repository)
+   - [Clone the Repository](#clone-the-repository)
+   - [Developing](#developing)
      - [Shared components](#shared-components)
      - [Installing packages](#installing-packages)
 3. [Create a pull request](#create-a-pull-request)
 
 - [Community channels](#community-channels)
 
-## Getting started
+## Getting Started
 
 Thanks for your interest in [Wesbitty](https://wesbitty.org) and for wanting to contribute! Before you begin, read the
 [code of conduct](./CODE_OF_CONDUCT.md) and check out the
 [existing issues](https://github.com/wesbitty/wesbitty/issues).
 This document describes how to set up your development environment to build and test [Wesbitty](https://wesbitty.org).
 
-### Install dependencies
+### Install Dependencies
 
 You need to install and configure the following dependencies on your machine to build [Wesbitty](https://wesbitty.org):
 
@@ -33,17 +33,17 @@ You need to install and configure the following dependencies on your machine to 
 - [Node.js v18.x (LTS)](http://nodejs.org)
 - [Npm](https://www.npmjs.com/) version 7+ or [Npm](https://npmjs.org/)
 
-## Local development
+## Local Development
 
 This project is configured in a lerna monorepo, where one repository contains multiple npm packages. Dependencies are installed and managed with `npm` CLI.
 
 Make sure all the tests pass before making changes.
 
-### Fork the repository
+### Fork the Repository
 
 To contribute code to [Wesbitty](https://wesbitty.org), you must fork the [Wesbitty Repository](https://github.com/wesbitty/wesbitty).
 
-### Clone the repo
+### Clone the Repository
 
 To get started, execute the following:
 
@@ -58,9 +58,9 @@ To get started, execute the following:
    cd wesbitty
    ```
 
-### Running turborepo
+### Developing
 
-[Wesbitty](https://wesbitty.org) uses [Turborepo](https://turborepo.org/docs) to manage and run this monorepo.
+[Wesbitty](https://wesbitty.org) uses [Npm](https://docs.npmjs.com) to manage and run this monorepo.
 
 1. Install the dependences in the root of the repo.
 
@@ -78,7 +78,7 @@ Then visit, and edit, any of the following sites:
 | Site                                           | Directory                        | Scope name       | Description                          | Local development server   |
 | ---------------------------------------------- | -------------------------------- | ---------------- | ------------------------------------ | -------------------------- |
 | [wesbitty.org](https://wesbitty.org)           | `/apps/web`                      | web              | The main website                     | http://localhost:3000      |
-| [app.wesbitty.org](https://app.wesbitty.org)   | `/apps/web/pages/app`            | In processing... | Platform Dashboard                   | http://localhost:3000      |
+| [app.wesbitty.org](https://app.wesbitty.org)   | `/apps/web/pages/app`            | In processing... | Platform Dashboard                   | http://app.localhost:3000  |
 | [wesbitty.org/docs](https://wesbitty.org/docs) | `/apps/web/pages/brand/wesbitty` | docs             | Guides and Reference (Next.js based) | http://localhost:3000/docs |
 
 #### Running sites individually
