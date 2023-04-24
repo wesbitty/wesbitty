@@ -5,6 +5,7 @@ tasks:
     command: |
       brew install planetscale/tap/pscale
       brew install mysql-client
+      npm install -g vercel
   - name: Install Deps
   - init: |
       npm install
