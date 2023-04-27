@@ -4,10 +4,11 @@
   "private": true,
   "description": "We've Got Your WishList",
   "keywords": [
-    "wesbitty",
     "platform",
-    "wesjet",
-    "application"
+    "storage",
+    "functions",
+    "database",
+    "wesbitty"
   ],
   "repository": {
     "type": "git",
