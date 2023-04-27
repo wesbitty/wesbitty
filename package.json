@@ -1,60 +1,83 @@
 {
   "name": "wesbitty",
-  "description": "We've Got Your WishList",
   "version": "0.0.0",
-  "license": "Apache-2.0",
   "private": true,
-  "engines": {
-    "node": ">=14.0.0",
-    "npm": ">=7.0.0"
-  },
-  "workspaces": [
-    "packages/*",
-    "apps/*",
-    "examples/*",
-    "tests"
-  ],
-  "author": "Wesbitty Inc.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wesbitty/wesbitty.git"
-  },
+  "description": "We've Got Your WishList",
   "keywords": [
     "wesbitty",
     "platform",
     "wesjet",
     "application"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wesbitty/wesbitty.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Wesbitty Inc.",
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "examples/*",
+    "tests"
+  ],
   "scripts": {
-    "prepare": "husky install",
-    "pre-commit": "lint-staged",
     "build": "turbo run build",
-    "build:app": "turbo run build --filter={apps/web}",
-    "dev": "turbo run dev --filter={apps/web}",
-    "lint": "eslint . --ext .ts --fix",
-    "format": "prettier --write .",
+    "build-app": "turbo run build --filter={apps/web}",
     "clean": "turbo run clean",
-    "schema:generate": "cd ./apps/web && npx prisma generate",
-    "schema:up": "cd apps/web && pscale connect wesbitty main",
+    "dev": "turbo run dev --filter={apps/web}",
+    "postinstall": "patch-package",
+    "lint": "eslint . --ext .ts --fix",
+    "lint-package": "sort-package-json",
+    "pre-commit": "lint-staged",
+    "prepare": "husky install",
+    "prettier": "prettier --write .",
+    "release": "npm run release --workspaces --if-present",
+    "schema-generate": "cd ./apps/web && npx prisma generate",
+    "schema-up": "cd apps/web && pscale connect wesbitty main",
     "test": "turbo run test"
   },
+  "lint-staged": {
+    "package.json": [
+      "npm run lint-package"
+    ],
+    "*.{mts,cts,ts,tsx,yml,js,jsx,mjs,cjs,json,md,mdx,css}": [
+      "prettier --write ."
+    ]
+  },
   "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
+    "@babel/cli": "^7.21.0",
+    "@babel/preset-env": "^7.19.1",
     "@babel/preset-typescript": "^7.16.6",
+    "@types/fs-extra": "^9.0.1",
     "@types/jest": "^27.0.3",
+    "auto": "^9.50.1",
     "babel-jest": "^27.3.1",
-    "eslint": "^8.32.0",
+    "cross-env": "^7.0.2",
+    "dotenv-cli": "^3.1.0",
+    "eslint": "^8.31.0",
     "eslint-plugin-wesjet": "^0.0.34-rc.1",
     "husky": "^8.0.3",
     "jest": "^27.3.1",
     "lint-staged": "^13.2.1",
-    "prettier": "^2.2.1",
+    "patch-package": "^6.4.7",
+    "prettier": "^2.5.1",
+    "seedrandom": "^3.0.5",
+    "sort-package-json": "^1.51.0",
     "ts-jest": "^27.0.7",
     "ts-node": "^9.1.1",
     "ts-patch": "^2.1.0",
     "turbo": "^1.9.3",
-    "typescript": "^4.8.4"
+    "typescript": "^4.5.3"
+  },
+  "engines": {
+    "node": ">=14",
+    "npm": ">=6"
+  },
+  "auto": {
+    "plugins": [
+      "npm",
+      "release"
+    ]
   }
 }
