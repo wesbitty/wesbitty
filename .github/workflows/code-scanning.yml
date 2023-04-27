@@ -3,11 +3,11 @@ name: 'Code Scanning'
 on:
   push:
     branches:
-      - 'patches/sort'
+      - 'main'
   pull_request:
     # The branches below must be a subset of the branches above
     branches:
-      - 'patches/sort'
+      - 'main'
 
 permissions:
   contents: read

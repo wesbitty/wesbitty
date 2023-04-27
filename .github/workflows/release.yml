@@ -3,10 +3,10 @@ name: Release
 on:
   push:
     branches:
-      - 'patches/sort'
+      - 'main'
   pull_request:
     branches:
-      - 'patches/sort'
+      - 'main'
 
 jobs:
   release-ui:
