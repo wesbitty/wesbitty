@@ -1,13 +1,23 @@
 module.exports = {
   root: true,
-  env: {
-    browser: true,
-    node: true,
-  },
+  extends: ['@storybook/eslint-config-storybook', 'plugin:storybook/recommended'],
   parserOptions: {
-    parser: 'babel-eslint',
+    project: ['./tsconfig.json'],
+    createDefaultProgram: true,
   },
-  extends: ['react-app', 'prettier', 'plugin:prettier/recommended'],
-  plugins: ['prettier'],
-  rules: {},
-}
+  overrides: [
+    {
+      files: ['**/*.tsx'],
+      rules: {
+        'react/prop-types': 'off',
+        'react/require-default-props': 'off',
+        'react/default-props-match-prop-types': 'off',
+      },
+    },
+  ],
+  settings: {
+    jest: {
+      version: 'latest',
+    },
+  },
+};

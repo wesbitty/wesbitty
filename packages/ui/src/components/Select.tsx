@@ -1,195 +1,376 @@
-import React, { useEffect } from 'react'
-import { FormLayout } from '../lib/Layout/FormLayout'
-import InputErrorIcon from '../lib/Layout/InputErrorIcon'
-import InputIconContainer from '../lib/Layout/InputIconContainer'
-import { useFormContext } from './Form/FormContext'
-import defaultTheme from '../theme/globalTheme'
-import styleHandler from '../theme/handler'
+import React, { ComponentProps, FunctionComponent, ReactNode } from 'react';
+import { styled, css } from '@storybook/theming';
+import { color, typography } from './Shared/styles';
+import { jiggle } from './Shared/animation';
+import { Icon } from './Icon';
+import { Spinner } from './Spinner';
+
+interface SelectContainerProps {
+  appearance?: 'default' | 'tertiary';
+}
+
+const SelectContainer = styled.div<SelectContainerProps>`
+  ${(props) =>
+    props.appearance === 'tertiary' &&
+    css`
+      display: inline-flex;
+    `}
+`;
+
+const Label = styled.label`
+  font-weight: ${typography.weight.bold};
+  font-size: ${typography.size.s2}px;
+`;
+
+interface LabelProps {
+  hideLabel: boolean;
+}
+
+const LabelWrapper = styled.div<LabelProps>`
+  margin-bottom: 0.5em;
+
+  ${(props) =>
+    props.hideLabel &&
+    css`
+      border: 0px !important;
+      clip: rect(0 0 0 0) !important;
+      -webkit-clip-path: inset(100%) !important;
+      clip-path: inset(100%) !important;
+      height: 1px !important;
+      overflow: hidden !important;
+      padding: 0px !important;
+      position: absolute !important;
+      white-space: nowrap !important;
+      width: 1px !important;
+    `}
+`;
+
+interface SelectProps {
+  disabled?: boolean;
+  inProgress?: boolean;
+}
+
+const Selector = styled.select<SelectProps>`
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  font-size: ${typography.size.s2}px;
+  line-height: 20px;
+  padding: 10px 3em 10px 15px;
+  position: relative;
+  outline: none;
+  width: 100%;
+  margin: 0;
+  display: block;
+
+  ${(props) =>
+    props.disabled &&
+    css`
+      cursor: not-allowed;
+    `}
+
+  ${(props) =>
+    props.inProgress &&
+    css`
+      cursor: progress;
+    `}
+`;
+
+const OptionWrapper = styled.option``;
+
+const Arrow = styled((props: Omit<ComponentProps<typeof Icon>, 'icon'>) => (
+  <Icon {...props} icon="arrowdown" />
+))``;
+
+const SelectIcon = styled(Icon)``;
+
+const SelectSpinner = styled(Spinner)`
+  right: 16px;
+  left: auto;
+  z-index: 2;
+`;
+
+const SelectError = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  transition: all 300ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
+  font-size: ${typography.size.s1}px;
+  font-family: ${typography.type.primary};
+
+  color: ${color.negative};
+  line-height: 40px;
+  padding-right: 2.75em;
+  pointer-events: none;
+`;
+
+interface WrapperProps {
+  hasIcon: boolean;
+  error: any;
+  appearance?: 'default' | 'tertiary';
+  disabled?: boolean;
+  inProgress?: boolean;
+  stackLevel?: 'top' | 'middle' | 'bottom';
+}
+
+const getStackLevelStyling = (props: Pick<Props, 'stackLevel'>) => {
+  const radius = 4;
+
+  const stackLevelDefinedStyling = css`
+    position: relative;
+
+    &:focus {
+      z-index: 2;
+    }
+  `;
+
+  switch (props.stackLevel) {
+    case 'top':
+      return css`
+        border-top-left-radius: ${radius}px;
+        border-top-right-radius: ${radius}px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        ${stackLevelDefinedStyling}
+      `;
+    case 'middle':
+      return css`
+        border-radius: 0px;
+        margin-top: -1px;
+        ${stackLevelDefinedStyling}
+      `;
+    case 'bottom':
+      return css`
+        border-bottom-left-radius: ${radius}px;
+        border-bottom-right-radius: ${radius}px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        margin-top: -1px;
+        ${stackLevelDefinedStyling}
+      `;
+    default:
+      return css`
+        border-radius: ${radius}px;
+      `;
+  }
+};
+
+const SelectWrapper = styled.span<WrapperProps>`
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+
+  &:before {
+    content: '';
+    bottom: 1px;
+    right: 1px;
+    top: 1px;
+    width: 2em;
+    margin-left: 1px;
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  ${Arrow} {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+    height: 12px;
+    margin-top: -6px;
+    right: 12px;
+    top: 50%;
+
+    path {
+      fill: ${color.mediumdark};
+    }
+  }
+
+  ${Selector} {
+    box-shadow: ${color.border} 0 0 0 1px inset;
+    ${(props) => getStackLevelStyling(props)}
+  }
+  ${Selector}:focus {
+    box-shadow: ${color.secondary} 0 0 0 1px inset;
+  }
+
+  ${(props) =>
+    props.disabled &&
+    css`
+      opacity: 0.5;
+    `}
+
+  ${Selector} {
+    background-color: ${color.lightest};
+    color: ${color.darkest};
+  }
+
+  ${(props) =>
+    props.appearance === 'tertiary' &&
+    `
+      width: auto;
+      height: auto;
+
+      ${Selector} {
+        color: ${color.darkest};
+        background-color: transparent;
+        padding: 0 1.5em 0 0;
+        text-decoration: none;
+        box-shadow: none;
+      }
+      &:before {
+        content: none;
+      }
+      ${Arrow} {
+        right: 0;
+        top: 10px;
+      }
+      ${SelectSpinner} {
+        right: 0;
+      }
+      ${SelectIcon} {
+        left: 0;
+        top: 10px;
+      }
+      ${SelectError} {
+        position: relative;
+        line-height: 20px;
+        margin-top: 8px;
+      }
+    `}
+
+  ${(props) =>
+    props.hasIcon &&
+    `
+      ${Selector} {
+        padding-left: ${props.appearance === 'tertiary' ? '20px' : '40px'};
+      }
+
+      ${Selector} + ${SelectIcon} {
+        transition: all 150ms ease-out;
+        position: absolute;
+        top: ${props.appearance === 'tertiary' ? '10px' : '50%'};
+        left: ${props.appearance === 'tertiary' ? 0 : '0.8em'};
+        height: 1em;
+        width: 1em;
+        margin-top: -0.5em;
+        z-index: 2;
+
+        path {
+          fill: ${color.mediumdark};
+        }
+      }
+      ${Selector}:focus + ${SelectIcon} path {
+        fill: ${color.darker};
+      }
+    `}
+
+  ${(props) =>
+    props.error &&
+    `
+      ${Selector} {
+        box-shadow: ${color.red} 0 0 0 1px inset;
+        &:focus {
+          box-shadow: ${color.red} 0 0 0 1px inset !important;
+        }
+      }
+
+      ${Selector} + ${SelectIcon} {
+        ${css`
+          animation: ${jiggle} 700ms ease-out;
+        `}
+        path {
+          fill: ${color.red};
+        }
+      }
+    `}
+`;
 
 interface OptionProps {
-  value: string
-  children: React.ReactNode
-  selected?: boolean
+  label: string;
+  value: string;
 }
 
-interface OptGroupProps {
-  label: string
-  children: React.ReactNode
+const Option: FunctionComponent<OptionProps> = ({ label, value }) => {
+  return <OptionWrapper value={value}>{label}</OptionWrapper>;
+};
+
+interface Props {
+  options: OptionProps[];
+  value: string;
+  appearance?: 'default' | 'tertiary';
+  label: string;
+  hideLabel?: boolean;
+  error?: ReactNode;
+  icon?: ComponentProps<typeof Icon>['icon'];
+  className?: string;
+  inProgress?: boolean;
+  disabled?: boolean;
+  stackLevel?: 'top' | 'middle' | 'bottom';
 }
 
-export interface Props
-  extends Omit<React.InputHTMLAttributes<HTMLSelectElement>, 'size'> {
-  autofocus?: boolean
-  children: React.ReactNode
-  descriptionText?: string
-  error?: string
-  icon?: any
-  inputRef?: string
-  label?: string
-  afterLabel?: string
-  beforeLabel?: string
-  labelOptional?: string
-  layout?: 'horizontal' | 'vertical'
-  reveal?: boolean
-  actions?: React.ReactNode
-  size?: 'tiny' | 'small' | 'medium' | 'large' | 'xlarge'
-  borderless?: boolean
-  validation?: (x: any) => void
-}
-
-export const ColLayout = (props: any) => (
-  <div className="">{props.children}</div>
-)
-
-export function Select({
-  autoComplete,
-  autofocus,
-  children,
-  className,
-  descriptionText,
-  disabled,
+export const Select: FunctionComponent<Props & ComponentProps<typeof Selector>> = ({
+  id,
+  options = [{ label: 'Loading', value: 'loading' }],
+  value = 'loading',
+  appearance = 'default',
+  label,
+  hideLabel = false,
   error,
   icon,
-  id = '',
-  inputRef,
-  label,
-  afterLabel,
-  beforeLabel,
-  labelOptional,
-  layout,
-  name = '',
-  onChange,
-  onFocus,
-  onBlur,
-  placeholder,
-  required,
-  value = undefined,
-  defaultValue = undefined,
-  style,
-  size = 'medium',
-  borderless = false,
-  validation,
-  ...props
-}: Props) {
-  const {
-    formContextOnChange,
-    values,
-    errors,
-    handleBlur,
-    touched,
-    fieldLevelValidation,
-  } = useFormContext()
-
-  if (values && !value) value = values[id]
-
-  function handleBlurEvent(e: React.FocusEvent<HTMLSelectElement>) {
-    if (handleBlur) handleBlur(e)
-    if (onBlur) onBlur(e)
+  className,
+  inProgress = false,
+  disabled = false,
+  stackLevel = undefined,
+  ...other
+}) => {
+  let spinnerId;
+  let errorId;
+  let ariaDescribedBy;
+  if (inProgress) {
+    spinnerId = `${id}-in-progress`;
+    ariaDescribedBy = spinnerId;
   }
-
-  if (!error) {
-    if (errors && !error) error = errors[id || name]
-    error = touched && touched[id || name] ? error : undefined
+  if (error) {
+    errorId = `${id}-error`;
+    ariaDescribedBy = `${ariaDescribedBy || ''} ${errorId}`;
   }
-
-  function onInputChange(e: React.ChangeEvent<HTMLSelectElement>) {
-    if (onChange) onChange(e)
-    // update form
-    if (formContextOnChange) formContextOnChange(e)
-    // run field level validation
-    if (validation) fieldLevelValidation(id, validation(e.target.value))
-  }
-
-  useEffect(() => {
-    if (validation) fieldLevelValidation(id, validation(value))
-  }, [])
-
-  const __styles = styleHandler('select')
-
-  let classesContainer = [__styles.container]
-  if (className) classesContainer.push(className)
-
-  let classes = [__styles.base]
-  if (error) classes.push(__styles.variants.error)
-  if (!error) classes.push(__styles.variants.standard)
-  if (icon) classes.push(__styles.with_icon)
-  if (size) classes.push(__styles.size[size])
-  if (disabled) classes.push(__styles.disabled)
 
   return (
-    <FormLayout
-      label={label}
-      afterLabel={afterLabel}
-      beforeLabel={beforeLabel}
-      labelOptional={labelOptional}
-      layout={layout}
-      id={id}
-      error={error}
-      descriptionText={descriptionText}
-      className={className}
-      style={style}
-      size={size}
-    >
-      <div className={__styles.container}>
-        <select
+    <SelectContainer className={className} appearance={appearance}>
+      <LabelWrapper hideLabel={hideLabel}>
+        <Label htmlFor={id}>{label}</Label>
+      </LabelWrapper>
+      <SelectWrapper
+        appearance={appearance}
+        hasIcon={!!icon}
+        data-error={error}
+        error={error}
+        disabled={disabled}
+        inProgress={inProgress}
+        stackLevel={stackLevel}
+      >
+        {!inProgress && <Arrow />}
+        <Selector
           id={id}
-          name={name}
-          autoComplete={autoComplete}
-          autoFocus={autofocus}
-          className={classes.join(' ')}
-          onChange={onInputChange}
-          onFocus={onFocus ? (event) => onFocus(event) : undefined}
-          onBlur={handleBlurEvent}
-          ref={inputRef}
           value={value}
-          disabled={disabled}
-          required={required}
-          placeholder={placeholder}
-          {...props}
+          {...other}
+          disabled={disabled || inProgress}
+          inProgress={inProgress}
+          aria-describedby={ariaDescribedBy}
+          aria-invalid={!!error}
+          aria-busy={inProgress}
         >
-          {children}
-        </select>
-        {icon && <InputIconContainer icon={icon} />}
-        {error && (
-          <div className={__styles.actions_container}>
-            {error && <InputErrorIcon size={size} />}
-          </div>
-        )}
-        <span className={__styles.chevron_container}>
-          <svg
-            className={__styles.chevron}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
-    </FormLayout>
-  )
-}
-
-export function Option({ value, children, selected }: OptionProps) {
-  const __styles = styleHandler('select')
-
-  let classes = [__styles.option]
-
-  return (
-    <option className={classes.join('')} value={value} selected={selected}>
-      {children}
-    </option>
-  )
-}
-
-export function OptGroup({ label, children }: OptGroupProps) {
-  return <optgroup label={label}>{children}</optgroup>
-}
-
-Select.Option = Option
-Select.OptGroup = OptGroup
+          {options.map((option) => (
+            <Option {...option} key={option.value} />
+          ))}
+        </Selector>
+        {icon && <SelectIcon icon={icon} aria-hidden />}
+        {error && <SelectError id={errorId}>{error}</SelectError>}
+        {inProgress && <SelectSpinner id={spinnerId} aria-label="Loading" inForm />}
+      </SelectWrapper>
+    </SelectContainer>
+  );
+};

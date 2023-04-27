@@ -1,15 +1,16 @@
 node_modules/
 
-dist*
-
 /.yarn/*
 !/.yarn/releases
 !/.yarn/plugins
 !/.yarn/sdks
 !/.yarn/patches
 
-# wesjet cache
+# Local Wesjet folder
 .wesjet
+
+# storybook
+storybook-static
 
 # Next.js Output
 .next
@@ -20,6 +21,8 @@ dist*
 # Ignore artifacts:
 build
 coverage
+dist*
+packages/ui/lib
 
 .editorconfig
 

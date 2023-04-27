@@ -1,231 +1,145 @@
-import React, { useEffect, useState } from 'react'
-import { FormLayout } from '../../lib/Layout/FormLayout'
-import { CheckboxContext } from './CheckboxContext'
-// @ts-ignore
-import CheckboxStyles from './Checkbox.module.css'
+import React, { ComponentProps, FunctionComponent, ReactNode } from 'react';
+import { styled, css } from '@storybook/theming';
+import { rgba } from 'polished';
+import { color, typography } from '../Shared/styles';
 
-import defaultTheme from '../../theme/globalTheme'
+const Label = styled.label`
+  cursor: pointer;
+  font-size: ${typography.size.s2}px;
+  font-weight: ${typography.weight.bold};
+  position: relative;
+  height: 1em;
+  display: flex;
+  align-items: center;
+`;
 
-import { useFormContext } from '../Form/FormContext'
-import styleHandler from '../../theme/handler'
+const OptionalText = styled.span<{ hideLabel: boolean }>`
+  ${(props) =>
+    props.hideLabel &&
+    css`
+      border: 0px !important;
+      clip: rect(0 0 0 0) !important;
+      -webkit-clip-path: inset(100%) !important;
+      clip-path: inset(100%) !important;
+      height: 1px !important;
+      overflow: hidden !important;
+      padding: 0px !important;
+      position: absolute !important;
+      white-space: nowrap !important;
+      width: 1px !important;
+    `}
+`;
 
-export interface InputProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
-  afterLabel?: string
-  beforeLabel?: string
-  description?: string
-  label?: string
-  size?: 'tiny' | 'small' | 'medium' | 'large' | 'xlarge'
-}
+const Error = styled.span`
+  font-weight: ${typography.weight.regular};
+  font-size: ${typography.size.s2}px;
+  color: ${color.negative};
+  margin-left: 6px;
+  height: 1em;
+  display: flex;
+  align-items: center;
+`;
 
-interface GroupProps {
-  id?: string
-  layout?: 'horizontal' | 'vertical'
-  error?: any
-  descriptionText?: any
-  label?: any
-  afterLabel?: string
-  beforeLabel?: string
-  labelOptional?: any
-  name?: any
-  value?: any
-  className?: string
-  children?: React.ReactNode
-  options?: Array<InputProps>
-  defaultValue?: string
-  onChange?(x: React.ChangeEvent<HTMLInputElement>): void
-  size?: 'tiny' | 'small' | 'medium' | 'large' | 'xlarge'
-}
+const LabelText = styled.span``;
 
-function Group({
-  id,
-  layout = 'vertical',
-  error,
-  descriptionText,
-  label,
-  afterLabel,
-  beforeLabel,
-  labelOptional,
-  children,
-  className,
-  options,
-  onChange,
-  size = 'medium',
-}: GroupProps) {
-  const parentCallback = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (onChange) onChange(e)
+const Input = styled.input<{ checkboxColor: string }>`
+  margin: 0 0.4em 0 0;
+  font-size: initial;
+  opacity: 0;
+  vertical-align: text-top;
+
+  & + ${LabelText} {
+    &:before,
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1em;
+      width: 1em;
+      content: '';
+      display: block;
+    }
+
+    &:before {
+      border-radius: 4px;
+    }
+
+    &:after {
+      border-radius: 3px;
+    }
   }
 
-  const __styles = styleHandler('checkbox')
+  & + ${LabelText}:before {
+    box-shadow: ${color.mediumdark} 0 0 0 1px inset;
+  }
 
-  return (
-    <FormLayout
-      label={label}
-      afterLabel={afterLabel}
-      beforeLabel={beforeLabel}
-      labelOptional={labelOptional}
-      layout={layout}
-      id={id}
-      error={error}
-      descriptionText={descriptionText}
-      className={className}
-      size={size}
-    >
-      <CheckboxContext.Provider value={{ parentCallback, parentSize: size }}>
-        <div className={__styles.group}>
-          {options
-            ? options.map((option: InputProps) => {
-                return (
-                  <Checkbox
-                    id={option.id}
-                    value={option.value}
-                    label={option.label}
-                    beforeLabel={option.beforeLabel}
-                    afterLabel={option.afterLabel}
-                    checked={option.checked}
-                    name={option.name}
-                    description={option.description}
-                  />
-                )
-              })
-            : children}
-        </div>
-      </CheckboxContext.Provider>
-    </FormLayout>
-  )
+  &:focus + ${LabelText}:before {
+    box-shadow: ${(props) => props.checkboxColor} 0 0 0 1px inset;
+  }
+
+  &:checked + ${LabelText}:before {
+    box-shadow: ${(props) => props.checkboxColor} 0 0 0 1px inset;
+  }
+
+  &:checked:focus + ${LabelText}:before {
+    box-shadow: ${(props) => props.checkboxColor} 0 0 0 1px inset,
+      ${(props) => rgba(props.checkboxColor, 0.3)} 0 0 5px 2px;
+  }
+
+  & + ${LabelText}:after {
+    transition: all 150ms ease-out;
+    transform: scale3d(0, 0, 1);
+
+    height: 10px;
+    margin-left: 2px;
+    margin-top: 2px;
+    width: 10px;
+
+    opacity: 0;
+  }
+
+  &:checked + ${LabelText}:after {
+    transform: scale3d(1, 1, 1);
+    background: ${(props) => props.checkboxColor};
+    opacity: 1;
+  }
+`;
+
+const CheckboxWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+`;
+
+interface Props {
+  appearance?: 'primary' | 'secondary';
+  id: string;
+  label: ReactNode;
+  hideLabel?: boolean;
+  error?: ReactNode;
 }
 
-export function Checkbox({
-  className,
-  id = '',
-  name = '',
-  label,
-  afterLabel,
-  beforeLabel,
-  description,
-  checked,
-  value,
-  onChange,
-  onFocus,
-  onBlur,
-  size = 'medium',
-  disabled = false,
-  ...props
-}: InputProps) {
-  const { formContextOnChange, values, handleBlur } = useFormContext()
-
-  const __styles = styleHandler('checkbox')
-
+export const Checkbox: FunctionComponent<
+  Props & Omit<ComponentProps<typeof Input>, 'checkboxColor'>
+> = ({ appearance = 'primary', id, label, error, hideLabel, ...props }) => {
+  const errorId = `${id}-error`;
+  const checkboxColor = color[appearance];
   return (
-    <CheckboxContext.Consumer>
-      {({ parentCallback, parentSize }) => {
-        // if id does not exist, use label
-        const markupId = id
-          ? id
-          : name
-          ? name
-          : label
-          ? label
-              .toLowerCase()
-              .replace(/^[^A-Z0-9]+/gi, '')
-              .replace(/ /g, '-')
-          : undefined
-
-        // @ts-ignore
-        size = parentSize ? parentSize : size
-
-        // if name does not exist on Radio then use Context Name from Radio.Group
-        // if that fails, use the id
-        const markupName = name ? name : markupId
-
-        // check if checkbox checked is true or false
-        // if neither true or false the checkbox will rely on native control
-        let active = checked ?? undefined
-
-        // if (values && !value) value = values[id || name]
-
-        let containerClasses = [__styles.container]
-
-        function onInputChange(e: React.ChangeEvent<HTMLInputElement>) {
-          // '`onChange` callback for parent component
-          if (parentCallback) parentCallback(e)
-          // '`onChange` callback for this component
-          if (onChange) onChange(e)
-          // update form
-          if (formContextOnChange) formContextOnChange(e)
-        }
-
-        if (className) containerClasses.push(className)
-
-        if (values && checked === undefined) active = values[id || name]
-
-        function handleBlurEvent(e: React.FocusEvent<HTMLInputElement>) {
-          if (handleBlur) handleBlur(e)
-          if (onBlur) onBlur(e)
-        }
-
-        return (
-          <div className={containerClasses.join(' ')}>
-            <input
-              id={markupId}
-              name={markupName}
-              type="checkbox"
-              // className={CheckboxStyles['sbui-checkbox']}
-              className={[__styles.base, __styles.size[size]].join(' ')}
-              onChange={onInputChange}
-              onFocus={onFocus ? (event) => onFocus(event) : undefined}
-              onBlur={handleBlurEvent}
-              checked={active}
-              value={value ? value : markupId}
-              disabled={disabled}
-              {...props}
-            />
-
-            <label
-              className={[__styles.label.base, __styles.label[size]].join(' ')}
-              htmlFor={markupId}
-            >
-              <span>
-                {beforeLabel && (
-                  <span
-                    className={[
-                      __styles.label_before.base,
-                      __styles.label_before[size],
-                    ].join(' ')}
-                  >
-                    {beforeLabel}
-                  </span>
-                )}
-                {label}
-                {afterLabel && (
-                  <span
-                    className={[
-                      __styles.label_after.base,
-                      __styles.label_after[size],
-                    ].join(' ')}
-                  >
-                    {afterLabel}
-                  </span>
-                )}
-              </span>
-
-              {description && (
-                <p
-                  className={[
-                    __styles.description.base,
-                    __styles.description[size],
-                  ].join(' ')}
-                >
-                  {description}
-                </p>
-              )}
-            </label>
-          </div>
-        )
-      }}
-    </CheckboxContext.Consumer>
-  )
-}
-
-Checkbox.Group = Group
-export default Checkbox
+    <CheckboxWrapper>
+      <Label>
+        <Input
+          {...props}
+          id={id}
+          aria-describedby={errorId}
+          aria-invalid={!!error}
+          checkboxColor={checkboxColor}
+          type="checkbox"
+        />
+        <LabelText>
+          <OptionalText hideLabel={hideLabel}>{label}</OptionalText>
+        </LabelText>
+      </Label>
+      <Error id={errorId}>{error}</Error>
+    </CheckboxWrapper>
+  );
+};
