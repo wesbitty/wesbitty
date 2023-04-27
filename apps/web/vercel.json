@@ -1,9 +1,5 @@
 {
   "github": {
-    "autoAlias": false,
-    "silent": true,
-    "deploymentEnabled": {
-      "vercel/build": false
-    }
+    "enabled": false
   }
 }
