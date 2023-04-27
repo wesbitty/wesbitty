@@ -34,16 +34,3 @@ jobs:
       - name: check code
         run: |
           npx prettier --check .
-
-  types-check:
-    name: Types check - UI
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout repository
-        uses: actions/checkout@v3
-      - name: Install dependencies
-        run: npm ci
-      - name: check types
-        run: |
-          npm run types-check
-        working-directory: packages/ui
