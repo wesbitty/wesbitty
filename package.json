@@ -30,10 +30,11 @@
     "dev": "turbo run dev --filter={apps/web}",
     "lint": "eslint . --ext .ts --fix",
     "lint-package": "sort-package-json",
-    "format": "prettier --write .",
+    "prettier": "prettier --write .",
     "clean": "turbo run clean",
     "schema:generate": "cd ./apps/web && npx prisma generate",
     "schema:up": "cd apps/web && pscale connect wesbitty main",
+    "release": "npm run release --workspaces --if-present",
     "test": "turbo run test"
   },
   "lint-staged": {
@@ -48,8 +49,12 @@
     "@babel/cli": "^7.21.0",
     "@babel/preset-env": "^7.19.1",
     "@babel/preset-typescript": "^7.16.6",
+    "@types/fs-extra": "^9.0.1",
     "@types/jest": "^27.0.3",
+    "auto": "^9.50.1",
     "babel-jest": "^27.3.1",
+    "cross-env": "^7.0.2",
+    "dotenv-cli": "^3.1.0",
     "eslint": "^8.32.0",
     "eslint-plugin-wesjet": "^0.0.34-rc.1",
     "husky": "^8.0.3",
@@ -57,6 +62,7 @@
     "lint-staged": "^13.2.1",
     "patch-package": "^6.4.7",
     "prettier": "^2.5.1",
+    "seedrandom": "^3.0.5",
     "sort-package-json": "^1.51.0",
     "ts-jest": "^27.0.7",
     "ts-node": "^9.1.1",
@@ -67,5 +73,11 @@
   "engines": {
     "node": ">=14",
     "npm": ">=6"
+  },
+  "auto": {
+    "plugins": [
+      "npm",
+      "release"
+    ]
   }
 }

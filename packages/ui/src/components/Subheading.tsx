@@ -21,11 +21,13 @@ const StyledSubheading = styled('span', { shouldForwardProp: (prop) => !['muted'
 `;
 
 export const Subheading: FunctionComponent<SubheadingProps> = ({
+  children,
   muted = false,
   ...props
 }: SubheadingProps) => <StyledSubheading muted={muted} {...props} />;
 
 export interface SubheadingProps {
   /** This prop lightens the Subheading color and increases the letter spacing */
+  children?: string;
   muted?: boolean;
 }

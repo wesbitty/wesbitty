@@ -146,7 +146,7 @@ interface TextareaProps {
   hideLabel?: boolean;
   hideError?: boolean;
   orientation?: 'vertical' | 'horizontal';
-  error?: ReactNode | ComponentType;
+  error?: any;
   startFocused?: boolean;
   subtext?: string;
   className?: string;
@@ -226,4 +226,5 @@ export const Textarea = forwardRef<
     );
   }
 );
+
 Textarea.displayName = 'Textarea';

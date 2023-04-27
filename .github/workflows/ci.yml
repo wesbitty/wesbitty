@@ -1,34 +1,47 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-name: Check & Format Code
 
-name: Check & Format Code With Prettier
+name: Check
 
 on:
   push:
-    branches: ['vercel/build']
+    branches:
+      - 'patches/sort'
   pull_request:
-    branches: ['vercel/build']
+    branches:
+      - 'patches/sort'
 
 permissions:
   contents: read
 
 jobs:
-  check-code:
+  prettier-check:
     permissions:
       actions: read
       contents: read
       security-events: write
-    name: Check Code
+    name: Analyze
     strategy:
       matrix:
         node-version: [16]
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Install Dependencies
+      - name: checkout repository
+        uses: actions/checkout@v3
+      - name: Install dependencies
         run: npm ci
+      - name: check code - prettier
+        run: |
+          npx prettier --check .
 
-      - name: Check Prettier
-        run: npx prettier --check .
+  types-check:
+    name: Analyze
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
+      - name: types check - UI
+        run: |
+          npm run types-check
+        working-directory: packages/ui

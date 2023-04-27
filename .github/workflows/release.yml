@@ -1,15 +1,21 @@
 name: Release
 
-on: [push]
+on:
+  push:
+    branches:
+      - 'patches/sort'
+  pull_request:
+    branches:
+      - 'patches/sort'
 
 jobs:
-  release:
+  release-ui:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
     steps:
       - uses: actions/checkout@v2
 
-      - name: Prepare repository
+      - name: Prepare Repo
         run: git fetch --unshallow --tags
 
       - name: Use Node.js 16.17.1
@@ -20,9 +26,9 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
-      - name: Create Release
+      - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          yarn release
+        run: npm run release
+        working-directory: packages/ui

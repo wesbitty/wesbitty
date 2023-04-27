@@ -17,15 +17,15 @@
     "lib"
   ],
   "scripts": {
-    "build": "npm run build-img && babel src -d lib --extensions \".js,.jsx,.ts,.tsx\" --ignore \"**/*.stories.tsx\" --ignore \"**/*.stories.js\"",
-    "build-img": "npx svgr --out-dir src/images src/images",
-    "stories": "npm run build-img && storybook build",
-    "clean": "rm -rf lib",
-    "lint": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
-    "release": "dotenv npm run build & npm run tsc-build && auto shipit",
+    "prebuild": "npx svgr --out-dir src/images src/images",
+    "build": "babel src -d lib --extensions \".js,.jsx,.ts,.tsx\" --ignore \"**/*.stories.tsx\" --ignore \"**/*.stories.js\"",
+    "postbuild": "storybook build",
+    "types": "tsc --declaration --emitDeclarationOnly --outDir lib --declarationMap",
+    "types-check": "tsc --project ./tsconfig.json --noEmit",
     "storybook": "storybook dev -p 6006",
-    "tsc-check": "tsc --project ./tsconfig.json --noEmit",
-    "tsc-build": "tsc --declaration --emitDeclarationOnly --outDir lib --declarationMap"
+    "lint": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
+    "clean": "rm -rf lib storybook-static",
+    "release": "dotenv npm run build & npm run types && auto shipit"
   },
   "dependencies": {
     "@emotion/weak-memoize": "^0.3.0",

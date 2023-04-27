@@ -1,3 +1,3 @@
-export { Link } from './Link';
+export { Link, LinkProps } from './Link';
 
 export { LinkTabs } from './Tabs';
