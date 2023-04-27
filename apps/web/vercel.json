@@ -1,3 +1,8 @@
 {
-  "buildCommand": "turbo run build"
+  "github": {
+    "silent": true,
+    "deploymentEnabled": {
+      "main": false
+    }
+  }
 }
