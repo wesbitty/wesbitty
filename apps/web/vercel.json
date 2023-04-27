@@ -3,7 +3,7 @@
     "autoAlias": false,
     "silent": true,
     "deploymentEnabled": {
-      "main": false
+      "vercel/build": false
     }
   }
 }
