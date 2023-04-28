@@ -1,35 +1,26 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "checkJs": false,
-    "baseUrl": ".",
-    "outDir": "./lib",
-    "rootDir": "./src",
-    "incremental": false,
-    "noImplicitAny": true,
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "jsx": "react",
-    "module": "commonjs",
-    "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
+    "rootDir": "./src",
+    "outDir": "./lib",
     "esModuleInterop": true,
-    "target": "es5",
-    "types": [],
-    "lib": ["es2017", "dom"]
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx"
   },
   "include": ["src"],
-  "exclude": [
-    "**/lib",
-    "**/test.*",
-    "node_modules",
-    "**/node_modules",
-    "**/*.spec.ts",
-    "**/__tests__",
-    "**/*.test.ts",
-    "**/*.stories.*"
-  ]
+  "exclude": ["node_modules"]
 }

@@ -1,3 +1,1 @@
-export { Button } from './Button';
-export { ButtonAction } from './Action';
-export { ButtonToggle } from './Toggle';
+export { default as Button } from './Button'

@@ -1,1 +1,0 @@
-export { Cardinal } from './Cardinal';

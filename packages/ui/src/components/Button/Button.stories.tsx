@@ -1,140 +1,221 @@
-import React from 'react';
-import { styled } from '@storybook/theming';
-import { action } from '@storybook/addon-actions';
+import React, { useRef, useState } from 'react'
 
-import { Button } from '../Button';
-import { Icon } from '../Icon';
-import { StoryLinkWrapper } from '../StoryLinkWrapper';
+import { Button, Space, IconPackage, IconChevronRight } from './../../index'
 
-export default {
-  title: 'Button',
+const meta = {
+  title: 'General/Button',
   component: Button,
-};
+  tags: ['docspage'],
+}
 
-export const Basic = (args) => <Button {...args} />;
-Basic.args = { children: 'Label' };
+export default meta
 
-export const All = () => (
+export const Default = (args: any) => <Button {...args}>Button text</Button>
+
+export const withStyles = (args: any) => <Button {...args}>Button text</Button>
+
+export const withIcon = (args: any) => <Button {...args}>Button text</Button>
+
+export const withIconRight = (args: any) => (
+  <Button {...args}>Button text</Button>
+)
+
+export const withBlock = (args: any) => <Button {...args}>Button text</Button>
+
+export const withOnlyIcon = (args: any) => <Button {...args} />
+
+export const withOnlyLoading = (args: any) => <Button {...args} />
+
+export const withLoadingCentered = (args: any) => (
+  <Button {...args}>Loading icon is centered</Button>
+)
+
+export const withRef = () => {
+  const buttonRef = useRef(null)
+  const [msg, setMsg] = useState('Click button to console.log Ref')
+
+  function onClick() {
+    const message = `
+    button: ${buttonRef?.current}`
+    setMsg(message)
+    console.log(message)
+  }
+
+  return (
+    <>
+      <Button ref={buttonRef} onClick={onClick}>
+        Button with forwardRef
+      </Button>
+
+      <p style={{ color: '#666666' }}>{msg}</p>
+    </>
+  )
+}
+export const allButtons = (args: any) => (
   <>
-    <div style={{ display: 'flex', gap: 16, padding: 32 }}>
-      <Button appearance="primary">Primary</Button>
-      <Button appearance="secondary">Secondary</Button>
-      <Button appearance="tertiary">Tertiary</Button>
-      <Button appearance="outline">Outline</Button>
-      <Button appearance="primaryOutline">Outline primary</Button>
-      <Button appearance="secondaryOutline">Outline secondary</Button>
-    </div>
-    <div style={{ background: '#333333', display: 'flex', gap: 16, padding: 32 }}>
-      <Button appearance="inversePrimary">Primary inverse</Button>
-      <Button appearance="inverseSecondary">Secondary inverse</Button>
-      <Button appearance="inverseOutline">Outline inverse</Button>
-      <Button appearance="inverse">Inverse</Button>
-      <Button appearance="inverseNoChrome">No Chrome Inverse</Button>
-    </div>
+    <Space direction="vertical" size={6}>
+      <Space>
+        <Button {...args} size="tiny">
+          Button text
+        </Button>
+        <Button {...args} size="tiny" type="secondary">
+          Button text
+        </Button>
+        <Button {...args} size="tiny" type="default">
+          Button text
+        </Button>
+        <Button {...args} size="tiny" type="link">
+          Button text
+        </Button>
+        <Button {...args} size="tiny" type="text">
+          Button text
+        </Button>
+        <Button {...args} size="tiny" type="dashed">
+          Button text
+        </Button>
+        <Button {...args} size="tiny" type="outline">
+          Button text
+        </Button>
+      </Space>
+
+      <Space>
+        <Button {...args} size="small">
+          Button text
+        </Button>
+        <Button {...args} size="small" type="secondary">
+          Button text
+        </Button>
+        <Button {...args} size="small" type="default">
+          Button text
+        </Button>
+        <Button {...args} size="small" type="link">
+          Button text
+        </Button>
+        <Button {...args} size="small" type="text">
+          Button text
+        </Button>
+        <Button {...args} size="small" type="dashed">
+          Button text
+        </Button>
+        <Button {...args} size="small" type="outline">
+          Button text
+        </Button>
+      </Space>
+      <Space>
+        <Button {...args}>Button text</Button>
+        <Button {...args} size="medium" type="secondary">
+          Button text
+        </Button>
+        <Button {...args} size="medium" type="default">
+          Button text
+        </Button>
+        <Button {...args} size="medium" type="link">
+          Button text
+        </Button>
+        <Button {...args} size="medium" type="text">
+          Button text
+        </Button>
+        <Button {...args} size="medium" type="dashed">
+          Button text
+        </Button>
+        <Button {...args} size="medium" type="outline">
+          Button text
+        </Button>
+      </Space>
+      <Space>
+        <Button {...args} size="large">
+          Button text
+        </Button>
+        <Button {...args} size="large" type="secondary">
+          Button text
+        </Button>
+        <Button {...args} size="large" type="default">
+          Button text
+        </Button>
+        <Button {...args} size="large" type="link">
+          Button text
+        </Button>
+        <Button {...args} size="large" type="text">
+          Button text
+        </Button>
+        <Button {...args} size="large" type="dashed">
+          Button text
+        </Button>
+        <Button {...args} size="large" type="outline">
+          Button text
+        </Button>
+      </Space>
+      <Space>
+        <Button {...args} size="xlarge">
+          Button text
+        </Button>
+        <Button {...args} size="xlarge" type="secondary">
+          Button text
+        </Button>
+        <Button {...args} size="xlarge" type="default">
+          Button text
+        </Button>
+        <Button {...args} size="xlarge" type="link">
+          Button text
+        </Button>
+        <Button {...args} size="xlarge" type="text">
+          Button text
+        </Button>
+        <Button {...args} size="xlarge" type="dashed">
+          Button text
+        </Button>
+        <Button {...args} size="xlarge" type="outline">
+          Button text
+        </Button>
+      </Space>
+    </Space>
   </>
-);
+)
 
-export const Sizes = () => (
-  <>
-    <Button appearance="primary">Default</Button>
-    <Button appearance="primary" size="small">
-      Small
-    </Button>
-  </>
-);
+export const withCustomTag = (args: any) => (
+  <Button {...args}>Button text</Button>
+)
 
-export const ContainsSVG = () => (
-  <>
-    <Button appearance="secondary">
-      <Icon icon="lock" />
-      Default
-    </Button>
-    <Button appearance="secondary" size="small">
-      <Icon icon="lock" />
-      Small
-    </Button>
-    <Button appearance="secondary">
-      <Icon icon="check" />
-      Default
-    </Button>
-    <Button appearance="secondary" size="small">
-      <Icon icon="check" />
-      Small
-    </Button>
-    <Button appearance="secondary">
-      <Icon icon="grid" />
-      Default
-    </Button>
-    <Button appearance="secondary" size="small">
-      <Icon icon="grid" />
-      Small
-    </Button>
-  </>
-);
+const icon = <IconPackage />
 
-export const Loading = () => (
-  <>
-    <Button appearance="primary" isLoading>
-      Primary
-    </Button>
-    <Button appearance="secondary" isLoading>
-      Secondary
-    </Button>
-    <Button appearance="tertiary" isLoading>
-      Tertiary
-    </Button>
-    <Button appearance="outline" isLoading>
-      Outline
-    </Button>
-    <Button appearance="outline" isLoading loadingText="Custom...">
-      Outline
-    </Button>
-  </>
-);
+withIcon.args = {
+  type: 'primary',
+  icon: icon,
+}
 
-export const Disabled = () => (
-  <>
-    <Button appearance="primary" isDisabled>
-      Primary
-    </Button>
-    <Button appearance="secondary" isDisabled>
-      Secondary
-    </Button>
-    <Button appearance="tertiary" isDisabled>
-      Tertiary
-    </Button>
-    <Button appearance="outline" isDisabled>
-      Outline
-    </Button>
-  </>
-);
+withIconRight.args = {
+  type: 'primary',
+  iconRight: <IconChevronRight strokeWidth={2} />,
+}
 
-export const ContainsIcon = () => (
-  <>
-    <Button appearance="outline" containsIcon>
-      <Icon icon="link" aria-label="Link" />
-    </Button>
-    <Button appearance="outline" size="small" containsIcon>
-      <Icon icon="link" aria-label="Link" />
-    </Button>
-  </>
-);
+withStyles.args = {
+  type: 'primary',
+  style: { backgroundColor: 'red', color: 'yellow' },
+}
 
-// eslint-disable-next-line react/button-has-type
-const ButtonWrapper = (props) => <button {...props} />;
+withBlock.args = {
+  type: 'primary',
+  block: true,
+}
 
-export const BasicWrapper = () => (
-  <Button
-    ButtonWrapper={ButtonWrapper}
-    appearance="primary"
-    onClick={action('button action click')}
-  >
-    Button that passes clicks through
-  </Button>
-);
+withOnlyIcon.args = {
+  icon: icon,
+}
 
-export const AnchorWrapper = () => (
-  <Button ButtonWrapper={StoryLinkWrapper} appearance="primary" href="http://storybook.js.org">
-    Button that passes href through
-  </Button>
-);
+withOnlyLoading.args = {
+  loading: true,
+}
+
+withLoadingCentered.args = {
+  loading: true,
+  loadingCentered: true,
+}
+
+allButtons.args = {
+  loading: false,
+  danger: false,
+}
+
+withCustomTag.args = {
+  as: 'span',
+}

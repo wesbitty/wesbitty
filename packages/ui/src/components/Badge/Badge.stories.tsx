@@ -1,28 +1,42 @@
-import React from 'react';
-import { Badge } from './Badge';
-import { Icon } from '../Icon';
+import React from 'react'
+import Typography from '../Typography'
+// import { AutoForm } from 'uniforms'
 
-export default {
-  title: 'Badge',
+import { Badge } from './'
+
+const meta = {
+  title: 'Displays/Badge',
   component: Badge,
-};
+  tags: ['docspage'],
+}
 
-export const Basic = (args) => <Badge {...args}>Badge</Badge>;
+export default meta
 
-export const All = () => (
-  <div>
-    <Badge status="positive">Positive</Badge>
-    <Badge status="negative">Negative</Badge>
-    <Badge status="neutral">Neutral</Badge>
-    <Badge status="error">Error</Badge>
-    <Badge status="warning">Warning</Badge>
-    <Badge status="selected">Selected</Badge>
-  </div>
-);
+export const Default = (args: any) => <Badge {...args}>Hello world</Badge>
 
-export const WithIcon = () => (
-  <Badge status="warning">
-    <Icon icon="check" />
-    with icon
-  </Badge>
-);
+export const withColor = (args: any) => <Badge {...args}>Hello world</Badge>
+
+export const withDot = (args: any) => <Badge {...args}>Hello world</Badge>
+
+export const large = (args: any) => <Badge {...args}>Hello world</Badge>
+
+export const withDotLarge = (args: any) => <Badge {...args}>Hello world</Badge>
+
+Default.args = {}
+
+withColor.args = {
+  color: 'red',
+}
+
+withDot.args = {
+  dot: true,
+}
+
+large.args = {
+  size: 'large',
+}
+
+withDotLarge.args = {
+  size: 'large',
+  dot: true,
+}

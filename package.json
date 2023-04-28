@@ -42,7 +42,8 @@
       "npm run lint-package"
     ],
     "*.{mts,cts,ts,tsx,yml,js,jsx,mjs,cjs,json,md,mdx,css}": [
-      "prettier --write ."
+      "prettier --write",
+      "git add"
     ]
   },
   "devDependencies": {
@@ -51,7 +52,7 @@
     "@babel/preset-typescript": "^7.16.6",
     "@types/fs-extra": "^9.0.1",
     "@types/jest": "^27.0.3",
-    "auto": "^9.50.1",
+    "auto": "^10.2.3",
     "babel-jest": "^27.3.1",
     "cross-env": "^7.0.2",
     "dotenv-cli": "^3.1.0",
