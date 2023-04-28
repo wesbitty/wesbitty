@@ -47,9 +47,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.21.0",
-    "@babel/preset-env": "^7.19.1",
-    "@babel/preset-typescript": "^7.16.6",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-typescript": "^7.21.4",
     "@types/fs-extra": "^9.0.1",
     "auto": "^10.2.3",
     "babel-jest": "^27.3.1",

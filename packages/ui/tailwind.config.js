@@ -1,12 +1,11 @@
-const ui = require('./src/theme/config')
 const colors = require('tailwindcss/colors')
 
-module.exports = ui({
+module.exports = {
   purge: [
     './src/**/**/*.{js,ts,jsx,tsx,html,mdx}',
     './src/**/*.{js,ts,jsx,tsx,html,mdx}',
     './src/*.{js,ts,jsx,tsx,html,mdx}',
-    './src/theme/globalTheme.ts',
+    './src/theme/global.tsx',
   ],
   darkMode: 'class',
   theme: {
@@ -161,4 +160,4 @@ module.exports = ui({
     },
   },
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
-})
+}

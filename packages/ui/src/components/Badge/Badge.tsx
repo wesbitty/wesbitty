@@ -1,47 +1,69 @@
-import React from 'react'
-// @ts-ignore
-import BadgeStyles from './Badge.module.css'
+import { styled, css } from '@storybook/theming'
+import { rgba } from 'polished'
+import { background, color, typography } from '../../theme/styles'
 
-interface Props {
-  color?:
-    | 'gray'
-    | 'red'
-    | 'yellow'
-    | 'green'
-    | 'blue'
-    | 'indigo'
-    | 'purple'
-    | 'pink'
-  children: string
-  size?: 'large' | 'small'
-  dot?: boolean
-}
+export const Badge = styled.div<{
+  status: 'positive' | 'negative' | 'neutral' | 'error' | 'warning' | 'selected'
+}>`
+  display: inline-block;
+  vertical-align: top;
+  font-size: ${typography.size.s1}px;
+  line-height: 12px;
+  padding: 4px 12px;
+  border-radius: 3em;
+  font-weight: ${typography.weight.bold};
 
-function Badge({ color, children, size, dot }: Props) {
-  let classes = [BadgeStyles['sbui-badge']]
-  if (color) {
-    classes.push(BadgeStyles[`sbui-badge--${color}`])
-  }
-  if (size === 'large') {
-    classes.push(BadgeStyles['sbui-badge--large'])
+  svg {
+    height: 12px;
+    width: 12px;
+    margin-right: 4px;
+    margin-top: -2px;
   }
 
-  return (
-    <span className={classes.join(' ')}>
-      {dot && (
-        <svg
-          className={`${BadgeStyles[`sbui-badge-dot`]} ${
-            BadgeStyles[`sbui-badge--${color}`]
-          }`}
-          fill="currentColor"
-          viewBox="0 0 8 8"
-        >
-          <circle cx="4" cy="4" r="3" />
-        </svg>
-      )}
+  ${(props) =>
+    props.status === 'positive' &&
+    css`
+      color: ${color.positive};
+      background: ${background.positive};
+      box-shadow: ${rgba(color.positive, 0.1)} 0 0 0 1px inset;
+    `};
 
-      {children}
-    </span>
-  )
-}
-export default Badge
+  ${(props) =>
+    props.status === 'negative' &&
+    css`
+      color: ${color.negative};
+      background: ${background.negative};
+      box-shadow: ${rgba(color.negative, 0.1)} 0 0 0 1px inset;
+    `};
+
+  ${(props) =>
+    props.status === 'warning' &&
+    css`
+      color: ${color.warning};
+      background: ${background.warning};
+      box-shadow: ${rgba(color.warning, 0.1)} 0 0 0 1px inset;
+    `};
+
+  ${(props) =>
+    props.status === 'error' &&
+    css`
+      color: ${color.lightest};
+      background: ${color.red};
+    `};
+
+  ${(props) =>
+    props.status === 'selected' &&
+    css`
+      color: ${color.selected};
+      background: ${background.calmBlue};
+      box-shadow: ${rgba(color.selected, 0.1)} 0 0 0 1px inset;
+    `};
+
+  ${(props) =>
+    (props.status === 'neutral' || props.status === undefined) &&
+    css`
+      color: ${color.darker};
+      background: ${color.mediumlight};
+      box-shadow: ${rgba(color.darker, 0.1)} 0 0 0 1px inset;
+    `};
+`
