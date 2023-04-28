@@ -43,7 +43,7 @@
     ],
     "*.{mts,cts,ts,tsx,yml,js,jsx,mjs,cjs,json,md,mdx,css}": [
       "prettier --write",
-      "git push"
+      "git add"
     ]
   },
   "devDependencies": {
