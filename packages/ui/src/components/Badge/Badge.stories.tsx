@@ -5,7 +5,7 @@ import Typography from '../Typography'
 import { Badge } from './'
 
 const meta = {
-  title: 'Displays/Badge',
+  title: 'Elements/Badge',
   component: Badge,
   tags: ['docspage'],
 }

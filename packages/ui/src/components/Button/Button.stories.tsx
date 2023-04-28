@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import { Button, Space, IconPackage, IconChevronRight } from './../../index'
 
 const meta = {
-  title: 'General/Button',
+  title: 'Elements/Button',
   component: Button,
   tags: ['docspage'],
 }

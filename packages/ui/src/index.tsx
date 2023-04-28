@@ -1,14 +1,18 @@
+// Elements
 export * from './components/Button/index'
-export * from './components/Typography/index'
 export * from './components/Icon/index'
-
 export * from './components/Badge/index'
 
+// Feedback
+export * from './components/Alert/index'
+
+// Typography
+export * from './components/Typography/index'
+
+// Space
 export * from './components/Space/index'
 
 // ICONS
-
-// export icons
 export * from './components/Icon/icons/IconActivity/index'
 export * from './components/Icon/icons/IconAirplay/index'
 export * from './components/Icon/icons/IconAlertCircle/index'

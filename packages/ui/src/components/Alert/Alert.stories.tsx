@@ -2,7 +2,7 @@ import React from 'react'
 import { Alert } from './'
 
 const Alertmeta = {
-  title: 'Displays/Alert',
+  title: 'Feedback/Alert',
   component: Alert,
 }
 export default Alertmeta

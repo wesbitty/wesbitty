@@ -3,7 +3,7 @@ import React from 'react'
 import { IconMail, Typography } from './../../index'
 
 export default {
-  title: 'General/Icon',
+  title: 'Elements/Icon',
   component: IconMail,
 }
 

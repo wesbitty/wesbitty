@@ -1,11 +1,21 @@
 {
   "name": "ui",
   "version": "0.0.4",
-  "description": "Wesbitty UI Libary",
-  "keywords": [],
+  "description": "Wesbitty UI Component Libary",
+  "keywords": [
+    "storybook",
+    "libary",
+    "ui-component",
+    "components",
+    "react"
+  ],
   "license": "MIT",
-  "author": "",
+  "author": "iamnicholax <Wesbitty Inc>",
   "main": "./lib/index.js",
+  "files": [
+    "lib",
+    "LICENSE"
+  ],
   "scripts": {
     "prebuild": "node ./src/assets/icons/generateIcons.js",
     "types-check": "tsc --project ./tsconfig.json --noEmit",

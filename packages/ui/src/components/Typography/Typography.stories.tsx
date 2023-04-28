@@ -12,7 +12,7 @@ const gfm = require('remark-gfm')
 const { Title, Text, Link } = Typography
 
 const meta = {
-  title: 'General/Typography',
+  title: 'Typography',
   component: Typography,
   tags: ['docspage'],
 }
