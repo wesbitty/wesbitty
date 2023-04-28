@@ -19,7 +19,7 @@
   "scripts": {
     "prebuild": "node ./src/assets/icons/generateIcons.js",
     "types-check": "tsc --project ./tsconfig.json --noEmit",
-    "types": "tsc --declaration --outDir lib --declarationMap",
+    "types": "tsc --declaration --outDir lib",
     "storybook": "storybook dev -p 6006",
     "stories": "storybook build",
     "release": "auto shipit"
