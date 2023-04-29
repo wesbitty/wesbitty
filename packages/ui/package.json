@@ -1,31 +1,31 @@
 {
   "name": "ui",
+  "version": "0.0.4",
   "description": "Wesbitty UI Component library",
-  "version": "0.0.3-rc.1",
-  "license": "MIT",
-  "main": "./lib/cjs/index.js",
-  "module": "./lib/esm/index.js",
-  "files": [
-    "lib",
-    "LICENSE",
-    "README.md",
-    "package.json"
-  ],
   "keywords": [
     "storybook",
     "ui",
     "components",
     "wesbitty"
   ],
+  "license": "MIT",
   "sideEffects": false,
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
   "source": "src/index.tsx",
+  "files": [
+    "lib",
+    "LICENSE",
+    "README.md",
+    "package.json"
+  ],
   "scripts": {
     "prebuild": "node --experimental-modules src/lib/Icon/generate.js",
     "build": "rollup -c",
-    "build-storybook": "build-storybook",
+    "build-storybook": "storybook build",
     "gen:doc": "tsc --declaration --outDir docs --declarationMap",
     "build:tailwind": "tailwindcss build -i src/theme/main.css -o src/theme/global.css -c tailwind.config.js",
-    "storybook": "start-storybook -s ./public -p 6006",
+    "storybook": "storybook dev -p 6006",
     "clean": "bash -c 'rm -rf lib docs storybook-static'",
     "test": "react-scripts test"
   },
@@ -41,18 +41,10 @@
       "last 1 safari version"
     ]
   },
-  "optionalDependencies": {
-    "fsevents": "^2.3.2"
-  },
   "jest": {
     "transformIgnorePatterns": [
       "/node_modules/(?!react-feather)"
     ]
-  },
-  "peerDependencies": {
-    "react": "^17.0.1 || 18.1.0",
-    "react-dom": "^17.0.1 || ^18.1.0",
-    "styled-components": "^5.1.11"
   },
   "resolutions": {
     "react": "^18.1.0",
@@ -97,12 +89,16 @@
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.1",
     "@storybook/addon-a11y": "^6.5.9",
-    "@storybook/addon-actions": "^6.5.9",
-    "@storybook/addon-docs": "^6.5.9",
-    "@storybook/addon-essentials": "^6.5.9",
-    "@storybook/addon-links": "^6.5.9",
+    "@storybook/addon-actions": "^7.0.7",
+    "@storybook/addon-docs": "^7.0.7",
+    "@storybook/addon-essentials": "^7.0.7",
+    "@storybook/addon-interactions": "^7.0.7",
+    "@storybook/addon-links": "^7.0.7",
     "@storybook/addon-storysource": "^6.5.9",
-    "@storybook/react": "^6.5.9",
+    "@storybook/blocks": "^7.0.7",
+    "@storybook/react": "^7.0.7",
+    "@storybook/react-webpack5": "^7.0.7",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@supabase/supabase-js": "^1.21.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.4",
@@ -141,9 +137,18 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss-modules": "^2.0.2",
     "rollup-plugin-typescript2": "^0.29.0",
+    "storybook": "^7.0.7",
     "storybook-dark-mode": "^1.0.4",
     "typedoc": "^0.19.2",
     "typescript": "^4.8.4",
     "yup": "^0.32.11"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1 || 18.1.0",
+    "react-dom": "^17.0.1 || ^18.1.0",
+    "styled-components": "^5.1.11"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
   }
 }
