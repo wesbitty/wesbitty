@@ -22,7 +22,7 @@
   "scripts": {
     "prebuild": "node --experimental-modules src/lib/Icon/generate.js",
     "build": "rollup -c",
-    "build-storybook": "storybook build",
+    "stories": "storybook build",
     "gen:doc": "tsc --declaration --outDir docs --declarationMap",
     "build:tailwind": "tailwindcss build -i src/theme/main.css -o src/theme/global.css -c tailwind.config.js",
     "storybook": "storybook dev -p 6006",

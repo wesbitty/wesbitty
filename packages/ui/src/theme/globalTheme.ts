@@ -174,7 +174,7 @@ export const wsbcolor = {
 
 /** GLOBAL THEME **/
 
-export default {
+export const defaultTheme = {
   /** ACCORDION **/
   accordion: {
     variants: {

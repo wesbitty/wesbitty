@@ -10,10 +10,66 @@
 }
 
 .dark,
+.light,
+.light .docs-story,
 .dark .docs-story {
-  background: bg-gray-600;
+  @apply bg-gray-200;
+  /* background: #181818; */
 }
 
-.light {
-  background: bg-gray-500;
+/* 
+html {
+	 background: #009688;
+}
+ html, body {
+	 height: 100%;
+}
+ body {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+} */
+.spin-loader {
+  border-radius: 80%;
+  display: block;
+  height: 20px;
+  width: 20px;
+  position: relative;
+  animation: spin 0.675s linear 0s infinite normal;
+  /* background: #26a69a; */
+}
+.spin-loader:before,
+.spin-loader:after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+.spin-loader:before {
+  border-radius: 0 90px 90px 0;
+  height: 20px;
+  width: 50%;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background: #005041;
+  opacity: 0.5;
+  background-image: linear-gradient(
+    var(--colors-scale1),
+    var(--colors-scale12)
+  );
+}
+.spin-loader:after {
+  border-radius: 80%;
+  height: 16px;
+  width: 16px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background: #009688;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
