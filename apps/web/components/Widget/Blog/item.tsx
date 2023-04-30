@@ -13,7 +13,7 @@ const ListItem: FC<{ post: Post }> = ({ post }) => {
 
   return (
     <div key={post.slug}>
-      <Link href={post.slug} legacyBehavior>
+      <Link href={post.slug}>
         <div className="inline-block min-w-full group">
           <div className="flex flex-col space-y-6">
             <div className="flex flex-col space-y-3">

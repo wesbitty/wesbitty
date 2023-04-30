@@ -169,7 +169,7 @@ export default function AppIndex() {
           {sites ? (
             sites.length > 0 ? (
               sites.map((site) => (
-                <Link href={`/site/${site.id}`} key={site.id} legacyBehavior>
+                <Link href={`/site/${site.id}`} key={site.id}>
                   <div className="flex flex-col md:flex-row md:h-60 rounded-lg overflow-hidden border border-gray-200">
                     <div className="relative w-full h-60 md:h-auto md:w-1/3 md:flex-none">
                       {site.image ? (

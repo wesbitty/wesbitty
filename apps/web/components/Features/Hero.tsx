@@ -84,17 +84,12 @@ export const Hero = () => {
                       </p>
                     </div>
                     <div className="mt-8 flex items-center gap-4">
-                      <Link
-                        href="https://app.wesbitty.org"
-                        as="https://app.wesbitty.org"
-                        passHref
-                        legacyBehavior
-                      >
+                      <Link href="https://app.wesbitty.org">
                         <Button size="small" className="text-white bg-blue-600">
                           Start your project
                         </Button>
                       </Link>
-                      <Link href="/docs" as="/docs" passHref legacyBehavior>
+                      <Link href="/docs" as="/docs" passHref>
                         <Button
                           size="small"
                           type="default"

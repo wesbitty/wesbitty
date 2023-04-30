@@ -78,7 +78,7 @@ export default function SiteDrafts() {
           {data ? (
             data.posts.length > 0 ? (
               data.posts.map((post) => (
-                <Link href={`/post/${post.id}`} key={post.id} legacyBehavior>
+                <Link href={`/post/${post.id}`} key={post.id}>
                   <div className="flex flex-col md:flex-row md:h-60 rounded-lg overflow-hidden border border-gray-200">
                     <div className="relative w-full h-60 md:h-auto md:w-1/3 md:flex-none">
                       {post.image ? (

@@ -9,7 +9,7 @@ import Link from 'next/link'
 type Props = {
   text: string
   description?: string
-  url?: string
+  url?: any
   icon?: string
 }
 
@@ -19,7 +19,7 @@ const Developers = () => {
     const { text, description, url, icon } = company
 
     const content = (
-      <a
+      <Link
         href={url}
         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 dark:hover:bg-dark-700 transition ease-in-out duration-150"
       >
@@ -45,14 +45,13 @@ const Developers = () => {
             <p>{description}</p>
           </Typography.Text>
         </div>
-      </a>
+      </Link>
     )
     return url ? (
       <Link
         key={text}
         href={url}
         className="p-3 col-span-6 rounded hover:bg-gray-50 dark:hover:bg-dark-700 transition"
-        legacyBehavior
       >
         {content}
       </Link>
@@ -82,7 +81,6 @@ const Developers = () => {
                 <Link
                   href={caseStudy.url}
                   className="p-3 flex rounded-lg hover:bg-gray-100 dark:hover:bg-dark-700 transition ease-in-out duration-150 border dark:border-gray-600"
-                  legacyBehavior
                 >
                   <div className="hidden sm:block flex-shrink-0">
                     <img

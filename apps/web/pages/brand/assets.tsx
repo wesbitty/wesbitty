@@ -63,8 +63,7 @@ const BrandAssetPage = ({}: Props) => {
                   <Image
                     alt="Brand Assets"
                     src={`/brand/logo-preview.jpg`}
-                    layout="fill"
-                    objectFit="contain"
+                    fill
                     className="object-cover h-full rounded-l-lg"
                   />
                 </div>
@@ -80,7 +79,10 @@ const BrandAssetPage = ({}: Props) => {
                       </p>
                       <p>Do not use any other color for the wordmark.</p>
                     </p>
-                    <form method="get" action={`/assets/wesbitty-logos.zip`}>
+                    <form
+                      method="get"
+                      action={`/brand/assets/wesbitty-logos.zip`}
+                    >
                       <Button
                         htmlType="submit"
                         type="default"

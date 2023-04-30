@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { format, parseISO } from 'date-fns'
 import { allPosts, Post } from 'wesjet/static'
-import { Default } from 'components/Widget/Default'
-import CodeBlock from 'components/CodeBlock/CodeBlock'
+import { Default } from '~/components/Widget/Default'
+import CodeBlock from '~/components/CodeBlock/CodeBlock'
 import Quote from '~/components/Quote'
 import ImageGrid from '~/components/Image/ImageGrid'
 import {
@@ -113,7 +113,6 @@ const PostLayout = ({ post }: { post: Post }) => {
                 <Link
                   href={'/blog'}
                   className="hover:text-gray-900 dark:hover:text-white cursor-pointer flex items-center"
-                  legacyBehavior
                 >
                   <IconChevronLeft style={{ padding: 0 }} />
                   Back
@@ -189,7 +188,7 @@ const PostLayout = ({ post }: { post: Post }) => {
                       </div>
                       <Space direction="vertical">
                         {relatedPosts.map((post) => (
-                          <Link href={post.slug} as={post.slug} legacyBehavior>
+                          <Link href={post.slug} as={post.slug}>
                             <div>
                               <Typography.Text className="cursor-pointer">
                                 <Space>
@@ -206,7 +205,7 @@ const PostLayout = ({ post }: { post: Post }) => {
                             </div>
                           </Link>
                         ))}
-                        <Link href={`/blog`} as={`/blog`} legacyBehavior>
+                        <Link href={`/blog`} as={`/blog`}>
                           <div>
                             <Typography.Text type="secondary">
                               <span className="hover:text-gray-900 dark:hover:text-white cursor-pointer">

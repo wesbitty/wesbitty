@@ -99,7 +99,6 @@ const SupportPage = ({}: Props) => {
                         target="_blank"
                         href="https://github.com/wesbitty/wesbitty/issues"
                         as="https://github.com/wesbitty/wesbitty/issues"
-                        legacyBehavior
                       >
                         <Button
                           size="medium"
@@ -153,7 +152,6 @@ const SupportPage = ({}: Props) => {
                         target="_blank"
                         href="https://github.com/wesbitty/wesbitty/discussions"
                         as="https://github.com/wesbitty/wesbitty/discussions"
-                        legacyBehavior
                       >
                         <Button
                           size="medium"
@@ -205,7 +203,7 @@ const SupportPage = ({}: Props) => {
                   rounded rounded-t-none"
                   >
                     <Space className="">
-                      <Link href="mailto:admin@wesbitty.org" legacyBehavior>
+                      <Link href="mailto:admin@wesbitty.org">
                         <Button
                           size="medium"
                           type="default"

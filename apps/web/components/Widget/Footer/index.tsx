@@ -21,7 +21,7 @@ const Footer = () => {
       <div className="sm:pt-2 container relative mx-auto px-6 pt-4 md:pt-4 lg:px-8 lg:pt-4 xl:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-2">
           <div className="space-y-2 xl:col-span-1">
-            <Link href="/" legacyBehavior>
+            <Link href="/">
               <img
                 className="w-40"
                 src="/brand/logo/wesbitty-light-logo.svg"
@@ -32,7 +32,6 @@ const Footer = () => {
               <Link
                 href="https://twitter.com/wesbitty"
                 className="text-gray-300 hover:text-gray-400"
-                legacyBehavior
               >
                 <span className="sr-only">Twitter</span>
                 <svg
@@ -48,7 +47,6 @@ const Footer = () => {
               <Link
                 href="https://github.com/wesbitty"
                 className="text-gray-300 hover:text-gray-400"
-                legacyBehavior
               >
                 <span className="sr-only">GitHub</span>
                 <svg
@@ -68,7 +66,6 @@ const Footer = () => {
               <Link
                 href="https://discord.wesbitty.org/"
                 className="text-gray-300 hover:text-gray-400"
-                legacyBehavior
               >
                 <span className="sr-only">Discord</span>
                 <svg
@@ -104,7 +101,6 @@ const Footer = () => {
                                 ? 'text-gray-500 dark:text-dark-100'
                                 : 'text-gray-400 dark:text-dark-200'
                             } hover:text-gray-900 dark:hover:text-gray-300`}
-                            legacyBehavior
                           >
                             {item.text}
                             {!item.href && (
@@ -127,7 +123,6 @@ const Footer = () => {
         <Link
           href="https://wesbitty.org"
           className="mb-0 self-center text-base py-4 link-text dark:text-dark-100"
-          legacyBehavior
         >
           &copy; <span>{currentYear}</span> Wesbitty, Inc.
         </Link>

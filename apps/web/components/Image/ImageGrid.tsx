@@ -69,7 +69,7 @@ const ImageGrid = ({
         const Container = ({ children, link }: any) => {
           if (x.link) {
             return (
-              <Link href={link} legacyBehavior>
+              <Link href={link}>
                 <div className="cursor-pointer transform duration-100 ease-in-out scale-100 hover:scale-105 hover:shadow-sm hover:z-50">
                   {children}
                 </div>

@@ -14,9 +14,6 @@ import { Default } from '~/Widget/Default'
 import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import { Metadata } from '~/utils/Metadata'
-import { Section } from '~/Widget/Section'
-import Container from '~/Widget/Container'
-import Image from 'next/image'
 
 type Props = {}
 
