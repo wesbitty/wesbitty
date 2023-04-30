@@ -1,28 +1,14 @@
-// import css for san serif font styling
-import './preview.css'
-import { ThemeProvider } from './../src/theme/Provider'
-import { defaultTheme } from '../src/theme/globalTheme'
-
-export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  darkMode: {
-    darkClass: 'dark',
-    lightClass: 'light',
-    stylePreview: true,
+/** @type { import('@storybook/react').Preview } */
+const preview = {
+  parameters: {
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
+      },
+    },
   },
 }
 
-// .storybook/preview.js
-
-import React from 'react'
-
-export const decorators = [
-  (Story) => {
-    // console.log('story', Story)
-    return (
-      <ThemeProvider theme={defaultTheme}>
-        <Story />
-      </ThemeProvider>
-    )
-  },
-]
+export default preview

@@ -10,9 +10,13 @@
     "database",
     "wesbitty"
   ],
+  "homepage": "https://wesbitty.org",
+  "bugs": {
+    "url": "https://github.com/wesbitty/wesbitty/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wesbitty/wesbitty.git"
+    "url": "https://github.com/wesbitty/wesbitty.git"
   },
   "license": "Apache-2.0",
   "author": "Wesbitty Inc.",
@@ -24,52 +28,57 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "build-app": "turbo run build --filter={apps/web}",
+    "build:app": "turbo run build --filter={apps/web}",
     "clean": "turbo run clean",
     "dev": "turbo run dev --filter={apps/web}",
     "postinstall": "patch-package",
     "lint": "eslint . --ext .ts --fix",
-    "lint-package": "sort-package-json",
+    "lint:package": "sort-package-json",
     "pre-commit": "lint-staged",
     "prepare": "husky install",
     "prettier": "prettier --write .",
     "release": "npm run release --workspaces --if-present",
-    "schema-generate": "cd ./apps/web && npx prisma generate",
-    "schema-up": "cd apps/web && pscale connect wesbitty main",
+    "schema:generate": "cd ./apps/web && npx prisma generate",
+    "schema:up": "cd apps/web && pscale connect wesbitty main",
     "test": "turbo run test"
   },
   "lint-staged": {
     "package.json": [
-      "npm run lint-package"
+      "npm run lint:package"
     ],
     "*.{mts,cts,ts,tsx,yml,js,jsx,mjs,cjs,json,md,mdx,css}": [
-      "prettier --write ."
+      "prettier --write",
+      "git add"
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.21.0",
-    "@babel/preset-env": "^7.19.1",
-    "@babel/preset-typescript": "^7.16.6",
-    "@types/fs-extra": "^9.0.1",
+    "@babel/core": "7.18.0",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/fs-extra": "8.1.0",
     "@types/jest": "^27.0.3",
-    "auto": "^9.50.1",
+    "@typescript-eslint/eslint-plugin": "4.29.1",
+    "@typescript-eslint/parser": "4.29.1",
+    "auto": "^10.3.0",
     "babel-jest": "^27.3.1",
-    "cross-env": "^7.0.2",
+    "browserslist": "4.20.2",
+    "cross-env": "6.0.3",
     "dotenv-cli": "^3.1.0",
     "eslint": "^8.31.0",
-    "eslint-plugin-wesjet": "^0.0.34-rc.1",
+    "fs-extra": "^9.0.0",
     "husky": "^8.0.3",
     "jest": "^27.3.1",
-    "lint-staged": "^13.2.1",
+    "lint-staged": "^10.1.7",
     "patch-package": "^6.4.7",
-    "prettier": "^2.5.1",
+    "prettier": "2.5.1",
+    "rimraf": "3.0.2",
     "seedrandom": "^3.0.5",
     "sort-package-json": "^1.51.0",
     "ts-jest": "^27.0.7",
-    "ts-node": "^9.1.1",
+    "ts-node": "10.9.1",
     "ts-patch": "^2.1.0",
-    "turbo": "^1.9.3",
-    "typescript": "^4.5.3"
+    "turbo": "^1.6.3",
+    "typescript": "^4.9.5"
   },
   "engines": {
     "node": ">=14",

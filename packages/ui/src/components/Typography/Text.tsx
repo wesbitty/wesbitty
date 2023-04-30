@@ -1,5 +1,6 @@
 import React from 'react'
-import styleHandler from '../../theme/handler'
+// @ts-ignore
+import TextStyles from './Text.module.css'
 
 export interface Props {
   className?: string
@@ -30,32 +31,29 @@ function Text({
   strong,
   small,
 }: Props) {
-  let __styles = styleHandler('typography')
-
-  let classes = [__styles.text.base]
-
+  let classes = [TextStyles['sbui-typography-text']]
   if (className) {
     classes.push(className)
   }
 
   if (type) {
-    classes.push(__styles.text.type[type])
+    classes.push(TextStyles[`sbui-typography-text-${type}`])
   }
 
   if (disabled) {
-    classes.push(__styles.text.disabled)
+    classes.push(TextStyles[`sbui-typography-text-disabled`])
   }
 
   if (underline) {
-    classes.push(__styles.text.underline)
+    classes.push(TextStyles[`sbui-typography-text-underline`])
   }
 
   if (strikethrough) {
-    classes.push(__styles.text.strikethrough)
+    classes.push(TextStyles[`sbui-typography-text-strikethrough`])
   }
 
   if (small) {
-    classes.push(__styles.text.small)
+    classes.push(TextStyles['sbui-typography-text-small'])
   }
 
   if (code)
@@ -82,7 +80,6 @@ function Text({
         {children}
       </strong>
     )
-
   return (
     <span style={style} className={classes.join(' ')}>
       {children}

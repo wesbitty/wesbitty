@@ -1,28 +1,29 @@
-import React, { useEffect, useState } from 'react'
-import globalTheme from '../../../theme/globalTheme'
+import React from 'react'
+// @ts-ignore
+import { Space } from '../../../index'
+// @ts-ignore
+import FormLayoutStyles from './FormLayout.module.css'
 
 type Props = {
-  align?: 'left' | 'right'
+  align?: string
   children?: any
   className?: string
-  descriptionText?: string | React.ReactNode
-  error?: string | React.ReactNode
+  descriptionText?: string
+  error?: string
   id?: string
-  label?: string | React.ReactNode
-  labelOptional?: string | React.ReactNode
-  layout?: 'horizontal' | 'vertical' | 'flex'
+  label?: string
+  labelOptional?: string
+  layout?: 'horizontal' | 'vertical'
   style?: React.CSSProperties
-  // flex?: boolean
+  flex?: boolean
   responsive?: boolean
   size?: 'tiny' | 'small' | 'medium' | 'large' | 'xlarge'
   beforeLabel?: string
   afterLabel?: string
-  nonBoxInput?: boolean
-  labelLayout?: 'horizontal' | 'vertical'
 }
 
 export function FormLayout({
-  align = 'left',
+  align,
   children,
   className,
   descriptionText,
@@ -32,77 +33,31 @@ export function FormLayout({
   labelOptional,
   layout = 'vertical',
   style,
-  // flex = false,
-  labelLayout,
+  flex,
   responsive = true,
   size = 'medium',
   beforeLabel,
   afterLabel,
-  nonBoxInput = label ? false : true,
 }: Props) {
-  // _error is used label && to delay the error string beind removed too soon
-  // once it has animated out, the string will be removed
-  // const [_error, _setError] = useState(error)
+  let containerClasses = [FormLayoutStyles['sbui-formlayout']]
 
-  // useEffect(() => {
-  //   if (!error) {
-  //     console.log('no error')
-  //     setTimeout(function () {
-  //       _setError(error)
-  //     }, 500)
-  //   } else {
-  //     console.log('has error')
-  //     _setError(error)
-  //   }
-  //   // Update the document title using the browser API
-  // }, [error])
-
-  const __styles = globalTheme.form_layout
-
-  const flex = layout === 'flex'
-
-  let containerClasses = []
-
-  containerClasses.push(__styles.size[size])
-
-  let labelContainerClasses = []
-  let dataInputContainerClasses = []
-
-  if (layout !== 'horizontal' && !labelLayout && !flex) {
-    labelContainerClasses.push(__styles.labels_horizontal_layout)
-  } else if (labelLayout === 'horizontal') {
-    labelContainerClasses.push(__styles.labels_horizontal_layout)
-  } else if (labelLayout === 'vertical') {
-    labelContainerClasses.push(__styles.labels_vertical_layout)
-  } else {
-    labelContainerClasses.push(__styles.labels_vertical_layout)
-  }
-
-  if (layout !== 'horizontal') {
-    dataInputContainerClasses.push(__styles.data_input_horizontal_layout)
-  } else {
-    dataInputContainerClasses.push(__styles.data_input_vertical_layout)
-    if (align === 'right') {
-      dataInputContainerClasses.push(
-        __styles.data_input_vertical_layout__align_right
-      )
-    }
+  if (size) {
+    containerClasses.push(FormLayoutStyles[`sbui-formlayout--${size}`])
   }
 
   if (flex) {
-    containerClasses.push(__styles.flex[align].base)
+    containerClasses.push(FormLayoutStyles['sbui-formlayout--flex'])
     if (align === 'left') {
-      labelContainerClasses.push(__styles.flex.left.labels)
-      dataInputContainerClasses.push(__styles.flex.left.data_input)
+      containerClasses.push(FormLayoutStyles['sbui-formlayout--flex-left'])
     }
     if (align === 'right') {
-      labelContainerClasses.push(__styles.flex.right.labels)
-      dataInputContainerClasses.push(__styles.flex.right.data_input)
+      containerClasses.push(FormLayoutStyles['sbui-formlayout--flex-right'])
     }
   } else {
     containerClasses.push(
-      __styles.container,
-      responsive ? __styles.responsive : __styles.non_responsive
+      responsive
+        ? FormLayoutStyles['sbui-formlayout--responsive']
+        : FormLayoutStyles['sbui-formlayout--non-responsive']
     )
   }
 
@@ -112,57 +67,31 @@ export function FormLayout({
 
   const labelled = Boolean(label || beforeLabel || afterLabel)
 
-  // console.log('error', error)
-
-  const renderError = (
-    <p
-      data-state={error ? 'show' : 'hide'}
-      className={[__styles.error.base, __styles.error.size[size]].join(' ')}
-    >
-      {error}
-    </p>
-  )
-
-  const renderDescription = descriptionText && (
-    <p
-      className={[
-        __styles.description.base,
-        __styles.description.size[size],
-      ].join(' ')}
-      id={id + '-description'}
-    >
-      {descriptionText}
-    </p>
-  )
-
   return (
     <div className={containerClasses.join(' ')}>
-      {flex && <div className={__styles.flex[align].content}>{children}</div>}
       {labelled || labelOptional || layout === 'horizontal' ? (
-        <div
-          // direction={
-          //   (layout && layout === 'horizontal') ||
-          //   (flex && layout && layout === 'vertical')
-          //     ? 'vertical'
-          //     : 'horizontal'
-          // }
-          className={labelContainerClasses.join(' ')}
+        <Space
+          direction={
+            (layout && layout === 'horizontal') ||
+            (flex && layout && layout === 'vertical')
+              ? 'vertical'
+              : 'horizontal'
+          }
+          className={
+            '' +
+            (layout !== 'horizontal' && !flex
+              ? FormLayoutStyles['sbui-formlayout__label-container-horizontal']
+              : FormLayoutStyles['sbui-formlayout__label-container-vertical'])
+          }
         >
           {labelled && (
             <label
-              className={[
-                __styles.label.base,
-                __styles.label.size[size],
-                'break-all',
-              ].join(' ')}
+              className={FormLayoutStyles['sbui-formlayout__label']}
               htmlFor={id}
             >
               {beforeLabel && (
                 <span
-                  className={[
-                    __styles.label_before.base,
-                    __styles.label_before.size[size],
-                  ].join(' ')}
+                  className={FormLayoutStyles['sbui-formlayout__label-before']}
                   id={id + '-before'}
                 >
                   {beforeLabel}
@@ -171,10 +100,7 @@ export function FormLayout({
               {label}
               {afterLabel && (
                 <span
-                  className={[
-                    __styles.label_after.base,
-                    __styles.label_after.size[size],
-                  ].join(' ')}
+                  className={FormLayoutStyles['sbui-formlayout__label-after']}
                   id={id + '-after'}
                 >
                   {afterLabel}
@@ -184,42 +110,38 @@ export function FormLayout({
           )}
           {labelOptional && (
             <span
-              className={[
-                __styles.label_optional.base,
-                __styles.label_optional.size[size],
-              ].join(' ')}
+              className={FormLayoutStyles['sbui-formlayout__label-opt']}
               id={id + '-optional'}
             >
               {labelOptional}
             </span>
           )}
-          {flex && (
-            <>
-              {renderDescription}
-              {renderError}
-            </>
-          )}
-        </div>
+        </Space>
       ) : null}
-      {!flex && (
-        <div className={dataInputContainerClasses.join(' ')} style={style}>
-          <>
-            <div
-              className={
-                nonBoxInput && label && layout === 'vertical'
-                  ? __styles.non_box_data_input_spacing_vertical
-                  : nonBoxInput && label && layout === 'horizontal'
-                  ? __styles.non_box_data_input_spacing_horizontal
-                  : ''
-              }
-            >
-              {children}
-            </div>
-            {renderError}
-            {renderDescription}
-          </>
-        </div>
-      )}
+      <div
+        className={
+          layout !== 'horizontal'
+            ? FormLayoutStyles['sbui-formlayout__content-container-horizontal']
+            : FormLayoutStyles['sbui-formlayout__content-container-vertical'] +
+              (align === 'right'
+                ? ` ${FormLayoutStyles['sbui-formlayout__content-container-vertical--align-right']}`
+                : '')
+        }
+        style={style}
+      >
+        {children}
+        {error && (
+          <p className={FormLayoutStyles['sbui-formlayout__error']}>{error}</p>
+        )}
+        {descriptionText && (
+          <p
+            className={FormLayoutStyles['sbui-formlayout__description']}
+            id={id + '-description'}
+          >
+            {descriptionText}
+          </p>
+        )}
+      </div>
     </div>
   )
 }

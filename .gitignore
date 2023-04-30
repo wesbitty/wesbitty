@@ -1,15 +1,10 @@
 node_modules/
 
-dist*
-
 /.yarn/*
 !/.yarn/releases
 !/.yarn/plugins
 !/.yarn/sdks
 !/.yarn/patches
-
-# wesjet cache
-.wesjet
 
 # Next.js Output
 .next
@@ -20,6 +15,9 @@ dist*
 # Ignore artifacts:
 build
 coverage
+dist
+packages/ui/lib
+storybook-static
 
 .editorconfig
 
@@ -32,6 +30,9 @@ __pycache__
 .env.local*
 .env.production*
 .env.development*
+
+# Local Wesjet folder
+.wesjet
 
 # Local Netlify folder
 .netlify

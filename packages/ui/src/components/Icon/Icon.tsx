@@ -1,133 +1,38 @@
-import React from 'react'
-import styleHandler from '../../theme/handler'
-import { IconContext } from './IconContext'
-// @ts-ignore
-// import IconStyles from './Icon.module.css'
+import React, { FunctionComponent } from 'react'
+import { styled } from '@storybook/theming'
+import { icons } from '../../assets/icons'
 
-const IconStyles = {}
+const Svg = styled.svg`
+  display: inline-block;
+  shape-rendering: inherit;
+  transform: translate3d(0, 0, 0);
+  vertical-align: middle;
 
-interface Props {
-  className?: string
-  size?:
-    | 'tiny'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'xlarge'
-    | 'xxlarge'
-    | 'xxxlarge'
-    | number
-  type?: string
-  color?: string
-  strokeWidth?: number
-  fill?: string
-  stroke?: string
-  background?:
-    | 'brand'
-    | 'gray'
-    | 'red'
-    | 'yellow'
-    | 'green'
-    | 'blue'
-    | 'indigo'
-    | 'purple'
-    | 'pink'
-  src: React.ReactNode
-}
+  path {
+    fill: currentColor;
+  }
+`
 
-interface StringMap {
-  [key: string]: number
-}
-
-function Icon({
-  className,
-  size,
-  type,
-  color,
-  strokeWidth,
-  fill = undefined,
-  stroke = undefined,
-  background,
-  src,
+/**
+ * An Icon is a piece of visual element, but we must ensure its accessibility while using it.
+ * It can have 2 purposes:
+ *
+ * - *decorative only*: for example, it illustrates a label next to it. We must ensure that it is ignored by screen readers, by setting `aria-hidden` attribute (ex: `<Icon icon="check" aria-hidden />`)
+ * - *non-decorative*: it means that it delivers information. For example, an icon as only child in a button. The meaning can be obvious visually, but it must have a proper text alternative via `aria-label` for screen readers. (ex: `<Icon icon="print" aria-label="Print this document" />`)
+ */
+export const Icon: FunctionComponent<IconProps> = ({
+  icon,
   ...props
-}: Props) {
-  const __styles = styleHandler('icon')
-
+}: IconProps) => {
   return (
-    <IconContext.Consumer>
-      {({ contextSize, className: contextClassName }) => {
-        const defaultSizes: StringMap = {
-          tiny: 14,
-          small: 18,
-          medium: 20,
-          large: 20,
-          xlarge: 24,
-          xxlarge: 30,
-          xxxlarge: 42,
-        }
-
-        const defaultSize = defaultSizes['large']
-
-        // const iconSize = typeof size === 'string' ? defaultSizes[contextSize] : 21
-        let iconSize: any = 21
-
-        // use contextSize of parent (via context hook) if one exists
-        if (contextSize) {
-          iconSize = contextSize
-            ? typeof contextSize === 'string'
-              ? defaultSizes[contextSize]
-              : contextSize
-            : defaultSize
-        }
-
-        // use size prop of this component if one exists
-        if (size) {
-          iconSize = size
-            ? typeof size === 'string'
-              ? defaultSizes[size]
-              : size
-            : defaultSize
-        }
-
-        // confitional used for Icons with no color settings
-        // default these icons to use 'currentColor' ie, the text color
-        const noColor = !color && !fill && !stroke
-
-        let classes = ['sbui-icon', className]
-        if (contextClassName) {
-          classes.push(contextClassName)
-        }
-
-        const Icon = (
-          // custom SVG file
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            color={!noColor ? color : 'currentColor'}
-            fill={!noColor ? (fill ? fill : 'none') : 'none'}
-            stroke={!noColor ? stroke : 'currentColor'}
-            strokeWidth={strokeWidth}
-            className={classes.join(' ')}
-            width={iconSize}
-            height={iconSize}
-            {...props}
-          >
-            {src}
-          </svg>
-        )
-
-        return background ? (
-          <div
-            // circle coloured background
-            className={__styles.container}
-          >
-            {Icon}
-          </div>
-        ) : (
-          Icon
-        )
-      }}
-    </IconContext.Consumer>
+    <Svg viewBox="0 0 14 14" width="14px" height="14px" {...props}>
+      <>{icons[icon]}</>
+    </Svg>
   )
 }
 
-export default Icon
+export type IconType = keyof typeof icons
+
+export interface IconProps {
+  icon: IconType
+}

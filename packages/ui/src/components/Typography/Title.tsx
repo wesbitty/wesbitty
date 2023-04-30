@@ -1,5 +1,6 @@
 import React from 'react'
-import styleHandler from '../../theme/handler'
+// @ts-ignore
+import TitleStyles from './Title.module.css'
 
 interface Props {
   className?: string
@@ -9,18 +10,10 @@ interface Props {
 }
 
 function Title({ className, level = 1, children, style }: Props) {
-  let __styles = styleHandler('typography')
-
-  let classes = [__styles.title.base]
-
+  let classes = [TitleStyles['sbui-typography-title']]
   if (className) {
     classes.push(className)
   }
-
-  if (level) {
-    classes.push(__styles.title.level[level])
-  }
-
   const CustomTag: any = `h${level}`
 
   return (

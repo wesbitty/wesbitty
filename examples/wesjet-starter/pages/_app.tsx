@@ -1,7 +1,5 @@
 import Head from 'next/head'
-
 import '../styles/globals.css'
-
 import { Header } from '../components/Header'
 
 // This default export is required in a new `pages/_app.js` file.

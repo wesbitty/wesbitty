@@ -6,19 +6,19 @@
   @apply transition ease-out duration-100;
 }
 .sbui-overlay--enterFrom {
-  @apply transform opacity-0 gray-95;
+  @apply transform opacity-0 scale-95;
 }
 .sbui-overlay--enterTo {
-  @apply transform opacity-100 gray-100;
+  @apply transform opacity-100 scale-100;
 }
 .sbui-overlay--leave {
   @apply transition ease-in duration-75;
 }
 .sbui-overlay--leaveFrom {
-  @apply transform opacity-100 gray-100;
+  @apply transform opacity-100 scale-100;
 }
 .sbui-overlay--leaveTo {
-  @apply transform opacity-0 gray-95;
+  @apply transform opacity-0 scale-95;
 }
 
 .sbui-overlay {

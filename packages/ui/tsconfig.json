@@ -1,38 +1,26 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
-    "jsx": "react-jsx",
-    "declaration": true,
-    "declarationDir": "types",
-    "sourceMap": true,
-    "outDir": "lib",
-    "strict": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "emitDeclarationOnly": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "noImplicitAny": true,
-    "preserveConstEnums": true,
+    "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "skipLibCheck": true,
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "isolatedModules": true,
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./*"]
-    }
+    "jsx": "react-jsx"
   },
-  "include": [
-    "src/components/**/*",
-    "src/types.tsx",
-    "src/theme/ColorScheme/*",
-    "src/theme/Provider"
-  ],
-  "exclude": ["node_modules", "src/__tests__"]
+  "include": ["src"],
+  "exclude": ["node_modules", "**/*.stories.*", "**/*.test.js"]
 }
