@@ -1,6 +1,5 @@
 import React from 'react'
 import { styled, css } from '@storybook/theming'
-
 import { Icon } from './Icon'
 import { icons } from '../../assets/icons'
 

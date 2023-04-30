@@ -26,8 +26,8 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Metadata } from '~/utils/Metadata'
-import fs from 'fs'
 import { defineStaticProps } from '~/utils/next'
+import gfm from 'remark-gfm'
 
 export async function getStaticPaths() {
   const paths: string[] = allPosts.map((post) => post.slug)
@@ -48,7 +48,6 @@ const components = {
 }
 
 // plugins for next-mdx-remote
-const gfm = require('remark-gfm')
 const slug = require('rehype-slug')
 
 export const getStaticProps = defineStaticProps(async (context) => {

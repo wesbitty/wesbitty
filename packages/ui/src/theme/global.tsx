@@ -1,6 +1,14 @@
 import React from 'react'
-import { Global, css } from '@storybook/theming'
+import { Global, css, keyframes } from '@storybook/theming'
 import { color, typography } from './styles'
+
+// ANIMATION
+export const glow = keyframes`
+  0%, 100% { opacity: 1; }
+  50% { opacity: .4; }
+`
+
+// TYPOGRAPHY
 
 export const bodyStyles = css`
   font-family: ${typography.type.primary};

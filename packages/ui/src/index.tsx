@@ -1,7 +1,11 @@
-export * from './components/Button/index'
-export * from './components/Typography/index'
-export * from './components/Icon/index'
+export { Button } from './components/Button'
+export * from './components/Typography'
+export { Icon } from './components/Icon'
 
-export * from './components/Badge/index'
+export { Avatar, AvatarType } from './components/Avatar'
 
-export * from './components/Space/index'
+export { Tooltip, TooltipNote, WithTooltip } from './components/Tooltip'
+
+export * from './components/Badge'
+
+export * from './components/Space'
