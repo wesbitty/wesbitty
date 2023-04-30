@@ -101,10 +101,10 @@ const PostLayout = ({ post }: { post: Post }) => {
       <Default>
         <div
           className="
-          bg-white dark:bg-dark-800
-            container px-8 sm:px-16 xl:px-20 mx-auto
-            py-16
-          "
+        bg-white dark:bg-dark-800
+          container px-8 sm:px-16 xl:px-20 mx-auto
+          py-16
+        "
         >
           <div className="grid grid-cols-12 gap-4">
             <div className="col-span-12 lg:col-span-2 mb-2">
@@ -113,6 +113,7 @@ const PostLayout = ({ post }: { post: Post }) => {
                 <Link
                   href={'/blog'}
                   className="hover:text-gray-900 dark:hover:text-white cursor-pointer flex items-center"
+                  legacyBehavior
                 >
                   <IconChevronLeft style={{ padding: 0 }} />
                   Back
@@ -188,7 +189,7 @@ const PostLayout = ({ post }: { post: Post }) => {
                       </div>
                       <Space direction="vertical">
                         {relatedPosts.map((post) => (
-                          <Link href={post.slug} as={post.slug}>
+                          <Link href={post.slug} as={post.slug} legacyBehavior>
                             <div>
                               <Typography.Text className="cursor-pointer">
                                 <Space>
@@ -205,7 +206,7 @@ const PostLayout = ({ post }: { post: Post }) => {
                             </div>
                           </Link>
                         ))}
-                        <Link href={`/blog`} as={`/blog`}>
+                        <Link href={`/blog`} as={`/blog`} legacyBehavior>
                           <div>
                             <Typography.Text type="secondary">
                               <span className="hover:text-gray-900 dark:hover:text-white cursor-pointer">

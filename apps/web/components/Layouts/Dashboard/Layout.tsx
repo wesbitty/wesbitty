@@ -67,6 +67,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
             <Link
               href="/"
               className="flex items-center space-x-2.5 font-bold text-slate-800 no-underline dark:text-white"
+              legacyBehavior
             >
               <svg
                 width="22"

@@ -52,6 +52,7 @@ const Developers = () => {
         key={text}
         href={url}
         className="p-3 col-span-6 rounded hover:bg-gray-50 dark:hover:bg-dark-700 transition"
+        legacyBehavior
       >
         {content}
       </Link>
@@ -81,6 +82,7 @@ const Developers = () => {
                 <Link
                   href={caseStudy.url}
                   className="p-3 flex rounded-lg hover:bg-gray-100 dark:hover:bg-dark-700 transition ease-in-out duration-150 border dark:border-gray-600"
+                  legacyBehavior
                 >
                   <div className="hidden sm:block flex-shrink-0">
                     <img

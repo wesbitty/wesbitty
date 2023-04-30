@@ -18,6 +18,7 @@ const Company = () => {
       <Link
         href="#"
         className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 dark:hover:bg-dark-700 transition ease-in-out duration-150"
+        legacyBehavior
       >
         {/* <!-- Heroicon name: support --> */}
         <svg
@@ -75,6 +76,7 @@ const Company = () => {
                 <Link
                   href={caseStudy.url}
                   className="-m-3 py-3 flex rounded-lg hover:bg-gray-100 dark:hover:bg-dark-600 transition ease-in-out duration-150"
+                  legacyBehavior
                 >
                   <div className="min-w-0 flex-1 sm:ml-3">
                     <h4 className="text-base font-medium text-gray-900 dark:text-white truncate">
@@ -93,6 +95,7 @@ const Company = () => {
           <Link
             href="/blog"
             className="text-gray-600 hover:text-gray-500 dark:text-brand-600 dark:hover:text-brand-700 transition ease-in-out duration-150"
+            legacyBehavior
           >
             View all posts <span aria-hidden="true">&rarr;</span>
           </Link>

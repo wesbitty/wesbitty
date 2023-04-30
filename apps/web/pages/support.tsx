@@ -61,11 +61,11 @@ const SupportPage = ({}: Props) => {
               <div className="col-span-12 lg:col-span-6 xl:col-span-4">
                 <div
                   className="h-40 bg-white dark:bg-gray-700 
-                    border-t border-r border-l border-gray-100 dark:border-gray-600
-                    p-5
-                    flex flex-col justify-between
-                    rounded rounded-b-none
-                    "
+                  border-t border-r border-l border-gray-100 dark:border-gray-600
+                  p-5
+                  flex flex-col justify-between
+                  rounded rounded-b-none
+                  "
                 >
                   <div className="mb-4">
                     <Typography.Title level={5} className="mb-1">
@@ -88,17 +88,18 @@ const SupportPage = ({}: Props) => {
                 <div>
                   <div
                     className="
-                    bg-white dark:bg-gray-800 
-                    border-b border-r border-l border-gray-100 dark:border-gray-600
-                    p-5
-                    flex flex-col justify-between
-                    rounded rounded-t-none"
+                  bg-white dark:bg-gray-800 
+                  border-b border-r border-l border-gray-100 dark:border-gray-600
+                  p-5
+                  flex flex-col justify-between
+                  rounded rounded-t-none"
                   >
                     <Space className="">
                       <Link
                         target="_blank"
                         href="https://github.com/wesbitty/wesbitty/issues"
                         as="https://github.com/wesbitty/wesbitty/issues"
+                        legacyBehavior
                       >
                         <Button
                           size="medium"
@@ -115,11 +116,11 @@ const SupportPage = ({}: Props) => {
               <div className="col-span-12 lg:col-span-6 xl:col-span-4">
                 <div
                   className="h-40 bg-white dark:bg-gray-700 
-                    border-t border-r border-l border-gray-100 dark:border-gray-600
-                    p-5
-                    flex flex-col justify-between
-                    rounded rounded-b-none
-                    "
+                  border-t border-r border-l border-gray-100 dark:border-gray-600
+                  p-5
+                  flex flex-col justify-between
+                  rounded rounded-b-none
+                  "
                 >
                   <div className="mb-4">
                     <Typography.Title level={5} className="mb-1">
@@ -141,17 +142,18 @@ const SupportPage = ({}: Props) => {
                 <div>
                   <div
                     className="
-                    bg-white dark:bg-gray-800 
-                    border-b border-r border-l border-gray-100 dark:border-gray-600
-                    p-5
-                    flex flex-col justify-between
-                    rounded rounded-t-none"
+                  bg-white dark:bg-gray-800 
+                  border-b border-r border-l border-gray-100 dark:border-gray-600
+                  p-5
+                  flex flex-col justify-between
+                  rounded rounded-t-none"
                   >
                     <Space className="">
                       <Link
                         target="_blank"
                         href="https://github.com/wesbitty/wesbitty/discussions"
                         as="https://github.com/wesbitty/wesbitty/discussions"
+                        legacyBehavior
                       >
                         <Button
                           size="medium"
@@ -169,11 +171,11 @@ const SupportPage = ({}: Props) => {
               <div className="col-span-12 lg:col-span-6 xl:col-span-4">
                 <div
                   className="h-40 bg-white dark:bg-gray-700 
-                    border-t border-r border-l border-gray-100 dark:border-gray-600
-                    p-5
-                    flex flex-col justify-between
-                    rounded rounded-b-none
-                    "
+                  border-t border-r border-l border-gray-100 dark:border-gray-600
+                  p-5
+                  flex flex-col justify-between
+                  rounded rounded-b-none
+                  "
                 >
                   <div className="mb-4">
                     <Typography.Title level={5} className="mb-1">
@@ -196,14 +198,14 @@ const SupportPage = ({}: Props) => {
                 <div>
                   <div
                     className="
-                    bg-white dark:bg-gray-800 
-                    border-b border-r border-l border-gray-100 dark:border-gray-600
-                    p-5
-                    flex flex-col justify-between
-                    rounded rounded-t-none"
+                  bg-white dark:bg-gray-800 
+                  border-b border-r border-l border-gray-100 dark:border-gray-600
+                  p-5
+                  flex flex-col justify-between
+                  rounded rounded-t-none"
                   >
                     <Space className="">
-                      <Link href="mailto:admin@wesbitty.org">
+                      <Link href="mailto:admin@wesbitty.org" legacyBehavior>
                         <Button
                           size="medium"
                           type="default"

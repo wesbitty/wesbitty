@@ -60,6 +60,7 @@ export default function PricingPage({}: Props) {
               <Link
                 href="https://app.wesbitty.org"
                 as="https://app.wesbitty.org"
+                legacyBehavior
               >
                 <Button type="outline" size="medium" block>
                   Get started
@@ -104,6 +105,7 @@ export default function PricingPage({}: Props) {
               <Link
                 href="https://app.wesbitty.org"
                 as="https://app.wesbitty.org"
+                legacyBehavior
               >
                 <Button type="outline" size="medium" block>
                   Get started
@@ -149,6 +151,7 @@ export default function PricingPage({}: Props) {
               <Link
                 href="https://app.wesbitty.org"
                 as="https://app.wesbitty.org"
+                legacyBehavior
               >
                 <Button type="outline" size="medium" block>
                   Get started
@@ -258,6 +261,7 @@ export default function PricingPage({}: Props) {
                       <Link
                         href="https://app.wesbitty.org"
                         as="https://app.wesbitty.org"
+                        legacyBehavior
                       >
                         <Button
                           size="medium"
@@ -287,6 +291,7 @@ export default function PricingPage({}: Props) {
                       <Link
                         href="https://app.wesbitty.org"
                         as="https://app.wesbitty.org"
+                        legacyBehavior
                       >
                         <Button
                           size="medium"
@@ -319,6 +324,7 @@ export default function PricingPage({}: Props) {
                       <Link
                         href="https://app.wesbitty.org"
                         as="https://app.wesbitty.org"
+                        legacyBehavior
                       >
                         <Button
                           size="medium"
@@ -357,6 +363,7 @@ export default function PricingPage({}: Props) {
                     <Link
                       href="https://app.wesbitty.org"
                       as="https://app.wesbitty.org"
+                      legacyBehavior
                     >
                       <Button size="medium" type="outline" block>
                         Get started
@@ -368,6 +375,7 @@ export default function PricingPage({}: Props) {
                     <Link
                       href="https://app.wesbitty.org"
                       as="https://app.wesbitty.org"
+                      legacyBehavior
                     >
                       <Button size="medium" type="outline" block>
                         Get started
@@ -379,6 +387,7 @@ export default function PricingPage({}: Props) {
                     <Link
                       href="mailto:support@wesbitty.org"
                       as="mailto:support@wesbitty.org"
+                      legacyBehavior
                     >
                       <Button size="medium" type="outline" block>
                         Contact us

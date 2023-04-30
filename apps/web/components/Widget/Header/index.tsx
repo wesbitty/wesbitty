@@ -91,6 +91,7 @@ const Header = () => {
           key={`solution_${idx}`}
           href={url}
           className="-m-3 p-3 my-2 flex flex-col justify-between rounded-lg hover:bg-gray-50 dark:hover:bg-dark-600 transition ease-in-out duration-150"
+          legacyBehavior
         >
           {content}
         </Link>
@@ -196,7 +197,7 @@ const Header = () => {
           <div className="mx-auto flex h-16 w-full max-w-screen-2xl items-center justify-between px-4 md:px-8 lg:px-16">
             <div className="flex items-center">
               <div className="flex items-center space-x-2.5">
-                <Link href="/">
+                <Link href="/" legacyBehavior>
                   <img
                     className="w-40"
                     src="/brand/logo/wesbitty-light-logo.svg"
@@ -209,24 +210,24 @@ const Header = () => {
                 <Link
                   href="/blog"
                   className={`
-                    flex h-8 items-center text-gray-500 rounded-md bg-transparent mx-1 m-5 px-3 text-sm font-medium leading-none hover:bg-gray-100 hover:text-gray-600
-                  `}
+                  flex h-8 items-center text-gray-500 rounded-md bg-transparent mx-1 m-5 px-3 text-sm font-medium leading-none hover:bg-gray-100 hover:text-gray-600
+                `}
                 >
                   Blog
                 </Link>
                 <Link
                   href="/pricing"
                   className={`
-                    flex h-8 items-center text-gray-500 rounded-md bg-transparent mx-1 m-5 px-3 text-sm font-medium leading-none hover:bg-gray-100 hover:text-gray-600
-                  `}
+                  flex h-8 items-center text-gray-500 rounded-md bg-transparent mx-1 m-5 px-3 text-sm font-medium leading-none hover:bg-gray-100 hover:text-gray-600
+                `}
                 >
                   Pricing
                 </Link>
                 <Link
                   href="/developer"
                   className={`
-                    flex h-8 items-center text-gray-500 rounded-md bg-transparent mx-1 m-5 px-3 text-sm font-medium leading-none hover:bg-gray-100 hover:text-gray-600
-                  `}
+                  flex h-8 items-center text-gray-500 rounded-md bg-transparent mx-1 m-5 px-3 text-sm font-medium leading-none hover:bg-gray-100 hover:text-gray-600
+                `}
                 >
                   Developer
                 </Link>
@@ -240,12 +241,16 @@ const Header = () => {
               </div>
             </div>
             <div className="hidden lg:flex items-center sm:space-x-3">
-              <Link href="https://app.wesbitty.org" target="_blank">
+              <Link
+                href="https://app.wesbitty.org"
+                target="_blank"
+                legacyBehavior
+              >
                 <Button type="default" icon={<IconPackage />}>
                   Start Your Project
                 </Button>
               </Link>
-              <Link href="https://app.wesbitty.org/login">
+              <Link href="https://app.wesbitty.org/login" legacyBehavior>
                 <Button title="Sign In" type="default" icon={<IconLogIn />}>
                   Sign In
                 </Button>

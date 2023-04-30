@@ -88,12 +88,13 @@ export const Hero = () => {
                         href="https://app.wesbitty.org"
                         as="https://app.wesbitty.org"
                         passHref
+                        legacyBehavior
                       >
                         <Button size="small" className="text-white bg-blue-600">
                           Start your project
                         </Button>
                       </Link>
-                      <Link href="/docs" as="/docs" passHref>
+                      <Link href="/docs" as="/docs" passHref legacyBehavior>
                         <Button
                           size="small"
                           type="default"
