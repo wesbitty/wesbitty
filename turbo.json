@@ -16,7 +16,7 @@
       "cache": false,
       "persistent": true
     },
-    "clean": {
+    "prebuild": {
       "cache": false
     }
   }
