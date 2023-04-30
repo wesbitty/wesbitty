@@ -4,7 +4,7 @@
   "private": true,
   "description": "wesbitty template v1",
   "scripts": {
-    "prebuild": "rm -rf .next .wesjet",
+    "prebuild": "rimraf .next .wesjet",
     "build": "prisma generate && next build",
     "postbuild": "node ./wesbitty/utils/Sitemap.mjs",
     "build:svg": "npx svgr --out-dir components/Icons components/Icons",

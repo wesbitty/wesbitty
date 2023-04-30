@@ -26,7 +26,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "prebuild": "rm -rf lib storybook-static",
+    "prebuild": "rimraf lib storybook-static",
     "build": "tsc --declaration --outDir lib",
     "postbuild": "storybook build",
     "release": "auto shipit",
