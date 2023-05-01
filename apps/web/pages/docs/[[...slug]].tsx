@@ -87,7 +87,7 @@ const Page: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   childrenTree,
 }) => {
   const router = useRouter()
-  MakeReload()
+
   const MDXContent = MakeMdx(doc.body.code || '')
 
   return (
