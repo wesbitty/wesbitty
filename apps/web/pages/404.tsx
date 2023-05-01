@@ -10,7 +10,7 @@ import {
   IconPause,
 } from '@wesbitty/ui'
 import Link from 'next/link'
-import { Default } from '~/Widget/Default'
+import { Default } from '~/widget/Default'
 import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import { Metadata } from '~/utils/Metadata'

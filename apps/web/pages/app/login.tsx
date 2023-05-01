@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import LoadingDots from '~/Layouts/Dashboard/loading-dots'
+import LoadingDots from '~/components/layouts/Dashboard/loading-dots'
 import toast, { Toaster } from 'react-hot-toast'
 
 const pageTitle = 'Authentication • Wesbitty Inc'

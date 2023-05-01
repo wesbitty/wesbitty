@@ -1,5 +1,5 @@
 import React from 'react'
-import type { BaseIconProps } from '~/types'
+import type { BaseIconProps } from 'types'
 interface LinkIconProps extends BaseIconProps {}
 
 function LinkIcon({ className, color, height, width }: LinkIconProps) {

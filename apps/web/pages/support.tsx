@@ -1,5 +1,5 @@
-import Container from '~/Widget/Container'
-import { Default } from '~/Widget/Default'
+import Container from '~/widget/Container'
+import { Default } from '~/widget/Default'
 import { Metadata } from '~/utils/Metadata'
 import Link from 'next/link'
 import {
@@ -16,7 +16,7 @@ import {
   Divider,
   IconMail,
 } from '@wesbitty/ui'
-import { Section } from '~/Widget/Section'
+import { Section } from '~/components/widget/Section'
 import 'swiper/swiper.min.css'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'

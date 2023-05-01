@@ -6,7 +6,7 @@ import { getTweets } from '~/lib/twitter'
 import type { Literal, Node } from 'unist'
 import type { Example, PrismaClient } from '@prisma/client'
 
-import type { WithChildren } from '~/types'
+import type { WithChildren } from 'types'
 
 interface NodesToChange {
   node: Node

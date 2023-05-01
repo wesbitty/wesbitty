@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-
-import { Default } from '~/Widget/Default'
+import { Default } from '~/widget/Default'
 import {
   PricingTableRowDesktop,
   PricingTableRowMobile,
 } from '~/components/PricingTableRow'
 import { Badge, Button, Divider, Space, Typography } from '@wesbitty/ui'
-
 import pricing from '~/data/Pricing.json'
 import pricingFaq from '~/data/PricingFAQ.json'
 import ReactMarkdown from 'react-markdown'

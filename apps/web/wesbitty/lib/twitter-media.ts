@@ -1,4 +1,4 @@
-import type { MediaTweet } from '~/types'
+import type { MediaTweet } from 'types'
 
 interface Video {
   bitrate: number

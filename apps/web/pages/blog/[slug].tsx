@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import { format, parseISO } from 'date-fns'
 import { allPosts, Post } from 'wesjet/static'
-import { Default } from '~/components/Widget/Default'
-import CodeBlock from '~/components/CodeBlock/CodeBlock'
+import { Default } from '~/components/widget/Default'
+import CodeBlock from '~/components/codeblock/CodeBlock'
 import Quote from '~/components/Quote'
-import ImageGrid from '~/components/Image/ImageGrid'
+import ImageGrid from '~/components/images/ImageGrid'
 import {
   Badge,
   Card,
