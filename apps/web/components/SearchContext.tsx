@@ -60,30 +60,7 @@ export const SearchProvider: FC<{ children: ReactNode }> = ({ children }) => {
       },
     ]
     let id = 1
-    const mapExamples = (tree: TreeNode[], parent: string) => {
-      for (const element of tree) {
-        actions.push({
-          id: ('1-examples-' + id).toString(),
-          name: element.label
-            ? `${element.title == 'Examples' ? 'Overview' : element.title} (${
-                element.label
-              })`
-            : element.title == 'Examples'
-            ? 'Overview'
-            : element.title,
-          keywords: element?.excerpt || '',
-          section: 'Examples',
-          subtitle: parent,
-          perform: () => router.push(element.urlPath),
-        })
-        id++
-        if (element.children.length)
-          mapExamples(
-            element.children,
-            parent + parent ? ' / ' : '' + element.title
-          )
-      }
-    }
+    
     const mapPosts = (posts: Post[]) => {
       actions.push({
         id: ('2-blog-' + id).toString(),
@@ -122,11 +99,10 @@ export const SearchProvider: FC<{ children: ReactNode }> = ({ children }) => {
           mapDocs(element.children, parent + ' / ' + element.title)
       }
     }
-    mapExamples(examplesTree, '')
     mapPosts(allPosts)
     mapDocs(docsTree, 'Docs')
     return actions
-  }, [docsTree, examplesTree, router])
+  }, [docsTree, router])
 
   return (
     <KBarProvider actions={actions}>
