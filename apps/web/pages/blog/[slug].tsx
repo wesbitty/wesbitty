@@ -66,7 +66,6 @@ const PostLayout = ({ post }: { post: Post }) => {
   // @ts-ignore
   const author = post.author ? authors[post.author] : authors['wesbitty']
   const router = useRouter()
-  const { data, content } = matter(post.body.html)
 
   const relatedPosts = allPosts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -167,7 +166,7 @@ const PostLayout = ({ post }: { post: Post }) => {
                   <article className={blogStyles['article']}>
                     <Typography>
                       <div
-                        dangerouslySetInnerHTML={{ __html: post.body.html }}
+                        dangerouslySetInnerHTML={{ __html: post.body.code }}
                       />
                     </Typography>
                   </article>
