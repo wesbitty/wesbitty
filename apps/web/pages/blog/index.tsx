@@ -23,11 +23,11 @@ export const getStaticProps = defineStaticProps(async (context) => {
   return { props: { posts } }
 })
 
-const BlogPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
+export const BlogPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   posts,
 }) => {
   const router = useRouter()
-
+  MakeReload()
   const pageTitle = `Blog - ${Metadata.Name}`
   const pageDescription =
     "The Wesbitty Blog | Updates, Ideas, Tips, Trends to help developers build application's."
@@ -67,9 +67,9 @@ const BlogPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
           <ul className="grid grid-cols-12 py-6 lg:gap-16">
             {posts.map((post, index) => (
-              <div className="col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4 mb-16">
+              <ol className="col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4 mb-16">
                 <ListItem key={index} post={post} />
-              </div>
+              </ol>
             ))}
           </ul>
         </div>
@@ -77,5 +77,3 @@ const BlogPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
     </>
   )
 }
-
-export default BlogPage
