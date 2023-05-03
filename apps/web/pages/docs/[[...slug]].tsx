@@ -1,4 +1,4 @@
-import { MakeReload, MakeMdx } from 'wesjet/next/hook'
+import { MakeReload, MakeMdx } from 'wesjet/hooks'
 import type { FC } from 'react'
 import { InferGetStaticPropsType } from 'next'
 import { allDocs } from 'wesjet/static'
@@ -80,14 +80,14 @@ const mdxComponents = {
   OptionDescription,
 }
 
-const Page: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
+export const DocsPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   doc,
   tree,
   breadcrumbs,
   childrenTree,
 }) => {
   const router = useRouter()
-
+  MakeReload()
   const MDXContent = MakeMdx(doc.body.code || '')
 
   return (
@@ -145,5 +145,3 @@ const Page: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
     </Container>
   )
 }
-
-export default Page
