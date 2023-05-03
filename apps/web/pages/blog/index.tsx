@@ -1,5 +1,5 @@
 import type { InferGetStaticPropsType } from 'next'
-import { MakeReload } from 'wesjet/next/hook'
+import { MakeReload } from 'wesjet/hooks'
 import type { FC } from 'react'
 import { allPosts } from 'wesjet/static'
 import { Default } from '~/widget/Default'
