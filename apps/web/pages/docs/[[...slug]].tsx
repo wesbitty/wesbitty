@@ -8,13 +8,13 @@ import { DocsNavigation } from '~/components/widget/Docs/Navigation'
 import { Callout } from '~/components/Callout'
 import { DocsCard as Card } from '~/components/widget/Docs/Card'
 import { Card as ChildCard } from '~/components/Card'
-import { Link } from '~/components/Link'
+import { iLink } from '~/components/Link'
 import Image from 'next/image'
 import { DocsHeader } from '~/components/widget/Docs/Header'
 import { ChevronLink } from '~/components/ChevronLink'
 import { Label } from '~/components/Label'
 import { DocsFooter } from '~/widget/Docs/Footer'
-import { PageNavigation } from '~/components/PageNavigation'
+import { PageNavigation } from '~/components/widget/Header/PageNavigation'
 import { buildDocsTree } from '~/utils/build-docs-tree'
 import { H2, H3, H4 } from '~/components/Headings'
 import {
@@ -68,19 +68,19 @@ const mdxComponents = {
   Callout,
   Card,
   Image,
-  Link,
+  iLink,
   ChevronLink,
   Label,
   h2: H2,
   h3: H3,
   h4: H4,
-  a: Link,
+  a: iLink,
   OptionsTable,
   OptionTitle,
   OptionDescription,
 }
 
-export const DocsPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
+const DocsPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   doc,
   tree,
   breadcrumbs,
@@ -106,7 +106,7 @@ export const DocsPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
         <div className="relative w-full grow">
           <DocsHeader tree={tree} breadcrumbs={breadcrumbs} title={doc.title} />
-          <div className="docs prose prose-slate prose-violet mx-auto mb-4 w-full max-w-3xl shrink p-4 pb-8 prose-headings:font-semibold prose-a:font-normal prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-hr:border-gray-200 dark:prose-invert dark:prose-a:text-violet-400 dark:prose-hr:border-gray-800 md:mb-8 md:px-8 lg:mx-0 lg:max-w-full lg:px-16">
+          <div className="docs prose prose-slate prose-violet mx-auto mb-4 w-full max-w-3xl shrink p-4 pb-8 prose-headings:font-semibold prose-a:font-normal prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-hr:border-gray-200 dark:prose-invert dark:prose-a:text-sky-400 dark:prose-hr:border-gray-800 md:mb-8 md:px-8 lg:mx-0 lg:max-w-full lg:px-16">
             {MDXContent && <MDXContent components={mdxComponents as any} />}
             {doc.show_child_cards && (
               <>
@@ -145,3 +145,5 @@ export const DocsPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
     </Container>
   )
 }
+
+export default DocsPage

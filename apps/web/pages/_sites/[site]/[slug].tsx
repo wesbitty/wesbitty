@@ -68,7 +68,7 @@ export default function Post({
           <h1 className="font-bold text-3xl font-cal md:text-6xl mb-10 text-gray-800">
             {data.title}
           </h1>
-          <p className="text-md md:text-lg text-gray-600 w-10/12 m-auto">
+          <p className="text-md md:text-lg text-slate-1200 w-10/12 m-auto">
             {data.description}
           </p>
         </div>
