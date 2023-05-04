@@ -10,27 +10,28 @@ export const ChevronLink: FC<{ label: string; url: string }> = ({
 }) => {
   if (isExternalUrl(url)) {
     return (
-      <a
+      <Link
         href={url}
         target="_blank"
         rel="noreferrer"
-        className="inline-flex items-center space-x-1.5 text-violet-600 no-underline hover:text-violet-700 dark:text-violet-400 dark:hover:text-violet-300"
+        className="inline-flex items-center space-x-1.5 text-sky-600 no-underline hover:text-sky-700 dark:text-sky-400 dark:hover:text-sky-300"
       >
         <span className="font-semibold">{label}</span>
         <span className="block w-2">
           <Icon name="chevron-right" />
         </span>
-      </a>
+      </Link>
     )
   } else {
     return (
-      <Link href={url}>
-        <a className="inline-flex items-center space-x-1.5 text-violet-600 no-underline hover:text-violet-700 dark:text-violet-400 dark:hover:text-violet-300">
-          <span className="font-semibold">{label}</span>
-          <span className="block w-2">
-            <Icon name="chevron-right" />
-          </span>
-        </a>
+      <Link
+        href={url}
+        className="inline-flex items-center space-x-1.5 text-sky-600 no-underline hover:text-sky-700 dark:text-sky-400 dark:hover:text-sky-300"
+      >
+        <span className="font-semibold">{label}</span>
+        <span className="block w-2">
+          <Icon name="chevron-right" />
+        </span>
       </Link>
     )
   }
