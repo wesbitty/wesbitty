@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-export const ContentlayerIcon: FC = () => {
+export const WesjetIcon: FC = () => {
   return (
     <svg
       viewBox="0 0 256 256"
