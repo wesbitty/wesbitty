@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import { FC } from 'react'
 import { format, parseISO } from 'date-fns'
 import { allPosts, Post } from 'wesjet/static'
 import { Default } from '~/components/widget/Default'
@@ -28,9 +28,14 @@ import ReactMarkdown from 'react-markdown'
 import { Metadata } from '~/utils/Metadata'
 import fs from 'fs'
 import { defineStaticProps } from '~/utils/next'
+import { MakeMdx } from 'wesjet/hooks'
+import NextImage from 'next/image'
+import { InferGetStaticPropsType } from 'next'
 
-export async function getStaticPaths() {
-  const paths: string[] = allPosts.map((post) => post.slug)
+export const getStaticPaths = async () => {
+  const paths = allPosts.map(({ slug }) => {
+    return { params: { slug } }
+  })
 
   return {
     paths,
@@ -38,8 +43,34 @@ export async function getStaticPaths() {
   }
 }
 
-const components = {
+const Image: FC<{
+  src: string
+  alt?: any
+  width?: number
+  height?: number
+  className?: string
+}> = ({ src, alt, width, height, className }) => {
+  return (
+    <div className={`overflow-hidden rounded-lg ${className}`}>
+      <div className="-mb-3">
+        <NextImage
+          src={src}
+          alt={alt}
+          width={width ?? '1600'}
+          height={height ?? '900'}
+          placeholder="blur"
+          blurDataURL={src}
+        />
+      </div>
+    </div>
+  )
+}
+
+const mdxComponents = {
   CodeBlock,
+  Image,
+  Link,
+  img: Image,
   Quote,
   code: (post: any) => {
     return <CodeBlock {...post} />
@@ -47,13 +78,13 @@ const components = {
   ImageGrid,
 }
 
-// plugins for next-mdx-remote
-const gfm = require('remark-gfm')
-const slug = require('rehype-slug')
-
 export const getStaticProps = defineStaticProps(async (context) => {
+  console.time(`getStaticProps /blog/${context.params!.slug}`)
+
   const params = context.params as unknown as Post
-  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
+  const post = allPosts.find((_) => _.slug === params.slug)!
+
+  console.timeEnd(`getStaticProps /blog/${context.params!.slug}`)
 
   return {
     props: {
@@ -62,30 +93,31 @@ export const getStaticProps = defineStaticProps(async (context) => {
   }
 })
 
-const PostLayout = ({ post }: { post: Post }) => {
+const Post: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ post }) => {
   // @ts-ignore
   const author = post.author ? authors[post.author] : authors['wesbitty']
   const router = useRouter()
+  const MDXContent = MakeMdx(post.body.code || '')
 
   const relatedPosts = allPosts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   )
 
-  const slugTitle = `${post.title} - ${Metadata.Name}`
-  const slugDescription = `${post.description}`
+  const Title = `${post.title} - ${Metadata.Name}`
+  const Description = `${post.description}`
 
   return (
     <>
       <NextSeo
-        title={slugTitle}
-        description={slugDescription}
+        title={Title}
+        description={Description}
         openGraph={{
-          title: slugTitle,
-          description: slugDescription,
+          title: Title,
+          description: Description,
           url: `https://wesbitty.org/${router.pathname}`,
           images: [
             {
-              url: `https://wesbitty.org/brand/og/wesbitty-og.jpg`,
+              url: `https://wesbitty.org/brand/og-image.png`,
             },
           ],
         }}
@@ -123,7 +155,7 @@ const PostLayout = ({ post }: { post: Post }) => {
               <div className="mb-16 space-y-8 max-w-5xl">
                 <div className="space-y-4">
                   <Typography.Text type="success">Blog post</Typography.Text>
-                  <Typography.Title>{post.title}</Typography.Title>
+                  <h4 className="text-slate-1200 text-lg">{post.title}</h4>
                   <div className="flex space-x-3">
                     <Typography.Text>
                       {format(new Date(post.date), 'MMMM dd, yyyy')}
@@ -156,19 +188,17 @@ const PostLayout = ({ post }: { post: Post }) => {
               <div className="grid grid-cols-12 lg:gap-16 xl:gap-8">
                 {/* Content */}
                 <div className="col-span-12 lg:col-span-7 xl:col-span-7">
-                  {post.thumb && (
+                  {post.thumbnail && (
                     <img
-                      src={'/images/blog/' + post.thumb}
+                      src={'/images/blog/' + post.thumbnail}
                       className="object-cover mb-8 border dark:border-gray-600"
                       style={{ maxHeight: '520px' }}
                     />
                   )}
                   <article className={blogStyles['article']}>
-                    <Typography>
-                      <div
-                        dangerouslySetInnerHTML={{ __html: post.body.code }}
-                      />
-                    </Typography>
+                    {MDXContent && (
+                      <MDXContent components={{ ...(mdxComponents as any) }} />
+                    )}
                   </article>
                 </div>
                 {/* Sidebar */}
@@ -226,4 +256,4 @@ const PostLayout = ({ post }: { post: Post }) => {
   )
 }
 
-export default PostLayout
+export default Post
