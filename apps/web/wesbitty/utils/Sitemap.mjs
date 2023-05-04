@@ -10,12 +10,12 @@ async function generateSitemap() {
     'pages/*/*.tsx',
     '!pages/404.tsx',
     '!wesbitty/data/**/*.mdx',
-    '[Post]/*.mdx',
+    '[Post]/*/*.mdx',
     '!pages/index.tsx',
+    '!pages/*/index.tsx',
     '!pages/app',
     '!pages/_app.tsx',
     '!pages/_sites.tsx',
-    '!pages/*/index.tsx',
     '!pages/api',
   ])
 
@@ -30,13 +30,18 @@ async function generateSitemap() {
               .replace('.mdx', '')
               .replace('pages', '')
               .replace('public', '')
-              .replace('[Post]', '/blog')
+              .replace('[Post]/blog', '/blog')
+              .replace('[Post]/docs', '/docs')
               .replace('/blog/[slug]', '/blog')
+              .replace('/docs/[[...slug]]', '/docs')
 
             let route = path === '/index' ? '' : path
 
-            if (route.includes('/blog/')) {
-              const _route = route.replace('/blog/', '')
+            if (route.includes(`/blog/`)) {
+              const _route = route.replace(`/blog/`, '')
+              const substring = _route.substring(0)
+
+              route = `/blog/`
             }
 
             return `
