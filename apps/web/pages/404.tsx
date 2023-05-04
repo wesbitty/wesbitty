@@ -18,23 +18,23 @@ import { Metadata } from '~/utils/Metadata'
 type Props = {}
 
 const ErrorPage = ({}: Props) => {
-  const Title = `Oops! Not Found | ${Metadata.Name}`
-  const Description = 'Oops! Not Found'
-
-  const { basePath } = useRouter()
+  const PageMeta = {
+    title: `Oops! Not Found | ${Metadata.Name}`,
+    description: 'Oops! Not Found',
+  }
 
   return (
     <>
       <NextSeo
-        title={Title}
-        description={Description}
+        title={PageMeta.title}
+        description={PageMeta.description}
         openGraph={{
-          title: Title,
-          description: Description,
+          title: PageMeta.title,
+          description: PageMeta.description,
           url: `${Metadata.Url}/404`,
           images: [
             {
-              url: `${Metadata.Url}${basePath}/brand/og-image.png`,
+              url: `${Metadata.Url}${Metadata.Og}`,
             },
           ],
         }}
@@ -43,7 +43,7 @@ const ErrorPage = ({}: Props) => {
         <div className="flex h-screen bg-slate-100">
           <div className="w-screen h-screen flex flex-col justify-center items-center">
             <div className="flex justify-center">
-              <h1 className="font-bold text-5xl text-gray-600">404</h1>
+              <h1 className="font-bold text-5xl text-slate-1200">404</h1>
               <IconLink2
                 size="xxxlarge"
                 strokeWidth={2}
@@ -65,7 +65,7 @@ const ErrorPage = ({}: Props) => {
               <Link
                 href="https://wesbitty.org"
                 prefetch={false} // workaround until https://github.com/vercel/vercel/pull/8978 is deployed
-                className="text-gray-600 underline hover:text-gray-500 transition-all"
+                className="text-slate-1200 underline hover:text-gray-500 transition-all"
               >
                 Go back home
               </Link>
@@ -74,7 +74,7 @@ const ErrorPage = ({}: Props) => {
                 href="/support"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 underline hover:text-gray-500 transition-all"
+                className="text-slate-1200 underline hover:text-gray-500 transition-all"
               >
                 Report Isues
               </Link>
