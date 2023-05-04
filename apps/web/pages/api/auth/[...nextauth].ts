@@ -1,7 +1,9 @@
 import NextAuth, { type NextAuthOptions } from 'next-auth'
+import CredentialsProvider from 'next-auth/providers/credentials'
 import GitHubProvider from 'next-auth/providers/github'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import prisma from '~/lib/prisma'
+import { compare } from 'bcrypt'
 
 const VERCEL_DEPLOYMENT = !!process.env.VERCEL_URL
 
@@ -23,12 +25,30 @@ export const authOptions: NextAuthOptions = {
         }
       },
     }),
+    CredentialsProvider({
+      credentials: {},
+      // @ts-ignore
+      async authorize(credentials, _) {
+        const { email, password } = credentials as {
+          email: string
+          password: string
+        }
+        if (!email || !password) {
+          throw new Error('Missing username or password')
+        }
+        const user = await prisma.user.findUnique({
+          where: {
+            email,
+          },
+        })
+        // if user doesn't exist or password doesn't match
+        if (!user || !(await compare(password, user.password))) {
+          throw new Error('Invalid username or password')
+        }
+        return user
+      },
+    }),
   ],
-  pages: {
-    signIn: `/login`,
-    verifyRequest: `/login`,
-    error: '/login', // Error code passed in query string as ?error=
-  },
   adapter: PrismaAdapter(prisma),
   cookies: {
     sessionToken: {
@@ -43,6 +63,7 @@ export const authOptions: NextAuthOptions = {
       },
     },
   },
+  session: { strategy: 'jwt' },
   callbacks: {
     session: ({ session, user }) => ({
       ...session,

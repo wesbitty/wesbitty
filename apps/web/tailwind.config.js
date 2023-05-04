@@ -1,4 +1,4 @@
-const { fontFamily } = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 const svgToDataUri = require('mini-svg-data-uri')
 
@@ -12,13 +12,13 @@ module.exports = {
   theme: {
     borderColor: (theme) => ({
       ...theme('colors'),
-      DEFAULT: theme('colors.slate.300'),
-      dark: theme('colors.slate.1200', 'currentColor'),
+      DEFAULT: '#f0f2f5',
+      dark: theme('colors.gray.600', 'currentColor'),
     }),
     divideColor: (theme) => ({
       ...theme('colors'),
-      DEFAULT: theme('colors.slate.300', 'currentColor'),
-      dark: theme('colors.slate.600', 'currentColor'),
+      DEFAULT: '#f0f2f5',
+      dark: theme('colors.gray.600', 'currentColor'),
     }),
     extend: {
       screens: {
@@ -54,18 +54,6 @@ module.exports = {
           1100: 'hsl(211, 100%, 43.2%)',
           1200: 'hsl(211, 100%, 15.0%)',
         },
-        brandDark1: 'hsl(205, 45.0%, 8.6%)',
-        brandDark2: 'hsl(202, 71.4%, 9.6%)',
-        brandDark3: 'hsl(201, 74.6%, 12.2%)',
-        brandDark4: 'hsl(201, 77.4%, 14.4%)',
-        brandDark5: 'hsl(200, 80.3%, 16.5%)',
-        brandDark6: 'hsl(200, 84.1%, 18.9%)',
-        brandDark7: 'hsl(199, 90.2%, 22.1%)',
-        brandDark8: 'hsl(198, 100%, 26.1%)',
-        brandDark9: 'hsl(193, 98.0%, 70.0%)',
-        brandDark10: 'hsl(192, 100%, 77.0%)',
-        brandDark11: 'hsl(192, 85.0%, 55.8%)',
-        brandDark12: 'hsl(198, 98.0%, 95.8%)',
         slate: {
           100: 'hsl(206, 30.0%, 98.8%)',
           200: 'hsl(210, 16.7%, 97.6%)',
@@ -80,18 +68,6 @@ module.exports = {
           1100: 'hsl(206, 6.0%, 43.5%)',
           1200: 'hsl(206, 24.0%, 9.0%)',
         },
-        slateDark1: 'hsl(200, 7.0%, 8.8%)',
-        slateDark2: 'hsl(195, 7.1%, 11.0%)',
-        slateDark3: 'hsl(197, 6.8%, 13.6%)',
-        slateDark4: 'hsl(198, 6.6%, 15.8%)',
-        slateDark5: 'hsl(199, 6.4%, 17.9%)',
-        slateDark6: 'hsl(201, 6.2%, 20.5%)',
-        slateDark7: 'hsl(203, 6.0%, 24.3%)',
-        slateDark8: 'hsl(207, 5.6%, 31.6%)',
-        slateDark9: 'hsl(206, 6.0%, 43.9%)',
-        slateDark10: 'hsl(206, 5.2%, 49.5%)',
-        slateDark11: 'hsl(206, 6.0%, 63.0%)',
-        slateDark12: 'hsl(210, 6.0%, 93.0%)',
         dark: {
           100: '#eeeeee',
           200: '#e0e0e0',
@@ -131,21 +107,20 @@ module.exports = {
       spacing: {
         28: '7rem',
       },
+      fontSize: {
+        '5xl': '2.5rem',
+        '6xl': '2.75rem',
+        '7xl': '4.5rem',
+        '8xl': '6.25rem',
+      },
       letterSpacing: {
         tighter: '-.04em',
       },
       fontFamily: {
-        default: ['var(--font-inter)', ...fontFamily.sans],
-        cal: ['var(--font-cal)', ...fontFamily.sans],
-        title: ['var(--font-title)', ...fontFamily.sans],
-        sans: [
-          'custom-font',
-          'Helvetica Neue',
-          'Helvetica',
-          'Arial',
-          'sans-serif',
-        ],
-        mono: ['Office Code Pro', 'Source Code Pro', 'Menlo', 'monospace'],
+        default: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
+        cal: ['var(--font-cal)', ...defaultTheme.fontFamily.sans],
+        title: ['var(--font-title)', ...defaultTheme.fontFamily.sans],
+        mono: ['Consolas', ...defaultTheme.fontFamily.mono],
       },
       stroke: (theme) => ({
         white: theme('colors.white'),
@@ -157,78 +132,23 @@ module.exports = {
         medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
         override: '0px 0px 0px rgba(0, 0, 0, 0)',
       },
-      typography: ({ theme }) => ({
+      typography: {
         DEFAULT: {
           css: {
-            'code::before': {
-              content: '""',
+            h1: {
+              fontFamily: 'Cal Sans',
             },
-            'code::after': {
-              content: '""',
+            h2: {
+              fontFamily: 'Cal Sans',
+            },
+            h3: {
+              fontFamily: 'Cal Sans',
             },
             'blockquote p:first-of-type::before': { content: 'none' },
             'blockquote p:first-of-type::after': { content: 'none' },
-            'h1, h2, h3, h4, h5': {
-              fontWeight: '400',
-            },
-            h2: {
-              fontWeight: '400',
-            },
-            p: {
-              fontWeight: '400',
-            },
-            pre: {
-              background: 'none',
-              padding: 0,
-              marginBottom: '32px',
-            },
-            ul: {
-              listStyleType: 'none',
-              paddingLeft: '1rem',
-            },
-            'ul li': {
-              position: 'relative',
-            },
-            'ul li::before': {
-              position: 'absolute',
-              top: '0.75rem',
-              left: '-1rem',
-              height: '0.125rem',
-              width: '0.5rem',
-              borderRadius: '0.25rem',
-              backgroundColor: colors.slate - 700,
-              content: '""',
-            },
-            ol: {
-              paddingLeft: '1rem',
-              counterReset: 'item',
-              listStyleType: 'none',
-            },
-            'ol li': {
-              display: 'block',
-              position: 'relative',
-              paddingLeft: '1rem',
-            },
-            'ol li::before': {
-              position: 'absolute',
-              top: '0.25rem',
-              left: '-1rem',
-              height: '1.2rem',
-              width: '1.2rem',
-              borderRadius: '0.25rem',
-              backgroundColor: colors.slate - 300,
-              border: `1px solid ${colors.slate - 500}`,
-              content: 'counter(item) "  "',
-              counterIncrement: 'item',
-              fontSize: '12px',
-              color: colors.slate - 900,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            },
           },
         },
-      }),
+      },
       keyframes: {
         wiggle: {
           '0%, 100%': {
