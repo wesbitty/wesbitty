@@ -17,15 +17,25 @@ export const Hero = () => {
                 <div className="md:mx-auto md:max-w-2xl lg:col-span-6 lg:flex lg:items-center lg:text-left">
                   <div className="space-y-12 sm:mx-auto md:w-3/4 lg:mx-0 lg:w-full">
                     <div>
-                      <p className="mt-4 text-3xl font-extrabold tracking-[-0.04em] text-slate-900 sm:text-5xl sm:leading-[3.5rem]">
-                        Build Better Store, in a few steps.
-                      </p>
+                      <h1
+                        className="
+                        text-slate-1200
+                        text-2xl sm:text-3xl sm:leading-none lg:text-4xl
+                        xl:text-5xl
+                        "
+                      >
+                        <span className="block">Build Better Store.</span>
+                        <span className="text-brand-800 block md:ml-0">
+                          In a Few Steps.
+                        </span>
+                      </h1>
+
                       <div className="flex flex-wrap mt-4">
-                        <div className="flex items-center text-sm font-medium text-slate-500">
+                        <div className="flex items-center text-sm sm:mt-5 sm:text-base">
                           <svg
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-8 w-8 flex-none stroke-current text-slate-400"
+                            className="h-8 w-8 flex-none stroke-current text-brand-800"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -35,11 +45,11 @@ export const Hero = () => {
                           </svg>
                           <span className="ml-2.5">HTML</span>
                         </div>
-                        <div className="flex items-center text-sm font-medium text-slate-500 ml-6">
+                        <div className="flex items-center text-sm sm:mt-5 sm:text-base ml-6">
                           <svg
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-8 w-8 flex-none stroke-current text-slate-400"
+                            className="h-8 w-8 flex-none stroke-current text-brand-800"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -61,11 +71,11 @@ export const Hero = () => {
                           </svg>
                           <span className="ml-2.5">React</span>
                         </div>
-                        <div className="flex items-center text-sm font-medium text-slate-500 ml-6">
+                        <div className="flex items-center text-sm sm:mt-5 sm:text-base ml-6">
                           <svg
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-8 w-8 flex-none stroke-current text-slate-400"
+                            className="h-8 w-8 flex-none stroke-current text-brand-800"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -77,13 +87,13 @@ export const Hero = () => {
                         </div>
                       </div>
 
-                      <p className="mt-4 text-base leading-7 text-slate-700">
+                      <p className="p mt-1.5 text-sm sm:mt-5 sm:text-base lg:text-lg ">
                         Start your business website with Wesbitty to sell
                         online, offline, and everywhere in between, no credit
                         card required.
                       </p>
                     </div>
-                    <div className="mt-8 flex items-center gap-4">
+                    <div className="flex items-center gap-2">
                       <Link href="https://app.wesbitty.org">
                         <Button size="small" className="text-white bg-blue-600">
                           Start your project
@@ -135,7 +145,7 @@ export const Hero = () => {
                 <div className="flex">
                   <div className="">
                     <svg
-                      className="h-10 w-10 shrink-0 transform-cpu rounded-lg shadow-md shadow-indigo-500/[.12]"
+                      className="h-10 w-10 shrink-0 transform-cpu rounded-lg shadow-md shadow-brand-500/[.12]"
                       viewBox="0 0 40 40"
                       fill="none"
                       strokeWidth="1.5"
@@ -144,23 +154,23 @@ export const Hero = () => {
                     >
                       <path
                         d="M.75 8A7.25 7.25 0 018 .75h24A7.25 7.25 0 0139.25 8v24A7.25 7.25 0 0132 39.25H8A7.25 7.25 0 01.75 32V8z"
-                        className="fill-indigo-50 stroke-indigo-500"
+                        className="fill-brand-100 stroke-brand-800"
                       ></path>
                       <path
                         d="M27 25.335L30.25 27l-6.603 3.382a8 8 0 01-7.294 0L9.75 27 13 25.335m14-6.999L30.25 20l-6.603 3.382a8 8 0 01-7.294 0L9.75 20 13 18.336"
-                        className="stroke-indigo-500/50"
+                        className="stroke-brand-800"
                       ></path>
                       <path
                         d="M9.75 13l9.338-4.783a2 2 0 011.824 0L30.25 13l-6.603 3.382a8 8 0 01-7.294 0L9.75 13z"
-                        className="stroke-indigo-500"
+                        className="stroke-brand-800"
                       ></path>
                     </svg>
                   </div>
                   <div className="ml-6">
-                    <h2 className="text-base font-semibold tracking-wide leading-6 text-gray-600">
+                    <h2 className="text-base font-medium tracking-wide leading-6 text-slate-1200">
                       Build an online storefront
                     </h2>
-                    <p className="mt-2 text-base leading-6 text-slate-700">
+                    <p className="mt-2 text-base leading-6 text-slate-1100">
                       Bring your vision to life with our drag-and-drop store
                       creator. No coding expertise required — just your next big
                       idea.
@@ -170,7 +180,7 @@ export const Hero = () => {
                 <div className="flex">
                   <div className="">
                     <svg
-                      className="h-10 w-10 shrink-0 transform-cpu rounded-lg shadow-md shadow-indigo-500/[.12]"
+                      className="h-10 w-10 shrink-0 transform-cpu rounded-lg shadow-md shadow-brand-500/[.12]"
                       viewBox="0 0 40 40"
                       fill="none"
                       strokeWidth="1.5"
@@ -179,23 +189,23 @@ export const Hero = () => {
                     >
                       <path
                         d="M.75 8A7.25 7.25 0 018 .75h24A7.25 7.25 0 0139.25 8v24A7.25 7.25 0 0132 39.25H8A7.25 7.25 0 01.75 32V8z"
-                        className="fill-indigo-50 stroke-indigo-500"
+                        className="fill-brand-100 stroke-brand-800"
                       ></path>
                       <path
                         d="M22.25 11.75l-4.5 16.5"
-                        className="stroke-indigo-500/50"
+                        className="stroke-brand-800"
                       ></path>
                       <path
                         d="M16.25 7.75h-.5a4 4 0 00-4 4v4.007a3 3 0 01-.88 2.122 3 3 0 000 4.242 3 3 0 01.88 2.122v4.007a4 4 0 004 4h.5m7.5-24.5h.5a4 4 0 014 4v4.007a3.002 3.002 0 00.878 2.122 3 3 0 010 4.242 3 3 0 00-.878 2.122v4.007a4 4 0 01-4 4h-.5"
-                        className="stroke-indigo-500"
+                        className="stroke-brand-800"
                       ></path>
                     </svg>
                   </div>
                   <div className="ml-6">
-                    <h2 className="text-base font-semibold tracking-wide leading-6 text-gray-600">
+                    <h2 className="text-base font-medium tracking-wide leading-6 text-slate-1200">
                       Craft the brand you want
                     </h2>
-                    <p className="mt-2 text-base leading-6 text-slate-700">
+                    <p className="mt-2 text-base leading-6 text-slate-1100">
                       Select from customizable templates created by a community
                       of world-class designers.
                     </p>
@@ -204,7 +214,7 @@ export const Hero = () => {
                 <div className="flex">
                   <div className="p-0.5">
                     <svg
-                      className="h-10 w-10 shrink-0 transform-cpu rounded-lg shadow-md shadow-indigo-500/[.12]"
+                      className="h-10 w-10 shrink-0 transform-cpu rounded-lg shadow-md shadow-brand-500/[.12]"
                       viewBox="0 0 40 40"
                       fill="none"
                       strokeWidth="1.5"
@@ -213,27 +223,27 @@ export const Hero = () => {
                     >
                       <path
                         d="M.75 8A7.25 7.25 0 018 .75h24A7.25 7.25 0 0139.25 8v24A7.25 7.25 0 0132 39.25H8A7.25 7.25 0 01.75 32V8z"
-                        className="fill-indigo-50 stroke-indigo-500"
+                        className="fill-brand-100 stroke-brand-800"
                       ></path>
                       <path
                         d="M7.75 21.25v-1.5a4 4 0 014-4h7.5m5 5v7.5a4 4 0 01-4 4h-1.5M27.75 32.25h.5a4 4 0 004-4v-10.5m-10-10h-10.5a4 4 0 00-4 4v.5"
-                        className="stroke-indigo-500/50"
+                        className="stroke-brand-800"
                       ></path>
                       <path
                         d="M31.5 8.5l-23 23"
-                        className="stroke-indigo-500"
+                        className="stroke-brand-800"
                       ></path>
                       <path
                         d="M25.75 7.75h4.5a2 2 0 012 2v4.5m-18 18h-4.5a2 2 0 01-2-2v-4.5"
-                        className="stroke-indigo-500"
+                        className="stroke-brand-800"
                       ></path>
                     </svg>
                   </div>
                   <div className="ml-6">
-                    <h2 className="text-base font-semibold tracking-wide leading-6 text-gray-600">
+                    <h2 className="text-base font-medium tracking-wide leading-6 text-slate-1200">
                       Level up with apps
                     </h2>
-                    <p className="mt-2 text-base leading-6 text-slate-700">
+                    <p className="mt-2 text-base leading-6 text-slate-1100">
                       Add more features and functionality to your online store
                       with apps built by trusted Wesbitty developers.
                     </p>
