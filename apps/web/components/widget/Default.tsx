@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
-import Header from './Header/index'
+import { Header } from './Header'
 import Footer from './Footer/index'
+import { SearchProvider } from './Header/SearchContext'
 
 type Props = {
   hideHeader?: boolean
@@ -17,11 +18,18 @@ export const Default = (props: Props) => {
 
   return (
     <>
-      {!hideHeader && <Header />}
-      <div className="min-h-screen bg-gray-50">
-        <main>{children}</main>
-      </div>
-      {!hideFooter && <Footer />}
+      <SearchProvider>
+        {!hideHeader && <Header />}
+        <div className="flex min-h-screen flex-col justify-between bg-slate-200">
+          <main
+            className="relative pt-16"
+            style={{ scrollPaddingTop: '150px' }}
+          >
+            {children}
+          </main>
+          {!hideFooter && <Footer />}
+        </div>
+      </SearchProvider>
     </>
   )
 }
