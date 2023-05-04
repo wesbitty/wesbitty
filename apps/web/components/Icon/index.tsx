@@ -15,7 +15,7 @@ import { CodeIcon } from './Code'
 import { CodeLightIcon } from './CodeLight'
 import { CollapseIcon } from './Collapse'
 import { ContentfulIcon } from './Contentful'
-import { ContentlayerIcon } from './Contentlayer'
+import { WesjetIcon } from './Wesjet'
 import { CrossCircleOutlineIcon } from './CrossCircleOutline'
 import { DatabaseIcon } from './Database'
 import { DiscordIcon } from './Discord'
@@ -61,7 +61,7 @@ export type IconName =
   | 'code'
   | 'collapse'
   | 'contentful'
-  | 'contentlayer'
+  | 'wesjet'
   | 'cross-circle-outline'
   | 'database'
   | 'discord'
@@ -110,7 +110,7 @@ const iconMap = {
   code: CodeIcon,
   collapse: CollapseIcon,
   contentful: ContentfulIcon,
-  contentlayer: ContentlayerIcon,
+  wesjet: WesjetIcon,
   database: DatabaseIcon,
   discord: DiscordIcon,
   exclamation: ExclamationIcon,
