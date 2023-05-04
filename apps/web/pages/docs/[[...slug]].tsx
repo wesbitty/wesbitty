@@ -2,19 +2,18 @@ import { MakeReload, MakeMdx } from 'wesjet/hooks'
 import type { FC } from 'react'
 import { InferGetStaticPropsType } from 'next'
 import { allDocs } from 'wesjet/static'
-import { Container } from '~/components/Container'
 import { defineStaticProps, toParams } from '~/utils/next'
-import { DocsNavigation } from '~/components/widget/Docs/Navigation'
+import { DocsNavigation } from '~/widget/Docs/Navigation'
 import { Callout } from '~/components/Callout'
 import { DocsCard as Card } from '~/components/widget/Docs/Card'
 import { Card as ChildCard } from '~/components/Card'
 import { iLink } from '~/components/Link'
 import Image from 'next/image'
-import { DocsHeader } from '~/components/widget/Docs/Header'
+import { DocsHeader } from '~/widget/Docs/Header'
 import { ChevronLink } from '~/components/ChevronLink'
 import { Label } from '~/components/Label'
 import { DocsFooter } from '~/widget/Docs/Footer'
-import { PageNavigation } from '~/components/widget/Header/PageNavigation'
+import { PageNavigation } from '~/widget/Header/PageNavigation'
 import { buildDocsTree } from '~/utils/build-docs-tree'
 import { H2, H3, H4 } from '~/components/Headings'
 import {
@@ -25,6 +24,7 @@ import {
 import { useRouter } from 'next/router'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
 import { PathSegment } from '~/types'
+import { Default } from '~/widget/Default'
 
 export const getStaticPaths = async () => {
   const paths = allDocs
@@ -91,7 +91,7 @@ const DocsPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   const MDXContent = MakeMdx(doc.body.code || '')
 
   return (
-    <Container title={doc.title + ' – Wesbitty'} description={doc.excerpt}>
+    <Default>
       <div className="relative mx-auto w-full max-w-screen-2xl lg:flex lg:items-start">
         <div
           style={{ height: 'calc(100vh - 64px)' }}
@@ -142,7 +142,7 @@ const DocsPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-b from-white/0 to-white/100 dark:from-gray-950/0 dark:to-gray-950/100" />
         </div>
       </div>
-    </Container>
+    </Default>
   )
 }
 
