@@ -32,10 +32,10 @@ const NavLink: FC<{
         url == activePath
           ? `${
               level == 0 ? 'font-medium' : 'font-normal'
-            } bg-violet-50 text-sky-900 dark:bg-violet-500/20 dark:text-sky-50`
+            } bg-blue-50 text-blue-900 dark:bg-blue-500/20 dark:text-sky-50`
           : `hover:bg-gray-50 dark:hover:bg-gray-900 ${
               level == 0
-                ? 'font-medium text-slate-1200 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200'
+                ? 'font-medium text-slate-1200 hover:text-slate-1100 dark:text-slate-200 dark:hover:text-slate-300'
                 : 'font-normal hover:text-slate-1200 dark:hover:text-slate-300'
             }`
       )}

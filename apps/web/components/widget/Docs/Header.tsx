@@ -42,7 +42,7 @@ export const DocsHeader: FC<{
                     >
                       {title}
                     </Link>
-                    <span className="inline-block w-1.5 text-slate-400 dark:text-slate-500">
+                    <span className="inline-block w-1.5 text-slate-1100 dark:text-slate-300">
                       <Icon name="chevron-right" />
                     </span>
                   </li>
@@ -50,14 +50,14 @@ export const DocsHeader: FC<{
               </Fragment>
             ))}
           </ul>
-          <h1 className="sr-only text-2xl font-semibold text-slate-800 dark:text-slate-200 md:text-3xl lg:not-sr-only lg:text-4xl">
+          <h1 className="sr-only text-2xl font-semibold text-slate-1100 dark:text-slate-200 md:text-3xl lg:not-sr-only lg:text-4xl">
             {title}
           </h1>
           <div className="lg:hidden">
             <button
               aria-label="Show docs navigation"
               onClick={() => setOpen(true)}
-              className="flex space-x-2 text-left text-2xl font-semibold text-slate-800 dark:text-slate-200 md:space-x-3 md:text-3xl lg:text-4xl"
+              className="flex space-x-2 text-left text-2xl text-slate-1200 dark:text-slate-200 md:space-x-3"
             >
               <span className="mt-1.5 inline-block w-4 flex-shrink-0 md:w-5">
                 <Icon name="chevron-down" />
@@ -71,7 +71,7 @@ export const DocsHeader: FC<{
         <div className="fixed inset-0 z-50 h-screen bg-gray-950/10 pb-20 backdrop-blur-lg backdrop-filter dark:bg-gray-950/50">
           <div className="absolute left-0 h-full divide-y divide-gray-200 overflow-y-scroll border-l border-gray-200 bg-white p-4 dark:divide-gray-800 dark:border-gray-800 dark:bg-gray-950">
             <div className="flex items-center justify-between pb-2">
-              <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200">
+              <h2 className="text-slate-1200 dark:text-slate-200">
                 Documentation
               </h2>
               <button
@@ -92,7 +92,7 @@ export const DocsHeader: FC<{
         </div>
       )}
       <div
-        className={`fixed top-16 z-10 hidden h-16 w-full border-b border-gray-200 bg-white bg-opacity-90 backdrop-blur backdrop-filter transition-opacity duration-200 dark:border-gray-800 dark:bg-gray-950 lg:block ${
+        className={`fixed top-16 z-10 hidden h-16 w-full border-b border-gray-200 bg-white bg-opacity-90 backdrop-blur backdrop-filter transition-opacity duration-200 dark:border-gray-800 dark:bg-gray-900 lg:block ${
           top ? 'opacity-0' : 'opacity-100'
         }`}
       >
