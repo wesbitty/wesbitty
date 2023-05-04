@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Space, Typography } from '@wesbitty/ui'
-import authors from '../../../wesbitty/data/authors.json'
+import authors from '~/data/authors.json'
 import React from 'react'
 import { Post } from 'wesjet/static'
 import { FC } from 'react'
@@ -12,63 +12,58 @@ const ListItem: FC<{ post: Post }> = ({ post }) => {
   const author = post.author ? authors[post.author] : authors['wesbitty']
 
   return (
-    <div key={post.slug}>
-      <Link href={post.slug}>
-        <div className="inline-block min-w-full group">
-          <div className="flex flex-col space-y-6">
-            <div className="flex flex-col space-y-3">
-              <div
-                className={`relative overflow-auto w-full border dark:border-dark shadow-sm rounded-lg mb-4`}
-              >
-                <Image
-                  alt="Thumbnail"
-                  src={
-                    !post.thumb
-                      ? `/images/blog/blog-placeholder.png`
-                      : `/images/blog/${post.thumb}`
-                  }
-                  className="p-1 bg-sky-50 border rounded max-w-sm"
-                  width={500}
-                  height={500}
-                  style={{
-                    objectFit: 'cover',
-                  }}
-                />
-              </div>
-
-              <div>
-                <Typography.Title level={3} className="m-0">
-                  {post.title}
-                </Typography.Title>
-              </div>
-              <Typography.Text type="secondary" small>
-                {format(new Date(post.date), 'MMMM dd, yyyy')}
-              </Typography.Text>
-
-              <Typography.Text className="m-0" type="secondary">
-                <p className="text-base mb-0">{post.description}</p>
-              </Typography.Text>
+    <div>
+      <Link
+        href={`/blog/${post.slug}`}
+        className="inline-block min-w-full group"
+      >
+        <div className="flex flex-col space-y-6">
+          <div className="flex flex-col space-y-3">
+            <div
+              className={`border-slate-30000 relative mb-4 h-60 w-full overflow-auto rounded-lg border shadow-sm`}
+            >
+              <Image
+                alt="Thumbnail"
+                src={
+                  !post.thumbnail
+                    ? `/images/blog/blog-placeholder.png`
+                    : `/images/blog/${post.thumbnail}`
+                }
+                className="slate-100 transform duration-100 ease-in group-hover:scale-105"
+                fill
+                style={{
+                  objectFit: 'cover',
+                }}
+              />
             </div>
-            {author && (
-              <div>
-                <Space size={4}>
-                  {author.avatar && (
-                    <img
-                      alt="Avatar"
-                      src={author.avatar}
-                      className="rounded-full w-10"
-                    />
-                  )}
-                  <Space direction="vertical" size={0}>
-                    <Typography.Text>{author.author}</Typography.Text>
-                    <Typography.Text type="secondary" small>
-                      {author.position}
-                    </Typography.Text>
-                  </Space>
-                </Space>
-              </div>
-            )}
+            <h3 className="text-slate-1200 max-w-sm text-xl">{post.title}</h3>
+            <p className="text-slate-1100 text-xs">
+              {format(new Date(post.date), 'MMMM dd, yyyy')}
+            </p>
+            <p className="text-slate-1100 max-w-sm text-base">
+              {post.description}
+            </p>
           </div>
+          {author && (
+            <div>
+              <Space size={4}>
+                {author.avatar && (
+                  <div className="dark:ring-slate-200 w-10 rounded-full ring-2 ring-white">
+                    <Image
+                      alt={author.avatar}
+                      height={40}
+                      className="dark:border-dark rounded-full border"
+                      src={author.avatar}
+                      width={40}
+                    />
+                  </div>
+                )}
+                <span className="inline-block ml-3 text-slate-1100 text-base truncate">
+                  {author.author}
+                </span>
+              </Space>
+            </div>
+          )}
         </div>
       </Link>
     </div>
