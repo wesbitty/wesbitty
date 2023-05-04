@@ -14,7 +14,7 @@ import { TreeNode } from 'types/TreeNode'
 import { Card } from '../../Card'
 import { Icon } from '../../Icon'
 import { Label } from '../../Label'
-import { buildDocsTree } from '~/utils/build-docs-tree'
+import { buildDocsTree } from '~/utils/docsTree'
 import { allDocs, allPosts, Post } from 'wesjet/static'
 import { format } from 'date-fns'
 
