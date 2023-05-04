@@ -1,7 +1,8 @@
 import { FC, useState, useEffect } from 'react'
 import { type DocHeading } from '~/utils/wesjet/config/Doc'
 import { getNodeText, sluggifyTitle } from '~/utils/sluggify'
-import { Icon } from './Icon'
+import { Icon } from '../../Icon'
+import Link from 'next/link'
 
 export const PageNavigation: FC<{ headings: DocHeading[] }> = ({
   headings,
@@ -31,19 +32,19 @@ export const PageNavigation: FC<{ headings: DocHeading[] }> = ({
 
   return (
     <div className="text-sm">
-      <h4 className="mb-4 font-medium text-slate-600 dark:text-slate-300">
+      <h4 className="mb-4 font-medium text-slate-1200 dark:text-slate-300">
         On this page
       </h4>
       <ul className="space-y-2">
         {headingsToRender.map(({ title, level }, index) => (
           <li key={index}>
-            <a
+            <Link
               href={`#${sluggifyTitle(getNodeText(title))}`}
               style={{ marginLeft: (level - 2) * 16 }}
               className={`flex ${
                 sluggifyTitle(getNodeText(title)) == activeHeading
-                  ? 'text-violet-600 dark:text-violet-400'
-                  : 'hover:text-slate-600 dark:hover:text-slate-300'
+                  ? 'text-sky-600 dark:text-sky-400'
+                  : 'hover:text-slate-1200 dark:hover:text-slate-300'
               }`}
             >
               <span className="mr-2 mt-[5px] block w-1.5 shrink-0">
@@ -56,7 +57,7 @@ export const PageNavigation: FC<{ headings: DocHeading[] }> = ({
                     .replace('`', '</code>'),
                 }}
               />
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
