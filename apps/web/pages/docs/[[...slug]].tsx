@@ -14,7 +14,7 @@ import { ChevronLink } from '~/components/ChevronLink'
 import { Label } from '~/components/Label'
 import { DocsFooter } from '~/widget/Docs/Footer'
 import { PageNavigation } from '~/widget/Header/PageNavigation'
-import { buildDocsTree } from '~/utils/build-docs-tree'
+import { buildDocsTree } from '~/utils/docsTree'
 import { H2, H3, H4 } from '~/components/Headings'
 import {
   OptionsTable,
