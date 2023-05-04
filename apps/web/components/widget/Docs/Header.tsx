@@ -36,10 +36,11 @@ export const DocsHeader: FC<{
               <Fragment key={index}>
                 {index < breadcrumbs.length - 1 && (
                   <li className="mx-1 flex items-center space-x-2">
-                    <Link href={path}>
-                      <a className="inline whitespace-nowrap hover:text-slate-600 dark:hover:text-slate-300">
-                        {title}
-                      </a>
+                    <Link
+                      href={path}
+                      className="inline whitespace-nowrap hover:text-slate-1200 dark:hover:text-slate-300"
+                    >
+                      {title}
                     </Link>
                     <span className="inline-block w-1.5 text-slate-400 dark:text-slate-500">
                       <Icon name="chevron-right" />
@@ -77,7 +78,7 @@ export const DocsHeader: FC<{
                 type="button"
                 aria-label="Close docs navigation"
                 onClick={() => setOpen(!open)}
-                className="flex h-8 w-8 items-center justify-end text-slate-600 dark:text-slate-300"
+                className="flex h-8 w-8 items-center justify-end text-slate-1200 dark:text-slate-300"
               >
                 <span className="inline-block w-4">
                   <Icon name="close" />
@@ -100,10 +101,11 @@ export const DocsHeader: FC<{
             <Fragment key={index}>
               {index < breadcrumbs.length - 1 && (
                 <li className="flex items-center space-x-2">
-                  <Link href={path}>
-                    <a className="inline whitespace-nowrap hover:text-slate-600 dark:hover:text-slate-300">
-                      {title}
-                    </a>
+                  <Link
+                    href={path}
+                    className="inline whitespace-nowrap hover:text-slate-1200 dark:hover:text-slate-300"
+                  >
+                    {title}
                   </Link>
                   <span className="inline-block w-1.5 text-slate-400 dark:text-slate-500">
                     <Icon name="chevron-right" />
