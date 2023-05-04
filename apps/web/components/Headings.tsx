@@ -8,7 +8,7 @@ export const H2: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
       onClick={() => (window.location.hash = `#${slug}`)}
       className="group cursor-pointer"
     >
-      <span className="absolute left-8 hidden text-slate-400 dark:text-slate-600 lg:group-hover:inline">
+      <span className="absolute left-8 hidden text-slate-400 dark:text-slate-1200 lg:group-hover:inline">
         #
       </span>
       {children}
@@ -24,7 +24,7 @@ export const H3: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
       onClick={() => (window.location.hash = `#${slug}`)}
       className="group cursor-pointer"
     >
-      <span className="absolute left-8 hidden text-slate-400 dark:text-slate-600 lg:group-hover:inline">
+      <span className="absolute left-8 hidden text-slate-400 dark:text-slate-1200 lg:group-hover:inline">
         #
       </span>
       {children}
@@ -40,7 +40,7 @@ export const H4: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
       onClick={() => (window.location.hash = `#${slug}`)}
       className="group cursor-pointer"
     >
-      <span className="absolute left-8 hidden text-slate-400 dark:text-slate-600 lg:group-hover:inline">
+      <span className="absolute left-8 hidden text-slate-400 dark:text-slate-1200 lg:group-hover:inline">
         #
       </span>
       {children}

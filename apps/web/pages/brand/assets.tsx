@@ -12,23 +12,24 @@ type Props = {}
 
 const BrandAssetPage = ({}: Props) => {
   const router = useRouter()
-
   const { Title, Text } = Typography
-  const pageTitle = `Brand Assets - ${Metadata.Name}`
-  const Description = 'Get Wesbitty Brand assets here.'
+  const PageMeta = {
+    title: `Brand Assets - ${Metadata.Name}`,
+    description: 'Get Wesbitty Brand assets here.',
+  }
 
   return (
     <>
       <NextSeo
-        title={pageTitle}
-        description={Description}
+        title={PageMeta.title}
+        description={PageMeta.description}
         openGraph={{
-          title: pageTitle,
-          description: Description,
+          title: PageMeta.title,
+          description: PageMeta.description,
           url: `${Metadata.Url}/${router.pathname}`,
           images: [
             {
-              url: `${Metadata.Url}/brand/og-image.png`,
+              url: `${Metadata.Url}${Metadata.Og}`,
             },
           ],
         }}

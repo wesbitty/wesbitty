@@ -103,7 +103,7 @@ export default function Index({ stringifiedData }: IndexProps) {
               placeholder="blur"
               blurDataURL={placeholderBlurhash}
             />
-            <p className="text-2xl font-cal text-gray-600">No posts yet.</p>
+            <p className="text-2xl font-cal text-slate-1200">No posts yet.</p>
           </div>
         )}
       </div>

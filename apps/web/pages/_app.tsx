@@ -9,13 +9,14 @@ import '~/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { Metadata } from '~/utils/Metadata'
 import { DefaultSeo } from 'next-seo'
+import { ColorSchemeProvider } from '~/widget/Header/colorscheme/ColorSchemeContext'
 
 export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }: AppProps<{ session: Session }>) {
   const { basePath } = useRouter()
-  const AppTitle = `${Metadata.Description} - ${Metadata.Name}`
+  const Title = `${Metadata.Description} - ${Metadata.Name}`
 
   return (
     <>
@@ -23,7 +24,7 @@ export default function App({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <DefaultSeo
-        title={AppTitle}
+        title={Title}
         description={`${Metadata.Description}`}
         openGraph={{
           type: 'website',
@@ -31,10 +32,10 @@ export default function App({
           site_name: `${Metadata.Name}`,
           images: [
             {
-              url: `${Metadata.Url}${basePath}/brand/og-image.png`,
+              url: `${Metadata.Url}${Metadata.Og}`,
               width: 800,
               height: 600,
-              alt: 'Wesbitty Og Image',
+              alt: 'Og Image',
             },
           ],
         }}
@@ -46,7 +47,9 @@ export default function App({
       />
       <SessionProvider session={session}>
         <main className={cx(cal.variable, inter.variable)}>
-          <Component {...pageProps} />
+          <ColorSchemeProvider>
+            <Component {...pageProps} />
+          </ColorSchemeProvider>
         </main>
         <Analytics />
       </SessionProvider>

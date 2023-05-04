@@ -4,7 +4,7 @@ export const CheckIcon: FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="h-5 w-5 text-violet-600 dark:text-violet-500"
+      className="h-5 w-5 text-sky-600 dark:text-sky-500"
       viewBox="0 0 20 20"
       fill="currentColor"
     >

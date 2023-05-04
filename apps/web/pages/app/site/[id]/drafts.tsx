@@ -104,7 +104,7 @@ export default function SiteDrafts() {
                           'No description provided. Click to edit.'}
                       </p>
                       <a
-                        className="font-cal px-3 py-1 tracking-wide rounded bg-gray-200 text-gray-600 absolute bottom-5 left-10 whitespace-nowrap"
+                        className="font-cal px-3 py-1 tracking-wide rounded bg-gray-200 text-slate-1200 absolute bottom-5 left-10 whitespace-nowrap"
                         href={`https://${data.site?.subdomain}.wesbitty.org/${post.slug}`}
                         rel="noreferrer"
                         target="_blank"
@@ -127,7 +127,7 @@ export default function SiteDrafts() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <p className="text-2xl font-cal text-gray-600">
+                  <p className="text-2xl font-cal text-slate-1200">
                     No drafts yet. Click &quot;New Draft&quot; to create one.
                   </p>
                 </div>

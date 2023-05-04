@@ -121,7 +121,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
               <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <div className="py-1">
                   <Menu.Item>
-                    <div className="block text-gray-600 px-4 py-2 text-sm border-b">
+                    <div className="block text-slate-1200 px-4 py-2 text-sm border-b">
                       Sign in as{' '}
                       <span className="font-semibold">
                         {session.user?.name}
@@ -132,7 +132,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
                     <Link
                       href="/"
                       className={`bg-white ${
-                        tab == '' ? 'text-gray-600' : 'text-gray-700'
+                        tab == '' ? 'text-slate-1200' : 'text-gray-700'
                       } block px-4 py-2 text-sm`}
                     >
                       My stores
@@ -142,7 +142,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
                     <Link
                       href="/settings"
                       className={`bg-white ${
-                        tab == 'settings' ? 'text-gray-600' : 'text-gray-700'
+                        tab == 'settings' ? 'text-slate-1200' : 'text-gray-700'
                       } block px-4 py-2 text-sm`}
                     >
                       Settings
@@ -153,7 +153,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
                       <button
                         type="submit"
                         onClick={() => signOut()}
-                        className="bg-white text-gray-600 block w-full px-4 py-2 text-left text-sm border-t"
+                        className="bg-white text-slate-1200 block w-full px-4 py-2 text-left text-sm border-t"
                       >
                         Sign out
                       </button>

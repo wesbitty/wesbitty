@@ -214,7 +214,7 @@ export default function PostSettings() {
           >
             <h2 className="font-cal text-2xl mb-6">Delete Post</h2>
             <div className="grid gap-y-5 w-5/6 mx-auto">
-              <p className="text-gray-600 mb-3">
+              <p className="text-slate-1200 mb-3">
                 Are you sure you want to delete your post? This action is not
                 reversible.
               </p>
@@ -234,7 +234,7 @@ export default function PostSettings() {
                 className={`${
                   deletingPost
                     ? 'cursor-not-allowed text-gray-400 bg-gray-50'
-                    : 'bg-white text-gray-600 hover:text-black'
+                    : 'bg-white text-slate-1200 hover:text-black'
                 } w-full px-5 py-5 text-sm border-t border-l border-gray-300 rounded-br focus:outline-none focus:ring-0 transition-all ease-in-out duration-150`}
               >
                 {deletingPost ? <LoadingDots /> : 'DELETE POST'}

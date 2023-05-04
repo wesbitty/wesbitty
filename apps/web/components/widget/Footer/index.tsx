@@ -3,10 +3,15 @@ import { useEffect, useState } from 'react'
 import FooterLinks from '~/data/Footer.json'
 import { Section } from '../Section'
 import Link from 'next/link'
+import * as WesbittyLogo from 'public/brand/logo/wesbitty-light-logo.png'
+import * as WesbittyDarkLogo from 'public/brand/logo/wesbitty-dark-logo.png'
+import { useColorScheme } from '../Header/colorscheme/ColorSchemeContext'
+import Image from 'next/image'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
   const [mounted, setMounted] = useState(false)
+  const themeMode = useColorScheme()
 
   useEffect(() => setMounted(true), [])
 
@@ -21,11 +26,12 @@ const Footer = () => {
       <div className="sm:pt-2 container relative mx-auto px-6 pt-4 md:pt-4 lg:px-8 lg:pt-4 xl:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-2">
           <div className="space-y-2 xl:col-span-1">
-            <Link href="/">
-              <img
-                className="w-40"
-                src="/brand/logo/wesbitty-light-logo.svg"
-                alt="Wesbitty Logo"
+            <Link href="/" className="w-40">
+              <Image
+                src={themeMode ? WesbittyLogo : WesbittyDarkLogo}
+                width={160}
+                height={30}
+                alt="Logo"
               />
             </Link>
             <div className="flex space-x-6">

@@ -9,8 +9,6 @@ import { Metadata } from '~/utils/Metadata'
 import { Typography, Space, Tabs } from '@wesbitty/ui'
 import { generateRss } from '~/utils/Rss'
 import fs from 'fs'
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
 
 export const getStaticProps = defineStaticProps(async (context) => {
@@ -23,14 +21,14 @@ export const getStaticProps = defineStaticProps(async (context) => {
   return { props: { posts } }
 })
 
-export const BlogPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
+const Blog: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   posts,
 }) => {
-  const router = useRouter()
   MakeReload()
-  const pageTitle = `Blog - ${Metadata.Name}`
-  const pageDescription =
-    "The Wesbitty Blog | Updates, Ideas, Tips, Trends to help developers build application's."
+  const PageMeta = {
+    title: `Blog - ${Metadata.Name}`,
+    description: `The Wesbitty Blog | Updates, Ideas, Tips, Trends to help developers build application's.`,
+  }
   const Title = 'The Wesbitty Blog'
   const Description =
     "Updates, Ideas, Tips, Trends to help developers build application's."
@@ -38,15 +36,15 @@ export const BlogPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <>
       <NextSeo
-        title={pageTitle}
-        description={pageDescription}
+        title={PageMeta.title}
+        description={PageMeta.description}
         openGraph={{
-          title: pageTitle,
-          description: pageDescription,
-          url: `https://wesbitty.org/${router.pathname}`,
+          title: PageMeta.title,
+          description: PageMeta.description,
+          url: `${Metadata.Url}/blog`,
           images: [
             {
-              url: `https://wesbitty.org/brand/og/wesbitty-og.jpg`,
+              url: `${Metadata.Url}${Metadata.Og}`,
             },
           ],
         }}
@@ -65,11 +63,14 @@ export const BlogPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <Typography.Text type="default">{Description}</Typography.Text>
           </div>
 
-          <ul className="grid grid-cols-12 py-6 lg:gap-16">
+          <ul className="grid grid-cols-12 py-8 lg:gap-16">
             {posts.map((post, index) => (
-              <ol className="col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-4 mb-16">
-                <ListItem key={index} post={post} />
-              </ol>
+              <li
+                className="col-span-12 mb-16 md:col-span-12 lg:col-span-6 xl:col-span-4"
+                key={index}
+              >
+                <ListItem post={post} />
+              </li>
             ))}
           </ul>
         </div>
@@ -77,3 +78,5 @@ export const BlogPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
     </>
   )
 }
+
+export default Blog

@@ -9,6 +9,16 @@ const Author = defineNestedType(() => ({
   },
 }))
 
+const Thumbnail = defineNestedType(() => ({
+  name: 'Thumbnail',
+  fields: {
+    url: { type: 'string', required: true },
+    alt: { type: 'string', required: true },
+    width: { type: 'number', required: true },
+    height: { type: 'number', required: true },
+  },
+}))
+
 export const Post = defineDocumentType(() => ({
   name: 'Post',
   filePathPattern: `blog/**/*.mdx`,
@@ -23,16 +33,12 @@ export const Post = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
-    thumb: {
+    thumbnail: {
       type: 'string',
       required: true,
     },
     label: {
       type: 'string',
-    },
-    image: {
-      type: 'string',
-      required: true,
     },
     authorURL: {
       type: 'string',
@@ -57,7 +63,7 @@ export const Post = defineDocumentType(() => ({
     },
     slug: {
       type: 'string',
-      resolve: (post) => `/blog/${post._raw.flattenedPath}`,
+      resolve: (post) => urlFromFilePath(post).replace('blog/', ''),
     },
   },
 }))

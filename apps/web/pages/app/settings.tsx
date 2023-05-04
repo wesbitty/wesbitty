@@ -69,7 +69,7 @@ export default function AppSettings() {
                   }
                 />
               </div>
-              <p className="text-slate-600">
+              <p className="text-slate-1200">
                 Your name may appear around Wesbitty where you contributed or
                 are mentioned. You can remove it at any time.
               </p>
@@ -139,7 +139,7 @@ export default function AppSettings() {
 
             <div className="mt-6">
               <div className="space-y-2">
-                <p className="text-slate-600">
+                <p className="text-slate-1200">
                   All of the fields on this page are optional and can be deleted
                   at any time, and by filling them out, you're giving us consent
                   to share this data wherever your user profile appears. Please

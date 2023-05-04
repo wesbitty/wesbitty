@@ -249,7 +249,7 @@ export default function Tweet({ id, metadata, className }: TweetProps) {
             />
             <div className="w-full bg-white px-8 py-6">
               <p className="!m-0 font-semibold">{url_meta.title}</p>
-              <p className="!m-0 text-sm font-normal text-gray-600">
+              <p className="!m-0 text-sm font-normal text-slate-1200">
                 {url_meta.description}
               </p>
             </div>
