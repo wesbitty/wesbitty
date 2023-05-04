@@ -4,7 +4,7 @@ const svgToDataUri = require('mini-svg-data-uri')
 
 module.exports = {
   content: [
-    './[Post]/*.{md,mdx}',
+    './[Post]/**/*.{md,mdx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
