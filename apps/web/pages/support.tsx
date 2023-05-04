@@ -24,23 +24,24 @@ import { NextSeo } from 'next-seo'
 type Props = {}
 
 const SupportPage = ({}: Props) => {
-  const router = useRouter()
-  const Title = `Help & Support | ${Metadata.Name}`
-  const Description =
-    'Find help and support for Wesbitty. Our support agents provide answers on all types of issues, including account information, billing, and refunds.'
+  const PageMeta = {
+    title: `Help & Support | ${Metadata.Name}`,
+    description:
+      'Find help and support for Wesbitty. Our support agents provide answers on all types of issues, including account information, billing, and refunds.',
+  }
 
   return (
     <>
       <NextSeo
-        title={Title}
-        description={Description}
+        title={PageMeta.title}
+        description={PageMeta.description}
         openGraph={{
-          title: Title,
-          description: Description,
-          url: `${Metadata.Url}/${router.pathname}`,
+          title: PageMeta.title,
+          description: PageMeta.description,
+          url: `${Metadata.Url}/support`,
           images: [
             {
-              url: `${Metadata.Url}/brand/og-image.png`,
+              url: `${Metadata.Url}${Metadata.Og}`,
             },
           ],
         }}
