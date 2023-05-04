@@ -3,7 +3,7 @@ export const Metadata = {
   Description: "We've Got Your WishList",
   Language: 'en-US',
   Logo: '/brand/logo/wesbitty-icon.png',
-  Og: '/brand/og/wesbitty-og.jpg',
+  Og: '/brand/og-image.png',
   SocialBanner: '/brand/logo-preview.jpg',
   Theme: 'system', // system, dark or light
   Url: 'https://wesbitty.org',
