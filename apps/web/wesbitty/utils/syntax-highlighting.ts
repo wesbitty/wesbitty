@@ -39,8 +39,5 @@ export const snippetToHtml = async (
     twoslash
   )
 
-  return html.replace(
-    './assets/contentlayer-generated',
-    'contentlayer/generated'
-  )
+  return html.replace('./assets/wesjet-static', 'wesjet/static')
 }
