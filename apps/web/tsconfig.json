@@ -4,9 +4,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~/components/*": ["components/*"],
-      "~/Layouts/*": ["components/Layouts/*"],
-      "~/Widget/*": ["components/Widget/*"],
+      "~/Layouts/*": ["components/layouts/*"],
+      "~/Widget/*": ["components/widget/*"],
       "~/data/*": ["wesbitty/data/*"],
       "~/utils/*": ["wesbitty/utils/*"],
       "wesjet/static": ["./.wesjet/static"],

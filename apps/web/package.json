@@ -18,7 +18,7 @@
     "type-check": "tsc"
   },
   "prisma": {
-    "schema": "wesbitty/data/schema.prisma"
+    "schema": "wesbitty/prisma/schema.prisma"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",
