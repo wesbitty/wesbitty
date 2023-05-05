@@ -4,11 +4,11 @@ import { useRouter } from 'next/router'
 import BlurImage from '~/components/Image/BlurImage'
 import BlogCard from '~/components/Cards/BlogCard'
 import Loader from '~/Layouts/Sites/Loader'
-import prisma from '~/lib/prisma'
+import prisma from 'lib/prisma'
 import type { GetStaticPaths, GetStaticProps } from 'next'
-import type { _SiteData, Meta } from '~/types'
+import type { _SiteData, Meta } from 'types'
 import type { ParsedUrlQuery } from 'querystring'
-import { placeholderBlurhash, toDateString } from '~/lib/utils'
+import { placeholderBlurhash, toDateString } from 'lib/utils'
 
 interface PathProps extends ParsedUrlQuery {
   site: string

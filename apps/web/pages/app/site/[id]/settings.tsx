@@ -9,8 +9,8 @@ import DomainCard from '~/Layouts/Dashboard/DomainCard'
 import Layout from '~/Layouts/Dashboard/Layout'
 import LoadingDots from '~/Layouts/Dashboard/loading-dots'
 import Modal from '~/components/Modal'
-import { fetcher } from '~/lib/fetcher'
-import { HttpMethod } from '~/types'
+import { fetcher } from 'lib/fetcher'
+import { HttpMethod } from 'types'
 import type { Site } from '@prisma/client'
 
 interface SettingsData

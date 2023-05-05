@@ -5,8 +5,8 @@ import { useState } from 'react'
 import BlurImage from '~/components/Image/BlurImage'
 import Layout from '~/Layouts/Dashboard/Layout'
 import LoadingDots from '~/Layouts/Dashboard/loading-dots'
-import { fetcher } from '~/lib/fetcher'
-import { HttpMethod } from '~/types'
+import { fetcher } from 'lib/fetcher'
+import { HttpMethod } from 'types'
 import type { Post, Site } from '@prisma/client'
 
 interface SitePostData {

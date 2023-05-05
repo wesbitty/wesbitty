@@ -8,11 +8,11 @@ import Layout from '~/Layouts/Dashboard/Layout'
 import Loader from '~/Layouts/Dashboard/Loader'
 import LoadingDots from '~/Layouts/Dashboard/loading-dots'
 import Modal from '~/components/Modal'
-import { fetcher } from '~/lib/fetcher'
-import { HttpMethod } from '~/types'
+import { fetcher } from 'lib/fetcher'
+import { HttpMethod } from 'types'
 import type { ChangeEvent } from 'react'
-import type { WithSitePost } from '~/types'
-import { placeholderBlurhash } from '~/lib/utils'
+import type { WithSitePost } from 'types'
+import { placeholderBlurhash } from 'lib/utils'
 
 interface SettingsData {
   slug: string

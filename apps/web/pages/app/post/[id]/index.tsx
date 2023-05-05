@@ -7,10 +7,10 @@ import { useState, useEffect, useCallback } from 'react'
 import Layout from '~/Layouts/Dashboard/Layout'
 import Loader from '~/Layouts/Dashboard/Loader'
 import LoadingDots from '~/Layouts/Dashboard/loading-dots'
-import { fetcher } from '~/lib/fetcher'
-import { HttpMethod } from '~/types'
+import { fetcher } from 'lib/fetcher'
+import { HttpMethod } from 'types'
 import type { ChangeEvent } from 'react'
-import type { WithSitePost } from '~/types'
+import type { WithSitePost } from 'types'
 
 interface PostData {
   title: string
