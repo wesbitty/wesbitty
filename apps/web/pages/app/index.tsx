@@ -1,18 +1,18 @@
 import { useState, useEffect, useRef } from 'react'
-import Layout from '~/components/layouts/Dashboard/Layout'
+import Layout from '~/Layouts/Dashboard/Layout'
 import BlurImage from '~/components/images/BlurImage'
 import Modal from '~/components/modal'
-import LoadingDots from '~/components/layouts/Dashboard/loading-dots'
+import LoadingDots from '~/Layouts/Dashboard/loading-dots'
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import useSWR from 'swr'
 import { useDebounce } from 'use-debounce'
 import { fetcher } from '~/lib/fetcher'
-import { HttpMethod } from 'types'
+import { HttpMethod } from '~/types'
 import type { FormEvent } from 'react'
 import type { Site } from '@prisma/client'
-import { Section } from '~/components/widget/Section'
+import { Section } from '~/widget/Section'
 
 export default function AppIndex() {
   const [showModal, setShowModal] = useState<boolean>(false)
@@ -130,7 +130,7 @@ export default function AppIndex() {
           <div className="flex justify-between items-center mt-10 w-full">
             <button
               type="button"
-              className="w-full px-5 py-5 text-sm text-slate-1200 hover:text-black border-t border-gray-300 rounded-bl focus:outline-none focus:ring-0 transition-all ease-in-out duration-150"
+              className="w-full px-5 py-5 text-sm text-gray-600 hover:text-black border-t border-gray-300 rounded-bl focus:outline-none focus:ring-0 transition-all ease-in-out duration-150"
               onClick={() => {
                 setError(null)
                 setShowModal(false)
@@ -145,7 +145,7 @@ export default function AppIndex() {
               className={`${
                 creatingSite || error
                   ? 'cursor-not-allowed text-gray-400 bg-gray-50'
-                  : 'bg-white text-slate-1200 hover:text-black'
+                  : 'bg-white text-gray-600 hover:text-black'
               } w-full px-5 py-5 text-sm border-t border-l border-gray-300 rounded-br focus:outline-none focus:ring-0 transition-all ease-in-out duration-150`}
             >
               {creatingSite ? <LoadingDots /> : 'CREATE SITE'}
@@ -192,7 +192,7 @@ export default function AppIndex() {
                         {site.description}
                       </p>
                       <a
-                        className="font-cal px-3 py-1 tracking-wide rounded bg-gray-200 text-slate-1200 absolute bottom-5 left-10 whitespace-nowrap"
+                        className="font-cal px-3 py-1 tracking-wide rounded bg-gray-200 text-gray-600 absolute bottom-5 left-10 whitespace-nowrap"
                         href={`https://${site.subdomain}.wesbitty.org`}
                         onClick={(e) => e.stopPropagation()}
                         rel="noreferrer"
@@ -216,7 +216,7 @@ export default function AppIndex() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <p className="text-2xl font-cal text-slate-1200">
+                  <p className="text-2xl font-cal text-gray-600">
                     No sites yet. Click &quot;New Site&quot; to create one.
                   </p>
                 </div>
