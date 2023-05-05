@@ -11,6 +11,21 @@
   }
 }
 
+@font-face {
+  font-family: 'custom-font';
+  src: url(./font/CustomFont-Book.woff2) format('woff2'),
+    url(./font/CustomFont-Book.woff) format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'custom-font';
+  src: url(./font/CustomFont-Medium.woff2) format('woff2'),
+    url(./font/CustomFont-Medium.woff) format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
 html {
   scroll-behavior: smooth;
 }
