@@ -1,15 +1,19 @@
+import { signIn } from 'next-auth/react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import LoadingDots from '~/Layouts/Dashboard/loading-dots'
 import toast, { Toaster } from 'react-hot-toast'
-import Form from '~/components/layouts/Dashboard/Form'
+import { Metadata } from '~/utils/Metadata'
+import { NextSeo } from 'next-seo'
 
 const pageTitle = 'Authentication • Wesbitty Inc'
 const description = 'User Management.'
-const logo = './favicon.ico'
 
 export default function Login() {
+  const [loading, setLoading] = useState(false)
+
   // Get error message added by next/auth in URL.
   const { query } = useRouter()
   const { error } = query
@@ -20,54 +24,61 @@ export default function Login() {
   }, [error])
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <Head>
-        <title>{pageTitle}</title>
-        <link rel="icon" href={logo} />
-        <link rel="shortcut icon" type="image/x-icon" href={logo} />
-        <link rel="apple-touch-icon" sizes="180x180" href={logo} />
-        <meta name="theme-color" content="#7b46f6" />
-
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <meta itemProp="name" content={pageTitle} />
-        <meta itemProp="description" content={description} />
-        <meta itemProp="image" content={logo} />
-        <meta name="description" content={description} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={logo} />
-        <meta property="og:type" content="website" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@Wesbitty" />
-        <meta name="twitter:creator" content="@Wesbitty" />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={logo} />
-      </Head>
+    <>
+      <NextSeo
+        title={pageTitle}
+        description={description}
+        openGraph={{
+          title: pageTitle,
+          description: description,
+          url: `${Metadata.Url}/login`,
+          images: [
+            {
+              url: `${Metadata.Url}/brand/og-image.png`,
+            },
+          ],
+        }}
+      />
       <div className="flex h-screen w-screen items-center justify-center bg-gray-50">
         <div className="z-10 w-full max-w-md overflow-hidden rounded-2xl border border-gray-100 shadow-xl">
           <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16">
-            <a href="https://dub.sh">
-              <Image
-                src="/logo.png"
-                alt="Logo"
-                className="h-10 w-10 rounded-full"
-                width={20}
-                height={20}
-              />
-            </a>
-            <h3 className="text-xl font-semibold">Sign In</h3>
+            <Image
+              alt="Platform"
+              className="h-10 w-10 rounded-full"
+              width={20}
+              height={20}
+              src="/brand/logo.png"
+            />
+            <h3 className="text-3xl font-semibold">Wesbitty Inc</h3>
             <p className="text-sm text-gray-500">
-              Use your email and password to sign in
+              The global commerce platform
             </p>
           </div>
-          <Form type="login" />
+
+          <div className="flex flex-col space-y-4 bg-gray-50 px-4 py-8 sm:px-16">
+            <button
+              disabled={loading}
+              onClick={() => {
+                setLoading(true)
+                signIn('github')
+              }}
+              className={`${
+                loading
+                  ? 'cursor-not-allowed border-gray-200 bg-gray-100'
+                  : 'border-black bg-black text-white hover:bg-white hover:text-black'
+              } flex h-10 w-full items-center justify-center rounded-md border text-sm transition-all focus:outline-none`}
+            >
+              {loading ? (
+                <LoadingDots color="#808080" />
+              ) : (
+                <div className="text-center text-sm">Sign In With Github</div>
+              )}
+            </button>
+          </div>
+
+          <Toaster />
         </div>
       </div>
-      <Toaster />
-    </div>
+    </>
   )
 }

@@ -7,8 +7,6 @@ declare module 'next-auth' {
       email?: string | null
       /* The user's unique id number */
       id?: string | null
-      /* The user's unique password number */
-      password?: string
       /*
       The users preferred avatar. 
       Usually provided by the user's OAuth provider of choice
@@ -26,8 +24,6 @@ declare module 'next-auth' {
     email?: string | null
     /* The user's unique id number */
     id?: string
-    /* The user's unique password number */
-    password?: string
     /*
       The users preferred avatar. 
       Usually provided by the user's OAuth provider of choice
