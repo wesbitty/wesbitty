@@ -6,7 +6,7 @@
   "scripts": {
     "prebuild": "rimraf .turbo .next .wesjet",
     "build": "prisma generate && next build",
-    "postbuild": "node ./wesbitty/utils/Sitemap.mjs",
+    "postbuild": "node ./scripts/generate-sitemap.mjs",
     "build:svg": "npx svgr --out-dir components/Icons components/Icons",
     "dev": "prisma generate && next dev",
     "export": "next export",
