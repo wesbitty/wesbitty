@@ -35,7 +35,6 @@ To chat with other community members, you can join the [Wesbitty discord](https:
 
 Our [Code Of Conduct](https://github.com/wesbitty/wesbitty/blob/main/.github/CODE_OF_CONDUCT.md) applies to all Wesbitty community channels.
 
-
 ## Reference
 
 - [Code of Conduct](https://github.com/wesbitty/wesbitty/blob/main/.github/CODE_OF_CONDUCT.md)
