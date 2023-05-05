@@ -22,8 +22,7 @@
   "author": "Wesbitty Inc.",
   "workspaces": [
     "packages/*",
-    "apps/*",
-    "examples/*",
+    "apps/web",
     "tests"
   ],
   "scripts": {
