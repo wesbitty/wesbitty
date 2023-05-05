@@ -1,21 +1,19 @@
 import prettier from 'prettier'
 import { globby } from 'globby'
-import fs from 'fs'
+import { writeFileSync } from 'fs'
 
-async function generateSitemap() {
+async function generate() {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
   const pages = await globby([
     'pages/*.ts',
     'pages/*.tsx',
     'pages/*/*.tsx',
     '!pages/404.tsx',
-    '!wesbitty/data/**/*.mdx',
-    '[Post]/*/*.mdx',
+    '[Post]/**/*.mdx',
     '!pages/index.tsx',
     '!pages/*/index.tsx',
     '!pages/app',
-    '!pages/_app.tsx',
-    '!pages/_sites.tsx',
+    '!pages/_*.tsx',
     '!pages/api',
   ])
 
@@ -23,31 +21,21 @@ async function generateSitemap() {
     <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         ${pages
-          .filter((page) => !page.includes('_document.tsx'))
           .map((page) => {
             const path = page
               .replace('.tsx', '')
               .replace('.mdx', '')
               .replace('pages', '')
-              .replace('public', '')
               .replace('[Post]/blog', '/blog')
               .replace('[Post]/docs', '/docs')
               .replace('/blog/[slug]', '/blog')
               .replace('/docs/[[...slug]]', '/docs')
 
-            let route = path === '/index' ? '' : path
-
-            if (route.includes(`/blog/`)) {
-              const _route = route.replace(`/blog/`, '')
-              const substring = _route.substring(0)
-
-              route = `/blog/`
-            }
+            const route = path === '/index' ? '' : path
 
             return `
             <url>
             <loc>${`https://wesbitty.org${route}`}</loc>
-            <lastModified>${new Date().toUTCString()}</lastModified>
         </url>
             `
           })
@@ -60,7 +48,8 @@ async function generateSitemap() {
     parser: 'html',
   })
 
-  fs.writeFileSync('public/sitemap.xml', formatted)
+  // eslint-disable-next-line no-sync
+  writeFileSync('public/sitemap.xml', formatted)
 }
 
-generateSitemap()
+generate()
