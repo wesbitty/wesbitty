@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
-import Layout from '~/Layouts/Dashboard/Layout'
+import Layout from '~/components/layouts/Dashboard/Layout'
 import BlurImage from '~/components/Image/BlurImage'
-import Modal from '~/components/Modal'
-import LoadingDots from '~/Layouts/Dashboard/loading-dots'
+import Modal from '~/components/modal'
+import LoadingDots from '~/components/layouts/Dashboard/loading-dots'
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
@@ -12,7 +12,7 @@ import { fetcher } from 'lib/fetcher'
 import { HttpMethod } from 'types'
 import type { FormEvent } from 'react'
 import type { Site } from '@prisma/client'
-import { Section } from '~/Widget/Section'
+import { Section } from '~/components/widget/Section'
 
 export default function AppIndex() {
   const [showModal, setShowModal] = useState<boolean>(false)

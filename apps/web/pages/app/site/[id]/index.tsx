@@ -3,12 +3,12 @@ import { useState } from 'react'
 import Link from 'next/link'
 import useSWR from 'swr'
 import BlurImage from '~/components/Image/BlurImage'
-import Layout from '~/Layouts/Dashboard/Layout'
-import LoadingDots from '~/Layouts/Dashboard/loading-dots'
+import Layout from '~/components/layouts/Dashboard/Layout'
+import LoadingDots from '~/components/layouts/Dashboard/loading-dots'
 import { fetcher } from 'lib/fetcher'
 import { HttpMethod } from 'types'
 import type { Post, Site } from '@prisma/client'
-import { Section } from '~/Widget/Section'
+import { Section } from '~/components/widget/Section'
 
 interface SitePostData {
   posts: Array<Post>

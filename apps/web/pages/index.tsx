@@ -1,6 +1,6 @@
-import { Default } from '~/Widget/Default'
-import Container from '~/Widget/Container'
-import { Hero } from '~/components/Features/Hero'
+import { Default } from '~/components/widget/Default'
+import Container from '~/components/widget/Container'
+import { Hero } from '~/components/hero'
 
 export default function Home() {
   return (
