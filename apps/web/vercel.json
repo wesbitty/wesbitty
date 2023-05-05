@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/auth/[...nextauth]": {
-      "excludeFiles": "**/*.html"
-    }
-  }
-}
