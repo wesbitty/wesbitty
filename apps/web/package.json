@@ -12,7 +12,7 @@
     "export": "next export",
     "lint": "next lint",
     "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev --name init",
+    "prisma:migrate": "prisma migrate deploy",
     "prisma:push": "prisma db push",
     "start": "next start",
     "type-check": "tsc"
