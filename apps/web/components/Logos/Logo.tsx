@@ -1,4 +1,4 @@
-import type { WithClassName } from '~/types'
+import type { WithClassName } from 'types'
 
 interface LogoProps extends WithClassName {
   color: string
