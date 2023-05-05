@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/**/*.py": {
+    "api/auth/[...nextauth]": {
       "excludeFiles": "**/*.html"
     }
   }
