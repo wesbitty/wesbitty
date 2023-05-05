@@ -42,8 +42,8 @@ const NavLink: FC<{
       href={url}
       className={`group flex h-8 items-center rounded-md bg-transparent px-3 text-sm font-medium leading-none ${
         active
-          ? 'bg-sky-50 text-sky-900 dark:bg-violet-500/20 dark:text-sky-50'
-          : 'text-slate-1200 hover:bg-gray-50 hover:text-slate-700 dark:text-slate-300 dark:hover:bg-gray-900 dark:hover:text-slate-200'
+          ? 'bg-blue-50 text-blue-900 dark:bg-blue-500/20 dark:text-blue-50'
+          : 'text-gray-600 hover:bg-gray-50 hover:text-gray-500 dark:text-slate-100 dark:hover:bg-gray-900 dark:hover:text-slate-200'
       }`}
       target={isExternalUrl(url) ? '_blank' : undefined}
       rel={isExternalUrl(url) ? 'noreferrer' : undefined}
