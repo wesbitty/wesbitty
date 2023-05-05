@@ -37,8 +37,8 @@
     "pre-commit": "lint-staged",
     "prepare": "husky install",
     "prettier": "prettier --write .",
-    "prisma:generate": "cd ./apps/platform && npm run prisma:generate",
-    "prisma:up": "cd apps/platform && pscale connect wesbitty main",
+    "prisma:generate": "cd ./apps/web && npm run prisma:generate",
+    "prisma:up": "cd apps/web && pscale connect wesbitty main",
     "release": "npm run release --workspaces --if-present",
     "test": "turbo run test"
   },
