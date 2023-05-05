@@ -10,10 +10,9 @@
       "~/data/*": ["wesbitty/data/*"],
       "~/utils/*": ["wesbitty/utils/*"],
       "wesjet/static": ["./.wesjet/static"],
-      "~/lib/*": ["wesbitty/lib/*"],
       "~/styles/*": ["styles/*"],
-      "~/types": ["wesbitty/types/index"],
-      "~/types/*": ["wesbitty/types/*"]
+      "~/types": ["types/index"],
+      "~/types/*": ["types/*"]
     }
   },
   "include": [
