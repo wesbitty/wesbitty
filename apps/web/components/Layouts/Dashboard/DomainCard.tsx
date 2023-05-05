@@ -1,8 +1,8 @@
 import useSWR, { mutate } from 'swr'
 import { useState } from 'react'
 import LoadingDots from '~/Layouts/Dashboard/loading-dots'
-import { fetcher } from '~/lib/fetcher'
-import { HttpMethod } from '~/types'
+import { fetcher } from 'lib/fetcher'
+import { HttpMethod } from 'types'
 import type { Site } from '@prisma/client'
 
 type DomainData = Pick<
