@@ -1,15 +1,16 @@
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter'
-import monokaiCustomTheme from '~/data/CodeEditorTheme'
 import CodeBlockStyles from './CodeBlock.module.css'
-import { Button, IconCopy } from '@wesbitty/ui'
+import { Button, IconCopy, IconCheck } from '@wesbitty/ui'
 import CopyToClipboard from 'react-copy-to-clipboard'
-
-import js from 'react-syntax-highlighter/dist/cjs/languages/hljs/javascript'
+import monokaiCustomTheme from './code'
 import py from 'react-syntax-highlighter/dist/cjs/languages/hljs/python'
 import sql from 'react-syntax-highlighter/dist/cjs/languages/hljs/sql'
+import bash from 'react-syntax-highlighter/dist/cjs/languages/hljs/bash'
+import js from 'react-syntax-highlighter/dist/cjs/languages/hljs/javascript'
+import { useState } from 'react'
 
 interface Props {
-  lang: 'js' | 'sql' | 'py'
+  lang: 'js' | 'sql' | 'py' | 'bash' | 'ts' | 'tsx'
   startingLineNumber?: number
   hideCopy?: boolean
   className?: string
@@ -18,6 +19,15 @@ interface Props {
 }
 
 function CodeBlock(props: Props) {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = () => {
+    setCopied(true)
+    setTimeout(() => {
+      setCopied(false)
+    }, 1000)
+  }
+
   let lang = props.lang
     ? props.lang
     : props.className
@@ -26,6 +36,7 @@ function CodeBlock(props: Props) {
   // force jsx to be js highlighted
   if (lang === 'jsx') lang = 'js'
 
+  SyntaxHighlighter.registerLanguage('bash', bash)
   SyntaxHighlighter.registerLanguage('js', js)
   SyntaxHighlighter.registerLanguage('py', py)
   SyntaxHighlighter.registerLanguage('sql', sql)
@@ -40,10 +51,9 @@ function CodeBlock(props: Props) {
         style={monokaiCustomTheme}
         className={CodeBlockStyles['code-block']}
         customStyle={{
-          padding: 0,
-          fontSize: large ? 18 : 12,
-          lineHeight: large ? 1.2 : 1.2,
-          borderTop: '1px solid #393939',
+          padding: '21px 24px',
+          fontSize: large ? 18 : '0.875rem',
+          lineHeight: large ? 1.6 : 1.4,
           background: '#181818',
         }}
         showLineNumbers={lang === 'cli' ? false : true}
@@ -51,14 +61,11 @@ function CodeBlock(props: Props) {
           paddingTop: '128px',
         }}
         lineNumberStyle={{
-          minWidth: '48px',
-          background: '#1e1e1e',
-          paddingLeft: '21px',
-          marginRight: '12px',
-          color: '#828282',
-          fontSize: large ? 14 : 12,
-          paddingTop: '4px',
-          paddingBottom: '4px',
+          padding: '0px',
+          marginRight: '21px',
+          minWidth: '1.5em',
+          opacity: '0.3',
+          fontSize: large ? 14 : '0.75rem',
         }}
       >
         {props.children}
@@ -67,11 +74,19 @@ function CodeBlock(props: Props) {
         <div className="absolute right-2 top-2 dark">
           <CopyToClipboard text={props.children}>
             <Button
-              type="outline"
-              className="dark:bg-dark-800"
-              icon={<IconCopy />}
+              type="text"
+              icon={
+                copied ? (
+                  <span className="text-brand-900">
+                    <IconCheck strokeWidth={3} />
+                  </span>
+                ) : (
+                  <IconCopy />
+                )
+              }
+              onClick={() => handleCopy()}
             >
-              Copy
+              {/* {copied ? 'Copied' : 'Copy'} */}
             </Button>
           </CopyToClipboard>
         </div>

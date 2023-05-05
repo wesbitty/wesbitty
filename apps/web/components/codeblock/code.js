@@ -11,15 +11,15 @@ const monokaiCustomTheme = {
   },
   'hljs-keyword': {
     color: '#569cd6',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
   },
   'hljs-selector-tag': {
     color: '#569cd6',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
   },
   'hljs-literal': {
     color: '#569cd6',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
   },
   'hljs-strong': {
     color: '#569cd6',
@@ -31,7 +31,7 @@ const monokaiCustomTheme = {
     color: '#66d9ef',
   },
   'hljs-class .hljs-title': {
-    color: 'white',
+    color: 'gray',
   },
   'hljs-attribute': {
     color: '#bf79db',
@@ -56,18 +56,18 @@ const monokaiCustomTheme = {
   },
   'hljs-title': {
     color: '#3ECF8E',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
   },
   'hljs-section': {
     color: '#3ECF8E',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
   },
   'hljs-emphasis': {
     color: '#3ECF8E',
   },
   'hljs-type': {
     color: '#3ECF8E',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
   },
   'hljs-built_in': {
     color: '#3ECF8E',
@@ -106,10 +106,10 @@ const monokaiCustomTheme = {
     color: '#75715e',
   },
   'hljs-doctag': {
-    fontWeight: 'bold',
+    fontWeight: 'normal',
   },
   'hljs-selector-id': {
-    fontWeight: 'bold',
+    fontWeight: 'normal',
   },
 }
 
