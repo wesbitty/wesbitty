@@ -1,5 +1,7 @@
 {
-  "git": {
-    "silent": true
+  "functions": {
+    "api/**/*.py": {
+      "excludeFiles": "**/*.html"
+    }
   }
 }
