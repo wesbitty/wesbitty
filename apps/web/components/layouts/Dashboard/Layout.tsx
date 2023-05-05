@@ -5,14 +5,14 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import { signOut } from 'next-auth/react'
 import Loader from './Loader'
-import useRequireAuth from '~/lib/useRequireAuth'
-import type { WithChildren } from '~/types'
+import useRequireAuth from 'lib/useRequireAuth'
+import type { WithChildren } from 'types'
 import { Popover, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Fragment } from 'react'
 import classNames from 'classnames'
-import { Section } from '~/Widget/Section'
-import Container from '~/Widget/Container'
+import { Section } from '~/components/widget/Section'
+import Container from '~/components/widget/Container'
 interface LayoutProps extends WithChildren {
   siteId?: string
 }

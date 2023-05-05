@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect, useCallback } from 'react'
 import Cookies from 'js-cookie'
-import type { Meta, WithChildren } from '~/types'
+import type { Meta, WithChildren } from 'types'
 
 interface LayoutProps extends WithChildren {
   meta?: Meta

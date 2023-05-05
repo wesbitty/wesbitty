@@ -2,7 +2,7 @@ import { Button, IconBookOpen, Space, Typography } from '@wesbitty/ui'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { Section } from '../Widget/Section'
+import { Section } from './widget/Section'
 
 export const Hero = () => {
   const { basePath } = useRouter()
