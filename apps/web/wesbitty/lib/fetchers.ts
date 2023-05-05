@@ -1,5 +1,5 @@
 import { cache } from 'react'
-import type { _SiteData } from 'types'
+import type { _SiteData } from '~/types'
 import prisma from '~/lib/prisma'
 import { remark } from 'remark'
 import { serialize } from 'next-mdx-remote/serialize'
