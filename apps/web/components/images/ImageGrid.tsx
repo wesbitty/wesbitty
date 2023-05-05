@@ -70,7 +70,7 @@ const ImageGrid = ({
           if (x.link) {
             return (
               <Link href={link}>
-                <div className="cursor-pointer transform duration-100 ease-in-out scale-100 hover:scale-105 hover:shadow-sm hover:z-50">
+                <div className="cursor-pointer transform duration-100 ease-in-out gray-100 hover:gray-100 hover:shadow-sm hover:z-50">
                   {children}
                 </div>
               </Link>

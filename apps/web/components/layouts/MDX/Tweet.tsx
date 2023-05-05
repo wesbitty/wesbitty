@@ -1,7 +1,7 @@
 import BlurImage from '../../images/BlurImage'
 import { format } from 'date-fns'
 import { useState } from 'react'
-import type { TweetData, WithClassName } from 'types'
+import type { TweetData, WithClassName } from '~/types'
 
 function classNames(...classes: Array<string>) {
   return classes.filter(Boolean).join(' ')
