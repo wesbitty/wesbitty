@@ -12,6 +12,7 @@
     "export": "next export",
     "lint": "next lint",
     "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev --name init",
     "prisma:push": "prisma db push",
     "start": "next start",
     "type-check": "tsc"
@@ -113,6 +114,6 @@
     "typescript": "^4.9.5"
   },
   "prisma": {
-    "schema": "wesbitty/data/schema.prisma"
+    "schema": "wesbitty/prisma/schema.prisma"
   }
 }
