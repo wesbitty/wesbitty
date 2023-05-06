@@ -2,51 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://wesbitty.org/pricing</loc>
-    <lastModified>Fri, 05 May 2023 17:35:15 GMT</lastModified>
   </url>
 
   <url>
     <loc>https://wesbitty.org/support</loc>
-    <lastModified>Fri, 05 May 2023 17:35:15 GMT</lastModified>
   </url>
 
   <url>
     <loc>https://wesbitty.org/blog</loc>
-    <lastModified>Fri, 05 May 2023 17:35:15 GMT</lastModified>
   </url>
 
   <url>
     <loc>https://wesbitty.org/brand/assets</loc>
-    <lastModified>Fri, 05 May 2023 17:35:15 GMT</lastModified>
   </url>
 
   <url>
     <loc>https://wesbitty.org/products/wesjet</loc>
-    <lastModified>Fri, 05 May 2023 17:35:15 GMT</lastModified>
+  </url>
+
+  <url>
+    <loc>https://wesbitty.org/_sites/[site]/[slug]</loc>
+  </url>
+
+  <url>
+    <loc>https://wesbitty.org/_sites/[site]/index</loc>
   </url>
 
   <url>
     <loc>https://wesbitty.org/blog/getting-started-with-wesjet</loc>
-    <lastModified>Fri, 05 May 2023 17:35:15 GMT</lastModified>
   </url>
 
   <url>
     <loc>https://wesbitty.org/blog/introducing-wesjet</loc>
-    <lastModified>Fri, 05 May 2023 17:35:15 GMT</lastModified>
   </url>
 
   <url>
     <loc>https://wesbitty.org/blog/introduction-to-wesbitty</loc>
-    <lastModified>Fri, 05 May 2023 17:35:15 GMT</lastModified>
   </url>
 
   <url>
     <loc>https://wesbitty.org/blog/wesbitty-launch-announcement</loc>
-    <lastModified>Fri, 05 May 2023 17:35:15 GMT</lastModified>
   </url>
 
   <url>
     <loc>https://wesbitty.org/blog/what-are-wesjet-templates</loc>
-    <lastModified>Fri, 05 May 2023 17:35:15 GMT</lastModified>
   </url>
 </urlset>
