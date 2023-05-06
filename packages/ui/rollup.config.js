@@ -6,6 +6,7 @@ import typescript from 'rollup-plugin-typescript2'
 import nodeResolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import copy from 'rollup-plugin-copy'
+
 import icons from './src/lib/Icon/icons'
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx']
