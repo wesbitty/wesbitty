@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import Layout from '~/components/layouts/Dashboard/Layout'
+import Layout from '~/Layouts/Dashboard/Layout'
 import BlurImage from '~/components/Image/BlurImage'
 import Modal from '~/components/modal'
 import LoadingDots from '~/components/layouts/Dashboard/loading-dots'

@@ -1,7 +1,7 @@
 import Layout from '~/components/layouts/Dashboard/Layout'
 import toast, { Toaster } from 'react-hot-toast'
 import BlurImage from '~/components/Image/BlurImage'
-import CloudinaryUploadWidget from '~/components/Cloudinary/cloudinary'
+import CloudinaryUploadWidget from '~/components/cloudinary'
 import LoadingDots from '~/components/layouts/Dashboard/loading-dots'
 import { HttpMethod } from 'types'
 import { useState, useEffect } from 'react'
