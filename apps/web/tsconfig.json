@@ -5,15 +5,14 @@
     "baseUrl": ".",
     "paths": {
       "~/components/*": ["components/*"],
-      "~/Layouts/*": ["components/Layouts/*"],
-      "~/Widget/*": ["components/Widget/*"],
+      "~/Layouts/*": ["components/layouts/*"],
+      "~/Widget/*": ["components/widget/*"],
       "~/data/*": ["wesbitty/data/*"],
       "~/utils/*": ["wesbitty/utils/*"],
       "wesjet/static": ["./.wesjet/static"],
-      "~/lib/*": ["wesbitty/lib/*"],
       "~/styles/*": ["styles/*"],
-      "~/types": ["wesbitty/types/index"],
-      "~/types/*": ["wesbitty/types/*"]
+      "~/types": ["types/index"],
+      "~/types/*": ["types/*"]
     }
   },
   "include": [

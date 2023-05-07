@@ -1,10 +1,10 @@
 import type { InferGetStaticPropsType } from 'next'
-import { MakeReload } from 'wesjet/next/hook'
+import { MakeReload } from 'wesjet/hooks'
 import type { FC } from 'react'
 import { allPosts } from 'wesjet/static'
-import { Default } from '~/components/Widget/Default'
+import { Default } from '~/components/widget/Default'
 import { defineStaticProps } from '~/utils/next'
-import ListItem from '~/components/Widget/Blog/item'
+import ListItem from '~/components/widget/Blog/item'
 import { Metadata } from '~/utils/Metadata'
 import { Typography, Space, Tabs } from '@wesbitty/ui'
 import { generateRss } from '~/utils/Rss'
@@ -27,7 +27,7 @@ const BlogPage: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   posts,
 }) => {
   const router = useRouter()
-
+  MakeReload()
   const pageTitle = `Blog - ${Metadata.Name}`
   const pageDescription =
     "The Wesbitty Blog | Updates, Ideas, Tips, Trends to help developers build application's."

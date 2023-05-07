@@ -1,8 +1,8 @@
-import { createPost, deletePost, getPost, updatePost } from '~/lib/api'
+import { createPost, deletePost, getPost, updatePost } from 'lib/api'
 import { unstable_getServerSession } from 'next-auth/next'
 
 import { authOptions } from './auth/[...nextauth]'
-import { HttpMethod } from '~/types'
+import { HttpMethod } from 'types'
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 

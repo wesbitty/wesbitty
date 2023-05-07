@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-import { Default } from '~/Widget/Default'
+import { Default } from '~/components/widget/Default'
 import {
   PricingTableRowDesktop,
   PricingTableRowMobile,

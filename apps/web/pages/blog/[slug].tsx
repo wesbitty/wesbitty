@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { format, parseISO } from 'date-fns'
 import { allPosts, Post } from 'wesjet/static'
-import { Default } from 'components/Widget/Default'
-import CodeBlock from 'components/CodeBlock/CodeBlock'
+import { Default } from '~/components/widget/Default'
+import CodeBlock from '~/components/codeblock/CodeBlock'
 import Quote from '~/components/Quote'
 import ImageGrid from '~/components/Image/ImageGrid'
 import {
@@ -26,8 +26,8 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Metadata } from '~/utils/Metadata'
+import fs from 'fs'
 import { defineStaticProps } from '~/utils/next'
-import gfm from 'remark-gfm'
 
 export async function getStaticPaths() {
   const paths: string[] = allPosts.map((post) => post.slug)
@@ -48,6 +48,7 @@ const components = {
 }
 
 // plugins for next-mdx-remote
+const gfm = require('remark-gfm')
 const slug = require('rehype-slug')
 
 export const getStaticProps = defineStaticProps(async (context) => {
