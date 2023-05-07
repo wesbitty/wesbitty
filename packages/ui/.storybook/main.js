@@ -1,17 +1,22 @@
-/** @type { import('@storybook/react-webpack5').StorybookConfig } */
-const config = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+module.exports = {
+  stories: [
+    '../src/**/*.stories.mdx',
+    '../src/*.stories.@(js|jsx|ts|tsx)',
+    '../src/**/*.stories.@(js|jsx|ts|tsx)',
+  ],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
+    'storybook-dark-mode/register',
+    '@wesbitty/postcss-preset-modules',
   ],
-  framework: {
-    name: '@storybook/react-webpack5',
-    options: {},
-  },
-  docs: {
-    autodocs: 'tag',
+  webpackFinal: async (config) => {
+    // This is for fix webpack storybook get module @emotion/styled/base
+    // It's wrong module, the right module is @emotion/styled-base
+    config.resolve.alias = {
+      '@emotion/styled/base': '@emotion/styled-base',
+    }
+
+    return config
   },
 }
-export default config

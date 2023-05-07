@@ -1,14 +1,28 @@
-/** @type { import('@storybook/react').Preview } */
-const preview = {
-  parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/,
-      },
-    },
+// import css for san serif font styling
+import './preview.css'
+import { ThemeProvider } from './../src/theme/Provider'
+import globalTheme from '../src/theme/globalTheme'
+
+export const parameters = {
+  actions: { argTypesRegex: '^on[A-Z].*' },
+  darkMode: {
+    darkClass: 'dark',
+    lightClass: 'light',
+    stylePreview: true,
   },
 }
 
-export default preview
+// .storybook/preview.js
+
+import React from 'react'
+
+export const decorators = [
+  (Story) => {
+    // console.log('story', Story)
+    return (
+      <ThemeProvider theme={globalTheme}>
+        <Story />
+      </ThemeProvider>
+    )
+  },
+]
