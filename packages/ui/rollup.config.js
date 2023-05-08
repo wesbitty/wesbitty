@@ -68,13 +68,10 @@ export default [
     plugins: [
       external(),
       typescript(),
-      // so JS can be rolled with TS
-      // remove when JS files have been removed
       nodeResolve({
         ignoreGlobal: false,
         include: ['node_modules/**'],
         extensions,
-        // skip: keys(EXTERNALS), // <<-- skip: ['react', 'react-dom']
       }),
       commonjs({
         ignoreGlobal: false,
