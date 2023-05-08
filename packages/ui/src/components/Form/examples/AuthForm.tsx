@@ -128,7 +128,7 @@ const CardForm = () => {
             setSubmitting(false)
           }, 400)
         }}
-        validate={(values: Values) => {
+        validate={(values: any) => {
           const errors: any = {}
           if (!values.jwt_expiry) {
             errors.jwt_expiry = 'This is required'
@@ -835,7 +835,7 @@ const SmtpForm = () => {
             setSubmitting(false)
           }, 400)
         }}
-        validate={(values: Values) => {
+        validate={(values: any) => {
           const errors: any = {}
           if (!values.jwt_expiry) {
             errors.jwt_expiry = 'This is required'
@@ -996,7 +996,7 @@ const TemplatesForm = () => {
             setSubmitting(false)
           }, 400)
         }}
-        validate={(values: Values) => {
+        validate={(values: any) => {
           const errors: any = {}
           if (!values.jwt_expiry) {
             errors.jwt_expiry = 'This is required'
