@@ -37,8 +37,13 @@
     "test": "turbo run test --concurrency=1 --filter=[HEAD^1] --filter=./packages/*"
   },
   "lint-staged": {
-    "package.json": "npm run lint-package",
-    "*.{mts,cts,ts,tsx,yml,js,jsx,mjs,cjs,json,md,mdx,css}": "npm run format"
+    "*.{mts,cts,ts,tsx,yml,js,jsx,mjs,cjs,json,md,mdx,css}": "npm run format",
+    "package.json": "npm run lint-package"
+  },
+  "prettier": {
+    "endOfLine": "auto",
+    "semi": false,
+    "singleQuote": true
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
