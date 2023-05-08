@@ -23,7 +23,7 @@
     "build": "NODE_ENV=production rollup -c",
     "stories": "build-storybook",
     "storybook": "start-storybook -s ./src/static -p 6006",
-    "types": "rimraf types && tsc --declaration --outDir types --declarationMap",
+    "types": "rimraf types && tsc",
     "clean": "rimraf lib types storybook-static",
     "test": "react-scripts test"
   },
