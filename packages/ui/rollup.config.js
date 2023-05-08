@@ -31,7 +31,7 @@ export default [
       dropdown: 'src/components/Dropdown/index.tsx',
       form: 'src/components/Form/index.tsx',
       contextmenu: 'src/components/ContextMenu/index.tsx',
-      space: 'src/components/Space/index.tsx',
+      space: 'src/components/Space.tsx',
       loading: 'src/components/Loading/index.tsx',
       divider: 'src/components/Divider/index.tsx',
       select: 'src/components/Select/index.tsx',
