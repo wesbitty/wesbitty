@@ -1,5 +1,5 @@
 import React, { useEffect, useState, createContext, useContext } from 'react'
-import { wesbittyOauth, Session, User } from '@supabase/supabase-js'
+import { SupabaseClient, Session, User } from '@supabase/supabase-js'
 
 export interface AuthSession {
   user: User | null
