@@ -17,4 +17,6 @@ build
 .wesjet
 
 packages/ui/lib
+packages/ui/src/components/Icon
+packages/ui/types
 storybook-static

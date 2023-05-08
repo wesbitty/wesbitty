@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import globalTheme from '../../../theme/globalTheme'
+// @ts-ignore
+import defaultTheme from '../../../theme/default'
+// @ts-ignore
+// import FormLayoutStyles from './FormLayout.module.css'
 
 type Props = {
   align?: 'left' | 'right'
@@ -57,7 +60,7 @@ export function FormLayout({
   //   // Update the document title using the browser API
   // }, [error])
 
-  const __styles = globalTheme.form_layout
+  const __styles = defaultTheme.form_layout
 
   const flex = layout === 'flex'
 

@@ -1,6 +1,7 @@
 import { HandlerFunction } from '@storybook/addon-actions'
 import React from 'react'
-import styleHandler from '../../theme/handler'
+// @ts-ignore
+// import LinkStyles from './Link.module.css'
 
 interface Props {
   children?: React.ReactNode
@@ -19,18 +20,18 @@ function Link({
   onClick,
   style,
 }: Props) {
-  let __styles = styleHandler('typography')
-
-  let classes = [__styles.link]
-
-  if (className) {
-    classes.push(className)
-  }
+  // let classes = [
+  //   LinkStyles['sbui-typography'],
+  //   LinkStyles['sbui-typography-link'],
+  // ]
+  // if (className) {
+  //   classes.push(className)
+  // }
 
   return (
     <a
       onClick={onClick}
-      className={classes.join(' ')}
+      // className={classes.join(' ')}
       href={href}
       target={target}
       rel="noopener noreferrer"

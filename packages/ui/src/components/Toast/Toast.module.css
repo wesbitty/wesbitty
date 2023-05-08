@@ -79,19 +79,19 @@
   animation-duration: 1500ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  /* transform: rotate(3deg)', */
-  /* transform: rotate(0.3rad)',/ */
-  /* transform: rotate(3grad)', */
-  /* transform: rotate(.03turn)',  */
+  /* transform: rotate(3deg); */
+  /* transform: rotate(0.3rad);/ */
+  /* transform: rotate(3grad); */
+  /* transform: rotate(.03turn);  */
   transform-origin: center center;
 }
 
 @keyframes spin {
   from {
-    transform: rotate(0deg) ',
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg)';
+    transform: rotate(360deg);
   }
 }
 

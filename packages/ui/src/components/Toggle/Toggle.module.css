@@ -5,8 +5,8 @@
 }
 
 .sbui-toggle--active {
-  @apply bg-sky-600;
-  @apply dark:bg-sky-600;
+  @apply bg-brand-600;
+  @apply dark:bg-brand-600;
 }
 
 .sbui-toggle__handle {

@@ -11,7 +11,7 @@
 } */
 
 .sbui-radio-container--card--active {
-  @apply bg-sky-100 bg-opacity-20 border-sky-200 dark:border-sky-200 z-10;
+  @apply bg-brand-100 bg-opacity-20 border-brand-200 dark:border-brand-200 z-10;
 }
 
 /* .sbui-radio-container--card:first-child {
@@ -42,10 +42,10 @@
 /* .sbui-radio {
   @apply h-4 w-4 ml-0 mr-3.5 rounded-2xl border border-solid transition-all;
 
-  @apply text-sky-600 cursor-pointer border-gray-500;
-  @apply focus:ring-sky-500 hover:border-sky-700 focus:outline-none;
+  @apply text-brand-600 cursor-pointer border-gray-500;
+  @apply focus:ring-brand-500 hover:border-brand-700 focus:outline-none;
 
-  @apply dark:bg-transparent dark:hover:border-sky-700;
+  @apply dark:bg-transparent dark:hover:border-brand-700;
 } */
 
 /* .sbui-radio:checked {
@@ -57,7 +57,7 @@
 }
 
 .sbui-radio:checked {
-  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e")',
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
 } */
 
 /* .sbui-radio {
@@ -65,7 +65,7 @@
   -moz-appearance: none;
   appearance: none;
   -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
+  color-adjust: exact;
   background-origin: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;

@@ -26,7 +26,7 @@ export const Default = (args: any) => (
           <Button type="default" size="tiny">
             Clear
           </Button>
-          <h5 className="text-sm text-gray-900">Filter</h5>
+          <h5 className="text-sm text-scale-1200">Filter</h5>
           <Button type="primary">Save</Button>
         </div>
       }

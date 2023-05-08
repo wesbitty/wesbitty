@@ -12,9 +12,10 @@ import {
   IconInbox,
   IconLock,
 } from './../../index'
-import { UserContextProvider, useUser } from './context'
+import { UserContextProvider, useUser } from './UserContext'
 import * as SocialIcons from './Icons'
-import styleHandler from '../../theme/handler'
+// @ts-ignore
+import AuthStyles from './Auth.module.css'
 
 const VIEWS: ViewsMap = {
   SIGN_IN: 'sign_in',
@@ -38,7 +39,7 @@ type ViewType =
 type RedirectTo = undefined | string
 
 export interface Props {
-  wesbittyOauth: SupabaseClient
+  supabaseClient: SupabaseClient
   className?: string
   children?: React.ReactNode
   style?: React.CSSProperties
@@ -54,7 +55,7 @@ export interface Props {
 }
 
 function Auth({
-  wesbittyOauth,
+  supabaseClient,
   className,
   style,
   socialLayout = 'vertical',
@@ -72,10 +73,7 @@ function Auth({
 
   const verticalSocialLayout = socialLayout === 'vertical' ? true : false
 
-  let __styles = styleHandler('auth')
-
-  let containerClasses = [__styles.base]
-
+  let containerClasses = [AuthStyles['sbui-auth']]
   if (className) {
     containerClasses.push(className)
   }
@@ -84,7 +82,7 @@ function Auth({
     <div className={containerClasses.join(' ')} style={style}>
       <Space size={8} direction={'vertical'}>
         <SocialAuth
-          wesbittyOauth={wesbittyOauth}
+          supabaseClient={supabaseClient}
           verticalSocialLayout={verticalSocialLayout}
           providers={providers}
           socialLayout={socialLayout}
@@ -111,7 +109,7 @@ function Auth({
         <Container>
           <EmailAuth
             id={authView === VIEWS.SIGN_UP ? 'auth-sign-up' : 'auth-sign-in'}
-            wesbittyOauth={wesbittyOauth}
+            supabaseClient={supabaseClient}
             authView={authView}
             setAuthView={setAuthView}
             defaultEmail={defaultEmail}
@@ -127,7 +125,7 @@ function Auth({
       return (
         <Container>
           <ForgottenPassword
-            wesbittyOauth={wesbittyOauth}
+            supabaseClient={supabaseClient}
             setAuthView={setAuthView}
             redirectTo={redirectTo}
           />
@@ -138,7 +136,7 @@ function Auth({
       return (
         <Container>
           <MagicLink
-            wesbittyOauth={wesbittyOauth}
+            supabaseClient={supabaseClient}
             setAuthView={setAuthView}
             redirectTo={redirectTo}
           />
@@ -148,7 +146,7 @@ function Auth({
     case VIEWS.UPDATE_PASSWORD:
       return (
         <Container>
-          <UpdatePassword wesbittyOauth={wesbittyOauth} />
+          <UpdatePassword supabaseClient={supabaseClient} />
         </Container>
       )
 
@@ -160,7 +158,7 @@ function Auth({
 function SocialAuth({
   className,
   style,
-  wesbittyOauth,
+  supabaseClient,
   children,
   socialLayout = 'vertical',
   socialColors = false,
@@ -172,7 +170,7 @@ function SocialAuth({
   magicLink,
   ...props
 }: Props) {
-  const Providerbg: any = {
+  const buttonStyles: any = {
     azure: {
       backgroundColor: '#008AD7',
       color: 'white',
@@ -216,11 +214,9 @@ function SocialAuth({
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
-  let __styles = styleHandler('auth')
-
   const handleProviderSignIn = async (provider: Provider) => {
     setLoading(true)
-    const { error } = await wesbittyOauth.auth.signIn(
+    const { error } = await supabaseClient.auth.signIn(
       { provider },
       { redirectTo }
     )
@@ -233,7 +229,10 @@ function SocialAuth({
       {providers && providers.length > 0 && (
         <React.Fragment>
           <Space size={4} direction={'vertical'}>
-            <Typography.Text type="secondary" className={__styles.label}>
+            <Typography.Text
+              type="secondary"
+              className={AuthStyles['sbui-auth-label']}
+            >
               Sign in with
             </Typography.Text>
             <Space size={2} direction={socialLayout}>
@@ -250,8 +249,8 @@ function SocialAuth({
                       type="default"
                       shadow
                       size={socialButtonSize}
-                      style={socialColors ? Providerbg[provider] : {}}
-                      icon={AuthIcon ? <AuthIcon /> : ''}
+                      style={socialColors ? buttonStyles[provider] : {}}
+                      icon={<AuthIcon />}
                       loading={loading}
                       onClick={() => handleProviderSignIn(provider)}
                       className="flex items-center"
@@ -263,7 +262,7 @@ function SocialAuth({
               })}
             </Space>
           </Space>
-          {!onlyThirdPartyProviders && <Divider>Or Continue With</Divider>}
+          {!onlyThirdPartyProviders && <Divider>or continue with</Divider>}
         </React.Fragment>
       )}
     </Space>
@@ -278,7 +277,7 @@ function EmailAuth({
   setAuthView,
   setDefaultEmail,
   setDefaultPassword,
-  wesbittyOauth,
+  supabaseClient,
   redirectTo,
   magicLink,
 }: {
@@ -289,7 +288,7 @@ function EmailAuth({
   setAuthView: any
   setDefaultEmail: (email: string) => void
   setDefaultPassword: (password: string) => void
-  wesbittyOauth: SupabaseClient
+  supabaseClient: SupabaseClient
   redirectTo?: RedirectTo
   magicLink?: boolean
 }) {
@@ -316,7 +315,7 @@ function EmailAuth({
     setLoading(true)
     switch (authView) {
       case 'sign_in':
-        const { error: signInError } = await wesbittyOauth.auth.signIn(
+        const { error: signInError } = await supabaseClient.auth.signIn(
           {
             email,
             password,
@@ -326,20 +325,17 @@ function EmailAuth({
         if (signInError) setError(signInError.message)
         break
       case 'sign_up':
-        const {
-          user: signUpUser,
-          session: signUpSession,
-          error: signUpError,
-        } = await wesbittyOauth.auth.signUp(
-          {
-            email,
-            password,
-          },
-          { redirectTo }
-        )
+        const { error: signUpError, data: signUpData } =
+          await supabaseClient.auth.signUp(
+            {
+              email,
+              password,
+            },
+            { redirectTo }
+          )
         if (signUpError) setError(signUpError.message)
-        // Check if session is null -> email confirmation setting is turned on
-        else if (signUpUser && !signUpSession)
+        // checking if it has access_token to know if email verification is disabled
+        else if (signUpData?.hasOwnProperty('confirmation_sent_at'))
           setMessage('Check your email for the confirmation link.')
         break
     }
@@ -457,11 +453,11 @@ function EmailAuth({
 
 function MagicLink({
   setAuthView,
-  wesbittyOauth,
+  supabaseClient,
   redirectTo,
 }: {
   setAuthView: any
-  wesbittyOauth: SupabaseClient
+  supabaseClient: SupabaseClient
   redirectTo?: RedirectTo
 }) {
   const [email, setEmail] = useState('')
@@ -474,7 +470,10 @@ function MagicLink({
     setError('')
     setMessage('')
     setLoading(true)
-    const { error } = await wesbittyOauth.auth.signIn({ email }, { redirectTo })
+    const { error } = await supabaseClient.auth.signIn(
+      { email },
+      { redirectTo }
+    )
     if (error) setError(error.message)
     else setMessage('Check your email for the magic link')
     setLoading(false)
@@ -520,11 +519,11 @@ function MagicLink({
 
 function ForgottenPassword({
   setAuthView,
-  wesbittyOauth,
+  supabaseClient,
   redirectTo,
 }: {
   setAuthView: any
-  wesbittyOauth: SupabaseClient
+  supabaseClient: SupabaseClient
   redirectTo?: RedirectTo
 }) {
   const [email, setEmail] = useState('')
@@ -537,7 +536,7 @@ function ForgottenPassword({
     setError('')
     setMessage('')
     setLoading(true)
-    const { error } = await wesbittyOauth.auth.api.resetPasswordForEmail(
+    const { error } = await supabaseClient.auth.api.resetPasswordForEmail(
       email,
       { redirectTo }
     )
@@ -584,7 +583,11 @@ function ForgottenPassword({
   )
 }
 
-function UpdatePassword({ wesbittyOauth }: { wesbittyOauth: SupabaseClient }) {
+function UpdatePassword({
+  supabaseClient,
+}: {
+  supabaseClient: SupabaseClient
+}) {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [message, setMessage] = useState('')
@@ -595,7 +598,7 @@ function UpdatePassword({ wesbittyOauth }: { wesbittyOauth: SupabaseClient }) {
     setError('')
     setMessage('')
     setLoading(true)
-    const { error } = await wesbittyOauth.auth.update({ password })
+    const { error } = await supabaseClient.auth.update({ password })
     if (error) setError(error.message)
     else setMessage('Your password has been updated')
     setLoading(false)

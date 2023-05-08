@@ -24,56 +24,54 @@
   "scripts": {
     "postinstall": "patch-package",
     "prepare": "husky install",
-    "pre-commit": "lint-staged",
-    "build": "turbo run build",
-    "build:app": "turbo run build --filter={apps/web}",
-    "dev": "turbo run dev --filter={apps/web}",
+    "build": "turbo run build --filter=ui --filter=./examples/*",
+    "build:app": "turbo run build --filter=web",
+    "dev": "turbo run dev --parallel --continue --filter=web...",
     "lint": "eslint . --ext .ts --fix",
     "lint-package": "sort-package-json",
-    "prettier": "prettier --write .",
-    "clean": "turbo run clean",
-    "schema:generate": "cd ./apps/web && npx prisma generate",
-    "schema:up": "cd apps/web && pscale connect wesbitty main",
-    "release": "npm run release --workspaces --if-present",
-    "test": "turbo run test"
+    "format": "prettier --write .",
+    "clean": "turbo run clean --no-cache",
+    "prisma-generate": "cd ./apps/web && npx prisma generate",
+    "pscale-up": "cd apps/web && pscale connect wesbitty main",
+    "release": "release",
+    "test": "turbo run test --concurrency=1 --filter=[HEAD^1] --filter=./packages/*"
   },
   "lint-staged": {
-    "package.json": [
-      "npm run lint-package"
-    ],
-    "*.{mts,cts,ts,tsx,yml,js,jsx,mjs,cjs,json,md,mdx,css}": [
-      "prettier --write",
-      "git add"
-    ]
+    "package.json": "npm run lint-package",
+    "*.{mts,cts,ts,tsx,yml,js,jsx,mjs,cjs,json,md,mdx,css}": "npm run format"
   },
   "devDependencies": {
-    "@babel/cli": "^7.21.0",
-    "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.19.1",
-    "@babel/preset-typescript": "^7.16.6",
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12",
     "@types/fs-extra": "^9.0.1",
+    "@types/jest": "^28.1.3",
+    "@types/node": "^17.0.25",
     "auto": "^9.50.1",
     "chromatic": "^5.0.0",
     "cross-env": "^7.0.2",
     "dotenv-cli": "^3.1.0",
-    "eslint": "^8.31.0",
+    "eslint": "^8.30.0",
     "eslint-plugin-wesjet": "^0.0.34-rc.1",
     "husky": "^8.0.3",
-    "jest": "^27.3.1",
+    "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1",
+    "jest-watch-typeahead": "^1.1.0",
     "lint-staged": "^13.2.1",
     "patch-package": "^6.4.7",
-    "prettier": "^2.5.1",
+    "prettier": "^2.8.1",
+    "rimraf": "^5.0.0",
     "seedrandom": "^3.0.5",
     "sort-package-json": "^1.51.0",
     "ts-loader": "^7.0.5",
     "ts-node": "^9.1.1",
     "ts-patch": "^2.1.0",
-    "turbo": "^1.9.3",
-    "typescript": "^4.9.5"
+    "turbo": "1.8.8",
+    "typescript": "^4.9.4"
   },
   "engines": {
-    "node": ">=14",
-    "npm": ">=6"
+    "node": "^16.13.0 || ^18.12.0"
   },
   "auto": {
     "plugins": [

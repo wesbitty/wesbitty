@@ -1,30 +1,16 @@
-// GENERAL
-export * from './components/Button'
+// // GENERAL
+export * from './components/Button/index'
 export * from './components/Typography/index'
 export * from './components/Icon/index'
 // export * from './components/Image/index'
 
-// FORM
-export * from './components/Select'
-export * from './components/Listbox/index'
-export * from './components/Checkbox/index'
-export * from './components/Input'
-export * from './components/InputNumber/index'
-export * from './components/Radio/index'
-export * from './components/Toggle/index'
-export * from './components/Upload/index'
-export * from './components/Form/index'
-
 // DISPLAYS
 export * from './components/Card/index'
-export * from './components/Badge'
-export * from './components/Tabs'
-export * from './components/Alert'
-export * from './components/Accordion'
+export * from './components/Badge/index'
+export * from './components/Tabs/index'
+export * from './components/Alert/index'
+export * from './components/Accordion/index'
 export * from './components/Collapsible/index'
-
-export * from './components/Header'
-export * from './theme/ColorScheme/index'
 
 // NAV
 export * from './components/Menu/index'
@@ -32,18 +18,27 @@ export * from './components/Menu/index'
 // OVERLAYS
 export * from './components/Modal/index'
 export * from './components/SidePanel/index'
-export * from './components/Dropdown'
+export * from './components/Dropdown/index'
+export * from './components/ContextMenu/index'
 export * from './components/Popover/index'
 // export * from './components/Toast/index'
 
 // UTILITIES
-export * from './components/Space'
-export * from './components/Loading'
-export * from './components/Divider'
-export * from './theme/Provider/index'
+export * from './components/Space/index'
+export * from './components/Loading/index'
+export * from './components/Divider/index'
+export * from './theme/provider/index'
 
-// AUTH
-// export * from './components/Auth/index'
+// DATA ENTRY
+export * from './components/Select/index'
+export * from './components/Listbox/index'
+export * from './components/Checkbox/index'
+export * from './components/Input/index'
+export * from './components/InputNumber/index'
+export * from './components/Radio/index'
+export * from './components/Toggle/index'
+export * from './components/Upload/index'
+export * from './components/Form/index'
 
 // ICONS
 export * from './components/Icon/icons/IconActivity/index'

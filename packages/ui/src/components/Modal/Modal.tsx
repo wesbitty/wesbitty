@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 // @ts-ignore
 import ModalStyles from './Modal.module.css'
-import { Button, IconX, Typography, Space } from '../../index'
+import { Button, IconX, Typography, Space } from './../../index'
 import { AnimationTailwindClasses } from '../../types'
 
 import * as Dialog from '@radix-ui/react-dialog'

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FormLayout } from '../../lib/Layout/FormLayout'
 import { useFormContext } from '../Form/FormContext'
 
-import defaultTheme from '../../theme/globalTheme'
+import defaultTheme from '../../theme/default'
 import styleHandler from '../../theme/handler'
 
 interface Props extends Omit<React.HTMLAttributes<HTMLButtonElement>, 'size'> {

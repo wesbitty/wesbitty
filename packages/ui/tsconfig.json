@@ -1,32 +1,26 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
-    "module": "ESNext",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "preserveConstEnums": true,
+    "target": "es6",
+    "module": "esnext",
     "declaration": true,
     "rootDir": "./src",
     "outDir": "./types",
-    "strict": false,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "preserveConstEnums": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": false,
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./*"]
-    }
+    "noEmit": true
   },
   "include": ["src/"],
-  "exclude": [
-    "node_modules",
-    "src/_tests_",
-    "src/stories",
-    "src/components/*/*.stories.tsx"
-  ]
+  "exclude": ["node_modules"]
 }

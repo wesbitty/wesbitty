@@ -2,22 +2,26 @@
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**", ".wesjet/**"],
-      "dependsOn": ["^build"]
-    },
-    "test": {
-      "outputs": ["coverage/**"],
-      "dependsOn": []
+      "dependsOn": ["^build"],
+      "outputs": [
+        "packages/ui/lib/**",
+        "packages/ui/types/**",
+        ".next/**",
+        "!.next/cache/**",
+        ".wesjet/**"
+      ]
     },
     "lint": {
       "dependsOn": ["^build"]
     },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
     "clean": {
       "cache": false
+    },
+    "dev": {
+      "cache": false
+    },
+    "test": {
+      "outputs": []
     }
   }
 }

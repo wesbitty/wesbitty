@@ -10,7 +10,7 @@
   @apply dark:bg-transparent dark:text-input-value-dark dark:border-input-border-dark;
   @apply dark:focus:border-input-border-focus-dark dark:focus:ring-input-border-focus-dark;
 
-  /* box-shadow: 0 0 0 2px rgba(255, 255, 255, 0)', */
+  /* box-shadow: 0 0 0 2px rgba(255, 255, 255, 0); */
   font-family: inherit;
   transition: box-shadow 0.3s ease-in-out;
 

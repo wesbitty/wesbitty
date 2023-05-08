@@ -1,6 +1,7 @@
 import React from 'react'
 import styleHandler from '../../theme/handler'
-import { IconAlertCircle } from '../../index'
+// @ts-ignore
+import { IconAlertCircle } from './../../index'
 
 interface Props {
   style?: React.CSSProperties

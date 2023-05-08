@@ -3,5 +3,5 @@
 }
 
 .sbui-upload-dragger--dragged {
-  @apply bg-sky-100;
+  @apply bg-brand-100;
 }

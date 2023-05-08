@@ -4,10 +4,10 @@ import { RadioContext } from './RadioContext'
 
 import { useFormContext } from '../Form/FormContext'
 
-import defaultTheme from '../../theme/globalTheme'
+import defaultTheme from '../../theme/default'
 import styleHandler from '../../theme/handler'
 
-import randomIdGenerator from '../../lib/randomIdGenerator'
+import randomIdGenerator from './../../utils/randomIdGenerator'
 
 interface GroupProps {
   allowedValues?: any

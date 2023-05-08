@@ -1,23 +1,11 @@
-const babel = require('@babel/core')
-
 module.exports = {
-  stories: [
-    '../src/**/*.stories.mdx',
-    '../src/stories/*.stories.tsx',
-    '../src/**/*.stories.tsx',
-  ],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-postcss',
-    'storybook-dark-mode/register',
-    '@wesbitty/postcss-preset-modules',
-  ],
-  webpackFinal: async (config) => {
-    config.resolve.alias = {
-      '@emotion/styled/base': '@emotion/styled-base',
-    }
-
-    return config
+  stories: ['../components/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  features: {
+    postcss: false,
+  },
+  // webpackFinal is modified by nextjs/storybook-plugin to include node-modules and nextjs/babel
+  typescript: {
+    reactDocgen: 'react-docgen',
   },
 }
