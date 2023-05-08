@@ -24,12 +24,9 @@
     "**/build": true
   },
   "deepscan.enable": true,
-
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-
-  "css.lint.unknownAtRules": "ignore",
-
+  // Set the default
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": false,
