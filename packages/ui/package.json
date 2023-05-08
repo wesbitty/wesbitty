@@ -23,7 +23,7 @@
     "prebuild": "node --experimental-modules src/lib/Icon/generate.js",
     "build": "rollup -c",
     "build-storybook": "build-storybook",
-    "gen:doc": "tsc --declaration --outDir docs --declarationMap",
+    "types": "bash -c 'rm -rf types' && tsc",
     "build:tailwind": "tailwindcss build -i src/theme/main.css -o src/theme/global.css -c tailwind.config.js",
     "storybook": "start-storybook -s ./public -p 6006",
     "clean": "bash -c 'rm -rf lib docs storybook-static'",
