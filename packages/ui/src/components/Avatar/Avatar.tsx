@@ -4,7 +4,7 @@ import { IconUser } from '../Icon/icons/IconUser'
 // @ts-ignore
 import AvatarStyles from './Avatar.module.css'
 
-interface Props {
+type Props = {
   children?: React.ReactNode
   src?: string | undefined
   style?: React.CSSProperties

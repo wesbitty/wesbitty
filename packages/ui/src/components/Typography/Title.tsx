@@ -2,7 +2,7 @@ import React from 'react'
 // @ts-ignore
 // import TitleStyles from './Title.module.css'
 
-interface Props {
+type Props = {
   className?: string
   level?: 1 | 2 | 3 | 4 | 5
   children: any

@@ -1,7 +1,7 @@
 // import css for san serif font styling
 import './preview.css'
-import { ThemeProvider } from '../src/components/ThemeProvider'
-import CustomTheme from '../src/lib/theme/defaultTheme'
+import { ThemeProvider } from '../src/theme/provider'
+import CustomTheme from '../src/theme/default'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

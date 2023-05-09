@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
@@ -10,17 +8,28 @@
     "target": "es6",
     "module": "esnext",
     "declaration": true,
-    "rootDir": "./src",
-    "outDir": "./types",
+    "rootDir": "src",
+    "outDir": "types",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
+    "inlineSources": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "esModuleInterop": true,
     "strict": false,
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
-    "noEmit": true
+    "noImplicitAny": false,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"]
+    }
   },
   "include": ["src/"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "src/components/*/*.test.js",
+    "src/components/*/*.stories.tsx"
+  ]
 }

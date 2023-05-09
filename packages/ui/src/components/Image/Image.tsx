@@ -2,7 +2,7 @@ import React from 'react'
 // @ts-ignore
 // import ImageStyles from './Image.module.css'
 
-interface Props {
+type Props = {
   source?: string
   style?: React.CSSProperties
   className?: string

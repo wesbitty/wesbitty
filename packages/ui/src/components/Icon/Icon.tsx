@@ -6,7 +6,7 @@ import { IconContext } from './IconContext'
 
 const IconStyles = {}
 
-interface Props {
+type Props = {
   className?: string
   size?:
     | 'tiny'

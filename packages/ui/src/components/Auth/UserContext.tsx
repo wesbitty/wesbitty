@@ -8,7 +8,7 @@ export interface AuthSession {
 
 const UserContext = createContext<AuthSession>({ user: null, session: null })
 
-export interface Props {
+export type Props = {
   supabaseClient: SupabaseClient
   [propName: string]: any
 }

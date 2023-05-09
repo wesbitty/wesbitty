@@ -4,7 +4,7 @@ import { IconContext } from './IconContext'
 // @ts-ignore
 // import IconStyles from './Icon.module.css'
 
-interface Props {
+type Props = {
   className?: string
   size?:
     | 'tiny'

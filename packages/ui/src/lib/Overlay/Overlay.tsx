@@ -8,7 +8,7 @@ import OverlayStyles from './Overlay.module.css'
 
 import { Transition } from '@headlessui/react'
 
-interface Props {
+type Props = {
   visible?: boolean
   overlay?: React.ReactNode
   children?: React.ReactNode

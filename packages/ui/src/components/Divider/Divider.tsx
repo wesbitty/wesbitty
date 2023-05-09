@@ -2,7 +2,7 @@ import React from 'react'
 // @ts-ignore
 // import DividerStyles from './Divider.module.css'
 
-interface Props {
+type Props = {
   children?: React.ReactNode
   className?: string
   light?: boolean

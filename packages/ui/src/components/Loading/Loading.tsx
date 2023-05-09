@@ -2,7 +2,7 @@ import React from 'react'
 import styleHandler from '../../theme/handler'
 import { IconLoader } from './../../index'
 
-interface Props {
+type Props = {
   children: React.ReactNode
   active: boolean
 }

@@ -2,7 +2,7 @@ import { IconChevronRight } from '../Icon/icons/IconChevronRight'
 // @ts-ignore
 import BreadcrumbStyle from './Breadcrumb.module.css'
 
-interface Props {
+type Props = {
   children?: [React.ReactNode]
   className?: string
   style?: React.CSSProperties

@@ -25,7 +25,7 @@ const VIEWS: ViewsMap = {
   UPDATE_PASSWORD: 'update_password',
 }
 
-interface ViewsMap {
+type ViewsMap = {
   [key: string]: ViewType
 }
 
@@ -38,7 +38,7 @@ type ViewType =
 
 type RedirectTo = undefined | string
 
-export interface Props {
+export type Props = {
   supabaseClient: SupabaseClient
   className?: string
   children?: React.ReactNode
@@ -325,17 +325,20 @@ function EmailAuth({
         if (signInError) setError(signInError.message)
         break
       case 'sign_up':
-        const { error: signUpError, data: signUpData } =
-          await supabaseClient.auth.signUp(
-            {
-              email,
-              password,
-            },
-            { redirectTo }
-          )
+        const {
+          user: signUpUser,
+          session: signUpSession,
+          error: signUpError,
+        } = await supabaseClient.auth.signUp(
+          {
+            email,
+            password,
+          },
+          { redirectTo }
+        )
         if (signUpError) setError(signUpError.message)
-        // checking if it has access_token to know if email verification is disabled
-        else if (signUpData?.hasOwnProperty('confirmation_sent_at'))
+        // Check if session is null -> email confirmation setting is turned on
+        else if (signUpUser && !signUpSession)
           setMessage('Check your email for the confirmation link.')
         break
     }

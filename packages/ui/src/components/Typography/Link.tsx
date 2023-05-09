@@ -3,7 +3,7 @@ import React from 'react'
 // @ts-ignore
 // import LinkStyles from './Link.module.css'
 
-interface Props {
+type Props = {
   children?: React.ReactNode
   target?: '_blank' | '_self' | '_parent' | '_top' | 'framename'
   href?: string

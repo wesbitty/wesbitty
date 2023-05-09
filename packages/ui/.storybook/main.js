@@ -1,11 +1,15 @@
 module.exports = {
-  stories: ['../components/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
-  features: {
-    postcss: false,
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {},
   },
-  // webpackFinal is modified by nextjs/storybook-plugin to include node-modules and nextjs/babel
-  typescript: {
-    reactDocgen: 'react-docgen',
+  // OR whatever framework you're using
+  features: {
+    storyStoreV7: true,
+  },
+  docs: {
+    autodocs: true,
   },
 }

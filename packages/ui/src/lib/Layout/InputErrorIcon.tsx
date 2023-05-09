@@ -3,7 +3,7 @@ import styleHandler from '../../theme/handler'
 // @ts-ignore
 import { IconAlertCircle } from './../../index'
 
-interface Props {
+type Props = {
   style?: React.CSSProperties
   size?: 'tiny' | 'small' | 'medium' | 'large' | 'xlarge'
 }

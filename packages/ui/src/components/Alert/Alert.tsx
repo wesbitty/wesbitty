@@ -10,7 +10,7 @@ import styleHandler from '../../theme/handler'
 import { IconAlertOctagon } from '../Icon/icons/IconAlertOctagon'
 import { IconCheckCircle } from '../Icon/icons/IconCheckCircle'
 
-interface Props {
+type Props = {
   variant?: 'success' | 'danger' | 'warning' | 'info' | 'neutral'
   className?: string
   title: string

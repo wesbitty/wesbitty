@@ -1,6 +1,6 @@
 import styleHandler from '../../theme/handler'
 
-interface Props {
+type Props = {
   color?:
     | 'brand'
     | 'scale'

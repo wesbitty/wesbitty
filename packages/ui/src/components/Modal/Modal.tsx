@@ -24,7 +24,7 @@ interface RadixProps
       | 'onInteractOutside'
     > {}
 
-interface Props {
+type Props = {
   children?: React.ReactNode
   customFooter?: React.ReactNode
   closable?: boolean

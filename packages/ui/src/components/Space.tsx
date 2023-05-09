@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Space({
+export function Space({
   direction,
   size = 2,
   className,
@@ -37,5 +37,3 @@ function Space({
     </div>
   )
 }
-
-export default Space
