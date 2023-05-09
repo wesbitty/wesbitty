@@ -4,6 +4,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@wesbitty/storybook-theming',
+    '@storybook/addon-postcss',
     'storybook-dark-mode',
   ],
   framework: {
