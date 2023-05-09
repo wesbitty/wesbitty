@@ -1,7 +1,8 @@
 module.exports = {
+  sourceType: 'unambiguous',
   presets: [
     [
-      '@babel/env',
+      '@babel/preset-env',
       {
         modules: false,
         loose: true,
@@ -10,6 +11,7 @@ module.exports = {
         },
       },
     ],
+    '@babel/preset-typescript',
     '@babel/preset-react',
   ],
   plugins: ['@babel/plugin-transform-runtime', 'add-react-displayname'],
