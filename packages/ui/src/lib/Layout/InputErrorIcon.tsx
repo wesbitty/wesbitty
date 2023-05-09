@@ -1,6 +1,5 @@
 import React from 'react'
 import styleHandler from '../../theme/handler'
-// @ts-ignore
 import { IconAlertCircle } from './../../index'
 
 type Props = {

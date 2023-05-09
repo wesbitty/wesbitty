@@ -94,7 +94,7 @@ const default___animations = {
  *
  */
 
-export default {
+const defaultTheme = {
   /*
    * Accordion
    *
@@ -1603,3 +1603,5 @@ export default {
     `,
   },
 }
+
+export default defaultTheme

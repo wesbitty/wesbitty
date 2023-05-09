@@ -42,7 +42,7 @@ export default [
       toggle: 'src/components/Toggle/index.tsx',
       // upload: 'src/components/Upload/index.tsx',
       // auth: 'src/components/Auth/index.tsx',
-      // auth: 'src/components/ThemeProvider/index.tsx',
+      // auth: 'src/theme/provider/index.tsx',
       ...icons,
     },
     external: [

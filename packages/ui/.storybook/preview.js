@@ -1,7 +1,8 @@
 // import css for san serif font styling
 import './preview.css'
 import { ThemeProvider } from '../src/theme/provider'
-import CustomTheme from '../src/theme/default'
+import defaultTheme from '../src/theme/default'
+import React from 'react'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -12,15 +13,10 @@ export const parameters = {
   },
 }
 
-// .storybook/preview.js
-
-import React from 'react'
-
 export const decorators = [
   (Story) => {
-    // console.log('story', Story)
     return (
-      <ThemeProvider theme={CustomTheme}>
+      <ThemeProvider theme={defaultTheme}>
         <Story />
       </ThemeProvider>
     )

@@ -1,15 +1,7 @@
-// import React, { useRef, useState } from 'react'
-// import defaultTheme from '../../theme/defaultTheme'
-// import { ThemeProvider } from './../ThemeProvider'
-// import customThemeExample from '../../lib/theme/customThemeExample'
-
-import { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Button, IconPackage, IconChevronRight } from './../../index'
 
-export default {
-  title: 'General/Button',
-  component: Button,
-}
+export default { component: Button }
 
 export const Default = (args: any) => <Button {...args}>Button text</Button>
 export const withStyles = (args: any) => <Button {...args}>Button text</Button>

@@ -38,16 +38,6 @@ const ThemeProvider: React.FC<Props> = ({
   // usePreferences = false,
 }) => {
   const mergedTheme = mergeDeep(defaultTheme, customTheme)
-  // const [mode, setMode, toggleMode] = useDarkMode(usePreferences)
-
-  // useLayoutEffect(() => {
-  //   if (dark) {
-  //     if (setMode != null) {
-  //       setMode('dark')
-  //     }
-  //     document.documentElement.classList.add(`dark`)
-  //   }
-  // }, [dark])
 
   const value = useMemo(
     () => ({
@@ -58,7 +48,6 @@ const ThemeProvider: React.FC<Props> = ({
     []
   )
 
-  // console.log('defaultTheme', defaultTheme)
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }
 
