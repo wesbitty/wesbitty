@@ -60,7 +60,7 @@ To get started, execute the following:
 
 ### Developing
 
-[Wesbitty](https://wesbitty.org) uses [Lerna](https://lerna.js.org) & [Npm](https://docs.npmjs.com) to manage and run this monorepo.
+[Wesbitty](https://wesbitty.org) uses [Turbo](https://turbo.build) & [Npm](https://docs.npmjs.com) to manage and run this monorepo.
 
 1. Install the dependences in the root of the repo.
 
@@ -70,7 +70,7 @@ To get started, execute the following:
 
 2. You can then run the apps simultaneously with the following.
    ```sh
-   npm run dev # start all the applications
+   npm run dev
    ```
 
 Then visit, and edit, any of the following sites:
