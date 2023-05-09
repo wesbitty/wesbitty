@@ -33,10 +33,10 @@ The [Wesbitty Community](https://github.com/wesbitty/wesbitty/discussions) can b
 
 To chat with other community members, you can join the [Wesbitty discord](https://discord.com).
 
-Our [Code Of Conduct](https://github.com/wesbitty/wesbitty/blob/main/.github/CODE_OF_CONDUCT.md) applies to all Wesbitty community channels.
+Our [Code Of Conduct](https://github.com/wesbitty/wesbitty/blob/main/CODE_OF_CONDUCT.md) applies to all Wesbitty community channels.
 
 ## Reference
 
-- [Code of Conduct](https://github.com/wesbitty/wesbitty/blob/main/.github/CODE_OF_CONDUCT.md)
+- [Code of Conduct](https://github.com/wesbitty/wesbitty/blob/main/CODE_OF_CONDUCT.md)
 - [Contributing Guidelines](https://github.com/wesbitty/wesbitty/blob/main/CONTRIBUTING.md)
 - [Apache 2.0 License](./LICENSE)
