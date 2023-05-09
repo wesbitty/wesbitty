@@ -1,6 +1,6 @@
 // import css for san serif font styling
 import './preview.css'
-import { ThemeProvider } from '../src/theme/provider'
+import { ThemeProvider } from '../src/theme'
 import defaultTheme from '../src/theme/default'
 import React from 'react'
 

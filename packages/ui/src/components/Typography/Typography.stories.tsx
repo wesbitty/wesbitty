@@ -12,7 +12,7 @@ import { Space } from '../../index'
 const { Title, Text, Link } = Typography
 
 export default {
-  title: 'General/Typography',
+  title: 'Elements/Typography',
   component: Typography,
 }
 

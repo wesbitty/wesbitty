@@ -1,7 +1,7 @@
 import { ThemeDecorator } from './ThemeDecorator'
 
-addDecorator(withKnobs) // inbuilt storybook addon decorator
-addDecorator(ThemeDecorator) // custom decorator
+addDecorator(withKnobs)
+addDecorator(ThemeDecorator)
 
 configure(() => {
   loadStories()

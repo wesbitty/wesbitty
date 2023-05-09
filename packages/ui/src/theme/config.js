@@ -8,18 +8,12 @@ const {
   default: flattenColorPalette,
 } = require('tailwindcss/lib/util/flattenColorPalette')
 
-// console.log(Object.keys(radixUiColors))
-
-// generates fixed scales
-// based on the root/light mode version
 const fixedOptions = ['scale', 'scaleA', 'brand']
 
 function radixColorKeys() {
   let keys = Object.keys(radixUiColors)
 
-  /**
-   * Filter array items based on search criteria (query)
-   */
+  // Filter array items based on search criteria (query)
   function filterItems(arr, query) {
     return arr.filter(function (el) {
       return el.toLowerCase().indexOf(query.toLowerCase()) == -1
@@ -75,16 +69,8 @@ function generateColorClasses() {
 
 const colorClasses = generateColorClasses()
 
-/*
- * generateCssVariables()
- *
- * generate the CSS variables for tailwind to use
- *
- */
+// generate the CSS variables for tailwind to use
 function generateCssVariables() {
-  // potential options
-  // { fixedOptions, brandColors }
-
   let rootColors = {}
   let darkColors = {}
 
@@ -126,7 +112,7 @@ function generateCssVariables() {
 
 const variables = generateCssVariables()
 
-const wesbittyConfig = {
+const wesbitty = {
   theme: {
     variables: {
       DEFAULT: {
@@ -393,7 +379,7 @@ function arrayMergeFn(destinationArray, sourceArray) {
 }
 
 /**
- * Merge Wesbitty UI and Tailwind CSS configurations
+ * Merge Wesbitty and Tailwind CSS configurations
  * @param {object} tailwindConfig - Tailwind config object
  * @return {object} new config object
  */
@@ -406,7 +392,7 @@ function wrapper(tailwindConfig) {
   } else {
     purge = tailwindConfig.purge
   }
-  return deepMerge({ ...tailwindConfig, purge }, wesbittyConfig, {
+  return deepMerge({ ...tailwindConfig, purge }, wesbitty, {
     arrayMerge: arrayMergeFn,
   })
 }

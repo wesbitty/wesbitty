@@ -1,4 +1,5 @@
-module.exports = {
+/** @type { import('@storybook/react-webpack5').StorybookConfig } */
+const config = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
@@ -11,7 +12,9 @@ module.exports = {
     name: '@storybook/react-webpack5',
     options: {},
   },
-  features: {
-    storyStoreV7: false,
+  docs: {
+    autodocs: 'tag',
   },
 }
+
+export default config

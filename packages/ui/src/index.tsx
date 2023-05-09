@@ -1,8 +1,10 @@
-// // GENERAL
+// THEME
+export * from './theme'
+
+// Elements
 export * from './components/Button/index'
 export * from './components/Typography/index'
 export * from './components/Icon/index'
-// export * from './components/Image/index'
 
 // DISPLAYS
 export * from './components/Card/index'
@@ -27,7 +29,6 @@ export * from './components/Popover/index'
 export { Space } from './components/Space'
 export * from './components/Loading/index'
 export * from './components/Divider/index'
-export * from './theme/provider/index'
 
 // DATA ENTRY
 export * from './components/Select/index'

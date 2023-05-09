@@ -1,4 +1,4 @@
-const wesbittyConfig = require('./styles/config.js')
+const wesbitty = require('./src/theme/config.js')
 
 const gray = {
   100: '#eeeeee',
@@ -287,7 +287,7 @@ function generateRadixVariables() {
 
 const custom_colors = generateRadixVariables()
 
-module.exports = wesbittyConfig({
+module.exports = wesbitty({
   content: {
     content: [
       './src/**/**/*.{js,ts,jsx,tsx,html,mdx}',

@@ -1,20 +1,31 @@
 import React, { useRef, useState } from 'react'
 import { Button, IconPackage, IconChevronRight } from './../../index'
 
-export default { component: Button }
+// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
+export default {
+  title: 'Elements/Button',
+  component: Button,
+  tags: ['autodocs'],
+}
 
+// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default = (args: any) => <Button {...args}>Button text</Button>
-export const withStyles = (args: any) => <Button {...args}>Button text</Button>
+
+export const customStyle = (args: any) => <Button {...args}>Button text</Button>
+
 export const withIcon = (args: any) => <Button {...args}>Button text</Button>
+
 export const withIconRight = (args: any) => (
   <Button {...args}>Button text</Button>
 )
+
 export const withBlock = (args: any) => <Button {...args}>Button text</Button>
 export const withOnlyIcon = (args: any) => <Button {...args} />
 export const withOnlyLoading = (args: any) => <Button {...args} />
 export const withLoadingCentered = (args: any) => (
   <Button {...args}>Loading icon is centered</Button>
 )
+
 export const withRef = () => {
   const buttonRef = useRef(null)
   const [msg, setMsg] = useState('Click button to console.log Ref')
@@ -22,7 +33,6 @@ export const withRef = () => {
   function onClick() {
     const message = `button:${buttonRef?.current}  `
     setMsg(message)
-    // console.log(message)
   }
 
   return (
@@ -214,14 +224,14 @@ withIcon.args = {
   icon: icon,
 }
 
+customStyle.args = {
+  type: 'primary',
+  style: { backgroundColor: 'blue', color: 'white' },
+}
+
 withIconRight.args = {
   type: 'primary',
   iconRight: <IconChevronRight strokeWidth={2} />,
-}
-
-withStyles.args = {
-  type: 'primary',
-  style: { backgroundColor: 'red', color: 'yellow' },
 }
 
 withBlock.args = {
