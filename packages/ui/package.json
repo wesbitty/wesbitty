@@ -20,8 +20,8 @@
   ],
   "scripts": {
     "prebuild": "node --experimental-modules scripts/generate-icons.js",
-    "build": "NODE_ENV=production rollup -c",
-    "stories": "storybook build",
+    "build": "NODE_ENV=production rollup -c && npm run types",
+    "postbuild": "storybook build",
     "storybook": "storybook dev -s ./src/static -p 6006",
     "types": "rimraf types && tsc",
     "clean": "rimraf lib types storybook-static",
