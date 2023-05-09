@@ -1,4 +1,4 @@
-export interface AnimationTailwindClasses {
+export type AnimationTailwindClasses = {
   enter?: string
   enterFrom?: string
   enterTo?: string

@@ -3,7 +3,6 @@ import * as RadixCollapsible from '@radix-ui/react-collapsible'
 import { Button } from '../Button'
 import { IconChevronRight, IconGlobe } from '../..'
 import styleHandler from '../../theme/handler'
-
 export interface CollapsibleProps extends RadixCollapsible.CollapsibleProps {
   children: React.ReactNode
   // onChange?: (e: boolean) => void
