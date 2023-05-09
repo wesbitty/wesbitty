@@ -60,7 +60,7 @@ module.exports = config({
   purge: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@wesbitty/ui/lib/theme/global-theme.js', // add this
+    './node_modules/@wesbitty/ui/lib/theme/default.js', // add this
   ],
   theme: {
     extend: {},
@@ -69,7 +69,7 @@ module.exports = config({
 })
 ```
 
-## Using Wesbitty UI
+## Usage
 
 ### Colors
 
