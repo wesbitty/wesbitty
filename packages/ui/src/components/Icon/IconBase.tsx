@@ -96,7 +96,7 @@ function IconBase({
         // default these icons to use 'currentColor' ie, the text color
         const noColor = !color && !fill && !stroke
 
-        let classes = ['sbui-icon', className]
+        let classes = ['wsb-icon', className]
         if (contextClassName) {
           classes.push(contextClassName)
         }

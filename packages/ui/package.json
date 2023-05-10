@@ -6,6 +6,7 @@
     "storybook",
     "ui",
     "components",
+    "library",
     "wesbitty"
   ],
   "license": "MIT",
@@ -15,6 +16,7 @@
   "source": "src/index.tsx",
   "files": [
     "lib",
+    "LICENSE",
     "README.md",
     "types"
   ],

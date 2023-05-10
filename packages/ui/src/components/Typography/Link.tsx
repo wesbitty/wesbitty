@@ -1,9 +1,8 @@
 import { HandlerFunction } from '@storybook/addon-actions'
 import React from 'react'
-// @ts-ignore
-// import LinkStyles from './Link.module.css'
+import { styleHandler } from '../../theme'
 
-type Props = {
+interface Props {
   children?: React.ReactNode
   target?: '_blank' | '_self' | '_parent' | '_top' | 'framename'
   href?: string
@@ -20,18 +19,18 @@ function Link({
   onClick,
   style,
 }: Props) {
-  // let classes = [
-  //   LinkStyles['sbui-typography'],
-  //   LinkStyles['sbui-typography-link'],
-  // ]
-  // if (className) {
-  //   classes.push(className)
-  // }
+  let __styles = styleHandler('typography')
+
+  let classes = [__styles.link]
+
+  if (className) {
+    classes.push(className)
+  }
 
   return (
     <a
       onClick={onClick}
-      // className={classes.join(' ')}
+      className={classes.join(' ')}
       href={href}
       target={target}
       rel="noopener noreferrer"

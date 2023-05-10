@@ -1,15 +1,15 @@
-.sbui-loading {
+.wsb-loading {
   @apply transition-all relative;
 }
 
-.sbui-loading--active .sbui-loading-content {
+.wsb-loading--active .wsb-loading-content {
   opacity: 0.4;
 }
-.sbui-loading-content {
+.wsb-loading-content {
   @apply transition-opacity duration-300;
 }
 
-.sbui-loading-spinner {
+.wsb-loading-spinner {
   @apply text-brand-800 animate-spin;
   margin: auto;
   position: absolute;

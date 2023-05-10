@@ -229,7 +229,7 @@ export const withCards = (args: any) => (
     {options.map((x, i) => (
       <Radio
         align={args.align}
-        name="sbui-radiogroup"
+        name="wsb-radiogroup"
         key={i}
         label={x.label}
         description={x.description}
@@ -243,7 +243,7 @@ export const withStackedCards = (args: any) => (
   <Radio.Group {...args} onChange={action('onChange')}>
     {stackedOptions.map((x, i) => (
       <Radio
-        name="sbui-radiogroup"
+        name="wsb-radiogroup"
         key={i}
         align={args.align}
         label={x.label}
@@ -260,7 +260,7 @@ export const withSmallCards = (args: any) => (
   <Radio.Group {...args} onChange={action('onChange')}>
     {smallOptions.map((x, i) => (
       <Radio
-        name="sbui-radiogroup"
+        name="wsb-radiogroup"
         key={i}
         label={x.label}
         value={x.value}

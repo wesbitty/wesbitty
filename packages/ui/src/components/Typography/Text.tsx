@@ -1,8 +1,7 @@
 import React from 'react'
-// @ts-ignore
-// import TextStyles from './Text.module.css'
+import { styleHandler } from '../../theme'
 
-export type Props = {
+export interface Props {
   className?: string
   children: any
   style?: React.CSSProperties
@@ -31,72 +30,61 @@ function Text({
   strong,
   small,
 }: Props) {
-  // let classes = [TextStyles['sbui-typography-text']]
-  // if (className) {
-  //   classes.push(className)
-  // }
+  let __styles = styleHandler('typography')
 
-  // if (type) {
-  //   classes.push(TextStyles[`sbui-typography-text-${type}`])
-  // }
+  let classes = [__styles.text.base]
 
-  // if (disabled) {
-  //   classes.push(TextStyles[`sbui-typography-text-disabled`])
-  // }
+  if (className) {
+    classes.push(className)
+  }
 
-  // if (underline) {
-  //   classes.push(TextStyles[`sbui-typography-text-underline`])
-  // }
+  if (type) {
+    classes.push(__styles.text.type[type])
+  }
 
-  // if (strikethrough) {
-  //   classes.push(TextStyles[`sbui-typography-text-strikethrough`])
-  // }
+  if (disabled) {
+    classes.push(__styles.text.disabled)
+  }
 
-  // if (small) {
-  //   classes.push(TextStyles['sbui-typography-text-small'])
-  // }
+  if (underline) {
+    classes.push(__styles.text.underline)
+  }
+
+  if (strikethrough) {
+    classes.push(__styles.text.strikethrough)
+  }
+
+  if (small) {
+    classes.push(__styles.text.small)
+  }
 
   if (code)
     return (
-      <code
-        style={style}
-        // className={classes.join(' ')}
-      >
+      <code style={style} className={classes.join(' ')}>
         {children}
       </code>
     )
   if (mark)
     return (
-      <mark
-        style={style}
-        // className={classes.join(' ')}
-      >
+      <mark style={style} className={classes.join(' ')}>
         {children}
       </mark>
     )
   if (keyboard)
     return (
-      <kbd
-        style={style}
-        // className={classes.join(' ')}
-      >
+      <kbd style={style} className={classes.join(' ')}>
         {children}
       </kbd>
     )
   if (strong)
     return (
-      <strong
-        style={style}
-        // className={classes.join(' ')}
-      >
+      <strong style={style} className={classes.join(' ')}>
         {children}
       </strong>
     )
+
   return (
-    <span
-      style={style}
-      // className={classes.join(' ')}
-    >
+    <span style={style} className={classes.join(' ')}>
       {children}
     </span>
   )

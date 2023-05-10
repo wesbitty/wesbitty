@@ -20,7 +20,7 @@
 
 - [x] Alert
 
-## Install
+## Installation
 
 ```cli
 npm install @wesbitty/ui
@@ -31,12 +31,12 @@ npm install @wesbitty/ui
 - Icon
   We use [Feather icon library](https://feathericons.com/) in **Wesbitty UI**
 
-You can use any Icon from the library as a component by prepending `Icon` to any Icon name, like, `<IconMail>`
+You can use any Icon from the library as a component by prepending `Icon` to any Icon name, like, `<IconHome>`
 
 ```js
-import { IconMail } from '@wesbitty/ui'
+import { IconHome } from '@wesbitty/ui'
 //...
-return <IconMail size="small" />
+return <IconHome size="small" />
 ```
 
 - Button

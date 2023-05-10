@@ -21,7 +21,7 @@ describe('#Breadcrumb', () => {
       </Breadcrumb>
     )
     expect(screen.queryByTestId('breadcrumb')).toHaveClass(
-      '.sbui-breadcrumb--item '
+      '.wsb-breadcrumb--item '
     )
   })
 })

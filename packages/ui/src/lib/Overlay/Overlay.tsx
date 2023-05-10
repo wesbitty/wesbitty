@@ -43,8 +43,8 @@ function Overlay({
   const [visibleState, setVisibleState] = useState(!!visible)
 
   let classes = [
-    OverlayStyles['sbui-overlay-container'],
-    OverlayStyles[`sbui-overlay-container--${placement}`],
+    OverlayStyles['wsb-overlay-container'],
+    OverlayStyles[`wsb-overlay-container--${placement}`],
   ]
   if (overlayClassName) classes.push(overlayClassName)
 
@@ -70,7 +70,7 @@ function Overlay({
   }
 
   return (
-    <div ref={ref} className={OverlayStyles['sbui-overlay']}>
+    <div ref={ref} className={OverlayStyles['wsb-overlay']}>
       {placement === 'bottomRight' ||
       placement === 'bottomLeft' ||
       placement === 'bottomCenter' ? (
@@ -78,12 +78,12 @@ function Overlay({
       ) : null}
       <Transition
         show={visibleState}
-        enter={OverlayStyles[`sbui-overlay--enter`]}
-        enterFrom={OverlayStyles[`sbui-overlay--enterFrom`]}
-        enterTo={OverlayStyles[`sbui-overlay--enterTo`]}
-        leave={OverlayStyles[`sbui-overlay--leave`]}
-        leaveFrom={OverlayStyles[`sbui-overlay--leaveFrom`]}
-        leaveTo={OverlayStyles[`sbui-overlay--leaveTo`]}
+        enter={OverlayStyles[`wsb-overlay--enter`]}
+        enterFrom={OverlayStyles[`wsb-overlay--enterFrom`]}
+        enterTo={OverlayStyles[`wsb-overlay--enterTo`]}
+        leave={OverlayStyles[`wsb-overlay--leave`]}
+        leaveFrom={OverlayStyles[`wsb-overlay--leaveFrom`]}
+        leaveTo={OverlayStyles[`wsb-overlay--leaveTo`]}
       >
         <div className={classes.join(' ')} style={overlayStyle}>
           <DropdownContext.Provider value={{ onClick: onToggle }}>

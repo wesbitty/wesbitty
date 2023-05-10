@@ -1,18 +1,18 @@
-.sbui-image {
+.wsb-image {
 }
 
-.sbui-image-circle {
+.wsb-image-circle {
   @apply rounded-full;
 }
 
-.sbui-image-normal {
+.wsb-image-normal {
 }
 
-.sbui-image-rounded {
+.wsb-image-rounded {
   @apply rounded;
 }
 
-.sbui-image-responsive {
+.wsb-image-responsive {
   @apply w-full;
   @apply h-auto;
 }

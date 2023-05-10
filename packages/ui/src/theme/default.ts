@@ -389,14 +389,9 @@ const defaultTheme = {
     content: `focus:outline-none focus:ring text-scale-900`,
   },
 
-  /*
-   * Button
+  /**
+   * @button
    */
-
-  // button: {
-  //   base : 'border border-4'
-  // }
-
   button: {
     base: `
       relative 
@@ -413,46 +408,44 @@ const defaultTheme = {
     container: 'inline-flex font-medium',
     type: {
       primary: `
-        bg-brand-fixed-800 hover:bg-brand-fixed-900
+        bg-brand-fixed-900 hover:bg-brand-fixed-800
         text-lo-contrast
         bordershadow-brand-fixed-800 hover:bordershadow-brand-fixed-1000
         focus-visible:outline-brand-600
       `,
       secondary: `
-        bg-scale-1200
-        text-scale-100 hover:text-scale-800
-        focus-visible:text-scale-600 
-
+        bg-scale-1200 text-scale-200 hover:bg-scale-1100
+        focus-visible:text-scale-100 
         bordershadow-scale-1100 hover:bordershadow-scale-900
-
-        focus-visible:outline-scale-700
+        focus-visible:outline-brand-600
       `,
       default: `
-        text-scale-1200
+        text-scale-1100 
+        border 
+        box-border
+        shadow-sm
         bg-scale-100 hover:bg-scale-300
-        bordershadow-scale-600 hover:bordershadow-scale-700
-        dark:bordershadow-scale-700 hover:dark:bordershadow-scale-800
-        dark:bg-scale-500 dark:hover:bg-scale-600
+        border-scale-600
+        hover:dark:bordershadow-scale-800
         focus-visible:outline-brand-600
-        
       `,
       alternative: `
-        text-brand-1100
-        bg-brand-200 hover:bg-brand-400
-        bordershadow-brand-600 hover:bordershadow-brand-800
-        dark:bordershadow-brand-700 hover:dark:bordershadow-brand-800
-        focus-visible:border-brand-800
-        focus-visible:outline-brand-600
+        text-white
+        bg-green-900 hover:bg-green-800
+        bordershadow-green-600 hover:bordershadow-green-800
+        dark:bordershadow-green-700 hover:dark:bordershadow-green-800
+        focus-visible:border-green-800
+        focus-visible:outline-green-600
       `,
       outline: `
-        text-scale-1200 
+        text-scale-1100 
         bg-transparent 
         bordershadow-scale-600 hover:bordershadow-scale-700
         dark:bordershadow-scale-800 hover:dark:bordershadow-scale-900
         focus-visible:outline-scale-700
       `,
       dashed: `
-        text-scale-1200 
+        text-scale-1100 
         border
         border-dashed
         border-scale-700 hover:border-scale-900
@@ -470,14 +463,14 @@ const defaultTheme = {
         focus-visible:outline-scale-700
       `,
       text: `
-        text-scale-1200 
+        text-scale-1100 
         hover:bg-scale-500
         shadow-none
         focus-visible:outline-scale-700
       `,
       danger: `
         text-red-1100
-        bg-red-200
+        bg-red-300
         bordershadow-red-700 hover:bordershadow-red-900
         hover:bg-red-900
         hover:text-lo-contrast
@@ -485,7 +478,7 @@ const defaultTheme = {
       `,
       warning: `
         text-amber-1100
-        bg-amber-200
+        bg-amber-300
         bordershadow-amber-700 hover:bordershadow-amber-900
         hover:bg-amber-900
         hover:text-hi-contrast
@@ -504,10 +497,9 @@ const defaultTheme = {
     disabled: 'opacity-50 cursor-not-allowed pointer-events-none',
   },
 
-  /*
-   * Input
+  /**
+   * @input
    */
-
   input: {
     base: `
       block 
@@ -1468,8 +1460,136 @@ const defaultTheme = {
     content: `px-5`,
   },
 
-  // listbox
+  // Auth
+  auth: {
+    base: 'w-full',
+    label: 'block text-sm font-medium text-scale-1100',
+  },
 
+  /** DIVIDER */
+  divider: {
+    span: `text-sm text-scale-1100 inline-block px-2;`,
+    base: `w-full flex items-center whitespace-nowrap`,
+    vertical: `bg-gray-200 dark:bg-dark-500 w-px h-inherit`,
+    light: `bg-gray-100 dark:bg-dark-600`,
+    no_text: `
+    border-gray-200 dark:border-dark-500 
+    border-b-1 border-b-solid
+    `,
+    orientation: {
+      left: `
+      border-b border-solid
+      top-2/4
+      relative inline-block w-full
+      `,
+      center: `
+        border-gray-200 dark:border-dark-500;
+        border-solid border-b-2 top-2/4
+        content relative inline-block w-6/12
+        `,
+      right: `      
+      border-gray-200 dark:border-dark-500
+      border-b border-solid
+      top-2/4
+      relative inline-block w-full
+      `,
+    },
+  },
+
+  /** TYPOGRAPHY **/
+  typography: {
+    title: {
+      base: `text-scale-1200 font-medium dark:text-white`,
+      level: {
+        1: `text-5xl`,
+        2: `text-4xl`,
+        3: `text-2xl`,
+        4: `text-lg`,
+        5: `text-base`,
+      },
+    },
+    text: {
+      base: 'text-sm leading-4 text-scale-1100',
+      small: 'text-xs leading-4 text-scale-1100',
+      type: {
+        secondary: `
+      text-scale-1100
+      `,
+        success: `
+      text-green-500 dark:text-green-500
+      `,
+        warning: `
+      text-yellow-500 dark:text-yellow-500
+      `,
+        danger: `
+      text-red-500 dark:text-red-500
+      `,
+      },
+      disable: `
+      text-gray-300 dark:text-gray-400
+      cursor-not-allowed pointer-events-none
+      `,
+      underline: `underline`,
+      strikethrough: `line-through`,
+      mark: `p-0 text-yellow-600`,
+      code: `bg-gray-300 border border-gray-400 rounded-sm p-1 px-2 pb-0.5`,
+    },
+    link: 'text-sm leading-4 text-scale-1100',
+  },
+
+  // SPACE
+  space: {
+    base: 'flex',
+    block: 'block',
+    row: 'space-x-2 flex flex-row items-center',
+    col: 'space-y-2 flex flex-col',
+    'wsb-space-y-0': `space-y-0`,
+    'wsb-space-y-1': `space-y-1`,
+    'wsb-space-y-2': `space-y-2`,
+    'wsb-space-y-3': `space-y-3`,
+    'wsb-space-y-4': `space-y-4`,
+    'wsb-space-y-5': `space-y-5`,
+    'wsb-space-y-6': `space-y-6`,
+    'wsb-space-y-7': `space-y-7`,
+    'wsb-space-y-8': `space-y-8`,
+    'wsb-space-y-9': `space-y-9`,
+    'wsb-space-y-10': `space-x-10`,
+    'wsb-space-x-0': `space-x-0`,
+    'wsb-space-x-1': `space-x-1`,
+    'wsb-space-x-2': `space-x-2`,
+    'wsb-space-x-3': `space-x-3`,
+    'wsb-space-x-4': `space-x-4`,
+    'wsb-space-x-5': `space-x-5`,
+    'wsb-space-x-6': `space-x-6`,
+    'wsb-space-x-7': `space-x-7`,
+    'wsb-space-x-8': `space-x-8`,
+    'wsb-space-x-9': `space-x-9`,
+    'wsb-space-x-10': `space-x-10`,
+    'wsb-minus-space-y-0': `-space-y-0`,
+    'wsb-minus-space-y-1': `-space-y-1`,
+    'wsb-minus-space-y-2': `-space-y-2`,
+    'wsb-minus-space-y-3': `-space-y-3`,
+    'wsb-minus-space-y-4': `-space-y-4`,
+    'wsb-minus-space-y-5': `-space-y-5`,
+    'wsb-minus-space-y-6': `-space-y-6`,
+    'wsb-minus-space-y-7': `-space-y-7`,
+    'wsb-minus-space-y-8': `-space-y-8`,
+    'wsb-minus-space-y-9': `-space-y-9`,
+    'wsb-minus-space-y-10': `-space-y-10`,
+    'wsb-minus-space-x-0': `-space-x-0`,
+    'wsb-minus-space-x-1': `-space-x-1`,
+    'wsb-minus-space-x-2': `-space-x-2`,
+    'wsb-minus-space-x-3': `-space-x-3`,
+    'wsb-minus-space-x-4': `-space-x-4`,
+    'wsb-minus-space-x-5': `-space-x-5`,
+    'wsb-minus-space-x-6': `-space-x-6`,
+    'wsb-minus-space-x-7': `-space-x-7`,
+    'wsb-minus-space-x-8': `-space-x-8`,
+    'wsb-minus-space-x-9': `-space-x-9`,
+    'wsb-minus-space-x-10': `-space-x-10`,
+  },
+
+  // listbox
   listbox: {
     base: `
       block 

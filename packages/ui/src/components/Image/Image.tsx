@@ -19,10 +19,10 @@ export default function Image({
   alt,
   responsive,
 }: Props) {
-  // let classes = [ImageStyles['sbui-image-normal']]
-  // classes.push(type === 'rounded' && ImageStyles['sbui-image-rounded'])
-  // classes.push(type === 'circle' && ImageStyles['sbui-image-circle'])
-  // if(responsive) classes.push(ImageStyles['sbui-image-responsive'])
+  // let classes = [ImageStyles['wsb-image-normal']]
+  // classes.push(type === 'rounded' && ImageStyles['wsb-image-rounded'])
+  // classes.push(type === 'circle' && ImageStyles['wsb-image-circle'])
+  // if(responsive) classes.push(ImageStyles['wsb-image-responsive'])
   // if (className) classes.push(className)
   return (
     <>

@@ -96,19 +96,19 @@ const Modal = ({
     e.stopPropagation()
   }
 
-  // let footerClasses = [ModalStyles['sbui-modal-footer']]
+  // let footerClasses = [ModalStyles['wsb-modal-footer']]
   if (footerBackground) {
-    // footerClasses.push(ModalStyles['sbui-modal-footer--with-bg'])
+    // footerClasses.push(ModalStyles['wsb-modal-footer--with-bg'])
   }
 
   let modalClasses = [
     __styles.base,
-    // ModalStyles[`sbui-modal`],
-    // ModalStyles[`sbui-modal--${size}`],
+    // ModalStyles[`wsb-modal`],
+    // ModalStyles[`wsb-modal--${size}`],
   ]
   // if (className) modalClasses.push(className)
 
-  // let overlayClasses = [ModalStyles['sbui-modal-overlay']]
+  // let overlayClasses = [ModalStyles['wsb-modal-overlay']]
   // if (overlayClassName) overlayClasses.push(overlayClassName)
 
   const footerContent = customFooter ? (
@@ -152,7 +152,7 @@ const Modal = ({
     <Dialog.Root open={open} onOpenChange={handleOpenChange}>
       {triggerElement && (
         <Dialog.Trigger
-        // className={ModalStyles[`sbui-modal__trigger`]}
+        // className={ModalStyles[`wsb-modal__trigger`]}
         >
           {triggerElement}
         </Dialog.Trigger>
@@ -166,7 +166,7 @@ const Modal = ({
           >
             {header && <div className={__styles.header}>{header}</div>}
             {/* <div
-              className={ModalStyles['sbui-modal-content']}
+              className={ModalStyles['wsb-modal-content']}
               style={contentStyle}
             > */}
             {children}
@@ -175,7 +175,7 @@ const Modal = ({
               <div className={__styles.footer}>{footerContent}</div>
             )}
             {/* {closable && (
-              <div className={ModalStyles['sbui-modal-close-container']}>
+              <div className={ModalStyles['wsb-modal-close-container']}>
                 <Button
                   onClick={onCancel}
                   type="text"

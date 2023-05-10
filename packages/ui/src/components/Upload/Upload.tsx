@@ -16,9 +16,9 @@ function Dragger({
   files,
   setFiles,
 }: any) {
-  // const [classes, setClasses] = useState([UploadStyles['sbui-upload-dragger']])
+  // const [classes, setClasses] = useState([UploadStyles['wsb-upload-dragger']])
 
-  // const draggedCssClass = UploadStyles['sbui-upload-dragger--dragged']
+  // const draggedCssClass = UploadStyles['wsb-upload-dragger--dragged']
 
   const dragOver = (e: any) => {
     e.preventDefault()

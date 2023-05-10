@@ -1,17 +1,19 @@
 // THEME
 export * from './theme'
 
-// Elements
-export * from './components/Button/index'
+// TYPOGRAPHY
 export * from './components/Typography/index'
+
+// Elements
+export { Button } from './components/Button'
+export { Badge } from './components/Badge'
 export * from './components/Icon/index'
 
 // DISPLAYS
 export * from './components/Card/index'
-export * from './components/Badge/index'
 export * from './components/Tabs/index'
-export * from './components/Alert/index'
-export * from './components/Accordion/index'
+export { Alert } from './components/Alert'
+export { Accordion } from './components/Accordion'
 export * from './components/Collapsible/index'
 
 // NAV
@@ -26,14 +28,14 @@ export * from './components/Popover/index'
 // export * from './components/Toast/index'
 
 // UTILITIES
-export { Space } from './components/Space/index'
+export { Space } from './components/Space'
 export * from './components/Loading/index'
-export * from './components/Divider/index'
+export { Divider } from './components/Divider'
 
 // DATA ENTRY
 export * from './components/Select/index'
 export * from './components/Listbox/index'
-export * from './components/Checkbox/index'
+export * from './components/Checkbox'
 export * from './components/Input/index'
 export * from './components/InputNumber/index'
 export * from './components/Radio/index'

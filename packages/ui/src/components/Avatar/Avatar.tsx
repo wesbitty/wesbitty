@@ -29,7 +29,7 @@ export default function Avatar({
   size,
   children,
 }: Props) {
-  const classes = [AvatarStyles['sbui-avatar']]
+  const classes = [AvatarStyles['wsb-avatar']]
   classes.push(className)
   let objectToRender
 
@@ -49,7 +49,7 @@ export default function Avatar({
   }
 
   if (imageExist && src) {
-    classes.push(AvatarStyles['sbui-avatar-image'])
+    classes.push(AvatarStyles['wsb-avatar-image'])
     objectToRender = (
       <img
         className={classes.join(' ')}
@@ -59,7 +59,7 @@ export default function Avatar({
       />
     )
   } else if (AvatarIcon) {
-    classes.push(AvatarStyles['sbui-avatar-icon'])
+    classes.push(AvatarStyles['wsb-avatar-icon'])
     objectToRender = (
       <div
         className={classes.join(' ')}
@@ -69,7 +69,7 @@ export default function Avatar({
       </div>
     )
   } else if (text) {
-    classes.push(AvatarStyles['sbui-avatar-text'])
+    classes.push(AvatarStyles['wsb-avatar-text'])
     objectToRender = (
       <div
         className={classes.join(' ')}
@@ -79,7 +79,7 @@ export default function Avatar({
       </div>
     )
   } else if (children) {
-    classes.push(AvatarStyles['sbui-avatar-children'])
+    classes.push(AvatarStyles['wsb-avatar-children'])
     objectToRender = (
       <div
         className={classes.join(' ')}
@@ -89,7 +89,7 @@ export default function Avatar({
       </div>
     )
   } else {
-    classes.push(AvatarStyles['sbui-avatar-fallback'])
+    classes.push(AvatarStyles['wsb-avatar-fallback'])
     objectToRender = (
       <div
         className={classes.join(' ')}
