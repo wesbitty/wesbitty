@@ -33,7 +33,6 @@
     "clean": "turbo run clean --no-cache",
     "prisma-generate": "cd ./apps/web && npx prisma generate",
     "pscale-up": "cd apps/web && pscale connect wesbitty main",
-    "git-commit": "git-cz",
     "release": "release",
     "test": "turbo run test --concurrency=1 --filter=[HEAD^1] --filter=./packages/*"
   },
@@ -61,7 +60,6 @@
     "auto": "^9.50.1",
     "chromatic": "^5.0.0",
     "cross-env": "^7.0.2",
-    "cz-conventional-changelog": "^3.2.0",
     "dotenv-cli": "^3.1.0",
     "eslint": "^8.30.0",
     "eslint-plugin-wesjet": "^0.0.34-rc.1",
