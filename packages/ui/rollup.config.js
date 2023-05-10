@@ -33,7 +33,7 @@ export default [
       modal: 'src/components/Popover/index.tsx',
       radio: 'src/components/Radio/index.tsx',
       sidepanel: 'src/components/SidePanel/index.tsx',
-      space: 'src/components/Space.tsx',
+      space: 'src/components/Space/index.tsx',
       select: 'src/components/Select/index.tsx',
       tabs: 'src/components/Tabs/index.tsx',
       toggle: 'src/components/Toggle/index.tsx',

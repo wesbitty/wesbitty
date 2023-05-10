@@ -26,7 +26,7 @@ export * from './components/Popover/index'
 // export * from './components/Toast/index'
 
 // UTILITIES
-export { Space } from './components/Space'
+export { Space } from './components/Space/index'
 export * from './components/Loading/index'
 export * from './components/Divider/index'
 
