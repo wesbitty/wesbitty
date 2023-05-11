@@ -6,15 +6,13 @@
       "dependsOn": ["^build"]
     },
     "test": {
-      "outputs": ["coverage/**"],
-      "dependsOn": []
+      "outputs": []
     },
     "lint": {
       "dependsOn": ["^build"]
     },
     "dev": {
-      "cache": false,
-      "persistent": true
+      "cache": false
     },
     "clean": {
       "cache": false
