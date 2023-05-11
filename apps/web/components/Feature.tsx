@@ -1,28 +1,30 @@
 import SectionHeader from './widget/SectionHeader'
 import PostTypes from '~/types/post'
-import SectionContainer from './widget/Section'
+import { Section } from './widget/Section'
 import Link from 'next/link'
 import { GlassPanel } from 'ui'
-import TextLink from '../TextLink'
+import TextLink from './TextLink'
 
-const FeatureService = ({ customerStories }: any) => {
-  const caseStudyThumbs = customerStories.map((blog: PostTypes, idx: number) => {
-    return {
-      logo: blog.logo,
-      logoInverse: blog.logo_inverse,
-      title: blog.title,
-      link: blog.url,
+export const FeatureService = ({ customerStories }: any) => {
+  const caseStudyThumbs = customerStories.map(
+    (blog: PostTypes, idx: number) => {
+      return {
+        logo: blog.logo,
+        logoInverse: blog.logo_inverse,
+        title: blog.title,
+        link: blog.url,
+      }
     }
-  })
+  )
   return (
-    <SectionContainer>
+    <Section>
       <div className="mb-12">
         <SectionHeader
           title={'Infrastructure'}
           title_alt={' to innovate and scale with ease.'}
           subtitle={'Customer Stories'}
           paragraph={
-            'See how Supabase empowers companies of all sizes to accelerate their growth and streamline their work.'
+            'See how Wesbitty empowers companies of all sizes to accelerate their growth and streamline their work.'
           }
         />
       </div>
@@ -46,8 +48,6 @@ const FeatureService = ({ customerStories }: any) => {
       <div className="mt-12">
         <TextLink url="/customers" label="Explore more" />
       </div>
-    </SectionContainer>
+    </Section>
   )
 }
-
-export default FeatureService

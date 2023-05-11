@@ -81,6 +81,7 @@ export default [
       del({ targets: ['lib/*'] }),
       copy({
         targets: [
+          { src: 'src/utils/cn.ts', dest: 'lib/utils' },
           { src: 'src/theme/config.js', dest: 'lib/theme' },
           { src: 'src/theme/colors.js', dest: 'lib/theme' },
           {
