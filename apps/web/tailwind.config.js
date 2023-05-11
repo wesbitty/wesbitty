@@ -1,14 +1,14 @@
 const { fontFamily } = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
-const config = require('@wesbitty/ui/lib/theme/config.js')
+const { wesjetTheme } = require('@wesbitty/ui')
 
-module.exports = config({
+module.exports = wesjetTheme({
   content: [
     './[blog]/**/*.{md,mdx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     './wesbitty/lib/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@wesbitty/ui/lib/theme/default.js',
+    '../../node_modules/@wesbitty/ui/types/theme/default.js',
   ],
   darkMode: 'class',
   theme: {

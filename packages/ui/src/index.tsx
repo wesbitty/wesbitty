@@ -6,6 +6,8 @@ export * from './components/Typography/index'
 
 export { GlassPanel } from './components/GlassPanel'
 
+export { cn } from './utils/cn'
+
 // Elements
 export { Button } from './components/Button'
 export { Badge } from './components/Badge'

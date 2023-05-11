@@ -112,7 +112,7 @@ function generateCssVariables() {
 
 const variables = generateCssVariables()
 
-const wesbitty = {
+const themeConfig = {
   theme: {
     variables: {
       DEFAULT: {
@@ -379,7 +379,7 @@ function arrayMergeFn(destinationArray, sourceArray) {
 }
 
 /**
- * Merge Wesbitty and Tailwind CSS configurations
+ * Merge Wesjet and Tailwind CSS configurations
  * @param {object} tailwindConfig - Tailwind config object
  * @return {object} new config object
  */
@@ -392,9 +392,9 @@ function wrapper(tailwindConfig) {
   } else {
     purge = tailwindConfig.purge
   }
-  return deepMerge({ ...tailwindConfig, purge }, wesbitty, {
+  return deepMerge({ ...tailwindConfig, purge }, themeConfig, {
     arrayMerge: arrayMergeFn,
   })
 }
 
-module.exports = wrapper
+module.exports.wesjetTheme = wrapper

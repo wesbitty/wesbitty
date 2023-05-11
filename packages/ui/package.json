@@ -11,6 +11,11 @@
   ],
   "license": "MIT",
   "sideEffects": false,
+  "exports": {
+    ".": "./types/index.js",
+    "./esm": "./lib/esm/index.js",
+    "./cjs": "./lib/cjs/index.js"
+  },
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "source": "src/index.tsx",

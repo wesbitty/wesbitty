@@ -10,7 +10,7 @@
     "declaration": true,
     "rootDir": "src",
     "outDir": "types",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": ["ES2015", "dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "inlineSources": false,
