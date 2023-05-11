@@ -5,17 +5,22 @@ import { useRouter } from 'next/router'
 import { Section } from './widget/Section'
 
 export const Hero = () => {
-  const { basePath } = useRouter()
+  const router = useRouter()
+  const { basePath } = router
 
   return (
     <div className="overflow-hidden">
-      <Section className="py-24">
+      <Section className="pb-0 py-24">
         <div className="relative">
           <main className="">
-            <div className="mx-auto pb-24">
+            <div className="mx-auto">
               <div className="lg:grid lg:grid-cols-12 lg:gap-16">
                 <div className="md:mx-auto md:max-w-2xl lg:col-span-6 lg:flex lg:items-center lg:text-left">
-                  <div className="space-y-12 sm:mx-auto md:w-3/4 lg:mx-0 lg:w-full">
+                  <div
+                    className="
+                    space-y-12 sm:mx-auto md:w-3/4 lg:mx-0
+                    lg:w-full"
+                  >
                     <div>
                       <h1
                         className="p text-2xl sm:text-3xl text-slate-600
@@ -26,69 +31,14 @@ export const Hero = () => {
                           business for $1/month
                         </span>
                       </h1>
-                      <div className="flex flex-wrap mt-4">
-                        <div className="flex items-center text-sm font-medium text-slate-500">
-                          <svg
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-8 w-8 flex-none stroke-current text-slate-400"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="M5 4.15h22.5l-2 20.5-9.25 4-9.25-4-2-20.5Z"></path>
-                            <path d="M20.5 9.15H12v5.5h8.5v6l-4.25 2-4.25-2v-2.5"></path>
-                          </svg>
-                          <span className="ml-2.5">HTML</span>
-                        </div>
-                        <div className="flex items-center text-sm font-medium text-slate-500 ml-6">
-                          <svg
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-8 w-8 flex-none stroke-current text-slate-400"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <ellipse cx="16" cy="16" rx="13" ry="5"></ellipse>
-                            <ellipse
-                              cx="16"
-                              cy="16"
-                              rx="13"
-                              ry="5"
-                              transform="rotate(60 16 16)"
-                            ></ellipse>
-                            <ellipse
-                              rx="13"
-                              ry="5"
-                              transform="matrix(-.5 .86603 .86603 .5 16 16)"
-                            ></ellipse>
-                            <circle cx="16" cy="16" r="2"></circle>
-                          </svg>
-                          <span className="ml-2.5">React</span>
-                        </div>
-                        <div className="flex items-center text-sm font-medium text-slate-500 ml-6">
-                          <svg
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-8 w-8 flex-none stroke-current text-slate-400"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="M19.924 5 16 11.644 12.075 5H3l13 23L29 5h-9.076Z"></path>
-                            <path d="M19.879 5 16 11.26 12.121 5H8l8 13 8-13h-4.121Z"></path>
-                          </svg>
-                          <span className="ml-2.5">Vue</span>
-                        </div>
-                      </div>
-
-                      <p className="mt-4 text-base leading-7 text-slate-700">
+                    </div>
+                     <p className="p mt-1.5 text-sm sm:mt-5 sm:text-base lg:text-lg ">
                         Start a free trial and enjoy your first month of
                         Wesbitty for $1 on select plans.
                       </p>
                     </div>
-                    <div className="mt-8 flex items-center gap-4">
+                   </div>
+                    <div className="flex items-center gap-2">
                       <Link
                         href="https://app.wesbitty.org"
                         as="https://app.wesbitty.org"
@@ -107,6 +57,33 @@ export const Hero = () => {
                           Documentation
                         </Button>
                       </Link>
+                    </div>
+                  <div className="flex flex-col gap-4">
+                      <small className="small text-xs">backed by</small>
+                      <div className="w-full sm:max-w-lg lg:ml-0">
+                        <div className="flex flex-wrap items-center justify-start gap-y-8 sm:flex-nowrap">
+                          <img
+                            className="h-8 pr-5 sm:h-8 md:pr-10"
+                            src={`${basePath}/images/logos/yc--grey.png`}
+                            alt="Y Combinator"
+                          />
+                          <img
+                            className="relative h-5 pr-5 sm:h-5 md:pr-10"
+                            src={`${basePath}/images/logos/mozilla--grey.png`}
+                            alt="Mozilla"
+                          />
+                          <img
+                            className="relative h-5 pr-5 sm:h-5 md:pr-10"
+                            src={`${basePath}/images/logos/coatue.png`}
+                            alt="Coatue"
+                          />
+                          <img
+                            className="relative h-6 pr-5 sm:h-6 md:pr-10"
+                            src={`${basePath}/images/logos/felicis.png`}
+                            alt="Felicis"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -139,6 +116,8 @@ export const Hero = () => {
                 </div>
               </div>
             </div>
+      
+      
             <div className="mx-auto max-w-container">
               <div className="relative mx-auto grid max-w-[40rem] grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
                 <div className="flex">
