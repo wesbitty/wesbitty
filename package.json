@@ -33,7 +33,7 @@
     "clean": "turbo run clean --no-cache",
     "prisma-generate": "cd ./apps/web && npx prisma generate",
     "pscale-up": "cd apps/web && pscale connect wesbitty main",
-    "release": "npm run release --workspaces && release-it",
+    "release": "npm run release --workspaces --if-present && release-it",
     "test": "turbo run turbo run test --concurrency=1 --filter=[HEAD^1] --filter=./packages/*"
   },
   "lint-staged": {
