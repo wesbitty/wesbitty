@@ -1,7 +1,7 @@
 import { cache } from 'react'
 import type { _SiteData } from 'types'
 import prisma from 'lib/prisma'
-import { remark } from 'remark'
+import remark from 'remark'
 import { serialize } from 'next-mdx-remote/serialize'
 import { replaceExamples, replaceTweets } from 'lib/remark-plugins'
 

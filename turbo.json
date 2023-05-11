@@ -5,6 +5,10 @@
       "outputs": ["dist/**", ".next/**", "!.next/cache/**", ".wesjet/**"],
       "dependsOn": ["^build"]
     },
+    "release": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
     "test": {
       "outputs": []
     },
