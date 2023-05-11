@@ -18,7 +18,7 @@ export const Hero = () => {
                   <div className="space-y-12 sm:mx-auto md:w-3/4 lg:mx-0 lg:w-full">
                     <div>
                       <p className="mt-4 text-3xl font-extrabold tracking-[-0.04em] text-slate-900 sm:text-5xl sm:leading-[3.5rem]">
-                        Build Better Store, in a few steps.
+                        Build your dream business for $1/month
                       </p>
                       <div className="flex flex-wrap mt-4">
                         <div className="flex items-center text-sm font-medium text-slate-500">
@@ -78,9 +78,8 @@ export const Hero = () => {
                       </div>
 
                       <p className="mt-4 text-base leading-7 text-slate-700">
-                        Start your business website with Wesbitty to sell
-                        online, offline, and everywhere in between, no credit
-                        card required.
+                        Start a free trial and enjoy your first month of
+                        Wesbitty for $1 on select plans.
                       </p>
                     </div>
                     <div className="mt-8 flex items-center gap-4">
