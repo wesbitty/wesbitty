@@ -1,25 +1,25 @@
 {
   "name": "tests",
+  "version": "0.0.0",
   "description": "Jest Presets for codespace tests runner",
-  "version": "0.0.1",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wesbitty/wesbitty.git"
-  },
   "keywords": [
     "jest",
     "presets",
     "test"
   ],
-  "author": "Wesbitty Inc",
+  "homepage": "https://github.com/wesbitty/wesbitty/blob/main/tests",
   "bugs": {
     "url": "https://github.com/wesbitty/wesbitty/issues"
   },
-  "homepage": "https://github.com/wesbitty/wesbitty/blob/main/tests#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wesbitty/wesbitty.git"
+  },
+  "license": "MIT",
+  "author": "Wesbitty Inc",
   "dependencies": {
-    "mkdirp": "^1.0.4",
     "lru-cache": "^6.0.0",
+    "mkdirp": "^1.0.4",
     "semver": "^7.3.8",
     "ts-jest": "^26.5.6",
     "yallist": "^4.0.0",
