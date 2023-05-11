@@ -5,7 +5,7 @@ import ImageGrid from '~/components/Image/ImageGrid'
 import Quote from '~/components/Quote'
 import Chart from '~/components/PGCharts'
 import InlineCodeTag from '~/components/InlineCode'
-import { Badge } from 'ui'
+import { Badge } from '@wesbitty/ui'
 import ImageFadeStack from '~/components/Image/ImageFadeStack'
 
 // import all components used in blog articles here
