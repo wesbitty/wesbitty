@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
-import { IconPauseCircle, IconPlayCircle } from 'ui'
-import { cn } from 'ui/lib/utils/cn'
+import { IconPauseCircle, IconPlayCircle } from '@wesbitty/ui'
+import { cn } from '@wesbitty/ui/lib/utils/cn'
 
 interface ImageFadeStackProps {
   autoplay?: boolean

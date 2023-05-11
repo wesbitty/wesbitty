@@ -13,7 +13,7 @@ import PostTypes from '~/types/post'
 import { motion } from 'framer-motion'
 import styles from './customers.module.css'
 import Link from 'next/link'
-import { GlassPanel } from 'ui'
+import { GlassPanel } from '@wesbitty/ui'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPosts('_customers')

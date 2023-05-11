@@ -1,4 +1,9 @@
-import { Button, IconChevronRight, IconExternalLink } from '@wesbitty/ui'
+import {
+  Button,
+  IconChevronRight,
+  IconChevronLeft,
+  IconExternalLink,
+} from '@wesbitty/ui'
 import matter from 'gray-matter'
 
 import { MDXRemote } from 'next-mdx-remote'
@@ -6,7 +11,6 @@ import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { IconChevronLeft, IconChevronsLeft } from 'ui'
 import { Default } from '~/Widget/Default'
 import mdxComponents from 'lib/mdx/mdxComponents'
 import { mdxSerialize } from 'lib/mdx/mdxSerialize'
