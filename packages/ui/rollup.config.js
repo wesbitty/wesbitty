@@ -24,6 +24,7 @@ export default [
       divider: 'src/components/Divider.tsx',
       dropdown: 'src/components/Dropdown/index.tsx',
       form: 'src/components/Form/index.tsx',
+      glasspanel: 'src/components/GlassPanel.tsx',
       input: 'src/components/Input/index.tsx',
       icon: 'src/components/Icon/index.tsx',
       listbox: 'src/components/Listbox/index.tsx',

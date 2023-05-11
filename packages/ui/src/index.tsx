@@ -4,6 +4,8 @@ export * from './theme'
 // TYPOGRAPHY
 export * from './components/Typography/index'
 
+export { GlassPanel } from './components/GlassPanel'
+
 // Elements
 export { Button } from './components/Button'
 export { Badge } from './components/Badge'
