@@ -69,7 +69,6 @@
     "sitemap": "^7.1.1",
     "swiper": "^6.5.0",
     "swr": "^2.0.0",
-    "ui": "^0.0.4",
     "unist-util-visit": "^4.1.1",
     "use-debounce": "^9.0.2",
     "uuid": "^9.0.0",

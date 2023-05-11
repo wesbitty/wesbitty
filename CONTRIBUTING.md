@@ -98,14 +98,14 @@ The Monorepo has a set of shared components under `/packages`:
 
 #### Installing packages
 
-Installing a package with NPM workspaces requires you to add the `-w` flag to tell NPM which workspace you want to install into. Do not install dependencies in their local folder, install them from the route using the `-w` flag.
+Installing a package with NPM workspaces requires you to add the `-w` flag to tell NPM which workspace you want to install into. Do not install dependencies in their local folder, install them from the route using the `--workspace` flag.
 
-The format is: `npm install <package name> -w=<workspace to install in>`.
+The format is: `npm install <package name> --workspace=<workspace to install in>`.
 
 For example:
 
-- `npm install @types/node -w ui`: installs into `./packages/ui`
-- `npm install @types/node -w web`: installs into `./apps/web`
+- `npm install @types/node --workspace @wesbitty/ui`: installs into `./packages/ui`
+- `npm install @types/node --workspace web`: installs into `./apps/web`
 
 You do not need to install `devDependencies` in each workspace. These can all be installed in the root package.
 
