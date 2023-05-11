@@ -17,9 +17,15 @@ export const Hero = () => {
                 <div className="md:mx-auto md:max-w-2xl lg:col-span-6 lg:flex lg:items-center lg:text-left">
                   <div className="space-y-12 sm:mx-auto md:w-3/4 lg:mx-0 lg:w-full">
                     <div>
-                      <p className="mt-4 text-3xl font-extrabold tracking-[-0.04em] text-slate-900 sm:text-5xl sm:leading-[3.5rem]">
-                        Build your dream business for $1/month
-                      </p>
+                      <h1
+                        className="p text-2xl sm:text-3xl text-slate-600
+                      lg:text-4xl xl:text-5xl sm:leading-none"
+                      >
+                        <span className="block">Build your dream</span>
+                        <span className="block text-blue-800 md-ml-0">
+                          business for $1/month
+                        </span>
+                      </h1>
                       <div className="flex flex-wrap mt-4">
                         <div className="flex items-center text-sm font-medium text-slate-500">
                           <svg

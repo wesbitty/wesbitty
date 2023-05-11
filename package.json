@@ -26,7 +26,7 @@
     "prepare": "husky install",
     "build": "turbo run build --filter=ui --filter=./examples/*",
     "build:app": "turbo run build --filter=web",
-    "dev": "npm run dev --workspace=apps/web",
+    "dev": "turbo run dev --parrallel --continue --filter=web...",
     "lint": "eslint . --ext .ts --fix",
     "lint-package": "sort-package-json",
     "format": "prettier --write .",
