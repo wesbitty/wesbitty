@@ -1,12 +1,14 @@
 const { fontFamily } = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
+const config = require('@wesbitty/ui/lib/theme/config.js')
 
-module.exports = {
+module.exports = config({
   content: [
     './[blog]/**/*.{md,mdx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     './wesbitty/lib/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@wesbitty/ui/lib/theme/default.js',
   ],
   darkMode: 'class',
   theme: {
@@ -155,4 +157,4 @@ module.exports = {
       })
     },
   ],
-}
+})
