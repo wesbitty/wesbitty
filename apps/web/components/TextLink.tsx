@@ -1,4 +1,4 @@
-import { IconChevronRight } from 'ui'
+import { IconChevronRight } from '@wesbitty/ui'
 import Link from 'next/link'
 
 function TextLink({ url = '', label, ...props }: any) {
