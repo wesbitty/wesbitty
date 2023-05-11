@@ -8,7 +8,7 @@ import { Badge } from '../Badge'
 import { Form } from '../Form'
 import { Button } from '../Button'
 import { Space } from '../Space'
-import { IconTrash, IconAlertCircle, IconCheck } from '../../index'
+import { IconTrash, IconAlertCircle, IconCheck } from './../../index'
 import { Dropdown } from '../Dropdown'
 import { IconGlobe } from '../Icon/icons/IconGlobe'
 import { IconLink2 } from '../Icon/icons/IconLink2'
@@ -28,9 +28,9 @@ export const withUseState = () => {
       <div
         className="
           py-4 px-8
-          bg-gray-300 
+          bg-scale-300 
           border 
-          border-gray-500 
+          border-scale-500 
           rounded flex gap-4 
           shadow-sm
           justify-between
@@ -45,8 +45,10 @@ export const withUseState = () => {
           -translate-y-1/2"
       >
         <div>
-          <h4 className="text-gray-900 text-base">Delete your project</h4>
-          <p className="text-gray-1100 text-sm">It will be sad to see you go</p>
+          <h4 className="text-scale-1200 text-base">Delete your project</h4>
+          <p className="text-scale-1100 text-sm">
+            It will be sad to see you go
+          </p>
         </div>
         <Button
           type="default"
@@ -62,13 +64,13 @@ export const withUseState = () => {
           visible={visible}
           onCancel={() => setVisible(!visible)}
           header={
-            <div className="flex items-center gap-2 text-gray-900">
-              {/* <div className="text-gray-600">
+            <div className="flex items-center gap-2 text-scale-1200">
+              {/* <div className="text-scale-600">
               <IconTrash strokeWidth={2} />
             </div> */}
               <div className="flex items-baseline gap-2">
                 <h3 className="text-sm">Delete your project</h3>
-                <span className="text-xs text-gray-900">Are you sure?</span>
+                <span className="text-xs text-scale-900">Are you sure?</span>
               </div>
             </div>
           }
@@ -111,16 +113,16 @@ export const withUseState = () => {
                     </span>
                   </div>
                   <div className="px-5">
-                    <p className="text-sm text-gray-1100">
+                    <p className="text-sm text-scale-1100">
                       This action cannot be undone. This will permanently delete
                       the project{' '}
-                      <span className="text-gray-900 font-regular">
+                      <span className="text-scale-1200 font-regular">
                         MyProject
                       </span>
                       .
                     </p>
                   </div>
-                  <div className="border-t border-gray-300 dark:border-gray-500"></div>
+                  <div className="border-t border-scale-300 dark:border-scale-500"></div>
                   <div className="px-5">
                     <Input
                       id="name"
@@ -129,7 +131,7 @@ export const withUseState = () => {
                       label="Please type MyProject to confirm."
                     />
                   </div>
-                  <div className="border-t border-gray-300 dark:border-gray-500"></div>
+                  <div className="border-t border-scale-300 dark:border-scale-500"></div>
                   <div className="px-5">
                     <Button
                       type="danger"
@@ -155,13 +157,13 @@ export const Default = (args: any) => (
   <Modal
     {...args}
     header={
-      <div className="flex items-center gap-2 text-gray-900">
-        <div className="text-sky-700">
+      <div className="flex items-center gap-2 text-scale-1200">
+        <div className="text-brand-700">
           <IconLink2 />
         </div>
         <div className="flex items-baseline gap-2">
           <h3>This is the title</h3>
-          <span className="text-xs text-gray-900">This is the title</span>
+          <span className="text-xs text-scale-900">This is the title</span>
         </div>
       </div>
     }

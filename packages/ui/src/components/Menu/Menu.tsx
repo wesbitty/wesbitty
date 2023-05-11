@@ -120,11 +120,11 @@ interface MiscProps {
 export function Misc({ children }: MiscProps) {
   return (
     <div
-    // className={MenuStyles['sbui-menu__misc']}
+    // className={MenuStyles['wsb-menu__misc']}
     >
       <Typography.Text>
         <span
-        // className={MenuStyles['sbui-menu__content']}
+        // className={MenuStyles['wsb-menu__content']}
         >
           {children}
         </span>

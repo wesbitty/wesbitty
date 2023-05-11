@@ -1,98 +1,106 @@
-import React from 'react'
-import { useRef, useState } from 'react'
-import { Button, IconPackage, IconChevronRight, IconGlobe } from '../index'
+import React, { useRef, useState } from 'react'
+import { Button, IconBriefcase, IconChevronRight } from '../index'
 
+// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 export default {
-  title: 'General/Button',
+  title: 'Elements/Button',
   component: Button,
+  tags: ['autodocs'],
 }
 
-export const Default = (args: any) => <Button {...args}>Button text</Button>
-export const withStyles = (args: any) => <Button {...args}>Button text</Button>
-export const withIcon = (args: any) => <Button {...args}>Button text</Button>
-export const withIconRight = (args: any) => (
-  <Button {...args}>Button text</Button>
+// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+export const Primary = (args: any) => <Button {...args}>Primary</Button>
+
+export const customStyle = (args: any) => (
+  <Button {...args}>Custom Style</Button>
 )
-export const withBlock = (args: any) => <Button {...args}>Button text</Button>
-export const withOnlyIcon = (args: any) => <Button {...args} />
-export const withOnlyLoading = (args: any) => <Button {...args} />
-export const withLoadingCentered = (args: any) => (
+
+export const Icon = (args: any) => <Button {...args}>Button</Button>
+
+export const rightIcon = (args: any) => <Button {...args}>Button</Button>
+
+export const fullwidth = (args: any) => (
+  <Button {...args}>Fullwidth Button</Button>
+)
+export const onlyIcon = (args: any) => <Button {...args} />
+export const loading = (args: any) => <Button {...args} />
+export const centeredLoading = (args: any) => (
   <Button {...args}>Loading icon is centered</Button>
 )
-export const withRef = () => {
+
+export const forwardRef = () => {
   const buttonRef = useRef(null)
   const [msg, setMsg] = useState('Click button to console.log Ref')
 
   function onClick() {
     const message = `button:${buttonRef?.current}  `
     setMsg(message)
-    // console.log(message)
   }
 
   return (
     <>
       <Button ref={buttonRef} onClick={onClick}>
-        Button with forwardRef
+        forwardRef Button
       </Button>
 
       <p style={{ color: '#666666' }}>{msg}</p>
     </>
   )
 }
-export const allButtons = (args: any) => (
+export const allButtonsWithSizes = (args: any) => (
   <>
     <div className="flex flex-col space-y-4">
       <div className="flex space-x-4">
         <Button {...args} size="tiny">
-          Button text
+          Primary
         </Button>
         <Button {...args} size="tiny" type="default">
-          Button text
+          Default
         </Button>
         <Button {...args} size="tiny" type="secondary">
-          Button text
+          Secondary
         </Button>
         <Button {...args} size="tiny" type="alternative">
-          Button text
+          Alternative
         </Button>
         <Button {...args} size="tiny" type="link">
-          Button text
+          Link
         </Button>
         <Button {...args} size="tiny" type="text">
-          Button text
+          Text
         </Button>
         <Button {...args} size="tiny" type="dashed">
-          Button text
+          Dashed
         </Button>
         <Button {...args} size="tiny" type="outline">
-          Button text
+          Outline
         </Button>
         <Button {...args} size="tiny" type="danger">
-          Button text
+          Danger
         </Button>
         <Button {...args} size="tiny" type="warning">
-          Button text
+          Warning
         </Button>
       </div>
 
       <div className="flex space-x-4">
         <Button {...args} size="small">
-          Button text
+          Primary
         </Button>
         <Button {...args} size="small" type="default">
-          Button text
+          Default
         </Button>
         <Button {...args} size="small" type="secondary">
-          Button text
+          Secondary
         </Button>
         <Button {...args} size="small" type="alternative">
-          Button text
+          Alternative
         </Button>
         <Button {...args} size="small" type="link">
-          Button text
+          Link
         </Button>
         <Button {...args} size="small" type="text">
-          Button text
+          Text
         </Button>
         <Button {...args} size="small" type="dashed">
           Button text
@@ -173,84 +181,82 @@ export const allButtons = (args: any) => (
       </div>
       <div className="flex space-x-4">
         <Button {...args} size="xlarge">
-          Button text
+          Primary
         </Button>
         <Button {...args} size="xlarge" type="default">
-          Button text
+          Default
         </Button>
         <Button {...args} size="xlarge" type="secondary">
-          Button text
+          Secondary
         </Button>
         <Button {...args} size="xlarge" type="alternative">
-          Button text
+          Alternative
         </Button>
         <Button {...args} size="xlarge" type="link">
-          Button text
+          Link
         </Button>
         <Button {...args} size="xlarge" type="text">
-          Button text
+          Text
         </Button>
         <Button {...args} size="xlarge" type="dashed">
-          Button text
+          Dashed
         </Button>
         <Button {...args} size="xlarge" type="outline">
-          Button text
+          Outline
         </Button>
         <Button {...args} size="xlarge" type="danger">
-          Button text
+          Danger
         </Button>
         <Button {...args} size="xlarge" type="warning">
-          Button text
+          Warning
         </Button>
       </div>
     </div>
   </>
 )
 
-export const withCustomTag = (args: any) => (
-  <Button {...args}>Button text</Button>
-)
+export const CustomTag = (args: any) => <Button {...args}>Button text</Button>
 
-const icon = <IconGlobe />
+const icon = <IconBriefcase />
 
-withIcon.args = {
+Icon.args = {
   type: 'primary',
   icon: icon,
 }
 
-withIconRight.args = {
+customStyle.args = {
+  type: 'primary',
+  style: { backgroundColor: 'blue', color: 'white' },
+}
+
+rightIcon.args = {
   type: 'primary',
   iconRight: <IconChevronRight strokeWidth={2} />,
 }
 
-withStyles.args = {
-  type: 'primary',
-  style: { backgroundColor: 'purple', color: 'white' },
-}
-
-withBlock.args = {
+fullwidth.args = {
   type: 'primary',
   block: true,
 }
 
-withOnlyIcon.args = {
+onlyIcon.args = {
   icon: icon,
 }
 
-withOnlyLoading.args = {
+loading.args = {
   loading: true,
 }
 
-withLoadingCentered.args = {
+centeredLoading.args = {
   loading: true,
   loadingCentered: true,
 }
 
-allButtons.args = {
+allButtonsWithSizes.args = {
   loading: false,
   danger: false,
 }
 
-withCustomTag.args = {
+CustomTag.args = {
   as: 'span',
 }

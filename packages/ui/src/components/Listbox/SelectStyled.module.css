@@ -1,18 +1,18 @@
-/* .sbui-listbox-container {
+/* .wsb-listbox-container {
   @apply relative;
 } */
 
-/* .sbui-listbox {
+/* .wsb-listbox {
   @apply block w-full bg-white pl-3 pr-10 py-2 text-sm rounded-md transition-all;
   @apply text-gray-700 border border-solid border-gray-300;
-  @apply cursor-default focus:outline-none focus:ring-1 focus:ring-sky-600 focus:border-sky-600;
+  @apply cursor-default focus:outline-none focus:ring-1 focus:ring-brand-600 focus:border-brand-600;
   @apply dark:bg-transparent dark:text-white dark:border-gray-500;
-  @apply dark:focus:border-sky-500;
+  @apply dark:focus:border-brand-500;
   -webkit-appearance: none;
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: '';
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0)',
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
   transition: box-shadow 0.3s ease-in-out; */
 
 /* // temporary fix
@@ -24,15 +24,15 @@
 /* background-image: none;
 } */
 
-.sbui-listbox:focus {
+.wsb-listbox:focus {
   box-shadow: 0 0 0 2px rgba(62, 207, 142, 0.1);
 }
 
-.sbui-listbox--error {
+.wsb-listbox--error {
   @apply border-red-500 dark:border-red-500;
 }
 
-.sbui-listbox--borderless {
+.wsb-listbox--borderless {
   @apply border-transparent shadow-none;
 }
 
@@ -40,23 +40,23 @@
   Select sizes
 */
 
-/* .sbui-listbox--tiny {
+/* .wsb-listbox--tiny {
   @apply px-2.5 py-1.5 text-xs;
 }
-.sbui-listbox--small {
+.wsb-listbox--small {
   @apply px-3 py-2 text-sm leading-4;
 }
-.sbui-listbox--medium {
+.wsb-listbox--medium {
   @apply px-4 py-2 text-sm;
 }
-.sbui-listbox--large {
+.wsb-listbox--large {
   @apply px-4 py-2 text-base;
 }
-.sbui-listbox--xlarge {
+.wsb-listbox--xlarge {
   @apply px-6 py-3 text-base;
 } */
 
-/* .sbui-listbox-actions-container {
+/* .wsb-listbox-actions-container {
   @apply absolute inset-y-0 right-0 pl-3 pr-1 mr-5 flex items-center;
 } */
 
@@ -64,7 +64,7 @@
   Select icon
 */
 
-/* .sbui-listbox--with-icon {
+/* .wsb-listbox--with-icon {
   @apply pl-10;
 } */
 
@@ -72,11 +72,11 @@
   Add on before
 */
 
-/* .sbui-listbox-addonbefore {
+/* .wsb-listbox-addonbefore {
   @apply w-full flex flex-row items-center space-x-3;
 } */
 
-.sbui-listbox-label {
+.wsb-listbox-label {
   @apply truncate;
 }
 
@@ -84,11 +84,11 @@
   Select Chevron
 */
 
-.sbui-listbox-chevron-container {
+.wsb-listbox-chevron-container {
   @apply absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none;
 }
 
-.sbui-listbox-chevron {
+.wsb-listbox-chevron {
   @apply h-5 w-5 text-gray-400;
 }
 
@@ -96,35 +96,35 @@
   Option
 */
 
-/* .sbui-listbox-option-container {
+/* .wsb-listbox-option-container {
   @apply list-none p-0 absolute mt-1 w-full bg-white dark:bg-gray-800 shadow-lg border border-solid border-gray-100 dark:border-gray-600 max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm z-10;
 } */
 
-/* .sbui-listbox-option {
+/* .wsb-listbox-option {
   @apply cursor-pointer select-none relative py-2 pl-3 pr-9 text-gray-900 dark:text-white;
 } */
 
-/* .sbui-listbox-option--active {
-  @apply text-sky-600 dark:text-sky-600 bg-sky-600 bg-opacity-20;
+/* .wsb-listbox-option--active {
+  @apply text-brand-600 dark:text-brand-600 bg-brand-600 bg-opacity-20;
 }
 
-.sbui-listbox-option--disabled {
+.wsb-listbox-option--disabled {
   @apply cursor-not-allowed opacity-50;
 } */
 
-/* .sbui-listbox-option__inner {
+/* .wsb-listbox-option__inner {
   @apply flex items-center space-x-3;
 } */
 
-/* .sbui-listbox-option__check {
+/* .wsb-listbox-option__check {
   @apply absolute inset-y-0 right-0 flex items-center pr-3;
 }
 
-.sbui-listbox-option__check--active {
-  @apply text-sky-600;
+.wsb-listbox-option__check--active {
+  @apply text-brand-600;
 } */
 
-.sbui-listbox-option__check__icon {
+.wsb-listbox-option__check__icon {
   @apply h-5 w-5;
 }
 
@@ -132,14 +132,14 @@
   Transition
 */
 
-.sbui-listbox-transition--leave {
+.wsb-listbox-transition--leave {
   @apply transition ease-in duration-100;
 }
 
-.sbui-listbox-transition--leave-from {
+.wsb-listbox-transition--leave-from {
   @apply opacity-100;
 }
 
-.sbui-listbox-transition--leave-to {
+.wsb-listbox-transition--leave-to {
   @apply opacity-0;
 }

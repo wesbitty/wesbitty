@@ -1,0 +1,65 @@
+.wsb-contextmenu-item {
+  @apply text-xs;
+  @apply text-typography-body-light dark:text-typography-body-dark;
+  @apply px-4 py-1.5 flex items-center space-x-2;
+  @apply cursor-pointer;
+  @apply focus:bg-bg-secondary-light dark:focus:bg-bg-primary-dark border-none;
+  cursor: 'default';
+}
+
+.wsb-contextmenu-item svg {
+  /* @apply text-typography-body-secondary-light dark:text-typography-body-secondary-dark; */
+}
+
+.wsb-contextmenu-label {
+  /* @apply text-typography-body-secondary-light dark:text-typography-body-secondary-dark; */
+  /* @apply px-4 py-1.5 flex items-center space-x-2; */
+  /* font-size: 0.65rem; */
+}
+
+.wsb-contextmenu-misc {
+  /* @apply px-4 py-1.5; */
+}
+
+.wsb-contextmenu-item:focus-visible {
+  /* border: none; */
+  /* outline: none; */
+}
+
+.wsb-contextmenu-input {
+  /* @apply flex items-center space-x-2; */
+}
+
+.wsb-contextmenu-input__check {
+  /* @apply flex items-center; */
+}
+
+.wsb-contextmenu__content {
+  /* @apply bg-bg-primary-light dark:bg-bg-secondary-dark p-0; */
+  /* @apply rounded; */
+  /* @apply border; */
+  /* @apply shadow; */
+  /* overflow: visible; */
+  /* border-style: solid; */
+  /* border-width: 1px; */
+}
+
+@keyframes transition {
+  /* 0% { */
+  /* opacity: 0; */
+  /* transform: scale(0.95); */
+  /* } */
+  /* 100% { */
+  /* opacity: 1; */
+  /* transform: scale(1); */
+  /* } */
+}
+
+.wsb-contextmenu__content {
+  /* transform-origin: var(--radix-dropdown-menu-content-transform-origin); */
+  /* animation: transition 0.1s ease-out; */
+}
+
+.wsb-contextmenu__trigger {
+  /* @apply border-none bg-transparent p-0 focus:ring-0; */
+}

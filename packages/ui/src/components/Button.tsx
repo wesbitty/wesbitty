@@ -2,6 +2,7 @@ import React, { forwardRef, useRef, useImperativeHandle } from 'react'
 import { IconContext } from './Icon/IconContext'
 import { IconLoader } from './Icon/icons/IconLoader'
 import styleHandler from '../theme/handler'
+import warn from '../utils/warning'
 
 export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   block?: boolean
@@ -41,12 +42,11 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
 
 interface CustomButtonProps extends React.HTMLAttributes<HTMLOrSVGElement> {}
 
-export interface RefHandle {
-  // container: () => HTMLElement | null
+export type RefHandle = {
   button: () => HTMLButtonElement | null
 }
 
-export const Button = forwardRef<RefHandle, ButtonProps>(
+export const Button = React.forwardRef<RefHandle, ButtonProps>(
   (
     {
       block,
@@ -74,8 +74,14 @@ export const Button = forwardRef<RefHandle, ButtonProps>(
     }: ButtonProps,
     ref
   ) => {
-    // button ref
-    // const containerRef = useRef<HTMLElement>(null)
+    const hasIcon = loading || icon
+
+    warn(
+      hasIcon && !props['aria-label'] && !children,
+      'Button',
+      'You are using an icon button, but no "aria-label" attribute was found. Add an "aria-label" attribute to work as a label for screen readers.'
+    )
+
     const buttonRef = useRef<HTMLButtonElement>(null)
 
     useImperativeHandle(ref, () => ({
@@ -84,10 +90,8 @@ export const Button = forwardRef<RefHandle, ButtonProps>(
       },
     }))
 
-    let __styles = styleHandler('button')
-
     // styles
-    const showIcon = loading || icon
+    let __styles = styleHandler('button')
 
     let classes = [__styles.base]
     let containerClasses = [__styles.container]
@@ -125,7 +129,7 @@ export const Button = forwardRef<RefHandle, ButtonProps>(
 
     const buttonContent = (
       <>
-        {showIcon &&
+        {hasIcon &&
           (loading ? (
             <IconLoader size={size} className={iconLoaderClasses.join(' ')} />
           ) : icon ? (

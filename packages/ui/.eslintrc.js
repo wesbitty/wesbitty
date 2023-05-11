@@ -9,5 +9,6 @@ module.exports = {
   },
   extends: ['react-app', 'prettier', 'plugin:prettier/recommended'],
   plugins: ['prettier'],
+  // add your custom rules here
   rules: {},
 }

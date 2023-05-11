@@ -4,10 +4,7 @@ import {
   toast as hotToast,
   resolveValue,
 } from 'react-hot-toast'
-import {
-  Toast as HotToastProps,
-  ToastType,
-} from 'react-hot-toast/dist/core/types'
+import { Toast as HotToastProps, ToastType } from 'react-hot-toast/dist/index'
 import * as Portal from '@radix-ui/react-portal'
 import { IconCheck } from '../Icon/icons/IconCheck'
 import { IconLoader } from '../Icon/icons/IconLoader'
@@ -35,7 +32,7 @@ function Message({
   ...props
 }: ComponentProps<typeof Typography.Text>) {
   return (
-    <Typography.Text className={ToastStyles['sbui-toast-message']} {...props}>
+    <Typography.Text className={ToastStyles['wsb-toast-message']} {...props}>
       {children}
     </Typography.Text>
   )
@@ -47,7 +44,7 @@ function Description({
 }: ComponentProps<typeof Typography.Text>) {
   return (
     <Typography.Text
-      className={ToastStyles['sbui-toast-description']}
+      className={ToastStyles['wsb-toast-description']}
       {...props}
     >
       {children}
@@ -81,22 +78,22 @@ function Toast({
   width,
   ...rest
 }: ToastProps) {
-  let containerClasses = [ToastStyles['sbui-toast-container']]
+  let containerClasses = [ToastStyles['wsb-toast-container']]
   if (type) {
-    containerClasses.push(ToastStyles[`sbui-toast-container--${type}`])
+    containerClasses.push(ToastStyles[`wsb-toast-container--${type}`])
   }
   if (width === 'sm' || width === 'md') {
-    containerClasses.push(ToastStyles[`sbui-toast-container--${width}`])
+    containerClasses.push(ToastStyles[`wsb-toast-container--${width}`])
   }
 
-  let closeButtonClasses = [ToastStyles['sbui-toast-close-button']]
+  let closeButtonClasses = [ToastStyles['wsb-toast-close-button']]
   if (type) {
-    closeButtonClasses.push(ToastStyles[`sbui-toast-close-button--${type}`])
+    closeButtonClasses.push(ToastStyles[`wsb-toast-close-button--${type}`])
   }
 
-  let detailsClasses = [ToastStyles['sbui-toast-details']]
+  let detailsClasses = [ToastStyles['wsb-toast-details']]
   if (actionsPosition === 'bottom') {
-    detailsClasses.push(ToastStyles[`sbui-toast-details--actions-bottom`])
+    detailsClasses.push(ToastStyles[`wsb-toast-details--actions-bottom`])
   }
 
   const _message =
@@ -113,30 +110,30 @@ function Toast({
       }`}
     >
       <div>
-        <Typography.Text className={ToastStyles['sbui-toast-icon-container']}>
+        <Typography.Text className={ToastStyles['wsb-toast-icon-container']}>
           {type === 'loading' ? (
             <IconLoader
               size="medium"
               strokeWidth={2}
-              className={ToastStyles['sbui-alert--anim--spin']}
+              className={ToastStyles['wsb-alert--anim--spin']}
             />
           ) : (
             icon || icons[type]
           )}
         </Typography.Text>
         <div className={detailsClasses.join(' ')}>
-          <div className={ToastStyles['sbui-toast-details__content']}>
+          <div className={ToastStyles['wsb-toast-details__content']}>
             {_message}
             {description && <Description>{description}</Description>}
           </div>
           {actions && (
-            <div className={ToastStyles['sbui-toast-details__actions']}>
+            <div className={ToastStyles['wsb-toast-details__actions']}>
               {actions}
             </div>
           )}
         </div>
         {closable && (
-          <div className={ToastStyles['sbui-toast-close-container']}>
+          <div className={ToastStyles['wsb-toast-close-container']}>
             <button
               aria-label="Close alert"
               className={closeButtonClasses.join(' ')}

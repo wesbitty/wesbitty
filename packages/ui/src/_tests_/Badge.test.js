@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import Badge from '../components/Badge'
+import Badge from './Badge'
 
 const SIZES = ['small', 'large']
 const COLORS = [
@@ -36,15 +36,13 @@ describe('#Badge', () => {
 
   it.each(COLORS)('should have %s color', (color) => {
     render(<Badge color={color}>{color}</Badge>)
-    expect(screen.getByText(color)).toHaveClass(
-      `sbui-badge sbui-badge--${color}`
-    )
+    expect(screen.getByText(color)).toHaveClass(`wsb-badge wsb-badge--${color}`)
   })
 
   it.each(SIZES)('should render with %s size', (size) => {
     render(<Badge size={size}>{size}</Badge>)
     expect(screen.getByText(size)).toHaveClass(
-      `sbui-badge ${size === 'large' ? 'sbui-badge--large' : ''}`
+      `wsb-badge ${size === 'large' ? 'wsb-badge--large' : ''}`
     )
   })
 

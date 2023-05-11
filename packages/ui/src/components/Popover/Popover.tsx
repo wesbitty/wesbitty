@@ -62,7 +62,7 @@ function Popover({
       open={open}
     >
       <RadixPopover.Trigger
-        // className={DropdownStyles['sbui-popover__trigger']}
+        // className={DropdownStyles['wsb-popover__trigger']}
         className={__styles.trigger}
         aria-label={ariaLabel}
       >
@@ -79,7 +79,7 @@ function Popover({
       >
         {arrow && (
           <RadixPopover.Arrow
-            // className={DropdownStyles['sbui-popover__arrow']}
+            // className={DropdownStyles['wsb-popover__arrow']}
             offset={10}
           ></RadixPopover.Arrow>
         )}

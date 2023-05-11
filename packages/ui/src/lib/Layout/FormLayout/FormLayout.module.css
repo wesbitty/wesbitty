@@ -1,0 +1,104 @@
+/* .wsb-formlayout {
+  @apply grid gap-2;
+} */
+
+/* .wsb-formlayout--flex {
+  @apply flex justify-between;
+}
+
+.wsb-formlayout--flex-right div:last-child {
+  @apply text-right;
+}
+
+.wsb-formlayout--flex-left div:first-child {
+  @apply order-2;
+}
+
+.wsb-formlayout--flex-left div:last-child {
+  @apply order-1;
+} */
+
+/* .wsb-formlayout--non-responsive {
+  @apply grid grid-cols-12 gap-4;
+} */
+
+/* .wsb-formlayout--responsive {
+  @apply md:grid md:grid-cols-12 md:gap-4;
+} */
+
+/* .wsb-formlayout__label-container-horizontal {
+  @apply justify-between col-span-12;
+}
+
+.wsb-formlayout__label-container-vertical {
+  @apply col-span-4;
+}
+
+.wsb-formlayout__content-container-horizontal {
+  @apply col-span-12;
+}
+
+.wsb-formlayout__content-container-vertical {
+  @apply col-span-8;
+}
+
+.wsb-formlayout__content-container-vertical--align-right {
+  @apply text-right;
+} */
+
+/* .wsb-formlayout__label {
+  @apply block text-sm text-input-label-light dark:text-input-label-dark;
+} */
+
+/* .wsb-formlayout__label-opt,
+.wsb-formlayout__label .wsb-formlayout__label-before,
+.wsb-formlayout__label .wsb-formlayout__label-after {
+  @apply text-sm text-gray-400 dark:text-gray-300;
+} */
+
+/* .wsb-formlayout__error {
+  @apply mt-2 text-sm text-red-500;
+} */
+
+/* .wsb-formlayout__description {
+  @apply mt-2 text-sm text-gray-400 dark:text-gray-300;
+} */
+
+/* .wsb-formlayout__content-container--width-25 {
+  width: 
+} */
+
+/*
+  Layout sizes
+*/
+
+/* .wsb-formlayout--tiny .wsb-formlayout__label, */
+/* .wsb-formlayout--tiny .wsb-formlayout__label-opt, */
+/* .wsb-formlayout--tiny .wsb-formlayout__error, */
+/* .wsb-formlayout--tiny .wsb-formlayout__description {
+  @apply text-xs;
+} */
+/* .wsb-formlayout--small .wsb-formlayout__label, */
+/* .wsb-formlayout--small .wsb-formlayout__label-opt, */
+/* .wsb-formlayout--small .wsb-formlayout__error, */
+/* .wsb-formlayout--small .wsb-formlayout__description {
+  @apply text-sm leading-4;
+} */
+/* .wsb-formlayout--medium .wsb-formlayout__label, */
+/* .wsb-formlayout--medium .wsb-formlayout__label-opt, */
+/* .wsb-formlayout--medium .wsb-formlayout__error, */
+/* .wsb-formlayout--medium .wsb-formlayout__description {
+  @apply text-sm;
+} */
+/* .wsb-formlayout--large .wsb-formlayout__label, */
+/* .wsb-formlayout--large .wsb-formlayout__label-opt, */
+/* .wsb-formlayout--large .wsb-formlayout__error, */
+/* .wsb-formlayout--large .wsb-formlayout__description {
+  @apply text-base;
+} */
+/* .wsb-formlayout--xlarge .wsb-formlayout__label, */
+/* .wsb-formlayout--xlarge .wsb-formlayout__label-opt, */
+/* .wsb-formlayout--xlarge .wsb-formlayout__error, */
+/* .wsb-formlayout--xlarge .wsb-formlayout__description {
+  @apply text-base;
+} */

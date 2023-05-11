@@ -79,12 +79,12 @@ function InputNumber({
     if (validation) fieldLevelValidation(id, validation(value))
   }, [])
 
-  // const inputClasses = [InputNumberStyles['sbui-inputnumber']]
+  // const inputClasses = [InputNumberStyles['wsb-inputnumber']]
   let inputClasses = [__styles.base]
 
   // const iconUpClasses = [
-  //   InputNumberStyles['sbui-inputnumber-button'],
-  //   InputNumberStyles['sbui-inputnumber-button-up'],
+  //   InputNumberStyles['wsb-inputnumber-button'],
+  //   InputNumberStyles['wsb-inputnumber-button-up'],
   // ]
 
   // const inputRefCurrent = inputRef
@@ -92,15 +92,15 @@ function InputNumber({
   //   : React.createRef<HTMLInputElement>()
 
   // const iconDownClasses = [
-  //   InputNumberStyles['sbui-inputnumber-button'],
-  //   InputNumberStyles['sbui-inputnumber-button-down'],
+  //   InputNumberStyles['wsb-inputnumber-button'],
+  //   InputNumberStyles['wsb-inputnumber-button-down'],
   // ]
 
-  // const iconNavClasses = [InputNumberStyles['sbui-inputnumber-nav']]
+  // const iconNavClasses = [InputNumberStyles['wsb-inputnumber-nav']]
 
   // if (size) {
-  // inputClasses.push(InputNumberStyles[`sbui-inputnumber--${size}`])
-  // iconNavClasses.push(InputNumberStyles[`sbui-inputnumber-nav--${size}`])
+  // inputClasses.push(InputNumberStyles[`wsb-inputnumber--${size}`])
+  // iconNavClasses.push(InputNumberStyles[`wsb-inputnumber-nav--${size}`])
   // }
 
   if (error) inputClasses.push(__styles.variants.error)
@@ -109,7 +109,7 @@ function InputNumber({
   if (size) inputClasses.push(__styles.size[size])
   if (props.disabled) inputClasses.push(__styles.disabled)
   // if (borderless)
-  //   inputClasses.push(InputNumberStyles['sbui-inputnumber--borderless'])
+  //   inputClasses.push(InputNumberStyles['wsb-inputnumber--borderless'])
 
   // const onClickChevronUp = () => {
   //   inputRefCurrent.current?.stepUp()

@@ -6,8 +6,7 @@ import typescript from 'rollup-plugin-typescript2'
 import nodeResolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import copy from 'rollup-plugin-copy'
-
-import icons from './src/lib/Icon/icons'
+import icons from './src/static/icons'
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx']
 
@@ -15,33 +14,29 @@ export default [
   {
     input: {
       index: 'src/index.tsx',
-      button: 'src/components/Button.tsx',
-      icon: 'src/components/Icon/index.tsx',
-      card: 'src/components/Card/index.tsx',
-      badge: 'src/components/Badge.tsx',
-      header: 'src/components/Header.tsx',
-      // colorscheme: 'src/theme/ColorScheme/index.tsx',
-      alert: 'src/components/Alert.tsx',
       accordion: 'src/components/Accordion.tsx',
-      tabs: 'src/components/Tabs.tsx',
-      menu: 'src/components/Menu/index.tsx',
-      modal: 'src/components/Modal/index.tsx',
-      popover: 'src/components/Popover/index.tsx',
-      sidepanel: 'src/components/SidePanel/index.tsx',
+      alert: 'src/components/Alert.tsx',
+      badge: 'src/components/Badge.tsx',
+      button: 'src/components/Button.tsx',
+      card: 'src/components/Card/index.tsx',
+      checkbox: 'src/components/Checkbox.tsx',
+      contextmenu: 'src/components/ContextMenu/index.tsx',
+      divider: 'src/components/Divider.tsx',
       dropdown: 'src/components/Dropdown/index.tsx',
       form: 'src/components/Form/index.tsx',
-      space: 'src/components/Space.tsx',
-      loading: 'src/components/Loading.tsx',
-      divider: 'src/components/Divider.tsx',
-      select: 'src/components/Select.tsx',
+      input: 'src/components/Input/index.tsx',
+      icon: 'src/components/Icon/index.tsx',
       listbox: 'src/components/Listbox/index.tsx',
-      checkbox: 'src/components/Checkbox/index.tsx',
-      input: 'src/components/Input.tsx',
+      loading: 'src/components/Loading/index.tsx',
+      menu: 'src/components/Menu/index.tsx',
+      modal: 'src/components/Modal/index.tsx',
+      modal: 'src/components/Popover/index.tsx',
       radio: 'src/components/Radio/index.tsx',
+      sidepanel: 'src/components/SidePanel/index.tsx',
+      space: 'src/components/Space.tsx',
+      select: 'src/components/Select/index.tsx',
+      tabs: 'src/components/Tabs/index.tsx',
       toggle: 'src/components/Toggle/index.tsx',
-      // upload: 'src/components/Upload/index.tsx',
-      // auth: 'src/components/Auth/index.tsx',
-      // auth: 'src/theme/Provider/index.tsx',
       ...icons,
     },
     external: [
@@ -68,13 +63,10 @@ export default [
     plugins: [
       external(),
       typescript(),
-      // so JS can be rolled with TS
-      // remove when JS files have been removed
       nodeResolve({
         ignoreGlobal: false,
         include: ['node_modules/**'],
         extensions,
-        // skip: keys(EXTERNALS), // <<-- skip: ['react', 'react-dom']
       }),
       commonjs({
         ignoreGlobal: false,
@@ -88,10 +80,12 @@ export default [
       del({ targets: ['lib/*'] }),
       copy({
         targets: [
+          { src: 'src/theme/config.js', dest: 'lib/theme' },
+          { src: 'src/theme/colors.js', dest: 'lib/theme' },
           {
-            src: 'src/theme/globalTheme.ts',
+            src: 'src/theme/default.ts',
             dest: 'lib/theme',
-            rename: () => 'global-theme.js',
+            rename: () => 'default.js',
           },
         ],
       }),

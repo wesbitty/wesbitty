@@ -1,5 +1,7 @@
 import React from 'react'
 import Typography from '../Typography'
+// @ts-ignore
+import CardStyles from './Card.module.css'
 
 import styleHandler from '../../theme/handler'
 
@@ -33,10 +35,8 @@ function Card({
     <div className={classes.join(' ')} style={style}>
       {title && (
         <div className={__styles.head}>
-          <h3 className="mt-3 text-lg font-bold text-gray-700 sm:text-xl">
-            {title}
-          </h3>
-          <p className="mt-4 text-sm text-gray-700">{titleExtra}</p>
+          <Typography.Text style={{ margin: 0 }}>{title}</Typography.Text>
+          <Typography.Link style={{ margin: 0 }}>{titleExtra}</Typography.Link>
         </div>
       )}
       {cover}

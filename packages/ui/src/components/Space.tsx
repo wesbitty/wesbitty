@@ -12,9 +12,7 @@ export function Space({
 }: any) {
   const __styles = styleHandler('space')
   const classes = [__styles.base]
-
   classes.push(direction === 'vertical' ? __styles.col : __styles.row)
-
   classes.push(
     __styles[
       'wsb-' +
@@ -25,14 +23,12 @@ export function Space({
         size
     ]
   )
-
   if (block) {
     classes.push(__styles.block)
   }
   if (className) {
     classes.push(className)
   }
-
   return (
     <div className={classes.join(' ')} style={style}>
       {children}

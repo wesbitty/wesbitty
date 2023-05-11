@@ -1,6 +1,5 @@
 import React from 'react'
 import { Alert } from '../index'
-// import ThemeProvider from '../../theme/themeContext'
 
 export default {
   title: 'Displays/Alerts',
@@ -77,7 +76,7 @@ export const Closable = (args: any) => (
   </Alert>
 )
 
-export const WithAction = (args: any) => (
+export const Action = (args: any) => (
   <Alert {...args}>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur amet
     labore.
@@ -138,7 +137,7 @@ Closable.args = {
   closable: true,
 }
 
-WithAction.args = {
+Action.args = {
   title: 'Alert with action',
   variant: 'warning',
   withIcon: true,

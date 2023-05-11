@@ -1,35 +1,35 @@
 /* marker fix */
-.sbui-typography li::marker {
+.wsb-typography li::marker {
   display: none;
   content: '';
 }
 
-.sbui-typography-container {
+.wsb-typography-container {
   @apply prose prose-sm lg:prose-lg;
 }
 
-.sbui-typography {
+.wsb-typography {
   @apply text-base;
   @apply text-gray-400;
 }
 
-/* .sbui-typography--prose-sm {
+/* .wsb-typography--prose-sm {
   @apply prose prose-sm;
 }
 
-.sbui-typography--prose-lg {
+.wsb-typography--prose-lg {
   @apply prose prose-lg;
 }
 
-.sbui-typography--prose-xl {
+.wsb-typography--prose-xl {
   @apply prose prose-xl;
 }
 
-.sbui-typography--prose-2xl {
+.wsb-typography--prose-2xl {
   @apply prose prose-2xl;
 } */
 
-.sbui-typography code {
+.wsb-typography code {
   padding: 0.2em 0.4em 0.1em;
   background: hsla(0, 0%, 58.8%, 0.1);
   border: 1px solid hsla(0, 0%, 39.2%, 0.2);
@@ -42,55 +42,55 @@
   default styles are handled by tailwind config
 */
 
-.dark .sbui-typography {
+.dark .wsb-typography {
   @apply text-gray-200;
 }
 
-.dark .sbui-typography h1 {
+.dark .wsb-typography h1 {
   @apply text-white;
 }
 
-.dark .sbui-typography h2 {
+.dark .wsb-typography h2 {
   @apply text-white;
 }
 
-.dark .sbui-typography h3 {
+.dark .wsb-typography h3 {
   @apply text-white;
 }
 
-.dark .sbui-typography h4 {
+.dark .wsb-typography h4 {
   @apply text-white;
 }
 
-.dark .sbui-typography h5 {
+.dark .wsb-typography h5 {
   @apply text-white;
 }
 
-.dark .sbui-typography strong {
+.dark .wsb-typography strong {
   @apply text-white;
 }
 
-.dark .sbui-typography li::before {
+.dark .wsb-typography li::before {
   @apply text-gray-300;
 }
 
-.dark .sbui-typography a {
+.dark .wsb-typography a {
   @apply text-white;
 }
 
-.dark .sbui-typography blockquote {
+.dark .wsb-typography blockquote {
   @apply text-white;
 }
 
-.dark .sbui-typography code {
+.dark .wsb-typography code {
   color: white;
 }
 
-.dark .sbui-typography figcaption {
+.dark .wsb-typography figcaption {
   @apply text-gray-600;
 }
 
-.dark .sbui-typography::selection {
-  /* @apply bg-sky-500; */
-  background-color: #6f7bb635;
+.dark .wsb-typography::selection {
+  /* @apply bg-brand-500; */
+  backgroundcolor: '#6f7bb635';
 }

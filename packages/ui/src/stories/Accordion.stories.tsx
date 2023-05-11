@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Accordion } from '../components/Accordion'
 import { Typography } from '../components/Typography'
 import { IconArrowUp } from '../components/Icon/icons/IconArrowUp'
@@ -14,13 +15,15 @@ export const OneItem = (args: any) => (
     <Accordion.Item
       header={
         <>
-          <span className="text-gray-700 dark:text-white">Title :</span>
+          <span className="text-scale-900 group-hover:text-scale-1200">
+            Title of the thing
+          </span>
           <Badge>Test badge</Badge>
         </>
       }
       id="first"
     >
-      <span className="text-gray-700 dark:text-white">
+      <span className="text-scale-900">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
         amet labore.
       </span>
@@ -31,37 +34,53 @@ export const OneItem = (args: any) => (
 export const MultipleItems = (args: any) => (
   <Accordion {...args} openBehaviour="multiple">
     <Accordion.Item
-      header={<span className="text-gray-700 dark:text-white">Title :</span>}
+      header={
+        <span className="text-scale-900 group-hover:text-scale-1200">
+          Title of the thing
+        </span>
+      }
       id={'1'}
     >
-      <span className="text-gray-700 dark:text-white">
+      <span className="text-scale-900">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
         amet labore.
       </span>
     </Accordion.Item>
     <Accordion.Item
-      header={<span className="text-gray-700 dark:text-white">Title :</span>}
+      header={
+        <span className="text-scale-900 group-hover:text-scale-1200">
+          Title of the thing
+        </span>
+      }
       id={'2'}
     >
-      <span className="text-gray-700 dark:text-white">
+      <span className="text-scale-900">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
         amet labore.
       </span>
     </Accordion.Item>
     <Accordion.Item
-      header={<span className="text-gray-700 dark:text-white">Title :</span>}
+      header={
+        <span className="text-scale-900 group-hover:text-scale-1200">
+          Title of the thing
+        </span>
+      }
       id={'3'}
     >
-      <span className="text-gray-700 dark:text-white">
+      <span className="text-scale-900">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
         amet labore.
       </span>
     </Accordion.Item>
     <Accordion.Item
-      header={<span className="text-gray-700 dark:text-white">Title :</span>}
+      header={
+        <span className="text-scale-900 group-hover:text-scale-1200">
+          Title of the thing
+        </span>
+      }
       id={'4'}
     >
-      <span className="text-gray-700 dark:text-white">
+      <span className="text-scale-900">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
         amet labore.
       </span>
@@ -72,37 +91,53 @@ export const MultipleItems = (args: any) => (
 export const Bordered = (args: any) => (
   <Accordion {...args}>
     <Accordion.Item
-      header={<span className="text-gray-700 dark:text-white">Title :</span>}
+      header={
+        <span className="text-scale-900 group-hover:text-scale-1200">
+          Title of the thing
+        </span>
+      }
       id={'1'}
     >
-      <span className="text-gray-700 dark:text-white">
+      <span className="text-scale-900">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
         amet labore.
       </span>
     </Accordion.Item>
     <Accordion.Item
-      header={<span className="text-gray-700 dark:text-white">Title :</span>}
+      header={
+        <span className="text-scale-900 group-hover:text-scale-1200">
+          Title of the thing
+        </span>
+      }
       id={'2'}
     >
-      <span className="text-gray-700 dark:text-white">
+      <span className="text-scale-900">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
         amet labore.
       </span>
     </Accordion.Item>
     <Accordion.Item
-      header={<span className="text-gray-700 dark:text-white">Title :</span>}
+      header={
+        <span className="text-scale-900 group-hover:text-scale-1200">
+          Title of the thing
+        </span>
+      }
       id={'3'}
     >
-      <span className="text-gray-700 dark:text-white">
+      <span className="text-scale-900">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
         amet labore.
       </span>
     </Accordion.Item>
     <Accordion.Item
-      header={<span className="text-gray-700 dark:text-white">Title :</span>}
+      header={
+        <span className="text-scale-900 group-hover:text-scale-1200">
+          Title of the thing
+        </span>
+      }
       id={'4'}
     >
-      <span className="text-gray-700 dark:text-white">
+      <span className="text-scale-900">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
         amet labore.
       </span>
@@ -119,13 +154,15 @@ export const LeftAlignedChevron = (args: any) => (
     <Accordion.Item
       header={
         <>
-          <span className="text-gray-700 dark:text-white">First item</span>
+          <span className="text-scale-900 group-hover:text-scale-1200">
+            First item
+          </span>
           <Badge>Test badge</Badge>
         </>
       }
       id="first"
     >
-      <span className="text-gray-700 dark:text-white">
+      <span className="text-scale-900">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
         amet labore.
       </span>
@@ -133,15 +170,32 @@ export const LeftAlignedChevron = (args: any) => (
     <Accordion.Item
       header={
         <>
-          <span className="text-gray-700 dark:text-white">Second item</span>
+          <span className="text-scale-900 group-hover:text-scale-1200">
+            Second item
+          </span>
         </>
       }
       id="second"
     >
-      <span className="text-gray-700 dark:text-white">
+      <span className="text-scale-900">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
         amet labore.
       </span>
     </Accordion.Item>
   </Accordion>
 )
+
+// export const withDefaultActive = Multiple.bind({})
+// withDefaultActive.args = {
+//   defaultActiveId: [1],
+// }
+
+// export const withIconLeft = Multiple.bind({})
+// withIconLeft.args = {
+//   iconPosition: 'left',
+// }
+
+// export const withCustomIcon = Multiple.bind({})
+// withCustomIcon.args = {
+//   icon: <IconArrowUp />,
+// }

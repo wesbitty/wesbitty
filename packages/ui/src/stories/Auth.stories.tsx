@@ -5,12 +5,12 @@ import { createClient } from '@supabase/supabase-js'
 import { Typography, Button, Space } from '../index'
 
 const wesbitty = createClient(
-  'https://rsnibhkhsbfnncjmwnkj.wesbitty.org',
+  'https://auth.wesbitty.org',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNTIxNDE1MywiZXhwIjoxOTMwNzkwMTUzfQ.OQEbAaTfgDdLCCht251P2JRD3QDnui6nsU8N-tZA_Mc'
 )
 
 export default {
-  title: 'Auth/Auth',
+  title: 'Feedback/Auth',
   component: Auth,
 }
 
@@ -35,35 +35,35 @@ export const Default = (args: any) => (
     </Container>
   </Auth.UserContextProvider>
 )
-export const withSocialAuth = (args: any) => (
+export const socialAuth = (args: any) => (
   <Auth.UserContextProvider {...args}>
     <Container {...args}>
       <Auth {...args} />
     </Container>
   </Auth.UserContextProvider>
 )
-export const withAllSocialAuth = (args: any) => (
+export const allSocialAuth = (args: any) => (
   <Auth.UserContextProvider {...args}>
     <Container {...args}>
       <Auth {...args} />
     </Container>
   </Auth.UserContextProvider>
 )
-export const withSocialLargeButtons = (args: any) => (
+export const largeButtonSocialAuth = (args: any) => (
   <Auth.UserContextProvider {...args}>
     <Container {...args}>
       <Auth {...args} />
     </Container>
   </Auth.UserContextProvider>
 )
-export const withColouredSocialAuth = (args: any) => (
+export const colouredSocialAuth = (args: any) => (
   <Auth.UserContextProvider {...args}>
     <Container {...args}>
       <Auth {...args} />
     </Container>
   </Auth.UserContextProvider>
 )
-export const withSocialAuthHorizontal = (args: any) => (
+export const horizontalSocialAuth = (args: any) => (
   <Auth.UserContextProvider {...args}>
     <Container {...args}>
       <Auth {...args} />
@@ -78,8 +78,8 @@ export const ChangeViewState = (args: any) => {
   >('sign_in')
 
   return (
-    <div className="w-80 m-auto mt-16">
-      <Space size={2}>
+    <div>
+      <Space>
         <Button
           type={view === 'sign_up' ? 'primary' : 'default'}
           onClick={() => setView('sign_up')}
@@ -93,18 +93,16 @@ export const ChangeViewState = (args: any) => {
           Sign in
         </Button>
         <Button
-          type={view === 'magic_link' ? 'primary' : 'default'}
-          onClick={() => setView('magic_link')}
-        >
-          Magic link
-        </Button>
-      </Space>
-      <Space size={2} direction={'horizontal'}>
-        <Button
           type={view === 'forgotten_password' ? 'primary' : 'default'}
           onClick={() => setView('forgotten_password')}
         >
           Forgotten password
+        </Button>
+        <Button
+          type={view === 'magic_link' ? 'primary' : 'default'}
+          onClick={() => setView('magic_link')}
+        >
+          Magic link
         </Button>
       </Space>
       <Auth.UserContextProvider wesbittyOauth={wesbitty}>
@@ -120,12 +118,12 @@ Default.args = {
   wesbittyOauth: wesbitty,
 }
 
-withSocialAuth.args = {
+socialAuth.args = {
   wesbittyOauth: wesbitty,
   providers: ['facebook', 'google'],
 }
 
-withAllSocialAuth.args = {
+allSocialAuth.args = {
   wesbittyOauth: wesbitty,
   providers: [
     'apple',
@@ -141,7 +139,7 @@ withAllSocialAuth.args = {
   ],
 }
 
-withSocialLargeButtons.args = {
+largeButtonSocialAuth.args = {
   wesbittyOauth: wesbitty,
   providers: [
     'apple',
@@ -158,7 +156,7 @@ withSocialLargeButtons.args = {
   socialButtonSize: 'large',
 }
 
-withColouredSocialAuth.args = {
+colouredSocialAuth.args = {
   wesbittyOauth: wesbitty,
   socialColors: true,
   providers: [
@@ -175,7 +173,7 @@ withColouredSocialAuth.args = {
   ],
 }
 
-withSocialAuthHorizontal.args = {
+horizontalSocialAuth.args = {
   wesbittyOauth: wesbitty,
   providers: ['facebook', 'google'],
   socialLayout: 'horizontal',

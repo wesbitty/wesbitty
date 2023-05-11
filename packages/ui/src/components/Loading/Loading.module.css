@@ -1,0 +1,20 @@
+.wsb-loading {
+  @apply transition-all relative;
+}
+
+.wsb-loading--active .wsb-loading-content {
+  opacity: 0.4;
+}
+.wsb-loading-content {
+  @apply transition-opacity duration-300;
+}
+
+.wsb-loading-spinner {
+  @apply text-brand-800 animate-spin;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}

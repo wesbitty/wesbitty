@@ -6,7 +6,7 @@ import { IconContext } from './IconContext'
 
 const IconStyles = {}
 
-interface Props {
+type Props = {
   className?: string
   size?:
     | 'tiny'
@@ -93,7 +93,7 @@ function Icon({
         // default these icons to use 'currentColor' ie, the text color
         const noColor = !color && !fill && !stroke
 
-        let classes = ['sbui-icon', className]
+        let classes = ['wsb-icon', className]
         if (contextClassName) {
           classes.push(contextClassName)
         }

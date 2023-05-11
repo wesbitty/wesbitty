@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useState } from 'react'
+
 import { IconChevronUp } from './Icon/icons/IconChevronUp'
 import styleHandler from '../theme/handler'
+
 import * as RadixAccordion from '@radix-ui/react-accordion'
 import { IconChevronDown } from '..'
 import { Transition } from '@headlessui/react'
@@ -14,7 +16,7 @@ type Type = 'default' | 'bordered'
 type Size = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge'
 type Align = 'left' | 'right'
 
-interface ContextValue {
+type ContextValue = {
   bordered?: boolean
   type: Type
   justified: Boolean
@@ -115,6 +117,7 @@ interface ItemProps {
 
 export function Item({ children, className, header, id, icon }: ItemProps) {
   const __styles = styleHandler('accordion')
+  // const [open, setOpen] = useState(false)
 
   const {
     type,

@@ -1,5 +1,5 @@
 import React from 'react'
-import styleHandler from '../../theme/handler'
+import { styleHandler } from '../../theme'
 
 export interface Props {
   className?: string

@@ -1,0 +1,10 @@
+export declare const google: () => import("react/jsx-runtime").JSX.Element;
+export declare const facebook: () => import("react/jsx-runtime").JSX.Element;
+export declare const twitter: () => import("react/jsx-runtime").JSX.Element;
+export declare const apple: () => import("react/jsx-runtime").JSX.Element;
+export declare const github: () => import("react/jsx-runtime").JSX.Element;
+export declare const gitlab: () => import("react/jsx-runtime").JSX.Element;
+export declare const bitbucket: () => import("react/jsx-runtime").JSX.Element;
+export declare const discord: () => import("react/jsx-runtime").JSX.Element;
+export declare const azure: () => import("react/jsx-runtime").JSX.Element;
+export declare const twitch: () => import("react/jsx-runtime").JSX.Element;

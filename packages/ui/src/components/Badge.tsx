@@ -1,22 +1,37 @@
 import styleHandler from '../theme/handler'
 
-interface BadgeProps {
+type Props = {
   color?:
     | 'brand'
-    | 'gray'
+    | 'scale'
+    | 'tomato'
     | 'red'
+    | 'crimson'
+    | 'pink'
+    | 'plum'
     | 'purple'
     | 'violet'
-    | 'teal'
+    | 'indigo'
     | 'blue'
     | 'cyan'
     | 'teal'
     | 'green'
+    | 'grass'
     | 'brown'
+    | 'orange'
     | 'sky'
+    | 'mint'
+    | 'lime'
     | 'yellow'
     | 'amber'
+    | 'gold'
+    | 'bronze'
+    | 'gray'
+    | 'mauve'
     | 'slate'
+    | 'sage'
+    | 'olive'
+    | 'sand'
   children: string | React.ReactNode
   size?: 'large' | 'small'
   dot?: boolean
@@ -29,11 +44,10 @@ export function Badge({
   size,
   dot,
   className,
-}: BadgeProps) {
+}: Props) {
   const __styles = styleHandler('badge')
 
   let classes = [__styles.base]
-
   if (color) {
     classes.push(__styles.color[color])
   }

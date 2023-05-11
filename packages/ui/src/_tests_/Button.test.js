@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
-import Button from '../components/Button'
+import { Button } from '../components/Button'
 
 const SIZES = ['tiny', 'small', 'medium', 'large', 'xlarge']
 const TYPES = [
@@ -60,7 +60,7 @@ describe('#Button', () => {
   it('should have "w-full" class', async () => {
     render(<Button block>Button Block</Button>)
     expect(screen.queryByRole('button')).toHaveClass(
-      'sbui-btn sbui-btn-primary sbui-btn--w-full sbui-btn-container--shadow sbui-btn--tiny'
+      'wsb-btn wsb-btn-primary wsb-btn--w-full wsb-btn-container--shadow wsb-btn--tiny'
     )
   })
 
@@ -69,11 +69,11 @@ describe('#Button', () => {
 
     if (type !== 'text' && type !== 'link') {
       expect(screen.queryByRole('button')).toHaveClass(
-        `sbui-btn sbui-btn-${type} sbui-btn-container--shadow sbui-btn--tiny`
+        `wsb-btn wsb-btn-${type} wsb-btn-container--shadow wsb-btn--tiny`
       )
     } else {
       expect(screen.queryByRole('button')).toHaveClass(
-        `sbui-btn sbui-btn-${type} sbui-btn--tiny`
+        `wsb-btn wsb-btn-${type} wsb-btn--tiny`
       )
     }
   })
@@ -81,7 +81,7 @@ describe('#Button', () => {
   it.each(SIZES)('should have "btn--%s" class', (size) => {
     render(<Button size={size}>Button</Button>)
     expect(screen.queryByRole('button')).toHaveClass(
-      `sbui-btn sbui-btn-primary sbui-btn-container--shadow sbui-btn--${size}`
+      `wsb-btn wsb-btn-primary wsb-btn-container--shadow wsb-btn--${size}`
     )
   })
 })

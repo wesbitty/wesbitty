@@ -1,37 +1,58 @@
 import { Badge } from '../components/Badge'
+import React from 'react'
 
 export default {
-  title: 'Displays/Badge',
+  title: 'Elements/Badge',
   component: Badge,
 }
 
 const colors = [
   'brand',
+  'scale',
+  'tomato',
   'red',
+  'crimson',
+  'pink',
+  'plum',
   'purple',
-  'gray',
   'violet',
+  'indigo',
+  'blue',
+  'cyan',
   'teal',
   'green',
-  'cyan',
-  'slate',
+  'grass',
   'brown',
-  'blue',
+  'orange',
   'sky',
+  'mint',
+  'lime',
   'yellow',
   'amber',
+  'gold',
+  'bronze',
+  'gray',
+  'mauve',
+  'slate',
+  'sage',
+  'olive',
+  'sand',
 ]
 
 const sizes: string[] = ['small', 'large']
 
-export const Default = (args: any) => <Badge {...args}>Badge</Badge>
-export const withColor = (args: any) => <Badge {...args}>Badge</Badge>
-export const withDot = (args: any) => <Badge {...args}>Badge</Badge>
-export const large = (args: any) => <Badge {...args}>Badge</Badge>
-export const withDotLarge = (args: any) => <Badge {...args}>Badge</Badge>
+export const Default = (args: any) => <Badge {...args}>Hello world</Badge>
+
+export const withColor = (args: any) => <Badge {...args}>Hello world</Badge>
+
+export const withDot = (args: any) => <Badge {...args}>Hello world</Badge>
+
+export const large = (args: any) => <Badge {...args}>Hello world</Badge>
+
+export const withDotLarge = (args: any) => <Badge {...args}>Hello world</Badge>
 
 export const withCustomClassNames = (args: any) => (
-  <Badge {...args}>Badge</Badge>
+  <Badge {...args}>Hello world</Badge>
 )
 
 export const allBadges = () => (
@@ -39,12 +60,12 @@ export const allBadges = () => (
     <div className="flex flex-row gap-6 mx-auto my-4">
       {sizes.map((size, sizeIndex) => (
         <>
-          <h3 className="text-gray-900">{size}</h3>
+          <h3 className="text-scale-900">{size}</h3>
           <div className="flex flex-col gap-2">
             {colors.map((x, colorIndex) => (
               // @ts-ignore
               <Badge size={sizes[sizeIndex]} color={colors[colorIndex]}>
-                Badge
+                Supabase
               </Badge>
             ))}
           </div>
@@ -74,5 +95,5 @@ withDotLarge.args = {
 }
 
 withCustomClassNames.args = {
-  className: 'border-sky-200 border-2',
+  className: 'border-teal-100 border-2',
 }

@@ -1,4 +1,4 @@
-import { ThemeDecorator } from './decorator'
+import { ThemeDecorator } from './ThemeDecorator'
 
 addDecorator(withKnobs)
 addDecorator(ThemeDecorator)

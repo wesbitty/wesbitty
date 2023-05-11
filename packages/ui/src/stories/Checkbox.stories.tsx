@@ -3,7 +3,7 @@ import React from 'react'
 import { Checkbox } from '../components/Checkbox'
 
 export default {
-  title: 'Form Layouts/Checkbox',
+  title: 'Data Input/Checkbox',
   component: Checkbox,
 }
 

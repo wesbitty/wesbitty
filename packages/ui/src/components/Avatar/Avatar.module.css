@@ -1,0 +1,63 @@
+.wsb-avatar {
+  @apply rounded-full;
+}
+
+.wsb-avatar-type-rounded {
+  border-radius: 10%;
+}
+
+.wsb-avatar-type-square {
+  border-radius: 0;
+}
+
+.wsb-avatar-image {
+  object-fit: 'contain';
+  border-radius: '50%';
+  height: 3rem;
+  width: 3rem;
+}
+
+.wsb-avatar-children {
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+}
+
+.wsb-avatar-icon {
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+  background-color: cadetblue;
+  height: 3rem;
+  width: 3rem;
+}
+
+.wsb-avatar-text {
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+  background-color: cadetblue;
+  float: left;
+  height: 3rem;
+  width: 3rem;
+}
+
+.wsb-avatar-fallback {
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+  background-color: cadetblue;
+  height: 3rem;
+  width: 3rem;
+}
+
+.wsb-avatar-single {
+}
+
+.wsb-avatar-multiple {
+}
+
+.wsb-image-responsive {
+  width: 100%;
+  height: auto;
+}

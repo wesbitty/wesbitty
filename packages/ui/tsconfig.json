@@ -1,38 +1,37 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
-    "jsx": "react-jsx",
-    "declaration": true,
-    "declarationDir": "types",
-    "sourceMap": true,
-    "outDir": "lib",
-    "strict": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "emitDeclarationOnly": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
     "preserveConstEnums": true,
+    "target": "es6",
+    "module": "esnext",
+    "declaration": true,
+    "rootDir": "src",
+    "outDir": "types",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "skipLibCheck": true,
+    "inlineSources": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "esModuleInterop": true,
+    "strict": false,
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "noImplicitAny": false,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./*"]
     }
   },
-  "include": [
-    "src/components/**/*",
-    "src/types.tsx",
-    "src/theme/ColorScheme/*",
-    "src/theme/Provider"
-  ],
-  "exclude": ["node_modules", "src/__tests__"]
+  "include": ["src/"],
+  "exclude": [
+    "node_modules",
+    "src/_tests_",
+    "src/components/*/*.test.js",
+    "src/stories",
+    "src/components/*/*.stories.tsx"
+  ]
 }

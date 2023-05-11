@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import Upload from '.'
 import Typography from '../Typography'
 
@@ -17,7 +18,7 @@ export const Draggable = () => {
       files={files}
       setFiles={setFiles}
     >
-      <div className="flex flex-col justify-center">
+      <div className="flex flex-col gap-8 justify-evenly">
         <div className="space-y-1 text-center">
           <svg
             className="mx-auto h-12 w-12 text-gray-400"
@@ -33,7 +34,7 @@ export const Draggable = () => {
               stroke-linejoin="round"
             />
           </svg>
-          <div className="flex cursor-pointer text-sm font-medium text-violet-600">
+          <div className="flex text-sm text-gray-600">
             <Typography.Text className="m-auto text-center">
               <Typography.Link
                 style={{
@@ -45,9 +46,9 @@ export const Draggable = () => {
               {' or drag and drop'}
             </Typography.Text>
           </div>
-          <p className="text-xs text-gray-500 dark:text-gray-300">
+          <Typography.Text small type="secondary">
             PNG, JPG, GIF up to 10MB
-          </p>
+          </Typography.Text>
           {/* <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p> */}
         </div>
 

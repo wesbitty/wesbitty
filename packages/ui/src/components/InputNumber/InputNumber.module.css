@@ -1,8 +1,8 @@
-.sbui-inputnumber-container {
+.wsb-inputnumber-container {
   @apply relative;
 }
 
-.sbui-inputnumber {
+.wsb-inputnumber {
   @apply block box-border pl-3 pr-3 py-2 w-full rounded-md shadow-sm text-sm border border-solid transition-all;
   @apply bg-white text-input-value-light border-input-border-light;
   @apply focus:ring-input-border-focus-light focus:border-input-border-focus-light focus:outline-none;
@@ -10,45 +10,45 @@
   @apply dark:bg-transparent dark:text-input-value-dark dark:border-input-border-dark;
   @apply dark:focus:border-input-border-focus-dark dark:focus:ring-input-border-focus-dark;
 
-  /* box-shadow: 0 0 0 2px rgba(255, 255, 255, 0)', */
+  /* box-shadow: 0 0 0 2px rgba(255, 255, 255, 0); */
   font-family: inherit;
   transition: box-shadow 0.3s ease-in-out;
 
   -moz-appearance: textfield;
 }
 
-.sbui-inputnumber::-webkit-inner-spin-button,
-.sbui-inputnumber::-webkit-outer-spin-button {
+.wsb-inputnumber::-webkit-inner-spin-button,
+.wsb-inputnumber::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.sbui-inputnumber:focus {
+.wsb-inputnumber:focus {
   box-shadow: 0 0 0 2px rgba(62, 207, 142, 0.1);
   outline: 0;
 }
 
-.sbui-inputnumber--error {
+.wsb-inputnumber--error {
   @apply border-red-500 dark:border-red-500;
 }
 
-.sbui-inputnumber--borderless {
+.wsb-inputnumber--borderless {
   @apply border-transparent shadow-none;
 }
 
-.sbui-inputnumber-actions-container {
+.wsb-inputnumber-actions-container {
   @apply absolute inset-y-0 right-0 pl-3 pr-1 flex items-center;
 }
 
-.sbui-inputnumber-nav {
+.wsb-inputnumber-nav {
   @apply hidden;
 }
 
-.sbui-inputnumber:focus + .sbui-inputnumber-nav {
+.wsb-inputnumber:focus + .wsb-inputnumber-nav {
   @apply block;
 }
 
-.sbui-inputnumber-button {
+.wsb-inputnumber-button {
   @apply block box-border pl-3 pr-3 py-2 w-full rounded-md text-sm border border-solid;
   @apply bg-transparent border-transparent;
   @apply dark:text-white;
@@ -70,12 +70,12 @@
   user-select: none;
 }
 
-.sbui-inputnumber-button:active {
+.wsb-inputnumber-button:active {
   background: #eaeaea;
   background-clip: padding-box;
 }
 
-.sbui-inputnumber-button-up {
+.wsb-inputnumber-button-up {
   position: absolute;
   height: 50%;
   top: 0;
@@ -83,7 +83,7 @@
   line-height: 1.6;
 }
 
-.sbui-inputnumber-button-down {
+.wsb-inputnumber-button-down {
   position: absolute;
   bottom: 0;
   height: 50%;
@@ -94,41 +94,41 @@
     Input sizes
   */
 
-.sbui-inputnumber--tiny {
+.wsb-inputnumber--tiny {
   @apply px-2.5 py-1.5 text-xs;
 }
-.sbui-inputnumber--small {
+.wsb-inputnumber--small {
   @apply px-3 py-2 text-sm leading-4;
 }
-.sbui-inputnumber--medium {
+.wsb-inputnumber--medium {
   @apply px-4 py-2 text-sm;
 }
-.sbui-inputnumber--large {
+.wsb-inputnumber--large {
   @apply px-4 py-2 text-base;
 }
-.sbui-inputnumber--xlarge {
+.wsb-inputnumber--xlarge {
   @apply px-6 py-3 text-base;
 }
 
-.sbui-inputnumber-nav--tiny {
+.wsb-inputnumber-nav--tiny {
   height: 30px;
 }
-.sbui-inputnumber-nav--small {
+.wsb-inputnumber-nav--small {
   height: 34px;
 }
-.sbui-inputnumber-nav--medium {
+.wsb-inputnumber-nav--medium {
   height: 38px;
 }
-.sbui-inputnumber-nav--large {
+.wsb-inputnumber-nav--large {
   height: 42px;
 }
-.sbui-inputnumber-nav--xlarge {
+.wsb-inputnumber-nav--xlarge {
   height: 50px;
 }
 /*
     Input icon
   */
 
-.sbui-inputnumber--with-icon {
+.wsb-inputnumber--with-icon {
   @apply pl-10;
 }
