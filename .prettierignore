@@ -4,6 +4,9 @@ package-lock.json
 
 CODE_OF_CONDUCT.md
 
+packages/ui/types/*
+storybook-static
+
 docker*
 dist*
 .next
