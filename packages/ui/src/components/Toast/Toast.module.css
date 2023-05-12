@@ -97,8 +97,8 @@
 
 div[data-radix-portal]:not(.portal--toast) {
   /* 
-  override z-index to be lower than radix value of 2147483647 
-  except for the toast portal
-  */
+    override z-index to be lower than radix value of 2147483647 
+    except for the toast portal
+    */
   z-index: 2147483646 !important;
 }

@@ -8,12 +8,33 @@ const {
   default: flattenColorPalette,
 } = require('tailwindcss/lib/util/flattenColorPalette')
 
+// exclude these colors from the included set from Radix
+const excludedRadixColors = [
+  'bronze',
+  'brown',
+  'cyan',
+  'grass',
+  'olive',
+  'mauve',
+  'mint',
+  'lime',
+  'plum',
+  'sage',
+  'sand',
+  'sky',
+  'teal',
+]
+
+// generates fixed scales
+// based on the root/light mode version
 const fixedOptions = ['scale', 'scaleA', 'brand']
 
 function radixColorKeys() {
   let keys = Object.keys(radixUiColors)
 
-  // Filter array items based on search criteria (query)
+  /**
+   * Filter array items based on search criteria (query)
+   */
   function filterItems(arr, query) {
     return arr.filter(function (el) {
       return el.toLowerCase().indexOf(query.toLowerCase()) == -1
@@ -22,7 +43,12 @@ function radixColorKeys() {
 
   keys = filterItems(keys, 'Dark')
 
-  // console.log('radixColorKeys', keys)
+  // remove excluded colors
+  keys = keys.filter(
+    (key) =>
+      !excludedRadixColors.some((excludeColor) => key.startsWith(excludeColor))
+  )
+
   return keys
 }
 
@@ -37,11 +63,7 @@ function generateColorClasses() {
     // create empty obj for each color
     mappedColors[x] = {}
     // create empty obj for each fixed color
-    if (
-      fixedOptions.some(function (v) {
-        return x.indexOf(v) >= 0
-      })
-    ) {
+    if (fixedOptions.some((v) => x.indexOf(v) >= 0)) {
       mappedColors[`${x}-fixed`] = {}
     }
   })
@@ -49,14 +71,9 @@ function generateColorClasses() {
   colors.map((x) => {
     for (let index = 0; index < 12; index++) {
       const step = index + 1
-      mappedColors[x][step * 100] = `var(--colors-${x.toLowerCase()}${step})`
+      mappedColors[x][step * 100] = `var(--colors-${x}${step})`
 
-      if (
-        fixedOptions.some(function (v) {
-          return x.indexOf(v) >= 0
-        })
-      ) {
-        // console.log(x)
+      if (fixedOptions.some((v) => x.indexOf(v) >= 0)) {
         mappedColors[`${x}-fixed`][
           step * 100
         ] = `var(--colors-fixed-${x}${step})`
@@ -71,10 +88,21 @@ const colorClasses = generateColorClasses()
 
 // generate the CSS variables for tailwind to use
 function generateCssVariables() {
+  // potential options
+  // { fixedOptions, brandColors }
+
   let rootColors = {}
   let darkColors = {}
 
-  const radixArray = Object.values(radixUiColors)
+  const radixArray = Object.entries(radixUiColors)
+    .filter(
+      ([key, value]) =>
+        !excludedRadixColors.some((excludeColor) =>
+          key.startsWith(excludeColor)
+        )
+    )
+    .map(([, value]) => value)
+
   const brandArray = Object.values(brandColors)
 
   function generateColors(colors, index, colorSet) {
@@ -112,7 +140,7 @@ function generateCssVariables() {
 
 const variables = generateCssVariables()
 
-const themeConfig = {
+const wesjetTheme = {
   theme: {
     variables: {
       DEFAULT: {
@@ -214,6 +242,26 @@ const themeConfig = {
           '0%': { transform: 'translate-x-0', opacity: 1 },
           '100%': { transform: 'translateX(100%)', opacity: 0 },
         },
+        lineLoading: {
+          '0%': {
+            marginLeft: '-10%',
+            width: '80px',
+          },
+          '25%': {
+            width: ' 240px',
+          },
+          '50%': {
+            marginLeft: '100%',
+            width: '80px',
+          },
+          '75%': {
+            width: '240px',
+          },
+          '100%': {
+            marginLeft: '-10%',
+            width: '80px',
+          },
+        },
       },
       animation: {
         'fade-in': 'fadeIn 300ms',
@@ -248,6 +296,8 @@ const themeConfig = {
         'panel-slide-right-in':
           'panelSlideRightIn 250ms cubic-bezier(0.87, 0, 0.13, 1)',
 
+        'line-loading': 'lineLoading 1.8s infinite',
+
         // tailwind class for this is `animate-dropdownFadeIn`
         dropdownFadeIn: 'dropdownFadeIn 0.1s ease-out',
         // tailwind class for this is `animate-dropdownFadeOut`
@@ -255,6 +305,33 @@ const themeConfig = {
       },
       colors: {
         ...colorClasses,
+        transparent: 'transparent',
+        white: '#ffffff',
+        black: '#000000',
+        gray: {
+          50: '#f9fafb',
+          100: '#f4f5f7',
+          200: '#e5e7eb',
+          300: '#d5d6d7',
+          400: '#9e9e9e',
+          500: '#707275',
+          600: '#4c4f52',
+          700: '#24262d',
+          800: '#1a1c23',
+          900: '#121317',
+        },
+        dark: {
+          100: '#eeeeee',
+          200: '#e0e0e0',
+          300: '#bbbbbb',
+          400: '#666666',
+          500: '#444444',
+          600: '#2a2a2a',
+          700: '#1f1f1f',
+          800: '#181818',
+          900: '#0f0f0f',
+        },
+
         'hi-contrast': `var(--colors-fixed-scale12)`,
         'lo-contrast': `var(--colors-fixed-scale1)`,
       },
@@ -265,13 +342,20 @@ const themeConfig = {
     function ({ addUtilities, addVariant }) {
       // addVariant('data-open', '&:[data-state=open]')
       addUtilities({
+        '.line-loading-bg': {
+          background:
+            'linear-gradient(90deg,rgba(0, 0, 0, 0) 0%,rgba(255, 255, 255, 0.65) 50%,rgba(0, 0, 0, 0) 100%)',
+        },
+        '.line-loading-bg-light': {
+          background:
+            'linear-gradient(90deg,rgba(0, 0, 0, 0) 0%,rgba(33, 33, 33, 0.65) 50%,rgba(0, 0, 0, 0) 100%)',
+        },
         ".dropdown-content[data-state='open']": {
           animation: 'fadeIn 50ms ease-out',
         },
         ".dropdown-content[data-state='closed']": {
           animation: 'fadeOut 50ms ease-in',
         },
-
         "[data-state='open'] .accordion-content-animation": {
           animation: 'slideDown 200ms ease-out',
         },
@@ -349,12 +433,12 @@ const themeConfig = {
             bordershadow: (value) => {
               return {
                 boxShadow: `
-                var(--colors-blacka1) 0px 0px 0px 0px, 
-                var(--colors-blacka1) 0px 0px 0px 0px, 
-                var(--colors-blacka8) 0px 1px 1px 0px, 
-                ${value} 0px 0px 0px 1px, 
-                var(--colors-blacka1) 0px 0px 0px 0px, 
-                var(--colors-blacka1) 0px 0px 0px 0px, 
+                var(--colors-blackA1) 0px 0px 0px 0px,
+                var(--colors-blackA1) 0px 0px 0px 0px,
+                var(--colors-blackA8) 0px 1px 1px 0px,
+                ${value} 0px 0px 0px 1px,
+                var(--colors-blackA1) 0px 0px 0px 0px,
+                var(--colors-blackA1) 0px 0px 0px 0px,
                 rgb(64 68 82 / 8%) 0px 2px 5px 0px;
                 `,
               }
@@ -379,11 +463,11 @@ function arrayMergeFn(destinationArray, sourceArray) {
 }
 
 /**
- * Merge Wesjet and Tailwind CSS configurations
+ * Merge Wesjet CSS and Tailwind CSS configurations
  * @param {object} tailwindConfig - Tailwind config object
  * @return {object} new config object
  */
-export function wesjetTheme(tailwindConfig) {
+function wrapper(tailwindConfig) {
   let purge
   if (Array.isArray(tailwindConfig.purge)) {
     purge = {
@@ -392,7 +476,9 @@ export function wesjetTheme(tailwindConfig) {
   } else {
     purge = tailwindConfig.purge
   }
-  return deepMerge({ ...tailwindConfig, purge }, themeConfig, {
+  return deepMerge({ ...tailwindConfig, purge }, wesjetTheme, {
     arrayMerge: arrayMergeFn,
   })
 }
+
+module.exports = wrapper

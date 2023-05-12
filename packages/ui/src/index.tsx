@@ -1,6 +1,5 @@
 // THEME
 export {
-  wesjetTheme,
   defaultTheme,
   ThemeProvider,
   ThemeContext,

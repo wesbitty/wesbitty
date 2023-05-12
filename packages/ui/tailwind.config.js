@@ -1,305 +1,32 @@
-const { wesjetTheme } = require('./types')
+const config = require('./src/theme/config.js')
+const svgToDataUri = require('mini-svg-data-uri')
 
-const gray = {
-  100: '#eeeeee',
-  200: '#e0e0e0',
-  300: '#bbbbbb',
-  400: '#666666',
-  500: '#444444',
-  650: '#333',
-  600: '#2a2a2a',
-  700: '#1f1f1f',
-  800: '#181818',
-  900: '#0f0f0f',
-}
-const brand = {
-  100: '#c5f1dd',
-  200: '#c5f1dd',
-  300: '#9fe7c7',
-  400: '#65d9a5',
-  500: '#24b47e',
-  600: '#38bc81',
-  700: '#1c8656',
-  800: '#10633e',
-  900: '#10633e',
-}
-
-const blueGray = {
-  50: '#F8FAFC',
-  100: '#F1F5F9',
-  200: '#E2E8F0',
-  300: '#CBD5E1',
-  400: '#94A3B8',
-  500: '#64748B',
-  600: '#475569',
-  700: '#334155',
-  800: '#1E293B',
-  900: '#0F172A',
-}
-
-const coolGray = {
-  50: '#F9FAFB',
-  100: '#F3F4F6',
-  200: '#E5E7EB',
-  300: '#D1D5DB',
-  400: '#9CA3AF',
-  500: '#6B7280',
-  600: '#4B5563',
-  700: '#374151',
-  800: '#1F2937',
-  900: '#111827',
-}
-
-const colors = {
-  red: {
-    50: '#fdf2f2',
-    100: '#fde8e8',
-    200: '#fbd5d5',
-    300: '#f8b4b4',
-    400: '#f98080',
-    500: '#f05252',
-    600: '#e02424',
-    700: '#c81e1e',
-    800: '#9b1c1c',
-    900: '#771d1d',
-  },
-  orange: {
-    50: '#fff8f1',
-    100: '#feecdc',
-    200: '#fcd9bd',
-    300: '#fdba8c',
-    400: '#ff8a4c',
-    500: '#ff5a1f',
-    600: '#d03801',
-    700: '#b43403',
-    800: '#8a2c0d',
-    900: '#771d1d',
-  },
-  yellow: {
-    50: '#fdfdea',
-    100: '#fdf6b2',
-    200: '#fce96a',
-    300: '#faca15',
-    400: '#e3a008',
-    500: '#c27803',
-    600: '#9f580a',
-    700: '#8e4b10',
-    800: '#723b13',
-    900: '#633112',
-  },
-  green: {
-    50: '#f3faf7',
-    100: '#def7ec',
-    200: '#bcf0da',
-    300: '#84e1bc',
-    400: '#31c48d',
-    500: '#0e9f6e',
-    600: '#057a55',
-    700: '#046c4e',
-    800: '#03543f',
-    900: '#014737',
-  },
-  teal: {
-    50: '#edfafa',
-    100: '#d5f5f6',
-    200: '#afecef',
-    300: '#7edce2',
-    400: '#16bdca',
-    500: '#0694a2',
-    600: '#047481',
-    700: '#036672',
-    800: '#05505c',
-    900: '#014451',
-  },
-  blue: {
-    50: '#ebf5ff',
-    100: '#e1effe',
-    200: '#c3ddfd',
-    300: '#a4cafe',
-    400: '#76a9fa',
-    500: '#3f83f8',
-    600: '#1c64f2',
-    700: '#1a56db',
-    800: '#1e429f',
-    900: '#233876',
-  },
-  indigo: {
-    50: '#f0f5ff',
-    100: '#e5edff',
-    200: '#cddbfe',
-    300: '#b4c6fc',
-    400: '#8da2fb',
-    500: '#6875f5',
-    600: '#5850ec',
-    700: '#5145cd',
-    800: '#42389d',
-    900: '#362f78',
-  },
-  purple: {
-    50: '#f6f5ff',
-    100: '#edebfe',
-    200: '#dcd7fe',
-    300: '#cabffd',
-    400: '#ac94fa',
-    500: '#9061f9',
-    600: '#7e3af2',
-    700: '#6c2bd9',
-    800: '#5521b5',
-    900: '#4a1d96',
-  },
-  pink: {
-    50: '#fdf2f8',
-    100: '#fce8f3',
-    200: '#fad1e8',
-    300: '#f8b4d9',
-    400: '#f17eb8',
-    500: '#e74694',
-    600: '#d61f69',
-    700: '#bf125d',
-    800: '#99154b',
-    900: '#751a3d',
-  },
-}
-
-const dark = {
-  50: '#eeeeee',
-  100: '#eeeeee',
-  200: '#e0e0e0',
-  300: '#bbbbbb',
-  400: '#666666',
-  500: '#444444',
-  600: '#2a2a2a',
-  700: '#1f1f1f',
-  800: '#181818',
-  900: '#0f0f0f',
-}
-
-const wsb_border = {
-  100: 'var(--border-1)',
-  200: 'var(--border-2)',
-  300: 'var(--border-3)',
-  400: 'var(--border-4)',
-  500: 'var(--border-5)',
-  600: 'var(--border-6)',
-  700: 'var(--border-7)',
-  800: 'var(--border-8)',
-  900: 'var(--border-9)',
-  1000: 'var(--border-10)',
-  1100: 'var(--border-11)',
-  1200: 'var(--border-12)',
-}
-
-const wsb_background = {
-  100: 'var(--background-1)',
-  200: 'var(--background-2)',
-  300: 'var(--background-3)',
-  400: 'var(--background-4)',
-  500: 'var(--background-5)',
-  600: 'var(--background-6)',
-  700: 'var(--background-7)',
-  800: 'var(--background-8)',
-  900: 'var(--background-9)',
-  1000: 'var(--background-10)',
-  1100: 'var(--background-11)',
-  1200: 'var(--background-12)',
-}
-
-const wsb_brand = {
-  100: 'var(--brand-1)',
-  200: 'var(--brand-2)',
-  300: 'var(--brand-3)',
-  400: 'var(--brand-4)',
-  500: 'var(--brand-5)',
-  600: 'var(--brand-6)',
-  700: 'var(--brand-7)',
-  800: 'var(--brand-8)',
-  900: 'var(--brand-9)',
-  1000: 'var(--brand-10)',
-  1100: 'var(--brand-11)',
-  1200: 'var(--brand-12)',
-}
-
-const wsb_brand_fixed = {
-  100: 'var(--brand-fixed-1)',
-  200: 'var(--brand-fixed-2)',
-  300: 'var(--brand-fixed-3)',
-  400: 'var(--brand-fixed-4)',
-  500: 'var(--brand-fixed-5)',
-  600: 'var(--brand-fixed-6)',
-  700: 'var(--brand-fixed-7)',
-  800: 'var(--brand-fixed-8)',
-  900: 'var(--brand-fixed-9)',
-  1000: 'var(--brand-fixed-10)',
-  1100: 'var(--brand-fixed-11)',
-  1200: 'var(--brand-fixed-12)',
-}
-
-function generateRadixVariables() {
-  const colors = [
-    'brand',
-    'brand-fixed',
-    'scale',
-    'tomato',
-    'red',
-    'crimson',
-    'pink',
-    'plum',
-    'purple',
-    'violet',
-    'indigo',
-    'blue',
-    'cyan',
-    'teal',
-    'green',
-    'grass',
-    'brown',
-    'orange',
-    'sky',
-    'mint',
-    'lime',
-    'yellow',
-    'amber',
-    'gold',
-    'bronze',
-    'gray',
-    'mauve',
-    'slate',
-    'sage',
-    'olive',
-    'sand',
-  ]
-
-  let mappedColors = {}
-
-  colors.map((x) => {
-    mappedColors[x] = {}
-  })
-
-  colors.map((x) => {
-    for (let index = 0; index < 12; index++) {
-      const step = index + 1
-      mappedColors[x][step * 100] = `var(--colors-${x}${step})`
-    }
-  })
-
-  return mappedColors
-}
-
-const custom_colors = generateRadixVariables()
-
-module.exports = wesjetTheme({
-  content: {
-    content: [
-      './src/**/**/*.{js,ts,jsx,tsx,html,mdx}',
-      './src/**/*.{js,ts,jsx,tsx,html,mdx}',
-      './src/**/*.{js,ts,jsx,tsx,html,mdx}',
-      './src/theme/default.ts',
-    ],
-  },
+module.exports = config({
+  mode: 'JIT',
+  content: [
+    './src/**/*.{ts,tsx,mdx}',
+    './components/**/*.tsx',
+    './layouts/**/*.tsx',
+    './pages/**/*.{tsx,mdx}',
+    './docs/**/*.{tsx,mdx}',
+    './[Post]/*/*.mdx',
+  ],
   darkMode: 'class',
   theme: {
+    borderColor: (theme) => ({
+      ...theme('colors'),
+      DEFAULT: theme('colors.scale.300', 'currentColor'),
+      dark: theme('colors.scale.1200', 'currentColor'),
+    }),
+    divideColor: (theme) => ({
+      ...theme('colors'),
+      DEFAULT: theme('colors.scale.300', 'currentColor'),
+      dark: theme('colors.scale.600', 'currentColor'),
+    }),
     extend: {
-      typography: {
+      typography: ({ theme }) => ({
+        // Removal of backticks in code blocks for tailwind v3.0
+        // https://github.com/tailwindlabs/tailwindcss-typography/issues/135
         DEFAULT: {
           css: {
             'code::before': {
@@ -308,115 +35,225 @@ module.exports = wesjetTheme({
             'code::after': {
               content: '""',
             },
+            '--tw-prose-body': theme('colors.scale[1100]'),
+            '--tw-prose-headings': theme('colors.scale[1200]'),
+            '--tw-prose-lead': theme('colors.scale[1100]'),
+            '--tw-prose-links': theme('colors.scale[1100]'),
+            '--tw-prose-bold': theme('colors.scale[1100]'),
+            '--tw-prose-counters': theme('colors.scale[1100]'),
+            '--tw-prose-bullets': theme('colors.scale[900]'),
+            '--tw-prose-hr': theme('colors.scale[500]'),
+            '--tw-prose-quotes': theme('colors.scale[1100]'),
+            '--tw-prose-quote-borders': theme('colors.scale[500]'),
+            '--tw-prose-captions': theme('colors.scale[700]'),
+            '--tw-prose-code': theme('colors.scale[1200]'),
+            '--tw-prose-pre-code': theme('colors.scale[900]'),
+            '--tw-prose-pre-bg': theme('colors.scale[400]'),
+            '--tw-prose-th-borders': theme('colors.scale[500]'),
+            '--tw-prose-td-borders': theme('colors.scale[200]'),
+            '--tw-prose-invert-body': theme('colors.scale[200]'),
+            '--tw-prose-invert-headings': theme('colors.white'),
+            '--tw-prose-invert-lead': theme('colors.scale[500]'),
+            '--tw-prose-invert-links': theme('colors.white'),
+            '--tw-prose-invert-bold': theme('colors.white'),
+            '--tw-prose-invert-counters': theme('colors.scale[400]'),
+            '--tw-prose-invert-bullets': theme('colors.scale[600]'),
+            '--tw-prose-invert-hr': theme('colors.scale[700]'),
+            '--tw-prose-invert-quotes': theme('colors.scale[100]'),
+            '--tw-prose-invert-quote-borders': theme('colors.scale[700]'),
+            '--tw-prose-invert-captions': theme('colors.scale[400]'),
+            // the following are typography overrides
+            // examples can be seen here —> https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
+            // reset all header font weights
+            'h1, h2, h3, h4, h5': {
+              fontWeight: '400',
+            },
+            h2: {
+              fontWeight: '400',
+            },
+            p: {
+              fontWeight: '400',
+            },
+            pre: {
+              background: 'none',
+              padding: 0,
+              marginBottom: '32px',
+            },
+            ul: {
+              listStyleType: 'none',
+              paddingLeft: '1rem',
+            },
+            'ul li': {
+              position: 'relative',
+            },
+            'ul li::before': {
+              position: 'absolute',
+              top: '0.75rem',
+              left: '-1rem',
+              height: '0.125rem',
+              width: '0.5rem',
+              borderRadius: '0.25rem',
+              backgroundColor: 'var(--colors-scale7)',
+              content: '""',
+            },
+            ol: {
+              paddingLeft: '1rem',
+              counterReset: 'item',
+              listStyleType: 'none',
+            },
+            'ol li': {
+              display: 'block',
+              position: 'relative',
+              paddingLeft: '1rem',
+            },
+            'ol li::before': {
+              position: 'absolute',
+              top: '0.25rem',
+              left: '-1rem',
+              height: '1.2rem',
+              width: '1.2rem',
+              borderRadius: '0.25rem',
+              backgroundColor: 'var(--colors-scale3)',
+              border: '1px solid var(--colors-scale5)',
+              content: 'counter(item) "  "',
+              counterIncrement: 'item',
+              fontSize: '12px',
+              color: 'var(--colors-scale9)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            },
+
+            'p img': {
+              border: '1px solid var(--colors-scale4)',
+              borderRadius: '4px',
+              overflow: 'hidden',
+            },
+            iframe: {
+              border: '1px solid ' + theme('borderColor.DEFAULT'),
+              borderRadius: theme('borderRadius.lg'),
+            },
+            td: {
+              borderBottom: '1px solid ' + theme('colors.scale[400]'),
+            },
+            code: {
+              fontWeight: '400',
+              padding: '0.2rem 0.4rem',
+              backgroundColor: theme('colors.scale[400]'),
+              border: '1px solid ' + theme('colors.scale[500]'),
+              borderRadius: theme('borderRadius.lg'),
+              wordBreak: 'break-all',
+            },
+            a: {
+              position: 'relative',
+              transition: 'color 0.3s ease-in-out',
+              paddingBottom: '2px',
+              fontWeight: '400',
+              color: 'var(--colors-scale12)',
+              textDecorationLine: 'underline',
+              textDecorationColor: 'var(--colors-brand7)',
+              textDecorationThickness: '1px',
+              textUnderlineOffset: '4px',
+            },
+            'a:hover': {
+              textDecorationColor: 'var(--colors-brand9)',
+            },
+            figcaption: {
+              color: 'var(--colors-scale9)',
+            },
+            'figure.quote-figure p:first-child': {
+              marginTop: '0 !important',
+            },
+            'figure.quote-figure p:last-child': {
+              marginBottom: '0 !important',
+            },
           },
+        },
+
+        toc: {
+          css: {
+            ul: {
+              'list-style-type': 'none',
+              'padding-left': 0,
+              margin: 0,
+              li: {
+                'padding-left': 0,
+              },
+              a: {
+                display: 'block',
+                marginBottom: '0.4rem',
+                'text-decoration': 'none',
+                fontSize: '0.8rem',
+                fontWeight: '200',
+                color: theme('colors.scale[1100]'),
+                '&:hover': {
+                  color: theme('colors.scale[1200]'),
+                },
+                'font-weight': '400',
+              },
+              // margin: 0,
+              ul: {
+                'list-style-type': 'none',
+                li: {
+                  marginTop: '0.2rem',
+                  marginBottom: '0.2rem',
+                  'padding-left': '0 !important',
+                  'margin-left': '0.5rem',
+                },
+                a: {
+                  fontWeight: '200',
+                  color: theme('colors.scale[1000]'),
+                  '&:hover': {
+                    color: theme('colors.scale[1200]'),
+                  },
+                },
+              },
+            },
+          },
+        },
+      }),
+      screens: {
+        xs: '480px',
+      },
+      fontFamily: {
+        sans: [
+          'custom-font',
+          'Helvetica Neue',
+          'Helvetica',
+          'Arial',
+          'sans-serif',
+        ],
+        mono: ['Office Code Pro', 'Source Code Pro', 'Menlo', 'monospace'],
+      },
+      backgroundImage: (theme) => ({
+        squiggle: `url("${svgToDataUri(
+          `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3" enable-background="new 0 0 6 3" width="6" height="3" fill="${theme(
+            'colors.yellow.400'
+          )}"><polygon points="5.5,0 2.5,3 1.1,3 4.1,0"/><polygon points="4,0 6,2 6,0.6 5.4,0"/><polygon points="0,2 1,3 2.4,3 0,0.6"/></svg>`
+        )}")`,
+      }),
+      keyframes: {
+        'flash-code': {
+          '0%': { backgroundColor: 'rgba(63, 207, 142, 0.1)' },
+          '100%': { backgroundColor: 'transparent' },
         },
       },
-      colors: {
-        /* 
-          main
-        */
-        ['brandColor']: '#EC6F0D',
-
-        ['brandScale']: { ...wsb_brand },
-        ['brandScaleFixed']: { ...wsb_brand_fixed },
-
-        // used for backgrounds
-        ['bgScale']: { ...wsb_background },
-        ['bgScaleDark']: { ...dark },
-
-        // used for borders, inputs and text
-        ['grayScale']: { ...wsb_border },
-        ['grayScaleDark']: { ...gray },
-
-        /* typography */
-        typography: {
-          body: {
-            light: '#4B5563',
-            dark: 'white',
-            secondary: {
-              light: '#6B7280',
-              dark: '#bbbbbb',
-            },
-            strong: {
-              light: '#F3F4F6',
-              dark: 'white',
-            },
-            faded: {
-              light: '#9CA3AF',
-              dark: '#666666',
-            },
-          },
-        },
-
-        /* 
-          app backgrounds
-        */
-        'bg-primary': {
-          light: 'white',
-          dark: gray[800],
-        },
-        'bg-secondary': {
-          light: blueGray[100],
-          dark: gray[700],
-        },
-        'bg-alt': {
-          light: blueGray[50], // gray[100],
-          dark: gray[600],
-        },
-
-        /* 
-          Forms
-        */
-        'input-value': {
-          light: coolGray[600],
-          dark: gray[200],
-        },
-        'input-placeholder': {
-          light: coolGray[300],
-          dark: gray[400],
-        },
-        'input-border': {
-          light: coolGray[300],
-          dark: gray[500],
-        },
-        'input-label': {
-          light: coolGray[600],
-          dark: gray[200],
-        },
-        'input-border-hover': {
-          light: coolGray[400],
-          dark: gray[400],
-        },
-        'input-border-focus': {
-          light: brand[300],
-          dark: brand[300],
-        },
-
-        // ['brandColor']: '#7c3aed',
-        transparent: 'transparent',
-        current: 'currentColor',
-
-        black: '#000',
-        white: '#fff',
-
-        dark: {
-          100: '#eeeeee',
-          200: '#e0e0e0',
-          300: '#bbbbbb',
-          400: '#666666',
-          500: '#444444',
-          600: '#2a2a2a',
-          700: '#1f1f1f',
-          800: '#181818',
-          900: '#0f0f0f',
-        },
-
-        'secondary-text': {
-          light: '#71767F',
-          dark: '#878787',
-        },
+      animation: {
+        'flash-code': 'flash-code 1s forwards',
+        'flash-code-slow': 'flash-code 2s forwards',
       },
     },
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    function ({ addUtilities, addVariant }) {
+      addUtilities({
+        // prose (tailwind typography) helpers
+        // useful for removing margins in prose styled sections
+        '.prose--remove-p-margin p': {
+          margin: '0',
+        },
+      })
+    },
+  ],
 })
