@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/link-2'
+import { Link2 } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconLink2(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={Link2} {...props} />
 }
 
 export default IconLink2

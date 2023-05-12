@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/bar-chart-2'
+import { BarChart2 } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconBarChart2(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={BarChart2} {...props} />
 }
 
 export default IconBarChart2

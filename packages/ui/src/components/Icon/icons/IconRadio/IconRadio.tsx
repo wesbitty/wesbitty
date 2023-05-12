@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/radio'
+import { Radio } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconRadio(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={Radio} {...props} />
 }
 
 export default IconRadio

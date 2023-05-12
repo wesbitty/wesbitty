@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/more-horizontal'
+import { MoreHorizontal } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconMoreHorizontal(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={MoreHorizontal} {...props} />
 }
 
 export default IconMoreHorizontal

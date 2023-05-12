@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/alert-triangle'
+import { AlertTriangle } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconAlertTriangle(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={AlertTriangle} {...props} />
 }
 
 export default IconAlertTriangle

@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/bell-off'
+import { BellOff } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconBellOff(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={BellOff} {...props} />
 }
 
 export default IconBellOff

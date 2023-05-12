@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/headphones'
+import { Headphones } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconHeadphones(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={Headphones} {...props} />
 }
 
 export default IconHeadphones

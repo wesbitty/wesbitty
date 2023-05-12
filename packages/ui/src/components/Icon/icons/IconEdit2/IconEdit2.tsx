@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/edit-2'
+import { Edit2 } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconEdit2(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={Edit2} {...props} />
 }
 
 export default IconEdit2

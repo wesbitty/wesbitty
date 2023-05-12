@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/rotate-cw'
+import { RotateCw } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconRotateCw(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={RotateCw} {...props} />
 }
 
 export default IconRotateCw

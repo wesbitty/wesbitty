@@ -34,13 +34,13 @@ Object.values(icons).map((icon) => {
 * Do Not Edit
 */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from '${icon.path}'
+import { ${icon.name} } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function Icon${icon.name}(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={${icon.name}} {...props} />
 }
 
 export default Icon${icon.name}

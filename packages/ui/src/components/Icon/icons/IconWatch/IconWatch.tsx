@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/watch'
+import { Watch } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconWatch(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={Watch} {...props} />
 }
 
 export default IconWatch

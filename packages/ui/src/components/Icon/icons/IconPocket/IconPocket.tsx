@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/pocket'
+import { Pocket } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconPocket(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={Pocket} {...props} />
 }
 
 export default IconPocket

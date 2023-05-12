@@ -1,8 +1,6 @@
 import React from 'react'
 import { styleHandler } from '../../theme/handler'
 import { IconContext } from './IconContext'
-// @ts-ignore
-// import IconStyles from './Icon.module.css'
 
 const IconStyles = {}
 

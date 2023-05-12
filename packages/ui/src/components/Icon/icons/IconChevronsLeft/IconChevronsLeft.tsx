@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/chevrons-left'
+import { ChevronsLeft } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconChevronsLeft(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={ChevronsLeft} {...props} />
 }
 
 export default IconChevronsLeft

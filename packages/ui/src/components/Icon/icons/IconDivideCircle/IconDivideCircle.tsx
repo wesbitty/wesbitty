@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/divide-circle'
+import { DivideCircle } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconDivideCircle(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={DivideCircle} {...props} />
 }
 
 export default IconDivideCircle

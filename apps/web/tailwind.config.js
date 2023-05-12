@@ -8,7 +8,7 @@ module.exports = wesjetTheme({
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     './wesbitty/lib/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@wesbitty/ui/lib/theme/default.js',
+    './node_modules/@wesbitty/ui/types/theme/default.ts',
   ],
   darkMode: 'class',
   theme: {

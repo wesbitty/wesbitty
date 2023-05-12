@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/hard-drive'
+import { HardDrive } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconHardDrive(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={HardDrive} {...props} />
 }
 
 export default IconHardDrive

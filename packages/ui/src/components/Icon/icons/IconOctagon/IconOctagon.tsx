@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/octagon'
+import { Octagon } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconOctagon(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={Octagon} {...props} />
 }
 
 export default IconOctagon

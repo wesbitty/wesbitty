@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/minimize-2'
+import { Minimize2 } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconMinimize2(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={Minimize2} {...props} />
 }
 
 export default IconMinimize2

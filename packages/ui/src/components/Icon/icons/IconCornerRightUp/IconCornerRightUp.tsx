@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/corner-right-up'
+import { CornerRightUp } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconCornerRightUp(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={CornerRightUp} {...props} />
 }
 
 export default IconCornerRightUp

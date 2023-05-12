@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/cast'
+import { Cast } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconCast(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={Cast} {...props} />
 }
 
 export default IconCast

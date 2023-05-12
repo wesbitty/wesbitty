@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/map'
+import { Map } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconMap(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={Map} {...props} />
 }
 
 export default IconMap

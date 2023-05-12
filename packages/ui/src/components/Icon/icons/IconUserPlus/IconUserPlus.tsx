@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/user-plus'
+import { UserPlus } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconUserPlus(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={UserPlus} {...props} />
 }
 
 export default IconUserPlus

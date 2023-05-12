@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/pen-tool'
+import { PenTool } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconPenTool(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={PenTool} {...props} />
 }
 
 export default IconPenTool

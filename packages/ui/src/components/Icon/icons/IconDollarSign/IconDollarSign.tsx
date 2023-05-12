@@ -3,13 +3,13 @@
  * Do Not Edit
  */
 
-import React from 'react'
+import * as React from 'react'
 // @ts-ignore
-import Icon from 'react-feather/dist/icons/dollar-sign'
+import { DollarSign } from 'react-feather'
 import IconBase from './../../IconBase'
 
 function IconDollarSign(props: any) {
-  return <IconBase icon={Icon} {...props} />
+  return <IconBase icon={DollarSign} {...props} />
 }
 
 export default IconDollarSign
