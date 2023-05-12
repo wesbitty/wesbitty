@@ -1,8 +1,8 @@
 // THEME
 export {
   defaultTheme,
-  ThemeProvider,
-  ThemeContext,
+  WesjetThemeProvider,
+  WesjetContext,
   useTheme,
   styleHandler,
 } from './theme'

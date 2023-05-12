@@ -33,8 +33,8 @@ export const GlassPanel = ({
   showLink = false,
   showIconBg = false,
 }: GlassPanelProps) => {
-  const { darkMode } = useTheme()
-  const showLogoInverse = logoInverse && darkMode
+  const { theme } = useTheme()
+  const showLogoInverse = logoInverse && theme
   const showLogo = !showLogoInverse && logo
 
   const IconBackground: React.FC<Props> = ({ children }) => (
@@ -118,7 +118,7 @@ export const GlassPanel = ({
             <IconBackground>
               <img
                 className="w-5"
-                src={`${icon}${hasLightIcon && !darkMode ? '-light' : ''}.svg`}
+                src={`${icon}${hasLightIcon && !theme ? '-light' : ''}.svg`}
               />
             </IconBackground>
           ) : (

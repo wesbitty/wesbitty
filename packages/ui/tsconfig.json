@@ -25,7 +25,7 @@
       "~/*": ["./*"]
     }
   },
-  "include": ["src/"],
+  "include": ["src/", "types/Mode.d.ts"],
   "exclude": [
     "node_modules",
     "src/_tests_",

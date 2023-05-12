@@ -1,6 +1,6 @@
 {
   "name": "@wesbitty/ui",
-  "version": "0.0.10",
+  "version": "0.0.13",
   "description": "Wesbitty UI Component library",
   "keywords": [
     "storybook",
@@ -42,7 +42,7 @@
         "./lib/theme/default"
       ],
       "provider": [
-        "./lib/thene/provider"
+        "./lib/theme/provider"
       ]
     }
   },

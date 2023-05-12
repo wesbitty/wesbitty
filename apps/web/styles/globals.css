@@ -12,9 +12,6 @@
 }
 
 @import url(../pages/launch-week/launchWeek.css);
-@import url(../pages/customers/[slug].module.css);
-@import url(../pages/customers/customers.module.css);
-@import url(./loading-dots.css);
 
 @font-face {
   font-family: 'custom-font';
