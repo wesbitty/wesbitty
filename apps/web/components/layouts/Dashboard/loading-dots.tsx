@@ -1,4 +1,4 @@
-import styles from './loading-dots.module.css'
+import '~/styles/loading-dots.css'
 
 interface LoadingDotsProps {
   color?: string
@@ -6,7 +6,7 @@ interface LoadingDotsProps {
 
 const LoadingDots = ({ color = '#000' }: LoadingDotsProps) => {
   return (
-    <span className={styles.loading}>
+    <span className="loading">
       <span style={{ backgroundColor: color }} />
       <span style={{ backgroundColor: color }} />
       <span style={{ backgroundColor: color }} />

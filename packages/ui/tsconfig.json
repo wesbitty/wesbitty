@@ -9,7 +9,7 @@
     "module": "esnext",
     "declaration": true,
     "rootDir": "src",
-    "outDir": "types",
+    "outDir": "lib",
     "lib": ["ES2015", "dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,

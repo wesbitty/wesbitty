@@ -17,7 +17,6 @@ import {
 import matter from 'gray-matter'
 import authors from 'wesbitty/data/authors.json'
 import { generateReadingTime } from '~/utils/helpers'
-import blogStyles from './[slug].module.css'
 import hydrate from 'next-mdx-remote'
 import renderToString from 'next-mdx-remote'
 import { NextSeo } from 'next-seo'
@@ -160,7 +159,7 @@ const PostLayout = ({ post }: { post: Post }) => {
                       style={{ maxHeight: '520px' }}
                     />
                   )}
-                  <article className={blogStyles['article']}>
+                  <article className="">
                     <Typography>
                       <div
                         dangerouslySetInnerHTML={{ __html: post.body.html }}
