@@ -1,5 +1,5 @@
 import { Tabs } from '@wesbitty/ui'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import {
   Bar,
@@ -121,7 +121,7 @@ const Chart = () => {
               tick={<CustomizedAxisTick />}
             />
             {dimensions.map((dimension: string, index: number) => {
-              // @ts-ignore
+              //@ts-ignore
               return (
                 <Bar dataKey={`${dimension}`} fill={barColors[dimension]} />
               )

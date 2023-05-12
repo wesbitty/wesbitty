@@ -28,8 +28,10 @@ module.exports = {
         'next/core-web-vital',
         'plugin:react-hooks/recommended',
         'plugin:react/recommended',
+        'plugin:@typescript-eslint/recommended',
       ],
       rules: {
+        '@typescript-eslint/ban-types': 'off',
         'react/jsx-key': 'off',
         'react-hooks/rules-of-hooks': 'off',
         '@next/next/no-img-element': 'off',
@@ -40,7 +42,12 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
   },
-  plugins: ['react', 'simple-import-sort', 'import'],
+  plugins: [
+    'plugin:react-hooks/recommended',
+    'simple-import-sort',
+    '@typescript-eslint',
+    'import',
+  ],
   rules: {
     'simple-import-sort/imports': 'error',
     'import/no-duplicates': 'warn',

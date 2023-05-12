@@ -81,7 +81,9 @@ async function getTweet(node: Literal<string>) {
 
   const id = matches[1]
   let tweetData = null
+
   try {
+    //@ts-ignore
     tweetData = await getTweets(id)
   } catch (e) {
     console.log('ERROR', e)

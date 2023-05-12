@@ -12,7 +12,7 @@ import { flatten } from 'lodash'
 
 import { SelectContext } from './SelectContext'
 
-import styleHandler from '../../theme/handler'
+import { styleHandler } from '../../theme/handler'
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')

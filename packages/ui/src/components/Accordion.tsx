@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState } from 'react'
 
 import { IconChevronUp } from './Icon/icons/IconChevronUp'
-import styleHandler from '../theme/handler'
+import { styleHandler } from '../theme/handler'
 
 import * as RadixAccordion from '@radix-ui/react-accordion'
 import { IconChevronDown } from '..'

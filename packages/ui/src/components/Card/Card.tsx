@@ -3,7 +3,7 @@ import Typography from '../Typography'
 // @ts-ignore
 import CardStyles from './Card.module.css'
 
-import styleHandler from '../../theme/handler'
+import { styleHandler } from '../../theme/handler'
 
 interface CardProps {
   children?: React.ReactNode

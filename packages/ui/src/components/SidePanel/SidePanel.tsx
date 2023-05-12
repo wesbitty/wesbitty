@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '../../index'
 import * as Dialog from '@radix-ui/react-dialog'
-import styleHandler from '../../theme/handler'
+import { styleHandler } from '../../theme/handler'
 
 export type SidePanelProps = RadixProps & CustomProps
 

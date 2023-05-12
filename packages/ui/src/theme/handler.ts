@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { defaultTheme, ThemeContext } from '.'
 
-export default function styleHandler(target: string) {
+export function styleHandler(target: string) {
   let {
     theme: { [target]: __styles },
   }: any = useContext(ThemeContext)

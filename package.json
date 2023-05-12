@@ -28,10 +28,10 @@
     "clean": "turbo run clean --no-cache",
     "dev": "turbo run dev --parrallel --continue --filter=web...",
     "format": "prettier --write .",
+    "generate": "cd ./apps/web && npm run prisma-generate",
     "lint": "eslint . --ext .ts --fix",
     "lint-package": "sort-package-json",
     "prepare": "husky install",
-    "prisma-generate": "cd ./apps/web && npx prisma generate",
     "pscale-up": "cd apps/web && pscale connect wesbitty main",
     "release": "turbo run release",
     "test": "turbo run turbo run test --concurrency=1 --filter=[HEAD^1] --filter=./packages/*"

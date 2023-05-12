@@ -1,4 +1,4 @@
 export { ThemeProvider, ThemeContext, useTheme } from './provider'
 export { default as defaultTheme } from './default'
-export { default as styleHandler } from './handler'
-export * from './config'
+export { styleHandler } from './handler'
+export { wesjetTheme } from './config'

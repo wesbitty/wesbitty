@@ -47,10 +47,6 @@ const components = {
   ImageGrid,
 }
 
-// plugins for next-mdx-remote
-const gfm = require('remark-gfm')
-const slug = require('rehype-slug')
-
 export const getStaticProps = defineStaticProps(async (context) => {
   const params = context.params as unknown as Post
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)

@@ -383,7 +383,7 @@ function arrayMergeFn(destinationArray, sourceArray) {
  * @param {object} tailwindConfig - Tailwind config object
  * @return {object} new config object
  */
-function wrapper(tailwindConfig) {
+export function wesjetTheme(tailwindConfig) {
   let purge
   if (Array.isArray(tailwindConfig.purge)) {
     purge = {
@@ -396,5 +396,3 @@ function wrapper(tailwindConfig) {
     arrayMerge: arrayMergeFn,
   })
 }
-
-module.exports.wesjetTheme = wrapper

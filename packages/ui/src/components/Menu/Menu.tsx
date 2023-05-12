@@ -3,7 +3,7 @@ import { Space } from '../Space'
 import Typography from '../Typography'
 import { MenuContextProvider, useMenuContext } from './MenuContext'
 
-import styleHandler from '../../theme/handler'
+import { styleHandler } from '../../theme/handler'
 
 interface MenuProps {
   children: React.ReactNode

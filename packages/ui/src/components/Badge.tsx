@@ -1,4 +1,4 @@
-import styleHandler from '../theme/handler'
+import { styleHandler } from '../theme/handler'
 
 type Props = {
   color?:

@@ -5,7 +5,7 @@ import type * as RadixPopoverTypes from '@radix-ui/react-popover/'
 
 import { IconX } from '../Icon/icons/IconX'
 
-import styleHandler from '../../theme/handler'
+import { styleHandler } from '../../theme/handler'
 
 interface RootProps {
   align?: RadixPopoverTypes.PopoverContentProps['align']

@@ -1,5 +1,12 @@
 // THEME
-export * from './theme'
+export {
+  wesjetTheme,
+  defaultTheme,
+  ThemeProvider,
+  ThemeContext,
+  useTheme,
+  styleHandler,
+} from './theme'
 
 // TYPOGRAPHY
 export * from './components/Typography/index'

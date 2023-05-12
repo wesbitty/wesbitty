@@ -14,7 +14,7 @@ import {
 } from '../index'
 import { UserContextProvider, useUser } from './Shared/Context/Auth'
 import * as SocialIcons from './Shared/AuthIcons'
-import styleHandler from '../theme/handler'
+import { styleHandler } from '../theme/handler'
 
 const VIEWS: ViewsMap = {
   SIGN_IN: 'sign_in',

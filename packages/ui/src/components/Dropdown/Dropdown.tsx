@@ -8,7 +8,7 @@ import { IconCheck } from '../Icon/icons/IconCheck'
 
 import type * as RadixDropdownTypes from '@radix-ui/react-dropdown-menu/'
 
-import styleHandler from '../../theme/handler'
+import { styleHandler } from '../../theme/handler'
 import { IconTarget } from '../..'
 
 interface RootProps {

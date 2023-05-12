@@ -6,7 +6,7 @@ import * as TabsPrimitive from '@radix-ui/react-tabs'
 // @ts-ignore
 // import TabsStyles from './Tabs.module.css'
 
-import styleHandler from '../../theme/handler'
+import { styleHandler } from '../../theme/handler'
 
 interface TabsProps {
   type?: 'pills' | 'underlined' | 'cards'

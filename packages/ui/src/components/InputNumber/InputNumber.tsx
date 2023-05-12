@@ -6,7 +6,7 @@ import InputErrorIcon from '../../lib/Layout/InputErrorIcon'
 import InputIconContainer from '../../lib/Layout/InputIconContainer'
 
 import { useFormContext } from '../Form/FormContext'
-import styleHandler from '../../theme/handler'
+import { styleHandler } from '../../theme/handler'
 
 export interface Props
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {

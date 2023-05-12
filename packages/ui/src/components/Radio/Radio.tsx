@@ -5,7 +5,7 @@ import { RadioContext } from './RadioContext'
 import { useFormContext } from '../Form/FormContext'
 
 import defaultTheme from '../../theme/default'
-import styleHandler from '../../theme/handler'
+import { styleHandler } from '../../theme/handler'
 
 import randomIdGenerator from '../../utils/generateUID'
 

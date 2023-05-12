@@ -7,7 +7,7 @@ import { AnimationTailwindClasses } from '../../types'
 import * as Dialog from '@radix-ui/react-dialog'
 
 import { Transition } from '@headlessui/react'
-import styleHandler from '../../theme/handler'
+import { styleHandler } from '../../theme/handler'
 
 // import { Transition } from '@tailwindui/react'
 // Merge Radix Props to surface in the modal component

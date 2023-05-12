@@ -93,7 +93,7 @@ npm run dev
 
 The Monorepo has a set of shared components under `/packages`:
 
-- `/packages/ui`: Wesbitty UI Library.
+- `/packages/ui`: Wesbitty UI Component Library.
 - `/packages/tsconfig`: Shared Typescript Configuration settings
 
 #### Installing packages
@@ -104,7 +104,7 @@ The format is: `npm install <package name> --workspace=<workspace to install in>
 
 For example:
 
-- `npm install @types/node --workspace @wesbitty/ui`: installs into `./packages/ui`
+- `npm install @types/node --workspace ui`: installs into `./packages/ui`
 - `npm install @types/node --workspace web`: installs into `./apps/web`
 
 You do not need to install `devDependencies` in each workspace. These can all be installed in the root package.

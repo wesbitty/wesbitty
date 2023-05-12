@@ -6,7 +6,7 @@ import InputIconContainer from '../../lib/Layout/InputIconContainer'
 import { useFormContext } from '../Form/FormContext'
 
 import defaultTheme from '../../theme/default'
-import styleHandler from '../../theme/handler'
+import { styleHandler } from '../../theme/handler'
 
 interface OptionProps {
   value: string
