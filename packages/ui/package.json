@@ -14,6 +14,9 @@
   "type": "module",
   "exports": {
     "./package.json": "./packages.json",
+    ".": {
+      "import": "./lib/index.js"
+    },
     "./config": {
       "import": "./lib/theme/config.js",
       "require": "./lib/theme/config.js"
@@ -26,7 +29,6 @@
       "import": "./lib/theme/provider.js"
     }
   },
-  "source": "src/index.tsx",
   "types": "./lib/index.d.ts",
   "typesVersions": {
     "*": {

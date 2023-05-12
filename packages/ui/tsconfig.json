@@ -8,8 +8,8 @@
     "target": "es6",
     "module": "esnext",
     "declaration": true,
-    "rootDir": "src",
-    "outDir": "lib",
+    "rootDir": "./src",
+    "outDir": "./lib",
     "lib": ["ES2015", "dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -21,7 +21,6 @@
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
     "noImplicitAny": false,
-    "baseUrl": ".",
     "paths": {
       "~/*": ["./*"]
     }
