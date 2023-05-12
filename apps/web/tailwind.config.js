@@ -1,4 +1,4 @@
-const config = require('@wesbitty/ui/types/theme/config.js')
+const config = require('@wesbitty/ui/config')
 const svgToDataUri = require('mini-svg-data-uri')
 const { fontFamily } = require('tailwindcss/defaultTheme')
 
