@@ -3,6 +3,7 @@ node_modules/
 dist*
 storybook-static
 packages/ui/lib
+packages/styles/output.css
 
 /.yarn/*
 !/.yarn/releases

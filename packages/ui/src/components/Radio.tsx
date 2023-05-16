@@ -1,13 +1,13 @@
 import React, { useEffect, useState, createRef } from 'react'
-import { FormLayout } from '../../lib/Layout/FormLayout'
-import { RadioContext } from './RadioContext'
+import { FormLayout } from '../lib/Layout/FormLayout'
+import { RadioContext } from './Shared/Context/Radio'
 
-import { useFormContext } from '../Form/FormContext'
+import { useFormContext } from './Form/FormContext'
 
-import defaultTheme from '../../theme/default'
-import { styleHandler } from '../../theme/handler'
+import defaultTheme from '../theme/default'
+import { styleHandler } from '../theme/handler'
 
-import randomIdGenerator from '../../utils/generateUID'
+import randomIdGenerator from '../utils/generateUID'
 
 interface GroupProps {
   allowedValues?: any
@@ -315,5 +315,4 @@ function Radio({
 }
 
 Radio.Group = RadioGroup
-
 export default Radio

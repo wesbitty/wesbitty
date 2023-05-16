@@ -278,9 +278,9 @@ const defaultTheme = {
       },
       success: {
         base: `bg-brand-300 dark:bg-brand-100 border-brand-700`,
-        icon: `text-brand-900`,
-        header: `text-brand-1200`,
-        description: `text-brand-1100`,
+        icon: `text-scale-1200`,
+        header: `text-scale-1200`,
+        description: `text-scale-1100`,
       },
       neutral: {
         base: `bg-scale-300 dark:bg-scale-300 border-scale-500`,

@@ -1,10 +1,19 @@
 import React, { useLayoutEffect, useMemo } from 'react'
-import { ThemeContext } from './context'
 import defaultTheme from './default'
 import { mergeDeep } from '../utils/mergeDeep'
 import useDarkMode from '../utils/useDarkMode'
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
+interface ThemeContextInterface {
+  theme: any
+  mode?: Mode
+  toggleMode?: any
+}
+
+export const ThemeContext = React.createContext<ThemeContextInterface>({
+  theme: defaultTheme,
+})
+
+interface ThemeProviderProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
   /**
    * Defines the styles used throughout the library
@@ -20,7 +29,9 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   usePreferences?: boolean
 }
 
-const WesjetThemeProvider: React.FC<Props> = ({
+export const useTheme = () => React.useContext(ThemeContext)
+
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
   theme: customTheme,
   dark,
@@ -49,5 +60,3 @@ const WesjetThemeProvider: React.FC<Props> = ({
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }
-
-export default WesjetThemeProvider

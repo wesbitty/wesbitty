@@ -21,14 +21,14 @@ const icons: Record<
   'success' | 'danger' | 'warning' | 'info' | 'neutral',
   React.ReactElement
 > = {
-  danger: <IconAlertOctagon strokeWidth={1.5} size={18} />,
-  success: <IconCheckCircle strokeWidth={1.5} size={18} />,
-  warning: <IconAlertTriangle strokeWidth={1.5} size={18} />,
-  info: <IconInfo strokeWidth={1.5} size={18} />,
+  danger: <IconAlertOctagon strokeWidth={2} size={16} />,
+  success: <IconCheckCircle strokeWidth={2} size={16} />,
+  warning: <IconAlertTriangle strokeWidth={1.5} size={16} />,
+  info: <IconInfo strokeWidth={2} size={16} />,
   neutral: <></>,
 }
 
-export function Alert({
+function Alert({
   variant = 'neutral',
   className,
   title,
@@ -91,3 +91,5 @@ export function Alert({
     </>
   )
 }
+
+export default Alert

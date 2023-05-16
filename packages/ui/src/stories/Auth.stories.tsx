@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
-import { Auth } from '../components/Auth'
+import { Auth } from '..'
 import { createClient } from '@supabase/supabase-js'
-// @ts-ignore
 import { Typography, Button, Space } from '../index'
 
 const wesbitty = createClient(
-  'https://auth.wesbitty.org',
+  'https://app.wesbitty.org',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxNTIxNDE1MywiZXhwIjoxOTMwNzkwMTUzfQ.OQEbAaTfgDdLCCht251P2JRD3QDnui6nsU8N-tZA_Mc'
 )
 
 export default {
   title: 'Feedback/Auth',
   component: Auth,
+  tags: ['autodocs'],
 }
 
 const Container = (props: any) => {

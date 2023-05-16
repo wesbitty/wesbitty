@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../components/Button'
+import { Button } from '..'
 import Typography from '../components/Typography'
 import { Divider } from '../components/Divider'
 

@@ -4,6 +4,7 @@ import { Alert } from '../index'
 export default {
   title: 'Displays/Alerts',
   component: Alert,
+  tags: ['autodocs'],
 }
 
 export const Neutral = (args: any) => (
@@ -84,7 +85,7 @@ export const Action = (args: any) => (
 )
 
 Neutral.args = {
-  title: 'Success alert with icon',
+  title: 'Neutral Alert',
   withIcon: true,
 }
 

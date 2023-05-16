@@ -1,13 +1,11 @@
 import React from 'react'
 // import { AutoForm } from 'uniforms'
-
-import { Collapsible } from '.'
-import { IconChevronUp } from '../..'
-import { Button } from '../Button'
+import { Collapsible, Button, IconChevronUp } from '..'
 
 export default {
   title: 'Displays/Collapsible',
   component: Collapsible,
+  tags: ['autodocs'],
 }
 
 export const Default = (args: any) => {

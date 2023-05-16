@@ -228,4 +228,3 @@ export function Checkbox({
 }
 
 Checkbox.Group = Group
-export default Checkbox

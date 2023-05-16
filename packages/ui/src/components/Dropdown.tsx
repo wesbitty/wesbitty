@@ -1,15 +1,9 @@
 import React, { useState } from 'react'
-
 import * as RadixDropdown from '@radix-ui/react-dropdown-menu'
-import { IconCheck } from '../Icon/icons/IconCheck'
-
-// @ts-ignore
-// import DropdownStyles from './Dropdown.module.css'
-
+import { IconCheck } from './Icon/icons/IconCheck'
 import type * as RadixDropdownTypes from '@radix-ui/react-dropdown-menu/'
-
-import { styleHandler } from '../../theme/handler'
-import { IconTarget } from '../..'
+import { styleHandler } from '../theme/handler'
+import { IconTarget } from '..'
 
 interface RootProps {
   open?: boolean
@@ -26,7 +20,7 @@ interface RootProps {
   isNested?: Boolean
 }
 
-function Dropdown({
+export function Dropdown({
   open,
   onOpenChange,
   align = 'center', //Default value
@@ -189,7 +183,7 @@ interface RadioProps {
   ItemIndicator?: React.ReactNode
 }
 
-export function Radio({ children, value, ItemIndicator }: RadioProps) {
+function Radio({ children, value, ItemIndicator }: RadioProps) {
   let __styles = styleHandler('dropdown')
 
   return (
@@ -257,4 +251,5 @@ Dropdown.Label = Label
 Dropdown.Seperator = Seperator
 Dropdown.RightSlot = RightSlot
 Dropdown.TriggerItem = TriggerItem
+
 export default Dropdown

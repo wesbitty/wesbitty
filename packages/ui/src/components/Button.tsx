@@ -46,7 +46,7 @@ export type RefHandle = {
   button: () => HTMLButtonElement | null
 }
 
-export const Button = React.forwardRef<RefHandle, ButtonProps>(
+const Button = React.forwardRef<RefHandle, ButtonProps>(
   (
     {
       block,
@@ -181,3 +181,5 @@ export const Button = React.forwardRef<RefHandle, ButtonProps>(
     }
   }
 )
+
+export default Button

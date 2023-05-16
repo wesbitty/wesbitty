@@ -37,7 +37,7 @@ type ViewType =
 
 type RedirectTo = undefined | string
 
-export type Props = {
+export type AuthProps = {
   wesbittyOauth: SupabaseClient
   className?: string
   children?: React.ReactNode
@@ -53,7 +53,7 @@ export type Props = {
   magicLink?: boolean
 }
 
-export function Auth({
+function Auth({
   wesbittyOauth,
   className,
   style,
@@ -65,7 +65,7 @@ export function Auth({
   redirectTo,
   onlyThirdPartyProviders = false,
   magicLink = false,
-}: Props): JSX.Element | null {
+}: AuthProps): JSX.Element | null {
   const [authView, setAuthView] = useState(view)
   const [defaultEmail, setDefaultEmail] = useState('')
   const [defaultPassword, setDefaultPassword] = useState('')
@@ -171,7 +171,7 @@ function SocialAuth({
   onlyThirdPartyProviders,
   magicLink,
   ...props
-}: Props) {
+}: AuthProps) {
   const buttonStyles: any = {
     azure: {
       backgroundColor: '#008AD7',
@@ -637,3 +637,5 @@ Auth.UpdatePassword = UpdatePassword
 Auth.MagicLink = MagicLink
 Auth.UserContextProvider = UserContextProvider
 Auth.useUser = useUser
+
+export default Auth

@@ -1,4 +1,4 @@
-import { Badge } from '../components/Badge'
+import { Badge } from '..'
 import React from 'react'
 
 export default {

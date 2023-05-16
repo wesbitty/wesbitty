@@ -1,13 +1,11 @@
 import React from 'react'
-// import { AutoForm } from 'uniforms'
-// @ts-ignore
+
 import MarkdownExample from '../lib/MarkdownSample.md'
 import ReactMarkdown from 'react-markdown'
-const gfm = require('remark-gfm')
+import gfm from 'remark-gfm'
 
 import Typography from '../components/Typography'
-// @ts-ignore
-import { Space } from '../index'
+import { Space } from '..'
 
 const { Title, Text, Link } = Typography
 
@@ -58,8 +56,8 @@ export const Texts = () => (
     <br />
     <Text strong>Wesbitty UI (strong)</Text>
     <br />
-    <Link href="https://supabase.io" target="_blank">
-      Supabase (Link)
+    <Link href="https://wesbitty.org" target="_blank">
+      Wesbitty (Link)
     </Link>
   </>
 )

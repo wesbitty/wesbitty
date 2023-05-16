@@ -3,6 +3,7 @@ import { Form } from './../'
 import {
   Input,
   Button,
+  Collapsible,
   InputNumber,
   Toggle,
   Checkbox,
@@ -21,7 +22,6 @@ import {
 } from '../../../index'
 
 import * as Yup from 'yup'
-import { Collapsible } from '../../Collapsible'
 
 import AuthFormSchema from './AuthFormSchema.json'
 import { Modal } from '../../Modal'

@@ -9,7 +9,7 @@ module.exports = config({
     './layouts/**/*.tsx',
     './pages/**/*.{tsx,mdx}',
     './docs/**/*.{tsx,mdx}',
-    './[Post]/*/*.mdx',
+    './[Post]/**/*.mdx',
   ],
   darkMode: 'class',
   theme: {

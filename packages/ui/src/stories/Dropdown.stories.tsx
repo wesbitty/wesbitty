@@ -1,23 +1,24 @@
 import React, { useState } from 'react'
-import { Button } from '../Button'
-import { Divider } from '../Divider'
+import { Divider } from '../components/Divider'
 import {
+  Button,
   IconSettings,
   IconLogOut,
   IconChevronDown,
   IconChevronRight,
   IconHardDrive,
-} from './../../index'
-import Typography from '../Typography'
+} from '../index'
+import Typography from '../components/Typography'
 
-import { Dropdown } from './'
-import { IconLogIn } from '../Icon/icons/IconLogIn'
-import { Input } from '../Input'
-import { IconSearch } from '../Icon/icons/IconSearch'
+import { Dropdown } from '../components/Dropdown'
+import { IconLogIn } from '../components/Icon/icons/IconLogIn'
+import { Input } from '../components/Input'
+import { IconSearch } from '../components/Icon/icons/IconSearch'
 
 export default {
   title: 'Navigation/Dropdown',
   component: Dropdown,
+  tags: ['autodocs'],
 }
 
 const DemoContainer = ({ children }: { children: React.ReactNode }) => (
@@ -233,7 +234,7 @@ export const SearchList = (args: any) => (
       {...args}
       overlay={[
         <Dropdown.Item>
-          <Input size="tiny" icon={<IconSearch />} autofocus={false} />
+          <Input size="tiny" icon={<IconSearch />} autoFocus={false} />
         </Dropdown.Item>,
         <Dropdown.Item>
           <Typography.Text>Signed in as </Typography.Text>

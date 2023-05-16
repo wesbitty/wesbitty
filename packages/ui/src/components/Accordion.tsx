@@ -47,7 +47,7 @@ interface AccordionProps {
   chevronAlign: Align
 }
 
-export function Accordion({
+function Accordion({
   children,
   className,
   defaultActiveId = [],
@@ -159,3 +159,4 @@ export function Item({ children, className, header, id, icon }: ItemProps) {
 }
 
 Accordion.Item = Item
+export default Accordion

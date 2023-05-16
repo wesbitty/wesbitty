@@ -1,30 +1,33 @@
 // THEME
 export {
   defaultTheme,
-  WesjetThemeProvider,
-  WesjetContext,
+  ThemeProvider,
+  ThemeContext,
   useTheme,
   styleHandler,
 } from './theme'
 
+// FEEDBACKS
+export { default as Auth } from './components/Auth'
+
 // TYPOGRAPHY
 export * from './components/Typography/index'
 
-export { GlassPanel } from './components/GlassPanel'
+export { default as GlassPanel } from './components/GlassPanel'
 
 export { cn } from './utils/cn'
 
 // Elements
-export { Button } from './components/Button'
-export { Badge } from './components/Badge'
+export { default as Button } from './components/Button'
+export { default as Badge } from './components/Badge'
 export * from './components/Icon/index'
 
 // DISPLAYS
 export * from './components/Card/index'
 export * from './components/Tabs/index'
-export { Alert } from './components/Alert'
-export { Accordion } from './components/Accordion'
-export * from './components/Collapsible/index'
+export { default as Alert } from './components/Alert'
+export { default as Accordion } from './components/Accordion'
+export { default as Collapsible } from './components/Collapsible'
 
 // NAV
 export * from './components/Menu/index'
@@ -32,7 +35,7 @@ export * from './components/Menu/index'
 // OVERLAYS
 export * from './components/Modal/index'
 export * from './components/SidePanel/index'
-export * from './components/Dropdown/index'
+export { Dropdown } from './components/Dropdown'
 export * from './components/ContextMenu/index'
 export * from './components/Popover/index'
 // export * from './components/Toast/index'
@@ -45,10 +48,10 @@ export { Divider } from './components/Divider'
 // DATA ENTRY
 export * from './components/Select/index'
 export * from './components/Listbox/index'
-export * from './components/Checkbox'
+export { Checkbox } from './components/Checkbox'
 export * from './components/Input/index'
 export * from './components/InputNumber/index'
-export * from './components/Radio/index'
+export { default as Radio } from './components/Radio'
 export * from './components/Toggle/index'
 export * from './components/Upload/index'
 export * from './components/Form/index'

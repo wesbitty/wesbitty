@@ -38,13 +38,7 @@ type Props = {
   className?: string
 }
 
-export function Badge({
-  color = 'brand',
-  children,
-  size,
-  dot,
-  className,
-}: Props) {
+function Badge({ color = 'brand', children, size, dot, className }: Props) {
   const __styles = styleHandler('badge')
 
   let classes = [__styles.base]
@@ -74,3 +68,5 @@ export function Badge({
     </span>
   )
 }
+
+export default Badge

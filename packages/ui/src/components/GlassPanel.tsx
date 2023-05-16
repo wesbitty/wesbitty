@@ -20,7 +20,7 @@ interface Props {
   children: React.ReactNode
 }
 
-export const GlassPanel = ({
+const GlassPanel = ({
   title,
   span,
   icon,
@@ -137,3 +137,5 @@ export const GlassPanel = ({
     </div>
   )
 }
+
+export default GlassPanel

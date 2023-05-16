@@ -1,25 +1,22 @@
 import React from 'react'
 
-import { Accordion } from '../components/Accordion'
+import { Accordion, Badge } from '..'
 import { Typography } from '../components/Typography'
 import { IconArrowUp } from '../components/Icon/icons/IconArrowUp'
-import { Badge } from '../components/Badge'
 
 export default {
   title: 'Displays/Accordion',
   component: Accordion,
+  tags: ['autodocs'],
 }
 
 export const OneItem = (args: any) => (
   <Accordion {...args} justified={false}>
     <Accordion.Item
       header={
-        <>
-          <span className="text-scale-900 group-hover:text-scale-1200">
-            Title of the thing
-          </span>
-          <Badge>Test badge</Badge>
-        </>
+        <span className="text-scale-900 group-hover:text-scale-1200">
+          Accordion
+        </span>
       }
       id="first"
     >
@@ -36,7 +33,7 @@ export const MultipleItems = (args: any) => (
     <Accordion.Item
       header={
         <span className="text-scale-900 group-hover:text-scale-1200">
-          Title of the thing
+          Accordion
         </span>
       }
       id={'1'}
@@ -49,7 +46,7 @@ export const MultipleItems = (args: any) => (
     <Accordion.Item
       header={
         <span className="text-scale-900 group-hover:text-scale-1200">
-          Title of the thing
+          Accordion
         </span>
       }
       id={'2'}
@@ -62,7 +59,7 @@ export const MultipleItems = (args: any) => (
     <Accordion.Item
       header={
         <span className="text-scale-900 group-hover:text-scale-1200">
-          Title of the thing
+          Accordion
         </span>
       }
       id={'3'}
@@ -75,7 +72,7 @@ export const MultipleItems = (args: any) => (
     <Accordion.Item
       header={
         <span className="text-scale-900 group-hover:text-scale-1200">
-          Title of the thing
+          Accordion
         </span>
       }
       id={'4'}
@@ -119,7 +116,7 @@ export const Bordered = (args: any) => (
     <Accordion.Item
       header={
         <span className="text-scale-900 group-hover:text-scale-1200">
-          Title of the thing
+          Accordion
         </span>
       }
       id={'3'}
@@ -132,7 +129,7 @@ export const Bordered = (args: any) => (
     <Accordion.Item
       header={
         <span className="text-scale-900 group-hover:text-scale-1200">
-          Title of the thing
+          Accordion
         </span>
       }
       id={'4'}
@@ -153,12 +150,9 @@ export const LeftAlignedChevron = (args: any) => (
   <Accordion {...args} justified={false} chevronAlign="left">
     <Accordion.Item
       header={
-        <>
-          <span className="text-scale-900 group-hover:text-scale-1200">
-            First item
-          </span>
-          <Badge>Test badge</Badge>
-        </>
+        <span className="text-scale-900 group-hover:text-scale-1200">
+          First item
+        </span>
       }
       id="first"
     >
@@ -169,11 +163,9 @@ export const LeftAlignedChevron = (args: any) => (
     </Accordion.Item>
     <Accordion.Item
       header={
-        <>
-          <span className="text-scale-900 group-hover:text-scale-1200">
-            Second item
-          </span>
-        </>
+        <span className="text-scale-900 group-hover:text-scale-1200">
+          Second item
+        </span>
       }
       id="second"
     >
