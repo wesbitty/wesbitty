@@ -4,6 +4,7 @@ package-lock.json
 
 CODE_OF_CONDUCT.md
 
+packages/ui/styles/*
 packages/ui/types/*
 storybook-static
 
