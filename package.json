@@ -22,8 +22,8 @@
   "scripts": {
     "build": "turbo run build --filter=ui --filter=./examples/*",
     "build:app": "turbo run build --filter=web",
-    "cc": "node ./scripts/check.mjs",
     "clean": "turbo run clean --no-cache",
+    "copyright": "node ./scripts/licenseSourceCode.mjs",
     "dev": "turbo run dev --parrallel --continue --filter=web...",
     "format": "prettier --write .",
     "generate": "cd ./apps/web && npm run prisma-generate",
