@@ -1,11 +1,6 @@
-import { Button } from '../Button'
-import { Divider } from '../Divider'
-import { IconChevronDown } from '../../index'
-import Typography from '../Typography'
-
-import { Popover } from '.'
-import { IconLogIn } from '../Icon/icons/IconLogIn'
-import { Input } from '../Input'
+import { Button, Input, Popover } from '..'
+import { IconChevronDown } from '../components/Icon/icons/IconChevronDown'
+import React from 'react'
 
 export default {
   title: 'Navigation/Popover',
@@ -19,7 +14,6 @@ export const Default = (args: any) => (
       side="bottom"
       align="end"
       size="content"
-      portalled
       showClose
       header={
         <div className="flex justify-between items-center">
@@ -41,7 +35,7 @@ export const Default = (args: any) => (
               descriptionText="Set the width of something"
               layout="horizontal"
             />
-            <Popover.Seperator />
+            <Popover.Separator />
             <Input
               className="px-3"
               size="tiny"
@@ -50,7 +44,7 @@ export const Default = (args: any) => (
               descriptionText="Set the width of something"
               layout="horizontal"
             />
-            <Popover.Seperator />
+            <Popover.Separator />
             <Input
               className="px-3"
               size="tiny"

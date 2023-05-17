@@ -4,6 +4,7 @@ import React from 'react'
 export default {
   title: 'Elements/Badge',
   component: Badge,
+  tags: ['autodocs'],
 }
 
 const colors = [
@@ -41,18 +42,18 @@ const colors = [
 
 const sizes: string[] = ['small', 'large']
 
-export const Default = (args: any) => <Badge {...args}>Hello world</Badge>
+export const Default = (args: any) => <Badge {...args}>Badge</Badge>
 
-export const withColor = (args: any) => <Badge {...args}>Hello world</Badge>
+export const withColor = (args: any) => <Badge {...args}>Badge</Badge>
 
-export const withDot = (args: any) => <Badge {...args}>Hello world</Badge>
+export const withDot = (args: any) => <Badge {...args}>Badge</Badge>
 
-export const large = (args: any) => <Badge {...args}>Hello world</Badge>
+export const large = (args: any) => <Badge {...args}>Badge</Badge>
 
-export const withDotLarge = (args: any) => <Badge {...args}>Hello world</Badge>
+export const withDotLarge = (args: any) => <Badge {...args}>Badge</Badge>
 
 export const withCustomClassNames = (args: any) => (
-  <Badge {...args}>Hello world</Badge>
+  <Badge {...args}>Badge</Badge>
 )
 
 export const allBadges = () => (
@@ -65,7 +66,7 @@ export const allBadges = () => (
             {colors.map((x, colorIndex) => (
               // @ts-ignore
               <Badge size={sizes[sizeIndex]} color={colors[colorIndex]}>
-                Supabase
+                Badge
               </Badge>
             ))}
           </div>

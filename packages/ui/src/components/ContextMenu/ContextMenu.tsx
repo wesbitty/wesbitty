@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
 
-// import * as RadixContextMenu from '@radix-ui/react-dropdown-menu'
 import { IconCheck } from '../Icon/icons/IconCheck'
-
-// @ts-ignore
-// import ContextMenuStyles from './ContextMenu.module.css'
 
 import type * as RadixContextMenuTypes from '@radix-ui/react-context-menu/'
 
@@ -30,20 +26,20 @@ function ContextMenu({
   className,
   style,
 }: RootProps) {
-  // let classes = [ContextMenuStyles['wsb-contextmenu__content']]
+  // let classes = [ContextMenuStyles['sbui-contextmenu__content']]
   // if (className) {
   //   classes.push(className)
   // }
   return (
     <RadixContextMenu.Root onOpenChange={onOpenChange}>
       <RadixContextMenu.Trigger
-      // className={ContextMenuStyles['wsb-contextmenu__trigger']}
+      // className={ContextMenuStyles['sbui-contextmenu__trigger']}
       >
         {children}
       </RadixContextMenu.Trigger>
 
       <RadixContextMenu.Content
-        sideOffset={alignOffset}
+        alignOffset={alignOffset}
         // className={classes.join(' ')}
         style={style}
       >
@@ -63,7 +59,7 @@ interface ItemProps {
 export function Item({ children, icon, disabled, onClick }: ItemProps) {
   return (
     <RadixContextMenu.Item
-      // className={ContextMenuStyles['wsb-contextmenu-item']}
+      // className={ContextMenuStyles['sbui-contextmenu-item']}
       disabled={disabled}
       onSelect={onClick}
     >
@@ -76,7 +72,7 @@ export function Item({ children, icon, disabled, onClick }: ItemProps) {
 export function Misc({ children, icon }: ItemProps) {
   return (
     <div
-    // className={ContextMenuStyles['wsb-contextmenu-misc']}
+    // className={ContextMenuStyles['sbui-contextmenu-misc']}
     >
       {icon && icon}
       {children}
@@ -110,11 +106,11 @@ export function Checkbox({
     <RadixContextMenu.CheckboxItem
       checked={checked}
       onCheckedChange={handleChange}
-      // className={`${ContextMenuStyles['wsb-contextmenu-item']} ${ContextMenuStyles['wsb-contextmenu-input']}`}
+      // className={`${ContextMenuStyles['sbui-contextmenu-item']} ${ContextMenuStyles['sbui-contextmenu-input']}`}
       disabled={disabled}
     >
       <RadixContextMenu.ItemIndicator
-      // className={ContextMenuStyles['wsb-contextmenu-input__check']}
+      // className={ContextMenuStyles['sbui-contextmenu-input__check']}
       >
         {ItemIndicator ? ItemIndicator : <IconCheck size="tiny" />}
         <RadixContextMenu.CheckboxItem />
@@ -134,10 +130,10 @@ export function Radio({ children, value, ItemIndicator }: RadioProps) {
   return (
     <RadixContextMenu.RadioItem
       value={value}
-      // className={`${ContextMenuStyles['wsb-contextmenu-item']} ${ContextMenuStyles['wsb-contextmenu-input']}`}
+      // className={`${ContextMenuStyles['sbui-contextmenu-item']} ${ContextMenuStyles['sbui-contextmenu-input']}`}
     >
       <RadixContextMenu.ItemIndicator
-      // className={ContextMenuStyles['wsb-contextmenu-input__check']}
+      // className={ContextMenuStyles['sbui-contextmenu-input__check']}
       >
         {ItemIndicator ? ItemIndicator : <IconCheck size="tiny" />}
       </RadixContextMenu.ItemIndicator>
@@ -178,7 +174,7 @@ interface LabelProps {
 export function Label({ children }: LabelProps) {
   return (
     <RadixContextMenu.Label
-    // className={ContextMenuStyles['wsb-contextmenu-label']}
+    // className={ContextMenuStyles['sbui-contextmenu-label']}
     >
       {children}
     </RadixContextMenu.Label>

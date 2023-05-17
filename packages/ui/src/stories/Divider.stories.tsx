@@ -11,16 +11,12 @@ export default {
 export const Default = (args: any) => <Divider {...args} />
 
 export const withCenterText = (args: any) => (
-  <Divider {...args}>Hello world</Divider>
+  <Divider {...args}>Divider</Divider>
 )
 
-export const withLeftText = (args: any) => (
-  <Divider {...args}>Hello world</Divider>
-)
+export const withLeftText = (args: any) => <Divider {...args}>Divider</Divider>
 
-export const withRightText = (args: any) => (
-  <Divider {...args}>Hello world</Divider>
-)
+export const withRightText = (args: any) => <Divider {...args}>Divider</Divider>
 
 export const lighterColor = (args: any) => <Divider {...args} />
 

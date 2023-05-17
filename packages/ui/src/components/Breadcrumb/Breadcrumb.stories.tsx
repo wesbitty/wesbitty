@@ -6,6 +6,7 @@ import Typography from '../Typography'
 export default {
   title: 'Navigation/Breadcrumb',
   component: Breadcrumb,
+  tags: ['autodocs'],
 }
 
 export const Default = ({ children, ...args }) => (

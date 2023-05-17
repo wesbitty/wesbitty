@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Button } from '../Button'
+import { Button } from '../..'
 import { Divider } from '../Divider'
-import { IconSettings, IconLogOut } from '../../index'
-import Typography from '../Typography'
+import { IconSettings } from '../Icon/icons/IconSettings'
+import { IconLogOut } from '../Icon/icons/IconLogOut'
 
 import { ContextMenu } from '.'
 import { IconLogIn } from '../Icon/icons/IconLogIn'
@@ -34,13 +34,8 @@ export const Default = (args: any) => (
       overlay={[
         <ContextMenu.Misc>
           <div>
-            <Typography.Text small className="block">
-              Signed in as{' '}
-            </Typography.Text>
-
-            <Typography.Text small strong>
-              tom@example.com{' '}
-            </Typography.Text>
+            <span className="block">Signed in as </span>
+            <span>tom@example.com </span>
           </div>
         </ContextMenu.Misc>,
         <Divider light />,
@@ -68,8 +63,8 @@ export const doNotcloseOverlay = (args: any) => (
       {...args}
       overlay={[
         <ContextMenu.Misc>
-          <Typography.Text>Signed in as </Typography.Text>
-          <Typography.Text strong>tom@example.com </Typography.Text>
+          <span>Signed in as </span>
+          <span>tom@example.com </span>
         </ContextMenu.Misc>,
         <Divider light />,
         <ContextMenu.Item>Account</ContextMenu.Item>,
@@ -101,8 +96,8 @@ export const withCustomStyles = (args: any) => (
       {...args}
       overlay={[
         <ContextMenu.Item>
-          <Typography.Text>Signed in as </Typography.Text>
-          <Typography.Text strong>tom@example.com </Typography.Text>
+          <span>Signed in as </span>
+          <span>tom@example.com </span>
         </ContextMenu.Item>,
         <Divider light />,
         <ContextMenu.Item>Account</ContextMenu.Item>,

@@ -1,29 +1,38 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
-import { Button } from '../components/Button'
+import { Button, ButtonSize, ButtonType } from '../components/Button'
+import { defaultTheme } from '../theme'
+import Link from 'next/link'
 
-const SIZES = ['tiny', 'small', 'medium', 'large', 'xlarge']
-const TYPES = [
+const SIZES: ButtonSize[] = ['tiny', 'small', 'medium', 'large', 'xlarge']
+const TYPES: ButtonType[] = [
   'primary',
   'default',
   'secondary',
+  'alternative',
   'outline',
   'dashed',
   'link',
   'text',
+  'danger',
+  'warning',
 ]
 
 describe('#Button', () => {
   it('should render button correctly', () => {
     const wrapper = render(<Button>Button</Button>)
+
     expect(wrapper.getByText('Button')).toBeInTheDocument()
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
   it('should render different text', () => {
     const wrapper = render(<Button>Button</Button>)
+
     expect(screen.getByText('Button')).toBeInTheDocument()
+
     wrapper.rerender(<Button>按钮</Button>)
+
     expect(screen.getByText('按钮')).toBeInTheDocument()
   })
 
@@ -36,9 +45,12 @@ describe('#Button', () => {
         </Button>
       )
     }
+
     render(<WrapperButton />)
     expect(screen.getByText('state1')).toBeInTheDocument()
+
     fireEvent.click(screen.getByText('state1'))
+
     expect(screen.getByText('state1')).toBeInTheDocument()
     expect(screen.queryByText('state2')).not.toBeInTheDocument()
   })
@@ -57,31 +69,44 @@ describe('#Button', () => {
     expect(screen.queryByText('state2')).not.toBeInTheDocument()
   })
 
-  it('should have "w-full" class', async () => {
-    render(<Button block>Button Block</Button>)
-    expect(screen.queryByRole('button')).toHaveClass(
-      'wsb-btn wsb-btn-primary wsb-btn--w-full wsb-btn-container--shadow wsb-btn--tiny'
-    )
+  it('should have "w-full" class when fullwidth is true', async () => {
+    render(<Button fullwidth>Fullwidth Button</Button>)
+    expect(screen.queryByRole('button')).toHaveClass('w-full')
   })
 
-  it.each(TYPES)('should have "btn--%s" class', (type) => {
+  it.each(TYPES)(`should have %p class from theme`, (type) => {
+    const expected = defaultTheme.button.type[type]
+
     render(<Button type={type}>Button Variant</Button>)
 
-    if (type !== 'text' && type !== 'link') {
-      expect(screen.queryByRole('button')).toHaveClass(
-        `wsb-btn wsb-btn-${type} wsb-btn-container--shadow wsb-btn--tiny`
-      )
-    } else {
-      expect(screen.queryByRole('button')).toHaveClass(
-        `wsb-btn wsb-btn-${type} wsb-btn--tiny`
-      )
-    }
+    expect(screen.queryByRole('button')).toHaveClass(expected)
   })
 
-  it.each(SIZES)('should have "btn--%s" class', (size) => {
+  it.each(SIZES)('should have %p class from theme', (size) => {
+    const expected = defaultTheme.button.size[size]
+
     render(<Button size={size}>Button</Button>)
-    expect(screen.queryByRole('button')).toHaveClass(
-      `wsb-btn wsb-btn-primary wsb-btn-container--shadow wsb-btn--${size}`
-    )
+
+    expect(screen.queryByRole('button')).toHaveClass(expected)
+  })
+
+  it("shouldn't crash when wrapped with next/link", () => {
+    expect(() =>
+      render(
+        <Link href="https://wesbitty.org">
+          <Button>Button</Button>
+        </Link>
+      )
+    ).not.toThrow()
+  })
+
+  it('should forward ref', () => {
+    const ref: React.MutableRefObject<HTMLButtonElement | null> = {
+      current: null,
+    }
+
+    render(<Button ref={ref}>Button</Button>)
+
+    expect(ref.current).toBeInstanceOf(HTMLButtonElement)
   })
 })

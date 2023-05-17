@@ -666,7 +666,7 @@ const DomainsForm = () => {
                       <Button
                         form="new-domain-form"
                         htmlType="submit"
-                        block
+                        fullwidth
                         size="medium"
                         loading={isSubmitting}
                       >
@@ -750,7 +750,7 @@ const DomainsForm = () => {
           <div className="px-5 flex gap-3">
             <Button
               type="secondary"
-              block
+              fullwidth
               size="medium"
               onClick={() => {
                 // setOpen(!open)
@@ -759,7 +759,7 @@ const DomainsForm = () => {
               Cancel
             </Button>
             <Button
-              block
+              fullwidth
               size="medium"
               type="warning"
               loading={deleteLoading}

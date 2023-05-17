@@ -1,8 +1,3 @@
-/*
- * Globlal Variables
- *
- */
-
 const defaults = {
   bg: {
     brand: {
@@ -34,7 +29,6 @@ const defaults = {
     focus-visible:outline-offset-1
   `,
   size: {
-    // buttons, inputs, input labels use these sizes
     text: {
       tiny: 'text-xs',
       small: 'text-sm leading-4',
@@ -42,7 +36,6 @@ const defaults = {
       large: 'text-base',
       xlarge: 'text-base',
     },
-    // buttons, inputs, input labels use these sizes
     padding: {
       tiny: 'px-2.5 py-1',
       small: 'px-3 py-2',
@@ -73,11 +66,9 @@ const default__padding_and_text = {
   xlarge: `${defaults.size.text.xlarge} ${defaults.size.padding.xlarge}`,
 }
 
-/*
- * Animations
- *
+/**
+ * @Animations
  */
-
 const default___animations = {
   accordion: {
     enter: 'transition-max-height ease-in-out duration-700 overflow-hidden',
@@ -89,17 +80,13 @@ const default___animations = {
   },
 }
 
-/*
- * Main tailwind utility classes output
- *
+/**
+ * Default theme @wesbitty UI
  */
-
-const defaultTheme = {
-  /*
-   * Accordion
-   *
+export default {
+  /**
+   * @Accordion
    */
-
   accordion: {
     variants: {
       default: {
@@ -200,11 +187,9 @@ const defaultTheme = {
     },
   },
 
-  /*
-   * Badge
-   *
+  /**
+   * @Badge
    */
-
   badge: {
     base: 'inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-opacity-10',
     size: {
@@ -485,7 +470,7 @@ const defaultTheme = {
         focus-visible:outline-amber-700
       `,
     },
-    block: 'w-full flex items-center justify-center',
+    fullwidth: 'w-full flex items-center justify-center',
     shadow: 'shadow-sm',
     size: {
       ...default__padding_and_text,
@@ -1723,5 +1708,3 @@ const defaultTheme = {
     `,
   },
 }
-
-export default defaultTheme

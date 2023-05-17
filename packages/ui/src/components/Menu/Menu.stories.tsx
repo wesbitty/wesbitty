@@ -5,7 +5,7 @@ import { IconMail } from './../../index'
 import Typography from '../Typography'
 
 import { Menu } from './'
-import { Button } from '../Button'
+import { Button } from '../../index'
 import { IconDatabase } from '../Icon/icons/IconDatabase'
 import { IconMenu } from '../Icon/icons/IconMenu'
 import { IconRefreshCcw } from '../Icon/icons/IconRefreshCcw'

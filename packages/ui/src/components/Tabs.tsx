@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { TabsContext } from './TabsContext'
+import { TabsContext } from './Shared/Context/Tabs'
 
 import * as TabsPrimitive from '@radix-ui/react-tabs'
 
 // @ts-ignore
 // import TabsStyles from './Tabs.module.css'
 
-import { styleHandler } from '../../theme/handler'
+import { styleHandler } from '../theme/handler'
 
 interface TabsProps {
   type?: 'pills' | 'underlined' | 'cards'

@@ -1,5 +1,5 @@
 import React from 'react'
-
+// @ts-ignore
 import MarkdownExample from '../lib/MarkdownSample.md'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
@@ -22,11 +22,11 @@ export const article = () => (
 
 export const Titles = () => (
   <React.Fragment>
-    <Title level={1}>Hello world</Title>
-    <Title level={2}>Hello world</Title>
-    <Title level={3}>Hello world</Title>
-    <Title level={4}>Hello world</Title>
-    <Title level={5}>Hello world</Title>
+    <Title level={1}>Title</Title>
+    <Title level={2}>Title</Title>
+    <Title level={3}>Title</Title>
+    <Title level={4}>Title</Title>
+    <Title level={5}>Title</Title>
   </React.Fragment>
 )
 

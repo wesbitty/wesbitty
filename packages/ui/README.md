@@ -49,7 +49,7 @@ import { Button } from '@wesbitty/ui'
 After adding import into your project you can use it simply like:
 
 ```jsx
-<Button>Hello World!</Button>
+<Button type="primary">Button</Button>
 ```
 
 **Button Props**

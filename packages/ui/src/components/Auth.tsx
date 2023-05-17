@@ -247,7 +247,7 @@ function SocialAuth({
                     style={!verticalSocialLayout ? { flexGrow: 1 } : {}}
                   >
                     <Button
-                      block
+                      fullwidth
                       type="default"
                       shadow
                       size={socialButtonSize}
@@ -410,7 +410,7 @@ function EmailAuth({
             size="large"
             icon={<IconLock size={21} />}
             loading={loading}
-            block
+            fullwidth
           >
             {authView === VIEWS.SIGN_IN ? 'Sign in' : 'Sign up'}
           </Button>
@@ -494,7 +494,7 @@ function MagicLink({
             }
           />
           <Button
-            block
+            fullwidth
             size="large"
             htmlType="submit"
             icon={<IconInbox size={21} />}
@@ -560,7 +560,7 @@ function ForgottenPassword({
             }
           />
           <Button
-            block
+            fullwidth
             size="large"
             htmlType="submit"
             icon={<IconInbox size={21} />}
@@ -616,7 +616,7 @@ function UpdatePassword({ wesbittyOauth }: { wesbittyOauth: SupabaseClient }) {
             }
           />
           <Button
-            block
+            fullwidth
             size="large"
             htmlType="submit"
             icon={<IconKey size={21} />}

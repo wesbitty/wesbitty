@@ -1,34 +1,36 @@
 {
-  "name": "@wesbitty/ui",
-  "version": "0.0.13",
+  "name": "ui",
+  "version": "0.0.15",
   "description": "Wesbitty UI Component library",
   "keywords": [
     "storybook",
     "ui",
     "components",
-    "library",
-    "wesbitty"
+    "library"
   ],
   "license": "MIT",
   "sideEffects": false,
-  "type": "module",
-  "exports": "./lib/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    }
+  },
+  "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "files": [
     "LICENSE",
-    "package.json",
-    "README.md",
-    "lib"
+    "lib",
+    "README.md"
   ],
   "scripts": {
-    "prebuild": "node --experimental-modules scripts/generate-icons.cjs",
     "build": "rimraf lib && tsc",
     "postbuild": "storybook build",
+    "build:css": "npx tailwindcss -i ./styles/input.css -o styles/output.css -c ./tailwind.config.js",
+    "build:icons": "node --experimental-modules scripts/generate-icons.cjs",
     "clean": "rimraf lib storybook-static",
-    "postinstall": "tailwindcss build styles/tailwind.css -o styles/output.css -c ./tailwind.config.js",
     "release": "release-it",
-    "storybook": "storybook dev -s ./src/static -p 6006",
-    "test": "react-scripts test"
+    "storybook": "storybook dev -s ./src/static -p 6006"
   },
   "browserslist": {
     "production": [
@@ -42,28 +44,19 @@
       "last 1 safari version"
     ]
   },
-  "jest": {
-    "transformIgnorePatterns": [
-      "/node_modules/(?!react-feather)"
-    ]
-  },
-  "resolutions": {
-    "react": "^18",
-    "react-dom": "^18"
-  },
   "dependencies": {
-    "@babel/runtime": "^7.20.13",
+    "@babel/runtime": "^7.21.5",
     "@headlessui/react": "^1.0.0",
     "@mertasan/tailwindcss-variables": "^2.2.3",
     "@radix-ui/colors": "^0.1.8",
-    "@radix-ui/react-accordion": "^0.1.5",
-    "@radix-ui/react-collapsible": "^0.1.5",
-    "@radix-ui/react-context-menu": "^0.1.0",
-    "@radix-ui/react-dialog": "^0.1.5",
-    "@radix-ui/react-dropdown-menu": "^0.1.4",
-    "@radix-ui/react-popover": "^0.1.0",
-    "@radix-ui/react-portal": "^0.1.3",
-    "@radix-ui/react-tabs": "^0.1.0",
+    "@radix-ui/react-accordion": "^1.1.1",
+    "@radix-ui/react-collapsible": "^1.0.2",
+    "@radix-ui/react-context-menu": "^2.1.3",
+    "@radix-ui/react-dialog": "^1.0.3",
+    "@radix-ui/react-dropdown-menu": "^2.0.4",
+    "@radix-ui/react-popover": "^1.0.5",
+    "@radix-ui/react-portal": "^1.0.2",
+    "@radix-ui/react-tabs": "^1.0.3",
     "@storybook/addon-postcss": "^2.0.0",
     "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/typography": "^0.5.2",
@@ -74,17 +67,18 @@
     "lodash": "^4.17.20",
     "lucide-react": "^0.124.0",
     "mini-svg-data-uri": "^1.4.4",
+    "next": "^13.4.2",
     "openai": "^3.2.1",
     "postcss": "^8.4.5",
     "prop-types": "^15.7.2",
-    "react": "^18",
+    "react": "^18.2.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-countdown": "^2.3.5",
-    "react-dom": "^18",
+    "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-hot-toast": "^2.4.0",
     "react-markdown": "^8.0.3",
-    "react-scripts": "^4.0.3",
+    "react-scripts": "^5.0.1",
     "react-syntax-highlighter": "^15.5.0",
     "react-transition-group": "^4.4.1",
     "remark-gfm": "^3.0.1",
@@ -93,30 +87,28 @@
     "tailwindcss-radix": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.18.6",
     "@babel/core": "^7.18.6",
     "@babel/eslint-parser": "^7.18.2",
     "@babel/plugin-transform-runtime": "^7.18.2",
     "@babel/preset-env": "^7.18.6",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@storybook/addon-actions": "^7.0.9",
-    "@storybook/addon-essentials": "^7.0.9",
-    "@storybook/addon-links": "^7.0.9",
-    "@storybook/html": "^7.0.9",
-    "@storybook/react": "^7.0.9",
-    "@storybook/react-webpack5": "^7.0.9",
+    "@storybook/addon-actions": "^7.0.12",
+    "@storybook/addon-essentials": "^7.0.12",
+    "@storybook/addon-links": "^7.0.12",
+    "@storybook/html": "^7.0.12",
+    "@storybook/react": "^7.0.12",
+    "@storybook/react-webpack5": "^7.0.12",
     "@supabase/supabase-js": "^1.21.0",
-    "@testing-library/dom": "^8.13.0",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/react-hooks": "^8.0.0",
+    "@testing-library/dom": "^9.0.3",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.2.0",
     "@types/lodash": "^4.14.172",
     "@types/react-copy-to-clipboard": "^5.0.4",
     "@types/react-syntax-highlighter": "^15.5.6",
     "@wesbitty/storybook-theming": "^0.0.2",
-    "babel-loader": "^8.2.5",
+    "babel-loader": "^9.1.2",
     "babel-plugin-add-react-displayname": "^0.0.5",
     "babel-plugin-macros": "^2.8.0",
     "css-loader": "^5.0.1",
@@ -124,16 +116,11 @@
     "postcss-modules-values": "^4.0.0",
     "postcss-preset-env": "^6.7.0",
     "release-it": "^15.10.3",
-    "storybook": "^7.0.9",
+    "storybook": "^7.0.12",
     "storybook-dark-mode": "^3.0.0",
     "style-loader": "^3.3.2",
-    "typedoc": "^0.19.1",
     "typescript": "4.9.4",
     "yup": "^0.32.11"
-  },
-  "peerDependencies": {
-    "react": "^17.0.2 || ^18",
-    "react-dom": "^17.0.2 || ^18"
   },
   "optionalDependencies": {
     "fsevents": "^2.3.2"

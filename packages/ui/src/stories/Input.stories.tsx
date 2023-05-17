@@ -1,10 +1,10 @@
 import React from 'react'
 // import { AutoForm } from 'uniforms'
 
-import { Input } from '.'
-import { IconPackage } from './../../index'
-import { Button } from '../Button'
-import { Space } from '../Space'
+import { Input } from '../index'
+import { IconPackage } from '../index'
+import { Button } from '../index'
+import { Space } from '../components/Space'
 
 export default {
   title: 'Data Input/Input',

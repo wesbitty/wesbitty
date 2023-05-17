@@ -1,8 +1,8 @@
 import React from 'react'
-import Typography from '../Typography'
+import Typography from '../components/Typography'
 // import { AutoForm } from 'uniforms'
 
-import { Card } from './'
+import { Card } from '..'
 
 export default {
   title: 'Displays/Card',

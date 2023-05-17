@@ -28,7 +28,7 @@
   "include": ["src/", "types/Mode.d.ts"],
   "exclude": [
     "node_modules",
-    "src/_tests_",
+    "src/__tests__",
     "src/components/*/*.test.js",
     "src/stories",
     "src/components/*/*.stories.tsx"

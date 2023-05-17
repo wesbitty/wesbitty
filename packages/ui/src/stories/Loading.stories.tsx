@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import { Loading } from '.'
-import { Card } from '../Card'
+import { Loading } from '../index'
+import { Card } from '../index'
 
 export default {
   title: 'Utilities/Loading',

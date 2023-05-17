@@ -1,11 +1,11 @@
-import React, { forwardRef, useRef, useImperativeHandle } from 'react'
+import React, { forwardRef } from 'react'
 import { IconContext } from './Icon/IconContext'
 import { IconLoader } from './Icon/icons/IconLoader'
-import { styleHandler } from '../theme/handler'
-import warn from '../utils/warning'
+
+import { styleHandler } from '../theme'
 
 export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
-  block?: boolean
+  fullwidth?: boolean
   className?: string
   children?: React.ReactNode
   disabled?: boolean
@@ -15,19 +15,9 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   loading?: boolean
   loadingCentered?: boolean
   shadow?: boolean
-  size?: 'tiny' | 'small' | 'medium' | 'large' | 'xlarge'
+  size?: ButtonSize
   style?: React.CSSProperties
-  type?:
-    | 'primary'
-    | 'default'
-    | 'secondary'
-    | 'alternative'
-    | 'outline'
-    | 'dashed'
-    | 'link'
-    | 'text'
-    | 'danger'
-    | 'warning'
+  type?: ButtonType
   danger?: boolean
   htmlType?: 'button' | 'submit' | 'reset'
   ref?: any
@@ -40,16 +30,25 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   form?: string
 }
 
-interface CustomButtonProps extends React.HTMLAttributes<HTMLOrSVGElement> {}
+export type ButtonSize = 'tiny' | 'small' | 'medium' | 'large' | 'xlarge'
+export type ButtonType =
+  | 'primary'
+  | 'default'
+  | 'secondary'
+  | 'alternative'
+  | 'outline'
+  | 'dashed'
+  | 'link'
+  | 'text'
+  | 'danger'
+  | 'warning'
 
-export type RefHandle = {
-  button: () => HTMLButtonElement | null
-}
+interface CustomButtonProps extends React.HTMLAttributes<HTMLButtonElement> {}
 
-const Button = React.forwardRef<RefHandle, ButtonProps>(
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
-      block,
+      fullwidth,
       className,
       children,
       danger,
@@ -74,33 +73,18 @@ const Button = React.forwardRef<RefHandle, ButtonProps>(
     }: ButtonProps,
     ref
   ) => {
-    const hasIcon = loading || icon
-
-    warn(
-      hasIcon && !props['aria-label'] && !children,
-      'Button',
-      'You are using an icon button, but no "aria-label" attribute was found. Add an "aria-label" attribute to work as a label for screen readers.'
-    )
-
-    const buttonRef = useRef<HTMLButtonElement>(null)
-
-    useImperativeHandle(ref, () => ({
-      button: () => {
-        return buttonRef.current
-      },
-    }))
-
-    // styles
     let __styles = styleHandler('button')
+
+    const showIcon = loading || icon
 
     let classes = [__styles.base]
     let containerClasses = [__styles.container]
 
     classes.push(__styles.type[type])
 
-    if (block) {
-      containerClasses.push(__styles.block)
-      classes.push(__styles.block)
+    if (fullwidth) {
+      containerClasses.push(__styles.fullwidth)
+      classes.push(__styles.fullwidth)
     }
 
     if (shadow && type !== 'link' && type !== 'text') {
@@ -121,15 +105,14 @@ const Button = React.forwardRef<RefHandle, ButtonProps>(
 
     const iconLoaderClasses = [__styles.loading]
 
-    // custom button tag
-    const CustomButton: React.FC<CustomButtonProps> = ({ ...props }) => {
+    const CustomButton = ({ ...props }) => {
       const Tag = as as keyof JSX.IntrinsicElements
       return <Tag {...props} />
     }
 
     const buttonContent = (
       <>
-        {hasIcon &&
+        {showIcon &&
           (loading ? (
             <IconLoader size={size} className={iconLoaderClasses.join(' ')} />
           ) : icon ? (
@@ -159,10 +142,9 @@ const Button = React.forwardRef<RefHandle, ButtonProps>(
       )
     } else {
       return (
-        // <span ref={containerRef} className={containerClasses.join(' ')}>
         <button
           {...props}
-          ref={buttonRef}
+          ref={ref}
           className={classes.join(' ')}
           disabled={loading || (disabled && true)}
           onClick={onClick}
@@ -176,10 +158,7 @@ const Button = React.forwardRef<RefHandle, ButtonProps>(
         >
           {buttonContent}
         </button>
-        // </span>
       )
     }
   }
 )
-
-export default Button

@@ -18,13 +18,13 @@ export { default as GlassPanel } from './components/GlassPanel'
 export { cn } from './utils/cn'
 
 // Elements
-export { default as Button } from './components/Button'
+export { Button, ButtonSize, ButtonType } from './components/Button'
 export { default as Badge } from './components/Badge'
 export * from './components/Icon/index'
 
 // DISPLAYS
-export * from './components/Card/index'
-export * from './components/Tabs/index'
+export { default as Card } from './components/Card'
+export { default as Tabs } from './components/Tabs'
 export { default as Alert } from './components/Alert'
 export { default as Accordion } from './components/Accordion'
 export { default as Collapsible } from './components/Collapsible'
@@ -35,21 +35,21 @@ export * from './components/Menu/index'
 // OVERLAYS
 export * from './components/Modal/index'
 export * from './components/SidePanel/index'
-export { Dropdown } from './components/Dropdown'
+export { default as Dropdown } from './components/Dropdown'
 export * from './components/ContextMenu/index'
-export * from './components/Popover/index'
+export { default as Popover } from './components/Popover'
 // export * from './components/Toast/index'
 
 // UTILITIES
 export { Space } from './components/Space'
-export * from './components/Loading/index'
+export { default as Loading } from './components/Loading'
 export { Divider } from './components/Divider'
 
 // DATA ENTRY
 export * from './components/Select/index'
 export * from './components/Listbox/index'
 export { Checkbox } from './components/Checkbox'
-export * from './components/Input/index'
+export { default as Input } from './components/Input'
 export * from './components/InputNumber/index'
 export { default as Radio } from './components/Radio'
 export * from './components/Toggle/index'

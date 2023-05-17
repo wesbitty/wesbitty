@@ -4,7 +4,7 @@ When contributing to this repository, please first discuss the change you wish t
 
 Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) and follow it in all your interactions with the project.
 
-# Developing Wesbitty, Inc.
+# Developing Wesbitty Repo
 
 1. [Getting Started](#getting-started)
    - [Install Dependencies](#install-dependencies)
@@ -70,7 +70,7 @@ To get started, execute the following:
 
 2. You can then run the apps simultaneously with the following.
    ```sh
-   npm run dev # start all the applications
+   npm run dev
    ```
 
 Then visit, and edit, any of the following sites:
@@ -98,7 +98,7 @@ The Monorepo has a set of shared components under `/packages`:
 
 #### Installing packages
 
-Installing a package with NPM workspaces requires you to add the `-w` flag to tell NPM which workspace you want to install into. Do not install dependencies in their local folder, install them from the route using the `--workspace` flag.
+Installing a package with NPM workspaces requires you to add the `--workspace` flag to tell NPM which workspace you want to install into. Do not install dependencies in their local folder, install them from the route using the `--workspace` flag.
 
 The format is: `npm install <package name> --workspace=<workspace to install in>`.
 

@@ -103,80 +103,80 @@ export const allButtonsWithSizes = (args: any) => (
           Text
         </Button>
         <Button {...args} size="small" type="dashed">
-          Button text
+          Dashed
         </Button>
         <Button {...args} size="small" type="outline">
-          Button text
+          Outline
         </Button>
         <Button {...args} size="small" type="danger">
-          Button text
+          Danger
         </Button>
         <Button {...args} size="small" type="warning">
-          Button text
+          Warning
         </Button>
       </div>
       <div className="flex space-x-4">
         <Button {...args} size="medium">
-          Button text
+          Primary
         </Button>
         <Button {...args} size="medium" type="default">
-          Button text
+          Default
         </Button>
         <Button {...args} size="medium" type="secondary">
-          Button text
+          Secondary
         </Button>
         <Button {...args} size="medium" type="alternative">
-          Button text
+          Alternatives
         </Button>
         <Button {...args} size="medium" type="link">
-          Button text
+          Link
         </Button>
         <Button {...args} size="medium" type="text">
-          Button text
+          Text
         </Button>
         <Button {...args} size="medium" type="dashed">
-          Button text
+          Dashed
         </Button>
         <Button {...args} size="medium" type="outline">
-          Button text
+          Outline
         </Button>
         <Button {...args} size="medium" type="danger">
-          Button text
+          Danger
         </Button>
         <Button {...args} size="medium" type="warning">
-          Button text
+          Warning
         </Button>
       </div>
       <div className="flex space-x-4">
         <Button {...args} size="large">
-          Button text
+          Primary
         </Button>
         <Button {...args} size="large" type="default">
-          Button text
+          Default
         </Button>
         <Button {...args} size="large" type="secondary">
-          Button text
+          Secondary
         </Button>
         <Button {...args} size="large" type="alternative">
-          Button text
+          Alternative
         </Button>
         <Button {...args} size="large" type="link">
-          Button text
+          Link
         </Button>
         <Button {...args} size="large" type="text">
-          Button text
+          Text
         </Button>
         <Button {...args} size="large" type="dashed">
-          Button text
+          Dashed
         </Button>
         <Button {...args} size="large" type="outline">
-          Button text
+          Outline
         </Button>
         <Button {...args} size="large" type="danger">
-          Button text
+          Danger
         </Button>
         <Button {...args} size="large" type="warning">
-          Button text
+          Warning
         </Button>
       </div>
       <div className="flex space-x-4">
@@ -236,7 +236,7 @@ rightIcon.args = {
 
 fullwidth.args = {
   type: 'primary',
-  block: true,
+  fullwidth: true,
 }
 
 onlyIcon.args = {

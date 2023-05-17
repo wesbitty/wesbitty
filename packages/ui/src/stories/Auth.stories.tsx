@@ -20,7 +20,7 @@ const Container = (props: any) => {
     return (
       <>
         <Typography.Text>Signed in: {user.email}</Typography.Text>
-        <Button block onClick={() => props.wesbittyOauth.auth.signOut()}>
+        <Button fullwidth onClick={() => props.wesbittyOauth.auth.signOut()}>
           Sign out
         </Button>
       </>
