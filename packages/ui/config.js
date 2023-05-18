@@ -463,7 +463,7 @@ function arrayMergeFn(destinationArray, sourceArray) {
 }
 
 /**
- * Merge Wesjet CSS and Tailwind CSS configurations
+ * Merge Wesbitty and Tailwind CSS configurations
  * @param {object} tailwindConfig - Tailwind config object
  * @return {object} new config object
  */
