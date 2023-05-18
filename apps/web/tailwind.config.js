@@ -10,6 +10,7 @@ module.exports = config({
     './pages/**/*.{tsx,mdx}',
     './docs/**/*.{tsx,mdx}',
     './[Post]/**/*.mdx',
+    '../../node_modules/ui/lib/theme/default.js',
   ],
   darkMode: 'class',
   theme: {
