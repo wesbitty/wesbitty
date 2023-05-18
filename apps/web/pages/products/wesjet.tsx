@@ -1,6 +1,6 @@
 import { Default } from '~/components/widget/Default'
 import Container from '~/components/widget/Container'
-import { Typography } from '@wesbitty/ui'
+import { Typography } from 'ui'
 import { useRouter } from 'next/router'
 import { Metadata } from '~/utils/Metadata'
 import { NextSeo } from 'next-seo'

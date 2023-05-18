@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography } from '@wesbitty/ui'
+import { Typography } from 'ui'
 import { Post } from 'wesjet/static'
 import { FC } from 'react'
 

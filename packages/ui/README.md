@@ -34,7 +34,7 @@ npm install @wesbitty/ui
 You can use any Icon from the library as a component by prepending `Icon` to any Icon name, like, `<IconHome>`
 
 ```js
-import { IconHome } from '@wesbitty/ui'
+import { IconHome } from 'ui'
 //...
 return <IconHome size="small" />
 ```
@@ -43,7 +43,7 @@ return <IconHome size="small" />
   To implement Button component into your project you'll need to add the import:
 
 ```js
-import { Button } from '@wesbitty/ui'
+import { Button } from 'ui'
 ```
 
 After adding import into your project you can use it simply like:

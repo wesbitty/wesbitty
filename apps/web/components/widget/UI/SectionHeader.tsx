@@ -1,4 +1,4 @@
-import { Typography } from '@wesbitty/ui'
+import { Typography } from 'ui'
 
 const SectionHeader = (props: any) => {
   return (
