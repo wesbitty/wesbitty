@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Card, Space, Typography } from 'ui'
+import { Card, Space, Typography } from '@wesbitty/ui'
 import DeveloperSignups from 'wesbitty/data/DeveloperSignups'
 
 type CommunityItem = {

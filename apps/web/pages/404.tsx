@@ -8,7 +8,7 @@ import {
   IconLink2,
   IconLink,
   IconPause,
-} from 'ui'
+} from '@wesbitty/ui'
 import Link from 'next/link'
 import { Default } from '~/components/widget/Default'
 import { NextSeo } from 'next-seo'

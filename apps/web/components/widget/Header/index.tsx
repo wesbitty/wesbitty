@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Button, Badge, IconLogIn, IconHome, IconPackage } from 'ui'
+import { Button, Badge, IconLogIn, IconHome, IconPackage } from '@wesbitty/ui'
 import FlyOut from '../UI/FlyOut'
 import Transition from '~/utils/transition'
 import SolutionsData from '~/data/Solutions.json'

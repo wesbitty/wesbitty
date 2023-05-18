@@ -4,7 +4,7 @@ import SolutionsData from '~/data/Solutions.json'
 import CaseStudiesData from '~/data/CaseStudies.json'
 import { useRouter } from 'next/router'
 import ProductIcon from '~/components/Icons/product'
-import { Typography, Badge } from 'ui'
+import { Typography, Badge } from '@wesbitty/ui'
 import Link from 'next/link'
 
 const Product = () => {

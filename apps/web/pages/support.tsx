@@ -15,7 +15,7 @@ import {
   IconGitHub,
   Divider,
   IconMail,
-} from 'ui'
+} from '@wesbitty/ui'
 import { Section } from '~/components/widget/Section'
 import 'swiper/swiper.min.css'
 import { useRouter } from 'next/router'

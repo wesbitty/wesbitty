@@ -13,7 +13,7 @@ import {
   IconFile,
   Space,
   Typography,
-} from 'ui'
+} from '@wesbitty/ui'
 import matter from 'gray-matter'
 import authors from 'wesbitty/data/authors.json'
 import { generateReadingTime } from '~/utils/helpers'

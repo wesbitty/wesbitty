@@ -6,7 +6,7 @@ import {
   PricingTableRowDesktop,
   PricingTableRowMobile,
 } from '~/components/PricingTableRow'
-import { Badge, Button, Divider, Space, Typography } from 'ui'
+import { Badge, Button, Divider, Space, Typography } from '@wesbitty/ui'
 import pricing from '~/data/Pricing.json'
 import pricingFaq from '~/data/PricingFAQ.json'
 import ReactMarkdown from 'react-markdown'

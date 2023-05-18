@@ -2,7 +2,7 @@ import React from 'react'
 import DevelopersData from '~/data/Developers.json'
 import AnnouncementsData from '~/data/Announcements.json'
 import { useRouter } from 'next/router'
-import { Typography } from 'ui'
+import { Typography } from '@wesbitty/ui'
 import Image from 'next/image'
 import Link from 'next/link'
 

@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
 import type { UserSettings } from 'types'
 import { Section } from '~/components/widget/Section'
-import { Button } from 'ui'
+import { Button } from '@wesbitty/ui'
 import Link from 'next/link'
 
 export default function AppSettings() {

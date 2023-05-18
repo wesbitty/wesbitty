@@ -1,4 +1,4 @@
-import { Space, Typography } from 'ui'
+import { Space, Typography } from '@wesbitty/ui'
 import Image from 'next/image'
 import React from 'react'
 

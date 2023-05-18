@@ -1,4 +1,4 @@
-import { Tabs } from 'ui'
+import { Tabs } from '@wesbitty/ui'
 import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import {

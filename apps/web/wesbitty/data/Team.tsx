@@ -1,4 +1,4 @@
-import { Card, Space, Typography } from 'ui'
+import { Card, Space, Typography } from '@wesbitty/ui'
 
 type TeamMember = {
   name: string

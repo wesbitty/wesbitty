@@ -2,7 +2,7 @@ import SectionHeader from './widget/SectionHeader'
 import { Section } from './widget/Section'
 import Link from 'next/link'
 import { allPosts, Post } from 'wesjet/static'
-import { GlassPanel } from 'ui'
+import { GlassPanel } from '@wesbitty/ui'
 import TextLink from './TextLink'
 
 type Props = {}
