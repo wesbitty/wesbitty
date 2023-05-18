@@ -1,3 +1,3 @@
-export * from './provider'
+export { ThemeContext, ThemeProvider, useTheme } from './provider'
 export { default as defaultTheme } from './default'
-export * from './handler'
+export { styleHandler } from './handler'
