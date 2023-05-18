@@ -1,5 +1,6 @@
-import React, { useLayoutEffect, useMemo } from 'react'
+import React from 'react'
 import defaultTheme from './default'
+import { useContext, useLayoutEffect, useMemo } from 'react'
 import { mergeDeep } from '../utils/mergeDeep'
 import useDarkMode from '../utils/useDarkMode'
 
@@ -13,7 +14,9 @@ export const ThemeContext = React.createContext<ThemeContextInterface>({
   theme: defaultTheme,
 })
 
-interface ThemeProviderProps extends React.HTMLAttributes<HTMLDivElement> {
+export const useTheme = () => useContext(ThemeContext)
+
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
   /**
    * Defines the styles used throughout the library
@@ -29,9 +32,7 @@ interface ThemeProviderProps extends React.HTMLAttributes<HTMLDivElement> {
   usePreferences?: boolean
 }
 
-export const useTheme = () => React.useContext(ThemeContext)
-
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({
+export const ThemeProvider: React.FC<Props> = ({
   children,
   theme: customTheme,
   dark,

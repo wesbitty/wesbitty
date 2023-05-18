@@ -8,6 +8,7 @@
     "target": "es6",
     "module": "esnext",
     "declaration": true,
+    "sourceMap": true,
     "rootDir": "./src",
     "outDir": "./lib",
     "lib": ["ES2015", "dom", "dom.iterable", "esnext"],

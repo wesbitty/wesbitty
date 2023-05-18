@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-
 import { Default } from '~/components/widget/Default'
 import {
   PricingTableRowDesktop,
   PricingTableRowMobile,
 } from '~/components/PricingTableRow'
 import { Badge, Button, Divider, Space, Typography } from '@wesbitty/ui'
-
 import pricing from '~/data/Pricing.json'
 import pricingFaq from '~/data/PricingFAQ.json'
 import ReactMarkdown from 'react-markdown'
@@ -61,7 +59,7 @@ export default function PricingPage({}: Props) {
                 href="https://app.wesbitty.org"
                 as="https://app.wesbitty.org"
               >
-                <Button type="outline" size="medium" block>
+                <Button type="outline" size="medium" fullwidth>
                   Get started
                 </Button>
               </Link>
@@ -105,7 +103,7 @@ export default function PricingPage({}: Props) {
                 href="https://app.wesbitty.org"
                 as="https://app.wesbitty.org"
               >
-                <Button type="outline" size="medium" block>
+                <Button type="outline" size="medium" fullwidth>
                   Get started
                 </Button>
               </Link>
@@ -150,7 +148,7 @@ export default function PricingPage({}: Props) {
                 href="https://app.wesbitty.org"
                 as="https://app.wesbitty.org"
               >
-                <Button type="outline" size="medium" block>
+                <Button type="outline" size="medium" fullwidth>
                   Get started
                 </Button>
               </Link>
@@ -358,7 +356,7 @@ export default function PricingPage({}: Props) {
                       href="https://app.wesbitty.org"
                       as="https://app.wesbitty.org"
                     >
-                      <Button size="medium" type="outline" block>
+                      <Button size="medium" type="outline" fullwidth>
                         Get started
                       </Button>
                     </Link>
@@ -369,7 +367,7 @@ export default function PricingPage({}: Props) {
                       href="https://app.wesbitty.org"
                       as="https://app.wesbitty.org"
                     >
-                      <Button size="medium" type="outline" block>
+                      <Button size="medium" type="outline" fullwidth>
                         Get started
                       </Button>
                     </Link>
@@ -380,7 +378,7 @@ export default function PricingPage({}: Props) {
                       href="mailto:support@wesbitty.org"
                       as="mailto:support@wesbitty.org"
                     >
-                      <Button size="medium" type="outline" block>
+                      <Button size="medium" type="outline" fullwidth>
                         Contact us
                       </Button>
                     </Link>

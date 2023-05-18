@@ -1,11 +1,9 @@
-// THEME
-export {
-  defaultTheme,
-  ThemeProvider,
-  ThemeContext,
-  useTheme,
-  styleHandler,
-} from './theme'
+// THEME PROVIDER
+export * from './theme/provider'
+// DEFAULT THEME
+export { default as defaultTheme } from './theme/default'
+// DEFAULT THEME HANDLER
+export * from './theme/handler'
 
 // FEEDBACKS
 export { default as Auth } from './components/Auth'

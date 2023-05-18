@@ -1,4 +1,4 @@
-const config = require('./src/theme/config.js')
+const config = require('./config.js')
 const svgToDataUri = require('mini-svg-data-uri')
 
 module.exports = config({
