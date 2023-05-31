@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "build": "npm run gen:ui && next build",
     "dev": "next dev -p 3001",
-    "build": "pnpm gen:ui && next build",
     "gen:ui": "ts-node --esm --project ./tsconfig.generate.json ./scripts/generate-ui.ts",
+    "lint": "next lint",
     "seed:tasks": "ts-node --esm --project ./tsconfig.generate.json ./app/examples/tasks/data/seed.ts",
     "start": "next start -p 3001",
-    "lint": "next lint",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -45,7 +45,7 @@
     "@tanstack/react-table": "^8.9.1",
     "@vercel/analytics": "^1.0.1",
     "@vercel/og": "^0.0.21",
-    "@wesbitty/tsconfig": "workspace:*",
+    "@wesbitty/tsconfig": "*",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
     "cmdk": "^0.2.0",

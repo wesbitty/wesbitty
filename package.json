@@ -4,9 +4,11 @@
   "private": true,
   "description": "We've Got Your WishList",
   "keywords": [
-    "ecommerce",
+    "next.js",
+    "react",
+    "hosting",
     "platform",
-    "hosting"
+    "deploy"
   ],
   "repository": {
     "type": "git",
@@ -26,7 +28,7 @@
     "copyright": "node ./scripts/licenseSourceCode.mjs",
     "dev": "turbo run dev --parrallel --continue --filter=web...",
     "format": "prettier --write .",
-    "generate": "cd ./apps/web && pnpm prisma-generate",
+    "generate": "cd ./apps/web && npm run prisma-generate",
     "git-reset": "git reset --hard HEAD",
     "lint": "eslint . --ext .ts --fix",
     "lint-package": "sort-package-json",
@@ -37,10 +39,10 @@
   },
   "lint-staged": {
     "*.{mts,cts,ts,tsx,yml,js,jsx,mjs,cjs,json,md,mdx,css}": [
-      "pnpm format"
+      "npm run format"
     ],
     "package.json": [
-      "pnpm lint-package"
+      "npm run lint-package"
     ]
   },
   "prettier": {
@@ -91,6 +93,5 @@
   },
   "engines": {
     "node": "^16.13.0 || ^18.12.0"
-  },
-  "packageManager": "pnpm@7.13.5"
+  }
 }
