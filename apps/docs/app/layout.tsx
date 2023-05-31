@@ -6,8 +6,8 @@ import { fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/helpers'
 import { Toaster } from '@/components/ui/toaster'
 import { Analytics } from '@/components/analytics'
-import { SiteFooter } from '@/components/site-footer'
-import { SiteHeader } from '@/components/site-header'
+import { Footer } from '@/components/widget/footer'
+import { Header } from '@/components/widget/header'
 import { StyleSwitcher } from '@/components/style-switcher'
 import { TailwindIndicator } from '@/components/tailwind-indicator'
 import { ThemeProvider } from '@/components/theme-provider'
@@ -78,9 +78,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
+              <Header />
               <div className="flex-1">{children}</div>
-              <SiteFooter />
+              <Footer />
             </div>
             <TailwindIndicator />
           </ThemeProvider>

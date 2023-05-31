@@ -5,11 +5,11 @@ import { cn } from '@/lib/helpers'
 import { buttonVariants } from '@/components/ui/button'
 import { CommandMenu } from '@/components/command-menu'
 import { Icons } from '@/components/icons'
-import { MainNav } from '@/components/main-nav'
-import { MobileNav } from '@/components/mobile-nav'
+import { MainNav } from './main-nav'
+import { MobileNav } from './mobile-nav'
 import { ModeToggle } from '@/components/mode-toggle'
 
-export function SiteHeader() {
+export function Header() {
   return (
     <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
       <div className="container flex h-14 items-center">
