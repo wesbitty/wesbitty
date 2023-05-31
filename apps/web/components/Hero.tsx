@@ -52,7 +52,7 @@ const Hero = () => {
                           Start your project
                         </Button>
                       </Link>
-                      <Link href="/pricing" as="/pricing" passHref>
+                      <Link href="/pricing" passHref>
                         <Button
                           size="small"
                           type="default"
