@@ -2,8 +2,8 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@wesbitty/tsconfig/nextjs.json",
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "~/components/*": ["components/*"],
