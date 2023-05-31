@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { Default } from '~/components/widget/Default'
+import { useRouter } from 'next/router'
+import React, { useState } from 'react'
+import ReactMarkdown from 'react-markdown'
+import { Badge, Button, Divider, Space, Typography } from 'ui'
 import {
   PricingTableRowDesktop,
   PricingTableRowMobile,
 } from '~/components/PricingTableRow'
-import { Badge, Button, Divider, Space, Typography } from 'ui'
+import { Default } from '~/components/widget/Default'
 import pricing from '~/data/Pricing.json'
 import pricingFaq from '~/data/PricingFAQ.json'
-import ReactMarkdown from 'react-markdown'
 import Solutions from '~/data/Solutions.json'
 
 type Props = {}

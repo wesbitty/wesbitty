@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react'
 import { Button, IconBriefcase, IconChevronRight } from '../index'
+import React, { useRef, useState } from 'react'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 export default {

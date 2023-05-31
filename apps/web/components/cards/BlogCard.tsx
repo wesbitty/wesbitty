@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import BlurImage from '../Image/BlurImage'
 import type { Post } from '@prisma/client'
 import { placeholderBlurhash, toDateString } from 'lib/utils'
+import Link from 'next/link'
 
 interface BlogCardProps {
   data: Pick<

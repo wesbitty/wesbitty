@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { Umbrella } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconUmbrella(props: any) {
   return <IconBase icon={Umbrella} {...props} />

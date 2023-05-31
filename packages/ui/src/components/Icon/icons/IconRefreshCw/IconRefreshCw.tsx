@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { RefreshCw } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconRefreshCw(props: any) {
   return <IconBase icon={RefreshCw} {...props} />

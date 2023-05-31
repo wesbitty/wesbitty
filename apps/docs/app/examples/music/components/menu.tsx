@@ -1,5 +1,3 @@
-import { Globe, Mic } from 'lucide-react'
-
 import {
   Menubar,
   MenubarCheckboxItem,
@@ -16,6 +14,7 @@ import {
   MenubarSubTrigger,
   MenubarTrigger,
 } from '@/components/ui/menubar'
+import { Globe, Mic } from 'lucide-react'
 
 export function Menu() {
   return (

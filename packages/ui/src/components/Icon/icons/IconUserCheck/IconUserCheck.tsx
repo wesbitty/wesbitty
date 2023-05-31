@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { UserCheck } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconUserCheck(props: any) {
   return <IconBase icon={UserCheck} {...props} />

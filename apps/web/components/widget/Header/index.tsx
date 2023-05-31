@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import FlyOut from '../UI/FlyOut'
+import Announcement from './Navigation/Announcement'
+import Developers from './Navigation/Developers'
+import Solutions from './Navigation/Product'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
 import { Button, Badge, IconLogIn, IconHome, IconPackage } from 'ui'
-import FlyOut from '../UI/FlyOut'
-import Transition from '~/utils/transition'
 import SolutionsData from '~/data/Solutions.json'
-import Solutions from './Navigation/Product'
-import Developers from './Navigation/Developers'
-import Announcement from './Navigation/Announcement'
+import Transition from '~/utils/transition'
 
 const Header = () => {
   const [mounted, setMounted] = useState(false)

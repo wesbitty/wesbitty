@@ -1,6 +1,5 @@
-import Link from 'next/link'
-
 import { cn } from '@/lib/helpers'
+import Link from 'next/link'
 
 export function MainNav({
   className,

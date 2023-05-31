@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { CornerLeftDown } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconCornerLeftDown(props: any) {
   return <IconBase icon={CornerLeftDown} {...props} />

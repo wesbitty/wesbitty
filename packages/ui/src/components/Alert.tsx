@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import { IconAlertTriangle } from './Icon/icons/IconAlertTriangle'
-import { IconInfo } from './Icon/icons/IconInfo'
-import { IconX } from './Icon/icons/IconX'
 import { styleHandler } from '../theme/handler'
 import { IconAlertOctagon } from './Icon/icons/IconAlertOctagon'
+import { IconAlertTriangle } from './Icon/icons/IconAlertTriangle'
 import { IconCheckCircle } from './Icon/icons/IconCheckCircle'
+import { IconInfo } from './Icon/icons/IconInfo'
+import { IconX } from './Icon/icons/IconX'
+import React, { useState } from 'react'
 
 type Props = {
   variant?: 'success' | 'danger' | 'warning' | 'info' | 'neutral'

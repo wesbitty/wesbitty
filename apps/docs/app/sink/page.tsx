@@ -1,7 +1,3 @@
-import * as React from 'react'
-import Link from 'next/link'
-
-import { cn } from '@/lib/helpers'
 import { AccordionDemo } from '@/components/examples/accordion/demo'
 import { AlertDialogDemo } from '@/components/examples/alert-dialog/demo'
 import { AspectRatioDemo } from '@/components/examples/aspect-ratio/demo'
@@ -46,6 +42,9 @@ import { ToggleDisabled } from '@/components/examples/toggle/disabled'
 import { ToggleOutline } from '@/components/examples/toggle/outline'
 import { ToggleWithText } from '@/components/examples/toggle/with-text'
 import { TooltipDemo } from '@/components/examples/tooltip/demo'
+import { cn } from '@/lib/helpers'
+import Link from 'next/link'
+import * as React from 'react'
 
 export default function KitchenSinkPage() {
   return (

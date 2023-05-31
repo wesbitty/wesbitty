@@ -1,11 +1,10 @@
-import React from 'react'
+import { Space } from '..'
+import Typography from '../components/Typography'
 // @ts-ignore
 import MarkdownExample from '../lib/MarkdownSample.md'
+import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
-
-import Typography from '../components/Typography'
-import { Space } from '..'
 
 const { Title, Text, Link } = Typography
 

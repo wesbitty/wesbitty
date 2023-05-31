@@ -1,10 +1,10 @@
-import { Default } from '~/components/widget/Default'
-import Container from '~/components/widget/Container'
-import { Typography } from 'ui'
-import { useRouter } from 'next/router'
-import { Metadata } from '~/utils/Metadata'
 import { NextSeo } from 'next-seo'
+import { useRouter } from 'next/router'
+import { Typography } from 'ui'
+import Container from '~/components/widget/Container'
+import { Default } from '~/components/widget/Default'
 import { Section } from '~/components/widget/Section'
+import { Metadata } from '~/utils/Metadata'
 
 const { Title, Text } = Typography
 

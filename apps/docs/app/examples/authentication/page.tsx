@@ -1,11 +1,10 @@
+import { UserAuthForm } from '@/app/examples/authentication/components/user-auth-form'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/helpers'
+import { Command } from 'lucide-react'
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Command } from 'lucide-react'
-
-import { cn } from '@/lib/helpers'
-import { buttonVariants } from '@/components/ui/button'
-import { UserAuthForm } from '@/app/examples/authentication/components/user-auth-form'
 
 export const metadata: Metadata = {
   title: 'Authentication',

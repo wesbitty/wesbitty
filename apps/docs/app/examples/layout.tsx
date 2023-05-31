@@ -1,16 +1,15 @@
-import { Metadata } from 'next'
-import Link from 'next/link'
-import { ChevronRight } from 'lucide-react'
-
-import { cn } from '@/lib/helpers'
-import { buttonVariants } from '@/components/ui/button'
-import { Separator } from '@/components/ui/separator'
 import { ExamplesNav } from '@/components/examples-nav'
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
 } from '@/components/page-header'
+import { buttonVariants } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
+import { cn } from '@/lib/helpers'
+import { ChevronRight } from 'lucide-react'
+import { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Examples',

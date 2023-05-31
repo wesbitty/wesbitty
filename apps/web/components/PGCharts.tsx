@@ -1,4 +1,3 @@
-import { Tabs } from 'ui'
 import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import {
@@ -9,9 +8,9 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import * as data from '~/data/PostgresFTSComparison'
-
 import remarkGfm from 'remark-gfm'
+import { Tabs } from 'ui'
+import * as data from '~/data/PostgresFTSComparison'
 
 const barColors = {
   pg: 'var(--colors-brand11)',

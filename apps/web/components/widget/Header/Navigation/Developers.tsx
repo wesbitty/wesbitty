@@ -1,10 +1,10 @@
-import React from 'react'
-import DevelopersData from '~/data/Developers.json'
-import AnnouncementsData from '~/data/Announcements.json'
-import { useRouter } from 'next/router'
-import { Typography } from 'ui'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React from 'react'
+import { Typography } from 'ui'
+import AnnouncementsData from '~/data/Announcements.json'
+import DevelopersData from '~/data/Developers.json'
 
 type Props = {
   text: string

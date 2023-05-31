@@ -1,7 +1,5 @@
 'use client'
 
-import { useState } from 'react'
-
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -16,10 +14,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
+import { useState } from 'react'
 
 const SHEET_POSITIONS = ['top', 'right', 'bottom', 'left'] as const
 
-type SheetPosition = typeof SHEET_POSITIONS[number]
+type SheetPosition = (typeof SHEET_POSITIONS)[number]
 
 export function SheetPosition() {
   const [position, setPosition] = useState<SheetPosition>('right')

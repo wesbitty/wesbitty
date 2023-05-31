@@ -1,7 +1,7 @@
 'use client'
 
-import * as React from 'react'
 import { useSelectedLayoutSegments } from 'next/navigation'
+import * as React from 'react'
 
 export function StyleSwitcher() {
   const segments = useSelectedLayoutSegments()

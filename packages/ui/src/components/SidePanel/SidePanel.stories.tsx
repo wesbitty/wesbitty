@@ -1,8 +1,7 @@
+import { Button, Space, Typography } from '../../index'
+import { SidePanel } from './index'
 import { action } from '@storybook/addon-actions'
 import React, { useState } from 'react'
-import { Button, Space, Typography } from '../../index'
-
-import { SidePanel } from './index'
 
 export default {
   title: 'Overlays/SidePanel',

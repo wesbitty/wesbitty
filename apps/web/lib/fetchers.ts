@@ -1,9 +1,9 @@
-import { cache } from 'react'
-import type { _SiteData } from 'types'
 import prisma from 'lib/prisma'
-import remark from 'remark'
-import { serialize } from 'next-mdx-remote/serialize'
 import { replaceExamples, replaceTweets } from 'lib/remark-plugins'
+import { serialize } from 'next-mdx-remote/serialize'
+import { cache } from 'react'
+import remark from 'remark'
+import type { _SiteData } from 'types'
 
 export const getSiteData = cache(async (site: string): Promise<_SiteData> => {
   let filter: {

@@ -1,10 +1,9 @@
 'use client'
 
-import * as React from 'react'
+import { cn } from '@/lib/helpers'
 import * as MenubarPrimitive from '@radix-ui/react-menubar'
 import { Check, ChevronRight, Circle } from 'lucide-react'
-
-import { cn } from '@/lib/helpers'
+import * as React from 'react'
 
 const MenubarMenu = MenubarPrimitive.Menu
 

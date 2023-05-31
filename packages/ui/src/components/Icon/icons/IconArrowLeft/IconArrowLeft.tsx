@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { ArrowLeft } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconArrowLeft(props: any) {
   return <IconBase icon={ArrowLeft} {...props} />

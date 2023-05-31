@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { ChevronDown } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconChevronDown(props: any) {
   return <IconBase icon={ChevronDown} {...props} />

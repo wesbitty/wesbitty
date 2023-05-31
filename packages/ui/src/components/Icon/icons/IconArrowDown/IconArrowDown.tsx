@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { ArrowDown } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconArrowDown(props: any) {
   return <IconBase icon={ArrowDown} {...props} />

@@ -1,5 +1,3 @@
-import { CalendarDays } from 'lucide-react'
-
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import {
@@ -7,6 +5,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from '@/components/ui/hover-card'
+import { CalendarDays } from 'lucide-react'
 
 export function HoverCardDemo() {
   return (

@@ -1,18 +1,17 @@
-import { actions } from '@storybook/addon-actions'
-import React, { useState } from 'react'
-import { action } from '@storybook/addon-actions'
-
 import { Modal } from '.'
-import Typography from '../Typography'
 import { Badge } from '../Badge'
-import { Form } from '../Form'
 import { Button } from '../Button'
-import { Space } from '../Space'
-import { IconTrash, IconAlertCircle, IconCheck } from './../../index'
 import { Dropdown } from '../Dropdown'
+import { Form } from '../Form'
 import { IconGlobe } from '../Icon/icons/IconGlobe'
 import { IconLink2 } from '../Icon/icons/IconLink2'
 import { Input } from '../Input'
+import { Space } from '../Space'
+import Typography from '../Typography'
+import { IconTrash, IconAlertCircle, IconCheck } from './../../index'
+import { actions } from '@storybook/addon-actions'
+import { action } from '@storybook/addon-actions'
+import React, { useState } from 'react'
 
 export default {
   title: 'Overlays/Modal',

@@ -1,5 +1,4 @@
-import { CreditCard } from 'lucide-react'
-
+import { Icons } from '@/components/icons'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -19,7 +18,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Icons } from '@/components/icons'
+import { CreditCard } from 'lucide-react'
 
 export function DemoPaymentMethod() {
   return (

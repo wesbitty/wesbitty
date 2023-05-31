@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { Sliders } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconSliders(props: any) {
   return <IconBase icon={Sliders} {...props} />

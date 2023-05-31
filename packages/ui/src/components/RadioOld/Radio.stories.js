@@ -1,6 +1,5 @@
-import React from 'react'
-
 import { Radio } from '.'
+import React from 'react'
 
 export default {
   title: 'Archive/Radio',

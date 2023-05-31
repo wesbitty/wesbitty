@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { HardDrive } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconHardDrive(props: any) {
   return <IconBase icon={HardDrive} {...props} />

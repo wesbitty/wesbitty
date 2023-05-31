@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
 import { Dropdown, Button, Input } from '..'
-
-import { IconSettings } from '../components/Icon/icons/IconSettings'
-import { IconLogOut } from '../components/Icon/icons/IconLogOut'
 import { IconChevronDown } from '../components/Icon/icons/IconChevronDown'
 import { IconChevronRight } from '../components/Icon/icons/IconChevronRight'
 import { IconHardDrive } from '../components/Icon/icons/IconHardDrive'
 import { IconLogIn } from '../components/Icon/icons/IconLogIn'
+import { IconLogOut } from '../components/Icon/icons/IconLogOut'
 import { IconSearch } from '../components/Icon/icons/IconSearch'
+import { IconSettings } from '../components/Icon/icons/IconSettings'
+import React, { useState } from 'react'
 
 export default {
   title: 'Navigation/Dropdown',

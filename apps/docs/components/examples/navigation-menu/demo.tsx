@@ -1,9 +1,6 @@
 'use client'
 
-import * as React from 'react'
-import Link from 'next/link'
-
-import { cn } from '@/lib/helpers'
+import { Icons } from '@/components/icons'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,7 +10,9 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
-import { Icons } from '@/components/icons'
+import { cn } from '@/lib/helpers'
+import Link from 'next/link'
+import * as React from 'react'
 
 const components: { title: string; href: string; description: string }[] = [
   {

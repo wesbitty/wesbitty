@@ -1,12 +1,11 @@
 'use client'
 
-import * as React from 'react'
-import Image from 'next/image'
-import { MakeMdx } from 'wesjet/hooks'
-import { NpmCommands } from 'types/unist'
-
-import { Event } from '@/lib/events'
-import { cn } from '@/lib/helpers'
+import { Callout } from '@/components/callout'
+import { CodeBlockWrapper } from '@/components/code-block-wrapper'
+import { ComponentExample } from '@/components/component-example'
+import { ComponentSource } from '@/components/component-source'
+import { CopyButton, CopyNpmCommandButton } from '@/components/copy-button'
+import { examples } from '@/components/examples'
 import {
   Accordion,
   AccordionContent,
@@ -15,12 +14,12 @@ import {
 } from '@/components/ui/accordion'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
-import { Callout } from '@/components/callout'
-import { CodeBlockWrapper } from '@/components/code-block-wrapper'
-import { ComponentExample } from '@/components/component-example'
-import { ComponentSource } from '@/components/component-source'
-import { CopyButton, CopyNpmCommandButton } from '@/components/copy-button'
-import { examples } from '@/components/examples'
+import { Event } from '@/lib/events'
+import { cn } from '@/lib/helpers'
+import Image from 'next/image'
+import * as React from 'react'
+import { NpmCommands } from 'types/unist'
+import { MakeMdx } from 'wesjet/hooks'
 
 const components = {
   Accordion,

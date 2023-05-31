@@ -1,7 +1,7 @@
 import React from 'react'
+import { FC } from 'react'
 import { Typography } from 'ui'
 import { Post } from 'wesjet/static'
-import { FC } from 'react'
 
 interface Props {
   title: string

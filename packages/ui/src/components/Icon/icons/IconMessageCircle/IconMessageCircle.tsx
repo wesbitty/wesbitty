@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { MessageCircle } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconMessageCircle(props: any) {
   return <IconBase icon={MessageCircle} {...props} />

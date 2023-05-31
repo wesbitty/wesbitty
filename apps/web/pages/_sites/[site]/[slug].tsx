@@ -1,23 +1,23 @@
-import { MDXRemote } from 'next-mdx-remote'
-import { serialize } from 'next-mdx-remote/serialize'
-import { useRouter } from 'next/router'
-import BlogCard from '~/components/cards/BlogCard'
-import BlurImage from '~/components/Image/BlurImage'
-import Examples from '~/components/layouts/MDX/Examples'
-import Layout from '~/components/layouts/Sites/Layout'
-import Loader from '~/components/layouts/Sites/Loader'
 import prisma from 'lib/prisma'
-import Tweet from '~/components/layouts/MDX/Tweet'
 import {
   replaceExamples,
   replaceLinks,
   replaceTweets,
 } from 'lib/remark-plugins'
-import type { AdjacentPost, Meta, _SiteSlugData } from 'types'
-import type { GetStaticPaths, GetStaticProps } from 'next'
-import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
-import type { ParsedUrlQuery } from 'querystring'
 import { placeholderBlurhash, toDateString } from 'lib/utils'
+import type { GetStaticPaths, GetStaticProps } from 'next'
+import { MDXRemote } from 'next-mdx-remote'
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
+import { useRouter } from 'next/router'
+import type { ParsedUrlQuery } from 'querystring'
+import type { AdjacentPost, Meta, _SiteSlugData } from 'types'
+import BlurImage from '~/components/Image/BlurImage'
+import BlogCard from '~/components/cards/BlogCard'
+import Examples from '~/components/layouts/MDX/Examples'
+import Tweet from '~/components/layouts/MDX/Tweet'
+import Layout from '~/components/layouts/Sites/Layout'
+import Loader from '~/components/layouts/Sites/Loader'
 
 const components = {
   a: replaceLinks,

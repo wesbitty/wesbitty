@@ -1,8 +1,9 @@
-import fs from 'graceful-fs'
-import { writeFile } from 'fs'
-import path from 'path'
 import chalk from 'chalk'
 import { execSync } from 'child_process'
+import { writeFile } from 'fs'
+import fs from 'graceful-fs'
+import path from 'path'
+
 ;(async function () {
   const DIR = path.join(process.cwd(), 'packages/ui/src/components/')
   const getFileContents = (path) => fs.readFileSync(path, { encoding: 'utf-8' })

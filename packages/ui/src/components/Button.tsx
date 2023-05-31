@@ -1,8 +1,7 @@
-import React, { forwardRef } from 'react'
+import { styleHandler } from '../theme'
 import { IconContext } from './Icon/IconContext'
 import { IconLoader } from './Icon/icons/IconLoader'
-
-import { styleHandler } from '../theme'
+import React, { forwardRef } from 'react'
 
 export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   fullwidth?: boolean

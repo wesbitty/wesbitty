@@ -1,6 +1,5 @@
-import { IconChevronRight } from 'ui'
-
 import Link from 'next/link'
+import { IconChevronRight } from 'ui'
 
 function TextLink({ url = '', label, ...props }: any) {
   return (

@@ -1,13 +1,4 @@
 import {
-  Calculator,
-  Calendar,
-  CreditCard,
-  Settings,
-  Smile,
-  User,
-} from 'lucide-react'
-
-import {
   Command,
   CommandEmpty,
   CommandGroup,
@@ -17,6 +8,14 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from '@/components/ui/command'
+import {
+  Calculator,
+  Calendar,
+  CreditCard,
+  Settings,
+  Smile,
+  User,
+} from 'lucide-react'
 
 export function CommandDemo() {
   return (

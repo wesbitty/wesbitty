@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { PieChart } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconPieChart(props: any) {
   return <IconBase icon={PieChart} {...props} />

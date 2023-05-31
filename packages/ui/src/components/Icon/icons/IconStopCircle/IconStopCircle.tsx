@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { StopCircle } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconStopCircle(props: any) {
   return <IconBase icon={StopCircle} {...props} />

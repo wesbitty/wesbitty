@@ -1,3 +1,11 @@
+import { IconAlertCircle } from '../Icon/icons/IconAlertCircle'
+import { IconCheck } from '../Icon/icons/IconCheck'
+import { IconLoader } from '../Icon/icons/IconLoader'
+import { IconX } from '../Icon/icons/IconX'
+import Typography from '../Typography'
+// @ts-ignore
+import ToastStyles from './Toast.module.css'
+import * as Portal from '@radix-ui/react-portal'
 import React, { ComponentProps } from 'react'
 import {
   Toaster as HotToaster,
@@ -5,14 +13,6 @@ import {
   resolveValue,
 } from 'react-hot-toast'
 import { Toast as HotToastProps, ToastType } from 'react-hot-toast/dist/index'
-import * as Portal from '@radix-ui/react-portal'
-import { IconCheck } from '../Icon/icons/IconCheck'
-import { IconLoader } from '../Icon/icons/IconLoader'
-import { IconX } from '../Icon/icons/IconX'
-import { IconAlertCircle } from '../Icon/icons/IconAlertCircle'
-// @ts-ignore
-import ToastStyles from './Toast.module.css'
-import Typography from '../Typography'
 
 const icons: Partial<{ [key in ToastType]: any }> = {
   error: <IconAlertCircle size="medium" strokeWidth={2} />,

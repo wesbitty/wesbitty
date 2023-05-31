@@ -1,7 +1,7 @@
-import React from 'react'
-import CompanyData from '~/data/Company.json'
-import BlogPostsData from '~/data/BlogPosts.json'
 import Link from 'next/link'
+import React from 'react'
+import BlogPostsData from '~/data/BlogPosts.json'
+import CompanyData from '~/data/Company.json'
 
 type Props = {
   text: string

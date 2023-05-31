@@ -1,3 +1,7 @@
+import { NextSeo } from 'next-seo'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 import {
   Button,
@@ -9,14 +13,10 @@ import {
   IconLink,
   IconPause,
 } from 'ui'
-import Link from 'next/link'
-import { Default } from '~/components/widget/Default'
-import { NextSeo } from 'next-seo'
-import { useRouter } from 'next/router'
-import { Metadata } from '~/utils/Metadata'
-import { Section } from '~/components/widget/Section'
 import Container from '~/components/widget/Container'
-import Image from 'next/image'
+import { Default } from '~/components/widget/Default'
+import { Section } from '~/components/widget/Section'
+import { Metadata } from '~/utils/Metadata'
 
 type Props = {}
 

@@ -1,10 +1,10 @@
-import React, { useState, useCallback } from 'react'
 // import { AutoForm } from 'uniforms'
 
 import { InputNumber } from '.'
-import { IconPackage } from './../../index'
 import { Button } from '../Button'
 import { Space } from '../Space'
+import { IconPackage } from './../../index'
+import React, { useState, useCallback } from 'react'
 
 export default {
   title: 'Data Input/InputNumber',

@@ -1,17 +1,3 @@
-import { Metadata } from 'next'
-import { History } from 'lucide-react'
-
-import { Button } from '@/components/ui/button'
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from '@/components/ui/hover-card'
-import { Label } from '@/components/ui/label'
-import { Separator } from '@/components/ui/separator'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Textarea } from '@/components/ui/textarea'
-
 import { CodeViewer } from './components/code-viewer'
 import { Icons } from './components/icons'
 import { MaxLengthSelector } from './components/maxlength-selector'
@@ -24,6 +10,18 @@ import { TemperatureSelector } from './components/temperature-selector'
 import { TopPSelector } from './components/top-p-selector'
 import { models, types } from './data/models'
 import { presets } from './data/presets'
+import { Button } from '@/components/ui/button'
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card'
+import { Label } from '@/components/ui/label'
+import { Separator } from '@/components/ui/separator'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Textarea } from '@/components/ui/textarea'
+import { History } from 'lucide-react'
+import { Metadata } from 'next'
 import './styles.css'
 import Image from 'next/image'
 

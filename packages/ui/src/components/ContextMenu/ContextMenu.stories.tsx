@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import { ContextMenu } from '.'
 import { Button } from '../..'
 import { Divider } from '../Divider'
-import { IconSettings } from '../Icon/icons/IconSettings'
-import { IconLogOut } from '../Icon/icons/IconLogOut'
-
-import { ContextMenu } from '.'
 import { IconLogIn } from '../Icon/icons/IconLogIn'
+import { IconLogOut } from '../Icon/icons/IconLogOut'
+import { IconSettings } from '../Icon/icons/IconSettings'
+import React, { useState } from 'react'
 
 export default {
   title: 'Navigation/ContextMenu',

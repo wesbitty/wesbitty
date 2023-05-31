@@ -1,10 +1,9 @@
-import Link from 'next/link'
-import { Doc } from 'wesjet/static'
-import { NavItem, NavItemWithChildren } from 'types/nav'
-
-import { docsConfig } from '@/lib/utils/docs'
-import { buttonVariants } from '@/components/ui/button'
 import { Icons } from '@/components/icons'
+import { buttonVariants } from '@/components/ui/button'
+import { docsConfig } from '@/lib/utils/docs'
+import Link from 'next/link'
+import { NavItem, NavItemWithChildren } from 'types/nav'
+import { Doc } from 'wesjet/static'
 
 interface DocsPagerProps {
   doc: Doc

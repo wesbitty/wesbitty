@@ -1,11 +1,6 @@
 'use client'
 
-import * as React from 'react'
-import { useRouter } from 'next/navigation'
-import { PopoverProps } from '@radix-ui/react-popover'
-import { Check, ChevronsUpDown } from 'lucide-react'
-
-import { cn } from '@/lib/helpers'
+import { Preset } from '../data/presets'
 import { Button } from '@/components/ui/button'
 import {
   Command,
@@ -19,8 +14,11 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
-
-import { Preset } from '../data/presets'
+import { cn } from '@/lib/helpers'
+import { PopoverProps } from '@radix-ui/react-popover'
+import { Check, ChevronsUpDown } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import * as React from 'react'
 
 interface PresetSelectorProps extends PopoverProps {
   presets: Preset[]

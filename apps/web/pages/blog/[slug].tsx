@@ -1,10 +1,14 @@
-import Head from 'next/head'
 import { format, parseISO } from 'date-fns'
-import { allPosts, Post } from 'wesjet/static'
-import { Default } from '~/components/widget/Default'
-import CodeBlock from '~/components/codeblock/CodeBlock'
-import Quote from '~/components/Quote'
-import ImageGrid from '~/components/Image/ImageGrid'
+import fs from 'fs'
+import matter from 'gray-matter'
+import hydrate from 'next-mdx-remote'
+import renderToString from 'next-mdx-remote'
+import { NextSeo } from 'next-seo'
+import Head from 'next/head'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React from 'react'
+import ReactMarkdown from 'react-markdown'
 import {
   Badge,
   Card,
@@ -14,18 +18,14 @@ import {
   Space,
   Typography,
 } from 'ui'
-import matter from 'gray-matter'
 import authors from 'wesbitty/data/authors.json'
-import { generateReadingTime } from '~/utils/helpers'
-import hydrate from 'next-mdx-remote'
-import renderToString from 'next-mdx-remote'
-import { NextSeo } from 'next-seo'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import React from 'react'
-import ReactMarkdown from 'react-markdown'
+import { allPosts, Post } from 'wesjet/static'
+import ImageGrid from '~/components/Image/ImageGrid'
+import Quote from '~/components/Quote'
+import CodeBlock from '~/components/codeblock/CodeBlock'
+import { Default } from '~/components/widget/Default'
 import { Metadata } from '~/utils/Metadata'
-import fs from 'fs'
+import { generateReadingTime } from '~/utils/helpers'
 import { defineStaticProps } from '~/utils/next'
 
 export async function getStaticPaths() {

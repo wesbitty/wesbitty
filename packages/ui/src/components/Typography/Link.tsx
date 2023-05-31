@@ -1,6 +1,6 @@
+import { styleHandler } from '../../theme'
 import { HandlerFunction } from '@storybook/addon-actions'
 import React from 'react'
-import { styleHandler } from '../../theme'
 
 interface Props {
   children?: React.ReactNode

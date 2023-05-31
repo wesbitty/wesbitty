@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-
 import { Image } from '.'
+import React, { useState } from 'react'
 
 export default {
   title: 'General/Image',

@@ -1,8 +1,5 @@
 'use client'
 
-import * as React from 'react'
-import { SliderProps } from '@radix-ui/react-slider'
-
 import {
   HoverCard,
   HoverCardContent,
@@ -10,6 +7,8 @@ import {
 } from '@/components/ui/hover-card'
 import { Label } from '@/components/ui/label'
 import { Slider } from '@/components/ui/slider'
+import { SliderProps } from '@radix-ui/react-slider'
+import * as React from 'react'
 
 interface TopPSelectorProps {
   defaultValue: SliderProps['defaultValue']

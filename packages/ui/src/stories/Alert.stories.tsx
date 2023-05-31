@@ -1,5 +1,5 @@
-import React from 'react'
 import { Alert } from '../index'
+import React from 'react'
 
 export default {
   title: 'Displays/Alerts',

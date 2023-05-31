@@ -1,5 +1,3 @@
-import { ChevronDown, Circle, Plus, Star } from 'lucide-react'
-
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -18,6 +16,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Separator } from '@/components/ui/separator'
+import { ChevronDown, Circle, Plus, Star } from 'lucide-react'
 
 export function DemoGithub() {
   return (

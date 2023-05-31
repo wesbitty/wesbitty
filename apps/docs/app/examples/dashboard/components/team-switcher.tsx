@@ -1,9 +1,5 @@
 'use client'
 
-import * as React from 'react'
-import { Check, ChevronsUpDown, PlusCircle } from 'lucide-react'
-
-import { cn } from '@/lib/helpers'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import {
@@ -38,6 +34,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { cn } from '@/lib/helpers'
+import { Check, ChevronsUpDown, PlusCircle } from 'lucide-react'
+import * as React from 'react'
 
 const groups = [
   {
@@ -64,7 +63,7 @@ const groups = [
   },
 ]
 
-type Team = typeof groups[number]['teams'][number]
+type Team = (typeof groups)[number]['teams'][number]
 
 type PopoverTriggerProps = React.ComponentPropsWithoutRef<typeof PopoverTrigger>
 

@@ -1,6 +1,5 @@
-import { AlertCircle, FileWarning, Terminal } from 'lucide-react'
-
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+import { AlertCircle, FileWarning, Terminal } from 'lucide-react'
 
 export function AlertDestructive() {
   return (

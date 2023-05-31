@@ -1,5 +1,5 @@
-import React, { useEffect, useState, createContext, useContext } from 'react'
 import { SupabaseClient, Session, User } from '@supabase/supabase-js'
+import React, { useEffect, useState, createContext, useContext } from 'react'
 
 export type AuthSession = {
   user: User | null

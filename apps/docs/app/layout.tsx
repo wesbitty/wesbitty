@@ -1,16 +1,15 @@
 import '@/styles/globals.css'
-import { Metadata } from 'next'
-
-import { siteConfig } from '@/lib/utils/metadata'
-import { fontSans } from '@/lib/fonts'
-import { cn } from '@/lib/helpers'
-import { Toaster } from '@/components/ui/toaster'
 import { Analytics } from '@/components/analytics'
-import { Footer } from '@/components/widget/footer'
-import { Header } from '@/components/widget/header'
 import { StyleSwitcher } from '@/components/style-switcher'
 import { TailwindIndicator } from '@/components/tailwind-indicator'
 import { ThemeProvider } from '@/components/theme-provider'
+import { Toaster } from '@/components/ui/toaster'
+import { Footer } from '@/components/widget/footer'
+import { Header } from '@/components/widget/header'
+import { fontSans } from '@/lib/fonts'
+import { cn } from '@/lib/helpers'
+import { siteConfig } from '@/lib/utils/metadata'
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: {

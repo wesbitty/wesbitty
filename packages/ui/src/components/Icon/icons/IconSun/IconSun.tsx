@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { Sun } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconSun(props: any) {
   return <IconBase icon={Sun} {...props} />

@@ -1,5 +1,3 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { SupabaseClient, Provider } from '@supabase/supabase-js'
 import {
   Input,
   Checkbox,
@@ -12,9 +10,11 @@ import {
   IconInbox,
   IconLock,
 } from '../index'
-import { UserContextProvider, useUser } from './Shared/Context/Auth'
-import * as SocialIcons from './Shared/AuthIcons'
 import { styleHandler } from '../theme/handler'
+import * as SocialIcons from './Shared/AuthIcons'
+import { UserContextProvider, useUser } from './Shared/Context/Auth'
+import { SupabaseClient, Provider } from '@supabase/supabase-js'
+import React, { useEffect, useRef, useState } from 'react'
 
 const VIEWS: ViewsMap = {
   SIGN_IN: 'sign_in',

@@ -1,11 +1,10 @@
 'use client'
 
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
+import { cn } from '@/lib/helpers'
+import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ArrowRight } from 'lucide-react'
-
-import { cn } from '@/lib/helpers'
-import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 
 const examples = [
   {

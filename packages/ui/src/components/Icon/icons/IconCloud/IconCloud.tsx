@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { Cloud } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconCloud(props: any) {
   return <IconBase icon={Cloud} {...props} />

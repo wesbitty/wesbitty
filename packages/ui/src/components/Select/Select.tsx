@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react'
 import { FormLayout } from '../../lib/Layout/FormLayout'
 import InputErrorIcon from '../../lib/Layout/InputErrorIcon'
 import InputIconContainer from '../../lib/Layout/InputIconContainer'
-
-import { useFormContext } from '../Form/FormContext'
-
 import defaultTheme from '../../theme/default'
 import { styleHandler } from '../../theme/handler'
+import { useFormContext } from '../Form/FormContext'
+import React, { useEffect } from 'react'
 
 interface OptionProps {
   value: string

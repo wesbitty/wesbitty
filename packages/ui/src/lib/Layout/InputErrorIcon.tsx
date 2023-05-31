@@ -1,6 +1,6 @@
-import React from 'react'
 import { styleHandler } from '../../theme/handler'
 import { IconAlertCircle } from './../../index'
+import React from 'react'
 
 type Props = {
   style?: React.CSSProperties

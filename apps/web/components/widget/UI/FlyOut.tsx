@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
 import Transition from '../../../wesbitty/utils/transition'
+import React, { useEffect } from 'react'
 
 type Props = {
   title?: string

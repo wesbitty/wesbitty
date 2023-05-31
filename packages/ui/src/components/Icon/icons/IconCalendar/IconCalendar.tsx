@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { Calendar } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconCalendar(props: any) {
   return <IconBase icon={Calendar} {...props} />

@@ -1,5 +1,5 @@
-import Head from 'next/head'
 import { format, parseISO } from 'date-fns'
+import Head from 'next/head'
 import { allPosts, Post } from 'wesjet/static'
 
 export async function getStaticPaths() {

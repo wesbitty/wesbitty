@@ -1,10 +1,9 @@
 'use client'
 
+import { cn } from '@/lib/helpers'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { SidebarNavItem } from 'types/nav'
-
-import { cn } from '@/lib/helpers'
 
 export interface DocsSidebarNavProps {
   items: SidebarNavItem[]

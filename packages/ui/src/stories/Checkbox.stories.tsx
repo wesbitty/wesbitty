@@ -1,6 +1,5 @@
-import React from 'react'
-
 import { Checkbox } from '../components/Checkbox'
+import React from 'react'
 
 export default {
   title: 'Data Input/Checkbox',

@@ -1,7 +1,6 @@
-import React from 'react'
-
 import { Toast } from '.'
 import { Button } from '../Button'
+import React from 'react'
 
 export default {
   title: 'Overlays/Toast',

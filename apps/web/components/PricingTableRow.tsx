@@ -1,7 +1,7 @@
 import React from 'react'
-import { IconHelpCircle, IconWatch, Space, Typography } from 'ui'
 // @ts-ignore
 import ReactTooltip from 'react-tooltip'
+import { IconHelpCircle, IconWatch, Space, Typography } from 'ui'
 import ProductIcon from '~/components/Icons/product'
 
 const Chevron = (props: any) => {

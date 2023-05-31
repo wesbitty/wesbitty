@@ -1,13 +1,13 @@
+import type { Post, Site } from '@prisma/client'
+import { fetcher } from 'lib/fetcher'
 import Link from 'next/link'
-import useSWR from 'swr'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import useSWR from 'swr'
+import { HttpMethod } from 'types'
 import BlurImage from '~/components/Image/BlurImage'
 import Layout from '~/components/layouts/Dashboard/Layout'
 import LoadingDots from '~/components/layouts/Dashboard/loading-dots'
-import { fetcher } from 'lib/fetcher'
-import { HttpMethod } from 'types'
-import type { Post, Site } from '@prisma/client'
 
 interface SitePostData {
   posts: Array<Post>

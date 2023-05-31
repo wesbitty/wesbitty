@@ -1,10 +1,8 @@
-import { createSite, deleteSite, getSite, updateSite } from 'lib/api'
-import { unstable_getServerSession } from 'next-auth/next'
-
 import { authOptions } from './auth/[...nextauth]'
-import { HttpMethod } from 'types'
-
+import { createSite, deleteSite, getSite, updateSite } from 'lib/api'
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { unstable_getServerSession } from 'next-auth/next'
+import { HttpMethod } from 'types'
 
 export default async function site(req: NextApiRequest, res: NextApiResponse) {
   const session = await unstable_getServerSession(req, res, authOptions)

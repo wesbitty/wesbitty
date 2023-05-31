@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import {
   Select,
   SelectContent,
@@ -9,6 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import * as React from 'react'
 
 export function SelectDemo() {
   return (

@@ -1,5 +1,5 @@
-import { siteConfig } from '@/lib/utils/metadata'
 import { Icons } from '@/components/icons'
+import { siteConfig } from '@/lib/utils/metadata'
 
 export function Footer() {
   return (

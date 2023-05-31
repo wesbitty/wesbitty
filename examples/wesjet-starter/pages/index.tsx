@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import { compareDesc, format, parseISO } from 'date-fns'
+import Link from 'next/link'
 import { allPosts, Post } from 'wesjet/static'
 
 export async function getStaticProps() {

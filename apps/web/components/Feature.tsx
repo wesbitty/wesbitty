@@ -1,9 +1,9 @@
-import SectionHeader from './widget/SectionHeader'
-import { Section } from './widget/Section'
-import Link from 'next/link'
-import { allPosts, Post } from 'wesjet/static'
-import { GlassPanel } from 'ui'
 import TextLink from './TextLink'
+import { Section } from './widget/Section'
+import SectionHeader from './widget/SectionHeader'
+import Link from 'next/link'
+import { GlassPanel } from 'ui'
+import { allPosts, Post } from 'wesjet/static'
 
 type Props = {}
 

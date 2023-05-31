@@ -1,5 +1,5 @@
-import { defineDocumentType, defineNestedType, makeSource } from 'wesjet/preset'
 import { DocumentGen } from 'wesjet/core'
+import { defineDocumentType, defineNestedType, makeSource } from 'wesjet/preset'
 
 const contentDirPath = './[Posts]'
 

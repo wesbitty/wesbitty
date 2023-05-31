@@ -1,7 +1,7 @@
-import React from 'react'
 import { Breadcrumb } from '../Breadcrumb'
 import { Textarea } from '../Textarea'
 import Typography from '../Typography'
+import React from 'react'
 
 export default {
   title: 'Navigation/Breadcrumb',

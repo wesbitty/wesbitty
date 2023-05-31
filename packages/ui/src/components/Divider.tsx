@@ -1,5 +1,5 @@
-import React from 'react'
 import { styleHandler } from '../theme/handler'
+import React from 'react'
 
 interface Props {
   children?: React.ReactNode

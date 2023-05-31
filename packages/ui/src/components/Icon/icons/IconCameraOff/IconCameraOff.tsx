@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { CameraOff } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconCameraOff(props: any) {
   return <IconBase icon={CameraOff} {...props} />

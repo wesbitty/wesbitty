@@ -1,7 +1,3 @@
-import { Metadata } from 'next'
-
-import { cn } from '@/lib/helpers'
-
 import { DemoCookieSettings } from './components/cookie-settings'
 import { DemoCreateAccount } from './components/create-account'
 import { DemoDatePicker } from './components/date-picker'
@@ -11,6 +7,8 @@ import { DemoPaymentMethod } from './components/payment-method'
 import { DemoReportAnIssue } from './components/report-an-issue'
 import { DemoShareDocument } from './components/share-document'
 import { DemoTeamMembers } from './components/team-members'
+import { cn } from '@/lib/helpers'
+import { Metadata } from 'next'
 import './styles.css'
 import Image from 'next/image'
 

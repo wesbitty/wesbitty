@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
 import { Auth } from '..'
-import { createClient } from '@supabase/supabase-js'
 import { Typography, Button, Space } from '../index'
+import { createClient } from '@supabase/supabase-js'
+import React, { useState } from 'react'
 
 const wesbitty = createClient(
   'https://app.wesbitty.org',

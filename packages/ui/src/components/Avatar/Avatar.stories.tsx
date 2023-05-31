@@ -1,7 +1,6 @@
-import React from 'react'
 import { IconAirplay } from '../Icon/icons/IconAirplay'
-
 import Avatar from './Avatar'
+import React from 'react'
 
 export default {
   title: 'General/Avatar',

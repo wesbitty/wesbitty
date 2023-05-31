@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
-import Header from './Header/index'
 import Footer from './Footer/index'
+import Header from './Header/index'
+import { useState, useEffect } from 'react'
 
 type Props = {
   hideHeader?: boolean

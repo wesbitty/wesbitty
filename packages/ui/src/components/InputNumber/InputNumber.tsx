@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react'
 import { FormLayout } from '../../lib/Layout/FormLayout'
 import InputErrorIcon from '../../lib/Layout/InputErrorIcon'
 // import { IconChevronDown } from '../Icon/icons/IconChevronDown'
 // import { IconChevronUp } from '../Icon/icons/IconChevronUp'
 import InputIconContainer from '../../lib/Layout/InputIconContainer'
-
-import { useFormContext } from '../Form/FormContext'
 import { styleHandler } from '../../theme/handler'
+import { useFormContext } from '../Form/FormContext'
+import React, { useEffect } from 'react'
 
 export interface Props
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {

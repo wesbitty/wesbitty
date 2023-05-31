@@ -1,13 +1,12 @@
-import { notFound } from 'next/navigation'
-import { Metadata } from 'next'
-import { allPages } from 'wesjet/static'
-
 import { Mdx } from '@/components/mdx-components'
+import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/helpers'
 import { ChevronRight } from 'lucide-react'
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import { doc } from 'prettier'
 import Balancer from 'react-wrap-balancer'
-import { Separator } from '@/components/ui/separator'
+import { allPages } from 'wesjet/static'
 
 interface PageProps {
   params: {

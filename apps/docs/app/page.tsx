@@ -1,11 +1,4 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { ChevronRight } from 'lucide-react'
-
-import { siteConfig } from '@/lib/utils/metadata'
-import { cn } from '@/lib/helpers'
-import { buttonVariants } from '@/components/ui/button'
-import { Separator } from '@/components/ui/separator'
+import DashboardPage from '@/app/examples/dashboard/page'
 import { ExamplesNav } from '@/components/examples-nav'
 import { Icons } from '@/components/icons'
 import {
@@ -14,7 +7,13 @@ import {
   PageHeaderHeading,
 } from '@/components/page-header'
 import { StyleSwitcher } from '@/components/style-switcher'
-import DashboardPage from '@/app/examples/dashboard/page'
+import { buttonVariants } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
+import { cn } from '@/lib/helpers'
+import { siteConfig } from '@/lib/utils/metadata'
+import { ChevronRight } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function IndexPage() {
   return (

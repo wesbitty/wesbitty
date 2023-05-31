@@ -1,6 +1,5 @@
-import Balance from 'react-wrap-balancer'
-
 import { cn } from '@/lib/helpers'
+import Balance from 'react-wrap-balancer'
 
 function PageHeader({
   className,

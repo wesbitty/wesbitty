@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { Copy } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconCopy(props: any) {
   return <IconBase icon={Copy} {...props} />

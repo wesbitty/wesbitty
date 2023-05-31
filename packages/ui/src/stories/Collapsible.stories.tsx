@@ -1,6 +1,6 @@
-import React from 'react'
 // import { AutoForm } from 'uniforms'
 import { Collapsible, Button, IconChevronUp } from '..'
+import React from 'react'
 
 export default {
   title: 'Displays/Collapsible',

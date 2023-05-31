@@ -1,8 +1,8 @@
-import React from 'react'
-import defaultTheme from './default'
-import { useContext, useLayoutEffect, useMemo } from 'react'
 import { mergeDeep } from '../utils/mergeDeep'
 import useDarkMode from '../utils/useDarkMode'
+import defaultTheme from './default'
+import React from 'react'
+import { useContext, useLayoutEffect, useMemo } from 'react'
 
 interface ThemeContextInterface {
   theme: any

@@ -1,6 +1,3 @@
-import Container from '~/components/widget/Container'
-import { Default } from '~/components/widget/Default'
-import { Metadata } from '~/utils/Metadata'
 import Link from 'next/link'
 import {
   Button,
@@ -16,10 +13,13 @@ import {
   Divider,
   IconMail,
 } from 'ui'
+import Container from '~/components/widget/Container'
+import { Default } from '~/components/widget/Default'
 import { Section } from '~/components/widget/Section'
+import { Metadata } from '~/utils/Metadata'
 import 'swiper/swiper.min.css'
-import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
+import { useRouter } from 'next/router'
 
 type Props = {}
 

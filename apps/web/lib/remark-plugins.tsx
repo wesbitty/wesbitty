@@ -1,12 +1,9 @@
-import Link from 'next/link'
-import { visit } from 'unist-util-visit'
-
-import { getTweets } from 'lib/twitter'
-
-import type { Literal, Node } from 'unist'
 import type { Example, PrismaClient } from '@prisma/client'
-
+import { getTweets } from 'lib/twitter'
+import Link from 'next/link'
 import type { WithChildren } from 'types'
+import type { Literal, Node } from 'unist'
+import { visit } from 'unist-util-visit'
 
 interface NodesToChange {
   node: Node

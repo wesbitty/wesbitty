@@ -1,11 +1,10 @@
 // @ts-nocheck
 'use client'
 
-import * as React from 'react'
-
-import { TableOfContents } from '@/lib/toc'
 import { cn } from '@/lib/helpers'
+import { TableOfContents } from '@/lib/toc'
 import { useMounted } from '@/lib/utils/hooks/use-mounted'
+import * as React from 'react'
 
 interface TocProps {
   toc: TableOfContents

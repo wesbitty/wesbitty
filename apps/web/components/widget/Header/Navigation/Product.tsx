@@ -1,11 +1,11 @@
-import React from 'react'
 import Image from 'next/image'
-import SolutionsData from '~/data/Solutions.json'
-import CaseStudiesData from '~/data/CaseStudies.json'
-import { useRouter } from 'next/router'
-import ProductIcon from '~/components/Icons/product'
-import { Typography, Badge } from 'ui'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React from 'react'
+import { Typography, Badge } from 'ui'
+import ProductIcon from '~/components/Icons/product'
+import CaseStudiesData from '~/data/CaseStudies.json'
+import SolutionsData from '~/data/Solutions.json'
 
 const Product = () => {
   const { basePath } = useRouter()

@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { Briefcase } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconBriefcase(props: any) {
   return <IconBase icon={Briefcase} {...props} />

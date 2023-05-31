@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { Thermometer } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconThermometer(props: any) {
   return <IconBase icon={Thermometer} {...props} />

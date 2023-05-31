@@ -1,6 +1,6 @@
+import { components } from '../lib/utils/components'
 import fs from 'fs'
 import path, { basename, dirname } from 'path'
-import { components } from '../lib/utils/components'
 
 const payload = components
   .map((component) => {

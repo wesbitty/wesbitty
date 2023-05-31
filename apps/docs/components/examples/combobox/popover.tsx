@@ -1,16 +1,5 @@
 'use client'
 
-import * as React from 'react'
-import {
-  ArrowUpCircle,
-  CheckCircle2,
-  Circle,
-  HelpCircle,
-  LucideIcon,
-  XCircle,
-} from 'lucide-react'
-
-import { cn } from '@/lib/helpers'
 import { Button } from '@/components/ui/button'
 import {
   Command,
@@ -25,6 +14,16 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
+import { cn } from '@/lib/helpers'
+import {
+  ArrowUpCircle,
+  CheckCircle2,
+  Circle,
+  HelpCircle,
+  LucideIcon,
+  XCircle,
+} from 'lucide-react'
+import * as React from 'react'
 
 type Status = {
   value: string

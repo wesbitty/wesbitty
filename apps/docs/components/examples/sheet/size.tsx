@@ -1,7 +1,5 @@
 'use client'
 
-import { useState } from 'react'
-
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -16,10 +14,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
+import { useState } from 'react'
 
 const SHEET_SIZES = ['sm', 'default', 'lg', 'xl', 'full', 'content'] as const
 
-type SheetSize = typeof SHEET_SIZES[number]
+type SheetSize = (typeof SHEET_SIZES)[number]
 
 export function SheetSize() {
   const [size, setSize] = useState<SheetSize>('default')

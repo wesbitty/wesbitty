@@ -1,5 +1,3 @@
-import { Plus } from 'lucide-react'
-
 import { Button } from '@/components/ui/button'
 import {
   Tooltip,
@@ -7,6 +5,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import { Plus } from 'lucide-react'
 
 export function TooltipDemo() {
   return (

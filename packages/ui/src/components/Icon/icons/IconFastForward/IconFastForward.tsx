@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { FastForward } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconFastForward(props: any) {
   return <IconBase icon={FastForward} {...props} />

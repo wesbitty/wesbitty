@@ -1,7 +1,5 @@
-import Image from 'next/image'
-import { ListMusic, PlusCircle } from 'lucide-react'
-
-import { cn } from '@/lib/helpers'
+import { Album } from '../data/albums'
+import { playlists } from '../data/playlists'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 import {
   ContextMenu,
@@ -13,9 +11,9 @@ import {
   ContextMenuSubTrigger,
   ContextMenuTrigger,
 } from '@/components/ui/context-menu'
-
-import { Album } from '../data/albums'
-import { playlists } from '../data/playlists'
+import { cn } from '@/lib/helpers'
+import { ListMusic, PlusCircle } from 'lucide-react'
+import Image from 'next/image'
 
 interface AlbumArtworkProps extends React.HTMLAttributes<HTMLDivElement> {
   album: Album

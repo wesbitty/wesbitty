@@ -1,6 +1,5 @@
-import React from 'react'
-
 import { Textarea } from '.'
+import React from 'react'
 
 export default {
   title: 'Archive/Textarea',

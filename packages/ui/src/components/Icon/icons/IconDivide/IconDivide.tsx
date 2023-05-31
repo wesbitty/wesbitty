@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { Divide } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconDivide(props: any) {
   return <IconBase icon={Divide} {...props} />

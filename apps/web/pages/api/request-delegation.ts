@@ -1,6 +1,5 @@
-import { HttpMethod } from 'types'
-
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { HttpMethod } from 'types'
 
 export default async function requestDelegation(
   req: NextApiRequest,

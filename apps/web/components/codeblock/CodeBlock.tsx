@@ -1,13 +1,13 @@
-import { Button, IconCheck, IconCopy, IconFile, IconTerminal } from 'ui'
+import monokaiCustomTheme from './CodeBlock.utils'
 import { useState } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter'
 import bash from 'react-syntax-highlighter/dist/cjs/languages/hljs/bash'
 import js from 'react-syntax-highlighter/dist/cjs/languages/hljs/javascript'
+import kotlin from 'react-syntax-highlighter/dist/cjs/languages/hljs/kotlin'
 import py from 'react-syntax-highlighter/dist/cjs/languages/hljs/python'
 import sql from 'react-syntax-highlighter/dist/cjs/languages/hljs/sql'
-import kotlin from 'react-syntax-highlighter/dist/cjs/languages/hljs/kotlin'
-import monokaiCustomTheme from './CodeBlock.utils'
+import { Button, IconCheck, IconCopy, IconFile, IconTerminal } from 'ui'
 
 export interface CodeBlockProps {
   lang: 'js' | 'sql' | 'py' | 'bash' | 'ts' | 'tsx' | 'kotlin'

@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { LogOut } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconLogOut(props: any) {
   return <IconBase icon={LogOut} {...props} />

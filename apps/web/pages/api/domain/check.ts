@@ -1,7 +1,6 @@
 import prisma from 'lib/prisma'
-import { HttpMethod } from 'types'
-
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { HttpMethod } from 'types'
 
 /*
  * Note: This endpoint is to check if a domain still has its nameservers/record configured correctly.

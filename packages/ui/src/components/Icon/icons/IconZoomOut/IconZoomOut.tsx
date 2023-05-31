@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { ZoomOut } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconZoomOut(props: any) {
   return <IconBase icon={ZoomOut} {...props} />

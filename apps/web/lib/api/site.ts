@@ -1,12 +1,11 @@
+import { placeholderBlurhash } from '../utils'
+import type { Site } from '.prisma/client'
 import cuid from 'cuid'
+import prisma from 'lib/prisma'
 import { NextApiRequest, NextApiResponse } from 'next'
+import type { Session } from 'next-auth'
 import { unstable_getServerSession } from 'next-auth/next'
 import { authOptions } from 'pages/api/auth/[...nextauth]'
-import prisma from 'lib/prisma'
-
-import type { Site } from '.prisma/client'
-import type { Session } from 'next-auth'
-import { placeholderBlurhash } from '../utils'
 
 /**
  * Get Site

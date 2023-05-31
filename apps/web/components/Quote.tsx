@@ -1,6 +1,6 @@
-import { Space, Typography } from 'ui'
 import Image from 'next/image'
 import React from 'react'
+import { Space, Typography } from 'ui'
 
 interface Props {
   children: React.ReactNode

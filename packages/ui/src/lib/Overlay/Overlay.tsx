@@ -1,12 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { AnimationTailwindClasses } from '../../types'
 //@ts-ignore
 import { useOnClickOutside } from './../../lib/Hooks'
-import { DropdownContext } from './OverlayContext'
-import { AnimationTailwindClasses } from '../../types'
 // @ts-ignore
 import OverlayStyles from './Overlay.module.css'
-
+import { DropdownContext } from './OverlayContext'
 import { Transition } from '@headlessui/react'
+import React, { useEffect, useRef, useState } from 'react'
 
 type Props = {
   visible?: boolean

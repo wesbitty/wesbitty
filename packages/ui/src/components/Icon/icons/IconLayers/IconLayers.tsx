@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { Layers } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconLayers(props: any) {
   return <IconBase icon={Layers} {...props} />

@@ -1,5 +1,3 @@
-import React, { useEffect, useReducer, useState } from 'react'
-import { Form } from './../'
 import {
   Input,
   Button,
@@ -20,11 +18,11 @@ import {
   IconTrash,
   IconAlertCircle,
 } from '../../../index'
-
-import * as Yup from 'yup'
-
-import AuthFormSchema from './AuthFormSchema.json'
 import { Modal } from '../../Modal'
+import { Form } from './../'
+import AuthFormSchema from './AuthFormSchema.json'
+import React, { useEffect, useReducer, useState } from 'react'
+import * as Yup from 'yup'
 
 // import GoogleIcon './../../../static/icons/google-icon.svg'
 

@@ -1,7 +1,7 @@
-import { Button, IconBookOpen } from 'ui'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
 import { Section } from './widget/Section'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { Button, IconBookOpen } from 'ui'
 
 const Hero = () => {
   const router = useRouter()

@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { MicOff } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconMicOff(props: any) {
   return <IconBase icon={MicOff} {...props} />

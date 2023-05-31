@@ -1,18 +1,15 @@
 /* This example requires Tailwind CSS v2.0+ */
-import React, { useEffect, useRef, useState } from 'react'
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
+
 import { FormLayout } from '../../lib/Layout/FormLayout'
-
-import InputIconContainer from '../../lib/Layout/InputIconContainer'
 import InputErrorIcon from '../../lib/Layout/InputErrorIcon'
-import { IconCheck } from '../Icon/icons/IconCheck'
-
-import { useFormContext } from '../Form/FormContext'
-import { flatten } from 'lodash'
-
-import { SelectContext } from './SelectContext'
-
+import InputIconContainer from '../../lib/Layout/InputIconContainer'
 import { styleHandler } from '../../theme/handler'
+import { useFormContext } from '../Form/FormContext'
+import { IconCheck } from '../Icon/icons/IconCheck'
+import { SelectContext } from './SelectContext'
+import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
+import { flatten } from 'lodash'
+import React, { useEffect, useRef, useState } from 'react'
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')

@@ -1,13 +1,10 @@
-import React, { useState } from 'react'
-
-import * as RadixDropdown from '@radix-ui/react-dropdown-menu'
-import { IconCheck } from './Icon/icons/IconCheck'
-
-import type * as RadixDropdownTypes from '@radix-ui/react-dropdown-menu/'
-
 import { styleHandler } from '../theme'
-import { IconTarget } from './Icon/icons/IconTarget'
 import { cn } from '../utils/cn'
+import { IconCheck } from './Icon/icons/IconCheck'
+import { IconTarget } from './Icon/icons/IconTarget'
+import * as RadixDropdown from '@radix-ui/react-dropdown-menu'
+import type * as RadixDropdownTypes from '@radix-ui/react-dropdown-menu/'
+import React, { useState } from 'react'
 
 interface RootProps extends RadixDropdownTypes.DropdownMenuProps {
   open?: boolean

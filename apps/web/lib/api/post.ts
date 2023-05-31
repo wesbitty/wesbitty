@@ -1,13 +1,11 @@
-import prisma from 'lib/prisma'
-
-import { NextApiRequest, NextApiResponse } from 'next'
-import { unstable_getServerSession } from 'next-auth/next'
-import { authOptions } from 'pages/api/auth/[...nextauth]'
 import type { Post, Site } from '.prisma/client'
-import type { Session } from 'next-auth'
+import prisma from 'lib/prisma'
 import { revalidate } from 'lib/revalidate'
 import { getBlurDataURL, placeholderBlurhash } from 'lib/utils'
-
+import { NextApiRequest, NextApiResponse } from 'next'
+import type { Session } from 'next-auth'
+import { unstable_getServerSession } from 'next-auth/next'
+import { authOptions } from 'pages/api/auth/[...nextauth]'
 import type { WithSitePost } from 'types'
 
 interface AllPosts {

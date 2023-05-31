@@ -1,13 +1,10 @@
-import React, { useEffect, useState, createRef } from 'react'
 import { FormLayout } from '../lib/Layout/FormLayout'
-import { RadioContext } from './Shared/Context/Radio'
-
-import { useFormContext } from './Form/FormContext'
-
 import defaultTheme from '../theme/default'
 import { styleHandler } from '../theme/handler'
-
 import randomIdGenerator from '../utils/generateUID'
+import { useFormContext } from './Form/FormContext'
+import { RadioContext } from './Shared/Context/Radio'
+import React, { useEffect, useState, createRef } from 'react'
 
 interface GroupProps {
   allowedValues?: any

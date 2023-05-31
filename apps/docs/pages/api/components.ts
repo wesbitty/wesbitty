@@ -1,6 +1,5 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-
 import components from './components.json'
+import { NextApiRequest, NextApiResponse } from 'next'
 
 export default async function handler(
   req: NextApiRequest,

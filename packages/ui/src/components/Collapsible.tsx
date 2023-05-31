@@ -1,8 +1,8 @@
-import React from 'react'
-import * as RadixCollapsible from '@radix-ui/react-collapsible'
-
 import { Button, IconChevronRight, IconGlobe } from '..'
 import { styleHandler } from '../theme/handler'
+import * as RadixCollapsible from '@radix-ui/react-collapsible'
+import React from 'react'
+
 export interface CollapsibleProps extends RadixCollapsible.CollapsibleProps {
   children: React.ReactNode
   // onChange?: (e: boolean) => void

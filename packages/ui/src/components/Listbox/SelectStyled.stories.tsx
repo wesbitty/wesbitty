@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-
-import Listbox from './Listbox2'
 import { IconBook, IconUser } from '../../index'
 import { Button } from '../Button'
 import Typography from '../Typography'
+import Listbox from './Listbox2'
+import React, { useState } from 'react'
 
 export default {
   title: 'Data Input/Listbox',

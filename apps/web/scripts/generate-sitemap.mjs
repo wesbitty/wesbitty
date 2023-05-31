@@ -1,6 +1,6 @@
-import prettier from 'prettier'
-import { globby } from 'globby'
 import { writeFileSync } from 'fs'
+import { globby } from 'globby'
+import prettier from 'prettier'
 
 async function generate() {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')

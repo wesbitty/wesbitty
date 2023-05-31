@@ -1,8 +1,8 @@
-import React from 'react'
-import { render, screen, fireEvent } from '@testing-library/react'
 import { Button, ButtonSize, ButtonType } from '../components/Button'
 import { defaultTheme } from '../theme'
+import { render, screen, fireEvent } from '@testing-library/react'
 import Link from 'next/link'
+import React from 'react'
 
 const SIZES: ButtonSize[] = ['tiny', 'small', 'medium', 'large', 'xlarge']
 const TYPES: ButtonType[] = [

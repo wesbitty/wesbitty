@@ -1,13 +1,12 @@
-import Link from 'next/link'
-
-import { siteConfig } from '@/lib/utils/metadata'
-import { cn } from '@/lib/helpers'
-import { buttonVariants } from '@/components/ui/button'
-import { CommandMenu } from '@/components/command-menu'
-import { Icons } from '@/components/icons'
 import { MainNav } from './main-nav'
 import { MobileNav } from './mobile-nav'
+import { CommandMenu } from '@/components/command-menu'
+import { Icons } from '@/components/icons'
 import { ModeToggle } from '@/components/mode-toggle'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/helpers'
+import { siteConfig } from '@/lib/utils/metadata'
+import Link from 'next/link'
 
 export function Header() {
   return (

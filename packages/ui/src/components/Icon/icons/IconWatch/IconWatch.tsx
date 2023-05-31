@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { Watch } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconWatch(props: any) {
   return <IconBase icon={Watch} {...props} />

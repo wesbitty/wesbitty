@@ -1,22 +1,20 @@
 import { notFound } from 'next/navigation'
 import { allDocs } from 'wesjet/static'
-
 import '@/styles/mdx.css'
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { ChevronRight } from 'lucide-react'
-import Balancer from 'react-wrap-balancer'
-
-import { siteConfig } from '@/lib/utils/metadata'
-import { getTableOfContents } from '@/lib/toc'
-import { absoluteUrl, cn } from '@/lib/helpers'
-import { badgeVariants } from '@/components/ui/badge'
-import { ScrollArea } from '@/components/ui/scroll-area'
-import { Separator } from '@/components/ui/separator'
 import { Icons } from '@/components/icons'
 import { Mdx } from '@/components/mdx-components'
 import { DocsPager } from '@/components/pager'
 import { DashboardTableOfContents } from '@/components/toc'
+import { badgeVariants } from '@/components/ui/badge'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { Separator } from '@/components/ui/separator'
+import { absoluteUrl, cn } from '@/lib/helpers'
+import { getTableOfContents } from '@/lib/toc'
+import { siteConfig } from '@/lib/utils/metadata'
+import { ChevronRight } from 'lucide-react'
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import Balancer from 'react-wrap-balancer'
 
 interface DocPageProps {
   params: {

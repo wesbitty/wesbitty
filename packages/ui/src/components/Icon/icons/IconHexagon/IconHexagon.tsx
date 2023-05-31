@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { Hexagon } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconHexagon(props: any) {
   return <IconBase icon={Hexagon} {...props} />

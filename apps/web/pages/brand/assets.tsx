@@ -1,12 +1,12 @@
-import Container from '~/components/widget/Container'
-import { Default } from '~/components/widget/Default'
-import { Button, Typography, IconDownload } from 'ui'
+import { NextSeo } from 'next-seo'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { Button, Typography, IconDownload } from 'ui'
+import Container from '~/components/widget/Container'
+import { Default } from '~/components/widget/Default'
 import { Section } from '~/components/widget/Section'
-import { NextSeo } from 'next-seo'
 import { Metadata } from '~/utils/Metadata'
-import Image from 'next/image'
 
 type Props = {}
 

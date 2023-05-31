@@ -1,5 +1,4 @@
 import Card from './Card'
-
 import type { MdxCardData } from 'types'
 
 interface ExamplesProps {

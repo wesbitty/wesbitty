@@ -1,6 +1,6 @@
-import React from 'react'
 import { styleHandler } from '../../theme/handler'
 import { IconContext } from './IconContext'
+import React from 'react'
 
 const IconStyles = {}
 

@@ -1,6 +1,6 @@
-import type { DocumentGen } from 'wesjet/core'
 import * as fs from 'node:fs/promises'
 import path from 'node:path'
+import type { DocumentGen } from 'wesjet/core'
 
 export const contentDirPath = '[Post]'
 

@@ -1,8 +1,7 @@
-import React from 'react'
-
 import { Accordion, Badge } from '..'
-import { Typography } from '../components/Typography'
 import { IconArrowUp } from '../components/Icon/icons/IconArrowUp'
+import { Typography } from '../components/Typography'
+import React from 'react'
 
 export default {
   title: 'Displays/Accordion',

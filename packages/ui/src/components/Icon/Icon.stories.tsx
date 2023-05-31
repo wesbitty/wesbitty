@@ -1,6 +1,5 @@
-import React from 'react'
-
 import { IconHome, Typography } from './../../index'
+import React from 'react'
 
 export default {
   title: 'Elements/Icon',

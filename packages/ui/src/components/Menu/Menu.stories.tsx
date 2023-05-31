@@ -1,14 +1,12 @@
-import React from 'react'
-
-import { Divider } from '../Divider'
-import { IconMail } from './../../index'
-import Typography from '../Typography'
-
-import { Menu } from './'
 import { Button } from '../../index'
+import { Divider } from '../Divider'
 import { IconDatabase } from '../Icon/icons/IconDatabase'
 import { IconMenu } from '../Icon/icons/IconMenu'
 import { IconRefreshCcw } from '../Icon/icons/IconRefreshCcw'
+import Typography from '../Typography'
+import { Menu } from './'
+import { IconMail } from './../../index'
+import React from 'react'
 
 export default {
   title: 'Navigation/Menu',

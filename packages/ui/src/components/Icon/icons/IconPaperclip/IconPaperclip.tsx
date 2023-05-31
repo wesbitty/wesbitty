@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { Paperclip } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconPaperclip(props: any) {
   return <IconBase icon={Paperclip} {...props} />

@@ -1,18 +1,17 @@
 'use client'
 
-import * as React from 'react'
-import { DropdownMenuTriggerProps } from '@radix-ui/react-dropdown-menu'
-import { NpmCommands } from 'types/unist'
-
-import { Event, trackEvent } from '@/lib/events'
-import { cn } from '@/lib/helpers'
+import { Icons } from '@/components/icons'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { Icons } from '@/components/icons'
+import { Event, trackEvent } from '@/lib/events'
+import { cn } from '@/lib/helpers'
+import { DropdownMenuTriggerProps } from '@radix-ui/react-dropdown-menu'
+import * as React from 'react'
+import { NpmCommands } from 'types/unist'
 
 interface CopyButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   value: string

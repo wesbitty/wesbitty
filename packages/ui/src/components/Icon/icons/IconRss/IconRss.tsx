@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { Rss } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconRss(props: any) {
   return <IconBase icon={Rss} {...props} />

@@ -1,14 +1,14 @@
 import { Analytics } from '@vercel/analytics/react'
-import Head from 'next/head'
-import { SessionProvider } from 'next-auth/react'
-import type { Session } from 'next-auth'
-import { cal, inter } from '~/styles/fonts'
 import cx from 'classnames'
+import type { Session } from 'next-auth'
+import { SessionProvider } from 'next-auth/react'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { cal, inter } from '~/styles/fonts'
 import '../styles/globals.css'
+import { DefaultSeo } from 'next-seo'
 import type { AppProps } from 'next/app'
 import { Metadata } from '~/utils/Metadata'
-import { DefaultSeo } from 'next-seo'
 
 export default function App({
   Component,

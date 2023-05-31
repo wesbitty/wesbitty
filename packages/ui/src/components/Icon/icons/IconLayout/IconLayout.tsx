@@ -3,10 +3,10 @@
  * Do Not Edit
  */
 
+import IconBase from './../../IconBase'
 import * as React from 'react'
 // @ts-ignore
 import { Layout } from 'react-feather'
-import IconBase from './../../IconBase'
 
 function IconLayout(props: any) {
   return <IconBase icon={Layout} {...props} />

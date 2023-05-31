@@ -9,10 +9,9 @@ import {
   Select,
   Listbox,
 } from '../../index'
-
-import * as Yup from 'yup'
 import { User } from '../Icon/IconImportHandler'
 import React from 'react'
+import * as Yup from 'yup'
 
 export default {
   title: 'Data Input/Form',

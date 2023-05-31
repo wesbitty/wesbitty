@@ -1,13 +1,11 @@
-import React, { useEffect } from 'react'
+import { styleHandler } from '../../theme/handler'
+import { AnimationTailwindClasses } from '../../types'
+import { Button, IconX, Typography, Space } from './../../index'
 // @ts-ignore
 import ModalStyles from './Modal.module.css'
-import { Button, IconX, Typography, Space } from './../../index'
-import { AnimationTailwindClasses } from '../../types'
-
-import * as Dialog from '@radix-ui/react-dialog'
-
 import { Transition } from '@headlessui/react'
-import { styleHandler } from '../../theme/handler'
+import * as Dialog from '@radix-ui/react-dialog'
+import React, { useEffect } from 'react'
 
 // import { Transition } from '@tailwindui/react'
 // Merge Radix Props to surface in the modal component

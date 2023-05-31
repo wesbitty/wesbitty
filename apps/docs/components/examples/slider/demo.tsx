@@ -1,5 +1,5 @@
-import { cn } from '@/lib/helpers'
 import { Slider } from '@/components/ui/slider'
+import { cn } from '@/lib/helpers'
 
 type SliderProps = React.ComponentProps<typeof Slider>
 

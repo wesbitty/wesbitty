@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import announcement from '~/data/Announcement.json'
-import { IconChevronRight, IconX } from 'ui'
 import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
+import { IconChevronRight, IconX } from 'ui'
+import announcement from '~/data/Announcement.json'
 
 const Announcement = () => {
   const [hidden, setHidden] = useState(true)
