@@ -20,7 +20,7 @@
     "tests"
   ],
   "scripts": {
-    "build": "turbo run build --filter=ui --filter=./examples/*",
+    "build": "turbo run build --filter=ui --filter=./apps/*",
     "build:app": "turbo run build --filter=web",
     "clean": "turbo run clean --no-cache",
     "copyright": "node ./scripts/licenseSourceCode.mjs",
