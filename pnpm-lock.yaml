@@ -510,7 +510,7 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(react@18.2.0)
       ui:
-        specifier: workspace:*
+        specifier: ^0.0.25
         version: link:../../packages/ui
       unist-util-visit:
         specifier: ^4.1.1
