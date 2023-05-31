@@ -23,7 +23,7 @@
 ## Installation
 
 ```cli
-npm install @wesbitty/ui
+npm install ui
 ```
 
 ## Usage

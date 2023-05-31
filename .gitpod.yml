@@ -9,5 +9,5 @@ tasks:
   - name: Install Deps
   - init: |
       npm install
-      npm run build
-    command: cd apps/web && npm run start
+      pnpm build
+    command: cd apps/web && pnpm start

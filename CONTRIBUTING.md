@@ -70,7 +70,7 @@ To get started, execute the following:
 
 2. You can then run the apps simultaneously with the following.
    ```sh
-   npm run dev
+   pnpm dev
    ```
 
 Then visit, and edit, any of the following sites:
@@ -86,7 +86,7 @@ Then visit, and edit, any of the following sites:
 You can run any of the sites individually by using the scope name. For example:
 
 ```sh
-npm run dev
+pnpm dev
 ```
 
 #### Shared components

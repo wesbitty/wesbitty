@@ -5,7 +5,13 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ['plugin:react/recommended', 'prettier', 'standard-with-typescript'],
+  extends: [
+    'plugin:react/recommended',
+    'prettier',
+    'standard-with-typescript',
+    'plugin:tailwindcss/recommended',
+  ],
+  plugins: ['tailwindcss'],
   ignorePatterns: [
     'packages/ui/lib/*',
     'examples/*',
@@ -15,15 +21,25 @@ module.exports = {
     '**/.turbo/*',
     '**/storybook-static/*',
   ],
+  settings: {
+    tailwindcss: {
+      callees: ['cn'],
+      config: 'tailwind.config.js',
+    },
+    next: {
+      rootDir: ['apps/*/'],
+    },
+  },
   overrides: [
     {
-      files: ['*-test.js', '*.spec.js'],
+      files: ['*-test.js', '*.spec.js', '*.ts', '*.tsx'],
+      parser: '@typescript-eslint/parser',
       rules: {
         'no-unused-expressions': 'off',
       },
     },
     {
-      files: ['apps/web/*'],
+      files: ['apps/*/'],
       extends: [
         'next/core-web-vital',
         'plugin:react-hooks/recommended',
@@ -54,5 +70,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'error',
     'import/no-named-as-default': 'warn',
     'import/no-named-as-default-member': 'warn',
+    'tailwindcss/no-custom-classname': 'off',
+    'tailwindcss/classnames-order': 'error',
   },
 }

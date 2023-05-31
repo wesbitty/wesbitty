@@ -1,4 +1,4 @@
-import { IconChevronRight } from '@wesbitty/ui'
+import { IconChevronRight } from 'ui'
 
 import Link from 'next/link'
 

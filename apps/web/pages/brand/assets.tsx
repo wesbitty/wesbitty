@@ -1,6 +1,6 @@
 import Container from '~/components/widget/Container'
 import { Default } from '~/components/widget/Default'
-import { Button, Typography, IconDownload } from '@wesbitty/ui'
+import { Button, Typography, IconDownload } from 'ui'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Section } from '~/components/widget/Section'

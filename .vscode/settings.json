@@ -10,14 +10,14 @@
   },
   "search.exclude": {
     "**/node_modules": true,
-    "**/package-lock.json": true,
+    "**/pnpm-lock.yaml": true,
     "**/bower_components": true,
     "**/*.code-search": true,
     "**/.next": true,
     "**/.wesjet": true,
     "**/.vercel": true,
     "**/.turbo": true,
-    "**/dist": true,
+    "packages/ui/lib": true,
     "**/build": true
   },
   "typescript.tsdk": "node_modules/typescript/lib",

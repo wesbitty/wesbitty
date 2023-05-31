@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Space, Typography } from '@wesbitty/ui'
+import { Space, Typography } from 'ui'
 import authors from '../../../wesbitty/data/authors.json'
 import React from 'react'
 import { Post } from 'wesjet/static'

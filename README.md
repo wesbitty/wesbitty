@@ -23,7 +23,7 @@ For details on how to use [Wesbitty](https://wesbitty.org), check out our [docum
 
 This project uses [Npm](https://npmjs.com/) to install dependencies and run scripts.
 
-You can use the `build` script to run local changes as if you were invoking Wesbitty CLI. For example, `wesbitty build` could be run with local changes with `npm run build`.
+You can use the `build` script to run local changes as if you were invoking Wesbitty CLI. For example, `wesbitty build` could be run with local changes with `pnpm build`.
 
 See the [Contributing Guidelines](./CONTRIBUTING.md) for more details.
 
