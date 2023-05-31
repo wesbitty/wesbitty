@@ -12,6 +12,7 @@ async function generate() {
     '[Post]/*.mdx',
     '!pages/index.tsx',
     '!pages/app',
+    '!pages/_sites',
     '!pages/_*.tsx',
     '!pages/*/index.tsx',
     '!pages/api',
