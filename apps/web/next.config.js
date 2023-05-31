@@ -12,4 +12,5 @@ module.exports = wesjetConfig({
   },
   reactStrictMode: true,
   swcMinify: false,
+  transpilePackages: ['ui'],
 })
