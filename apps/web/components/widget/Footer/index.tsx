@@ -2,7 +2,6 @@ import { Section } from '../Section'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import FooterLinks from '~/data/Footer.json'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
