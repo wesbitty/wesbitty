@@ -27,7 +27,7 @@
   "scripts": {
     "build": "tsc",
     "build-storybook": "storybook build",
-    "build:css": "pnpm tailwindcss -i ./styles/input.css -o styles/output.css -c ./tailwind.config.js",
+    "build:css": "npx tailwindcss -i ./styles/input.css -o styles/output.css -c ./tailwind.config.js",
     "build:icons": "node --experimental-modules scripts/generate-icons.cjs",
     "clean": "rimraf lib storybook-static",
     "release": "release-it",
