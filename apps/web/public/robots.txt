@@ -1,4 +1,2 @@
 User-agent: *
-Disallow: /_sites/
-
 Sitemap: https://wesbitty.org/sitemap.xml
