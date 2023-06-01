@@ -29,7 +29,7 @@ const Hero = () => {
                         "
                       >
                         <span className="block">Build an Online Store</span>
-                        <span className="text-brand-900 block md:ml-0">
+                        <span className="text-brand-1100 block md:ml-0">
                           In a few steps.
                         </span>
                       </h1>

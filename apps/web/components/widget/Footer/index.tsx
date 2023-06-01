@@ -11,121 +11,75 @@ const Footer = () => {
   useEffect(() => setMounted(true), [])
 
   return (
-    <footer
-      className="bg-white dark:bg-dark-800 border-t border-gray-100 dark:border-gray-600"
-      aria-labelledby="footerHeading"
-    >
-      <h2 id="footerHeading" className="sr-only">
-        Footer
-      </h2>
-      <div className="sm:pt-2 container relative mx-auto px-6 pt-4 md:pt-4 lg:px-8 lg:pt-4 xl:px-8">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-2">
-          <div className="space-y-2 xl:col-span-1">
-            <Link href="/">
-              <img
-                className="w-40"
-                src="/brand/logo/wesbitty-light-logo.svg"
-                alt="Wesbitty Logo"
-              />
-            </Link>
-            <div className="flex space-x-6">
-              <Link
-                href="https://twitter.com/wesbitty"
-                className="text-gray-300 hover:text-gray-400"
+    <footer className="bg-slate-100 border-t mx-auto flex w-full lg:container justify-center mt-6">
+      <div className="relative flex items-center f6 flex-column-reverse lg:flex-row flex-wrap lg:flex-nowrap mt-6 py-6 mx-4">
+        <div className="list-style-none flex flex-wrap col-0 col-lg-2 justify-start lg:justify-between mb-2 lg:mb-0">
+          <div className="mt-2 lg:mt-0 flex items-center">
+            <a
+              aria-label="Homepage"
+              title="Wesbitty"
+              className="footer-octicon mr-2"
+              href="https://wesbitty.org"
+            >
+              <svg
+                aria-hidden="true"
+                height="24"
+                viewBox="0 0 16 16"
+                version="1.1"
+                width="24"
+                data-view-component="true"
+                className="octicon octicon-mark-github"
               >
-                <span className="sr-only">Twitter</span>
-                <svg
-                  className="h-6 w-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                </svg>
-              </Link>
-
-              <Link
-                href="https://github.com/wesbitty"
-                className="text-gray-300 hover:text-gray-400"
-              >
-                <span className="sr-only">GitHub</span>
-                <svg
-                  className="h-6 w-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </Link>
-
-              <Link
-                href="https://discord.wesbitty.org/"
-                className="text-gray-300 hover:text-gray-400"
-              >
-                <span className="sr-only">Discord</span>
-                <svg
-                  className="h-6 w-6"
-                  fill="currentColor"
-                  viewBox="0 0 71 55"
-                  aria-hidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </div>
-          <div className="mt-2 grid grid-cols-1 gap-4 xl:mt-0 xl:col-span-2">
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-              {FooterLinks.map((item) => {
-                return (
-                  <div key={`footer_${item.title}`}>
-                    <h3 className="text-base pt-8 text-gray-500 dark:text-dark-100">
-                      {item.title}
-                    </h3>
-                    <ul className="mt-4 space-y-2">
-                      {item.elements.map((item: any, idx: number) => (
-                        <li key={`${item.title}_item_${idx}`}>
-                          <Link
-                            href={item.href}
-                            className={`text-sm ${
-                              item.href
-                                ? 'text-gray-500 dark:text-dark-100'
-                                : 'text-gray-400 dark:text-dark-200'
-                            } hover:text-gray-900 dark:hover:text-gray-300`}
-                          >
-                            {item.text}
-                            {!item.href && (
-                              <span className="block text-sm text-gray-300 dark:text-dark-300">
-                                Coming soon
-                              </span>
-                            )}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )
-              })}
-            </div>
+                <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+              </svg>
+            </a>
+            <span className="text-scale-1100 text-sm leading-loose font-medium">
+              © {currentYear} Wesbitty, Inc.
+            </span>
           </div>
         </div>
-      </div>
-      <div className="mt-12 border-t dark:border-dark flex justify-center">
-        <Link
-          href="https://wesbitty.org"
-          className="mb-0 self-center text-base py-4 link-text dark:text-dark-100"
-        >
-          &copy; <span>{currentYear}</span> Wesbitty, Inc.
-        </Link>
+
+        <nav aria-label="Footer" className="col-12 col-lg-8">
+          <h3 className="sr-only" id="sr-footer-heading">
+            Footer Navigation
+          </h3>
+          <ul className="list-style-none flex flex-wrap col-12  justify-center  text-sm leading-loose text-brand-1100 font-medium lg:justify-between mb-2 lg:mb-0">
+            <li className="mr-3">
+              <a href="/terms">Terms</a>
+            </li>
+            <li className="mr-3">
+              <a href="/privacy">Privacy</a>
+            </li>
+
+            <li className="mr-3">
+              <a href="/security">Security</a>
+            </li>
+            <li className="mr-3">
+              <a href="/status">Status</a>
+            </li>
+            <li className="mr-3">
+              <a href="/docs">Docs</a>
+            </li>
+            <li className="mr-3">
+              <a href="/support">Help Center</a>
+            </li>
+            <li className="mr-3 lg:mr-0">
+              <a href="/pricing">Pricing</a>
+            </li>
+            <li className="mr-3 lg:mr-0">
+              <a href="/docs">API</a>
+            </li>
+            <li className="mr-3 lg:mr-0">
+              <a href="/training">Training</a>
+            </li>
+            <li className="mr-3 lg:mr-0">
+              <a href="/blog">Blog</a>
+            </li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </footer>
   )
