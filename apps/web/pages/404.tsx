@@ -37,7 +37,7 @@ const ErrorPage = ({}: Props) => {
           url: `${Metadata.Url}/404`,
           images: [
             {
-              url: `${Metadata.Url}${basePath}/brand/og-image.png`,
+              url: `${Metadata.Url}${basePath}/brand/og.png`,
             },
           ],
         }}

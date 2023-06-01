@@ -31,7 +31,7 @@ export default function App({
           site_name: `${Metadata.Name}`,
           images: [
             {
-              url: `${Metadata.Url}${basePath}/brand/og-image.png`,
+              url: `${Metadata.Url}${basePath}/brand/og.png`,
               width: 800,
               height: 600,
               alt: 'Wesbitty Og Image',

@@ -34,7 +34,7 @@ export default function Login() {
           url: `${Metadata.Url}/login`,
           images: [
             {
-              url: `${Metadata.Url}/brand/og-image.png`,
+              url: `${Metadata.Url}/brand/og.png`,
             },
           ],
         }}

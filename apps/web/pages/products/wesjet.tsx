@@ -24,7 +24,7 @@ const WesjetPage = () => {
           url: `${Metadata.Url}/${router.pathname}`,
           images: [
             {
-              url: `${Metadata.Url}/brand/og-image.png`,
+              url: `${Metadata.Url}/brand/og.png`,
             },
           ],
         }}

@@ -163,6 +163,120 @@ h6:not(.overwrite) {
   overflow: hidden;
 }
 
+.d-flex {
+  display: flex !important;
+}
+
+.width-full {
+  width: 100% !important;
+}
+
+.container-lg {
+  max-width: 1012px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+.position-relative {
+  position: relative !important;
+}
+
+.flex-items-center {
+  align-items: center !important;
+}
+
+.flex-justify-center {
+  justify-content: center !important;
+}
+
+.flex-justify-start {
+  justify-content: flex-start !important;
+}
+.flex-column-reverse {
+  flex-direction: column-reverse !important;
+}
+
+.mt-2 {
+  margin-top: var(--base-size-8, 8px) !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.list-style-none {
+  list-style: none !important;
+}
+
+.mb-2 {
+  margin-bottom: var(--base-size-8, 8px) !important;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+ul,
+ol {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 544px) {
+  .p-responsive {
+    padding-right: var(--base-size-40, 40px) !important;
+    padding-left: var(--base-size-40, 40px) !important;
+  }
+}
+
+:root {
+  --base-size-4: 0.25rem;
+  --base-size-8: 0.5rem;
+  --base-size-12: 0.75rem;
+  --base-size-16: 1rem;
+  --base-size-20: 1.25rem;
+  --base-size-24: 1.5rem;
+  --base-size-28: 1.75rem;
+  --base-size-32: 2rem;
+  --base-size-36: 2.25rem;
+  --base-size-40: 2.5rem;
+  --base-size-44: 2.75rem;
+  --base-size-48: 3rem;
+  --base-size-64: 4rem;
+  --base-size-80: 5rem;
+  --base-size-96: 6rem;
+  --base-size-112: 7rem;
+  --base-size-128: 8rem;
+}
+
 .section-container {
   position: relative;
   /* z-index: 1; */
