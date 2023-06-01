@@ -12,6 +12,7 @@ import React from 'react'
 import { Fragment } from 'react'
 import type { WithChildren } from 'types'
 import Container from '~/components/widget/Container'
+import Footer from '~/components/widget/Footer'
 import { Section } from '~/components/widget/Section'
 
 interface LayoutProps extends WithChildren {
@@ -19,7 +20,6 @@ interface LayoutProps extends WithChildren {
 }
 
 export default function Layout({ siteId, children }: LayoutProps) {
-  const currentYear = new Date().getFullYear()
   const router = useRouter()
 
   const title = 'My Store • Home • Wesbitty'
@@ -262,11 +262,7 @@ export default function Layout({ siteId, children }: LayoutProps) {
       )}
       <div className="pt-28">{children}</div>
 
-      <div className="mt-12 border-t dark:border-dark flex justify-center">
-        <p className="mb-0 self-center text-base py-4 link-text dark:text-dark-100">
-          &copy; <span>{currentYear}</span> Wesbitty, Inc.
-        </p>
-      </div>
+      <Footer />
     </>
   )
 }
