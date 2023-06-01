@@ -9,7 +9,7 @@ async function generate() {
     'pages/*.tsx',
     'pages/**/*.tsx',
     '!pages/404.tsx',
-    '[Post]/*.mdx',
+    '[Posts]/**/*.mdx',
     '!pages/index.tsx',
     '!pages/app',
     '!pages/_sites',
@@ -22,18 +22,23 @@ async function generate() {
     <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         ${pages
+          .filter((page) => !page.includes('_document.tsx'))
           .map((page) => {
             const path = page
               .replace('.tsx', '')
               .replace('.mdx', '')
               .replace('pages', '')
-              .replace('[Post]', '/blog')
-              .replace('/blog/[slug]', '/blog')
+              .replace('blog/[slug]', 'blog')
+              .replace('[Posts]', '')
 
             let route = path === '/index' ? '' : path
 
             if (route.includes('/blog/')) {
               const _route = route.replace('/blog/', '')
+
+              let split = _route.split('')
+
+              route = '/blog/' + split.join('')
             }
 
             return `
