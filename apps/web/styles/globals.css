@@ -181,19 +181,6 @@ h6:not(.overwrite) {
   width: 100%;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section {
-  display: block;
-}
 .position-relative {
   position: relative !important;
 }
@@ -209,16 +196,13 @@ section {
 .flex-justify-start {
   justify-content: flex-start !important;
 }
+
 .flex-column-reverse {
   flex-direction: column-reverse !important;
 }
 
 .mt-2 {
   margin-top: var(--base-size-8, 8px) !important;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 .flex-wrap {
@@ -255,6 +239,11 @@ ol {
     padding-right: var(--base-size-40, 40px) !important;
     padding-left: var(--base-size-40, 40px) !important;
   }
+}
+
+.p-responsive {
+  padding-right: var(--base-size-40, 40px) !important;
+  padding-left: var(--base-size-40, 40px) !important;
 }
 
 :root {
