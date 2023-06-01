@@ -1,13 +1,11 @@
 import { format, parseISO } from 'date-fns'
-import fs from 'fs'
 import matter from 'gray-matter'
-import hydrate from 'next-mdx-remote'
-import renderToString from 'next-mdx-remote'
+import { InferGetStaticPropsType } from 'next'
 import { NextSeo } from 'next-seo'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { FC } from 'react'
 import ReactMarkdown from 'react-markdown'
 import {
   Badge,
@@ -19,6 +17,7 @@ import {
   Typography,
 } from 'ui'
 import authors from 'wesbitty/data/authors.json'
+import { MakeMdx } from 'wesjet/hooks'
 import { allPosts, Post } from 'wesjet/static'
 import ImageGrid from '~/components/Image/ImageGrid'
 import Quote from '~/components/Quote'
@@ -28,13 +27,11 @@ import { Metadata } from '~/utils/Metadata'
 import { generateReadingTime } from '~/utils/helpers'
 import { defineStaticProps } from '~/utils/next'
 
-export async function getStaticPaths() {
-  const paths: string[] = allPosts.map((post) => post.slug)
-
-  return {
-    paths,
-    fallback: false,
-  }
+export const getStaticPaths = async () => {
+  const paths = allPosts.map(({ slug }) => {
+    return { params: { slug } }
+  })
+  return { paths, fallback: false }
 }
 
 const components = {
@@ -47,8 +44,8 @@ const components = {
 }
 
 export const getStaticProps = defineStaticProps(async (context) => {
-  const params = context.params as unknown as Post
-  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
+  const params = context.params as any
+  const post = allPosts.find((_) => _.slug === params.slug)!
 
   return {
     props: {
@@ -57,11 +54,14 @@ export const getStaticProps = defineStaticProps(async (context) => {
   }
 })
 
-const PostLayout = ({ post }: { post: Post }) => {
+const PostLayout: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  post,
+}) => {
   // @ts-ignore
   const author = post.author ? authors[post.author] : authors['wesbitty']
   const router = useRouter()
-  const { data, content } = matter(post.body.html)
+
+  const MDXContent = MakeMdx(post.body.code || '')
 
   const relatedPosts = allPosts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -97,7 +97,7 @@ const PostLayout = ({ post }: { post: Post }) => {
         <div
           className="
           bg-white dark:bg-dark-800
-            container px-8 sm:px-16 xl:px-20 mx-auto
+            mx-auto px-8 sm:px-16 xl:px-20 mx-auto
             py-16
           "
         >
@@ -160,11 +160,9 @@ const PostLayout = ({ post }: { post: Post }) => {
                     />
                   )}
                   <article className="">
-                    <Typography>
-                      <div
-                        dangerouslySetInnerHTML={{ __html: post.body.html }}
-                      />
-                    </Typography>
+                    {MDXContent && (
+                      <MDXContent components={{ ...(components as any) }} />
+                    )}
                   </article>
                 </div>
                 {/* Sidebar */}

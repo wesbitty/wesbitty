@@ -12,35 +12,32 @@ const ListItem: FC<{ post: Post }> = ({ post }) => {
   const author = post.author ? authors[post.author] : authors['wesbitty']
 
   return (
-    <div key={post.slug}>
-      <Link href={post.slug}>
-        <div className="inline-block min-w-full group">
+    <div>
+      <Link href={`/blog/${post.slug}`}>
+        <div className="group inline-block min-w-full">
           <div className="flex flex-col space-y-6">
             <div className="flex flex-col space-y-3">
-              <div
-                className={`relative overflow-auto w-full border dark:border-dark shadow-sm rounded-lg mb-4`}
-              >
+              <div className="relative overflow-auto w-full border dark:border-dark shadow-sm rounded-lg h-60 mb-4">
                 <Image
                   alt="Thumbnail"
+                  fill
+                  style={{
+                    objectFit: 'cover',
+                  }}
                   src={
                     !post.thumb
                       ? `/images/blog/blog-placeholder.png`
                       : `/images/blog/${post.thumb}`
                   }
-                  className="p-1 bg-sky-50 border rounded max-w-sm"
-                  width={500}
-                  height={500}
-                  style={{
-                    objectFit: 'cover',
-                  }}
+                  // width={600}
+                  // height={338}
+
+                  className="scale-100 transform duration-100 ease-in group-hover:scale-105"
                 />
               </div>
 
-              <div>
-                <Typography.Title level={3} className="m-0">
-                  {post.title}
-                </Typography.Title>
-              </div>
+              <h3 className="text-scale-1200 max-w-sm text-xl">{post.title}</h3>
+
               <Typography.Text type="secondary" small>
                 {format(new Date(post.date), 'MMMM dd, yyyy')}
               </Typography.Text>
