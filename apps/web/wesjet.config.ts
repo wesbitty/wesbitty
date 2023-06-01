@@ -17,7 +17,8 @@ const Author = defineNestedType(() => ({
 
 const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: `blog/**/*.mdx`,
+  contentType: 'mdx',
   fields: {
     title: {
       type: 'string',
@@ -56,13 +57,13 @@ const Post = defineDocumentType(() => ({
     },
   },
   computedFields: {
-    url_path: {
+    urlPath: {
       type: 'string',
       resolve: urlFromFilePath,
     },
     slug: {
       type: 'string',
-      resolve: (post) => `/blog/${post._raw.flattenedPath}`,
+      resolve: (post) => urlFromFilePath(post).replace('blog/', ''),
     },
   },
 }))

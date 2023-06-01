@@ -16,7 +16,7 @@ export default async function middleware(req: NextRequest) {
     process.env.NODE_ENV === 'production' && process.env.VERCEL === '1'
       ? hostname.replace(`.wesbitty.org`, '')
       : hostname.replace(
-          `.3000-wesbitty-wesbitty-dtnyvntx4ke.ws-eu97.gitpod.io`,
+          `.3000-wesbitty-wesbitty-q38wv2fm65p.ws-eu98.gitpod.io`,
           ''
         )
 
@@ -35,7 +35,7 @@ export default async function middleware(req: NextRequest) {
   }
 
   if (
-    hostname === '3000-wesbitty-wesbitty-dtnyvntx4ke.ws-eu97.gitpod.io' ||
+    hostname === '3000-wesbitty-wesbitty-q38wv2fm65p.ws-eu98.gitpod.io' ||
     hostname === 'wesbitty.org'
   ) {
     return NextResponse.rewrite(new URL(`${path}`, req.url))
